@@ -24,18 +24,24 @@ namespace SuisHack
 		void Start()
 		{
 			var settings = SuisHack.SuisHackMain.Settings;
-			if(settings.Resolution != null)
-			{
-				var resolution = settings.Resolution.Value;
-				Screen.SetResolution(resolution.X, resolution.Y, false);
-				SuisHack.SuisHackMain.loggerInst.Msg($"Applying resolution {resolution.X}x{resolution.Y}");
-			}
 		}
 
 		void Update()
 		{
-			if (Input.GetKey(KeyCode.F11))
+			if (Input.GetKeyDown(KeyCode.F11))
+			{
 				m_Display = !m_Display;
+				if (m_Display)
+				{
+					Cursor.lockState = CursorLockMode.None;
+					Cursor.visible = true;
+				}
+				else
+				{
+					Cursor.lockState = CursorLockMode.Locked;
+					Cursor.visible = false;
+				}
+			}
 		}
 
 
@@ -43,7 +49,14 @@ namespace SuisHack
 		{
 			if(m_Display)
 			{
-				
+				GUILayout.BeginVertical(null);
+				GUILayout.BeginHorizontal(GUI.skin.box, null);
+				if(GUILayout.Button("LOL", null))
+				{
+					Screen.SetResolution(1280, 720, false);
+				}
+				GUILayout.EndHorizontal();
+				GUILayout.EndVertical();
 			}
 		}
 	}

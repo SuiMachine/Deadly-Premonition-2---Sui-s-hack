@@ -2,6 +2,13 @@
 
 namespace SuisHack
 {
+	public enum ControllerPrompts
+	{
+		Switch,
+		Xbox,
+		PlayStation
+	}
+
 	public class ExposedSettings
 	{
 		public (int X, int Y)? Resolution;
@@ -12,5 +19,8 @@ namespace SuisHack
 		public int TextureQuality = 0;
 		public bool RealtimeReflectionProbes = true;
 		public int vSyncCount = 1;
+
+		public bool SkipIntros;
+		public ControllerPrompts prompts;
 	}
 }
