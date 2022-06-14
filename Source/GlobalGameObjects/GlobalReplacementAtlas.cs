@@ -13,7 +13,7 @@ namespace SuisHack.GlobalGameObjects
 
 		public static void Initialize()
 		{
-			if(Instance == null)
+			if (Instance == null)
 			{
 				var GlobalAtlasGO = new GameObject("GlobalAtlas");
 				DontDestroyOnLoad(GlobalAtlasGO);
@@ -23,9 +23,9 @@ namespace SuisHack.GlobalGameObjects
 
 		void Awake()
 		{
-			if(SuisHackMain.Settings.Prompts != "")
+			if (SuisHackMain.Settings.Entry_Other_Prompts.Value != "")
 			{
-				string path = Path.Combine(Path.Combine(Application.streamingAssetsPath, "Prompts"), SuisHackMain.Settings.Prompts);
+				string path = Path.Combine(Path.Combine(Application.streamingAssetsPath, "Prompts"), SuisHackMain.Settings.Entry_Other_Prompts.Value);
 				SuisHackMain.loggerInst.Msg("Trying to load replacement prompts using bundle: " + path);
 
 				var assetBundle = AssetBundle.LoadFromFile(path);

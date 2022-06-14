@@ -12,12 +12,12 @@ namespace SuisHack.Hacks
 		public static void StartPostfix(LogoMain __instance)
 		{
 			var settings = SuisHackMain.Settings;
-			QualitySettings.pixelLightCount = settings.PixelLightCount;
-			QualitySettings.lodBias = settings.LOD_Bias;
-			QualitySettings.realtimeReflectionProbes = settings.RealtimeReflectionProbes;
-			QualitySettings.masterTextureLimit = settings.TextureQuality;
+			QualitySettings.pixelLightCount = settings.Entry_Quality_PixelLightCount.Value;
+			QualitySettings.lodBias = settings.Entry_Quality_LODBias.Value;
+			QualitySettings.realtimeReflectionProbes = settings.Entry_Quality_RealtimeReflectionProbes.Value;
+			QualitySettings.masterTextureLimit = settings.Entry_Quality_TextureQuality.Value;
 
-			if(settings.SkipIntros)
+			if(settings.Entry_Other_SkipIntros.Value)
 				MelonCoroutines.Start(StartMenu(__instance.gameObject.scene));
 			SuisHackMain.loggerInst.Msg($"Done applying settings!");
 		}
