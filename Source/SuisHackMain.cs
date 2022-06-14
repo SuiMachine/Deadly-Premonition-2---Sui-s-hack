@@ -1,4 +1,5 @@
 ﻿using MelonLoader;
+using UnhollowerRuntimeLib;
 using UnityEngine;
 
 namespace SuisHack
@@ -23,15 +24,23 @@ namespace SuisHack
 			base.OnApplicationLateStart();
 			loggerInst = LoggerInstance;
 			ApplySettings();
+			SettingsGUI.Initialize();
+			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
 			LoggerInstance.Msg("Sui's Hack loaded");
 		}
 
+#if DEBUG && FALSE
 		public override void OnSceneWasInitialized(int buildIndex, string sceneName)
 		{
-			SettingsGUI.Initialize();
-			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
+			LoggerInstance.Msg("Dumping all mono behaviours!");
+			var monoBehaviours = GameObject.FindObjectsOfTypeAll(Il2CppType.Of<MonoBehaviour>());
+			foreach(var obj in monoBehaviours)
+			{
+				LoggerInstance.Msg($"{obj.name}");
+			}
 			base.OnSceneWasInitialized(buildIndex, sceneName);
 		}
+#endif
 
 		public void ApplySettings()
 		{
@@ -49,7 +58,7 @@ namespace SuisHack
 			Settings.RealtimeReflectionProbes = graphicsSettingsCategory.CreateEntry("RealTimeReflectionProbes", true, description: "Allows usage of realtime reflection probes. Not sure if it used in game at all. Default is true.").Value;
 
 			Settings.SkipIntros = otherSettingsCategory.CreateEntry("Skip intros", true, description: "Allows to skip splash screns / intros and go straight to menu! Disable in case of issues").Value;
-			Settings.prompts = otherSettingsCategory.CreateEntry("Controller Prompts", ControllerPrompts.Switch, description: "Controller prompts displayed to a player. Options are Switch / Xbox / PlayStation. Make sure to disable Steam Input rebinding!").Value;
+			Settings.Prompts = otherSettingsCategory.CreateEntry("Controller Prompts", "", description: "Asset bundle file name that is containing replacement prompts atlas. Make sure to use correct Steam Input binding for the keys to correspond to displayed prompts.").Value;
 		}
 	}
 }
