@@ -10,23 +10,25 @@ namespace SuisHack.Hacks
 		[HarmonyPatch(typeof(UISprite), "OnInit")]
 		public static void UISpriteOn(UISprite __instance)
 		{
-			if (GlobalReplacementAtlas.Instance.Atlas != null)
+			if (GlobalReplacementAtlas.Instance.Atlas != null && __instance.mSprite != null)
 			{
-				if (__instance.mSpriteName != null && __instance.mSpriteName == "NX_Cont_Button_A")
+				switch(__instance.mSpriteName)
 				{
-					UIKeyGuideItemReplaceSprite(__instance, "A");
-				}
-				else if (__instance.mSpriteName != null && __instance.mSpriteName == "NX_Cont_Button_B")
-				{
-					UIKeyGuideItemReplaceSprite(__instance, "B");
-				}
-				else if (__instance.mSpriteName != null && __instance.mSpriteName == "NX_Cont_Button_X")
-				{
-					UIKeyGuideItemReplaceSprite(__instance, "X");
-				}
-				else if (__instance.mSpriteName != null && __instance.mSpriteName == "NX_Cont_Button_Y")
-				{
-					UIKeyGuideItemReplaceSprite(__instance, "Y");
+					case "NX_Cont_Button_A":
+						UIKeyGuideItemReplaceSprite(__instance, "A");
+						break;
+					case "A":
+						UIKeyGuideItemReplaceSprite(__instance, "A2");
+						break;
+					case "NX_Cont_Button_B":
+						UIKeyGuideItemReplaceSprite(__instance, "B");
+						break;
+					case "NX_Cont_Button_X":
+						UIKeyGuideItemReplaceSprite(__instance, "X");
+						break;
+					case "NX_Cont_Button_Y":
+						UIKeyGuideItemReplaceSprite(__instance, "Y");
+						break;
 				}
 			}
 		}
