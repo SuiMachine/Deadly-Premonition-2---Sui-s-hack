@@ -36,7 +36,6 @@ namespace SuisHack.Hacks
 
 		private static void UIKeyGuideItemReplaceSprite(UISprite m_buttonIcon, string name)
 		{
-
 			var replacementAtlas = GlobalReplacementAtlas.Instance.Atlas;
 			for (int i = 0; i < replacementAtlas.spriteList.Count; i++)
 			{

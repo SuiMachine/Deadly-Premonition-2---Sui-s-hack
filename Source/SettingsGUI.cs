@@ -303,6 +303,97 @@ namespace SuisHack
 				GUILayout.EndVertical();
 			}
 
+			//Shadows
+			{
+				GUILayout.BeginVertical(GUI.skin.box, null);
+				GUILayout.BeginHorizontal(GUI.skin.box, null);
+				GUILayout.Label($"Currently not stored (EXPERIMENTAL!):", null);
+				GUILayout.EndHorizontal();
+
+				//Shadow mode
+				{
+					GUILayout.BeginHorizontal(GUI.skin.box, null);
+					GUILayout.Label($"Shadows ({QualitySettings.shadows}):", null);
+					if (GUILayout.Button("None", null))
+						QualitySettings.shadows = ShadowQuality.Disable;
+					if (GUILayout.Button("Hard only", null))
+						QualitySettings.shadows = ShadowQuality.HardOnly;
+					if (GUILayout.Button("Soft", null))
+						QualitySettings.shadows = ShadowQuality.All;
+					GUILayout.EndHorizontal();
+				}
+
+				//Shadow resolution
+				{
+					GUILayout.BeginHorizontal(GUI.skin.box, null);
+					GUILayout.Label($"Shadow resolution ({QualitySettings.shadowResolution}):", null);
+					if (GUILayout.Button("Low", null))
+						QualitySettings.shadowResolution = ShadowResolution.Low;
+					if (GUILayout.Button("Medium", null))
+						QualitySettings.shadowResolution = ShadowResolution.Medium;
+					if (GUILayout.Button("High", null))
+						QualitySettings.shadowResolution = ShadowResolution.High;
+					if (GUILayout.Button("Very High", null))
+						QualitySettings.shadowResolution = ShadowResolution.VeryHigh;
+					GUILayout.EndHorizontal();
+				}
+
+				//Shadow mask mode
+				{
+					GUILayout.BeginHorizontal(GUI.skin.box, null);
+					GUILayout.Label($"Shadow mask mode ({QualitySettings.shadowmaskMode}):", null);
+					if (GUILayout.Button("Shadowmask", null))
+						QualitySettings.shadowmaskMode = ShadowmaskMode.Shadowmask;
+					if (GUILayout.Button("Distance shadowmask", null))
+						QualitySettings.shadowmaskMode = ShadowmaskMode.DistanceShadowmask;
+					GUILayout.EndHorizontal();
+				}
+
+				//Cascades
+				{
+					GUILayout.BeginHorizontal(GUI.skin.box, null);
+					GUILayout.Label($"Shadow cascades: ({QualitySettings.shadowCascades}):", null);
+					if (GUILayout.Button("2", null))
+						QualitySettings.shadowCascades = 2;
+					if (GUILayout.Button("4", null))
+						QualitySettings.shadowCascades = 4;
+					GUILayout.EndHorizontal();
+				}
+
+				{
+					if(QualitySettings.shadowCascades == 2)
+					{
+						GUILayout.BeginHorizontal(GUI.skin.box, null);
+						GUILayout.Label($"Shadow cascades  2 split: ({QualitySettings.shadowCascade2Split}):", null);
+						QualitySettings.shadowCascade2Split = GUILayout.HorizontalSlider(QualitySettings.shadowCascade2Split, 0, 4, null);
+						GUILayout.EndHorizontal();
+					}
+					else
+					{
+						float cascade1 = QualitySettings.shadowCascade4Split.x;
+						float cascade2 = QualitySettings.shadowCascade4Split.y;
+						float cascade3 = QualitySettings.shadowCascade4Split.z;
+						GUILayout.BeginHorizontal(GUI.skin.box, null);
+						GUILayout.Label($"Shadow cascades 1 split: ({cascade1}):", null);
+						cascade1 = GUILayout.HorizontalSlider(cascade1, 0, 50, null);
+						GUILayout.EndHorizontal();
+						GUILayout.BeginHorizontal(GUI.skin.box, null);
+						GUILayout.Label($"Shadow cascades 2 split: ({cascade2}):", null);
+						cascade2 = GUILayout.HorizontalSlider(cascade2, 0, 50, null);
+						GUILayout.EndHorizontal();
+						GUILayout.BeginHorizontal(GUI.skin.box, null);
+						GUILayout.Label($"Shadow cascades 3 split: ({cascade3}):", null);
+						cascade3 = GUILayout.HorizontalSlider(cascade3, 0, 50, null);
+						GUILayout.EndHorizontal();
+						QualitySettings.shadowCascade4Split = new Vector3(cascade1, cascade2, cascade3);
+					}
+				}
+				GUILayout.EndVertical();
+				
+
+			}
+
+
 			//LOD Bias
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
