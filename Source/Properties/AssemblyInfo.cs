@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: MelonInfo(typeof(SuisHack.SuisHackMain), "SuisHack", "0.1.0", "SuicideMachine")]
+[assembly: AssemblyVersion("0.2.0.0")]
+[assembly: AssemblyFileVersion("0.2.0.0")]
+[assembly: MelonInfo(typeof(SuisHack.SuisHackMain), "SuisHack", "0.2.0", "SuicideMachine", "https://github.com/SuiMachine/Deadly-Premonition-2---Sui-s-hack/releases")]
 [assembly: MelonGame("ToyBox Inc.", "DeadlyPremonition2")]

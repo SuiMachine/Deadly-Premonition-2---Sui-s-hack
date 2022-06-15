@@ -2,6 +2,7 @@
 using MelonLoader;
 using System;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 namespace SuisHack
 {
@@ -20,7 +21,6 @@ namespace SuisHack
 		public static SettingsGUI Instance { get; private set; }
 		private bool m_Display = false;
 		private Category category = Category.Root;
-		private Vector2 scrollPos;
 		private ExposedSettings Settings => SuisHackMain.Settings;
 		Vector2 resolution;
 		int refreshRate;
@@ -93,17 +93,14 @@ namespace SuisHack
 			if (GUILayout.Button("Display options", null))
 			{
 				category = Category.Display;
-				scrollPos = Vector2.zero;
 			}
 			if (GUILayout.Button("Quality settings", null))
 			{
 				category = Category.Quality;
-				scrollPos = Vector2.zero;
 			}
 			if (GUILayout.Button("Other settings", null))
 			{
 				category = Category.Other;
-				scrollPos = Vector2.zero;
 			}
 		}
 
@@ -230,6 +227,81 @@ namespace SuisHack
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
 			GUILayout.Label("<b>Quality settings:</b>", richText, null);
 			GUILayout.EndHorizontal();
+
+			//Antialiasing
+			{
+				GUILayout.BeginHorizontal(GUI.skin.box, null);
+				GUILayout.Label($"Antialiasing filter: ({Hacks.PostProcessLayerHook.GetShortName()}):", null);
+				if (GUILayout.Button("None", null))
+				{
+					Hacks.PostProcessLayerHook.Antialiasing = PostProcessLayer.Antialiasing.None;
+					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.None;
+				}
+				if (GUILayout.Button("FXAA", null))
+				{
+					Hacks.PostProcessLayerHook.Antialiasing = PostProcessLayer.Antialiasing.FastApproximateAntialiasing;
+					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.FastApproximateAntialiasing;
+				}
+				if (GUILayout.Button("SMAA", null))
+				{
+					Hacks.PostProcessLayerHook.Antialiasing = PostProcessLayer.Antialiasing.SubpixelMorphologicalAntialiasing;
+					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.SubpixelMorphologicalAntialiasing;
+				}
+				if (GUILayout.Button("TAA", null))
+				{
+					Hacks.PostProcessLayerHook.Antialiasing = PostProcessLayer.Antialiasing.TemporalAntialiasing;
+					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.TemporalAntialiasing;
+				}
+				GUILayout.EndHorizontal();
+			}
+
+			//Anisotropic filtering Bias
+			{
+				GUILayout.BeginVertical(GUI.skin.box, null);
+				GUILayout.BeginHorizontal(null);
+				GUILayout.Label($"Anisotropic filtering mode: ({QualitySettings.anisotropicFiltering}):", null);
+				
+				if(GUILayout.Button("Force disabled", null))
+				{
+					QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
+					Settings.Entry_AnistropicFiltering.Value = AnisotropicFiltering.Disable;
+				}
+				if (GUILayout.Button("Per texture", null))
+				{
+					QualitySettings.anisotropicFiltering = AnisotropicFiltering.Enable;
+					Settings.Entry_AnistropicFiltering.Value = AnisotropicFiltering.Enable;
+				}
+				if (GUILayout.Button("Force enabled", null))
+				{
+					QualitySettings.anisotropicFiltering = AnisotropicFiltering.ForceEnable;
+					Settings.Entry_AnistropicFiltering.Value = AnisotropicFiltering.ForceEnable;
+				}
+				GUILayout.EndHorizontal();
+
+				if (QualitySettings.anisotropicFiltering == AnisotropicFiltering.ForceEnable)
+				{
+					var oldMinimum = Settings.Entry_AnistropicFiltering_Min.Value;
+					var oldMaximum = Settings.Entry_AnistropicFiltering_Max.Value;
+					GUILayout.BeginHorizontal(null);
+					GUILayout.Label($"Anisotropic filtering minimum level ({oldMinimum}): ", null);
+					Settings.Entry_AnistropicFiltering_Min.Value = (int)GUILayout.HorizontalSlider(Settings.Entry_AnistropicFiltering_Min.Value, -1, 16, null);
+					GUILayout.EndHorizontal();
+
+					GUILayout.BeginHorizontal(null);
+					GUILayout.Label($"Anisotropic filtering maximum level ({oldMaximum}): ", null);
+					Settings.Entry_AnistropicFiltering_Max.Value = (int)GUILayout.HorizontalSlider(Settings.Entry_AnistropicFiltering_Max.Value, -1, 16, null);
+					GUILayout.EndHorizontal();
+
+					if (Settings.Entry_AnistropicFiltering_Max.Value < Settings.Entry_AnistropicFiltering_Min.Value)
+						Settings.Entry_AnistropicFiltering_Max.Value = Settings.Entry_AnistropicFiltering_Min.Value;
+
+					if (oldMinimum != Settings.Entry_AnistropicFiltering_Min.Value || oldMaximum != Settings.Entry_AnistropicFiltering_Max.Value)
+						Texture.SetGlobalAnisotropicFilteringLimits(Settings.Entry_AnistropicFiltering_Min.Value, Settings.Entry_AnistropicFiltering_Max.Value);
+				}
+
+				Texture.SetGlobalAnisotropicFilteringLimits(8, 16);
+				GUILayout.EndVertical();
+			}
 
 			//LOD Bias
 			{
