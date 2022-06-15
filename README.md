@@ -4,7 +4,7 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 # List of features
 * Resolution override (the game should no longer start in 1920x1080 maximized window).
 * Exposed display settings: Resolution, V-sync, Refresh Rate (or FPS cap), Display Mode (Windowed, Fullscreen, Borderless etc.).
-* Exposed quality settings: LOD Bias, Pixel Light Count, Texture Resolution, Realtime Reflection Probes.
+* Exposed quality settings: Antialiasing (Post Process due to deferred path), Anisotropic filtering, LOD Bias, Pixel Light Count, Texture Resolution, Realtime Reflection Probes.
 * Runtime button prompt replacement with buttons prepared for Xbox and Playstation controllers.
 * A basic GUI available for configuring the mod available under F11.
 
