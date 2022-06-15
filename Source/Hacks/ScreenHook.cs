@@ -15,9 +15,9 @@ namespace SuisHack.Hacks
 			var clampedRefresh = Mathf.Clamp(settings.Entry_Display_RefreshRate.Value, 30, 480);
 			if (settings.Resolution != null)
 			{
-				var resolution = settings.Resolution.Value;
-				SuisHackMain.loggerInst.Msg($"Setting screen resolution as: {resolution.X}x{resolution.Y}@{clampedRefresh}. Display mode: {settings.Entry_Display_DisplayMode.Value}");
-				Screen.SetResolution(resolution.X, resolution.Y, settings.Entry_Display_DisplayMode.Value, clampedRefresh);
+				var resolution = settings.Resolution;
+				SuisHackMain.loggerInst.Msg($"Setting screen resolution as: {resolution.Item1}x{resolution.Item2}@{clampedRefresh}. Display mode: {settings.Entry_Display_DisplayMode.Value}");
+				Screen.SetResolution(resolution.Item1, resolution.Item2, settings.Entry_Display_DisplayMode.Value, clampedRefresh);
 			}
 			else
 			{

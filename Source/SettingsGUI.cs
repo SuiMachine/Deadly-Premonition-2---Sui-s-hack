@@ -21,7 +21,7 @@ namespace SuisHack
 		public static SettingsGUI Instance { get; private set; }
 		private bool m_Display = false;
 		private Category category = Category.Root;
-		private ExposedSettings Settings => SuisHackMain.Settings;
+		private ExposedSettings Settings { get { return SuisHackMain.Settings; } }
 		Vector2 resolution;
 		int refreshRate;
 

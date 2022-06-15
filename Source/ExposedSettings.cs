@@ -33,7 +33,6 @@ namespace SuisHack
 		public MelonPreferences_Entry<bool> Entry_Other_SkipIntros;
 		public MelonPreferences_Entry<string> Entry_Other_Prompts;
 
-
 		public ExposedSettings()
 		{
 			Category_mainDisplay = MelonPreferences.CreateCategory("Suis Hack Main Display");
@@ -43,10 +42,8 @@ namespace SuisHack
 			Entry_Display_Resolution = Category_mainDisplay.CreateEntry("Resolution", "0x0", description: "Screen or game resolution depending on display mode - if invalid resolution is specified - main screen resolution is used");
 			Entry_Display_RefreshRate = Category_mainDisplay.CreateEntry("Refresh_Rate", -1, description: "Refresh rate used in fullscreen. If Vsync is disabled, this is used for FPS cap. (-1 is platform default, 0 is uncapped, anything higher is FPS capped)", validator: new ValueRange<int>(-1, 480));
 
-			if (Hacks.ConfigParsing.ParseResolution(Entry_Display_Resolution.Value, out (uint X, uint Y) desiredResolution))
-			{
-				Resolution = ((int)desiredResolution.X, (int)desiredResolution.Y);
-			}
+			if (Hacks.ConfigParsing.ParseResolution(Entry_Display_Resolution.Value, out LemonTuple<int,int> desiredResolution))
+				Resolution = desiredResolution;
 			else
 				Entry_Display_Resolution.Value = "0x0";
 
@@ -67,6 +64,6 @@ namespace SuisHack
 			Entry_Other_Prompts = Category_otherSettings.CreateEntry("Controller Prompts", "", description: "Asset bundle file name that is containing replacement prompts atlas. Make sure to use correct Steam Input binding for the keys to correspond to displayed prompts.");
 		}
 
-		public (int X, int Y)? Resolution;
+		public LemonTuple<int, int> Resolution;
 	}
 }

@@ -1,12 +1,13 @@
-﻿using System.Text.RegularExpressions;
+﻿using MelonLoader;
+using System.Text.RegularExpressions;
 
 namespace SuisHack.Hacks
 {
 	public static class ConfigParsing
 	{
-		public static bool ParseResolution(string text, out (uint X, uint Y) desiredResolution)
+		public static bool ParseResolution(string text, out LemonTuple<int, int> desiredResolution)
 		{
-			desiredResolution = (0, 0);
+			desiredResolution = null;
 			while(text.IndexOf(' ') >= 0)
 			{
 				var index = text.IndexOf(' ');
@@ -19,14 +20,21 @@ namespace SuisHack.Hacks
 			{
 				var resX = match.Groups[1].Value;
 				var resY = match.Groups[2].Value;
-				if (uint.TryParse(resX, out desiredResolution.X))
+
+				uint desiredResolutionX = 0, desiredResolutionY = 0;
+				if (uint.TryParse(resX, out desiredResolutionX))
 				{
-					if (uint.TryParse(resY, out desiredResolution.Y))
+					if (uint.TryParse(resY, out desiredResolutionY))
 					{
-						if (desiredResolution.X == 0 || desiredResolution.Y == 0)
+						if (desiredResolutionX == 0 || desiredResolutionY == 0)
 							return false;
 						else
+						{
+							desiredResolution = new LemonTuple<int, int>();
+							desiredResolution.Item1 = (int)desiredResolutionX;
+							desiredResolution.Item2 = (int)desiredResolutionY;
 							return true;
+						}
 					}
 					else
 						return false;

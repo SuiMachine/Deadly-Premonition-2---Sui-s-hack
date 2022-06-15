@@ -41,7 +41,7 @@ namespace SuisHack.Hacks
 					var replacement = replacementAtlas.spriteList[i];
 					m_buttonIcon.atlas = replacementAtlas;
 					m_buttonIcon.SetAtlasSprite(replacement);
-					SuisHackMain.loggerInst.Msg($"Replaced! {name}");
+					//SuisHackMain.loggerInst.Msg($"Replaced! {name}");
 					return;
 				}
 			}
