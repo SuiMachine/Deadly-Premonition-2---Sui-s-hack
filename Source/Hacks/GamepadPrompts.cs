@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using SuisHack.GlobalGameObjects;
+using System.Xml.Linq;
 
 namespace SuisHack.Hacks
 {
@@ -10,14 +11,14 @@ namespace SuisHack.Hacks
 		[HarmonyPatch(typeof(UISprite), "OnInit")]
 		public static void UISpriteOn(UISprite __instance)
 		{
-			if (GlobalReplacementAtlas.Instance.Atlas != null && __instance.mSprite != null)
+			if (GlobalReplacementAtlas.Instance.Atlas != null && __instance.mSpriteName != null)
 			{
-				switch(__instance.mSpriteName)
+				switch (__instance.mSpriteName)
 				{
 					case "NX_Cont_Button_A":
 						UIKeyGuideItemReplaceSprite(__instance, "A");
 						break;
-					case "A":
+					case "common_intaract_A":
 						UIKeyGuideItemReplaceSprite(__instance, "A2");
 						break;
 					case "NX_Cont_Button_B":
@@ -35,6 +36,7 @@ namespace SuisHack.Hacks
 
 		private static void UIKeyGuideItemReplaceSprite(UISprite m_buttonIcon, string name)
 		{
+
 			var replacementAtlas = GlobalReplacementAtlas.Instance.Atlas;
 			for (int i = 0; i < replacementAtlas.spriteList.Count; i++)
 			{
@@ -48,7 +50,7 @@ namespace SuisHack.Hacks
 				}
 			}
 
-			SuisHackMain.loggerInst.Msg($"Failed to replace!");
+			SuisHackMain.loggerInst.Msg($"Failed to replace {m_buttonIcon.mSpriteName}");
 		}
 	}
 }
