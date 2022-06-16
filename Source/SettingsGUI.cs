@@ -72,6 +72,8 @@ namespace SuisHack
 				DrawRoot();
 				GUILayout.EndHorizontal();
 				GUILayout.EndVertical();
+				if (restartingToDefault > 0)
+					restartingToDefault -= Time.deltaTime;
 
 				switch (category)
 				{
@@ -88,7 +90,19 @@ namespace SuisHack
 			}
 		}
 
-
+		private Texture2D CreateTexture(Color color)
+		{
+			Texture2D result = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+			for (int x = 0; x < result.width; x++)
+			{
+				for (int y = 0; y < result.height; y++)
+				{
+					result.SetPixel(x, y, color);
+				}
+			}
+			result.Apply();
+			return result;
+		}
 
 		private void DrawRoot()
 		{
@@ -112,11 +126,10 @@ namespace SuisHack
 		{
 			GUIStyle richText = GUI.skin.label;
 			richText.richText = true;
+
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
 			GUILayout.Label("<b>Display settings:</b>", richText, null);
 			GUILayout.EndHorizontal();
-			if (restartingToDefault > 5)
-				restartingToDefault -= Time.deltaTime;
 
 			//Resolution
 			{
@@ -581,15 +594,17 @@ namespace SuisHack
 				GUILayout.EndHorizontal();
 			}
 
+			GUILayout.BeginHorizontal(GUI.skin.box, null);
 			if (GUILayout.Button("Unlock restart to defaults", null))
 				restartingToDefault = 5f;
 			if (restartingToDefault > 0)
 			{
-				if (GUILayout.Button($"Restart to default {restartingToDefault:0.0} ", null))
+				if (GUILayout.Button($"Restart to default {restartingToDefault:0.0}s", null))
 				{
 					RestartToDefault();
 				}
 			}
+			GUILayout.EndHorizontal();
 		}
 
 		private void RestartToDefault()
