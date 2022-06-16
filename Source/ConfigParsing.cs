@@ -8,7 +8,7 @@ namespace SuisHack.Hacks
 		public static bool ParseResolution(string text, out LemonTuple<int, int> desiredResolution)
 		{
 			desiredResolution = null;
-			while(text.IndexOf(' ') >= 0)
+			while (text.IndexOf(' ') >= 0)
 			{
 				var index = text.IndexOf(' ');
 				text = text.Remove(index, 1);
@@ -20,19 +20,20 @@ namespace SuisHack.Hacks
 			{
 				var resX = match.Groups[1].Value;
 				var resY = match.Groups[2].Value;
-
-				uint desiredResolutionX = 0, desiredResolutionY = 0;
-				if (uint.TryParse(resX, out desiredResolutionX))
+				if (uint.TryParse(resX, out uint desiredResolutionX))
 				{
+					uint desiredResolutionY;
 					if (uint.TryParse(resY, out desiredResolutionY))
 					{
 						if (desiredResolutionX == 0 || desiredResolutionY == 0)
 							return false;
 						else
 						{
-							desiredResolution = new LemonTuple<int, int>();
-							desiredResolution.Item1 = (int)desiredResolutionX;
-							desiredResolution.Item2 = (int)desiredResolutionY;
+							desiredResolution = new LemonTuple<int, int>
+							{
+								Item1 = (int)desiredResolutionX,
+								Item2 = (int)desiredResolutionY
+							};
 							return true;
 						}
 					}

@@ -15,13 +15,13 @@ namespace SuisHack.Hacks
 			get { return m_Antialiasing; }
 			set
 			{
-				if(PostProcessLayerInstances.Contains(null))
+				if (PostProcessLayerInstances.Contains(null))
 				{
 					PostProcessLayerInstances = PostProcessLayerInstances.Where(x => x != null).ToList();
 				}
 
 				m_Antialiasing = value;
-				foreach(var postProcess in PostProcessLayerInstances)
+				foreach (var postProcess in PostProcessLayerInstances)
 				{
 					postProcess.antialiasingMode = value;
 				}
@@ -43,7 +43,7 @@ namespace SuisHack.Hacks
 
 		internal static string GetShortName()
 		{
-			switch(m_Antialiasing)
+			switch (m_Antialiasing)
 			{
 				case PostProcessLayer.Antialiasing.FastApproximateAntialiasing:
 					return "FXAA";

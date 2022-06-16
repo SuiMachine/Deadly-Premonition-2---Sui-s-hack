@@ -22,12 +22,14 @@ namespace SuisHack
 		private bool m_Display = false;
 		private Category category = Category.Root;
 		private ExposedSettings Settings { get { return SuisHackMain.Settings; } }
-		Vector2 resolution;
-		int refreshRate;
+		string resolutionX;
+		string resolutionY;
+		string refreshRate;
+		float restartingToDefault = 0;
 
 		public static void Initialize()
 		{
-			if(Instance == null)
+			if (Instance == null)
 			{
 				var gameObject = new GameObject("SuisHackSettingsGUI");
 				Instance = gameObject.AddComponent<SettingsGUI>();
@@ -37,8 +39,9 @@ namespace SuisHack
 
 		void Start()
 		{
-			resolution = new Vector2((float)Screen.currentResolution.width, (float)Screen.currentResolution.height);
-			refreshRate = Settings.Entry_Display_RefreshRate.Value;
+			resolutionX = Screen.width.ToString();
+			resolutionY = Screen.height.ToString();
+			refreshRate = Settings.Entry_Display_RefreshRate.Value.ToString();
 		}
 
 		void Update()
@@ -62,7 +65,7 @@ namespace SuisHack
 
 		public void OnGUI()
 		{
-			if(m_Display)
+			if (m_Display)
 			{
 				GUILayout.BeginVertical(null);
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
@@ -102,6 +105,7 @@ namespace SuisHack
 			{
 				category = Category.Other;
 			}
+			Settings.Entry_Other_ShowAdvanced.Value = GUILayout.Toggle(Settings.Entry_Other_ShowAdvanced.Value, "Show advanced and experimental options", null);
 		}
 
 		private void DrawDisplay()
@@ -111,31 +115,42 @@ namespace SuisHack
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
 			GUILayout.Label("<b>Display settings:</b>", richText, null);
 			GUILayout.EndHorizontal();
+			if (restartingToDefault > 5)
+				restartingToDefault -= Time.deltaTime;
 
 			//Resolution
 			{
 				GUILayout.BeginVertical(GUI.skin.box, null);
 				GUILayout.BeginHorizontal(null);
-				GUILayout.Label($"Current resolution ({Screen.currentResolution.width}x{Screen.currentResolution.height})", null);
+				GUILayout.Label($"Current resolution ({Screen.width}x{Screen.height})", null);
 				GUILayout.EndHorizontal();
 				GUILayout.BeginHorizontal(null);
 				GUILayout.Label($"Desired resolution:", null);
-				var x = GUILayout.TextField(resolution.x.ToString(), null);
+				resolutionX = GUILayout.TextField(resolutionX, null);
 				GUILayout.Label($"x", null);
-				var y = GUILayout.TextField(resolution.y.ToString(), null);
-				var newResX = (int)resolution.x;
-				var newResY = (int)resolution.y;
+				resolutionY = GUILayout.TextField(resolutionY, null);
 
-				if (int.TryParse(x, out int resX))
-					newResX = resX;
-				if (int.TryParse(y, out int resY))
-					newResY = resY;
-
-				resolution = new Vector2(newResX, newResY);
 				if (GUILayout.Button("Apply", null))
 				{
+					var newResX = Screen.width;
+					var newResY = Screen.height;
+
+					if (int.TryParse(resolutionX, out int resX))
+					{
+						if (resX > 0)
+							newResX = resX;
+					}
+
+					if (int.TryParse(resolutionY, out int resY))
+					{
+						if (resY > 0)
+							newResY = resY;
+					}
+
 					Screen.SetResolution(newResX, newResY, Settings.Entry_Display_DisplayMode.Value, Settings.Entry_Display_RefreshRate.Value);
 					Settings.Entry_Display_Resolution.Value = $"{newResX}x{newResY}";
+					resolutionX = newResX.ToString();
+					resolutionY = newResY.ToString();
 				}
 				GUILayout.EndHorizontal();
 				GUILayout.EndVertical();
@@ -146,25 +161,28 @@ namespace SuisHack
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				GUILayout.Label($"Display mode ({Screen.fullScreenMode}):", null);
 
-				if(GUILayout.Button("Exclusive fullscreen", null))
+				if (GUILayout.Button("Exclusive fullscreen", null))
 				{
 					Settings.Entry_Display_DisplayMode.Value = FullScreenMode.ExclusiveFullScreen;
 					Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, Settings.Entry_Display_DisplayMode.Value, Screen.currentResolution.refreshRate);
+					if (Settings.Entry_Display_Vsync.Value)
+						Settings.Entry_Display_RefreshRate.Value = Screen.currentResolution.refreshRate;
 				}
 				if (GUILayout.Button("Maximized window", null))
 				{
 					Settings.Entry_Display_DisplayMode.Value = FullScreenMode.MaximizedWindow;
-					Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, Settings.Entry_Display_DisplayMode.Value, Screen.currentResolution.refreshRate);
+					Screen.SetResolution(Screen.width, Screen.height, Settings.Entry_Display_DisplayMode.Value, 0);
 				}
 				if (GUILayout.Button("Borderless window", null))
 				{
 					Settings.Entry_Display_DisplayMode.Value = FullScreenMode.FullScreenWindow;
-					Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, Settings.Entry_Display_DisplayMode.Value, Screen.currentResolution.refreshRate);
+					Screen.SetResolution(Screen.width, Screen.height, Settings.Entry_Display_DisplayMode.Value, 0);
 				}
 				if (GUILayout.Button("Windowed", null))
 				{
 					Settings.Entry_Display_DisplayMode.Value = FullScreenMode.Windowed;
-					Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, Settings.Entry_Display_DisplayMode.Value, Screen.currentResolution.refreshRate);
+					Screen.SetResolution(Screen.width, Screen.height, Settings.Entry_Display_DisplayMode.Value, 0);
+
 				}
 				GUILayout.EndHorizontal();
 			}
@@ -174,13 +192,13 @@ namespace SuisHack
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				var oldValue = QualitySettings.vSyncCount > 0 ? true : false;
 				var newValue = GUILayout.Toggle(oldValue, "V-sync", null);
-				if(newValue != oldValue)
+				if (newValue != oldValue)
 				{
 					QualitySettings.vSyncCount = newValue ? 1 : 0;
 					Settings.Entry_Display_Vsync.Value = newValue;
-					if(newValue)
+					if (newValue)
 					{
-						Application.targetFrameRate = refreshRate;
+						Application.targetFrameRate = Settings.Entry_Display_RefreshRate.Value;
 					}
 				}
 				GUILayout.EndHorizontal();
@@ -192,29 +210,37 @@ namespace SuisHack
 				if (QualitySettings.vSyncCount > 0)
 				{
 					GUILayout.Label("Refresh rate", null);
-					var newValue = GUILayout.TextField(refreshRate.ToString(), null);
-					if(uint.TryParse(newValue, out var result))
+					refreshRate = GUILayout.TextField(refreshRate.ToString(), null);
+
+					if (GUILayout.Button("Apply", null))
 					{
-						refreshRate = (int)Mathf.Clamp(result, 30, 480);
-					}
-					if(GUILayout.Button("Apply", null))
-					{
-						Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, Screen.fullScreenMode, refreshRate);
-						Settings.Entry_Display_RefreshRate.Value = refreshRate;
+						if (int.TryParse(refreshRate, out var result))
+						{
+							result = Mathf.Clamp(result, 50, 480);
+							Screen.SetResolution(Screen.width, Screen.height, Screen.fullScreenMode, result);
+							Settings.Entry_Display_RefreshRate.Value = result;
+							refreshRate = result.ToString();
+						}
 					}
 				}
 				else
 				{
-					GUILayout.Label($"FPS cap {refreshRate}", null);
-					var oldValue = refreshRate;
-					refreshRate = (int)GUILayout.HorizontalSlider(refreshRate, -1, 1000, null);
-					if(oldValue != refreshRate)
+					GUILayout.Label("FPS cap", null);
+					refreshRate = GUILayout.TextField(refreshRate.ToString(), null);
+
+					if (GUILayout.Button("Apply", null))
 					{
-						Application.targetFrameRate = refreshRate;
-						Settings.Entry_Display_RefreshRate.Value = refreshRate;
+						if (int.TryParse(refreshRate, out var result))
+						{
+							result = Mathf.Clamp(result, -1, 9999);
+							Screen.SetResolution(Screen.width, Screen.height, Screen.fullScreenMode, 0);
+							QualitySettings.vSyncCount = 0;
+							Application.targetFrameRate = result;
+							Settings.Entry_Display_RefreshRate.Value = result;
+							refreshRate = result.ToString();
+						}
 					}
 				}
-
 
 				GUILayout.EndHorizontal();
 			}
@@ -260,8 +286,8 @@ namespace SuisHack
 				GUILayout.BeginVertical(GUI.skin.box, null);
 				GUILayout.BeginHorizontal(null);
 				GUILayout.Label($"Anisotropic filtering mode: ({QualitySettings.anisotropicFiltering}):", null);
-				
-				if(GUILayout.Button("Force disabled", null))
+
+				if (GUILayout.Button("Force disabled", null))
 				{
 					QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
 					Settings.Entry_AnistropicFiltering.Value = AnisotropicFiltering.Disable;
@@ -280,92 +306,150 @@ namespace SuisHack
 
 				if (QualitySettings.anisotropicFiltering == AnisotropicFiltering.ForceEnable)
 				{
-					var oldMinimum = Settings.Entry_AnistropicFiltering_Min.Value;
-					var oldMaximum = Settings.Entry_AnistropicFiltering_Max.Value;
+					var oldValue = Settings.Entry_AnistropicFilteringValue.Value;
 					GUILayout.BeginHorizontal(null);
-					GUILayout.Label($"Anisotropic filtering minimum level ({oldMinimum}): ", null);
-					Settings.Entry_AnistropicFiltering_Min.Value = (int)GUILayout.HorizontalSlider(Settings.Entry_AnistropicFiltering_Min.Value, -1, 16, null);
+					GUILayout.Label($"Anisotropic filtering level ({oldValue}): ", null);
+					Settings.Entry_AnistropicFilteringValue.Value = (int)GUILayout.HorizontalSlider(Settings.Entry_AnistropicFilteringValue.Value, -1, 16, null);
 					GUILayout.EndHorizontal();
 
-					GUILayout.BeginHorizontal(null);
-					GUILayout.Label($"Anisotropic filtering maximum level ({oldMaximum}): ", null);
-					Settings.Entry_AnistropicFiltering_Max.Value = (int)GUILayout.HorizontalSlider(Settings.Entry_AnistropicFiltering_Max.Value, -1, 16, null);
-					GUILayout.EndHorizontal();
-
-					if (Settings.Entry_AnistropicFiltering_Max.Value < Settings.Entry_AnistropicFiltering_Min.Value)
-						Settings.Entry_AnistropicFiltering_Max.Value = Settings.Entry_AnistropicFiltering_Min.Value;
-
-					if (oldMinimum != Settings.Entry_AnistropicFiltering_Min.Value || oldMaximum != Settings.Entry_AnistropicFiltering_Max.Value)
-						Texture.SetGlobalAnisotropicFilteringLimits(Settings.Entry_AnistropicFiltering_Min.Value, Settings.Entry_AnistropicFiltering_Max.Value);
+					if (oldValue != Settings.Entry_AnistropicFilteringValue.Value)
+						Texture.SetGlobalAnisotropicFilteringLimits(Settings.Entry_AnistropicFilteringValue.Value, Settings.Entry_AnistropicFilteringValue.Value);
 				}
 
-				Texture.SetGlobalAnisotropicFilteringLimits(8, 16);
 				GUILayout.EndVertical();
 			}
 
 			//Shadows
 			{
 				GUILayout.BeginVertical(GUI.skin.box, null);
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				GUILayout.Label($"Currently not stored (EXPERIMENTAL!):", null);
-				GUILayout.EndHorizontal();
 
 				//Shadow mode
+				if (Settings.Entry_Other_ShowAdvanced.Value)
 				{
-					GUILayout.BeginHorizontal(GUI.skin.box, null);
+					GUILayout.BeginHorizontal(null);
 					GUILayout.Label($"Shadows ({QualitySettings.shadows}):", null);
 					if (GUILayout.Button("None", null))
+					{
+						Settings.Entry_Quality_ShadowsQuality.Value = ShadowQuality.Disable;
 						QualitySettings.shadows = ShadowQuality.Disable;
+					}
 					if (GUILayout.Button("Hard only", null))
+					{
+						Settings.Entry_Quality_ShadowsQuality.Value = ShadowQuality.HardOnly;
 						QualitySettings.shadows = ShadowQuality.HardOnly;
+					}
 					if (GUILayout.Button("Soft", null))
+					{
+						Settings.Entry_Quality_ShadowsQuality.Value = ShadowQuality.All;
 						QualitySettings.shadows = ShadowQuality.All;
+					}
 					GUILayout.EndHorizontal();
 				}
 
 				//Shadow resolution
 				{
-					GUILayout.BeginHorizontal(GUI.skin.box, null);
+					GUILayout.BeginHorizontal(null);
 					GUILayout.Label($"Shadow resolution ({QualitySettings.shadowResolution}):", null);
 					if (GUILayout.Button("Low", null))
+					{
+						Settings.Entry_Quality_ShadowsResolution.Value = ShadowResolution.Low;
 						QualitySettings.shadowResolution = ShadowResolution.Low;
+					}
 					if (GUILayout.Button("Medium", null))
+					{
+						Settings.Entry_Quality_ShadowsResolution.Value = ShadowResolution.Medium;
 						QualitySettings.shadowResolution = ShadowResolution.Medium;
+					}
 					if (GUILayout.Button("High", null))
+					{
+						Settings.Entry_Quality_ShadowsResolution.Value = ShadowResolution.High;
 						QualitySettings.shadowResolution = ShadowResolution.High;
+					}
 					if (GUILayout.Button("Very High", null))
+					{
+						Settings.Entry_Quality_ShadowsResolution.Value = ShadowResolution.VeryHigh;
 						QualitySettings.shadowResolution = ShadowResolution.VeryHigh;
+					}
 					GUILayout.EndHorizontal();
 				}
 
 				//Shadow mask mode
+				if (Settings.Entry_Other_ShowAdvanced.Value)
 				{
-					GUILayout.BeginHorizontal(GUI.skin.box, null);
+					GUILayout.BeginHorizontal(null);
 					GUILayout.Label($"Shadow mask mode ({QualitySettings.shadowmaskMode}):", null);
 					if (GUILayout.Button("Shadowmask", null))
+					{
+						Settings.Entry_Quality_ShadowMaskMode.Value = ShadowmaskMode.Shadowmask;
 						QualitySettings.shadowmaskMode = ShadowmaskMode.Shadowmask;
+					}
 					if (GUILayout.Button("Distance shadowmask", null))
+					{
+						Settings.Entry_Quality_ShadowMaskMode.Value = ShadowmaskMode.DistanceShadowmask;
 						QualitySettings.shadowmaskMode = ShadowmaskMode.DistanceShadowmask;
+					}
 					GUILayout.EndHorizontal();
 				}
 
-				//Cascades
+				//Shadow Projection
+				if (Settings.Entry_Other_ShowAdvanced.Value)
 				{
-					GUILayout.BeginHorizontal(GUI.skin.box, null);
+					GUILayout.BeginHorizontal(null);
+					GUILayout.Label($"Shadow projection mode ({QualitySettings.shadowProjection}):", null);
+					if (GUILayout.Button("Close Fit", null))
+					{
+						Settings.Entry_Quality_ShadowProjectionMode.Value = ShadowProjection.CloseFit;
+						QualitySettings.shadowProjection = ShadowProjection.CloseFit;
+					}
+					if (GUILayout.Button("Stable fit", null))
+					{
+						Settings.Entry_Quality_ShadowProjectionMode.Value = ShadowProjection.StableFit;
+						QualitySettings.shadowProjection = ShadowProjection.StableFit;
+					}
+					GUILayout.EndHorizontal();
+				}
+
+				//Shadow distance
+				{
+					GUILayout.BeginHorizontal(null);
+					var val = QualitySettings.shadowDistance;
+					GUILayout.Label($"Shadow distance: ({QualitySettings.shadowDistance}):", null);
+					val = Mathf.Round(GUILayout.HorizontalSlider(val, 10, 1000, null));
+
+					if (val != QualitySettings.shadowDistance)
+					{
+						QualitySettings.shadowDistance = val;
+						Settings.Entry_Quality_ShadowDistance.Value = val;
+					}
+					GUILayout.EndHorizontal();
+				}
+
+				{
+					GUILayout.BeginHorizontal(null);
 					GUILayout.Label($"Shadow cascades: ({QualitySettings.shadowCascades}):", null);
 					if (GUILayout.Button("2", null))
+					{
+						Settings.Entry_Quality_Use4ShadowCascades.Value = false;
 						QualitySettings.shadowCascades = 2;
+					}
 					if (GUILayout.Button("4", null))
+					{
+						Settings.Entry_Quality_Use4ShadowCascades.Value = true;
 						QualitySettings.shadowCascades = 4;
+					}
 					GUILayout.EndHorizontal();
 				}
 
+				if (Settings.Entry_Other_ShowAdvanced.Value)
 				{
-					if(QualitySettings.shadowCascades == 2)
+					if (QualitySettings.shadowCascades == 2)
 					{
-						GUILayout.BeginHorizontal(GUI.skin.box, null);
+						GUILayout.BeginHorizontal(null);
 						GUILayout.Label($"Shadow cascades  2 split: ({QualitySettings.shadowCascade2Split}):", null);
-						QualitySettings.shadowCascade2Split = GUILayout.HorizontalSlider(QualitySettings.shadowCascade2Split, 0, 4, null);
+						float value = QualitySettings.shadowCascade2Split;
+						QualitySettings.shadowCascade2Split = GUILayout.HorizontalSlider(value, 0.01f, 0.5f, null);
+						if (QualitySettings.shadowCascade2Split != value)
+							Settings.Entry_Quality_ShadowTwoSplitValue.Value = QualitySettings.shadowCascade2Split;
 						GUILayout.EndHorizontal();
 					}
 					else
@@ -373,34 +457,45 @@ namespace SuisHack
 						float cascade1 = QualitySettings.shadowCascade4Split.x;
 						float cascade2 = QualitySettings.shadowCascade4Split.y;
 						float cascade3 = QualitySettings.shadowCascade4Split.z;
-						GUILayout.BeginHorizontal(GUI.skin.box, null);
+						GUILayout.BeginHorizontal(null);
 						GUILayout.Label($"Shadow cascades 1 split: ({cascade1}):", null);
-						cascade1 = GUILayout.HorizontalSlider(cascade1, 0, 50, null);
+						cascade1 = GUILayout.HorizontalSlider(cascade1, 0.01f, 0.5f, null);
 						GUILayout.EndHorizontal();
-						GUILayout.BeginHorizontal(GUI.skin.box, null);
+						GUILayout.BeginHorizontal(null);
 						GUILayout.Label($"Shadow cascades 2 split: ({cascade2}):", null);
-						cascade2 = GUILayout.HorizontalSlider(cascade2, 0, 50, null);
+						cascade2 = GUILayout.HorizontalSlider(cascade2, 0.1f, 0.8f, null);
 						GUILayout.EndHorizontal();
-						GUILayout.BeginHorizontal(GUI.skin.box, null);
+						GUILayout.BeginHorizontal(null);
 						GUILayout.Label($"Shadow cascades 3 split: ({cascade3}):", null);
-						cascade3 = GUILayout.HorizontalSlider(cascade3, 0, 50, null);
+						cascade3 = GUILayout.HorizontalSlider(cascade3, 0.02f, 0.9f, null);
 						GUILayout.EndHorizontal();
-						QualitySettings.shadowCascade4Split = new Vector3(cascade1, cascade2, cascade3);
+
+						if (cascade2 < cascade1)
+							cascade2 = cascade1 + 0.001f;
+
+						if (cascade3 < cascade2)
+							cascade3 = cascade2 + 0.001f;
+
+						if (cascade1 != QualitySettings.shadowCascade4Split.x || cascade2 != QualitySettings.shadowCascade4Split.y || cascade3 != QualitySettings.shadowCascade4Split.z)
+						{
+							QualitySettings.shadowCascade4Split = new Vector3(cascade1, cascade2, cascade3);
+							Settings.Entry_Quality_ShadowFourSplitValue1.Value = cascade1;
+							Settings.Entry_Quality_ShadowFourSplitValue2.Value = cascade2;
+							Settings.Entry_Quality_ShadowFourSplitValue3.Value = cascade3;
+						}
 					}
 				}
 				GUILayout.EndVertical();
-				
-
 			}
 
-
 			//LOD Bias
+			if (Settings.Entry_Other_ShowAdvanced.Value)
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				var oldValue = QualitySettings.lodBias;
 				GUILayout.Label($"LOD Bias ({QualitySettings.lodBias.ToString("0.0")}):", null);
 				QualitySettings.lodBias = GUILayout.HorizontalSlider(QualitySettings.lodBias, 0.5f, 4f, null);
-				if(oldValue != QualitySettings.lodBias)
+				if (oldValue != QualitySettings.lodBias)
 				{
 					Settings.Entry_Quality_LODBias.Value = QualitySettings.lodBias;
 				}
@@ -408,6 +503,7 @@ namespace SuisHack
 			}
 
 			//Pixel Light Count
+			if (Settings.Entry_Other_ShowAdvanced.Value)
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				var oldValue = QualitySettings.pixelLightCount;
@@ -426,16 +522,10 @@ namespace SuisHack
 				GUILayout.Label($"Texture resolution ({GetTextureString(QualitySettings.masterTextureLimit)}):", null);
 
 				var oldValue = QualitySettings.masterTextureLimit;
-				if(GUILayout.Button("Full", null))
+				if (GUILayout.Button("Full", null))
 					QualitySettings.masterTextureLimit = 0;
-				if (GUILayout.Button("1/2", null))
+				if (GUILayout.Button("Half", null))
 					QualitySettings.masterTextureLimit = 1;
-				if (GUILayout.Button("1/4", null))
-					QualitySettings.masterTextureLimit = 2;
-				if (GUILayout.Button("1/8", null))
-					QualitySettings.masterTextureLimit = 3;
-				if (GUILayout.Button("1/16", null))
-					QualitySettings.masterTextureLimit = 4;
 
 				if (oldValue != QualitySettings.masterTextureLimit)
 					Settings.Entry_Quality_TextureQuality.Value = QualitySettings.masterTextureLimit;
@@ -443,32 +533,122 @@ namespace SuisHack
 			}
 
 			//Real-time reflection probes toggle
+			if (Settings.Entry_Other_ShowAdvanced.Value)
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				var newValue = GUILayout.Toggle(QualitySettings.realtimeReflectionProbes, "Realtime Reflection probes", null);
 
-				if(newValue != QualitySettings.realtimeReflectionProbes)
+				if (newValue != QualitySettings.realtimeReflectionProbes)
 				{
 					QualitySettings.realtimeReflectionProbes = newValue;
 					Settings.Entry_Quality_RealtimeReflectionProbes.Value = newValue;
 				}
 				GUILayout.EndHorizontal();
 			}
+
+			//Soft particles
+			if (Settings.Entry_Other_ShowAdvanced.Value)
+			{
+				GUILayout.BeginHorizontal(GUI.skin.box, null);
+				var newValue = GUILayout.Toggle(QualitySettings.softParticles, "Soft particles", null);
+
+				if (newValue != QualitySettings.softParticles)
+				{
+					QualitySettings.softParticles = newValue;
+				}
+				GUILayout.EndHorizontal();
+			}
+
+			//Soft vegetation
+			if (Settings.Entry_Other_ShowAdvanced.Value)
+			{
+				GUILayout.BeginHorizontal(GUI.skin.box, null);
+				var newValue = GUILayout.Toggle(QualitySettings.softVegetation, "Soft vegetation", null);
+
+				if (newValue != QualitySettings.softVegetation)
+				{
+					QualitySettings.softVegetation = newValue;
+				}
+				GUILayout.EndHorizontal();
+			}
+
+			//Color space
+			if (Settings.Entry_Other_ShowAdvanced.Value)
+			{
+				GUILayout.BeginHorizontal(GUI.skin.box, null);
+				GUILayout.Label($"Color space: {QualitySettings.activeColorSpace}", null);
+				GUILayout.Label($"Desired color space: {QualitySettings.desiredColorSpace}", null);
+				GUILayout.EndHorizontal();
+			}
+
+			if (GUILayout.Button("Unlock restart to defaults", null))
+				restartingToDefault = 5f;
+			if (restartingToDefault > 0)
+			{
+				if (GUILayout.Button($"Restart to default {restartingToDefault:0.0} ", null))
+				{
+					RestartToDefault();
+				}
+			}
+		}
+
+		private void RestartToDefault()
+		{
+			Settings.Entry_AnistropicFiltering.Value = Settings.Entry_AnistropicFiltering.DefaultValue;
+			QualitySettings.anisotropicFiltering = Settings.Entry_AnistropicFiltering.Value;
+
+			Settings.Entry_AnistropicFilteringValue.Value = Settings.Entry_AnistropicFilteringValue.DefaultValue;
+			Texture.SetGlobalAnisotropicFilteringLimits(8, 16);
+
+			Settings.Entry_Antialiasing.Value = Settings.Entry_Antialiasing.DefaultValue;
+			Hacks.PostProcessLayerHook.Antialiasing = Settings.Entry_Antialiasing.Value;
+
+			Settings.Entry_Quality_LODBias.Value = Settings.Entry_Quality_LODBias.DefaultValue;
+			QualitySettings.lodBias = Settings.Entry_Quality_LODBias.Value;
+
+			Settings.Entry_Quality_PixelLightCount.Value = Settings.Entry_Quality_PixelLightCount.DefaultValue;
+			QualitySettings.pixelLightCount = Settings.Entry_Quality_PixelLightCount.Value;
+
+			Settings.Entry_Quality_RealtimeReflectionProbes.Value = Settings.Entry_Quality_RealtimeReflectionProbes.DefaultValue;
+			QualitySettings.realtimeReflectionProbes = Settings.Entry_Quality_RealtimeReflectionProbes.Value;
+
+			Settings.Entry_Quality_ShadowDistance.Value = Settings.Entry_Quality_ShadowDistance.DefaultValue;
+			QualitySettings.shadowDistance = Settings.Entry_Quality_ShadowDistance.Value;
+
+			Settings.Entry_Quality_ShadowFourSplitValue1.Value = Settings.Entry_Quality_ShadowFourSplitValue1.DefaultValue;
+			Settings.Entry_Quality_ShadowFourSplitValue2.Value = Settings.Entry_Quality_ShadowFourSplitValue2.DefaultValue;
+			Settings.Entry_Quality_ShadowFourSplitValue3.Value = Settings.Entry_Quality_ShadowFourSplitValue3.DefaultValue;
+			QualitySettings.shadowCascade4Split = new Vector3(Settings.Entry_Quality_ShadowFourSplitValue1.Value, Settings.Entry_Quality_ShadowFourSplitValue2.Value, Settings.Entry_Quality_ShadowFourSplitValue3.Value);
+
+			Settings.Entry_Quality_ShadowMaskMode.Value = Settings.Entry_Quality_ShadowMaskMode.DefaultValue;
+			QualitySettings.shadowmaskMode = Settings.Entry_Quality_ShadowMaskMode.Value;
+
+			Settings.Entry_Quality_ShadowProjectionMode.Value = Settings.Entry_Quality_ShadowProjectionMode.DefaultValue;
+			QualitySettings.shadowProjection = Settings.Entry_Quality_ShadowProjectionMode.Value;
+
+			Settings.Entry_Quality_ShadowsQuality.Value = Settings.Entry_Quality_ShadowsQuality.DefaultValue;
+			QualitySettings.shadows = Settings.Entry_Quality_ShadowsQuality.Value;
+
+			Settings.Entry_Quality_ShadowsResolution.Value = Settings.Entry_Quality_ShadowsResolution.DefaultValue;
+			QualitySettings.shadowResolution = Settings.Entry_Quality_ShadowsResolution.Value;
+
+			Settings.Entry_Quality_ShadowTwoSplitValue.Value = Settings.Entry_Quality_ShadowTwoSplitValue.DefaultValue;
+			QualitySettings.shadowCascade2Split = Settings.Entry_Quality_ShadowTwoSplitValue.Value;
+
+			Settings.Entry_Quality_TextureQuality.Value = Settings.Entry_Quality_TextureQuality.DefaultValue;
+			QualitySettings.masterTextureLimit = Settings.Entry_Quality_TextureQuality.Value;
+
+			Settings.Entry_Quality_Use4ShadowCascades.Value = Settings.Entry_Quality_Use4ShadowCascades.DefaultValue;
+			QualitySettings.shadowCascades = Settings.Entry_Quality_Use4ShadowCascades.Value ? 4 : 2;
 		}
 
 		private string GetTextureString(int masterTextureLimit)
 		{
 			//I wish I could use 8.0 recursive patern
-			switch(masterTextureLimit)
+			switch (masterTextureLimit)
 			{
 				case 1:
-					return "1/2";
-				case 2:
-					return "1/4";
-				case 3:
-					return "1/8";
-				case 4:
-					return "1/16";
+					return "Half";
 				default:
 					return "Full";
 			}

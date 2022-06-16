@@ -11,13 +11,25 @@ namespace SuisHack.Hacks
 		[HarmonyPatch(typeof(LogoMain), "Start")]
 		public static void StartPostfix(LogoMain __instance)
 		{
-			var settings = SuisHackMain.Settings;
-			QualitySettings.pixelLightCount = settings.Entry_Quality_PixelLightCount.Value;
-			QualitySettings.lodBias = settings.Entry_Quality_LODBias.Value;
-			QualitySettings.realtimeReflectionProbes = settings.Entry_Quality_RealtimeReflectionProbes.Value;
-			QualitySettings.masterTextureLimit = settings.Entry_Quality_TextureQuality.Value;
+			var Settings = SuisHackMain.Settings;
 
-			if(settings.Entry_Other_SkipIntros.Value)
+			QualitySettings.anisotropicFiltering = Settings.Entry_AnistropicFiltering.Value;
+			Texture.SetGlobalAnisotropicFilteringLimits(Settings.Entry_AnistropicFilteringValue.Value, Settings.Entry_AnistropicFilteringValue.Value);
+			PostProcessLayerHook.Antialiasing = Settings.Entry_Antialiasing.Value;
+			QualitySettings.lodBias = Settings.Entry_Quality_LODBias.Value;
+			QualitySettings.pixelLightCount = Settings.Entry_Quality_PixelLightCount.Value;
+			QualitySettings.realtimeReflectionProbes = Settings.Entry_Quality_RealtimeReflectionProbes.Value;
+			QualitySettings.shadowDistance = Settings.Entry_Quality_ShadowDistance.Value;
+			QualitySettings.shadowCascade4Split = new Vector3(Settings.Entry_Quality_ShadowFourSplitValue1.Value, Settings.Entry_Quality_ShadowFourSplitValue2.Value, Settings.Entry_Quality_ShadowFourSplitValue3.Value);
+			QualitySettings.shadowmaskMode = Settings.Entry_Quality_ShadowMaskMode.Value;
+			QualitySettings.shadowProjection = Settings.Entry_Quality_ShadowProjectionMode.Value;
+			QualitySettings.shadows = Settings.Entry_Quality_ShadowsQuality.Value;
+			QualitySettings.shadowResolution = Settings.Entry_Quality_ShadowsResolution.Value;
+			QualitySettings.shadowCascade2Split = Settings.Entry_Quality_ShadowTwoSplitValue.Value;
+			QualitySettings.masterTextureLimit = Settings.Entry_Quality_TextureQuality.Value;
+			QualitySettings.shadowCascades = Settings.Entry_Quality_Use4ShadowCascades.Value ? 4 : 2;
+
+			if (Settings.Entry_Other_SkipIntros.Value)
 				MelonCoroutines.Start(StartMenu(__instance.gameObject.scene));
 			SuisHackMain.loggerInst.Msg($"Done applying settings!");
 		}

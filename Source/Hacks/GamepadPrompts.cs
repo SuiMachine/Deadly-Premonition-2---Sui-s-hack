@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using SuisHack.GlobalGameObjects;
-using System.Xml.Linq;
 
 namespace SuisHack.Hacks
 {

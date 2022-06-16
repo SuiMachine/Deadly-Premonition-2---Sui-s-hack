@@ -1,11 +1,9 @@
 ﻿using MelonLoader;
-using UnhollowerRuntimeLib;
-using UnityEngine;
 
 namespace SuisHack
 {
 	public class SuisHackMain : MelonMod
-    {
+	{
 		public static HarmonyLib.Harmony harmonyInst;
 		public static MelonLogger.Instance loggerInst;
 		public static ExposedSettings Settings;
@@ -20,19 +18,6 @@ namespace SuisHack
 			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
 			LoggerInstance.Msg("Sui's Hack loaded");
 		}
-
-#if DEBUG && FALSE
-		public override void OnSceneWasInitialized(int buildIndex, string sceneName)
-		{
-			LoggerInstance.Msg("Dumping all mono behaviours!");
-			var monoBehaviours = GameObject.FindObjectsOfTypeAll(Il2CppType.Of<MonoBehaviour>());
-			foreach(var obj in monoBehaviours)
-			{
-				LoggerInstance.Msg($"{obj.name}");
-			}
-			base.OnSceneWasInitialized(buildIndex, sceneName);
-		}
-#endif
 
 		public void ApplySettings()
 		{
