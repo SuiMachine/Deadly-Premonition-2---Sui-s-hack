@@ -12,6 +12,8 @@ namespace SuisHack.Hacks
 		public static bool SetResolution1()
 		{
 			var settings = SuisHackMain.Settings;
+			if (settings == null)
+				return true;
 			var clampedRefresh = Mathf.Clamp(settings.Entry_Display_RefreshRate.Value, 30, 480);
 			if (settings.Resolution != null)
 			{
