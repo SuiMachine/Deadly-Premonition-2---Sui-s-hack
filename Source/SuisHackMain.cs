@@ -22,7 +22,6 @@ namespace SuisHack
 		public void ApplySettings()
 		{
 			Settings = new ExposedSettings();
-			Hacks.PostProcessLayerHook.Antialiasing = Settings.Entry_Antialiasing.Value;
 		}
 	}
 }

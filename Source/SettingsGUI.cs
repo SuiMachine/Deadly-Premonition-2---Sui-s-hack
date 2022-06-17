@@ -501,6 +501,18 @@ namespace SuisHack
 				GUILayout.EndVertical();
 			}
 
+			{
+				GUILayout.BeginHorizontal(GUI.skin.box, null);
+				var oldValue = Hacks.PostProcessLayerHook.FarClipDistance;
+				GUILayout.Label($"Far clip distance ({Hacks.PostProcessLayerHook.FarClipDistance}):", null);
+				var newValue = Mathf.Round(GUILayout.HorizontalSlider(oldValue, 400, 2000f, null));
+				if (newValue != oldValue)
+				{
+					Hacks.PostProcessLayerHook.FarClipDistance = newValue;
+				}
+				GUILayout.EndHorizontal();
+			}
+
 			//LOD Bias
 			if (Settings.Entry_Other_ShowAdvanced.Value)
 			{
@@ -618,6 +630,9 @@ namespace SuisHack
 			Settings.Entry_Antialiasing.Value = Settings.Entry_Antialiasing.DefaultValue;
 			Hacks.PostProcessLayerHook.Antialiasing = Settings.Entry_Antialiasing.Value;
 
+			Settings.Entry_Quality_CameraFarPlaneDistance.Value = Settings.Entry_Quality_CameraFarPlaneDistance.DefaultValue;
+			Hacks.PostProcessLayerHook.FarClipDistance = Settings.Entry_Quality_CameraFarPlaneDistance.Value;
+
 			Settings.Entry_Quality_LODBias.Value = Settings.Entry_Quality_LODBias.DefaultValue;
 			QualitySettings.lodBias = Settings.Entry_Quality_LODBias.Value;
 
@@ -678,7 +693,12 @@ namespace SuisHack
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
 			GUILayout.Label("Following settings require game restart!", null);
+			GUILayout.EndHorizontal();
+			GUILayout.BeginHorizontal(GUI.skin.box, null);
 			Settings.Entry_Other_SkipIntros.Value = GUILayout.Toggle(Settings.Entry_Other_SkipIntros.Value, "Skip intros", null);
+			GUILayout.EndHorizontal();
+			GUILayout.BeginHorizontal(GUI.skin.box, null);
+			Settings.Entry_Other_InterpolateMovement.Value = GUILayout.Toggle(Settings.Entry_Other_InterpolateMovement.Value, "Interpolate movement", null);
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
 			GUILayout.BeginVertical(null);

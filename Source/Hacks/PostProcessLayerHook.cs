@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
 namespace SuisHack.Hacks
@@ -10,15 +11,13 @@ namespace SuisHack.Hacks
 	{
 		static List<PostProcessLayer> PostProcessLayerInstances = new List<PostProcessLayer>();
 		private static PostProcessLayer.Antialiasing m_Antialiasing;
+		private static float m_FarClipDistance;
 		public static PostProcessLayer.Antialiasing Antialiasing
 		{
 			get { return m_Antialiasing; }
 			set
 			{
-				if (PostProcessLayerInstances.Contains(null))
-				{
-					PostProcessLayerInstances = PostProcessLayerInstances.Where(x => x != null).ToList();
-				}
+				ClearNullReferences();
 
 				m_Antialiasing = value;
 				foreach (var postProcess in PostProcessLayerInstances)
@@ -28,17 +27,47 @@ namespace SuisHack.Hacks
 			}
 		}
 
+		public static float FarClipDistance
+		{
+			get { return m_FarClipDistance; }
+			set
+			{
+				ClearNullReferences();
+
+				m_FarClipDistance = value;
+				foreach(var postProcess in PostProcessLayerInstances)
+				{
+					var camera = postProcess.GetComponent<Camera>();
+					if(camera != null)
+					{
+						camera.farClipPlane = m_FarClipDistance;
+					}
+				}
+				SuisHackMain.loggerInst.Msg($"Setting far clip to: {m_FarClipDistance}");
+			}
+		}
+
+		public static void ClearNullReferences()
+		{
+			if (PostProcessLayerInstances.Contains(null))
+			{
+				PostProcessLayerInstances = PostProcessLayerInstances.Where(x => x != null).ToList();
+			}
+		}
+
 		[HarmonyPostfix]
 		[HarmonyPatch(typeof(PostProcessLayer), "OnEnable")]
 		public static void PostProcessLayerAwakePostfix(PostProcessLayer __instance)
 		{
-#if DEBUG
-			SuisHack.SuisHackMain.loggerInst.Msg($"Setting AA for {__instance} to {m_Antialiasing}");
-#endif
 			__instance.antialiasingMode = SuisHackMain.Settings.Entry_Antialiasing.Value;
 			if (!PostProcessLayerInstances.Contains(__instance))
 				PostProcessLayerInstances.Add(__instance);
 
+			var camera = __instance.GetComponent<Camera>();
+			if(camera != null)
+			{
+				camera.farClipPlane = m_FarClipDistance;
+			}
 		}
 
 		internal static string GetShortName()

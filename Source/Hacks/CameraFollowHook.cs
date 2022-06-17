@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using SuisHack.Components;
 
 namespace SuisHack.Hacks
 {
@@ -9,10 +10,20 @@ namespace SuisHack.Hacks
 		[HarmonyPatch(typeof(CameraFollow), "Init")]
 		public static void CameraFollowHookInit(CameraFollow __instance)
 		{
-			var component = __instance.GetComponent<Components.CameraFollowSmoother>();
-			if(component == null)
+			//Originally was planning on interpolating camera, but that looked quite junk, so I just used it for pre-cull / post render.
+			var smootherController = __instance.GetComponent<Components.SmootherController>();
+			if (smootherController == null)
 			{
-				__instance.gameObject.AddComponent<Components.CameraFollowSmoother>();
+				__instance.gameObject.AddComponent<Components.SmootherController>();
+			}
+
+			if (SuisHackMain.Settings.Entry_Other_InterpolateMovement.Value)
+			{
+				var interpolation = __instance.GetComponent<GameObjectInterpolation>();
+				if (interpolation == null)
+				{
+					__instance.gameObject.AddComponent<GameObjectInterpolation>();
+				}
 			}
 		}
 	}
