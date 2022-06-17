@@ -509,6 +509,7 @@ namespace SuisHack
 				if (newValue != oldValue)
 				{
 					Hacks.PostProcessLayerHook.FarClipDistance = newValue;
+					Settings.Entry_Quality_CameraFarPlaneDistance.Value = newValue;
 				}
 				GUILayout.EndHorizontal();
 			}

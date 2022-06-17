@@ -29,6 +29,32 @@ namespace SuisHack.Components
 			}
 		}
 
+		public class RigidBodiesStoredVelocities
+		{
+			public Rigidbody rigidBody;
+			private Vector3 velocity;
+
+			public void StoreVelocity()
+			{
+				if(rigidBody != null)
+					this.velocity = rigidBody.velocity;
+			}
+
+			public void RestoreVelocity()
+			{
+				if (rigidBody != null)
+					this.rigidBody.velocity = velocity;
+			}
+
+			public RigidBodiesStoredVelocities(Rigidbody riggedBodyRef)
+			{
+				this.rigidBody = riggedBodyRef;
+				this.velocity = this.rigidBody.velocity;
+			}
+		}
+
+		public RigidBodiesStoredVelocities[] riggidBodiesStored;
+
 		PositionRecording[] records = new PositionRecording[2];
 		Vector3 restorePosition;
 		Quaternion restoreRotation;
@@ -39,6 +65,13 @@ namespace SuisHack.Components
 			if (!ActiveObjects.Contains(this))
 				ActiveObjects.Add(this);
 			restorePosition = Vector3.zero;
+
+			var riggedBodies = this.GetComponentsInChildren<Rigidbody>(true);
+			this.riggidBodiesStored = new RigidBodiesStoredVelocities[riggedBodies.Length];
+			for(int i=0; i<riggedBodies.Length; i++)
+			{
+				riggidBodiesStored[i] = new RigidBodiesStoredVelocities(riggedBodies[i]);
+			}
 
 			for (int i = 0; i < records.Length; i++)
 			{
@@ -68,6 +101,8 @@ namespace SuisHack.Components
 			{
 				float newerTime = records[0].time;
 				float olderTime = records[1].time;
+				foreach (var riggedBody in riggidBodiesStored)
+					riggedBody.StoreVelocity();
 
 				if (newerTime != olderTime)
 				{
@@ -84,6 +119,9 @@ namespace SuisHack.Components
 			this.transform.localPosition = restorePosition;
 			this.transform.localRotation = restoreRotation;
 			this.transform.localScale = restoreLocalScale;
+
+			foreach (var riggedBody in riggidBodiesStored)
+				riggedBody.RestoreVelocity();
 		}
 	}
 }
