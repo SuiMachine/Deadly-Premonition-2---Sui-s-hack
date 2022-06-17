@@ -3,13 +3,33 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 
 # List of features
 * Resolution override (the game should no longer start in 1920x1080 maximized window).
-* Exposed display settings: Resolution, V-sync, Refresh Rate (or FPS cap), Display Mode (Windowed, Fullscreen, Borderless etc.).
-* Exposed quality settings: Antialiasing (Post Process due to deferred path), Anisotropic filtering, LOD Bias, Pixel Light Count, Texture Resolution, Realtime Reflection Probes.
+* Exposed display settings:
+   * Resolution
+   * V-sync
+   * Refresh Rate (or FPS cap)
+   * Display Mode (Windowed, Fullscreen, Borderless etc.).
+* Exposed quality settings:
+   * Antialiasing (Post Process due to deferred path)
+   * Anisotropic filtering (and its level)
+   * Camera far plane distance
+   * Shadow Distance
+   * Shadow Quality
+   * Shadow Resolution
+   * Shadow Mask Mode
+   * Shadow Projection Mode
+   * Shadow cascade amount (and its distances)
+   * LOD Bias
+   * Pixel Light Count
+   * Texture Resolution
+   * Realtime Reflection Probes
+   * Far Plane Distance
 * Runtime button prompt replacement with buttons prepared for Xbox and Playstation controllers.
 * A basic GUI available for configuring the mod available under F11.
 
 # Experimental features
 * Skip splash screens / intros
+* Movement interpolation.
+
 
 # Requirements
 * Original copy of the game
@@ -23,7 +43,6 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 
 # Bugs / To do:
 * (Bug) Mod's GUI doesn't refresh resolution
-* Figure out at least camera movement interpolation
 
 # Notes
 * Replacing gamepad prompts requires generally requires modifying Steam Input profile, you generally want:
