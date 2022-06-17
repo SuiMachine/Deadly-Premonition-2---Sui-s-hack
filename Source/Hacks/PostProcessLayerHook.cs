@@ -43,7 +43,6 @@ namespace SuisHack.Hacks
 						camera.farClipPlane = m_FarClipDistance;
 					}
 				}
-				SuisHackMain.loggerInst.Msg($"Setting far clip to: {m_FarClipDistance}");
 			}
 		}
 
