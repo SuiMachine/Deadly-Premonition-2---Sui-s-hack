@@ -39,7 +39,6 @@ namespace SuisHack.Components
 				if (rigidBody != null)
 				{
 					this.velocity = rigidBody.velocity;
-					rigidBody.isKinematic = true;
 				}
 			}
 
