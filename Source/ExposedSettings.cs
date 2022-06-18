@@ -115,7 +115,7 @@ namespace SuisHack
 			Entry_Other_Prompts = Category_otherSettings.CreateEntry("Controller Prompts", "", description: "Asset bundle file name that is containing replacement prompts atlas. Make sure to use correct Steam Input binding for the keys to correspond to displayed prompts.");
 			Entry_Other_ShowAdvanced = Category_otherSettings.CreateEntry("Show advanced settings", false, description: "Shows advanced options in GUI.");
 
-			Entry_Other_InterpolateMovement = Category_otherSettings.CreateEntry("Interpolate movement", true, description: "Experimental: Enabled hooks related to movement interpolation of some rendered objects (protagonist and camera) to work around 50Hz Fixed Update stuttering.");
+			Entry_Other_InterpolateMovement = Category_otherSettings.CreateEntry("Interpolate movement", true, description: "Experimental: Enabled hooks related to movement interpolation of some rendered objects (protagonist and camera) to work around 50Hz Fixed Update stuttering - to my speedrunning friends: DO NOT allow this option for speedrunning.");
 			Entry_Other_InterpolateMovement.OnValueChanged += (bool oldValue, bool newVal) => { Components.SmootherController.InterpolateMovement = newVal; };
 			Components.SmootherController.InterpolateMovement = Entry_Other_InterpolateMovement.Value;
 		}

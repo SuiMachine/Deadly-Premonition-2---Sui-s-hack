@@ -21,7 +21,7 @@ namespace SuisHack.Components
 			}
 		}
 
-		public void OnPreCull()
+		public void OnPreRender()
 		{
 			if (!InterpolateMovement)
 				return;
@@ -43,14 +43,13 @@ namespace SuisHack.Components
 		}
 
 
-		private void OnRenderImage(RenderTexture source, RenderTexture destination)
+		private void OnPostRender()
 		{
 			if (!InterpolateMovement)
 				return;
 
 			if (visionCameraReference != null && visionCameraReference.activeInHierarchy)
 				return;
-
 
 			foreach (var obj in GameObjectInterpolation.ActiveObjects)
 			{
