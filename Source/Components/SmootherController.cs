@@ -11,12 +11,27 @@ namespace SuisHack.Components
 		public SmootherController(IntPtr ptr) : base(ptr) { }
 
 		private object postRenderRoutine;
+		public GameObject visionCameraReference;
+
+		public void OnEnable()
+		{
+			var visCam = this.transform.Find("VisionCamera");
+			if(visCam != null)
+			{
+				visionCameraReference = visCam.gameObject;
+			}
+		}
 
 		public void OnPreCull()
 		{
 			if (postRenderRoutine == null)
 			{
 				postRenderRoutine = MelonCoroutines.Start(PostRender());
+			}
+
+			if(visionCameraReference != null && visionCameraReference.activeInHierarchy)
+			{
+				return;
 			}
 
 			for (int i=0; i<GameObjectInterpolation.ActiveObjects.Count; i++)
@@ -36,6 +51,11 @@ namespace SuisHack.Components
 		{
 			while(true)
 			{
+				while(visionCameraReference.activeInHierarchy)
+				{
+					yield return new WaitForEndOfFrame();
+				}
+
 				yield return new WaitForEndOfFrame();
 				foreach(var obj in GameObjectInterpolation.ActiveObjects)
 				{
