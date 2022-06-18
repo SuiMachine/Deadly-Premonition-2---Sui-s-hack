@@ -33,14 +33,12 @@ namespace SuisHack.Components
 		{
 			public Rigidbody rigidBody;
 			private Vector3 velocity;
-			private bool wasKinematic;
 
 			public void StoreVelocity()
 			{
 				if (rigidBody != null)
 				{
 					this.velocity = rigidBody.velocity;
-					wasKinematic = rigidBody.isKinematic;
 					rigidBody.isKinematic = true;
 				}
 			}
@@ -50,7 +48,6 @@ namespace SuisHack.Components
 				if (rigidBody != null)
 				{
 					this.rigidBody.velocity = velocity;
-					this.rigidBody.isKinematic = wasKinematic;
 				}
 			}
 
