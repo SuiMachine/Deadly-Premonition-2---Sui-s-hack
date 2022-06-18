@@ -67,6 +67,30 @@ namespace SuisHack.Hacks
 			{
 				camera.farClipPlane = m_FarClipDistance;
 			}
+
+
+/*			var volume = __instance.GetComponentInChildren<PostProcessVolume>();
+			if (volume != null)
+			{
+				var motionBlur = volume.profile.GetSetting<MotionBlur>();
+				if (motionBlur != null)
+				{
+					SuisHackMain.loggerInst.Msg("Has motion blur");
+*//*					motionBlur.active = true;
+					motionBlur.shutterAngle.overrideState = true;
+					motionBlur.shutterAngle.value = 270;
+					motionBlur.sampleCount.overrideState = true;
+					motionBlur.sampleCount.value = 16;
+*//*
+				}
+				else
+				{
+					SuisHackMain.loggerInst.Msg("Motion blur was null");
+				}
+			}
+			else
+				SuisHackMain.loggerInst.Msg("Volume was null");*/
+
 		}
 
 		internal static string GetShortName()

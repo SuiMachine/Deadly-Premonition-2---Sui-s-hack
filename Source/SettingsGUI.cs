@@ -272,25 +272,16 @@ namespace SuisHack
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				GUILayout.Label($"Antialiasing filter: ({Hacks.PostProcessLayerHook.GetShortName()}):", null);
 				if (GUILayout.Button("None", null))
-				{
-					Hacks.PostProcessLayerHook.Antialiasing = PostProcessLayer.Antialiasing.None;
 					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.None;
-				}
 				if (GUILayout.Button("FXAA", null))
-				{
-					Hacks.PostProcessLayerHook.Antialiasing = PostProcessLayer.Antialiasing.FastApproximateAntialiasing;
 					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.FastApproximateAntialiasing;
-				}
+
 				if (GUILayout.Button("SMAA", null))
-				{
-					Hacks.PostProcessLayerHook.Antialiasing = PostProcessLayer.Antialiasing.SubpixelMorphologicalAntialiasing;
 					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.SubpixelMorphologicalAntialiasing;
-				}
+
 				if (GUILayout.Button("TAA", null))
-				{
-					Hacks.PostProcessLayerHook.Antialiasing = PostProcessLayer.Antialiasing.TemporalAntialiasing;
 					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.TemporalAntialiasing;
-				}
+
 				GUILayout.EndHorizontal();
 			}
 
@@ -301,20 +292,14 @@ namespace SuisHack
 				GUILayout.Label($"Anisotropic filtering mode: ({QualitySettings.anisotropicFiltering}):", null);
 
 				if (GUILayout.Button("Force disabled", null))
-				{
-					QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
 					Settings.Entry_AnistropicFiltering.Value = AnisotropicFiltering.Disable;
-				}
+
 				if (GUILayout.Button("Per texture", null))
-				{
-					QualitySettings.anisotropicFiltering = AnisotropicFiltering.Enable;
 					Settings.Entry_AnistropicFiltering.Value = AnisotropicFiltering.Enable;
-				}
+
 				if (GUILayout.Button("Force enabled", null))
-				{
-					QualitySettings.anisotropicFiltering = AnisotropicFiltering.ForceEnable;
 					Settings.Entry_AnistropicFiltering.Value = AnisotropicFiltering.ForceEnable;
-				}
+
 				GUILayout.EndHorizontal();
 
 				if (QualitySettings.anisotropicFiltering == AnisotropicFiltering.ForceEnable)
@@ -324,9 +309,6 @@ namespace SuisHack
 					GUILayout.Label($"Anisotropic filtering level ({oldValue}): ", null);
 					Settings.Entry_AnistropicFilteringValue.Value = (int)GUILayout.HorizontalSlider(Settings.Entry_AnistropicFilteringValue.Value, -1, 16, null);
 					GUILayout.EndHorizontal();
-
-					if (oldValue != Settings.Entry_AnistropicFilteringValue.Value)
-						Texture.SetGlobalAnisotropicFilteringLimits(Settings.Entry_AnistropicFilteringValue.Value, Settings.Entry_AnistropicFilteringValue.Value);
 				}
 
 				GUILayout.EndVertical();
@@ -342,20 +324,14 @@ namespace SuisHack
 					GUILayout.BeginHorizontal(null);
 					GUILayout.Label($"Shadows ({QualitySettings.shadows}):", null);
 					if (GUILayout.Button("None", null))
-					{
 						Settings.Entry_Quality_ShadowsQuality.Value = ShadowQuality.Disable;
-						QualitySettings.shadows = ShadowQuality.Disable;
-					}
+
 					if (GUILayout.Button("Hard only", null))
-					{
 						Settings.Entry_Quality_ShadowsQuality.Value = ShadowQuality.HardOnly;
-						QualitySettings.shadows = ShadowQuality.HardOnly;
-					}
+
 					if (GUILayout.Button("Soft", null))
-					{
 						Settings.Entry_Quality_ShadowsQuality.Value = ShadowQuality.All;
-						QualitySettings.shadows = ShadowQuality.All;
-					}
+
 					GUILayout.EndHorizontal();
 				}
 
@@ -364,25 +340,17 @@ namespace SuisHack
 					GUILayout.BeginHorizontal(null);
 					GUILayout.Label($"Shadow resolution ({QualitySettings.shadowResolution}):", null);
 					if (GUILayout.Button("Low", null))
-					{
 						Settings.Entry_Quality_ShadowsResolution.Value = ShadowResolution.Low;
-						QualitySettings.shadowResolution = ShadowResolution.Low;
-					}
+
 					if (GUILayout.Button("Medium", null))
-					{
 						Settings.Entry_Quality_ShadowsResolution.Value = ShadowResolution.Medium;
-						QualitySettings.shadowResolution = ShadowResolution.Medium;
-					}
+
 					if (GUILayout.Button("High", null))
-					{
 						Settings.Entry_Quality_ShadowsResolution.Value = ShadowResolution.High;
-						QualitySettings.shadowResolution = ShadowResolution.High;
-					}
+
 					if (GUILayout.Button("Very High", null))
-					{
 						Settings.Entry_Quality_ShadowsResolution.Value = ShadowResolution.VeryHigh;
-						QualitySettings.shadowResolution = ShadowResolution.VeryHigh;
-					}
+
 					GUILayout.EndHorizontal();
 				}
 
@@ -392,15 +360,11 @@ namespace SuisHack
 					GUILayout.BeginHorizontal(null);
 					GUILayout.Label($"Shadow mask mode ({QualitySettings.shadowmaskMode}):", null);
 					if (GUILayout.Button("Shadowmask", null))
-					{
 						Settings.Entry_Quality_ShadowMaskMode.Value = ShadowmaskMode.Shadowmask;
-						QualitySettings.shadowmaskMode = ShadowmaskMode.Shadowmask;
-					}
+
 					if (GUILayout.Button("Distance shadowmask", null))
-					{
 						Settings.Entry_Quality_ShadowMaskMode.Value = ShadowmaskMode.DistanceShadowmask;
-						QualitySettings.shadowmaskMode = ShadowmaskMode.DistanceShadowmask;
-					}
+
 					GUILayout.EndHorizontal();
 				}
 
@@ -410,15 +374,11 @@ namespace SuisHack
 					GUILayout.BeginHorizontal(null);
 					GUILayout.Label($"Shadow projection mode ({QualitySettings.shadowProjection}):", null);
 					if (GUILayout.Button("Close Fit", null))
-					{
 						Settings.Entry_Quality_ShadowProjectionMode.Value = ShadowProjection.CloseFit;
-						QualitySettings.shadowProjection = ShadowProjection.CloseFit;
-					}
+
 					if (GUILayout.Button("Stable fit", null))
-					{
 						Settings.Entry_Quality_ShadowProjectionMode.Value = ShadowProjection.StableFit;
-						QualitySettings.shadowProjection = ShadowProjection.StableFit;
-					}
+
 					GUILayout.EndHorizontal();
 				}
 
@@ -432,7 +392,6 @@ namespace SuisHack
 					if (val != QualitySettings.shadowDistance)
 					{
 						QualitySettings.shadowDistance = val;
-						Settings.Entry_Quality_ShadowDistance.Value = val;
 					}
 					GUILayout.EndHorizontal();
 				}
@@ -443,12 +402,10 @@ namespace SuisHack
 					if (GUILayout.Button("2", null))
 					{
 						Settings.Entry_Quality_Use4ShadowCascades.Value = false;
-						QualitySettings.shadowCascades = 2;
 					}
 					if (GUILayout.Button("4", null))
 					{
 						Settings.Entry_Quality_Use4ShadowCascades.Value = true;
-						QualitySettings.shadowCascades = 4;
 					}
 					GUILayout.EndHorizontal();
 				}
@@ -507,10 +464,8 @@ namespace SuisHack
 				GUILayout.Label($"Far clip distance ({Hacks.PostProcessLayerHook.FarClipDistance}):", null);
 				var newValue = Mathf.Round(GUILayout.HorizontalSlider(oldValue, 400, 2000f, null));
 				if (newValue != oldValue)
-				{
-					Hacks.PostProcessLayerHook.FarClipDistance = newValue;
 					Settings.Entry_Quality_CameraFarPlaneDistance.Value = newValue;
-				}
+
 				GUILayout.EndHorizontal();
 			}
 
@@ -522,9 +477,8 @@ namespace SuisHack
 				GUILayout.Label($"LOD Bias ({QualitySettings.lodBias.ToString("0.0")}):", null);
 				QualitySettings.lodBias = GUILayout.HorizontalSlider(QualitySettings.lodBias, 0.5f, 4f, null);
 				if (oldValue != QualitySettings.lodBias)
-				{
 					Settings.Entry_Quality_LODBias.Value = QualitySettings.lodBias;
-				}
+
 				GUILayout.EndHorizontal();
 			}
 
@@ -536,9 +490,8 @@ namespace SuisHack
 				GUILayout.Label($"Pixel light count: ({QualitySettings.pixelLightCount}):", null);
 				QualitySettings.pixelLightCount = (int)GUILayout.HorizontalSlider(QualitySettings.pixelLightCount, 0, 8, null);
 				if (oldValue != QualitySettings.pixelLightCount)
-				{
 					Settings.Entry_Quality_PixelLightCount.Value = QualitySettings.pixelLightCount;
-				}
+
 				GUILayout.EndHorizontal();
 			}
 
@@ -547,53 +500,21 @@ namespace SuisHack
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				GUILayout.Label($"Texture resolution ({GetTextureString(QualitySettings.masterTextureLimit)}):", null);
 
-				var oldValue = QualitySettings.masterTextureLimit;
 				if (GUILayout.Button("Full", null))
-					QualitySettings.masterTextureLimit = 0;
+					Settings.Entry_Quality_TextureQuality.Value = 0;
 				if (GUILayout.Button("Half", null))
-					QualitySettings.masterTextureLimit = 1;
+					Settings.Entry_Quality_TextureQuality.Value = 1;
 
-				if (oldValue != QualitySettings.masterTextureLimit)
-					Settings.Entry_Quality_TextureQuality.Value = QualitySettings.masterTextureLimit;
 				GUILayout.EndHorizontal();
 			}
 
-			//Real-time reflection probes toggle
+			//Color space
 			if (Settings.Entry_Other_ShowAdvanced.Value)
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				var newValue = GUILayout.Toggle(QualitySettings.realtimeReflectionProbes, "Realtime Reflection probes", null);
-
-				if (newValue != QualitySettings.realtimeReflectionProbes)
+				if (Camera.main != null)
 				{
-					QualitySettings.realtimeReflectionProbes = newValue;
-					Settings.Entry_Quality_RealtimeReflectionProbes.Value = newValue;
-				}
-				GUILayout.EndHorizontal();
-			}
-
-			//Soft particles
-			if (Settings.Entry_Other_ShowAdvanced.Value)
-			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				var newValue = GUILayout.Toggle(QualitySettings.softParticles, "Soft particles", null);
-
-				if (newValue != QualitySettings.softParticles)
-				{
-					QualitySettings.softParticles = newValue;
-				}
-				GUILayout.EndHorizontal();
-			}
-
-			//Soft vegetation
-			if (Settings.Entry_Other_ShowAdvanced.Value)
-			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				var newValue = GUILayout.Toggle(QualitySettings.softVegetation, "Soft vegetation", null);
-
-				if (newValue != QualitySettings.softVegetation)
-				{
-					QualitySettings.softVegetation = newValue;
+					GUILayout.Label($"Camera allow HDR: {Camera.main.allowHDR}", null);
 				}
 				GUILayout.EndHorizontal();
 			}
@@ -629,22 +550,11 @@ namespace SuisHack
 			Texture.SetGlobalAnisotropicFilteringLimits(8, 16);
 
 			Settings.Entry_Antialiasing.Value = Settings.Entry_Antialiasing.DefaultValue;
-			Hacks.PostProcessLayerHook.Antialiasing = Settings.Entry_Antialiasing.Value;
-
 			Settings.Entry_Quality_CameraFarPlaneDistance.Value = Settings.Entry_Quality_CameraFarPlaneDistance.DefaultValue;
-			Hacks.PostProcessLayerHook.FarClipDistance = Settings.Entry_Quality_CameraFarPlaneDistance.Value;
 
 			Settings.Entry_Quality_LODBias.Value = Settings.Entry_Quality_LODBias.DefaultValue;
-			QualitySettings.lodBias = Settings.Entry_Quality_LODBias.Value;
-
 			Settings.Entry_Quality_PixelLightCount.Value = Settings.Entry_Quality_PixelLightCount.DefaultValue;
-			QualitySettings.pixelLightCount = Settings.Entry_Quality_PixelLightCount.Value;
-
-			Settings.Entry_Quality_RealtimeReflectionProbes.Value = Settings.Entry_Quality_RealtimeReflectionProbes.DefaultValue;
-			QualitySettings.realtimeReflectionProbes = Settings.Entry_Quality_RealtimeReflectionProbes.Value;
-
 			Settings.Entry_Quality_ShadowDistance.Value = Settings.Entry_Quality_ShadowDistance.DefaultValue;
-			QualitySettings.shadowDistance = Settings.Entry_Quality_ShadowDistance.Value;
 
 			Settings.Entry_Quality_ShadowFourSplitValue1.Value = Settings.Entry_Quality_ShadowFourSplitValue1.DefaultValue;
 			Settings.Entry_Quality_ShadowFourSplitValue2.Value = Settings.Entry_Quality_ShadowFourSplitValue2.DefaultValue;
@@ -652,25 +562,13 @@ namespace SuisHack
 			QualitySettings.shadowCascade4Split = new Vector3(Settings.Entry_Quality_ShadowFourSplitValue1.Value, Settings.Entry_Quality_ShadowFourSplitValue2.Value, Settings.Entry_Quality_ShadowFourSplitValue3.Value);
 
 			Settings.Entry_Quality_ShadowMaskMode.Value = Settings.Entry_Quality_ShadowMaskMode.DefaultValue;
-			QualitySettings.shadowmaskMode = Settings.Entry_Quality_ShadowMaskMode.Value;
-
 			Settings.Entry_Quality_ShadowProjectionMode.Value = Settings.Entry_Quality_ShadowProjectionMode.DefaultValue;
-			QualitySettings.shadowProjection = Settings.Entry_Quality_ShadowProjectionMode.Value;
-
 			Settings.Entry_Quality_ShadowsQuality.Value = Settings.Entry_Quality_ShadowsQuality.DefaultValue;
-			QualitySettings.shadows = Settings.Entry_Quality_ShadowsQuality.Value;
-
 			Settings.Entry_Quality_ShadowsResolution.Value = Settings.Entry_Quality_ShadowsResolution.DefaultValue;
-			QualitySettings.shadowResolution = Settings.Entry_Quality_ShadowsResolution.Value;
-
 			Settings.Entry_Quality_ShadowTwoSplitValue.Value = Settings.Entry_Quality_ShadowTwoSplitValue.DefaultValue;
-			QualitySettings.shadowCascade2Split = Settings.Entry_Quality_ShadowTwoSplitValue.Value;
 
 			Settings.Entry_Quality_TextureQuality.Value = Settings.Entry_Quality_TextureQuality.DefaultValue;
-			QualitySettings.masterTextureLimit = Settings.Entry_Quality_TextureQuality.Value;
-
 			Settings.Entry_Quality_Use4ShadowCascades.Value = Settings.Entry_Quality_Use4ShadowCascades.DefaultValue;
-			QualitySettings.shadowCascades = Settings.Entry_Quality_Use4ShadowCascades.Value ? 4 : 2;
 		}
 
 		private string GetTextureString(int masterTextureLimit)
@@ -693,10 +591,10 @@ namespace SuisHack
 			GUILayout.Label("<b>Other settings:</b>", richText, null);
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			GUILayout.Label("Following settings require game restart!", null);
+			GUILayout.Label("Settings with * at the beginning require game restart!", null);
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			Settings.Entry_Other_SkipIntros.Value = GUILayout.Toggle(Settings.Entry_Other_SkipIntros.Value, "Skip intros", null);
+			Settings.Entry_Other_SkipIntros.Value = GUILayout.Toggle(Settings.Entry_Other_SkipIntros.Value, "* Skip intros", null);
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
 			Settings.Entry_Other_InterpolateMovement.Value = GUILayout.Toggle(Settings.Entry_Other_InterpolateMovement.Value, "Interpolate movement", null);
@@ -705,7 +603,7 @@ namespace SuisHack
 			GUILayout.BeginVertical(null);
 			var promptsUsed = Settings.Entry_Other_Prompts.Value == "" ? "None" : Settings.Entry_Other_Prompts.Value;
 
-			GUILayout.Label($"Prompts used: \"{promptsUsed}\" - possible:", null);
+			GUILayout.Label($"* Prompts used: \"{promptsUsed}\" - possible:", null);
 			if (GUILayout.Button("None", null))
 				Settings.Entry_Other_Prompts.Value = "";
 

@@ -19,7 +19,6 @@ namespace SuisHack.Hacks
 			PostProcessLayerHook.FarClipDistance = Settings.Entry_Quality_CameraFarPlaneDistance.Value;
 			QualitySettings.lodBias = Settings.Entry_Quality_LODBias.Value;
 			QualitySettings.pixelLightCount = Settings.Entry_Quality_PixelLightCount.Value;
-			QualitySettings.realtimeReflectionProbes = Settings.Entry_Quality_RealtimeReflectionProbes.Value;
 			QualitySettings.shadowDistance = Settings.Entry_Quality_ShadowDistance.Value;
 			QualitySettings.shadowCascade4Split = new Vector3(Settings.Entry_Quality_ShadowFourSplitValue1.Value, Settings.Entry_Quality_ShadowFourSplitValue2.Value, Settings.Entry_Quality_ShadowFourSplitValue3.Value);
 			QualitySettings.shadowmaskMode = Settings.Entry_Quality_ShadowMaskMode.Value;

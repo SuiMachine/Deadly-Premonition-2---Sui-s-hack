@@ -1,5 +1,4 @@
-﻿using Il2CppSystem.Collections.Generic;
-using MelonLoader;
+﻿using MelonLoader;
 using System;
 using UnityEngine;
 
@@ -10,13 +9,13 @@ namespace SuisHack.Components
 	{
 		public SmootherController(IntPtr ptr) : base(ptr) { }
 
-		private object postRenderRoutine;
+		public static bool InterpolateMovement;
 		public GameObject visionCameraReference;
 
 		public void OnEnable()
 		{
 			var visCam = this.transform.Find("VisionCamera");
-			if(visCam != null)
+			if (visCam != null)
 			{
 				visionCameraReference = visCam.gameObject;
 			}
@@ -24,20 +23,16 @@ namespace SuisHack.Components
 
 		public void OnPreCull()
 		{
-			if (postRenderRoutine == null)
-			{
-				postRenderRoutine = MelonCoroutines.Start(PostRender());
-			}
-
-			if(visionCameraReference != null && visionCameraReference.activeInHierarchy)
-			{
+			if (!InterpolateMovement)
 				return;
-			}
 
-			for (int i=0; i<GameObjectInterpolation.ActiveObjects.Count; i++)
+			if (visionCameraReference != null && visionCameraReference.activeInHierarchy)
+				return;
+
+			for (int i = 0; i < GameObjectInterpolation.ActiveObjects.Count; i++)
 			{
 				var obj = GameObjectInterpolation.ActiveObjects[i];
-				if(obj == null)
+				if (obj == null)
 				{
 					GameObjectInterpolation.ActiveObjects.RemoveAt(i);
 					i--;
@@ -47,27 +42,20 @@ namespace SuisHack.Components
 			}
 		}
 
-		private System.Collections.IEnumerator PostRender()
+
+		private void OnRenderImage(RenderTexture source, RenderTexture destination)
 		{
-			while(true)
+			if (!InterpolateMovement)
+				return;
+
+			if (visionCameraReference != null && visionCameraReference.activeInHierarchy)
+				return;
+
+
+			foreach (var obj in GameObjectInterpolation.ActiveObjects)
 			{
-				while(visionCameraReference.activeInHierarchy)
-				{
-					yield return new WaitForEndOfFrame();
-				}
-
-				yield return new WaitForEndOfFrame();
-				foreach(var obj in GameObjectInterpolation.ActiveObjects)
-				{
-					obj.RestoreOriginalPosition();
-				}
+				obj.RestoreOriginalPosition();
 			}
-		}
-
-		public void OnDisable()
-		{
-			MelonCoroutines.Stop(postRenderRoutine);
-			postRenderRoutine = null;
 		}
 	}
 }

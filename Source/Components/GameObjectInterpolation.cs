@@ -33,17 +33,25 @@ namespace SuisHack.Components
 		{
 			public Rigidbody rigidBody;
 			private Vector3 velocity;
+			private bool wasKinematic;
 
 			public void StoreVelocity()
 			{
-				if(rigidBody != null)
+				if (rigidBody != null)
+				{
 					this.velocity = rigidBody.velocity;
+					wasKinematic = rigidBody.isKinematic;
+					rigidBody.isKinematic = true;
+				}
 			}
 
 			public void RestoreVelocity()
 			{
 				if (rigidBody != null)
+				{
 					this.rigidBody.velocity = velocity;
+					this.rigidBody.isKinematic = wasKinematic;
+				}
 			}
 
 			public RigidBodiesStoredVelocities(Rigidbody riggedBodyRef)
@@ -68,7 +76,7 @@ namespace SuisHack.Components
 
 			var riggedBodies = this.GetComponentsInChildren<Rigidbody>(true);
 			this.riggidBodiesStored = new RigidBodiesStoredVelocities[riggedBodies.Length];
-			for(int i=0; i<riggedBodies.Length; i++)
+			for (int i = 0; i < riggedBodies.Length; i++)
 			{
 				riggidBodiesStored[i] = new RigidBodiesStoredVelocities(riggedBodies[i]);
 			}

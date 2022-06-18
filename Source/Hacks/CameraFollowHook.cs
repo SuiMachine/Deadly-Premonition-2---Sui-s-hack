@@ -17,13 +17,10 @@ namespace SuisHack.Hacks
 				__instance.gameObject.AddComponent<Components.SmootherController>();
 			}
 
-			if (SuisHackMain.Settings.Entry_Other_InterpolateMovement.Value)
+			var interpolation = __instance.GetComponent<GameObjectInterpolation>();
+			if (interpolation == null)
 			{
-				var interpolation = __instance.GetComponent<GameObjectInterpolation>();
-				if (interpolation == null)
-				{
-					__instance.gameObject.AddComponent<GameObjectInterpolation>();
-				}
+				__instance.gameObject.AddComponent<GameObjectInterpolation>();
 			}
 		}
 	}
