@@ -11,6 +11,10 @@ namespace SuisHack.Components
 
 		public static bool InterpolateMovement;
 		public GameObject visionCameraReference;
+		private bool DontInterpolate => VisionModeActive || CutscenePlaying;
+
+		private bool VisionModeActive => visionCameraReference != null && visionCameraReference.activeInHierarchy;
+		private bool CutscenePlaying => CutScenePlayer.Instance != null && CutScenePlayer.Instance.isActiveAndEnabled;
 
 		public void OnEnable()
 		{
@@ -26,7 +30,7 @@ namespace SuisHack.Components
 			if (!InterpolateMovement)
 				return;
 
-			if (visionCameraReference != null && visionCameraReference.activeInHierarchy)
+			if (DontInterpolate)
 				return;
 
 			for (int i = 0; i < GameObjectInterpolation.ActiveObjects.Count; i++)
@@ -42,13 +46,12 @@ namespace SuisHack.Components
 			}
 		}
 
-
 		private void OnPostRender()
 		{
 			if (!InterpolateMovement)
 				return;
 
-			if (visionCameraReference != null && visionCameraReference.activeInHierarchy)
+			if (DontInterpolate )
 				return;
 
 			foreach (var obj in GameObjectInterpolation.ActiveObjects)

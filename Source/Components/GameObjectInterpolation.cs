@@ -32,7 +32,7 @@ namespace SuisHack.Components
 		public class RigidBodiesStoredVelocities
 		{
 			public Rigidbody rigidBody;
-			private Vector3 velocity;
+			public Vector3 velocity;
 			private bool WasKinematic;
 
 			public void StoreVelocity()
@@ -40,6 +40,11 @@ namespace SuisHack.Components
 				if (rigidBody != null)
 				{
 					this.velocity = rigidBody.velocity;
+					
+					//A stupid hack to prevent a player floating after interpolation :(
+					if(velocity.y == 0 && rigidBody.velocity.y == 0)
+						velocity += Physics.gravity * Time.deltaTime;
+
 					this.WasKinematic = rigidBody.isKinematic;
 					this.rigidBody.isKinematic = true;
 				}
@@ -58,6 +63,7 @@ namespace SuisHack.Components
 			{
 				this.rigidBody = riggedBodyRef;
 				this.velocity = this.rigidBody.velocity;
+				this.WasKinematic = this.rigidBody.isKinematic;
 			}
 		}
 

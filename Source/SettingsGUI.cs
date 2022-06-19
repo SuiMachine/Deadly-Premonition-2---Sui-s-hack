@@ -512,17 +512,6 @@ namespace SuisHack
 			if (Settings.Entry_Other_ShowAdvanced.Value)
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				if (Camera.main != null)
-				{
-					GUILayout.Label($"Camera allow HDR: {Camera.main.allowHDR}", null);
-				}
-				GUILayout.EndHorizontal();
-			}
-
-			//Color space
-			if (Settings.Entry_Other_ShowAdvanced.Value)
-			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				GUILayout.Label($"Color space: {QualitySettings.activeColorSpace}", null);
 				GUILayout.Label($"Desired color space: {QualitySettings.desiredColorSpace}", null);
 				GUILayout.EndHorizontal();

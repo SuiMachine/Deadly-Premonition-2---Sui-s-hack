@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using SuisHack.Components;
+using UnityEngine;
 
 namespace SuisHack.Hacks
 {
