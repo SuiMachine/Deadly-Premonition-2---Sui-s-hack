@@ -47,6 +47,7 @@ namespace SuisHack
 		public MelonPreferences_Entry<string> Entry_Other_Prompts;
 		public MelonPreferences_Entry<bool> Entry_Other_ShowAdvanced;
 		public MelonPreferences_Entry<bool> Entry_Other_InterpolateMovement;
+		public MelonPreferences_Entry<bool> Entry_Other_FixGeometry;
 
 		public ExposedSettings()
 		{
@@ -118,6 +119,8 @@ namespace SuisHack
 			Entry_Other_InterpolateMovement = Category_otherSettings.CreateEntry("Interpolate movement", true, description: "Experimental: Enabled hooks related to movement interpolation of some rendered objects (protagonist and camera) to work around 50Hz Fixed Update stuttering - to my speedrunning friends: DO NOT allow this option for speedrunning.");
 			Entry_Other_InterpolateMovement.OnValueChanged += (bool oldValue, bool newVal) => { Components.SmootherController.InterpolateMovement = newVal; };
 			Components.SmootherController.InterpolateMovement = Entry_Other_InterpolateMovement.Value;
+
+			Entry_Other_FixGeometry = Category_otherSettings.CreateEntry("Fix geometry", true, description: "Applies additional scripts on level load to fix some geometry issues");
 		}
 
 		public LemonTuple<int, int> Resolution;

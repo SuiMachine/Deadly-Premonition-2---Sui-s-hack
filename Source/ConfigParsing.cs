@@ -22,8 +22,7 @@ namespace SuisHack.Hacks
 				var resY = match.Groups[2].Value;
 				if (uint.TryParse(resX, out uint desiredResolutionX))
 				{
-					uint desiredResolutionY;
-					if (uint.TryParse(resY, out desiredResolutionY))
+					if (uint.TryParse(resY, out uint desiredResolutionY))
 					{
 						if (desiredResolutionX == 0 || desiredResolutionY == 0)
 							return false;
