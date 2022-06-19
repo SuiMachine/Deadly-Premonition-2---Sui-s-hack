@@ -37,10 +37,10 @@ namespace SuisHack
 		public MelonPreferences_Entry<float> Entry_Quality_ShadowFourSplitValue2;
 		public MelonPreferences_Entry<float> Entry_Quality_ShadowFourSplitValue3;
 
-
 		public MelonPreferences_Entry<float> Entry_Quality_LODBias;
 		public MelonPreferences_Entry<int> Entry_Quality_PixelLightCount;
 		public MelonPreferences_Entry<int> Entry_Quality_TextureQuality;
+		public MelonPreferences_Entry<int> Entry_Quality_MirrorReflectionResolution;
 
 		//Other settings
 		public MelonPreferences_Entry<bool> Entry_Other_SkipIntros;
@@ -105,6 +105,9 @@ namespace SuisHack
 			Entry_Quality_ShadowProjectionMode = Category_graphicsSettings.CreateEntry("Shadow project mode", ShadowProjection.StableFit, description: "Shadow projection mode. Options \"CloseFit\" / \"StableFit\". Default is StableFit. See https://docs.unity3d.com/ScriptReference/ShadowProjection.html");
 			Entry_Quality_ShadowProjectionMode.OnValueChanged += (ShadowProjection oldValue, ShadowProjection newValue) => { QualitySettings.shadowProjection = newValue; };
 
+			Entry_Quality_MirrorReflectionResolution = Category_graphicsSettings.CreateEntry("Mirrors reflection reflection", 512, description: "Overrides render texture resolution for planar reflections - the resolution has to be a number that is a power of 2 and at least 128 and at most 2048.", validator: new PowerOfTwoValidatorWithRange(128, 2048));
+			Entry_Quality_MirrorReflectionResolution.OnValueChanged += (int oldValue, int newValue) => { Hacks.MirrorReflectionHook.ReflectionSize = newValue; };
+			Hacks.MirrorReflectionHook.ReflectionSize = Entry_Quality_MirrorReflectionResolution.Value;
 
 			Entry_Quality_PixelLightCount = Category_graphicsSettings.CreateEntry("PixelLightCount", 4, description: "Pixel Light Count - Default is 4. Affects the maximum number of pixel lights that should affect any object. If there are more lights illuminating an object, the dimmest ones will be rendered as vertex lights.", validator: new ValueRange<int>(0, 8));
 			Entry_Quality_PixelLightCount.OnValueChanged += (int oldValue, int newValue) => { QualitySettings.pixelLightCount = newValue; };

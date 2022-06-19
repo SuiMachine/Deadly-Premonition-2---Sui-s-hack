@@ -495,7 +495,7 @@ namespace SuisHack
 				GUILayout.EndHorizontal();
 			}
 
-			//Texture Quality Light Count
+			//Texture Quality
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				GUILayout.Label($"Texture resolution ({GetTextureString(QualitySettings.masterTextureLimit)}):", null);
@@ -504,6 +504,18 @@ namespace SuisHack
 					Settings.Entry_Quality_TextureQuality.Value = 0;
 				if (GUILayout.Button("Half", null))
 					Settings.Entry_Quality_TextureQuality.Value = 1;
+
+				GUILayout.EndHorizontal();
+			}
+
+			//Texture Quality
+			{
+				GUILayout.BeginHorizontal(GUI.skin.box, null);
+				GUILayout.Label($"Planar reflections resolution ({Hacks.MirrorReflectionHook.ReflectionSize}):", null);
+				var log = Mathf.RoundToInt(Mathf.Log(Hacks.MirrorReflectionHook.ReflectionSize, 2));
+				var newLog = (int)GUILayout.HorizontalSlider(log, 7, 11, null);
+				if(newLog != log)
+					Hacks.MirrorReflectionHook.ReflectionSize = (int)Mathf.Pow(2, newLog);
 
 				GUILayout.EndHorizontal();
 			}
