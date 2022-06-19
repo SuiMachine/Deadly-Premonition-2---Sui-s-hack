@@ -515,7 +515,7 @@ namespace SuisHack
 				var log = Mathf.RoundToInt(Mathf.Log(Hacks.MirrorReflectionHook.ReflectionSize, 2));
 				var newLog = (int)GUILayout.HorizontalSlider(log, 7, 11, null);
 				if(newLog != log)
-					Hacks.MirrorReflectionHook.ReflectionSize = (int)Mathf.Pow(2, newLog);
+					Settings.Entry_Quality_MirrorReflectionResolution.Value = (int)Mathf.Pow(2, newLog);
 
 				GUILayout.EndHorizontal();
 			}
