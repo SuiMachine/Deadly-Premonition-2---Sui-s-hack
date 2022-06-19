@@ -21,7 +21,6 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
    * LOD Bias
    * Pixel Light Count
    * Texture Resolution
-   * Realtime Reflection Probes
    * Far Plane Distance
 * Option to skip splash screens / intros
 * Runtime button prompt replacement with buttons prepared for Xbox and Playstation controllers.
