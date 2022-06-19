@@ -42,6 +42,7 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 
 # Bugs / To do:
 * Planar reflections lag a frame behind if using interpolation.
+* Wires from sections that loaded during gameplay don't have bounds corrected :(
 
 # Notes
 * Replacing gamepad prompts requires generally requires modifying Steam Input profile, you generally want:
