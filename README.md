@@ -23,7 +23,8 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
    * Texture Resolution
    * Far Plane Distance
 * Option to skip splash screens / intros
-* Runtime button prompt replacement with buttons prepared for Xbox and Playstation controllers.
+* Runtime button prompt replacement with buttons prepared for Xbox and Playstation controllers (make sure to correct bindings in Steam Input).
+* Bugfix: Corrected Electrical Wires bounds to be rendered correctly (Fix geometry).
 * A basic GUI available for configuring the mod available under F11.
 
 # Experimental features
@@ -40,7 +41,7 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 * Press F11 to open configuration GUI or close the game and edit "MelonPreferences.cfg" inside the UserData folder.
 
 # Bugs / To do:
-* Bug - occasionally when using interpolation, the player just starts hovering in mid air. Generally not a big problem.
+* Planar reflections lag a frame behind if using interpolation.
 
 # Notes
 * Replacing gamepad prompts requires generally requires modifying Steam Input profile, you generally want:
