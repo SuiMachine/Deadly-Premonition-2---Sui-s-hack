@@ -26,7 +26,6 @@ namespace SuisHack
 		public override void OnSceneWasLoaded(int buildIndex, string sceneName)
 		{
 			base.OnSceneWasLoaded(buildIndex, sceneName);
-			LoggerInstance.Msg($"Scene loaded {sceneName}");
 			if (Settings != null)
 			{
 				Application.targetFrameRate = Settings.Entry_DesiredFramerate.Value;
