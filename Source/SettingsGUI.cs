@@ -142,11 +142,15 @@ namespace SuisHack
 				resolutionX = GUILayout.TextField(resolutionX, null);
 				GUILayout.Label($"x", null);
 				resolutionY = GUILayout.TextField(resolutionY, null);
+				GUILayout.Label($"@", null);
+				refreshRate = GUILayout.TextField(refreshRate, null);
+				GUILayout.Label($"Hz", null);
 
 				if (GUILayout.Button("Apply", null))
 				{
 					var newResX = Screen.width;
 					var newResY = Screen.height;
+					var newRefreshRate = Screen.currentResolution.refreshRate;
 
 					if (int.TryParse(resolutionX, out int resX))
 					{
@@ -160,10 +164,17 @@ namespace SuisHack
 							newResY = resY;
 					}
 
-					Screen.SetResolution(newResX, newResY, Settings.Entry_Display_DisplayMode.Value, Settings.Entry_Display_RefreshRate.Value);
+					if (int.TryParse(refreshRate, out int refr))
+					{
+						if (refr >= 0)
+							newRefreshRate = refr;
+					}
+		
+					Screen.SetResolution(newResX, newResY, Settings.Entry_Display_DisplayMode.Value, newRefreshRate);
 					Settings.Entry_Display_Resolution.Value = $"{newResX}x{newResY}";
 					resolutionX = newResX.ToString();
 					resolutionY = newResY.ToString();
+					refreshRate = newRefreshRate.ToString();
 				}
 				GUILayout.EndHorizontal();
 				GUILayout.EndVertical();
@@ -209,53 +220,23 @@ namespace SuisHack
 				{
 					QualitySettings.vSyncCount = newValue ? 1 : 0;
 					Settings.Entry_Display_Vsync.Value = newValue;
-					if (newValue)
+					if (!newValue)
 					{
-						Application.targetFrameRate = Settings.Entry_Display_RefreshRate.Value;
+						Application.targetFrameRate = Settings.Entry_DesiredFramerate.Value;
 					}
 				}
 				GUILayout.EndHorizontal();
 			}
 
-			//Refresh rate / FPS cap
+			//FPS cap
 			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				if (QualitySettings.vSyncCount > 0)
+				if(QualitySettings.vSyncCount == 0)
 				{
-					GUILayout.Label("Refresh rate", null);
-					refreshRate = GUILayout.TextField(refreshRate.ToString(), null);
-
-					if (GUILayout.Button("Apply", null))
-					{
-						if (int.TryParse(refreshRate, out var result))
-						{
-							result = Mathf.Clamp(result, 50, 480);
-							Screen.SetResolution(Screen.width, Screen.height, Screen.fullScreenMode, result);
-							Settings.Entry_Display_RefreshRate.Value = result;
-							refreshRate = result.ToString();
-						}
-					}
+					GUILayout.BeginHorizontal(GUI.skin.box, null);
+					GUILayout.Label($"FPS cap ({Settings.Entry_DesiredFramerate.Value})", null);
+					Settings.Entry_DesiredFramerate.Value = (int)GUILayout.HorizontalSlider(Settings.Entry_DesiredFramerate.Value, -1, 1000, null);
+					GUILayout.EndHorizontal();
 				}
-				else
-				{
-					GUILayout.Label("FPS cap", null);
-					refreshRate = GUILayout.TextField(refreshRate.ToString(), null);
-
-					if (GUILayout.Button("Apply", null))
-					{
-						if (int.TryParse(refreshRate, out var result))
-						{
-							result = Mathf.Clamp(result, -1, 9999);
-							Screen.SetResolution(Screen.width, Screen.height, Screen.fullScreenMode, 0);
-							QualitySettings.vSyncCount = 0;
-							Application.targetFrameRate = result;
-							Settings.Entry_Display_RefreshRate.Value = result;
-							refreshRate = result.ToString();
-						}
-					}
-				}
-
-				GUILayout.EndHorizontal();
 			}
 		}
 
@@ -567,6 +548,7 @@ namespace SuisHack
 			Settings.Entry_Quality_ShadowsQuality.Value = Settings.Entry_Quality_ShadowsQuality.DefaultValue;
 			Settings.Entry_Quality_ShadowsResolution.Value = Settings.Entry_Quality_ShadowsResolution.DefaultValue;
 			Settings.Entry_Quality_ShadowTwoSplitValue.Value = Settings.Entry_Quality_ShadowTwoSplitValue.DefaultValue;
+			Settings.Entry_Quality_MirrorReflectionResolution.Value = Settings.Entry_Quality_MirrorReflectionResolution.DefaultValue;
 
 			Settings.Entry_Quality_TextureQuality.Value = Settings.Entry_Quality_TextureQuality.DefaultValue;
 			Settings.Entry_Quality_Use4ShadowCascades.Value = Settings.Entry_Quality_Use4ShadowCascades.DefaultValue;

@@ -16,6 +16,7 @@ namespace SuisHack
 		//Display settings
 		public MelonPreferences_Entry<string> Entry_Display_Resolution;
 		public MelonPreferences_Entry<int> Entry_Display_RefreshRate;
+		public MelonPreferences_Entry<int> Entry_DesiredFramerate;
 		public MelonPreferences_Entry<FullScreenMode> Entry_Display_DisplayMode;
 		public MelonPreferences_Entry<bool> Entry_Display_Vsync;
 
@@ -56,7 +57,9 @@ namespace SuisHack
 			Category_otherSettings = MelonPreferences.CreateCategory("Suis Hack Other Settings");
 
 			Entry_Display_Resolution = Category_mainDisplay.CreateEntry("Resolution", "0x0", description: "Screen or game resolution depending on display mode - if invalid resolution is specified - main screen resolution is used");
-			Entry_Display_RefreshRate = Category_mainDisplay.CreateEntry("Refresh_Rate", -1, description: "Refresh rate used in fullscreen. If Vsync is disabled, this is used for FPS cap. (-1 is platform default, 0 is uncapped, anything higher is FPS capped)", validator: new ValueRange<int>(-1, 480));
+			Entry_Display_RefreshRate = Category_mainDisplay.CreateEntry("Refresh_Rate", 0, description: "Refresh rate used in fullscreen. Normally it should be 0 (uses screen default). Only really matters if the game is set to Exclusive Fullscreen mode.", validator: new ValueRange<int>(0, 560));
+			Entry_DesiredFramerate = Category_mainDisplay.CreateEntry("DesiredFPS", -1, description: "Desired framerate. This is only used when Vsync is disabled. -1 is platform default, 0 is uncapped, max is 1000.", validator: new ValueRange<int>(-1, 1000));
+			Entry_DesiredFramerate.OnValueChanged += (int oldValue, int newValue) => { Application.targetFrameRate = newValue; };
 
 			if (Hacks.ConfigParsing.ParseResolution(Entry_Display_Resolution.Value, out LemonTuple<int, int> desiredResolution))
 				Resolution = desiredResolution;
@@ -105,7 +108,7 @@ namespace SuisHack
 			Entry_Quality_ShadowProjectionMode = Category_graphicsSettings.CreateEntry("Shadow project mode", ShadowProjection.StableFit, description: "Shadow projection mode. Options \"CloseFit\" / \"StableFit\". Default is StableFit. See https://docs.unity3d.com/ScriptReference/ShadowProjection.html");
 			Entry_Quality_ShadowProjectionMode.OnValueChanged += (ShadowProjection oldValue, ShadowProjection newValue) => { QualitySettings.shadowProjection = newValue; };
 
-			Entry_Quality_MirrorReflectionResolution = Category_graphicsSettings.CreateEntry("Mirrors reflection reflection", 512, description: "Overrides render texture resolution for planar reflections - the resolution has to be a number that is a power of 2 and at least 128 and at most 2048.", validator: new PowerOfTwoValidatorWithRange(128, 2048));
+			Entry_Quality_MirrorReflectionResolution = Category_graphicsSettings.CreateEntry("Mirrors reflection reflection", 512, description: "Overrides render texture resolution for planar reflections - the resolution has to be a number that is a power of 2 and at least 128 and at most 2048. Default is 512.", validator: new PowerOfTwoValidatorWithRange(128, 2048));
 			Entry_Quality_MirrorReflectionResolution.OnValueChanged += (int oldValue, int newValue) => { Hacks.MirrorReflectionHook.ReflectionSize = newValue; };
 			Hacks.MirrorReflectionHook.ReflectionSize = Entry_Quality_MirrorReflectionResolution.Value;
 
