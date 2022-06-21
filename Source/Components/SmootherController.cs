@@ -25,7 +25,7 @@ namespace SuisHack.Components
 			}
 		}
 
-		public void OnPreRender()
+		public void OnPreCull()
 		{
 			if (!InterpolateMovement)
 				return;
