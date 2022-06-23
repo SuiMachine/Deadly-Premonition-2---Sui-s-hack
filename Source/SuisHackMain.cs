@@ -13,8 +13,8 @@ namespace SuisHack
 
 		public override void OnApplicationLateStart()
 		{
-			LoggerInstance.Msg("Loading Sui's Hack loaded");
 			base.OnApplicationLateStart();
+			LoggerInstance.Msg("Loading Sui's Hack loaded");
 			loggerInst = LoggerInstance;
 			harmonyInst = HarmonyInstance;
 			ApplySettings();
@@ -32,6 +32,8 @@ namespace SuisHack
 
 				if (Settings.Entry_Other_FixGeometry.Value && sceneName == OPENWORLDSCENENAME)
 				{
+					GlobalGameObjects.GlobalInputHookHandler.Initialize();
+
 					if (GameObject.FindObjectOfType<Components.WireRenderCorrectionChecker>() == null)
 					{
 						var scene = SceneManager.GetSceneByName(OPENWORLDSCENENAME);
