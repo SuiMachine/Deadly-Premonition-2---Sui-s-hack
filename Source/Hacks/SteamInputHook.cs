@@ -46,6 +46,12 @@ namespace SuisHack.Hacks
 		{
 			if (GlobalInputHookHandler.Instance != null)
 			{
+				if (SettingsGUI.Display)
+				{
+					__result = new InputAnalogActionData_t();
+					return false;
+				}
+
 				var replacement = GlobalInputHookHandler.Instance.GetAnalogInputReplacement(analogActionHandle);
 				if (replacement == null)
 					return true;
@@ -63,6 +69,12 @@ namespace SuisHack.Hacks
 		{
 			if (GlobalInputHookHandler.Instance != null)
 			{
+				if(SettingsGUI.Display)
+				{
+					__result = new InputDigitalActionData_t();
+					return false;
+				}
+
 				var replacement = GlobalInputHookHandler.Instance.GetDigitalInputReplacement(digitalActionHandle);
 				if (replacement == null)
 					return true;
