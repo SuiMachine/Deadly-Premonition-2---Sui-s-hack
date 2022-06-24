@@ -1,57 +1,90 @@
-﻿using HarmonyLib;
-using Il2CppSystem.Collections.Generic;
-using Steamworks;
+﻿using Steamworks;
 using SuisHack.GlobalGameObjects;
-using UnhollowerBaseLib;
 
 namespace SuisHack.Hacks
 {
-	[HarmonyPatch]
 	public static class SteamInputHook
 	{
-		/*
-				[HarmonyPostfix]
-				[HarmonyPatch(typeof(SteamInput), "GetConnectedControllers")]
-				public static void GetConnectedControllersHook(Il2CppStructArray<InputHandle_t> handlesOut)
-				{
-					if(!SpewedNonsense)
-					{
-						SpewedNonsense = true;
-						SuisHackMain.loggerInst.Error($"Controllers: {handlesOut.Length}");
-						for (int i = 0; i <handlesOut.Length; i++)
-						{
-							SuisHackMain.loggerInst.Error($"Controller: {handlesOut[i].m_InputHandle}");
-						}
-					}
-				}*/
-
-/*		[HarmonyPrefix]
-		[HarmonyPatch(typeof(SteamInput), "GetAnalogActionData")]
-		public static void GetAnalogActionDataPostfix(InputHandle_t inputHandle, InputAnalogActionHandle_t analogActionHandle)
+		public static void InitializeKeyboardAndMouse()
 		{
-			
-		}*/
+			var harmonyInstance = SuisHackMain.harmonyInst;
+			var originalGetAnalogActionMethod = typeof(SteamInput).GetMethod(nameof(SteamInput.GetAnalogActionData), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+			var targetGetAnalogActionMethod = typeof(SteamInputHook).GetMethod(nameof(GetAnalogActionDataPrefix), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+			if(originalGetAnalogActionMethod == null)
+			{
+				SuisHackMain.loggerInst.Error("Original GetAnalogActionData was null");
+				return;
+			}
 
+			if (targetGetAnalogActionMethod == null)
+			{
+				SuisHackMain.loggerInst.Error("Target GetAnalogActionData was null");
+				return;
+			}
 
+			var originalGetDigitalActionMethod = typeof(SteamInput).GetMethod(nameof(SteamInput.GetDigitalActionData), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+			var targetGetDigitalActionMethod = typeof(SteamInputHook).GetMethod(nameof(GetDigitalActionDataPrefix), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
 
-		[HarmonyPrefix]
-		[HarmonyPatch(typeof(SteamInput), "GetAnalogActionData")]
-		public static bool GetAnalogActionDataPostfix(ref InputAnalogActionData_t __result, InputHandle_t inputHandle, InputAnalogActionHandle_t analogActionHandle)
+			if (originalGetDigitalActionMethod == null)
+			{
+				SuisHackMain.loggerInst.Error("Original GetDigitalActionData was null");
+				return;
+			}
+
+			if (targetGetDigitalActionMethod == null)
+			{
+				SuisHackMain.loggerInst.Error("Target GetDigitalActionData was null");
+				return;
+			}
+
+			harmonyInstance.Patch(originalGetAnalogActionMethod, prefix: new HarmonyLib.HarmonyMethod(targetGetAnalogActionMethod));
+			harmonyInstance.Patch(originalGetDigitalActionMethod, prefix: new HarmonyLib.HarmonyMethod(targetGetDigitalActionMethod));
+		}
+
+		//[HarmonyPatch(typeof(SteamInput), "GetAnalogActionData")]
+		public static bool GetAnalogActionDataPrefix(ref InputAnalogActionData_t __result, InputHandle_t inputHandle, InputAnalogActionHandle_t analogActionHandle)
 		{
 			if (GlobalInputHookHandler.Instance != null)
 			{
 				var replacement = GlobalInputHookHandler.Instance.GetAnalogInputReplacement(analogActionHandle);
 				if (replacement == null)
 					return true;
-				else
-				{
-					__result = replacement.GetInput();
-					return false;
-				}
+
+				__result = replacement.GetInput();
+				return false;
 			}
 			else
 				return true;
 		}
 
+/*		[HarmonyPrefix]
+		[HarmonyPatch(typeof(SteamInput), "GetDigitalActionData")]*/
+		public static bool GetDigitalActionDataPrefix(ref InputDigitalActionData_t __result, InputHandle_t inputHandle, InputDigitalActionHandle_t digitalActionHandle)
+		{
+			if (GlobalInputHookHandler.Instance != null)
+			{
+				var replacement = GlobalInputHookHandler.Instance.GetDigitalInputReplacement(digitalActionHandle);
+				if (replacement == null)
+					return true;
+
+				__result = replacement.GetInput();
+				return false;
+			}
+			else
+				return true;
+		}
+
+/*		static HashSet<string> LMAO = new HashSet<string>();
+
+		[HarmonyPrefix]
+		[HarmonyPatch(typeof(SteamInput), "GetDigitalActionHandle")]
+		public static void GetDigitalInputHandle(string pszActionName)
+		{
+			if(!LMAO.Contains(pszActionName))
+			{
+				SuisHackMain.loggerInst.Error($"Input: {pszActionName}");
+				LMAO.Add(pszActionName);
+			}
+		}*/
 	}
 }

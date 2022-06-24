@@ -7,8 +7,8 @@ namespace SuisHack
 	public class SuisHackMain : MelonMod
 	{
 		private const string OPENWORLDSCENENAME = "OpenWorld";
-		public static HarmonyLib.Harmony harmonyInst;
-		public static MelonLogger.Instance loggerInst;
+		public static HarmonyLib.Harmony harmonyInst { get; private set; }
+		public static MelonLogger.Instance loggerInst { get; private set; }
 		public static ExposedSettings Settings;
 
 		public override void OnApplicationLateStart()
@@ -17,7 +17,10 @@ namespace SuisHack
 			LoggerInstance.Msg("Loading Sui's Hack loaded");
 			loggerInst = LoggerInstance;
 			harmonyInst = HarmonyInstance;
-			ApplySettings();
+			Settings = new ExposedSettings();
+			if (Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
+				Hacks.SteamInputHook.InitializeKeyboardAndMouse();
+
 			SettingsGUI.Initialize();
 			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
 			LoggerInstance.Msg("Sui's Hack loaded");
@@ -29,11 +32,11 @@ namespace SuisHack
 			if (Settings != null)
 			{
 				Application.targetFrameRate = Settings.Entry_DesiredFramerate.Value;
+				if(Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
+					GlobalGameObjects.GlobalInputHookHandler.Initialize();
 
 				if (Settings.Entry_Other_FixGeometry.Value && sceneName == OPENWORLDSCENENAME)
 				{
-					GlobalGameObjects.GlobalInputHookHandler.Initialize();
-
 					if (GameObject.FindObjectOfType<Components.WireRenderCorrectionChecker>() == null)
 					{
 						var scene = SceneManager.GetSceneByName(OPENWORLDSCENENAME);
@@ -45,11 +48,6 @@ namespace SuisHack
 					}
 				}
 			}
-		}
-
-		public void ApplySettings()
-		{
-			Settings = new ExposedSettings();
 		}
 	}
 }

@@ -1,8 +1,7 @@
-﻿using Harmony;
-using Steamworks;
+﻿using Steamworks;
+using SuisHack.InputHandling;
 using System;
 using System.Collections.Generic;
-using UnhollowerBaseLib;
 using UnityEngine;
 
 namespace SuisHack.GlobalGameObjects
@@ -11,81 +10,36 @@ namespace SuisHack.GlobalGameObjects
 	class GlobalInputHookHandler : MonoBehaviour
 	{
 		public GlobalInputHookHandler(IntPtr ptr) : base(ptr) { }
-
-		public class KeyActionAnalog
-		{
-			private bool isMouseAxis;
-			private KeyCode keyCodeUp = KeyCode.None;
-			private KeyCode keyCodeDown = KeyCode.None;
-			private KeyCode keyCodeLeft = KeyCode.None;
-			private KeyCode keyCodeRight = KeyCode.None;
-
-			public KeyActionAnalog()
-			{
-				isMouseAxis = true;
-				keyCodeUp = KeyCode.None;
-				keyCodeDown = KeyCode.None;
-				keyCodeLeft = KeyCode.None;
-				keyCodeRight = KeyCode.None;
-			}
-
-			public KeyActionAnalog(KeyCode Up, KeyCode Down, KeyCode Left, KeyCode Right)
-			{
-				isMouseAxis = false;
-				keyCodeUp = Up;
-				keyCodeDown = Down;
-				keyCodeLeft = Left;
-				keyCodeRight = Right;
-			}
-
-			internal InputAnalogActionData_t GetInput()
-			{
-				if(!isMouseAxis)
-				{
-					var inputValUp = Input.GetKey(keyCodeUp) ? 1.0f : 0.0f;
-					var inputValDown = Input.GetKey(keyCodeDown) ? -1.0f : 0.0f;
-					var inputValLeft = Input.GetKey(keyCodeLeft) ? -1.0f : 0.0f;
-					var inputValRight = Input.GetKey(keyCodeRight) ? 1.0f : 0.0f;
-
-					var vector = new Vector2(inputValLeft + inputValRight, inputValUp + inputValDown);
-					if (vector.magnitude > 1)
-						vector.Normalize();
-
-					return new InputAnalogActionData_t() { x = vector.x, y = vector.y };
-				}
-				else
-				{
-					Cursor.lockState = CursorLockMode.Confined;
-					var vec = new Vector2(Input.GetAxis("Horizontal"), -Input.GetAxis("Vertical")) * 0.2f;
-
-
-					return new InputAnalogActionData_t() { x = vec.x, y = vec.y };
-				}
-
-			}
-		}
+		public ExposedSettings Settings => SuisHackMain.Settings;
 
 		public static GlobalInputHookHandler Instance { get; private set; }
-		public static Dictionary<string, KeyActionAnalog> AnalogInputToInput = new Dictionary<string, KeyActionAnalog>()
-		{
-			{"L_Stick", new KeyActionAnalog(KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D) },
-			{"R_Stick", new KeyActionAnalog() }
-		};
+		public static Dictionary<string, KeySteamAnalogAction> AnalogInputToInput;
+		public Dictionary<string, KeySteamDigitalAction> DigitalInputToInput;
 
-		internal KeyActionAnalog GetAnalogInputReplacement(InputAnalogActionHandle_t analogActionHandle)
+		internal KeySteamAnalogAction GetAnalogInputReplacement(InputAnalogActionHandle_t analogActionHandle)
 		{
-			if(TranslateAnalogBackToInput.TryGetValue(analogActionHandle, out KeyActionAnalog value))
+			if (TranslateAnalogBackToInput.TryGetValue(analogActionHandle, out KeySteamAnalogAction value))
 			{
 				return value;
 			}
-			return null;				
+			return null;
 		}
 
-		public static Dictionary<InputAnalogActionHandle_t, KeyActionAnalog> TranslateAnalogBackToInput = new Dictionary<InputAnalogActionHandle_t, KeyActionAnalog>();
+		internal KeySteamDigitalAction GetDigitalInputReplacement(InputDigitalActionHandle_t digitalActionHandle)
+		{
+			if (TranslateDigitalBackToInput.TryGetValue(digitalActionHandle, out KeySteamDigitalAction value))
+			{
+				return value;
+			}
+			return null;
+		}
+
+		public static Dictionary<InputAnalogActionHandle_t, KeySteamAnalogAction> TranslateAnalogBackToInput = new Dictionary<InputAnalogActionHandle_t, KeySteamAnalogAction>();
+		public static Dictionary<InputDigitalActionHandle_t, KeySteamDigitalAction> TranslateDigitalBackToInput = new Dictionary<InputDigitalActionHandle_t, KeySteamDigitalAction>();
 
 		public static void Initialize()
 		{
-			if(Instance == null)
+			if (Instance == null)
 			{
 				var gameObject = new GameObject("GlobalInputHandler");
 				GameObject.DontDestroyOnLoad(gameObject);
@@ -100,11 +54,58 @@ namespace SuisHack.GlobalGameObjects
 
 		private void Start()
 		{
-			foreach(var analogInput in AnalogInputToInput)
+			InitializeInputs();
+		}
+
+		public void InitializeInputs()
+		{
+			AnalogInputToInput = new Dictionary<string, KeySteamAnalogAction>()
+			{
+				{"L_Stick", new KeyActionAnalog(Settings.Input_Analog_LeftStick_Up.Value, Settings.Input_Analog_LeftStick_Down.Value, Settings.Input_Analog_LeftStick_Left.Value, Settings.Input_Analog_LeftStick_Right.Value, Settings.Input_Analog_LeftStickFloatTime.Value) },
+				{"R_Stick", new MouseAnalog() }
+			};
+
+			DigitalInputToInput = new Dictionary<string, KeySteamDigitalAction>()
+			{
+				{ "A_Button", new KeySteamDigitalAction(Settings.Input_Digital_A_Button.Value, false) },
+				{ "B_Button", new KeySteamDigitalAction(Settings.Input_Digital_B_Button.Value, false) },
+				{ "X_Button", new KeySteamDigitalAction(Settings.Input_Digital_X_Button.Value, false) },
+				{ "Y_Button", new KeySteamDigitalAction(Settings.Input_Digital_Y_Button.Value, false) },
+				{ "LB", new KeySteamDigitalAction(Settings.Input_Digital_LB.Value, false) },
+				{ "RB", new KeySteamDigitalAction(Settings.Input_Digital_RB.Value, false) },
+				{ "Back_Button", new KeySteamDigitalAction(Settings.Input_Digital_Back_Button.Value, false) },
+				{ "Start_Button", new KeySteamDigitalAction(Settings.Input_Digital_Start_Button.Value, false) },
+				{ "L_Stick_Button", new KeySteamDigitalAction(Settings.Input_Digital_L_Stick_Button.Value, false) },
+				{ "R_Stick_Button", new KeySteamDigitalAction(Settings.Input_Digital_Right_Button.Value, false) },
+				{ "Up_Button", new KeySteamDigitalAction(Settings.Input_Digital_Up_Button.Value, true) },
+				{ "Right_Button", new KeySteamDigitalAction(Settings.Input_Digital_Right_Button.Value, true) },
+				{ "Down_Button", new KeySteamDigitalAction(Settings.Input_Digital_Down_Button.Value, true) },
+				{ "Left_Button", new KeySteamDigitalAction(Settings.Input_Digital_Left_Button.Value, true) },
+				{ "LT", new KeySteamDigitalAction(Settings.Input_Digital_LT.Value, false) },
+				{ "RT", new KeySteamDigitalAction(Settings.Input_Digital_RT.Value, false) }
+			};
+
+			TranslateAnalogBackToInput.Clear();
+			foreach (var analogInput in AnalogInputToInput)
 			{
 				var handle = SteamInput.GetAnalogActionHandle(analogInput.Key);
 				TranslateAnalogBackToInput.Add(handle, analogInput.Value);
-			}			
+			}
+
+			TranslateDigitalBackToInput.Clear();
+			foreach (var digitalInput in DigitalInputToInput)
+			{
+				var handle = SteamInput.GetDigitalActionHandle(digitalInput.Key);
+				TranslateDigitalBackToInput.Add(handle, digitalInput.Value);
+			}
+		}
+
+		private void Update()
+		{
+			foreach (var analogInput in AnalogInputToInput)
+			{
+				analogInput.Value.Update();
+			}
 		}
 	}
 }
