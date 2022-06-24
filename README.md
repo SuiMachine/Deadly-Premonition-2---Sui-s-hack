@@ -29,6 +29,7 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 
 # Experimental features
 * Movement interpolation.
+* Hook for SteamInput to read Keyboard and mouse input instead (set Input type to "KeyboardAndMouse" in config file).
 
 # Requirements
 * Original copy of the game
@@ -41,8 +42,8 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 * Press F11 to open configuration GUI or close the game and edit "MelonPreferences.cfg" inside the UserData folder.
 
 # Bugs / To do:
-* Planar reflections lag a frame behind if using interpolation.
-* Resolution is not applied to main window on startup, if focus is on console window.
+* (BUG) Resolution is not applied to main window on startup, if focus is on console window.
+* (TODO) Display keyboard and mouse prompts if using Keyboard and mouse hook.
 
 # Notes
 * Replacing gamepad prompts requires generally requires modifying Steam Input profile, you generally want:
@@ -50,3 +51,4 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
    * Xbox's B / DualShock's Circle to be the game's (Switch) A.
    * Xbox's X / DualShock's Square to be the game's (Switch) Y.
    * Xbox's Y / DualShock's Triangle to be the game's (Switch) X.
+* Keyboard and mouse binds are not exposed via GUI. To edit them you need to edit UserData/MelonPreferences.cfg (requires launching it at least once). First set the input type to "KeyboardAndMouse". Keys should be using Unity's enum names - see https://docs.unity3d.com/ScriptReference/KeyCode.html.

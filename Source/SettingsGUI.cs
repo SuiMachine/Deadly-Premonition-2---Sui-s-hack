@@ -19,7 +19,7 @@ namespace SuisHack
 
 		public SettingsGUI(IntPtr ptr) : base(ptr) { }
 		public static SettingsGUI Instance { get; private set; }
-		private bool m_Display = false;
+		public static bool Display { get; private set; }
 		private Category category = Category.Root;
 		private ExposedSettings Settings { get { return SuisHackMain.Settings; } }
 		string resolutionX;
@@ -48,8 +48,8 @@ namespace SuisHack
 		{
 			if (Input.GetKeyDown(KeyCode.F11))
 			{
-				m_Display = !m_Display;
-				if (m_Display)
+				Display = !Display;
+				if (Display)
 				{
 					Cursor.lockState = CursorLockMode.None;
 					Cursor.visible = true;
@@ -65,7 +65,7 @@ namespace SuisHack
 
 		public void OnGUI()
 		{
-			if (m_Display)
+			if (Display)
 			{
 				GUILayout.BeginVertical(null);
 				GUILayout.BeginHorizontal(GUI.skin.box, null);

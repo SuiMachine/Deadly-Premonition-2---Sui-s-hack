@@ -1,5 +1,6 @@
 ﻿using MelonLoader;
 using MelonLoader.Preferences;
+using System;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -7,10 +8,16 @@ namespace SuisHack
 {
 	public class ExposedSettings
 	{
+		public enum InputType
+		{
+			Original,
+			KeyboardAndMouse
+		}
 
 		//Categories
 		MelonPreferences_Category Category_mainDisplay;
 		MelonPreferences_Category Category_graphicsSettings;
+		MelonPreferences_Category Category_inputSettings;
 		MelonPreferences_Category Category_otherSettings;
 
 		//Display settings
@@ -43,6 +50,30 @@ namespace SuisHack
 		public MelonPreferences_Entry<int> Entry_Quality_TextureQuality;
 		public MelonPreferences_Entry<int> Entry_Quality_MirrorReflectionResolution;
 
+		//Input settings
+		public MelonPreferences_Entry<InputType> Input_Override;
+		public MelonPreferences_Entry<float> Input_Analog_LeftStickFloatTime;
+		public MelonPreferences_Entry<KeyCode> Input_Analog_LeftStick_Up;
+		public MelonPreferences_Entry<KeyCode> Input_Analog_LeftStick_Right;
+		public MelonPreferences_Entry<KeyCode> Input_Analog_LeftStick_Down;
+		public MelonPreferences_Entry<KeyCode> Input_Analog_LeftStick_Left;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_A_Button;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_B_Button;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_X_Button;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_Y_Button;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_LB;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_RB;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_Back_Button;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_Start_Button;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_L_Stick_Button;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_R_Stick_Button;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_Up_Button;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_Right_Button;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_Down_Button;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_Left_Button;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_LT;
+		public MelonPreferences_Entry<KeyCode> Input_Digital_RT;
+
 		//Other settings
 		public MelonPreferences_Entry<bool> Entry_Other_SkipIntros;
 		public MelonPreferences_Entry<string> Entry_Other_Prompts;
@@ -54,8 +85,17 @@ namespace SuisHack
 		{
 			Category_mainDisplay = MelonPreferences.CreateCategory("Suis Hack Main Display");
 			Category_graphicsSettings = MelonPreferences.CreateCategory("Suis Hack Graphics Settings");
+			Category_inputSettings = MelonPreferences.CreateCategory("Suis Hack Input Settings");
 			Category_otherSettings = MelonPreferences.CreateCategory("Suis Hack Other Settings");
 
+			RegisterMainDisplay();
+			RegisterGraphicsSettings();
+			RegisterInputSettings();
+			RegisterOtherSettings();
+		}
+
+		private void RegisterMainDisplay()
+		{
 			Entry_Display_Resolution = Category_mainDisplay.CreateEntry("Resolution", "0x0", description: "Screen or game resolution depending on display mode - if invalid resolution is specified - main screen resolution is used");
 			Entry_Display_RefreshRate = Category_mainDisplay.CreateEntry("Refresh_Rate", 0, description: "Refresh rate used in fullscreen. Normally it should be 0 (uses screen default). Only really matters if the game is set to Exclusive Fullscreen mode.", validator: new ValueRange<int>(0, 560));
 			Entry_DesiredFramerate = Category_mainDisplay.CreateEntry("DesiredFPS", -1, description: "Desired framerate. This is only used when Vsync is disabled. -1 is platform default, 0 is uncapped, max is 1000.", validator: new ValueRange<int>(-1, 1000));
@@ -68,7 +108,10 @@ namespace SuisHack
 
 			Entry_Display_DisplayMode = Category_mainDisplay.CreateEntry("Mode", FullScreenMode.FullScreenWindow, description: "Unity's display mode. Options are: ExclusiveFullScreen / FullScreenWindow / MaximizedWindow / Windowed");
 			Entry_Display_Vsync = Category_mainDisplay.CreateEntry("Vsync", true, description: "Enable vSync. True by default. If this is false and refresh rate is not 0, FPS cap is used.");
+		}
 
+		private void RegisterGraphicsSettings()
+		{
 			Entry_Antialiasing = Category_graphicsSettings.CreateEntry("Antialiasing", PostProcessLayer.Antialiasing.FastApproximateAntialiasing, description: "Experimental: Antialiasing used by the game. Options are: \"None\" (disables AA) / \"FastApproximateAntialiasing\" (FXAA) / \"SubpixelMorphologicalAntialiasing\" (SMAA) / \"TemporalAntialiasing\" (TAA). Default on PC is \"FastApproximateAntialiasing\". MSAA is not available due to the game using deferred rendering path.");
 			Entry_Antialiasing.OnValueChanged += (PostProcessLayer.Antialiasing oldVal, PostProcessLayer.Antialiasing newVal) => { Hacks.PostProcessLayerHook.Antialiasing = newVal; };
 
@@ -117,7 +160,36 @@ namespace SuisHack
 
 			Entry_Quality_TextureQuality = Category_graphicsSettings.CreateEntry("Texture quality", 0, description: "Texture quality - default is 0. Higher values cause lower mip maps to be used. Can be used to reduce VRAM usage on low-end devices. 1 will cause half of the original resolution to be used", validator: new ValueRange<int>(0, 1));
 			Entry_Quality_TextureQuality.OnValueChanged += (int oldValue, int newValue) => { QualitySettings.masterTextureLimit = newValue; };
+		}
 
+		private void RegisterInputSettings()
+		{
+			Input_Override = Category_inputSettings.CreateEntry("Input type", InputType.Original, description: "Overrides controls handling - options are: Original (leaves the game using Steam Input as it is) / KeyboardAndMouse (hooks input to read keyboard and mouse instead)");
+			Input_Analog_LeftStickFloatTime = Category_inputSettings.CreateEntry("Left Stick Float Time", 0.1f, description: "How long does it take a stick to get to desired spot - this allows the game to handle rotations slightly better, although prevents the input from being instantanious. Min value: 0.01, Max 1.", validator: new ValueRange<float>(0.01f, 1f));
+			Input_Analog_LeftStick_Up = Category_inputSettings.CreateEntry("Left Stick Key Up", KeyCode.W, description: "Key used to as replacement for reading up on left analog's Y axis");
+			Input_Analog_LeftStick_Right = Category_inputSettings.CreateEntry("Left Stick Key Right", KeyCode.D, description: "Key used to as replacement for reading left on left analog's X axis");
+			Input_Analog_LeftStick_Down = Category_inputSettings.CreateEntry("Left Stick Key Down", KeyCode.S, description: "Key used to as replacement for reading down on left analog's Y axis");
+			Input_Analog_LeftStick_Left = Category_inputSettings.CreateEntry("Left Stick Key Left", KeyCode.A, description: "Key used to as replacement for reading right on left analog's X axis");
+			Input_Digital_A_Button = Category_inputSettings.CreateEntry("Controller button B", KeyCode.Q, description: "Key used as replacement for Xbox's B key (originally Switch's A key) - generally cancel action");
+			Input_Digital_B_Button = Category_inputSettings.CreateEntry("Controller button A", KeyCode.E, description: "Key used as replacement for Xbox's A key (originally Switch's B key) - generally confirm and contextual action");
+			Input_Digital_X_Button = Category_inputSettings.CreateEntry("Controller button Y", KeyCode.Space, description: "Key used as replacement for Xbox's Y key (originally Switch's X key) - generally used for skateboard");
+			Input_Digital_Y_Button = Category_inputSettings.CreateEntry("Controller button X", KeyCode.I, description: "Key used as replacement for Xbox's Y key (originally Switch's X key) - generally used for opening Red Room");
+			Input_Digital_LB = Category_inputSettings.CreateEntry("Controller LB", KeyCode.Alpha2, description: "Key used as replacement for Left Bumper - generally used for vision mode");
+			Input_Digital_RB = Category_inputSettings.CreateEntry("Controller RB", KeyCode.LeftShift, description: "Key used as replacement for Right Bumper - generally used for sprint");
+			Input_Digital_Back_Button = Category_inputSettings.CreateEntry("Controller Back", KeyCode.Tab, description: "Key used as replacement for Back / Select button");
+			Input_Digital_Start_Button = Category_inputSettings.CreateEntry("Controller Start", KeyCode.O, description: "Key used as replacement for Start button");
+			Input_Digital_L_Stick_Button = Category_inputSettings.CreateEntry("Controller Left Stick Click", KeyCode.LeftControl, description: "Key used as replacement for Left stick click - generally used for crouching");
+			Input_Digital_R_Stick_Button = Category_inputSettings.CreateEntry("Controller Right Stick Click", KeyCode.Mouse2, description: "Key used as replacement for Right stick click");
+			Input_Digital_Up_Button = Category_inputSettings.CreateEntry("Controller Dpad up", KeyCode.UpArrow, description: "Key used as replacement for D-pad up");
+			Input_Digital_Right_Button = Category_inputSettings.CreateEntry("Controller Dpad right", KeyCode.RightArrow, description: "Key used as replacement for D-pad right");
+			Input_Digital_Down_Button = Category_inputSettings.CreateEntry("Controller Dpad down", KeyCode.DownArrow, description: "Key used as replacement for D-pad down");
+			Input_Digital_Left_Button = Category_inputSettings.CreateEntry("Controller Dpad left", KeyCode.LeftArrow, description: "Key used as replacement for D-pad left");
+			Input_Digital_LT = Category_inputSettings.CreateEntry("Controller Left Trigger", KeyCode.Mouse1, description: "Key used as replacemen for Left trigger pull - generally aiming");
+			Input_Digital_RT = Category_inputSettings.CreateEntry("Controller Right Trigger", KeyCode.Mouse0, description: "Key used as replacemen for Right trigger pull - generally punching / shooting");
+		}
+
+		private void RegisterOtherSettings()
+		{
 			Entry_Other_SkipIntros = Category_otherSettings.CreateEntry("Skip intros", true, description: "Allows to skip splash screns / intros and go straight to menu! Disable in case of issues");
 			Entry_Other_Prompts = Category_otherSettings.CreateEntry("Controller Prompts", "", description: "Asset bundle file name that is containing replacement prompts atlas. Make sure to use correct Steam Input binding for the keys to correspond to displayed prompts.");
 			Entry_Other_ShowAdvanced = Category_otherSettings.CreateEntry("Show advanced settings", false, description: "Shows advanced options in GUI.");
