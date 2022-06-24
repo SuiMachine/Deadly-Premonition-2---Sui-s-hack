@@ -56,8 +56,8 @@ namespace SuisHack.InputHandling
 			var newUpDown = inputValUp + inputValDown;
 
 			analogVector = new Vector2(
-				Mathf.MoveTowards(analogVector.x, newLeftRight, Time.deltaTime * maxDelta),
-				Mathf.MoveTowards(analogVector.y, newUpDown, Time.deltaTime * maxDelta));
+				Mathf.MoveTowards(analogVector.x, newLeftRight, Time.unscaledDeltaTime * maxDelta),
+				Mathf.MoveTowards(analogVector.y, newUpDown, Time.unscaledDeltaTime * maxDelta));
 
 			if (analogVector.magnitude > 1)
 				analogVector.Normalize();
