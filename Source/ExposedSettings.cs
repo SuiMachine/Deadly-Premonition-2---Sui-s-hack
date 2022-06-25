@@ -14,6 +14,13 @@ namespace SuisHack
 			KeyboardAndMouse
 		}
 
+		public enum LightImprovements
+		{
+			Original,
+			Minor,
+			All
+		}
+
 		//Categories
 		MelonPreferences_Category Category_mainDisplay;
 		MelonPreferences_Category Category_graphicsSettings;
@@ -80,6 +87,7 @@ namespace SuisHack
 		public MelonPreferences_Entry<bool> Entry_Other_ShowAdvanced;
 		public MelonPreferences_Entry<bool> Entry_Other_InterpolateMovement;
 		public MelonPreferences_Entry<bool> Entry_Other_FixGeometry;
+		public MelonPreferences_Entry<LightImprovements> Entry_Other_LightImprovements;
 
 		public ExposedSettings()
 		{
@@ -198,7 +206,8 @@ namespace SuisHack
 			Entry_Other_InterpolateMovement.OnValueChanged += (bool oldValue, bool newVal) => { Components.SmootherController.InterpolateMovement = newVal; };
 			Components.SmootherController.InterpolateMovement = Entry_Other_InterpolateMovement.Value;
 
-			Entry_Other_FixGeometry = Category_otherSettings.CreateEntry("Fix geometry", true, description: "Applies additional scripts on level load to fix some geometry issues");
+			Entry_Other_FixGeometry = Category_otherSettings.CreateEntry("Fix geometry", true, description: "Applies additional scripts on level load to fix some geometry issues.");
+			Entry_Other_LightImprovements = Category_otherSettings.CreateEntry("Improve lights", LightImprovements.Minor, description: "Modifies light sources to improve the game's looks. Options are: Original / Minor / All - All can introduce some performance problems. Minor should be generally safe.");
 		}
 
 		public LemonTuple<int, int> Resolution;

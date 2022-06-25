@@ -41,7 +41,6 @@ namespace SuisHack.Hacks
 			harmonyInstance.Patch(originalGetDigitalActionMethod, prefix: new HarmonyLib.HarmonyMethod(targetGetDigitalActionMethod));
 		}
 
-		//[HarmonyPatch(typeof(SteamInput), "GetAnalogActionData")]
 		public static bool GetAnalogActionDataPrefix(ref InputAnalogActionData_t __result, InputHandle_t inputHandle, InputAnalogActionHandle_t analogActionHandle)
 		{
 			if (GlobalInputHookHandler.Instance != null)
@@ -63,8 +62,6 @@ namespace SuisHack.Hacks
 				return true;
 		}
 
-/*		[HarmonyPrefix]
-		[HarmonyPatch(typeof(SteamInput), "GetDigitalActionData")]*/
 		public static bool GetDigitalActionDataPrefix(ref InputDigitalActionData_t __result, InputHandle_t inputHandle, InputDigitalActionHandle_t digitalActionHandle)
 		{
 			if (GlobalInputHookHandler.Instance != null)
@@ -85,18 +82,5 @@ namespace SuisHack.Hacks
 			else
 				return true;
 		}
-
-/*		static HashSet<string> LMAO = new HashSet<string>();
-
-		[HarmonyPrefix]
-		[HarmonyPatch(typeof(SteamInput), "GetDigitalActionHandle")]
-		public static void GetDigitalInputHandle(string pszActionName)
-		{
-			if(!LMAO.Contains(pszActionName))
-			{
-				SuisHackMain.loggerInst.Error($"Input: {pszActionName}");
-				LMAO.Add(pszActionName);
-			}
-		}*/
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using MelonLoader;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,8 +23,17 @@ namespace SuisHack
 				Hacks.SteamInputHook.InitializeKeyboardAndMouse();
 
 			SettingsGUI.Initialize();
-			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
+			InitializeManualHarmonyHooks();
+
 			LoggerInstance.Msg("Sui's Hack loaded");
+		}
+
+		private void InitializeManualHarmonyHooks()
+		{
+			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
+			Hacks.NpcTestHook.Initialize();
+			Hacks.Lights.LightActiveCheckHook.Initialize();
+			Hacks.Lights.NpcVehicleHook.Initialize();
 		}
 
 		public override void OnSceneWasLoaded(int buildIndex, string sceneName)
@@ -32,19 +42,33 @@ namespace SuisHack
 			if (Settings != null)
 			{
 				Application.targetFrameRate = Settings.Entry_DesiredFramerate.Value;
-				if(Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
+				if (Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
 					GlobalGameObjects.GlobalInputHookHandler.Initialize();
 
-				if (Settings.Entry_Other_FixGeometry.Value && sceneName == OPENWORLDSCENENAME)
+				if (sceneName == OPENWORLDSCENENAME)
 				{
-					if (GameObject.FindObjectOfType<Components.WireRenderCorrectionChecker>() == null)
+					if (Settings.Entry_Other_FixGeometry.Value)
 					{
-						var scene = SceneManager.GetSceneByName(OPENWORLDSCENENAME);
-						var oldActiveScene = SceneManager.GetActiveScene();
-						SceneManager.SetActiveScene(scene);
-						var newGameObject = new GameObject("WireRendererCorrection");
-						SceneManager.SetActiveScene(oldActiveScene);
-						newGameObject.AddComponent<Components.WireRenderCorrectionChecker>();
+						if (GameObject.FindObjectOfType<Components.WireRenderCorrectionChecker>() == null)
+						{
+							var scene = SceneManager.GetSceneByName(OPENWORLDSCENENAME);
+							var oldActiveScene = SceneManager.GetActiveScene();
+							SceneManager.SetActiveScene(scene);
+							var newGameObject = new GameObject("WireRendererCorrection");
+							SceneManager.SetActiveScene(oldActiveScene);
+							newGameObject.AddComponent<Components.WireRenderCorrectionChecker>();
+						}
+					}
+				}
+				else
+				{
+					if (Settings.Entry_Other_LightImprovements.Value == ExposedSettings.LightImprovements.All)
+					{
+						var lights = GameObject.FindObjectsOfType<Light>();
+						for (int i = 0; i < lights.Length; i++)
+						{
+							lights[i].shadows = LightShadows.Soft;
+						}
 					}
 				}
 			}

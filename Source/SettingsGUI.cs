@@ -583,6 +583,18 @@ namespace SuisHack
 			Settings.Entry_Other_InterpolateMovement.Value = GUILayout.Toggle(Settings.Entry_Other_InterpolateMovement.Value, "Interpolate movement", null);
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
+			Settings.Entry_Other_FixGeometry.Value = GUILayout.Toggle(Settings.Entry_Other_FixGeometry.Value, "Geometry fixes", null);
+			GUILayout.EndHorizontal();
+			GUILayout.BeginHorizontal(GUI.skin.box, null);
+			GUILayout.Label("* Light improvements:", null);
+			if (GUILayout.Button("Disabled", null))
+				Settings.Entry_Other_LightImprovements.Value = ExposedSettings.LightImprovements.Original;
+			if (GUILayout.Button("Minor (performance safe)", null))
+				Settings.Entry_Other_LightImprovements.Value = ExposedSettings.LightImprovements.Minor;
+			if (GUILayout.Button("All", null))
+				Settings.Entry_Other_LightImprovements.Value = ExposedSettings.LightImprovements.All;
+			GUILayout.EndHorizontal();
+			GUILayout.BeginHorizontal(GUI.skin.box, null);
 			GUILayout.BeginVertical(null);
 			var promptsUsed = Settings.Entry_Other_Prompts.Value == "" ? "None" : Settings.Entry_Other_Prompts.Value;
 
