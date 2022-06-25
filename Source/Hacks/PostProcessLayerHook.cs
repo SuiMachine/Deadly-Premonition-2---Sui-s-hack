@@ -9,7 +9,7 @@ namespace SuisHack.Hacks
 	[HarmonyPatch]
 	public static class PostProcessLayerHook
 	{
-		const float TAA_JitterSpread = 0.175f;
+		const float TAA_JitterSpread = 0.1f;
 		static List<PostProcessLayer> PostProcessLayerInstances = new List<PostProcessLayer>();
 		private static PostProcessLayer.Antialiasing m_Antialiasing;
 		private static float m_FarClipDistance;
