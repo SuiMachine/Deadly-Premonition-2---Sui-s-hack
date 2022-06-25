@@ -16,6 +16,7 @@ namespace SuisHack.GlobalGameObjects
 		public static Dictionary<string, KeySteamAnalogAction> AnalogInputToInput;
 		public Dictionary<string, KeySteamDigitalAction> DigitalInputToInput;
 
+
 		internal KeySteamAnalogAction GetAnalogInputReplacement(InputAnalogActionHandle_t analogActionHandle)
 		{
 			if (TranslateAnalogBackToInput.TryGetValue(analogActionHandle, out KeySteamAnalogAction value))
@@ -45,6 +46,11 @@ namespace SuisHack.GlobalGameObjects
 				GameObject.DontDestroyOnLoad(gameObject);
 				Instance = gameObject.AddComponent<GlobalInputHookHandler>();
 			}
+		}
+
+		public KeyCode GetReplacementPrompt(string gamepadKey)
+		{
+			return DigitalInputToInput[gamepadKey].GetBind();
 		}
 
 		private void Awake()

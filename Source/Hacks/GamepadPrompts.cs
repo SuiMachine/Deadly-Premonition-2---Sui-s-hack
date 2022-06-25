@@ -1,5 +1,7 @@
 ﻿using HarmonyLib;
 using SuisHack.GlobalGameObjects;
+using System;
+using static MelonLoader.MelonLogger;
 
 namespace SuisHack.Hacks
 {
@@ -10,45 +12,86 @@ namespace SuisHack.Hacks
 		[HarmonyPatch(typeof(UISprite), "OnInit")]
 		public static void UISpriteOn(UISprite __instance)
 		{
-			if (GlobalReplacementAtlas.Instance.Atlas != null && __instance.mSpriteName != null)
+			if (GlobalReplacementAtlas.Instance != null && __instance.mSpriteName != null)
 			{
-				switch (__instance.mSpriteName)
+				switch (GlobalReplacementAtlas.Instance.ReplacementTypeUsed)
 				{
-					case "NX_Cont_Button_A":
-						UIKeyGuideItemReplaceSprite(__instance, "A");
+					case GlobalReplacementAtlas.ReplacementType.KeyboardAndMouse:
+						ReplaceKeyboardMouse(__instance);
 						break;
-					case "common_intaract_A":
-						UIKeyGuideItemReplaceSprite(__instance, "A2");
-						break;
-					case "NX_Cont_Button_B":
-						UIKeyGuideItemReplaceSprite(__instance, "B");
-						break;
-					case "NX_Cont_Button_X":
-						UIKeyGuideItemReplaceSprite(__instance, "X");
-						break;
-					case "NX_Cont_Button_Y":
-						UIKeyGuideItemReplaceSprite(__instance, "Y");
+					default:
+						ReplaceGamepadSteamInput(__instance);
 						break;
 				}
 			}
 		}
 
-		private static void UIKeyGuideItemReplaceSprite(UISprite m_buttonIcon, string name)
+		private static void ReplaceGamepadSteamInput(UISprite instance)
 		{
-			var replacementAtlas = GlobalReplacementAtlas.Instance.Atlas;
-			for (int i = 0; i < replacementAtlas.spriteList.Count; i++)
+			switch (instance.mSpriteName)
 			{
-				if (replacementAtlas.spriteList[i].name == name)
-				{
-					var replacement = replacementAtlas.spriteList[i];
-					m_buttonIcon.atlas = replacementAtlas;
-					m_buttonIcon.SetAtlasSprite(replacement);
-					//SuisHackMain.loggerInst.Msg($"Replaced! {name}");
-					return;
-				}
+				case "NX_Cont_Button_A":
+					GlobalReplacementAtlas.Instance.Replace(instance, GamepadKeys.A);
+					break;
+				case "common_intaract_A":
+					GlobalReplacementAtlas.Instance.Replace(instance, GamepadKeys.A2);
+					break;
+				case "NX_Cont_Button_B":
+					GlobalReplacementAtlas.Instance.Replace(instance, GamepadKeys.B);
+					break;
+				case "NX_Cont_Button_X":
+					GlobalReplacementAtlas.Instance.Replace(instance, GamepadKeys.X);
+					break;
+				case "NX_Cont_Button_Y":
+					GlobalReplacementAtlas.Instance.Replace(instance, GamepadKeys.Y);
+					break;
 			}
+		}
 
-			SuisHackMain.loggerInst.Msg($"Failed to replace {m_buttonIcon.mSpriteName}");
+		private static void ReplaceKeyboardMouse(UISprite instance)
+		{
+			switch (instance.mSpriteName)
+			{
+				//Seriously - fuck Nintendo and their layout!
+				case "NX_Cont_Button_A":
+				case "common_intaract_A":
+					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("B_Button"));
+					break;
+				case "NX_Cont_Button_B":
+					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("A_Button"));
+					break;
+				case "NX_Cont_Button_X":
+					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("Y_Button"));
+					break;
+				case "NX_Cont_Button_Y":
+					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("X_Button"));
+					break;
+				case "NX_Cont_Button_-":
+					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("Back_Button"));
+					break;
+				case "NX_Cont_Button_ZL":
+					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("LT"));
+					break;
+				case "NX_Cont_Button_L":
+					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("LB"));
+					break;
+				case "NX_Cont_Button_+":
+					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("Start_Button"));
+					break;
+				case "NX_Cont_Button_ZR":
+					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("RT"));
+					break;
+				case "NX_Cont_Button_R":
+					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("RB"));
+					break;
+				case "NX_stick_button_Stick_Button_L_Push":
+				case "common_intaract_Lpush":
+					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("L_Stick_Button"));
+					break;
+				case "NX_stick_button_Stick_Button_R_Push":
+					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("R_Stick_Button"));
+					break;
+			}
 		}
 	}
 }
