@@ -43,7 +43,6 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 
 # Bugs / To do:
 * (BUG) Resolution is not applied to main window on startup, if focus is on console window.
-* (TODO) Display keyboard and mouse prompts if using Keyboard and mouse hook.
 
 # Notes
 * Replacing gamepad prompts requires generally requires modifying Steam Input profile, you generally want:

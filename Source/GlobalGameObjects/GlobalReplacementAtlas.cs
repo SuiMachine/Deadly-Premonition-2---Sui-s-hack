@@ -7,9 +7,17 @@ namespace SuisHack.GlobalGameObjects
 	[MelonLoader.RegisterTypeInIl2Cpp]
 	public class GlobalReplacementAtlas : MonoBehaviour
 	{
+		public enum ReplacementType
+		{
+			Basic,
+			KeyboardAndMouse
+		}
+
 		public static GlobalReplacementAtlas Instance { get; private set; }
-		public UIAtlas Atlas { get; private set; }
+		private UIAtlas Atlas;
 		public GlobalReplacementAtlas(IntPtr ptr) : base(ptr) { }
+		public IPromptCache Cache { get; private set; }
+		public ReplacementType ReplacementTypeUsed { get; private set; }
 
 		public static void Initialize()
 		{
@@ -23,15 +31,23 @@ namespace SuisHack.GlobalGameObjects
 
 		void Awake()
 		{
-			if (SuisHackMain.Settings.Entry_Other_Prompts.Value != "")
+			if (SuisHackMain.Settings.Entry_Other_Prompts.Value != "" || SuisHackMain.Settings.Input_Override.Value != ExposedSettings.InputType.Original)
 			{
-				string path = Path.Combine(Path.Combine(Application.streamingAssetsPath, "Prompts"), SuisHackMain.Settings.Entry_Other_Prompts.Value);
+				var assetBundlePath = SuisHackMain.Settings.Entry_Other_Prompts.Value;
+				this.ReplacementTypeUsed = ReplacementType.Basic;
+				if (SuisHackMain.Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
+				{
+					this.ReplacementTypeUsed = ReplacementType.KeyboardAndMouse;
+					assetBundlePath = "keyboard";
+				}
+
+				string path = Path.Combine(Path.Combine(Application.streamingAssetsPath, "Prompts"), assetBundlePath);
 				SuisHackMain.loggerInst.Msg("Trying to load replacement prompts using bundle: " + path);
 
 				var assetBundle = AssetBundle.LoadFromFile(path);
 				if (assetBundle == null)
 				{
-					SuisHackMain.loggerInst.Msg("Failed to load asset bundle!");
+					SuisHackMain.loggerInst.Error("Failed to load asset bundle!");
 					return;
 				}
 
@@ -49,26 +65,45 @@ namespace SuisHack.GlobalGameObjects
 							instanitate.transform.localPosition = Vector3.zero;
 							instanitate.transform.localRotation = Quaternion.identity;
 							Atlas = instanitate.GetComponentInChildren<UIAtlas>();
+
+							switch (ReplacementTypeUsed)
+							{
+								case ReplacementType.KeyboardAndMouse:
+									Cache = new PromptCacheKeyboard(Atlas);
+									break;
+								default:
+									Cache = new PromptCacheBasic(Atlas);
+									break;
+							}
 						}
 						else
 						{
-							SuisHackMain.loggerInst.Msg("Atlas Game object was found, but UIAtlas was null. Crap!");
+							SuisHackMain.loggerInst.Error("Atlas Game object was found, but UIAtlas was null. Crap!");
 							return;
 						}
 					}
 					else
 					{
-						SuisHackMain.loggerInst.Msg("Atlas game object cast failed - object might be invalid.");
+						SuisHackMain.loggerInst.Error("Atlas game object cast failed - object might be invalid.");
 						return;
 					}
 				}
 				else
-					SuisHackMain.loggerInst.Msg("Failed to find Xbox atlas... fuck!");
+					SuisHackMain.loggerInst.Error("Failed to find Xbox atlas... fuck!");
 
 				if (Atlas != null)
 					SuisHackMain.loggerInst.Msg("Replacement atlas loaded correctly!!");
 			}
+		}
 
+		public void Replace(UISprite instance, Enum keyEnum)
+		{
+			var replacement = Cache.GetReplacement(keyEnum);
+			if (replacement != null)
+			{
+				instance.atlas = Atlas;
+				instance.SetAtlasSprite(replacement);
+			}
 		}
 	}
 }
