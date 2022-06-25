@@ -7,9 +7,16 @@ namespace SuisHack.GlobalGameObjects
 	[MelonLoader.RegisterTypeInIl2Cpp]
 	public class GlobalReplacementAtlas : MonoBehaviour
 	{
+		public enum ReplacementType
+		{
+			Basic,
+			KeyboardAndMouse
+		}
+
 		public static GlobalReplacementAtlas Instance { get; private set; }
 		public UIAtlas Atlas { get; private set; }
 		public GlobalReplacementAtlas(IntPtr ptr) : base(ptr) { }
+		private ReplacementType replacementType;
 
 		public static void Initialize()
 		{
@@ -23,9 +30,17 @@ namespace SuisHack.GlobalGameObjects
 
 		void Awake()
 		{
-			if (SuisHackMain.Settings.Entry_Other_Prompts.Value != "")
+			if (SuisHackMain.Settings.Entry_Other_Prompts.Value != "" || SuisHackMain.Settings.Input_Override.Value != ExposedSettings.InputType.Original)
 			{
-				string path = Path.Combine(Path.Combine(Application.streamingAssetsPath, "Prompts"), SuisHackMain.Settings.Entry_Other_Prompts.Value);
+				var assetBundlePath = SuisHackMain.Settings.Entry_Other_Prompts.Value;
+				this.replacementType = ReplacementType.Basic;
+				if(SuisHackMain.Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
+				{
+					this.replacementType = ReplacementType.KeyboardAndMouse;
+					assetBundlePath = "keyboard";
+				}
+
+				string path = Path.Combine(Path.Combine(Application.streamingAssetsPath, "Prompts"), assetBundlePath);
 				SuisHackMain.loggerInst.Msg("Trying to load replacement prompts using bundle: " + path);
 
 				var assetBundle = AssetBundle.LoadFromFile(path);
