@@ -9,6 +9,7 @@ namespace SuisHack.Hacks
 	[HarmonyPatch]
 	public static class PostProcessLayerHook
 	{
+		const float TAA_JitterSpread = 0.175f;
 		static List<PostProcessLayer> PostProcessLayerInstances = new List<PostProcessLayer>();
 		private static PostProcessLayer.Antialiasing m_Antialiasing;
 		private static float m_FarClipDistance;
@@ -23,6 +24,8 @@ namespace SuisHack.Hacks
 				foreach (var postProcess in PostProcessLayerInstances)
 				{
 					postProcess.antialiasingMode = value;
+					postProcess.temporalAntialiasing.jitterSpread = TAA_JitterSpread;
+
 				}
 			}
 		}
@@ -58,7 +61,8 @@ namespace SuisHack.Hacks
 		[HarmonyPatch(typeof(PostProcessLayer), "OnEnable")]
 		public static void PostProcessLayerAwakePostfix(PostProcessLayer __instance)
 		{
-			__instance.antialiasingMode = SuisHackMain.Settings.Entry_Antialiasing.Value;
+			__instance.antialiasingMode = m_Antialiasing;
+			__instance.temporalAntialiasing.jitterSpread = TAA_JitterSpread;
 			if (!PostProcessLayerInstances.Contains(__instance))
 				PostProcessLayerInstances.Add(__instance);
 
