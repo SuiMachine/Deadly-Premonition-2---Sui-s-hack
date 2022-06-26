@@ -25,7 +25,54 @@ namespace SuisHack.Hacks
 				{
 					postProcess.antialiasingMode = value;
 					postProcess.temporalAntialiasing.jitterSpread = TAA_JitterSpread;
+				}
+			}
+		}
 
+		private static HBAO_Core.Preset m_HBAO_Preset = HBAO_Core.Preset.FastestPerformance;
+		public static HBAO_Core.Preset HBAO_Preset
+		{
+			get { return m_HBAO_Preset; }
+			set
+			{
+				if (m_HBAO_Preset != value)
+				{
+					ClearNullReferences();
+
+					m_HBAO_Preset = value;
+					ApplyHBAOChange();
+
+				}
+			}
+		}
+
+		private static float m_HBAO_Intensity = 1f;
+		public static float HBAO_Intensity
+		{
+			get { return m_HBAO_Intensity; }
+			set
+			{
+				if (m_HBAO_Intensity != value)
+				{
+					ClearNullReferences();
+
+					m_HBAO_Intensity = value;
+					ApplyHBAOChange();
+				}
+			}
+		}
+
+		private static void ApplyHBAOChange()
+		{
+			foreach (var postprocess in PostProcessLayerInstances)
+			{
+				var hbao = postprocess.GetComponent<HBAO>();
+				if (hbao != null)
+				{
+					hbao.ApplyPreset(m_HBAO_Preset);
+					var settings = hbao.aoSettings;
+					settings.intensity = m_HBAO_Intensity;
+					hbao.aoSettings = settings;
 				}
 			}
 		}
@@ -38,10 +85,10 @@ namespace SuisHack.Hacks
 				ClearNullReferences();
 
 				m_FarClipDistance = value;
-				foreach(var postProcess in PostProcessLayerInstances)
+				foreach (var postProcess in PostProcessLayerInstances)
 				{
 					var camera = postProcess.GetComponent<Camera>();
-					if(camera != null)
+					if (camera != null)
 					{
 						camera.farClipPlane = m_FarClipDistance;
 					}
@@ -67,34 +114,19 @@ namespace SuisHack.Hacks
 				PostProcessLayerInstances.Add(__instance);
 
 			var camera = __instance.GetComponent<Camera>();
-			if(camera != null)
+			if (camera != null)
 			{
 				camera.farClipPlane = m_FarClipDistance;
 			}
 
-
-/*			var volume = __instance.GetComponentInChildren<PostProcessVolume>();
-			if (volume != null)
+			var hbao = __instance.GetComponent<HBAO>();
+			if (hbao != null)
 			{
-				var motionBlur = volume.profile.GetSetting<MotionBlur>();
-				if (motionBlur != null)
-				{
-					SuisHackMain.loggerInst.Msg("Has motion blur");
-*//*					motionBlur.active = true;
-					motionBlur.shutterAngle.overrideState = true;
-					motionBlur.shutterAngle.value = 270;
-					motionBlur.sampleCount.overrideState = true;
-					motionBlur.sampleCount.value = 16;
-*//*
-				}
-				else
-				{
-					SuisHackMain.loggerInst.Msg("Motion blur was null");
-				}
+				hbao.ApplyPreset(m_HBAO_Preset);
+				var settings = hbao.aoSettings;
+				settings.intensity = m_HBAO_Intensity;
+				hbao.aoSettings = settings;
 			}
-			else
-				SuisHackMain.loggerInst.Msg("Volume was null");*/
-
 		}
 
 		internal static string GetShortName()

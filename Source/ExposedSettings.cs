@@ -1,6 +1,5 @@
 ﻿using MelonLoader;
 using MelonLoader.Preferences;
-using System;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -14,9 +13,16 @@ namespace SuisHack
 			KeyboardAndMouse
 		}
 
+		public enum GeometryImprovements
+		{
+			Disabled,
+			Minor,
+			All
+		}
+
 		public enum LightImprovements
 		{
-			Original,
+			Disabled,
 			Minor,
 			All
 		}
@@ -56,6 +62,8 @@ namespace SuisHack
 		public MelonPreferences_Entry<int> Entry_Quality_PixelLightCount;
 		public MelonPreferences_Entry<int> Entry_Quality_TextureQuality;
 		public MelonPreferences_Entry<int> Entry_Quality_MirrorReflectionResolution;
+		public MelonPreferences_Entry<HBAO_Core.Preset> Entry_Quality_HBAO_Preset;
+		public MelonPreferences_Entry<float> Entry_Quality_HBAO_Intensity;
 
 		//Input settings
 		public MelonPreferences_Entry<InputType> Input_Override;
@@ -86,7 +94,7 @@ namespace SuisHack
 		public MelonPreferences_Entry<string> Entry_Other_Prompts;
 		public MelonPreferences_Entry<bool> Entry_Other_ShowAdvanced;
 		public MelonPreferences_Entry<bool> Entry_Other_InterpolateMovement;
-		public MelonPreferences_Entry<bool> Entry_Other_FixGeometry;
+		public MelonPreferences_Entry<GeometryImprovements> Entry_Other_GeometryImprovements;
 		public MelonPreferences_Entry<LightImprovements> Entry_Other_LightImprovements;
 
 		public ExposedSettings()
@@ -163,6 +171,14 @@ namespace SuisHack
 			Entry_Quality_MirrorReflectionResolution.OnValueChanged += (int oldValue, int newValue) => { Hacks.MirrorReflectionHook.ReflectionSize = newValue; };
 			Hacks.MirrorReflectionHook.ReflectionSize = Entry_Quality_MirrorReflectionResolution.Value;
 
+			Entry_Quality_HBAO_Preset = Category_graphicsSettings.CreateEntry("HBAO Preset", HBAO_Core.Preset.FastestPerformance, description: "Preset to use to override HBAO. Options are: FastestPerformance / FastPerformance / Normal / HighQuality / HighestQuality. Default is FastestPerformance. For Normal and higher, consider lowering HBAO intensity.");
+			Entry_Quality_HBAO_Preset.OnValueChanged += (HBAO_Core.Preset oldValue, HBAO_Core.Preset newValue) => { Hacks.PostProcessLayerHook.HBAO_Preset = newValue; };
+			Hacks.PostProcessLayerHook.HBAO_Preset = Entry_Quality_HBAO_Preset.Value;
+
+			Entry_Quality_HBAO_Intensity = Category_graphicsSettings.CreateEntry("HBAO Intensity", 1.0f, description: "HBAO intensity - this probably should be lower than 1.0 when using Normal and higher presets.", validator: new ValueRange<float>(0, 1));
+			Entry_Quality_HBAO_Intensity.OnValueChanged += (float oldValue, float newValue) => { Hacks.PostProcessLayerHook.HBAO_Intensity = newValue; };
+			Hacks.PostProcessLayerHook.HBAO_Intensity = Entry_Quality_HBAO_Intensity.Value;
+
 			Entry_Quality_PixelLightCount = Category_graphicsSettings.CreateEntry("PixelLightCount", 4, description: "Pixel Light Count - Default is 4. Affects the maximum number of pixel lights that should affect any object. If there are more lights illuminating an object, the dimmest ones will be rendered as vertex lights.", validator: new ValueRange<int>(0, 8));
 			Entry_Quality_PixelLightCount.OnValueChanged += (int oldValue, int newValue) => { QualitySettings.pixelLightCount = newValue; };
 
@@ -206,8 +222,8 @@ namespace SuisHack
 			Entry_Other_InterpolateMovement.OnValueChanged += (bool oldValue, bool newVal) => { Components.SmootherController.InterpolateMovement = newVal; };
 			Components.SmootherController.InterpolateMovement = Entry_Other_InterpolateMovement.Value;
 
-			Entry_Other_FixGeometry = Category_otherSettings.CreateEntry("Fix geometry", true, description: "Applies additional scripts on level load to fix some geometry issues.");
-			Entry_Other_LightImprovements = Category_otherSettings.CreateEntry("Improve lights", LightImprovements.Minor, description: "Modifies light sources to improve the game's looks. Options are: Original / Minor / All - All can introduce some performance problems. Minor should be generally safe.");
+			Entry_Other_GeometryImprovements = Category_otherSettings.CreateEntry("Geometry improvements", GeometryImprovements.All, description: "Runs additional scripts and shader replacement to improve geometry. Options are: \"Disabled\" / \"Minor\" (only fixes some geometry issues and modifiers a few really bad LOD distance groups) / \"All\" (adds tesselation)");
+			Entry_Other_LightImprovements = Category_otherSettings.CreateEntry("Improve lights", LightImprovements.Minor, description: "Modifies light sources to improve the game's looks. Options are: Disabled / Minor / All - All can introduce some performance problems. Minor should be generally safe.");
 		}
 
 		public LemonTuple<int, int> Resolution;

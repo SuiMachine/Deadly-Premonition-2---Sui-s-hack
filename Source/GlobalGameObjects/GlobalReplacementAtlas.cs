@@ -41,7 +41,7 @@ namespace SuisHack.GlobalGameObjects
 					assetBundlePath = "keyboard";
 				}
 
-				string path = Path.Combine(Path.Combine(Application.streamingAssetsPath, "Prompts"), assetBundlePath);
+				string path = Path.Combine(Path.Combine(Application.streamingAssetsPath, "prompts"), assetBundlePath);
 				SuisHackMain.loggerInst.Msg("Trying to load replacement prompts using bundle: " + path);
 
 				var assetBundle = AssetBundle.LoadFromFile(path);

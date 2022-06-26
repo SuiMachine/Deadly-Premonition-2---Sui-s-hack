@@ -169,7 +169,7 @@ namespace SuisHack
 						if (refr >= 0)
 							newRefreshRate = refr;
 					}
-		
+
 					Screen.SetResolution(newResX, newResY, Settings.Entry_Display_DisplayMode.Value, newRefreshRate);
 					Settings.Entry_Display_Resolution.Value = $"{newResX}x{newResY}";
 					resolutionX = newResX.ToString();
@@ -230,7 +230,7 @@ namespace SuisHack
 
 			//FPS cap
 			{
-				if(QualitySettings.vSyncCount == 0)
+				if (QualitySettings.vSyncCount == 0)
 				{
 					GUILayout.BeginHorizontal(GUI.skin.box, null);
 					GUILayout.Label($"FPS cap ({Settings.Entry_DesiredFramerate.Value})", null);
@@ -489,16 +489,40 @@ namespace SuisHack
 				GUILayout.EndHorizontal();
 			}
 
-			//Texture Quality
+			//Planar reflections
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				GUILayout.Label($"Planar reflections resolution ({Hacks.MirrorReflectionHook.ReflectionSize}):", null);
 				var log = Mathf.RoundToInt(Mathf.Log(Hacks.MirrorReflectionHook.ReflectionSize, 2));
 				var newLog = (int)GUILayout.HorizontalSlider(log, 7, 11, null);
-				if(newLog != log)
+				if (newLog != log)
 					Settings.Entry_Quality_MirrorReflectionResolution.Value = (int)Mathf.Pow(2, newLog);
 
 				GUILayout.EndHorizontal();
+			}
+
+			//HBAO
+			{
+				GUILayout.BeginVertical(GUI.skin.box, null);
+				GUILayout.BeginHorizontal(null);
+				GUILayout.Label($"HBAO preset ({Hacks.PostProcessLayerHook.HBAO_Preset}):", null);
+				if (GUILayout.Button("Fastest", null))
+					Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastestPerformance;
+				if (GUILayout.Button("Fast", null))
+					Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastPerformance;
+				if (GUILayout.Button("Normal", null))
+					Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.Normal;
+				if (GUILayout.Button("High", null))
+					Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.HighQuality;
+				if (GUILayout.Button("Highest", null))
+					Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.HighestQuality;
+				GUILayout.EndHorizontal();
+
+				GUILayout.BeginHorizontal(null);
+				GUILayout.Label($"HBAO intensity ({Hacks.PostProcessLayerHook.HBAO_Intensity}):", null);
+				Settings.Entry_Quality_HBAO_Intensity.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_HBAO_Intensity.Value, 0.0f, 1.0f, null);
+				GUILayout.EndHorizontal();
+				GUILayout.EndVertical();
 			}
 
 			//Color space
@@ -583,12 +607,18 @@ namespace SuisHack
 			Settings.Entry_Other_InterpolateMovement.Value = GUILayout.Toggle(Settings.Entry_Other_InterpolateMovement.Value, "Interpolate movement", null);
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			Settings.Entry_Other_FixGeometry.Value = GUILayout.Toggle(Settings.Entry_Other_FixGeometry.Value, "Geometry fixes", null);
+			GUILayout.Label($"* Geometry improvements ({Settings.Entry_Other_GeometryImprovements.Value}):", null);
+			if (GUILayout.Button("Disabled", null))
+				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.Disabled;
+			if (GUILayout.Button("Minor (only fixes)", null))
+				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.Minor;
+			if (GUILayout.Button("All (tesselation etc.)", null))
+				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.All;
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			GUILayout.Label("* Light improvements:", null);
+			GUILayout.Label($"* Light improvements ({Settings.Entry_Other_LightImprovements.Value}):", null);
 			if (GUILayout.Button("Disabled", null))
-				Settings.Entry_Other_LightImprovements.Value = ExposedSettings.LightImprovements.Original;
+				Settings.Entry_Other_LightImprovements.Value = ExposedSettings.LightImprovements.Disabled;
 			if (GUILayout.Button("Minor (performance safe)", null))
 				Settings.Entry_Other_LightImprovements.Value = ExposedSettings.LightImprovements.Minor;
 			if (GUILayout.Button("All", null))
