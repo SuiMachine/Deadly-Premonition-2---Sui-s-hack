@@ -62,14 +62,7 @@ namespace SuisHack
 				}
 				else
 				{
-					if (Settings.Entry_Other_LightImprovements.Value == ExposedSettings.LightImprovements.All)
-					{
-						var lights = GameObject.FindObjectsOfType<Light>();
-						for (int i = 0; i < lights.Length; i++)
-						{
-							lights[i].shadows = LightShadows.Soft;
-						}
-					}
+					LightImprovement.ModifyLights.ModifyOnSceneLoad(sceneName.ToLower());
 				}
 			}
 		}
