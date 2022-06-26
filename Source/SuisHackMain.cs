@@ -11,6 +11,7 @@ namespace SuisHack
 		public static HarmonyLib.Harmony harmonyInst { get; private set; }
 		public static MelonLogger.Instance loggerInst { get; private set; }
 		public static ExposedSettings Settings;
+		private bool AppliedResolutionInMainMenu;
 
 		public override void OnApplicationLateStart()
 		{
@@ -45,7 +46,13 @@ namespace SuisHack
 				if (Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
 					GlobalGameObjects.GlobalInputHookHandler.Initialize();
 
-				if (sceneName == OPENWORLDSCENENAME)
+				if(sceneName == "TitleTest2")
+				{
+					if(!AppliedResolutionInMainMenu)
+						Hacks.ScreenHook.SetResolution1();
+					AppliedResolutionInMainMenu = true;
+				}
+				else if (sceneName == OPENWORLDSCENENAME)
 				{
 					if (Settings.Entry_Other_GeometryImprovements.Value >= ExposedSettings.GeometryImprovements.Minor)
 					{
