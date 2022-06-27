@@ -65,6 +65,14 @@ namespace SuisHack
 		public MelonPreferences_Entry<HBAO_Core.Preset> Entry_Quality_HBAO_Preset;
 		public MelonPreferences_Entry<float> Entry_Quality_HBAO_Intensity;
 
+		public MelonPreferences_Entry<bool> Entry_Quality_SSR_Enable;
+		public MelonPreferences_Entry<ScreenSpaceReflectionPreset> Entry_Quality_SSR_Preset;
+		public MelonPreferences_Entry<ScreenSpaceReflectionResolution> Entry_Quality_SSR_Resolution;
+		public MelonPreferences_Entry<float> Entry_Quality_SSR_Tickness;
+		public MelonPreferences_Entry<float> Entry_Quality_SSR_Vignette;
+		public MelonPreferences_Entry<float> Entry_Quality_SSR_DistanceFade;
+		public MelonPreferences_Entry<float> Entry_Quality_SSR_MaxMarchingDistance;
+
 		//Input settings
 		public MelonPreferences_Entry<InputType> Input_Override;
 		public MelonPreferences_Entry<float> Input_Analog_LeftStickFloatTime;
@@ -128,6 +136,7 @@ namespace SuisHack
 
 		private void RegisterGraphicsSettings()
 		{
+			//I was originally planning on writting some wrapper to set up these events, but why should I when I can have a wall of text!
 			Entry_Antialiasing = Category_graphicsSettings.CreateEntry("Antialiasing", PostProcessLayer.Antialiasing.FastApproximateAntialiasing, description: "Experimental: Antialiasing used by the game. Options are: \"None\" (disables AA) / \"FastApproximateAntialiasing\" (FXAA) / \"SubpixelMorphologicalAntialiasing\" (SMAA) / \"TemporalAntialiasing\" (TAA). Default on PC is \"FastApproximateAntialiasing\". MSAA is not available due to the game using deferred rendering path.");
 			Entry_Antialiasing.OnValueChanged += (PostProcessLayer.Antialiasing oldVal, PostProcessLayer.Antialiasing newVal) => { Hacks.PostProcessLayerHook.Antialiasing = newVal; };
 
@@ -178,6 +187,34 @@ namespace SuisHack
 			Entry_Quality_HBAO_Intensity = Category_graphicsSettings.CreateEntry("HBAO Intensity", 1.0f, description: "HBAO intensity - this probably should be lower than 1.0 when using Normal and higher presets.", validator: new ValueRange<float>(0, 1));
 			Entry_Quality_HBAO_Intensity.OnValueChanged += (float oldValue, float newValue) => { Hacks.PostProcessLayerHook.HBAO_Intensity = newValue; };
 			Hacks.PostProcessLayerHook.HBAO_Intensity = Entry_Quality_HBAO_Intensity.Value;
+
+			Entry_Quality_SSR_Enable = Category_graphicsSettings.CreateEntry("SSR Enable", false, description: "Enables Screen Space Reflection override");
+			Entry_Quality_SSR_Enable.OnValueChanged += (bool oldValue, bool newValue) => { Hacks.PostProcessLayerHook.SSR_Enabled = newValue; };
+			Hacks.PostProcessLayerHook.SSR_Enabled = Entry_Quality_SSR_Enable.Value;
+
+			Entry_Quality_SSR_Preset = Category_graphicsSettings.CreateEntry("SSR Preset", ScreenSpaceReflectionPreset.Medium, description: "Sets Screen Space Reflection preset. Can be Lower / Low / Medium / High / Higher / Ultra / Overkill. Generally you shouldn't use Overkill.");
+			Entry_Quality_SSR_Preset.OnValueChanged += (ScreenSpaceReflectionPreset oldValue, ScreenSpaceReflectionPreset newValue) => { Hacks.PostProcessLayerHook.SSR_Preset = newValue; };
+			Hacks.PostProcessLayerHook.SSR_Preset = Entry_Quality_SSR_Preset.Value;
+
+			Entry_Quality_SSR_Resolution = Category_graphicsSettings.CreateEntry("SSR Resolution", ScreenSpaceReflectionResolution.Downsampled, description: "Sets Screen Space Reflections resolution. Can be Downsampled / FullSize / Supersampled. Generally you shouldn't use Supersampled.");
+			Entry_Quality_SSR_Resolution.OnValueChanged += (ScreenSpaceReflectionResolution oldValue, ScreenSpaceReflectionResolution newValue) => { Hacks.PostProcessLayerHook.SSR_Resolution = newValue; };
+			Hacks.PostProcessLayerHook.SSR_Resolution = Entry_Quality_SSR_Resolution.Value;
+
+			Entry_Quality_SSR_Tickness = Category_graphicsSettings.CreateEntry("SSR Tickness", 1f, description: "Sets Screen Space Reflections tickness value", validator: new ValueRange<float>(0, 1));
+			Entry_Quality_SSR_Tickness.OnValueChanged += (float oldValue, float newValue) => { Hacks.PostProcessLayerHook.SSR_Tickness = newValue; };
+			Hacks.PostProcessLayerHook.SSR_Tickness = Entry_Quality_SSR_Tickness.Value;
+
+			Entry_Quality_SSR_Vignette = Category_graphicsSettings.CreateEntry("SSR Vignette", 0.15f, description: "Sets Screen Space Reflections vigniette value, which smoothly disables reflections towards the edges of the screen", validator: new ValueRange<float>(0, 1));
+			Entry_Quality_SSR_Vignette.OnValueChanged += (float oldValue, float newValue) => { Hacks.PostProcessLayerHook.SSR_Vignette = newValue; };
+			Hacks.PostProcessLayerHook.SSR_Vignette = Entry_Quality_SSR_Vignette.Value;
+
+			Entry_Quality_SSR_DistanceFade = Category_graphicsSettings.CreateEntry("SSR Distance fade", 0.01f, description: "Sets Screen Space Reflections distance fade value. Keep it really low to reduce SSR glow-like effect around silhouettes", validator: new ValueRange<float>(0, 0.5f));
+			Entry_Quality_SSR_DistanceFade.OnValueChanged += (float oldValue, float newValue) => { Hacks.PostProcessLayerHook.SSR_DistanceFade = newValue; };
+			Hacks.PostProcessLayerHook.SSR_DistanceFade = Entry_Quality_SSR_DistanceFade.Value;
+
+			Entry_Quality_SSR_MaxMarchingDistance = Category_graphicsSettings.CreateEntry("SSR Max Marching Distance", 100f, description: "Sets Screen Space Reflections max maching distance value, after which the ray is terminated.", validator: new ValueRange<float>(50, 250));
+			Entry_Quality_SSR_MaxMarchingDistance.OnValueChanged += (float oldValue, float newValue) => { Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance = newValue; };
+			Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance = Entry_Quality_SSR_MaxMarchingDistance.Value;
 
 			Entry_Quality_PixelLightCount = Category_graphicsSettings.CreateEntry("PixelLightCount", 4, description: "Pixel Light Count - Default is 4. Affects the maximum number of pixel lights that should affect any object. If there are more lights illuminating an object, the dimmest ones will be rendered as vertex lights.", validator: new ValueRange<int>(0, 8));
 			Entry_Quality_PixelLightCount.OnValueChanged += (int oldValue, int newValue) => { QualitySettings.pixelLightCount = newValue; };

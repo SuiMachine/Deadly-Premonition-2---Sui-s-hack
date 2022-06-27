@@ -11,8 +11,11 @@ namespace SuisHack.Hacks
 	{
 		const float TAA_JitterSpread = 0.1f;
 		static List<PostProcessLayer> PostProcessLayerInstances = new List<PostProcessLayer>();
+		static List<PostProcessVolume> PostProcessVolumeInstances = new List<PostProcessVolume>();
+
+
+		#region Antialiasing
 		private static PostProcessLayer.Antialiasing m_Antialiasing;
-		private static float m_FarClipDistance;
 		public static PostProcessLayer.Antialiasing Antialiasing
 		{
 			get { return m_Antialiasing; }
@@ -28,7 +31,9 @@ namespace SuisHack.Hacks
 				}
 			}
 		}
+		#endregion
 
+		#region HBAO
 		private static HBAO_Core.Preset m_HBAO_Preset = HBAO_Core.Preset.FastestPerformance;
 		public static HBAO_Core.Preset HBAO_Preset
 		{
@@ -61,6 +66,143 @@ namespace SuisHack.Hacks
 				}
 			}
 		}
+		#endregion
+
+		#region Cameras Far Clip Distance
+		private static float m_FarClipDistance;
+		public static float FarClipDistance
+		{
+			get { return m_FarClipDistance; }
+			set
+			{
+				ClearNullReferences();
+
+				m_FarClipDistance = value;
+				foreach (var postProcess in PostProcessLayerInstances)
+				{
+					var camera = postProcess.GetComponent<Camera>();
+					if (camera != null)
+					{
+						camera.farClipPlane = m_FarClipDistance;
+					}
+				}
+			}
+		}
+		#endregion
+
+		#region Screen space reflections
+		private static bool m_SSR_Enabled;
+		public static bool SSR_Enabled
+		{
+			get { return m_SSR_Enabled; }
+			set
+			{
+				if (m_SSR_Enabled != value)
+				{
+					ClearNullReferences();
+
+					m_SSR_Enabled = value;
+					ApplySSRChange();
+				}
+			}
+		}
+
+		private static ScreenSpaceReflectionPreset m_SSR_Preset;
+		public static ScreenSpaceReflectionPreset SSR_Preset
+		{
+			get { return m_SSR_Preset; }
+			set
+			{
+				if (m_SSR_Preset != value)
+				{
+					ClearNullReferences();
+
+					m_SSR_Preset = value;
+					ApplySSRChange();
+				}
+			}
+		}
+
+		private static ScreenSpaceReflectionResolution m_SSR_Resolution;
+		public static ScreenSpaceReflectionResolution SSR_Resolution
+		{
+			get { return m_SSR_Resolution; }
+			set
+			{
+				if (m_SSR_Resolution != value)
+				{
+					ClearNullReferences();
+
+					m_SSR_Resolution = value;
+					ApplySSRChange();
+				}
+			}
+		}
+
+		private static float m_SSR_Tickness;
+		public static float SSR_Tickness
+		{
+			get { return m_SSR_Tickness; }
+			set
+			{
+				if (m_SSR_Tickness != value)
+				{
+					ClearNullReferences();
+
+					m_SSR_Tickness = value;
+					ApplySSRChange();
+				}
+			}
+		}
+
+		private static float m_SSR_Vignette;
+		public static float SSR_Vignette
+		{
+			get { return m_SSR_Vignette; }
+			set
+			{
+				if (m_SSR_Vignette != value)
+				{
+					ClearNullReferences();
+
+					m_SSR_Vignette = value;
+					ApplySSRChange();
+				}
+			}
+		}
+
+		private static float m_SSR_DistanceFade;
+		public static float SSR_DistanceFade
+		{
+			get { return m_SSR_DistanceFade; }
+			set
+			{
+				if (m_SSR_DistanceFade != value)
+				{
+					ClearNullReferences();
+
+					m_SSR_DistanceFade = value;
+					ApplySSRChange();
+				}
+			}
+		}
+
+		private static float m_SSR_MaxMarchingDistance;
+		public static float SSR_MaxMarchingDistance
+		{
+			get { return m_SSR_MaxMarchingDistance; }
+			set
+			{
+				if (m_SSR_MaxMarchingDistance != value)
+				{
+					ClearNullReferences();
+
+					m_SSR_MaxMarchingDistance = value;
+					ApplySSRChange();
+				}
+			}
+		}
+		#endregion
 
 		private static void ApplyHBAOChange()
 		{
@@ -77,21 +219,44 @@ namespace SuisHack.Hacks
 			}
 		}
 
-		public static float FarClipDistance
+		private static void ApplySSRChange()
 		{
-			get { return m_FarClipDistance; }
-			set
+			foreach (var volume in PostProcessVolumeInstances)
 			{
-				ClearNullReferences();
-
-				m_FarClipDistance = value;
-				foreach (var postProcess in PostProcessLayerInstances)
+				for (int i = 0; i < volume.profile.settings.Count; i++)
 				{
-					var camera = postProcess.GetComponent<Camera>();
-					if (camera != null)
+					//Dumb hack, but doesn't for whatever reason Il2CppType.Of<T> doesn't work
+					if (volume.profile.settings[i].GetIl2CppType().ToString() != typeof(ScreenSpaceReflections).ToString())
+						continue;
+
+					var ssr = volume.profile.settings[i].TryCast<ScreenSpaceReflections>();
+
+					if (m_SSR_Enabled)
 					{
-						camera.farClipPlane = m_FarClipDistance;
+						ssr.enabled.overrideState = true;
+						ssr.enabled.value = true;
+						ssr.active = true;
+
+						ssr.preset.overrideState = true;
+						ssr.preset.value = m_SSR_Preset;
+
+						ssr.resolution.overrideState = true;
+						ssr.resolution.value = m_SSR_Resolution;
+
+						ssr.thickness.overrideState = true;
+						ssr.thickness.value = m_SSR_Tickness; //0.3
+
+						ssr.vignette.overrideState = true;
+						ssr.vignette.value = m_SSR_Vignette; //0.3
+
+						ssr.distanceFade.overrideState = true;
+						ssr.distanceFade.value = m_SSR_DistanceFade; //0.1
+
+						ssr.maximumMarchDistance.overrideState = true;
+						ssr.maximumMarchDistance.value = m_SSR_MaxMarchingDistance;
 					}
+					else
+						ssr.enabled.overrideState = false;
 				}
 			}
 		}
@@ -127,6 +292,56 @@ namespace SuisHack.Hacks
 				settings.intensity = m_HBAO_Intensity;
 				hbao.aoSettings = settings;
 			}
+		}
+
+		[HarmonyPostfix]
+		[HarmonyPatch(typeof(PostProcessVolume), "OnEnable")]
+		public static void PostProcessVolumeOnEnablePostfix(PostProcessVolume __instance)
+		{
+			if (!PostProcessVolumeInstances.Contains(__instance))
+				PostProcessVolumeInstances.Add(__instance);
+
+			if (!m_SSR_Enabled)
+				return;
+
+			for (int i = 0; i < __instance.profile.settings.Count; i++)
+			{
+				//Dumb hack, but doesn't for whatever reason Il2CppType.Of<T> doesn't work
+				if (__instance.profile.settings[i].GetIl2CppType().ToString() != typeof(ScreenSpaceReflections).ToString())
+					continue;
+
+				var ssr = __instance.profile.settings[i].TryCast<ScreenSpaceReflections>();
+
+				ssr.enabled.overrideState = true;
+				ssr.enabled.value = true;
+				ssr.active = true;
+
+				ssr.preset.overrideState = true;
+				ssr.preset.value = m_SSR_Preset;
+
+				ssr.resolution.overrideState = true;
+				ssr.resolution.value = m_SSR_Resolution;
+
+				ssr.thickness.overrideState = true;
+				ssr.thickness.value = m_SSR_Tickness; //0.3
+
+				ssr.vignette.overrideState = true;
+				ssr.vignette.value = m_SSR_Vignette; //0.3
+
+				ssr.distanceFade.overrideState = true;
+				ssr.distanceFade.value = m_SSR_DistanceFade; //0.1
+
+				ssr.maximumMarchDistance.overrideState = true;
+				ssr.maximumMarchDistance.value = m_SSR_MaxMarchingDistance;
+			}
+		}
+
+		[HarmonyPostfix]
+		[HarmonyPatch(typeof(PostProcessVolume), "OnDisable")]
+		public static void PostProcessVolumeOnDisablePostfix(PostProcessVolume __instance)
+		{
+			if (PostProcessVolumeInstances.Contains(__instance))
+				PostProcessVolumeInstances.Remove(__instance);
 		}
 
 		internal static string GetShortName()

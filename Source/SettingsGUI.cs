@@ -396,7 +396,7 @@ namespace SuisHack
 					if (QualitySettings.shadowCascades == 2)
 					{
 						GUILayout.BeginHorizontal(null);
-						GUILayout.Label($"Shadow cascades  2 split: ({QualitySettings.shadowCascade2Split}):", null);
+						GUILayout.Label($"Shadow cascades  2 split: ({QualitySettings.shadowCascade2Split:0.00}):", null);
 						float value = QualitySettings.shadowCascade2Split;
 						QualitySettings.shadowCascade2Split = GUILayout.HorizontalSlider(value, 0.01f, 0.5f, null);
 						if (QualitySettings.shadowCascade2Split != value)
@@ -409,15 +409,15 @@ namespace SuisHack
 						float cascade2 = QualitySettings.shadowCascade4Split.y;
 						float cascade3 = QualitySettings.shadowCascade4Split.z;
 						GUILayout.BeginHorizontal(null);
-						GUILayout.Label($"Shadow cascades 1 split: ({cascade1}):", null);
+						GUILayout.Label($"Shadow cascades 1 split: ({cascade1:0.000}):", null);
 						cascade1 = GUILayout.HorizontalSlider(cascade1, 0.01f, 0.5f, null);
 						GUILayout.EndHorizontal();
 						GUILayout.BeginHorizontal(null);
-						GUILayout.Label($"Shadow cascades 2 split: ({cascade2}):", null);
+						GUILayout.Label($"Shadow cascades 2 split: ({cascade2:0.000}):", null);
 						cascade2 = GUILayout.HorizontalSlider(cascade2, 0.1f, 0.8f, null);
 						GUILayout.EndHorizontal();
 						GUILayout.BeginHorizontal(null);
-						GUILayout.Label($"Shadow cascades 3 split: ({cascade3}):", null);
+						GUILayout.Label($"Shadow cascades 3 split: ({cascade3:0.000}):", null);
 						cascade3 = GUILayout.HorizontalSlider(cascade3, 0.02f, 0.9f, null);
 						GUILayout.EndHorizontal();
 
@@ -455,7 +455,7 @@ namespace SuisHack
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				var oldValue = QualitySettings.lodBias;
-				GUILayout.Label($"LOD Bias ({QualitySettings.lodBias.ToString("0.0")}):", null);
+				GUILayout.Label($"LOD Bias ({QualitySettings.lodBias:0.0}):", null);
 				QualitySettings.lodBias = GUILayout.HorizontalSlider(QualitySettings.lodBias, 0.5f, 4f, null);
 				if (oldValue != QualitySettings.lodBias)
 					Settings.Entry_Quality_LODBias.Value = QualitySettings.lodBias;
@@ -519,9 +519,70 @@ namespace SuisHack
 				GUILayout.EndHorizontal();
 
 				GUILayout.BeginHorizontal(null);
-				GUILayout.Label($"HBAO intensity ({Hacks.PostProcessLayerHook.HBAO_Intensity}):", null);
+				GUILayout.Label($"HBAO intensity ({Hacks.PostProcessLayerHook.HBAO_Intensity:0.0}):", null);
 				Settings.Entry_Quality_HBAO_Intensity.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_HBAO_Intensity.Value, 0.0f, 1.0f, null);
 				GUILayout.EndHorizontal();
+				GUILayout.EndVertical();
+			}
+
+			//SSR
+			{
+				GUILayout.BeginVertical(GUI.skin.box, null);
+				Settings.Entry_Quality_SSR_Enable.Value = GUILayout.Toggle(Settings.Entry_Quality_SSR_Enable.Value, "Enable SSR override", null);
+
+				if (Settings.Entry_Quality_SSR_Enable.Value)
+				{
+					GUILayout.BeginHorizontal(null);
+					GUILayout.Label($"SSR preset ({Hacks.PostProcessLayerHook.SSR_Preset}):", null);
+					if (GUILayout.Button("Lower", null))
+						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Lower;
+					if (GUILayout.Button("Low", null))
+						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Low;
+					if (GUILayout.Button("Medium", null))
+						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Medium;
+					if (GUILayout.Button("High", null))
+						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.High;
+					if (GUILayout.Button("Higher", null))
+						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Higher;
+					if (GUILayout.Button("Ultra", null))
+						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Ultra;
+					if (GUILayout.Button("Overkill", null))
+						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Overkill;
+					GUILayout.EndHorizontal();
+
+					GUILayout.BeginHorizontal(null);
+					GUILayout.Label($"SSR resolution ({Hacks.PostProcessLayerHook.SSR_Resolution}):", null);
+					if (GUILayout.Button("Downsampled", null))
+						Settings.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.Downsampled;
+					if (GUILayout.Button("FullSize", null))
+						Settings.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.FullSize;
+					if (GUILayout.Button("Supersampled", null))
+						Settings.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.Supersampled;
+					GUILayout.EndHorizontal();
+
+					if(Settings.Entry_Other_ShowAdvanced.Value)
+					{
+						GUILayout.BeginHorizontal(null);
+						GUILayout.Label($"SSR Tickness ({Hacks.PostProcessLayerHook.SSR_Tickness:0.0}):", null);
+						Settings.Entry_Quality_SSR_Tickness.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_Tickness.Value, 0, 1, null);
+						GUILayout.EndHorizontal();
+
+						GUILayout.BeginHorizontal(null);
+						GUILayout.Label($"SSR Vignette ({Hacks.PostProcessLayerHook.SSR_Vignette:0.0}):", null);
+						Settings.Entry_Quality_SSR_Vignette.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_Vignette.Value, 0, 1, null);
+						GUILayout.EndHorizontal();
+
+						GUILayout.BeginHorizontal(null);
+						GUILayout.Label($"SSR Distance Fade ({Hacks.PostProcessLayerHook.SSR_DistanceFade:0.00}):", null);
+						Settings.Entry_Quality_SSR_DistanceFade.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_DistanceFade.Value, 0, 0.5f, null);
+						GUILayout.EndHorizontal();
+
+						GUILayout.BeginHorizontal(null);
+						GUILayout.Label($"SSR Max Marching Distance ({Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance:0}):", null);
+						Settings.Entry_Quality_SSR_MaxMarchingDistance.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_MaxMarchingDistance.Value, 50, 250, null);
+						GUILayout.EndHorizontal();
+					}
+				}
 				GUILayout.EndVertical();
 			}
 

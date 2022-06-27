@@ -26,7 +26,6 @@ namespace SuisHack.LightImprovement
 						}
 						break;
 				}
-
 			}
 		}
 
