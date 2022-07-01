@@ -1,22 +1,36 @@
 ﻿using HarmonyLib;
+using System;
+using UnityEngine;
 
 namespace SuisHack.Hacks.StateStracking
 {
 	[HarmonyPatch]
-	class MapMenuManagerHook
+	public static class MapMenuManagerHook
 	{
-		[HarmonyPrefix]
-		[HarmonyPatch(typeof(MapMenuManager), nameof(MapMenuManager.OpenMenu))]
-		public static void OpenMenuPrefix()
+		[HarmonyPostfix]
+		[HarmonyPatch(typeof(MapUI), nameof(MapUI.Init))]
+		public static void OpenMenuPrefix(MapUI __instance)
 		{
-			SuisHackMain.CurrentGameState = SuisHackMain.Gamestate.Map;
+			if (__instance.GetComponent<MapUIManagerTracking>() == null)
+			{
+				__instance.gameObject.AddComponent<MapUIManagerTracking>();
+			}
+		}
+	}
+
+	[MelonLoader.RegisterTypeInIl2Cpp]
+	public class MapUIManagerTracking : MonoBehaviour
+	{
+		public MapUIManagerTracking(IntPtr ptr) : base(ptr) { }
+
+		private void OnEnable()
+		{
+			GameStateMachine.MapOpened = true;
 		}
 
-		[HarmonyPrefix]
-		[HarmonyPatch(typeof(MapMenuManager), nameof(MapMenuManager.CloseMenu))]
-		public static void CloseMenuPrefix()
+		private void OnDisable()
 		{
-			SuisHackMain.CurrentGameState = SuisHackMain.Gamestate.StandardGameplay;
+			GameStateMachine.MapOpened = false;
 		}
 	}
 }

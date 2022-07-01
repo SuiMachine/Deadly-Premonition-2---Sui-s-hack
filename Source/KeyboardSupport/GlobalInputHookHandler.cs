@@ -132,19 +132,12 @@ namespace SuisHack.KeyboardSupport
 			}
 		}
 
-		private SuisHackMain.Gamestate oldGameState;
-
 		private void Update()
 		{
 			foreach (var analogInput in AnalogInputToInput)
 			{
 				analogInput.Value.Update();
 			}
-
-			if (oldGameState != SuisHackMain.CurrentGameState)
-				SuisHackMain.loggerInst.Msg($"Changed gamestate to {SuisHackMain.CurrentGameState}");
-
-			oldGameState = SuisHackMain.CurrentGameState;			
 		}
 	}
 }

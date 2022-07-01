@@ -12,7 +12,6 @@ namespace SuisHack
 		public static MelonLogger.Instance loggerInst { get; private set; }
 		public static ExposedSettings Settings;
 		private bool AppliedResolutionInMainMenu;
-		public static Gamestate CurrentGameState;
 
 		public override void OnApplicationStart()
 		{
@@ -69,10 +68,11 @@ namespace SuisHack
 					if(!AppliedResolutionInMainMenu)
 						Hacks.ScreenHook.SetResolution1();
 					AppliedResolutionInMainMenu = true;
-					CurrentGameState = Gamestate.MainMenu;
+					GameStateMachine.MainMenu = true;
 				}
 				else if (sceneName == OPENWORLDSCENENAME)
 				{
+					GameStateMachine.Gameplay = true;
 					if (Settings.Entry_Other_GeometryImprovements.Value >= ExposedSettings.GeometryImprovements.Minor)
 					{
 						if (GameObject.FindObjectOfType<Components.WireRenderCorrectionChecker>() == null)
@@ -88,17 +88,11 @@ namespace SuisHack
 				}
 				else
 				{
+					GameStateMachine.Gameplay = true;
 					LightImprovement.ModifyLights.ModifyOnSceneLoad(sceneName.ToLower());
 				}
 			}
 		}
 
-		public enum Gamestate
-		{
-			MainMenu,
-			StandardGameplay,
-			Map,
-			RedRoom,
-		}
 	}
 }
