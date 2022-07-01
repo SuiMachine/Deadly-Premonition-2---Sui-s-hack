@@ -1,7 +1,6 @@
 ﻿using Steamworks;
-using SuisHack.GlobalGameObjects;
 
-namespace SuisHack.Hacks
+namespace SuisHack.KeyboardSupport
 {
 	public static class SteamInputHook
 	{

@@ -1,8 +1,7 @@
 ﻿using Steamworks;
-using System;
 using UnityEngine;
 
-namespace SuisHack.InputHandling
+namespace SuisHack.KeyboardSupport
 {
 	public class KeySteamDigitalAction
 	{

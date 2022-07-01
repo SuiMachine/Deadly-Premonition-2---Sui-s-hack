@@ -1,50 +1,39 @@
 ﻿using HarmonyLib;
 using SuisHack.GlobalGameObjects;
-using System;
-using static MelonLoader.MelonLogger;
 
-namespace SuisHack.Hacks
+namespace SuisHack.KeyboardSupport
 {
-	[HarmonyPatch]
-	public static class GamepadPromptsFix
+	public static class KeyboardPrompts
 	{
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(UISprite), "OnInit")]
+		public static void Initialize()
+		{
+			if (SuisHackMain.Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
+			{
+				var source = typeof(UISprite).GetMethod(nameof(UISprite.OnInit), System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
+				var target = typeof(KeyboardPrompts).GetMethod(nameof(KeyboardPrompts.UISpriteOn), System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
+
+				if (source == null)
+				{
+					SuisHackMain.loggerInst.Msg("Failed to find source method for GamepadPrompts");
+					return;
+				}
+
+				if (target == null)
+				{
+					SuisHackMain.loggerInst.Msg("Failed to find target method for GamepadPrompts");
+					return;
+				}
+
+				SuisHackMain.harmonyInst.Patch(source, postfix: new HarmonyMethod(target));
+			}
+		}
+
+		
 		public static void UISpriteOn(UISprite __instance)
 		{
 			if (GlobalReplacementAtlas.Instance != null && __instance.mSpriteName != null)
 			{
-				switch (GlobalReplacementAtlas.Instance.ReplacementTypeUsed)
-				{
-					case GlobalReplacementAtlas.ReplacementType.KeyboardAndMouse:
-						ReplaceKeyboardMouse(__instance);
-						break;
-					default:
-						ReplaceGamepadSteamInput(__instance);
-						break;
-				}
-			}
-		}
 
-		private static void ReplaceGamepadSteamInput(UISprite instance)
-		{
-			switch (instance.mSpriteName)
-			{
-				case "NX_Cont_Button_A":
-					GlobalReplacementAtlas.Instance.Replace(instance, GamepadKeys.A);
-					break;
-				case "common_intaract_A":
-					GlobalReplacementAtlas.Instance.Replace(instance, GamepadKeys.A2);
-					break;
-				case "NX_Cont_Button_B":
-					GlobalReplacementAtlas.Instance.Replace(instance, GamepadKeys.B);
-					break;
-				case "NX_Cont_Button_X":
-					GlobalReplacementAtlas.Instance.Replace(instance, GamepadKeys.X);
-					break;
-				case "NX_Cont_Button_Y":
-					GlobalReplacementAtlas.Instance.Replace(instance, GamepadKeys.Y);
-					break;
 			}
 		}
 

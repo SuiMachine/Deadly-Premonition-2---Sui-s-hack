@@ -1,10 +1,9 @@
 ﻿using Steamworks;
-using SuisHack.InputHandling;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SuisHack.GlobalGameObjects
+namespace SuisHack.GlobalInputHookHandler
 {
 	[MelonLoader.RegisterTypeInIl2Cpp]
 	class GlobalInputHookHandler : MonoBehaviour

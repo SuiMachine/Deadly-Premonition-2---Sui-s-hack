@@ -1,7 +1,7 @@
 ﻿using Steamworks;
 using UnityEngine;
 
-namespace SuisHack.InputHandling
+namespace SuisHack.KeyboardSupport
 {
 	public abstract class KeySteamAnalogAction
 	{

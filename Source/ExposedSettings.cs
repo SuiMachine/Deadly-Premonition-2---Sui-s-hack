@@ -72,6 +72,7 @@ namespace SuisHack
 		public MelonPreferences_Entry<float> Entry_Quality_SSR_Vignette;
 		public MelonPreferences_Entry<float> Entry_Quality_SSR_DistanceFade;
 		public MelonPreferences_Entry<float> Entry_Quality_SSR_MaxMarchingDistance;
+		public MelonPreferences_Entry<bool> Entry_Quality_EdgeDetection;
 
 		//Input settings
 		public MelonPreferences_Entry<InputType> Input_Override;
@@ -104,6 +105,7 @@ namespace SuisHack
 		public MelonPreferences_Entry<bool> Entry_Other_InterpolateMovement;
 		public MelonPreferences_Entry<GeometryImprovements> Entry_Other_GeometryImprovements;
 		public MelonPreferences_Entry<LightImprovements> Entry_Other_LightImprovements;
+		public MelonPreferences_Entry<bool> Entry_Other_EnableCheats;
 
 		public ExposedSettings()
 		{
@@ -221,6 +223,10 @@ namespace SuisHack
 
 			Entry_Quality_TextureQuality = Category_graphicsSettings.CreateEntry("Texture quality", 0, description: "Texture quality - default is 0. Higher values cause lower mip maps to be used. Can be used to reduce VRAM usage on low-end devices. 1 will cause half of the original resolution to be used", validator: new ValueRange<int>(0, 1));
 			Entry_Quality_TextureQuality.OnValueChanged += (int oldValue, int newValue) => { QualitySettings.masterTextureLimit = newValue; };
+
+			Entry_Quality_EdgeDetection = Category_graphicsSettings.CreateEntry("Edge Detection Filter", true, description: "Responsible for Enabling/Disabling edge detection post process filter.");
+			Entry_Quality_EdgeDetection.OnValueChanged += (bool oldValue, bool newValue) => { Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = newValue; };
+			Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = Entry_Quality_EdgeDetection.Value;
 		}
 
 		private void RegisterInputSettings()
@@ -261,6 +267,7 @@ namespace SuisHack
 
 			Entry_Other_GeometryImprovements = Category_otherSettings.CreateEntry("Geometry improvements", GeometryImprovements.All, description: "Runs additional scripts and shader replacement to improve geometry. Options are: \"Disabled\" / \"Minor\" (only fixes some geometry issues and modifiers a few really bad LOD distance groups) / \"All\" (adds tesselation)");
 			Entry_Other_LightImprovements = Category_otherSettings.CreateEntry("Improve lights", LightImprovements.Minor, description: "Modifies light sources to improve the game's looks. Options are: Disabled / Minor / All - All can introduce some performance problems. Minor should be generally safe.");
+			Entry_Other_EnableCheats = Category_otherSettings.CreateEntry("Enable cheats", true, description: "Enables access to custom cheat menu.");
 		}
 
 		public LemonTuple<int, int> Resolution;
