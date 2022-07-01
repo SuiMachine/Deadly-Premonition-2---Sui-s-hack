@@ -9,7 +9,7 @@ namespace SuisHack.GamepadSupport
 		{
 			if(SuisHackMain.Settings.Input_Override.Value == ExposedSettings.InputType.Original)
 			{
-				var source = typeof(UISprite).GetMethod(nameof(UISprite.OnInit), System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
+				var source = typeof(UISprite).GetMethod(nameof(UISprite.OnInit), System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
 				var target = typeof(GamepadPrompts).GetMethod(nameof(GamepadPrompts.UISpriteOn), System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
 
 				if (source == null)
@@ -25,6 +25,7 @@ namespace SuisHack.GamepadSupport
 				}
 
 				SuisHackMain.harmonyInst.Patch(source, postfix: new HarmonyMethod(target));
+				SuisHackMain.loggerInst.Msg("Initialized GamepadPrompts patch");
 			}
 		}
 

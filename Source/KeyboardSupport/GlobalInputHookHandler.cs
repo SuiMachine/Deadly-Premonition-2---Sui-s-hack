@@ -9,7 +9,7 @@ namespace SuisHack.KeyboardSupport
 	class GlobalInputHookHandler : MonoBehaviour
 	{
 		public GlobalInputHookHandler(IntPtr ptr) : base(ptr) { }
-		public ExposedSettings Settings => SuisHackMain.Settings;
+		public ExposedSettings Settings;
 
 		public enum SteamInputAnalog
 		{
@@ -81,6 +81,7 @@ namespace SuisHack.KeyboardSupport
 		private void Awake()
 		{
 			SuisHackMain.loggerInst.Msg("Initialized Global Input Hook Handler");
+			Settings = SuisHackMain.Settings;
 		}
 
 		private void Start()
@@ -131,12 +132,19 @@ namespace SuisHack.KeyboardSupport
 			}
 		}
 
+		private SuisHackMain.Gamestate oldGameState;
+
 		private void Update()
 		{
 			foreach (var analogInput in AnalogInputToInput)
 			{
 				analogInput.Value.Update();
 			}
+
+			if (oldGameState != SuisHackMain.CurrentGameState)
+				SuisHackMain.loggerInst.Msg($"Changed gamestate to {SuisHackMain.CurrentGameState}");
+
+			oldGameState = SuisHackMain.CurrentGameState;			
 		}
 	}
 }

@@ -21,7 +21,7 @@ namespace SuisHack
 		public static SettingsGUI Instance { get; private set; }
 		public static bool Display { get; private set; }
 		private Category category = Category.Root;
-		private ExposedSettings Settings { get { return SuisHackMain.Settings; } }
+		private ExposedSettings Settings;
 		string resolutionX;
 		string resolutionY;
 		string refreshRate;
@@ -39,6 +39,7 @@ namespace SuisHack
 
 		void Start()
 		{
+			Settings = Settings = SuisHackMain.Settings;
 			resolutionX = Screen.width.ToString();
 			resolutionY = Screen.height.ToString();
 			refreshRate = Settings.Entry_Display_RefreshRate.Value.ToString();

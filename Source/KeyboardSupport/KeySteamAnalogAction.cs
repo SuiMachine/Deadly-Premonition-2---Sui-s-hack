@@ -1,4 +1,5 @@
-﻿using Steamworks;
+﻿using MelonLoader;
+using Steamworks;
 using UnityEngine;
 
 namespace SuisHack.KeyboardSupport
