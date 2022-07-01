@@ -41,7 +41,6 @@ namespace SuisHack.KeyboardSupport
 		public static Dictionary<SteamInputAnalog, KeySteamAnalogAction> AnalogInputToInput;
 		public Dictionary<SteamInputDigital, KeySteamDigitalAction> DigitalInputToInput;
 
-
 		internal KeySteamAnalogAction GetAnalogInputReplacement(InputAnalogActionHandle_t analogActionHandle)
 		{
 			if (TranslateAnalogBackToInput.TryGetValue(analogActionHandle, out KeySteamAnalogAction value))
@@ -75,7 +74,32 @@ namespace SuisHack.KeyboardSupport
 
 		public KeyCode GetReplacementPrompt(SteamInputDigital gamepadKey)
 		{
+			switch(GameStateMachine.CurrentGameState)
+			{
+				case GameStateMachine.Gamestate.Menu:
+					return GetKeysMenu(gamepadKey);
+			}
 			return DigitalInputToInput[gamepadKey].GetBind();
+		}
+
+		private KeyCode GetKeysMenu(SteamInputDigital gamepadKey)
+		{
+			switch(gamepadKey)
+			{
+				case SteamInputDigital.B_Button:
+					return KeyCode.KeypadEnter;
+				case SteamInputDigital.A_Button:
+					return KeyCode.Escape;
+				case SteamInputDigital.Up_Button:
+					return KeyCode.UpArrow;
+				case SteamInputDigital.Down_Button:
+					return KeyCode.DownArrow;
+				case SteamInputDigital.Left_Button:
+					return KeyCode.LeftArrow;
+				case SteamInputDigital.Right_Button:
+					return KeyCode.RightArrow;
+			}
+			return KeyCode.None;
 		}
 
 		private void Awake()

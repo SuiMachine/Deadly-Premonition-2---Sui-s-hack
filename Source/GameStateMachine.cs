@@ -6,6 +6,7 @@
 		{
 			Menu,
 			StandardGameplay,
+			Map,
 			RedRoom,
 			Unknown
 		}
@@ -80,7 +81,7 @@
 			else if (m_Gameplay)
 			{
 				if (m_MapOpened)
-					CurrentGameState = Gamestate.Menu;
+					CurrentGameState = Gamestate.Map;
 				else if (m_RedRoomOpened)
 					CurrentGameState = Gamestate.RedRoom;
 				else
