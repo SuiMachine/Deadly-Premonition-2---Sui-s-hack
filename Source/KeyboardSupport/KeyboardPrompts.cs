@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using SuisHack.GlobalGameObjects;
+using static SuisHack.KeyboardSupport.GlobalInputHookHandler;
 
 namespace SuisHack.KeyboardSupport
 {
@@ -28,58 +29,53 @@ namespace SuisHack.KeyboardSupport
 			}
 		}
 
-		
+
 		public static void UISpriteOn(UISprite __instance)
 		{
 			if (GlobalReplacementAtlas.Instance != null && __instance.mSpriteName != null)
 			{
-
-			}
-		}
-
-		private static void ReplaceKeyboardMouse(UISprite instance)
-		{
-			switch (instance.mSpriteName)
-			{
-				//Seriously - fuck Nintendo and their layout!
-				case "NX_Cont_Button_A":
-				case "common_intaract_A":
-					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("B_Button"));
-					break;
-				case "NX_Cont_Button_B":
-					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("A_Button"));
-					break;
-				case "NX_Cont_Button_X":
-					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("Y_Button"));
-					break;
-				case "NX_Cont_Button_Y":
-					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("X_Button"));
-					break;
-				case "NX_Cont_Button_-":
-					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("Back_Button"));
-					break;
-				case "NX_Cont_Button_ZL":
-					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("LT"));
-					break;
-				case "NX_Cont_Button_L":
-					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("LB"));
-					break;
-				case "NX_Cont_Button_+":
-					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("Start_Button"));
-					break;
-				case "NX_Cont_Button_ZR":
-					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("RT"));
-					break;
-				case "NX_Cont_Button_R":
-					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("RB"));
-					break;
-				case "NX_stick_button_Stick_Button_L_Push":
-				case "common_intaract_Lpush":
-					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("L_Stick_Button"));
-					break;
-				case "NX_stick_button_Stick_Button_R_Push":
-					GlobalReplacementAtlas.Instance.Replace(instance, GlobalInputHookHandler.Instance.GetReplacementPrompt("R_Stick_Button"));
-					break;
+				switch (__instance.mSpriteName)
+				{
+					//Seriously - fuck Nintendo and their layout!
+					case "NX_Cont_Button_A":
+					case "common_intaract_A":
+						GlobalReplacementAtlas.Instance.Replace(__instance, GlobalInputHookHandler.Instance.GetReplacementPrompt(SteamInputDigital.B_Button));
+						break;
+					case "NX_Cont_Button_B":
+						GlobalReplacementAtlas.Instance.Replace(__instance, GlobalInputHookHandler.Instance.GetReplacementPrompt(SteamInputDigital.A_Button));
+						break;
+					case "NX_Cont_Button_X":
+						GlobalReplacementAtlas.Instance.Replace(__instance, GlobalInputHookHandler.Instance.GetReplacementPrompt(SteamInputDigital.Y_Button));
+						break;
+					case "NX_Cont_Button_Y":
+						GlobalReplacementAtlas.Instance.Replace(__instance, GlobalInputHookHandler.Instance.GetReplacementPrompt(SteamInputDigital.X_Button));
+						break;
+					case "NX_Cont_Button_-":
+						GlobalReplacementAtlas.Instance.Replace(__instance, GlobalInputHookHandler.Instance.GetReplacementPrompt(SteamInputDigital.Back_Button));
+						break;
+					case "NX_Cont_Button_ZL":
+						GlobalReplacementAtlas.Instance.Replace(__instance, GlobalInputHookHandler.Instance.GetReplacementPrompt(SteamInputDigital.LT));
+						break;
+					case "NX_Cont_Button_L":
+						GlobalReplacementAtlas.Instance.Replace(__instance, GlobalInputHookHandler.Instance.GetReplacementPrompt(SteamInputDigital.RB));
+						break;
+					case "NX_Cont_Button_+":
+						GlobalReplacementAtlas.Instance.Replace(__instance, GlobalInputHookHandler.Instance.GetReplacementPrompt(SteamInputDigital.Start_Button));
+						break;
+					case "NX_Cont_Button_ZR":
+						GlobalReplacementAtlas.Instance.Replace(__instance, GlobalInputHookHandler.Instance.GetReplacementPrompt(SteamInputDigital.RT));
+						break;
+					case "NX_Cont_Button_R":
+						GlobalReplacementAtlas.Instance.Replace(__instance, GlobalInputHookHandler.Instance.GetReplacementPrompt(SteamInputDigital.RB));
+						break;
+					case "NX_stick_button_Stick_Button_L_Push":
+					case "common_intaract_Lpush":
+						GlobalReplacementAtlas.Instance.Replace(__instance, GlobalInputHookHandler.Instance.GetReplacementPrompt(SteamInputDigital.L_Stick_Button));
+						break;
+					case "NX_stick_button_Stick_Button_R_Push":
+						GlobalReplacementAtlas.Instance.Replace(__instance, GlobalInputHookHandler.Instance.GetReplacementPrompt(SteamInputDigital.R_Stick_Button));
+						break;
+				}
 			}
 		}
 	}

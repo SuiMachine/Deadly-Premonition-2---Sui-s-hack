@@ -29,12 +29,8 @@ namespace SuisHack
 					GamepadSupport.GamepadPrompts.Initialize();
 					break;
 			}
-			if (Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
-			{
 
-			}
 			base.OnApplicationStart();
-
 		}
 
 		public override void OnApplicationLateStart()
