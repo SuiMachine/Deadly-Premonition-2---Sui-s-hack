@@ -23,9 +23,20 @@ namespace SuisHack.KeyboardSupport
 				case GameStateMachine.Gamestate.Menu:
 				case GameStateMachine.Gamestate.RedRoom:
 					return MenuTranslateAnalogInput(analogActionHandle);
+				case GameStateMachine.Gamestate.Map:
+					return MapTranslateAnalogInput(analogActionHandle);
 				default:
 					return TranslateAnalogBackToInput[(int)analogActionHandle].GetInput();
 			}
+		}
+
+		private InputAnalogActionData_t MapTranslateAnalogInput(SteamInputHook.SteamInputAnalog analogActionHandle)
+		{
+			//Disable keyboard WSAD
+			if (analogActionHandle == SteamInputHook.SteamInputAnalog.L_Stick)
+				return TranslateAnalogBackToInput[(int)SteamInputHook.SteamInputAnalog.R_Stick].GetInput();
+			else
+				return new InputAnalogActionData_t();
 		}
 
 		private InputAnalogActionData_t MenuTranslateAnalogInput(SteamInputHook.SteamInputAnalog analogActionHandle)
@@ -41,9 +52,10 @@ namespace SuisHack.KeyboardSupport
 		{
 			switch (GameStateMachine.CurrentGameState)
 			{
-				case GameStateMachine.Gamestate.RedRoom:
 				case GameStateMachine.Gamestate.Menu:
 					return MenuTranslateDigitalInput(digitalAction);
+				case GameStateMachine.Gamestate.RedRoom:
+					return RedRoomTranslateDigitalInput(digitalAction);
 				case GameStateMachine.Gamestate.Map:
 					return TranslateDigitalInputMap(digitalAction);
 				default:
@@ -53,22 +65,48 @@ namespace SuisHack.KeyboardSupport
 
 		private InputDigitalActionData_t MenuTranslateDigitalInput(SteamInputHook.SteamInputDigital digitalAction)
 		{
-			var input = MenuTranslateDigitalBackToInput[(int)digitalAction];
-			if (input != KeyCode.None)
+			return new InputDigitalActionData_t()
 			{
-				return new InputDigitalActionData_t()
-				{
-					bActive = 1,
-					bState = Input.GetKeyDown(input) ? (byte)1 : (byte)0
-				};
-			}
-			else
-				return new InputDigitalActionData_t();
+				bActive = 1,
+				bState = Input.GetKeyDown(MenuTranslateDigitalBackToInput[(int)digitalAction]) ? (byte)1 : (byte)0
+			};
+		}
 
+		private InputDigitalActionData_t RedRoomTranslateDigitalInput(SteamInputHook.SteamInputDigital digitalAction)
+		{
+			return new InputDigitalActionData_t()
+			{
+				bActive = 1,
+				bState = Input.GetKeyDown(RedRoomTranslateDigitalBackToInput[(int)digitalAction]) ? (byte)1 : (byte)0
+			};
 		}
 
 		private InputDigitalActionData_t TranslateDigitalInputMap(SteamInputHook.SteamInputDigital digitalAction)
 		{
+			//Zoom in
+			if(digitalAction == SteamInputHook.SteamInputDigital.LB)
+			{
+				if (Input.mouseScrollDelta.y < -0.5f)
+					return new InputDigitalActionData_t() { bActive = 1, bState = 1 };
+				else
+					return new InputDigitalActionData_t()
+					{
+						bActive = 1,
+						bState = Input.GetKey(MapTranslateDigitalBackToInput[(int)digitalAction]) ? (byte)1 : (byte)0
+					};
+			}
+			else if(digitalAction == SteamInputHook.SteamInputDigital.RB)
+			{
+				if (Input.mouseScrollDelta.y > 0.5f)
+					return new InputDigitalActionData_t() { bActive = 1, bState = 1 };
+				else
+					return new InputDigitalActionData_t()
+					{
+						bActive = 1,
+						bState = Input.GetKey(MapTranslateDigitalBackToInput[(int)digitalAction]) ? (byte)1 : (byte)0
+					};
+			}
+
 			return new InputDigitalActionData_t()
 			{
 				bActive = 1,
@@ -80,6 +118,7 @@ namespace SuisHack.KeyboardSupport
 		private static KeySteamDigitalAction[] TranslateDigitalBackToInput = new KeySteamDigitalAction[17];
 
 		private static KeyCode[] MenuTranslateDigitalBackToInput = new KeyCode[17];
+		private static KeyCode[] RedRoomTranslateDigitalBackToInput = new KeyCode[17];
 		private static KeyCode[] MapTranslateDigitalBackToInput = new KeyCode[17];
 
 
@@ -99,6 +138,10 @@ namespace SuisHack.KeyboardSupport
 			{
 				case GameStateMachine.Gamestate.Menu:
 					return MenuTranslateDigitalBackToInput[(int)gamepadKey];
+				case GameStateMachine.Gamestate.RedRoom:
+					return RedRoomTranslateDigitalBackToInput[(int)gamepadKey];
+				case GameStateMachine.Gamestate.Map:
+					return MapTranslateDigitalBackToInput[(int)gamepadKey];
 				default:
 					return DigitalInputToInput[gamepadKey].GetBind();
 			}			
@@ -114,6 +157,7 @@ namespace SuisHack.KeyboardSupport
 		{
 			InitializeInputs();
 			InitializeInputsMenu();
+			InitializeRedRoomMenu();
 			InitializeInputsMap();
 		}
 
@@ -168,9 +212,9 @@ namespace SuisHack.KeyboardSupport
 			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.A_Button] = KeyCode.Escape;
 			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.B_Button] = KeyCode.Return;
 			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.X_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Y_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RB] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Y_Button] = KeyCode.Backspace;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.Insert;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RB] = KeyCode.PageUp;
 			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Back_Button] = KeyCode.None;
 			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Start_Button] = KeyCode.None;
 			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.L_Stick_Button] = KeyCode.None;
@@ -183,15 +227,36 @@ namespace SuisHack.KeyboardSupport
 			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RT] = KeyCode.None;
 		}
 
+		private void InitializeRedRoomMenu()
+		{
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.None] = KeyCode.None;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.A_Button] = KeyCode.Escape;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.B_Button] = KeyCode.Return;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.X_Button] = KeyCode.None;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Y_Button] = KeyCode.Backspace;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.None;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RB] = KeyCode.Tab;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Back_Button] = KeyCode.None;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Start_Button] = KeyCode.None;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.L_Stick_Button] = KeyCode.None;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.R_Stick_Button] = KeyCode.None;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Up_Button] = KeyCode.UpArrow;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Right_Button] = KeyCode.RightArrow;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Down_Button] = KeyCode.DownArrow;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Left_Button] = KeyCode.LeftArrow;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LT] = KeyCode.None;
+			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RT] = KeyCode.None;
+		}
+
 		private void InitializeInputsMap()
 		{
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.None] = KeyCode.None;
-			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.A_Button] = KeyCode.Return;
-			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.B_Button] = KeyCode.Escape;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.A_Button] = KeyCode.Escape;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.B_Button] = KeyCode.Mouse0;
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.X_Button] = KeyCode.None;
-			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Y_Button] = KeyCode.None;
-			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.None;
-			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RB] = KeyCode.None;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Y_Button] = KeyCode.Tab;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.Mouse5;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RB] = KeyCode.KeypadPlus;
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Back_Button] = KeyCode.None;
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Start_Button] = KeyCode.None;
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.L_Stick_Button] = KeyCode.None;
