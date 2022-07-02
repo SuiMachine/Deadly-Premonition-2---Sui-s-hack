@@ -1,11 +1,8 @@
-﻿using HarmonyLib;
-using Steamworks;
+﻿using Steamworks;
 using System.Collections.Generic;
-using UnhollowerBaseLib;
 
 namespace SuisHack.KeyboardSupport
 {
-	[HarmonyPatch]
 	public static class SteamInputHook
 	{
 		public readonly static Dictionary<string, InputAnalogActionHandle_t> AnalogInputDictionary = new Dictionary<string, InputAnalogActionHandle_t>()
@@ -68,120 +65,58 @@ namespace SuisHack.KeyboardSupport
 				return;
 			}
 
+			var originalGetAnalogActionHandle = typeof(SteamInput).GetMethod(nameof(SteamInput.GetAnalogActionHandle), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+			var targetGetAnalogActionHandle = typeof(SteamInputHook).GetMethod(nameof(GetAnalogActionHandle), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+
+			if (originalGetAnalogActionHandle == null)
+			{
+				SuisHackMain.loggerInst.Error("Original GetAnalogActionHandle was null");
+				return;
+			}
+
+			if (targetGetAnalogActionHandle == null)
+			{
+				SuisHackMain.loggerInst.Error("Target GetAnalogActionHandle was null");
+				return;
+			}
+
+			var originalGetDigitalActionHandle = typeof(SteamInput).GetMethod(nameof(SteamInput.GetDigitalActionHandle), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+			var targetGetDigitalActionHandle = typeof(SteamInputHook).GetMethod(nameof(GetDigitalActionHandle), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+
+			if (originalGetDigitalActionHandle == null)
+			{
+				SuisHackMain.loggerInst.Error("Original GetDigitalActionHandle was null");
+				return;
+			}
+
+			if (targetGetDigitalActionHandle == null)
+			{
+				SuisHackMain.loggerInst.Error("Target GetDigitalActionHandle was null");
+				return;
+			}
+
 			harmonyInstance.Patch(originalGetAnalogActionMethod, prefix: new HarmonyLib.HarmonyMethod(targetGetAnalogActionMethod));
 			harmonyInstance.Patch(originalGetDigitalActionMethod, prefix: new HarmonyLib.HarmonyMethod(targetGetDigitalActionMethod));
-		}
-
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetControllerForGamepadIndex))]
-		public static void GetControllerForGamepadIndex(ref InputHandle_t __result, int nIndex)
-		{
-			SuisHackMain.loggerInst.Error($"GetControllerForGamepadIndex: {__result.m_InputHandle} - {nIndex}");
-		}
-
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetGamepadIndexForController))]
-		public static void GetGamepadIndexForController(ref int __result, InputHandle_t ulinputHandle)
-		{
-			SuisHackMain.loggerInst.Error($"GetGamepadIndexForController: {__result} - {ulinputHandle.m_InputHandle}");
+			harmonyInstance.Patch(originalGetAnalogActionHandle, prefix: new HarmonyLib.HarmonyMethod(targetGetAnalogActionHandle));
+			harmonyInstance.Patch(originalGetDigitalActionHandle, prefix: new HarmonyLib.HarmonyMethod(targetGetDigitalActionHandle));
+			SuisHackMain.loggerInst.Msg("Patched Steam Input to redirect to keyboard mouse manager");
 		}
 
 
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetInputTypeForHandle))]
-		public static void GetInputTypeForHandle(ref ESteamInputType __result, InputHandle_t inputHandle)
+		public static bool GetDigitalActionHandle(ref InputDigitalActionHandle_t __result, string pszActionName)
 		{
-			SuisHackMain.loggerInst.Error($"GetInputTypeForHandle: {__result} - {inputHandle.m_InputHandle}");
-		}
-
-
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetMotionData))]
-		public static void GetMotionData(ref InputMotionData_t __result, InputHandle_t inputHandle)
-		{
-			SuisHackMain.loggerInst.Error($"GetMotionData VAL: {inputHandle.m_InputHandle}");
-		}
-
-
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetStringForActionOrigin))]
-		public static void GetStringForActionOrigin(ref string __result, EInputActionOrigin eOrigin)
-		{
-			SuisHackMain.loggerInst.Error($"GetStringForActionOrigin {__result}: {eOrigin}");
-		}
-
-
-		[HarmonyPrefix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetActionSetHandle))]
-		public static bool GetActionSetHandle(ref InputActionSetHandle_t __result, string pszActionSetName)
-		{
-			SuisHackMain.loggerInst.Error($"GetActionSetHandle {pszActionSetName}");
-
-			__result = new InputActionSetHandle_t(1);
+			__result = DigitalInputDictionary[pszActionName];
 			return false;
 		}
 
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetCurrentActionSet))]
-		public static void GetCurrentActionSet(ref InputActionSetHandle_t __result, InputHandle_t inputHandle)
-		{
-			SuisHackMain.loggerInst.Error($"GetCurrentActionSet");
-		}
-
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.DeactivateActionSetLayer))]
-		public static void DeactivateActionSetLayer(InputHandle_t inputHandle, InputActionSetHandle_t actionSetLayerHandle)
-		{
-			SuisHackMain.loggerInst.Msg($"DeactivateActionSetLayer");
-		}
-
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.DeactivateAllActionSetLayers))]
-		public static void DeactivateAllActionSetLayers(InputHandle_t inputHandle)
-		{
-			SuisHackMain.loggerInst.Msg($"DeactivateAllActionSetLayers");
-		}
-
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetActiveActionSetLayers))]
-		public static void GetActiveActionSetLayers(ref int __result, InputHandle_t inputHandle, Il2CppStructArray<InputActionSetHandle_t> handlesOut)
-		{
-			SuisHackMain.loggerInst.Msg($"GetActiveActionSetLayers");
-		}
-
-		[HarmonyPrefix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetAnalogActionHandle))]
 		public static bool GetAnalogActionHandle(ref InputAnalogActionHandle_t __result, string pszActionName)
 		{
 			__result = AnalogInputDictionary[pszActionName];
 			return false;
 		}
 
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetAnalogActionOrigins))]
-		public static void GetAnalogActionOrigins(ref int __result, InputHandle_t inputHandle, InputActionSetHandle_t actionSetHandle, InputAnalogActionHandle_t analogActionHandle, Il2CppStructArray<EInputActionOrigin> originsOut)
-		{
-			SuisHackMain.loggerInst.Msg($"GetAnalogActionOrigins");
-		}
-
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetGlyphForActionOrigin))]
-		public static void GetGlyphForActionOrigin(ref string __result, EInputActionOrigin eOrigin)
-		{
-			SuisHackMain.loggerInst.Msg($"GetGlyphForActionOrigin");
-		}
-
-		[HarmonyPostfix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetDigitalActionOrigins))]
-		public static void GetDigitalActionOrigins(ref int __result, InputHandle_t inputHandle, InputActionSetHandle_t actionSetHandle, InputDigitalActionHandle_t digitalActionHandle, Il2CppStructArray<EInputActionOrigin> originsOut)
-		{
-			SuisHackMain.loggerInst.Msg($"GetDigitalActionOrigins");
-		}
-
 		public static bool GetAnalogActionDataPrefix(ref InputAnalogActionData_t __result, InputHandle_t inputHandle, InputAnalogActionHandle_t analogActionHandle)
 		{
-			SuisHackMain.loggerInst.Msg($"Get input - {analogActionHandle.m_InputAnalogActionHandle}");
-
 			if (SettingsGUI.Display)
 			{
 				__result = new InputAnalogActionData_t();
@@ -196,14 +131,6 @@ namespace SuisHack.KeyboardSupport
 
 			return false;
 
-		}
-
-		[HarmonyPrefix]
-		[HarmonyPatch(typeof(SteamInput), nameof(SteamInput.GetDigitalActionHandle))]
-		public static bool GetDigitalActionHandle(ref InputDigitalActionHandle_t __result, string pszActionName)
-		{
-			__result = DigitalInputDictionary[pszActionName];
-			return false;
 		}
 
 		public static bool GetDigitalActionDataPrefix(ref InputDigitalActionData_t __result, InputHandle_t inputHandle, InputDigitalActionHandle_t digitalActionHandle)
