@@ -5,11 +5,39 @@ namespace SuisHack.KeyboardSupport
 {
 	public static class SteamInputHook
 	{
+		public enum SteamInputAnalog
+		{
+			None,
+			L_Stick,
+			R_Stick,
+		}
+
+		public enum SteamInputDigital
+		{
+			None,
+			A_Button,
+			B_Button,
+			X_Button,
+			Y_Button,
+			LB,
+			RB,
+			Back_Button,
+			Start_Button,
+			L_Stick_Button,
+			R_Stick_Button,
+			Up_Button,
+			Right_Button,
+			Down_Button,
+			Left_Button,
+			LT,
+			RT
+		}
+
 		public readonly static Dictionary<string, InputAnalogActionHandle_t> AnalogInputDictionary = new Dictionary<string, InputAnalogActionHandle_t>()
 		{
-			{ "None", new InputAnalogActionHandle_t(0) },
-			{ "R_Stick", new InputAnalogActionHandle_t(1) },
-			{ "L_Stick", new InputAnalogActionHandle_t(2) }
+			{ "None", new InputAnalogActionHandle_t((int)SteamInputAnalog.None) },
+			{ "L_Stick", new InputAnalogActionHandle_t((int)SteamInputAnalog.L_Stick) },
+			{ "R_Stick", new InputAnalogActionHandle_t((int)SteamInputAnalog.R_Stick) },
 		};
 
 		public readonly static Dictionary<string, InputDigitalActionHandle_t> DigitalInputDictionary = new Dictionary<string, InputDigitalActionHandle_t>()
@@ -102,7 +130,6 @@ namespace SuisHack.KeyboardSupport
 			SuisHackMain.loggerInst.Msg("Patched Steam Input to redirect to keyboard mouse manager");
 		}
 
-
 		public static bool GetDigitalActionHandle(ref InputDigitalActionHandle_t __result, string pszActionName)
 		{
 			__result = DigitalInputDictionary[pszActionName];
@@ -123,14 +150,8 @@ namespace SuisHack.KeyboardSupport
 				return false;
 			}
 
-			var replacement = GlobalInputHookHandler.Instance.GetAnalogInputReplacement(analogActionHandle);
-			if (replacement == null)
-				__result = new InputAnalogActionData_t();
-			else
-				__result = replacement.GetInput();
-
+			__result = GlobalInputHookHandler.Instance.GetAnalogInputReplacement((SteamInputAnalog)analogActionHandle.m_InputAnalogActionHandle);
 			return false;
-
 		}
 
 		public static bool GetDigitalActionDataPrefix(ref InputDigitalActionData_t __result, InputHandle_t inputHandle, InputDigitalActionHandle_t digitalActionHandle)
@@ -140,13 +161,8 @@ namespace SuisHack.KeyboardSupport
 				__result = new InputDigitalActionData_t();
 				return false;
 			}
-
-			var replacement = GlobalInputHookHandler.Instance.GetDigitalInputReplacement(digitalActionHandle);
-
-			if (replacement == null)
-				__result = new InputDigitalActionData_t();
-			else
-				__result = replacement.GetInput();
+			
+			__result = GlobalInputHookHandler.Instance.GetDigitalInputReplacement((SteamInputDigital)digitalActionHandle.m_InputDigitalActionHandle);
 
 			return false;
 		}

@@ -4,11 +4,11 @@
 	{
 		public enum Gamestate
 		{
-			Menu,
+			Unknown,
 			StandardGameplay,
+			Menu,
 			Map,
 			RedRoom,
-			Unknown
 		}
 
 		public static Gamestate CurrentGameState { get; private set; }

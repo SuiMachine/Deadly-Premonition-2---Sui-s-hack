@@ -240,7 +240,7 @@ namespace SuisHack
 			Input_Digital_A_Button = Category_inputSettings.CreateEntry("Controller button B", KeyCode.Q, description: "Key used as replacement for Xbox's B key (originally Switch's A key) - generally cancel action");
 			Input_Digital_B_Button = Category_inputSettings.CreateEntry("Controller button A", KeyCode.E, description: "Key used as replacement for Xbox's A key (originally Switch's B key) - generally confirm and contextual action");
 			Input_Digital_X_Button = Category_inputSettings.CreateEntry("Controller button Y", KeyCode.Space, description: "Key used as replacement for Xbox's Y key (originally Switch's X key) - generally used for skateboard");
-			Input_Digital_Y_Button = Category_inputSettings.CreateEntry("Controller button X", KeyCode.I, description: "Key used as replacement for Xbox's Y key (originally Switch's X key) - generally used for opening Red Room");
+			Input_Digital_Y_Button = Category_inputSettings.CreateEntry("Controller button X", KeyCode.Escape, description: "Key used as replacement for Xbox's Y key (originally Switch's X key) - generally used for opening Red Room");
 			Input_Digital_LB = Category_inputSettings.CreateEntry("Controller LB", KeyCode.Alpha2, description: "Key used as replacement for Left Bumper - generally used for vision mode");
 			Input_Digital_RB = Category_inputSettings.CreateEntry("Controller RB", KeyCode.LeftShift, description: "Key used as replacement for Right Bumper - generally used for sprint");
 			Input_Digital_Back_Button = Category_inputSettings.CreateEntry("Controller Back", KeyCode.Tab, description: "Key used as replacement for Back / Select button");

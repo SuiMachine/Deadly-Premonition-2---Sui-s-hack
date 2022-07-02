@@ -11,56 +11,70 @@ namespace SuisHack.KeyboardSupport
 		public GlobalInputHookHandler(IntPtr ptr) : base(ptr) { }
 		public ExposedSettings Settings;
 
-		public enum SteamInputAnalog
-		{
-			L_Stick,
-			R_Stick
-		}
-
-		public enum SteamInputDigital
-		{
-			A_Button,
-			B_Button,
-			X_Button,
-			Y_Button,
-			LB,
-			RB,
-			Back_Button,
-			Start_Button,
-			L_Stick_Button,
-			R_Stick_Button,
-			Up_Button,
-			Right_Button,
-			Down_Button,
-			Left_Button,
-			LT,
-			RT
-		}
-
 		public static GlobalInputHookHandler Instance { get; private set; }
-		public static Dictionary<SteamInputAnalog, KeySteamAnalogAction> AnalogInputToInput;
-		public Dictionary<SteamInputDigital, KeySteamDigitalAction> DigitalInputToInput;
+		private Dictionary<SteamInputHook.SteamInputAnalog, KeySteamAnalogAction> AnalogInputToInput;
+		private Dictionary<SteamInputHook.SteamInputDigital, KeySteamDigitalAction> DigitalInputToInput;
 
-		internal KeySteamAnalogAction GetAnalogInputReplacement(InputAnalogActionHandle_t analogActionHandle)
+
+		public InputAnalogActionData_t GetAnalogInputReplacement(SteamInputHook.SteamInputAnalog analogActionHandle)
 		{
-			if (TranslateAnalogBackToInput.TryGetValue(analogActionHandle, out KeySteamAnalogAction value))
+			switch (GameStateMachine.CurrentGameState)
 			{
-				return value;
+				case GameStateMachine.Gamestate.Menu:
+				case GameStateMachine.Gamestate.RedRoom:
+					return MenuTranslateAnalogInput(analogActionHandle);
+				default:
+					return TranslateAnalogBackToInput[(int)analogActionHandle].GetInput();
 			}
-			return null;
 		}
 
-		internal KeySteamDigitalAction GetDigitalInputReplacement(InputDigitalActionHandle_t digitalActionHandle)
+		private InputAnalogActionData_t MenuTranslateAnalogInput(SteamInputHook.SteamInputAnalog analogActionHandle)
 		{
-			if (TranslateDigitalBackToInput.TryGetValue(digitalActionHandle, out KeySteamDigitalAction value))
-			{
-				return value;
-			}
-			return null;
+			//Disable mouse in menu
+			if (analogActionHandle == SteamInputHook.SteamInputAnalog.R_Stick)
+				return new InputAnalogActionData_t();
+			else
+				return TranslateAnalogBackToInput[(int)analogActionHandle].GetInput();
 		}
 
-		public static Dictionary<InputAnalogActionHandle_t, KeySteamAnalogAction> TranslateAnalogBackToInput = new Dictionary<InputAnalogActionHandle_t, KeySteamAnalogAction>();
-		public static Dictionary<InputDigitalActionHandle_t, KeySteamDigitalAction> TranslateDigitalBackToInput = new Dictionary<InputDigitalActionHandle_t, KeySteamDigitalAction>();
+		public InputDigitalActionData_t GetDigitalInputReplacement(SteamInputHook.SteamInputDigital digitalAction)
+		{
+			switch (GameStateMachine.CurrentGameState)
+			{
+				case GameStateMachine.Gamestate.RedRoom:
+				case GameStateMachine.Gamestate.Menu:
+					return MenuTranslateDigitalInput(digitalAction);
+				case GameStateMachine.Gamestate.Map:
+					return TranslateDigitalInputMap(digitalAction);
+				default:
+					return TranslateDigitalBackToInput[(int)digitalAction].GetInput();
+			}
+		}
+
+		private InputDigitalActionData_t MenuTranslateDigitalInput(SteamInputHook.SteamInputDigital digitalAction)
+		{
+			return new InputDigitalActionData_t()
+			{
+				bActive = 1,
+				bState = Input.GetKeyDown(MenuTranslateDigitalBackToInput[(int)digitalAction]) ? (byte)1 : (byte)0
+			};
+		}
+
+		private InputDigitalActionData_t TranslateDigitalInputMap(SteamInputHook.SteamInputDigital digitalAction)
+		{
+			return new InputDigitalActionData_t()
+			{
+				bActive = 1,
+				bState = Input.GetKey(MapTranslateDigitalBackToInput[(int)digitalAction]) ? (byte)1 : (byte)0
+			};
+		}
+
+		private static KeySteamAnalogAction[] TranslateAnalogBackToInput = new KeySteamAnalogAction[3];
+		private static KeySteamDigitalAction[] TranslateDigitalBackToInput = new KeySteamDigitalAction[17];
+
+		private static KeyCode[] MenuTranslateDigitalBackToInput = new KeyCode[17];
+		private static KeyCode[] MapTranslateDigitalBackToInput = new KeyCode[17];
+
 
 		public static void Initialize()
 		{
@@ -72,34 +86,15 @@ namespace SuisHack.KeyboardSupport
 			}
 		}
 
-		public KeyCode GetReplacementPrompt(SteamInputDigital gamepadKey)
+		public KeyCode GetReplacementPrompt(SteamInputHook.SteamInputDigital gamepadKey)
 		{
-			switch(GameStateMachine.CurrentGameState)
+			switch (GameStateMachine.CurrentGameState)
 			{
 				case GameStateMachine.Gamestate.Menu:
-					return GetKeysMenu(gamepadKey);
-			}
-			return DigitalInputToInput[gamepadKey].GetBind();
-		}
-
-		private KeyCode GetKeysMenu(SteamInputDigital gamepadKey)
-		{
-			switch(gamepadKey)
-			{
-				case SteamInputDigital.B_Button:
-					return KeyCode.KeypadEnter;
-				case SteamInputDigital.A_Button:
-					return KeyCode.Escape;
-				case SteamInputDigital.Up_Button:
-					return KeyCode.UpArrow;
-				case SteamInputDigital.Down_Button:
-					return KeyCode.DownArrow;
-				case SteamInputDigital.Left_Button:
-					return KeyCode.LeftArrow;
-				case SteamInputDigital.Right_Button:
-					return KeyCode.RightArrow;
-			}
-			return KeyCode.None;
+					return MenuTranslateDigitalBackToInput[(int)gamepadKey];
+				default:
+					return DigitalInputToInput[gamepadKey].GetBind();
+			}			
 		}
 
 		private void Awake()
@@ -111,49 +106,116 @@ namespace SuisHack.KeyboardSupport
 		private void Start()
 		{
 			InitializeInputs();
+			InitializeInputsMenu();
+			InitializeInputsMap();
 		}
 
 		public void InitializeInputs()
 		{
-			AnalogInputToInput = new Dictionary<SteamInputAnalog, KeySteamAnalogAction>()
+			AnalogInputToInput = new Dictionary<SteamInputHook.SteamInputAnalog, KeySteamAnalogAction>()
 			{
-				{SteamInputAnalog.L_Stick, new KeyActionAnalog(Settings.Input_Analog_LeftStick_Up.Value, Settings.Input_Analog_LeftStick_Down.Value, Settings.Input_Analog_LeftStick_Left.Value, Settings.Input_Analog_LeftStick_Right.Value, Settings.Input_Analog_LeftStickFloatTime.Value) },
-				{SteamInputAnalog.R_Stick, new MouseAnalog() }
+				{ SteamInputHook.SteamInputAnalog.L_Stick, new KeyActionAnalog(Settings.Input_Analog_LeftStick_Up.Value, Settings.Input_Analog_LeftStick_Down.Value, Settings.Input_Analog_LeftStick_Left.Value, Settings.Input_Analog_LeftStick_Right.Value, Settings.Input_Analog_LeftStickFloatTime.Value) },
+				{ SteamInputHook.SteamInputAnalog.R_Stick, new MouseAnalog() },
 			};
 
-			DigitalInputToInput = new Dictionary<SteamInputDigital, KeySteamDigitalAction>()
+			DigitalInputToInput = new Dictionary<SteamInputHook.SteamInputDigital, KeySteamDigitalAction>()
 			{
-				{ SteamInputDigital.A_Button, new KeySteamDigitalAction(Settings.Input_Digital_A_Button.Value, false) },
-				{ SteamInputDigital.B_Button, new KeySteamDigitalAction(Settings.Input_Digital_B_Button.Value, false) },
-				{ SteamInputDigital.X_Button, new KeySteamDigitalAction(Settings.Input_Digital_X_Button.Value, false) },
-				{ SteamInputDigital.Y_Button, new KeySteamDigitalAction(Settings.Input_Digital_Y_Button.Value, false) },
-				{ SteamInputDigital.LB, new KeySteamDigitalAction(Settings.Input_Digital_LB.Value, false) },
-				{ SteamInputDigital.RB, new KeySteamDigitalAction(Settings.Input_Digital_RB.Value, false) },
-				{ SteamInputDigital.Back_Button, new KeySteamDigitalAction(Settings.Input_Digital_Back_Button.Value, false) },
-				{ SteamInputDigital.Start_Button, new KeySteamDigitalAction(Settings.Input_Digital_Start_Button.Value, false) },
-				{ SteamInputDigital.L_Stick_Button, new KeySteamDigitalAction(Settings.Input_Digital_L_Stick_Button.Value, false) },
-				{ SteamInputDigital.R_Stick_Button, new KeySteamDigitalAction(Settings.Input_Digital_Right_Button.Value, false) },
-				{ SteamInputDigital.Up_Button, new KeySteamDigitalAction(Settings.Input_Digital_Up_Button.Value, true) },
-				{ SteamInputDigital.Right_Button, new KeySteamDigitalAction(Settings.Input_Digital_Right_Button.Value, true) },
-				{ SteamInputDigital.Down_Button, new KeySteamDigitalAction(Settings.Input_Digital_Down_Button.Value, true) },
-				{ SteamInputDigital.Left_Button, new KeySteamDigitalAction(Settings.Input_Digital_Left_Button.Value, true) },
-				{ SteamInputDigital.LT, new KeySteamDigitalAction(Settings.Input_Digital_LT.Value, false) },
-				{ SteamInputDigital.RT, new KeySteamDigitalAction(Settings.Input_Digital_RT.Value, false) }
+				{ SteamInputHook.SteamInputDigital.A_Button, new KeySteamDigitalAction(Settings.Input_Digital_A_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.B_Button, new KeySteamDigitalAction(Settings.Input_Digital_B_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.X_Button, new KeySteamDigitalAction(Settings.Input_Digital_X_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.Y_Button, new KeySteamDigitalAction(Settings.Input_Digital_Y_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.LB, new KeySteamDigitalAction(Settings.Input_Digital_LB.Value, false) },
+				{ SteamInputHook.SteamInputDigital.RB, new KeySteamDigitalAction(Settings.Input_Digital_RB.Value, false) },
+				{ SteamInputHook.SteamInputDigital.Back_Button, new KeySteamDigitalAction(Settings.Input_Digital_Back_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.Start_Button, new KeySteamDigitalAction(Settings.Input_Digital_Start_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.L_Stick_Button, new KeySteamDigitalAction(Settings.Input_Digital_L_Stick_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.R_Stick_Button, new KeySteamDigitalAction(Settings.Input_Digital_Right_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.Up_Button, new KeySteamDigitalAction(Settings.Input_Digital_Up_Button.Value, true) },
+				{ SteamInputHook.SteamInputDigital.Right_Button, new KeySteamDigitalAction(Settings.Input_Digital_Right_Button.Value, true) },
+				{ SteamInputHook.SteamInputDigital.Down_Button, new KeySteamDigitalAction(Settings.Input_Digital_Down_Button.Value, true) },
+				{ SteamInputHook.SteamInputDigital.Left_Button, new KeySteamDigitalAction(Settings.Input_Digital_Left_Button.Value, true) },
+				{ SteamInputHook.SteamInputDigital.LT, new KeySteamDigitalAction(Settings.Input_Digital_LT.Value, false) },
+				{ SteamInputHook.SteamInputDigital.RT, new KeySteamDigitalAction(Settings.Input_Digital_RT.Value, false) }
 			};
 
-			TranslateAnalogBackToInput.Clear();
+			TranslateAnalogBackToInput[0] = new KeyActionAnalog(KeyCode.None, KeyCode.None, KeyCode.None, KeyCode.None, 1);
+			int i = 1;
 			foreach (var analogInput in AnalogInputToInput)
 			{
-				var handle = SteamInput.GetAnalogActionHandle(analogInput.Key.ToString());
-				TranslateAnalogBackToInput.Add(handle, analogInput.Value);
+				TranslateAnalogBackToInput[i] = analogInput.Value;
+				i++;
 			}
 
-			TranslateDigitalBackToInput.Clear();
+			TranslateDigitalBackToInput[0] = new KeySteamDigitalAction(KeyCode.None, true);
+			i = 1;
 			foreach (var digitalInput in DigitalInputToInput)
 			{
-				var handle = SteamInput.GetDigitalActionHandle(digitalInput.Key.ToString());
-				TranslateDigitalBackToInput.Add(handle, digitalInput.Value);
+				TranslateDigitalBackToInput[i] = digitalInput.Value;
+				i++;
 			}
+		}
+
+		private void InitializeInputsMenu()
+		{
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.None] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.A_Button] = KeyCode.Escape;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.B_Button] = KeyCode.Return;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.X_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Y_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RB] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Back_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Start_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.L_Stick_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.R_Stick_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Up_Button] = KeyCode.UpArrow;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Right_Button] = KeyCode.RightArrow;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Down_Button] = KeyCode.DownArrow;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Left_Button] = KeyCode.LeftArrow;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LT] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RT] = KeyCode.None;
+		}
+
+		private void InitializeInputsMap()
+		{
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.None] = KeyCode.None;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.A_Button] = KeyCode.Return;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.B_Button] = KeyCode.Escape;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.X_Button] = KeyCode.None;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Y_Button] = KeyCode.None;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.None;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RB] = KeyCode.None;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Back_Button] = KeyCode.None;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Start_Button] = KeyCode.None;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.L_Stick_Button] = KeyCode.None;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.R_Stick_Button] = KeyCode.None;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Up_Button] = KeyCode.UpArrow;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Right_Button] = KeyCode.RightArrow;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Down_Button] = KeyCode.DownArrow;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Left_Button] = KeyCode.LeftArrow;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LT] = KeyCode.None;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RT] = KeyCode.None;
+		}
+
+		private void Template()
+		{
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.None] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.A_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.B_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.X_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Y_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RB] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Back_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Start_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.L_Stick_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.R_Stick_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Up_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Right_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Down_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Left_Button] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LT] = KeyCode.None;
+			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RT] = KeyCode.None;
 		}
 
 		private void Update()
