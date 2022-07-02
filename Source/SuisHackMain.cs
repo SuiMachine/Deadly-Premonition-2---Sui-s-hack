@@ -21,7 +21,7 @@ namespace SuisHack
 			Settings = new ExposedSettings();
 			switch(Settings.Input_Override.Value)
 			{
-				case ExposedSettings.InputType.Original:
+				case ExposedSettings.InputType.SteamInput:
 					GamepadSupport.GamepadPrompts.Initialize();
 					break;
 				case ExposedSettings.InputType.KeyboardAndMouse:
