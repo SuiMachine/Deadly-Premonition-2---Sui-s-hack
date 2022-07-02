@@ -54,6 +54,7 @@ namespace SuisHack
 			Hacks.NpcTestHook.Initialize();
 			Hacks.Lights.LightActiveCheckHook.Initialize();
 			Hacks.Lights.NpcVehicleHook.Initialize();
+
 		}
 
 		public override void OnSceneWasLoaded(int buildIndex, string sceneName)
@@ -62,10 +63,14 @@ namespace SuisHack
 			if (Settings != null)
 			{
 				Application.targetFrameRate = Settings.Entry_DesiredFramerate.Value;
-
-				if(sceneName == "TitleTest2")
+				if (Settings.Input_Override.Value == ExposedSettings.InputType.SteamInput)
 				{
-					if(!AppliedResolutionInMainMenu)
+					Components.VibrationController.Initialize();
+				}
+
+				if (sceneName == "TitleTest2")
+				{
+					if (!AppliedResolutionInMainMenu)
 						Hacks.ScreenHook.SetResolution1();
 					AppliedResolutionInMainMenu = true;
 					GameStateMachine.MainMenu = true;
