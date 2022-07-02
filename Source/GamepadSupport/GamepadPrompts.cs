@@ -7,7 +7,7 @@ namespace SuisHack.GamepadSupport
 	{
 		public static void Initialize()
 		{
-			if(SuisHackMain.Settings.Input_Override.Value == ExposedSettings.InputType.Original)
+			if(SuisHackMain.Settings.Input_Override.Value == ExposedSettings.InputType.SteamInput)
 			{
 				var source = typeof(UISprite).GetMethod(nameof(UISprite.OnInit), System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
 				var target = typeof(GamepadPrompts).GetMethod(nameof(GamepadPrompts.UISpriteOn), System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
@@ -36,19 +36,19 @@ namespace SuisHack.GamepadSupport
 				switch (__instance.mSpriteName)
 				{
 					case "NX_Cont_Button_A":
-						GlobalReplacementAtlas.Instance.Replace(__instance, GamepadKeys.A);
+						GlobalReplacementAtlas.Instance.Replace(__instance, GamepadKeyIcons.A);
 						break;
 					case "common_intaract_A":
-						GlobalReplacementAtlas.Instance.Replace(__instance, GamepadKeys.A2);
+						GlobalReplacementAtlas.Instance.Replace(__instance, GamepadKeyIcons.A2);
 						break;
 					case "NX_Cont_Button_B":
-						GlobalReplacementAtlas.Instance.Replace(__instance, GamepadKeys.B);
+						GlobalReplacementAtlas.Instance.Replace(__instance, GamepadKeyIcons.B);
 						break;
 					case "NX_Cont_Button_X":
-						GlobalReplacementAtlas.Instance.Replace(__instance, GamepadKeys.X);
+						GlobalReplacementAtlas.Instance.Replace(__instance, GamepadKeyIcons.X);
 						break;
 					case "NX_Cont_Button_Y":
-						GlobalReplacementAtlas.Instance.Replace(__instance, GamepadKeys.Y);
+						GlobalReplacementAtlas.Instance.Replace(__instance, GamepadKeyIcons.Y);
 						break;
 				}
 			}

@@ -9,7 +9,7 @@ namespace SuisHack
 	{
 		public enum InputType
 		{
-			Original,
+			SteamInput,
 			KeyboardAndMouse
 		}
 
@@ -231,7 +231,7 @@ namespace SuisHack
 
 		private void RegisterInputSettings()
 		{
-			Input_Override = Category_inputSettings.CreateEntry("Input type", InputType.Original, description: "Overrides controls handling - options are: Original (leaves the game using Steam Input as it is) / KeyboardAndMouse (hooks input to read keyboard and mouse instead)");
+			Input_Override = Category_inputSettings.CreateEntry("Input type", InputType.SteamInput, description: "Overrides controls handling - options are: SteamInput (leaves the game using Steam Input as it is) / KeyboardAndMouse (hooks input to read keyboard and mouse instead)");
 			Input_Analog_LeftStickFloatTime = Category_inputSettings.CreateEntry("Left Stick Float Time", 0.1f, description: "How long does it take a stick to get to desired spot - this allows the game to handle rotations slightly better, although prevents the input from being instantanious. Min value: 0.01, Max 1.", validator: new ValueRange<float>(0.01f, 1f));
 			Input_Analog_LeftStick_Up = Category_inputSettings.CreateEntry("Left Stick Key Up", KeyCode.W, description: "Key used to as replacement for reading up on left analog's Y axis");
 			Input_Analog_LeftStick_Right = Category_inputSettings.CreateEntry("Left Stick Key Right", KeyCode.D, description: "Key used to as replacement for reading left on left analog's X axis");
