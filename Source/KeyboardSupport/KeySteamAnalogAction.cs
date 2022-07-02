@@ -1,7 +1,8 @@
-﻿using Steamworks;
+﻿using MelonLoader;
+using Steamworks;
 using UnityEngine;
 
-namespace SuisHack.InputHandling
+namespace SuisHack.KeyboardSupport
 {
 	public abstract class KeySteamAnalogAction
 	{
@@ -12,10 +13,12 @@ namespace SuisHack.InputHandling
 
 	public class MouseAnalog : KeySteamAnalogAction
 	{
+		public static float Sensitivity;
+
 		public override InputAnalogActionData_t GetInput()
 		{
 			Cursor.lockState = CursorLockMode.Confined;
-			var vec = new Vector2(Input.GetAxis("Horizontal"), -Input.GetAxis("Vertical")) * 0.5f;
+			var vec = new Vector2(Input.GetAxis("Horizontal"), -Input.GetAxis("Vertical")) * Sensitivity;
 
 			return new InputAnalogActionData_t() { x = vec.x, y = vec.y };
 		}

@@ -21,7 +21,7 @@ namespace SuisHack
 		public static SettingsGUI Instance { get; private set; }
 		public static bool Display { get; private set; }
 		private Category category = Category.Root;
-		private ExposedSettings Settings { get { return SuisHackMain.Settings; } }
+		private ExposedSettings Settings;
 		string resolutionX;
 		string resolutionY;
 		string refreshRate;
@@ -39,6 +39,7 @@ namespace SuisHack
 
 		void Start()
 		{
+			Settings = Settings = SuisHackMain.Settings;
 			resolutionX = Screen.width.ToString();
 			resolutionY = Screen.height.ToString();
 			refreshRate = Settings.Entry_Display_RefreshRate.Value.ToString();
@@ -88,20 +89,6 @@ namespace SuisHack
 						break;
 				}
 			}
-		}
-
-		private Texture2D CreateTexture(Color color)
-		{
-			Texture2D result = new Texture2D(2, 2, TextureFormat.RGBA32, false);
-			for (int x = 0; x < result.width; x++)
-			{
-				for (int y = 0; y < result.height; y++)
-				{
-					result.SetPixel(x, y, color);
-				}
-			}
-			result.Apply();
-			return result;
 		}
 
 		private void DrawRoot()
@@ -525,6 +512,13 @@ namespace SuisHack
 				GUILayout.EndVertical();
 			}
 
+			//Meh
+			{
+				GUILayout.BeginVertical(GUI.skin.box, null);
+				Settings.Entry_Quality_EdgeDetection.Value = GUILayout.Toggle(Settings.Entry_Quality_EdgeDetection.Value, "Edge detection post process filter", null);
+				GUILayout.EndVertical();
+			}
+
 			//SSR
 			{
 				GUILayout.BeginVertical(GUI.skin.box, null);
@@ -637,6 +631,16 @@ namespace SuisHack
 
 			Settings.Entry_Quality_TextureQuality.Value = Settings.Entry_Quality_TextureQuality.DefaultValue;
 			Settings.Entry_Quality_Use4ShadowCascades.Value = Settings.Entry_Quality_Use4ShadowCascades.DefaultValue;
+			
+			Settings.Entry_Quality_SSR_Enable.Value = Settings.Entry_Quality_SSR_Enable.DefaultValue;
+			Settings.Entry_Quality_SSR_DistanceFade.Value = Settings.Entry_Quality_SSR_DistanceFade.DefaultValue;
+			Settings.Entry_Quality_SSR_MaxMarchingDistance.Value = Settings.Entry_Quality_SSR_MaxMarchingDistance.DefaultValue;
+			Settings.Entry_Quality_SSR_Preset.Value = Settings.Entry_Quality_SSR_Preset.DefaultValue;
+			Settings.Entry_Quality_SSR_Resolution.Value = Settings.Entry_Quality_SSR_Resolution.DefaultValue;
+			Settings.Entry_Quality_SSR_Tickness.Value = Settings.Entry_Quality_SSR_Tickness.DefaultValue;
+			Settings.Entry_Quality_SSR_Vignette.Value = Settings.Entry_Quality_SSR_Vignette.DefaultValue;
+
+			Settings.Entry_Quality_EdgeDetection.Value = Settings.Entry_Quality_EdgeDetection.DefaultValue;
 		}
 
 		private string GetTextureString(int masterTextureLimit)

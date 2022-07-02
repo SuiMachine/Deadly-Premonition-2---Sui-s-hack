@@ -9,7 +9,7 @@ namespace SuisHack
 	{
 		public enum InputType
 		{
-			Original,
+			SteamInput,
 			KeyboardAndMouse
 		}
 
@@ -72,6 +72,7 @@ namespace SuisHack
 		public MelonPreferences_Entry<float> Entry_Quality_SSR_Vignette;
 		public MelonPreferences_Entry<float> Entry_Quality_SSR_DistanceFade;
 		public MelonPreferences_Entry<float> Entry_Quality_SSR_MaxMarchingDistance;
+		public MelonPreferences_Entry<bool> Entry_Quality_EdgeDetection;
 
 		//Input settings
 		public MelonPreferences_Entry<InputType> Input_Override;
@@ -96,6 +97,7 @@ namespace SuisHack
 		public MelonPreferences_Entry<KeyCode> Input_Digital_Left_Button;
 		public MelonPreferences_Entry<KeyCode> Input_Digital_LT;
 		public MelonPreferences_Entry<KeyCode> Input_Digital_RT;
+		public MelonPreferences_Entry<float> Input_Mouse_Sensitivity;
 
 		//Other settings
 		public MelonPreferences_Entry<bool> Entry_Other_SkipIntros;
@@ -104,6 +106,7 @@ namespace SuisHack
 		public MelonPreferences_Entry<bool> Entry_Other_InterpolateMovement;
 		public MelonPreferences_Entry<GeometryImprovements> Entry_Other_GeometryImprovements;
 		public MelonPreferences_Entry<LightImprovements> Entry_Other_LightImprovements;
+		public MelonPreferences_Entry<bool> Entry_Other_EnableCheats;
 
 		public ExposedSettings()
 		{
@@ -221,11 +224,15 @@ namespace SuisHack
 
 			Entry_Quality_TextureQuality = Category_graphicsSettings.CreateEntry("Texture quality", 0, description: "Texture quality - default is 0. Higher values cause lower mip maps to be used. Can be used to reduce VRAM usage on low-end devices. 1 will cause half of the original resolution to be used", validator: new ValueRange<int>(0, 1));
 			Entry_Quality_TextureQuality.OnValueChanged += (int oldValue, int newValue) => { QualitySettings.masterTextureLimit = newValue; };
+
+			Entry_Quality_EdgeDetection = Category_graphicsSettings.CreateEntry("Edge Detection Filter", true, description: "Responsible for Enabling/Disabling edge detection post process filter.");
+			Entry_Quality_EdgeDetection.OnValueChanged += (bool oldValue, bool newValue) => { Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = newValue; };
+			Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = Entry_Quality_EdgeDetection.Value;
 		}
 
 		private void RegisterInputSettings()
 		{
-			Input_Override = Category_inputSettings.CreateEntry("Input type", InputType.Original, description: "Overrides controls handling - options are: Original (leaves the game using Steam Input as it is) / KeyboardAndMouse (hooks input to read keyboard and mouse instead)");
+			Input_Override = Category_inputSettings.CreateEntry("Input type", InputType.SteamInput, description: "Overrides controls handling - options are: SteamInput (leaves the game using Steam Input as it is) / KeyboardAndMouse (hooks input to read keyboard and mouse instead)");
 			Input_Analog_LeftStickFloatTime = Category_inputSettings.CreateEntry("Left Stick Float Time", 0.1f, description: "How long does it take a stick to get to desired spot - this allows the game to handle rotations slightly better, although prevents the input from being instantanious. Min value: 0.01, Max 1.", validator: new ValueRange<float>(0.01f, 1f));
 			Input_Analog_LeftStick_Up = Category_inputSettings.CreateEntry("Left Stick Key Up", KeyCode.W, description: "Key used to as replacement for reading up on left analog's Y axis");
 			Input_Analog_LeftStick_Right = Category_inputSettings.CreateEntry("Left Stick Key Right", KeyCode.D, description: "Key used to as replacement for reading left on left analog's X axis");
@@ -234,7 +241,7 @@ namespace SuisHack
 			Input_Digital_A_Button = Category_inputSettings.CreateEntry("Controller button B", KeyCode.Q, description: "Key used as replacement for Xbox's B key (originally Switch's A key) - generally cancel action");
 			Input_Digital_B_Button = Category_inputSettings.CreateEntry("Controller button A", KeyCode.E, description: "Key used as replacement for Xbox's A key (originally Switch's B key) - generally confirm and contextual action");
 			Input_Digital_X_Button = Category_inputSettings.CreateEntry("Controller button Y", KeyCode.Space, description: "Key used as replacement for Xbox's Y key (originally Switch's X key) - generally used for skateboard");
-			Input_Digital_Y_Button = Category_inputSettings.CreateEntry("Controller button X", KeyCode.I, description: "Key used as replacement for Xbox's Y key (originally Switch's X key) - generally used for opening Red Room");
+			Input_Digital_Y_Button = Category_inputSettings.CreateEntry("Controller button X", KeyCode.Escape, description: "Key used as replacement for Xbox's Y key (originally Switch's X key) - generally used for opening Red Room");
 			Input_Digital_LB = Category_inputSettings.CreateEntry("Controller LB", KeyCode.Alpha2, description: "Key used as replacement for Left Bumper - generally used for vision mode");
 			Input_Digital_RB = Category_inputSettings.CreateEntry("Controller RB", KeyCode.LeftShift, description: "Key used as replacement for Right Bumper - generally used for sprint");
 			Input_Digital_Back_Button = Category_inputSettings.CreateEntry("Controller Back", KeyCode.Tab, description: "Key used as replacement for Back / Select button");
@@ -247,6 +254,8 @@ namespace SuisHack
 			Input_Digital_Left_Button = Category_inputSettings.CreateEntry("Controller Dpad left", KeyCode.LeftArrow, description: "Key used as replacement for D-pad left");
 			Input_Digital_LT = Category_inputSettings.CreateEntry("Controller Left Trigger", KeyCode.Mouse1, description: "Key used as replacemen for Left trigger pull - generally aiming");
 			Input_Digital_RT = Category_inputSettings.CreateEntry("Controller Right Trigger", KeyCode.Mouse0, description: "Key used as replacemen for Right trigger pull - generally punching / shooting");
+			Input_Mouse_Sensitivity = Category_inputSettings.CreateEntry("Mouse sensitivity", 1.0f, description: "Mouse sensitivity multiplier.");
+			KeyboardSupport.MouseAnalog.Sensitivity = Input_Mouse_Sensitivity.Value;
 		}
 
 		private void RegisterOtherSettings()
@@ -261,6 +270,7 @@ namespace SuisHack
 
 			Entry_Other_GeometryImprovements = Category_otherSettings.CreateEntry("Geometry improvements", GeometryImprovements.All, description: "Runs additional scripts and shader replacement to improve geometry. Options are: \"Disabled\" / \"Minor\" (only fixes some geometry issues and modifiers a few really bad LOD distance groups) / \"All\" (adds tesselation)");
 			Entry_Other_LightImprovements = Category_otherSettings.CreateEntry("Improve lights", LightImprovements.Minor, description: "Modifies light sources to improve the game's looks. Options are: Disabled / Minor / All - All can introduce some performance problems. Minor should be generally safe.");
+			Entry_Other_EnableCheats = Category_otherSettings.CreateEntry("Enable cheats", true, description: "Enables access to custom cheat menu.");
 		}
 
 		public LemonTuple<int, int> Resolution;

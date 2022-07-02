@@ -204,6 +204,24 @@ namespace SuisHack.Hacks
 		}
 		#endregion
 
+		#region Edge Detection
+		private static bool m_EnableEdgeDetectionFilter;
+		public static bool EnableEdgeDetectionFilter
+		{
+			get { return m_EnableEdgeDetectionFilter; }
+			set
+			{
+				if (m_EnableEdgeDetectionFilter != value)
+				{
+					ClearNullReferences();
+
+					m_EnableEdgeDetectionFilter = value;
+					ApplyEdgeDetectionChange();
+				}
+			}
+		}
+		#endregion
+
 		private static void ApplyHBAOChange()
 		{
 			foreach (var postprocess in PostProcessLayerInstances)
@@ -261,6 +279,22 @@ namespace SuisHack.Hacks
 			}
 		}
 
+		private static void ApplyEdgeDetectionChange()
+		{
+			foreach (var volume in PostProcessVolumeInstances)
+			{
+				for (int i = 0; i < volume.profile.settings.Count; i++)
+				{
+					//Dumb hack, but doesn't for whatever reason Il2CppType.Of<T> doesn't work
+					if (volume.profile.settings[i].GetIl2CppType().ToString() != typeof(SCPE.EdgeDetection).ToString())
+						continue;
+
+					var filter = volume.profile.settings[i].TryCast<SCPE.EdgeDetection>();
+					filter.enabled.value = m_EnableEdgeDetectionFilter;
+				}
+			}
+		}
+
 		public static void ClearNullReferences()
 		{
 			if (PostProcessLayerInstances.Contains(null))
@@ -307,6 +341,15 @@ namespace SuisHack.Hacks
 			for (int i = 0; i < __instance.profile.settings.Count; i++)
 			{
 				//Dumb hack, but doesn't for whatever reason Il2CppType.Of<T> doesn't work
+				if (__instance.profile.settings[i].GetIl2CppType().ToString() != typeof(SCPE.EdgeDetection).ToString())
+					continue;
+
+				var filter = __instance.profile.settings[i].TryCast<SCPE.EdgeDetection>();
+				filter.enabled.value = m_EnableEdgeDetectionFilter;
+			}
+
+			for (int i = 0; i < __instance.profile.settings.Count; i++)
+			{
 				if (__instance.profile.settings[i].GetIl2CppType().ToString() != typeof(ScreenSpaceReflections).ToString())
 					continue;
 

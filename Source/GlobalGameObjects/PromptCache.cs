@@ -9,7 +9,7 @@ namespace SuisHack.GlobalGameObjects
 		UISpriteData GetReplacement(Enum keyEnum);
 	}
 
-	public enum GamepadKeys
+	public enum GamepadKeyIcons
 	{
 		X,
 		Y,
@@ -61,7 +61,7 @@ namespace SuisHack.GlobalGameObjects
 		}
 	}
 
-	public class PromptCacheBasic : PromptCache<GamepadKeys>
+	public class PromptCacheBasic : PromptCache<GamepadKeyIcons>
 	{
 		public PromptCacheBasic(UIAtlas atlas) : base(atlas) { }
 	}

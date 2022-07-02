@@ -31,7 +31,7 @@ namespace SuisHack.GlobalGameObjects
 
 		void Awake()
 		{
-			if (SuisHackMain.Settings.Entry_Other_Prompts.Value != "" || SuisHackMain.Settings.Input_Override.Value != ExposedSettings.InputType.Original)
+			if (SuisHackMain.Settings.Entry_Other_Prompts.Value != "" || SuisHackMain.Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
 			{
 				var assetBundlePath = SuisHackMain.Settings.Entry_Other_Prompts.Value;
 				this.ReplacementTypeUsed = ReplacementType.Basic;

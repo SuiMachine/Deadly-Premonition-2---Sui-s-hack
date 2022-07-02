@@ -13,15 +13,34 @@ namespace SuisHack
 		public static ExposedSettings Settings;
 		private bool AppliedResolutionInMainMenu;
 
+		public override void OnApplicationStart()
+		{
+			loggerInst = LoggerInstance;
+			harmonyInst = HarmonyInstance;
+			LoggerInstance.Msg("Loading Sui's Hack loaded");
+			Settings = new ExposedSettings();
+			switch(Settings.Input_Override.Value)
+			{
+				case ExposedSettings.InputType.SteamInput:
+					GamepadSupport.GamepadPrompts.Initialize();
+					break;
+				case ExposedSettings.InputType.KeyboardAndMouse:
+					KeyboardSupport.KeyboardPrompts.Initialize();
+					KeyboardSupport.SteamInputHook.InitializeKeyboardAndMouse();
+					break;
+			}
+
+			base.OnApplicationStart();
+		}
+
 		public override void OnApplicationLateStart()
 		{
 			base.OnApplicationLateStart();
-			LoggerInstance.Msg("Loading Sui's Hack loaded");
-			loggerInst = LoggerInstance;
-			harmonyInst = HarmonyInstance;
-			Settings = new ExposedSettings();
+
 			if (Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
-				Hacks.SteamInputHook.InitializeKeyboardAndMouse();
+			{
+				KeyboardSupport.GlobalInputHookHandler.Initialize();
+			}
 
 			SettingsGUI.Initialize();
 			InitializeManualHarmonyHooks();
@@ -43,17 +62,17 @@ namespace SuisHack
 			if (Settings != null)
 			{
 				Application.targetFrameRate = Settings.Entry_DesiredFramerate.Value;
-				if (Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
-					GlobalGameObjects.GlobalInputHookHandler.Initialize();
 
 				if(sceneName == "TitleTest2")
 				{
 					if(!AppliedResolutionInMainMenu)
 						Hacks.ScreenHook.SetResolution1();
 					AppliedResolutionInMainMenu = true;
+					GameStateMachine.MainMenu = true;
 				}
 				else if (sceneName == OPENWORLDSCENENAME)
 				{
+					GameStateMachine.Gameplay = true;
 					if (Settings.Entry_Other_GeometryImprovements.Value >= ExposedSettings.GeometryImprovements.Minor)
 					{
 						if (GameObject.FindObjectOfType<Components.WireRenderCorrectionChecker>() == null)
@@ -69,9 +88,11 @@ namespace SuisHack
 				}
 				else
 				{
+					GameStateMachine.Gameplay = true;
 					LightImprovement.ModifyLights.ModifyOnSceneLoad(sceneName.ToLower());
 				}
 			}
 		}
+
 	}
 }
