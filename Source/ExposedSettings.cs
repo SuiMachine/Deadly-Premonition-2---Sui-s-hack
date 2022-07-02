@@ -97,6 +97,7 @@ namespace SuisHack
 		public MelonPreferences_Entry<KeyCode> Input_Digital_Left_Button;
 		public MelonPreferences_Entry<KeyCode> Input_Digital_LT;
 		public MelonPreferences_Entry<KeyCode> Input_Digital_RT;
+		public MelonPreferences_Entry<float> Input_Mouse_Sensitivity;
 
 		//Other settings
 		public MelonPreferences_Entry<bool> Entry_Other_SkipIntros;
@@ -253,6 +254,8 @@ namespace SuisHack
 			Input_Digital_Left_Button = Category_inputSettings.CreateEntry("Controller Dpad left", KeyCode.LeftArrow, description: "Key used as replacement for D-pad left");
 			Input_Digital_LT = Category_inputSettings.CreateEntry("Controller Left Trigger", KeyCode.Mouse1, description: "Key used as replacemen for Left trigger pull - generally aiming");
 			Input_Digital_RT = Category_inputSettings.CreateEntry("Controller Right Trigger", KeyCode.Mouse0, description: "Key used as replacemen for Right trigger pull - generally punching / shooting");
+			Input_Mouse_Sensitivity = Category_inputSettings.CreateEntry("Mouse sensitivity", 1.0f, description: "Mouse sensitivity multiplier.");
+			KeyboardSupport.MouseAnalog.Sensitivity = Input_Mouse_Sensitivity.Value;
 		}
 
 		private void RegisterOtherSettings()

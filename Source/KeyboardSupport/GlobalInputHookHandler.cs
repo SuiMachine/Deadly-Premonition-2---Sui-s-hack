@@ -175,18 +175,18 @@ namespace SuisHack.KeyboardSupport
 				{ SteamInputHook.SteamInputDigital.B_Button, new KeySteamDigitalAction(Settings.Input_Digital_B_Button.Value, false) },
 				{ SteamInputHook.SteamInputDigital.X_Button, new KeySteamDigitalAction(Settings.Input_Digital_X_Button.Value, false) },
 				{ SteamInputHook.SteamInputDigital.Y_Button, new KeySteamDigitalAction(Settings.Input_Digital_Y_Button.Value, false) },
-				{ SteamInputHook.SteamInputDigital.LB, new KeySteamDigitalAction(Settings.Input_Digital_LB.Value, false) },
-				{ SteamInputHook.SteamInputDigital.RB, new KeySteamDigitalAction(Settings.Input_Digital_RB.Value, false) },
 				{ SteamInputHook.SteamInputDigital.Back_Button, new KeySteamDigitalAction(Settings.Input_Digital_Back_Button.Value, false) },
 				{ SteamInputHook.SteamInputDigital.Start_Button, new KeySteamDigitalAction(Settings.Input_Digital_Start_Button.Value, false) },
-				{ SteamInputHook.SteamInputDigital.L_Stick_Button, new KeySteamDigitalAction(Settings.Input_Digital_L_Stick_Button.Value, false) },
-				{ SteamInputHook.SteamInputDigital.R_Stick_Button, new KeySteamDigitalAction(Settings.Input_Digital_Right_Button.Value, false) },
 				{ SteamInputHook.SteamInputDigital.Up_Button, new KeySteamDigitalAction(Settings.Input_Digital_Up_Button.Value, true) },
-				{ SteamInputHook.SteamInputDigital.Right_Button, new KeySteamDigitalAction(Settings.Input_Digital_Right_Button.Value, true) },
 				{ SteamInputHook.SteamInputDigital.Down_Button, new KeySteamDigitalAction(Settings.Input_Digital_Down_Button.Value, true) },
 				{ SteamInputHook.SteamInputDigital.Left_Button, new KeySteamDigitalAction(Settings.Input_Digital_Left_Button.Value, true) },
+				{ SteamInputHook.SteamInputDigital.Right_Button, new KeySteamDigitalAction(Settings.Input_Digital_Right_Button.Value, true) },
+				{ SteamInputHook.SteamInputDigital.LB, new KeySteamDigitalAction(Settings.Input_Digital_LB.Value, false) },
+				{ SteamInputHook.SteamInputDigital.RB, new KeySteamDigitalAction(Settings.Input_Digital_RB.Value, false) },
 				{ SteamInputHook.SteamInputDigital.LT, new KeySteamDigitalAction(Settings.Input_Digital_LT.Value, false) },
-				{ SteamInputHook.SteamInputDigital.RT, new KeySteamDigitalAction(Settings.Input_Digital_RT.Value, false) }
+				{ SteamInputHook.SteamInputDigital.RT, new KeySteamDigitalAction(Settings.Input_Digital_RT.Value, false) },
+				{ SteamInputHook.SteamInputDigital.L_Stick_Button, new KeySteamDigitalAction(Settings.Input_Digital_L_Stick_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.R_Stick_Button, new KeySteamDigitalAction(Settings.Input_Digital_Right_Button.Value, false) },
 			};
 
 			TranslateAnalogBackToInput[0] = new KeyActionAnalog(KeyCode.None, KeyCode.None, KeyCode.None, KeyCode.None, 1);
