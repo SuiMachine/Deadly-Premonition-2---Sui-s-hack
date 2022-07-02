@@ -53,11 +53,18 @@ namespace SuisHack.KeyboardSupport
 
 		private InputDigitalActionData_t MenuTranslateDigitalInput(SteamInputHook.SteamInputDigital digitalAction)
 		{
-			return new InputDigitalActionData_t()
+			var input = MenuTranslateDigitalBackToInput[(int)digitalAction];
+			if (input != KeyCode.None)
 			{
-				bActive = 1,
-				bState = Input.GetKeyDown(MenuTranslateDigitalBackToInput[(int)digitalAction]) ? (byte)1 : (byte)0
-			};
+				return new InputDigitalActionData_t()
+				{
+					bActive = 1,
+					bState = Input.GetKeyDown(input) ? (byte)1 : (byte)0
+				};
+			}
+			else
+				return new InputDigitalActionData_t();
+
 		}
 
 		private InputDigitalActionData_t TranslateDigitalInputMap(SteamInputHook.SteamInputDigital digitalAction)
@@ -197,7 +204,7 @@ namespace SuisHack.KeyboardSupport
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RT] = KeyCode.None;
 		}
 
-		private void Template()
+/*		private void Template()
 		{
 			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.None] = KeyCode.None;
 			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.A_Button] = KeyCode.None;
@@ -216,7 +223,7 @@ namespace SuisHack.KeyboardSupport
 			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Left_Button] = KeyCode.None;
 			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LT] = KeyCode.None;
 			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RT] = KeyCode.None;
-		}
+		}*/
 
 		private void Update()
 		{
