@@ -14,6 +14,7 @@ namespace SuisHack
 			Root,
 			Display,
 			Quality,
+			Input,
 			Other
 		}
 
@@ -84,12 +85,87 @@ namespace SuisHack
 					case Category.Quality:
 						DrawQuality();
 						break;
+					case Category.Input:
+						switch (Settings.Input_Override.Value)
+						{
+							case ExposedSettings.InputType.SteamInput:
+								DrawSteamInput();
+								break;
+							case ExposedSettings.InputType.KeyboardAndMouse:
+								DrawKeyboardAndMouseInput();
+								break;
+						}
+						break;
 					case Category.Other:
 						DrawOther();
 						break;
 				}
 			}
 		}
+
+		private void DrawSteamInput()
+		{
+			GUIStyle richText = GUI.skin.label;
+			richText.richText = true;
+
+			{
+				GUILayout.BeginVertical(GUI.skin.box, null);
+				GUILayout.Label("Options starting with * requires full game restart", null);
+				GUILayout.BeginHorizontal(null);
+				GUILayout.Label("* Input mode:", null);
+				if (GUILayout.Button("Change to keyboard and mouse", null))
+					Settings.Input_Override.Value = ExposedSettings.InputType.KeyboardAndMouse;
+				GUILayout.EndHorizontal();
+				GUILayout.EndVertical();
+			}
+
+			{
+				GUILayout.BeginVertical(GUI.skin.box, null);
+				Settings.Input_Controller_Vibration.Value = GUILayout.Toggle(Settings.Input_Controller_Vibration.Value, "Controller rumble / vibration", null);
+				GUILayout.EndVertical();
+			}
+
+		}
+
+		private void DrawKeyboardAndMouseInput()
+		{
+			GUIStyle richText = GUI.skin.label;
+			richText.richText = true;
+
+			{
+				GUILayout.BeginVertical(GUI.skin.box, null);
+				GUILayout.BeginHorizontal(null);
+				GUILayout.Label("* Input mode:", null);
+				if (GUILayout.Button("Change to gamepad", null))
+					Settings.Input_Override.Value = ExposedSettings.InputType.SteamInput;
+				GUILayout.EndHorizontal();
+				GUILayout.EndVertical();
+			}
+			{ 
+				GUILayout.BeginVertical(GUI.skin.box, null);
+				GUILayout.Label("Options starting with * requires full game restart", null);
+				GUILayout.Label("For keyboard and mouse to work a controller is still required!", null);
+				GUILayout.Label("A fake / emulated controller can work, provided it is detected by SteamInput.", null);
+				GUILayout.Label("For mouse support to work, a modified gamemangers file is required.", null);
+				GUILayout.EndVertical();
+			}
+
+			{
+				GUILayout.BeginVertical(GUI.skin.box, null);
+				GUILayout.BeginHorizontal(null);
+				GUILayout.Label($"Mouse sensitivity: {Settings.Input_Mouse_Sensitivity.Value:0.00}", null);
+				Settings.Input_Mouse_Sensitivity.Value = GUILayout.HorizontalSlider(Settings.Input_Mouse_Sensitivity.Value, 0.05f, 2, null);
+				GUILayout.EndHorizontal();
+				GUILayout.EndVertical();
+			}
+
+			{
+				GUILayout.BeginVertical(GUI.skin.box, null);
+				GUILayout.Label($"Key rebinding (affects only gameplay section)", null);
+				GUILayout.EndVertical();
+			}
+		}
+
 
 		private void DrawRoot()
 		{
@@ -101,6 +177,10 @@ namespace SuisHack
 			if (GUILayout.Button("Quality settings", null))
 			{
 				category = Category.Quality;
+			}
+			if (GUILayout.Button("Input settings", null))
+			{
+				category = Category.Input;
 			}
 			if (GUILayout.Button("Other settings", null))
 			{

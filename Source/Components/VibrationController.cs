@@ -14,6 +14,7 @@ namespace SuisHack.Components
 
 		public static VibrationController Instance { get; private set; }
 		private object RumbleRoutine = null;
+		public static bool UseRumble = false;
 
 		public static void Initialize()
 		{
@@ -22,6 +23,7 @@ namespace SuisHack.Components
 				var go = new GameObject("VibrationController");
 				GameObject.DontDestroyOnLoad(go);
 				Instance = go.AddComponent<VibrationController>();
+				UseRumble = SuisHackMain.Settings.Input_Controller_Vibration.Value;
 			}
 
 			if (Instance != null)
@@ -30,7 +32,7 @@ namespace SuisHack.Components
 
 		public void GetHandle()
 		{
-			if (ControllerHandle.m_InputHandle == 0)
+			if (UseRumble && ControllerHandle.m_InputHandle == 0)
 			{
 				if (ControllerHandle.m_InputHandle == 0)
 				{
@@ -46,7 +48,7 @@ namespace SuisHack.Components
 
 		public void TriggleRumble(ushort strenght, float lenght)
 		{
-			if (ControllerHandle.m_InputHandle != 0)
+			if (UseRumble && ControllerHandle.m_InputHandle != 0)
 			{
 				if (RumbleRoutine != null)
 					MelonCoroutines.Stop(RumbleRoutine);
@@ -56,7 +58,7 @@ namespace SuisHack.Components
 
 		public void TriggerChargeRumble(ushort startStrenght, ushort maxStrenght, float lenght)
 		{
-			if (ControllerHandle.m_InputHandle != 0)
+			if (UseRumble && ControllerHandle.m_InputHandle != 0)
 			{
 				if (RumbleRoutine != null)
 					MelonCoroutines.Stop(RumbleRoutine);
@@ -66,7 +68,7 @@ namespace SuisHack.Components
 
 		internal void CancelRumble()
 		{
-			if (ControllerHandle.m_InputHandle != 0)
+			if (UseRumble && ControllerHandle.m_InputHandle != 0)
 			{
 				StopAllCoroutines();
 				SteamInput.TriggerVibration(ControllerHandle, 0, 0);
@@ -75,7 +77,7 @@ namespace SuisHack.Components
 
 		public void TriggleRumble(ushort lStrenght, ushort rStrenght, float lenght)
 		{
-			if(ControllerHandle.m_InputHandle != 0)
+			if(UseRumble && ControllerHandle.m_InputHandle != 0)
 			{
 				if (RumbleRoutine != null)
 					MelonCoroutines.Stop(RumbleRoutine);
