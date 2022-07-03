@@ -27,6 +27,7 @@ namespace SuisHack.Hacks
 				foreach (var postProcess in PostProcessLayerInstances)
 				{
 					postProcess.antialiasingMode = value;
+					postProcess.subpixelMorphologicalAntialiasing.quality = SubpixelMorphologicalAntialiasing.Quality.High;
 					postProcess.temporalAntialiasing.jitterSpread = TAA_JitterSpread;
 				}
 			}
@@ -316,6 +317,7 @@ namespace SuisHack.Hacks
 		public static void PostProcessLayerAwakePostfix(PostProcessLayer __instance)
 		{
 			__instance.antialiasingMode = m_Antialiasing;
+			__instance.subpixelMorphologicalAntialiasing.quality = SubpixelMorphologicalAntialiasing.Quality.High;
 			__instance.temporalAntialiasing.jitterSpread = TAA_JitterSpread;
 			if (!PostProcessLayerInstances.Contains(__instance))
 				PostProcessLayerInstances.Add(__instance);
