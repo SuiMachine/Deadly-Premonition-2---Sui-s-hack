@@ -11,10 +11,10 @@ namespace SuisHack.Hacks
 		[HarmonyPatch(typeof(CharaControl), "Init")]
 		public static void CharaControlHookInit(CharaControl __instance)
 		{
-			var interpolation = __instance.GetComponent<GameObjectInterpolation>();
+			var interpolation = __instance.GetComponent<Components.Interpolation.GameObjectInterpolation>();
 			if (interpolation == null)
 			{
-				__instance.gameObject.AddComponent<GameObjectInterpolation>();
+				__instance.gameObject.AddComponent<Components.Interpolation.GameObjectInterpolation>();
 			}
 
 			if(SuisHackMain.Settings.Entry_Other_LightImprovements.Value >= ExposedSettings.LightImprovements.Minor)

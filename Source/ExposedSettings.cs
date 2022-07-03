@@ -265,8 +265,8 @@ namespace SuisHack
 			Entry_Other_ShowAdvanced = Category_otherSettings.CreateEntry("Show advanced settings", false, description: "Shows advanced options in GUI.");
 
 			Entry_Other_InterpolateMovement = Category_otherSettings.CreateEntry("Interpolate movement", true, description: "Experimental: Enabled hooks related to movement interpolation of some rendered objects (protagonist and camera) to work around 50Hz Fixed Update stuttering - to my speedrunning friends: DO NOT allow this option for speedrunning.");
-			Entry_Other_InterpolateMovement.OnValueChanged += (bool oldValue, bool newVal) => { Components.SmootherController.InterpolateMovement = newVal; };
-			Components.SmootherController.InterpolateMovement = Entry_Other_InterpolateMovement.Value;
+			Entry_Other_InterpolateMovement.OnValueChanged += (bool oldValue, bool newVal) => { Components.Interpolation.SmootherController.InterpolateMovement = newVal; };
+			Components.Interpolation.SmootherController.InterpolateMovement = Entry_Other_InterpolateMovement.Value;
 
 			Entry_Other_GeometryImprovements = Category_otherSettings.CreateEntry("Geometry improvements", GeometryImprovements.All, description: "Runs additional scripts and shader replacement to improve geometry. Options are: \"Disabled\" / \"Minor\" (only fixes some geometry issues and modifiers a few really bad LOD distance groups) / \"All\" (adds tesselation)");
 			Entry_Other_LightImprovements = Category_otherSettings.CreateEntry("Improve lights", LightImprovements.Minor, description: "Modifies light sources to improve the game's looks. Options are: Disabled / Minor / All - All can introduce some performance problems. Minor should be generally safe.");

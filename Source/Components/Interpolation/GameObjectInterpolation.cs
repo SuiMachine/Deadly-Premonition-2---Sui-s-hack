@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SuisHack.Components
+namespace SuisHack.Components.Interpolation
 {
 	[RegisterTypeInIl2Cpp]
 	public class GameObjectInterpolation : MonoBehaviour

@@ -31,7 +31,6 @@ namespace SuisHack.GamepadSupport
 		[HarmonyPatch(typeof(Gun), nameof(Gun.DispChargeFlash))]
 		public static void DispChargeFlash()
 		{
-			SuisHackMain.loggerInst.Msg("DispChargeFlash");
 			Components.VibrationController.Instance?.TriggerChargeRumble(1000, 40000, 3f);
 			//Components.VibrationController.Instance?.TriggleRumble(60000, 0.15f);
 		}

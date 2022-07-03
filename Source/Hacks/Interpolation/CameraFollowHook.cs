@@ -12,16 +12,16 @@ namespace SuisHack.Hacks
 		public static void CameraFollowHookInit(CameraFollow __instance)
 		{
 			//Originally was planning on interpolating camera, but that looked quite junk, so I just used it for pre-cull / post render.
-			var smootherController = __instance.GetComponent<Components.SmootherController>();
+			var smootherController = __instance.GetComponent<Components.Interpolation.SmootherController>();
 			if (smootherController == null)
 			{
-				__instance.gameObject.AddComponent<Components.SmootherController>();
+				__instance.gameObject.AddComponent<Components.Interpolation.SmootherController>();
 			}
 
-			var interpolation = __instance.GetComponent<GameObjectInterpolation>();
+			var interpolation = __instance.GetComponent<Components.Interpolation.GameObjectInterpolation>();
 			if (interpolation == null)
 			{
-				__instance.gameObject.AddComponent<GameObjectInterpolation>();
+				__instance.gameObject.AddComponent<Components.Interpolation.GameObjectInterpolation>();
 			}
 		}
 	}

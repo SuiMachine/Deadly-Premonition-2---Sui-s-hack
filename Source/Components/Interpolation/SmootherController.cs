@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace SuisHack.Components
+namespace SuisHack.Components.Interpolation
 {
 	[RegisterTypeInIl2Cpp]
 	public class SmootherController : MonoBehaviour
