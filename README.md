@@ -25,10 +25,10 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 * Option to skip splash screens / intros
 * Runtime button prompt replacement with buttons prepared for Xbox and Playstation controllers (make sure to correct bindings in Steam Input).
 * Bugfix: Corrected Electrical Wires bounds to be rendered correctly (Fix geometry).
+* Movement interpolation.
 * A basic GUI available for configuring the mod available under F11.
 
 # Experimental features
-* Movement interpolation.
 * Hook for SteamInput to read Keyboard and mouse input instead (set Input type to "KeyboardAndMouse" in config file).
 
 # Requirements
@@ -41,8 +41,9 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 * Launch the game.
 * Press F11 to open configuration GUI or close the game and edit "MelonPreferences.cfg" inside the UserData folder.
 
-# Bugs / To do:
+# Bugs
 * (BUG) Resolution is not applied to main window on startup, if focus is on console window.
+* TAA causes some issues with shader of phantoms in the otherworld, so it has Jitter set to 0 to avoid that - because of that it doesn't produce great results.
 
 # Notes
 * Replacing gamepad prompts requires generally requires modifying Steam Input profile, you generally want:

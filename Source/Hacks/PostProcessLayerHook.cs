@@ -9,7 +9,7 @@ namespace SuisHack.Hacks
 	[HarmonyPatch]
 	public static class PostProcessLayerHook
 	{
-		const float TAA_JitterSpread = 0.0001f;
+		const float TAA_JitterSpread = 0f;
 		static List<PostProcessLayer> PostProcessLayerInstances = new List<PostProcessLayer>();
 		static List<PostProcessVolume> PostProcessVolumeInstances = new List<PostProcessVolume>();
 
@@ -252,8 +252,16 @@ namespace SuisHack.Hacks
 					if (m_SSR_Enabled)
 					{
 						ssr.enabled.overrideState = true;
-						ssr.enabled.value = true;
-						ssr.active = true;
+						if(volume.gameObject.scene.name.ToLower() == "map_002_1_coldwarehouse")
+						{
+							ssr.enabled.value = false;
+							ssr.active = false;
+						}
+						else
+						{
+							ssr.enabled.value = true;
+							ssr.active = true;
+						}
 
 						ssr.preset.overrideState = true;
 						ssr.preset.value = m_SSR_Preset;
@@ -335,8 +343,7 @@ namespace SuisHack.Hacks
 			if (!PostProcessVolumeInstances.Contains(__instance))
 				PostProcessVolumeInstances.Add(__instance);
 
-			if (!m_SSR_Enabled)
-				return;
+
 
 			for (int i = 0; i < __instance.profile.settings.Count; i++)
 			{
@@ -348,6 +355,9 @@ namespace SuisHack.Hacks
 				filter.enabled.value = m_EnableEdgeDetectionFilter;
 			}
 
+			if (!m_SSR_Enabled)
+				return;
+
 			for (int i = 0; i < __instance.profile.settings.Count; i++)
 			{
 				if (__instance.profile.settings[i].GetIl2CppType().ToString() != typeof(ScreenSpaceReflections).ToString())
@@ -356,8 +366,16 @@ namespace SuisHack.Hacks
 				var ssr = __instance.profile.settings[i].TryCast<ScreenSpaceReflections>();
 
 				ssr.enabled.overrideState = true;
-				ssr.enabled.value = true;
-				ssr.active = true;
+				if (__instance.gameObject.scene.name.ToLower() == "map_002_1_coldwarehouse")
+				{
+					ssr.enabled.value = false;
+					ssr.active = false;
+				}
+				else
+				{
+					ssr.enabled.value = true;
+					ssr.active = true;
+				}
 
 				ssr.preset.overrideState = true;
 				ssr.preset.value = m_SSR_Preset;
