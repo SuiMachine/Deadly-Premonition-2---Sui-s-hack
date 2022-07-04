@@ -9,6 +9,12 @@ namespace SuisHack.KeyboardSupport
 		public abstract void Update();
 
 		public abstract InputAnalogActionData_t GetInput();
+
+		public abstract KeyCode GetUpKeyCode();
+		public abstract KeyCode GetDownKeyCode();
+		public abstract KeyCode GetLeftKeyCode();
+		public abstract KeyCode GetRightKeyCode();
+
 	}
 
 	public class MouseAnalog : KeySteamAnalogAction
@@ -22,6 +28,14 @@ namespace SuisHack.KeyboardSupport
 
 			return new InputAnalogActionData_t() { x = vec.x, y = vec.y };
 		}
+
+		public override KeyCode GetLeftKeyCode() => KeyCode.None;
+
+		public override KeyCode GetRightKeyCode() => KeyCode.None;
+
+		public override KeyCode GetUpKeyCode() => KeyCode.None;
+		public override KeyCode GetDownKeyCode() => KeyCode.None;
+
 
 		public override void Update()
 		{
@@ -71,5 +85,10 @@ namespace SuisHack.KeyboardSupport
 		public override void Update()
 		{
 		}
+
+		public override KeyCode GetUpKeyCode() => keyCodeUp;
+		public override KeyCode GetDownKeyCode() => keyCodeDown;
+		public override KeyCode GetLeftKeyCode() => keyCodeLeft;
+		public override KeyCode GetRightKeyCode() => keyCodeRight;
 	}
 }

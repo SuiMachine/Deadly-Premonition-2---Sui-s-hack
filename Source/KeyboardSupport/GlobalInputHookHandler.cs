@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static SuisHack.KeyboardSupport.SteamInputHook;
 
 namespace SuisHack.KeyboardSupport
 {
@@ -12,9 +13,61 @@ namespace SuisHack.KeyboardSupport
 		public ExposedSettings Settings;
 
 		public static GlobalInputHookHandler Instance { get; private set; }
-		private Dictionary<SteamInputHook.SteamInputAnalog, KeySteamAnalogAction> AnalogInputToInput;
-		private Dictionary<SteamInputHook.SteamInputDigital, KeySteamDigitalAction> DigitalInputToInput;
+		public Dictionary<SteamInputHook.SteamInputAnalog, KeySteamAnalogAction> AnalogInputToInput;
+		public Dictionary<SteamInputHook.SteamInputDigital, KeySteamDigitalAction> DigitalInputToInput;
 
+
+		public static KeyCode GetInputForRebinding(RebindingActions action)
+		{
+			if (Instance != null)
+			{
+				switch (action)
+				{
+					case RebindingActions.Forward:
+						return Instance.AnalogInputToInput[SteamInputAnalog.L_Stick].GetUpKeyCode();
+					case RebindingActions.Backward:
+						return Instance.AnalogInputToInput[SteamInputAnalog.L_Stick].GetDownKeyCode();
+					case RebindingActions.Left:
+						return Instance.AnalogInputToInput[SteamInputAnalog.L_Stick].GetLeftKeyCode();
+					case RebindingActions.Right:
+						return Instance.AnalogInputToInput[SteamInputAnalog.L_Stick].GetRightKeyCode();
+					case RebindingActions.Crouch:
+						return Instance.DigitalInputToInput[SteamInputDigital.L_Stick_Button].GetBind();
+					case RebindingActions.Dash_Dodge:
+						return Instance.DigitalInputToInput[SteamInputDigital.RB].GetBind();
+					case RebindingActions.Fire_Weapon_Punch:
+						return Instance.DigitalInputToInput[SteamInputDigital.RT].GetBind();
+					case RebindingActions.Point_Gun:
+						return Instance.DigitalInputToInput[SteamInputDigital.LT].GetBind();
+					case RebindingActions.Vision:
+						return Instance.DigitalInputToInput[SteamInputDigital.LB].GetBind();
+					case RebindingActions.Interact_Reload_Accellerate:
+						return Instance.DigitalInputToInput[SteamInputDigital.A_Button].GetBind();
+					case RebindingActions.Cancel_Brake:
+						return Instance.DigitalInputToInput[SteamInputDigital.B_Button].GetBind();
+					case RebindingActions.Reset_Camera_Fighting_Style:
+						return Instance.DigitalInputToInput[SteamInputDigital.R_Stick_Button].GetBind();
+					case RebindingActions.Display_Map:
+						return Instance.DigitalInputToInput[SteamInputDigital.Back_Button].GetBind();
+					case RebindingActions.Quest_Display:
+						return Instance.DigitalInputToInput[SteamInputDigital.Start_Button].GetBind();
+					case RebindingActions.Skateboard:
+						return Instance.DigitalInputToInput[SteamInputDigital.Y_Button].GetBind();
+					case RebindingActions.SwitchSlotLeft:
+						return Instance.DigitalInputToInput[SteamInputDigital.Left_Button].GetBind();
+					case RebindingActions.SwitchSlotRight:
+						return Instance.DigitalInputToInput[SteamInputDigital.Right_Button].GetBind();
+					case RebindingActions.SwitchAlbumDisplayDown:
+						return Instance.DigitalInputToInput[SteamInputDigital.Down_Button].GetBind();
+					case RebindingActions.SwitchAlbumDisplayUp:
+						return Instance.DigitalInputToInput[SteamInputDigital.Up_Button].GetBind();
+					default:
+						return KeyCode.None;
+				}
+			}
+			else
+				return KeyCode.None;
+		}
 
 		public InputAnalogActionData_t GetAnalogInputReplacement(SteamInputHook.SteamInputAnalog analogActionHandle)
 		{

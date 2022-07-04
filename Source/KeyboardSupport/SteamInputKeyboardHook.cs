@@ -5,6 +5,30 @@ namespace SuisHack.KeyboardSupport
 {
 	public static class SteamInputHook
 	{
+		public enum RebindingActions
+		{
+			None,
+			Forward,
+			Backward,
+			Left,
+			Right,
+			Display_Map,
+			Point_Gun,
+			Vision,
+			Crouch,
+			SwitchSlotLeft,
+			SwitchSlotRight,
+			SwitchAlbumDisplayUp,
+			SwitchAlbumDisplayDown,
+			Quest_Display,
+			Fire_Weapon_Punch,
+			Dash_Dodge,
+			Interact_Reload_Accellerate,
+			Cancel_Brake,
+			Skateboard,
+			Reset_Camera_Fighting_Style
+		}
+
 		public enum SteamInputAnalog
 		{
 			None,
