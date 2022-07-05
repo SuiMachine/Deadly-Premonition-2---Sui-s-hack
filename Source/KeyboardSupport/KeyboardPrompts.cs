@@ -35,6 +35,7 @@ namespace SuisHack.KeyboardSupport
 		{
 			if (GlobalReplacementAtlas.Instance != null && __instance.mSpriteName != null)
 			{
+				//SuisHackMain.loggerInst.Msg($"Trying to replace: {__instance.mSpriteName}"); 
 				switch (__instance.mSpriteName)
 				{
 					//Seriously - fuck Nintendo and their layout!
@@ -75,6 +76,18 @@ namespace SuisHack.KeyboardSupport
 						break;
 					case "NX_stick_button_Stick_Button_R_Push":
 						GlobalReplacementAtlas.Instance.Replace(__instance, Instance.GetReplacementPrompt(SteamInputHook.SteamInputDigital.R_Stick_Button));
+						break;
+					case "NX_Cont_Button_ARROW_L":
+						GlobalReplacementAtlas.Instance.Replace(__instance, Instance.GetReplacementPrompt(SteamInputHook.SteamInputDigital.Left_Button));
+						break;
+					case "NX_Cont_Button_ARROW_U":
+						GlobalReplacementAtlas.Instance.Replace(__instance, Instance.GetReplacementPrompt(SteamInputHook.SteamInputDigital.Up_Button));
+						break;
+					case "NX_Cont_Button_ARROW_D":
+						GlobalReplacementAtlas.Instance.Replace(__instance, Instance.GetReplacementPrompt(SteamInputHook.SteamInputDigital.Down_Button));
+						break;
+					case "NX_Cont_Button_ARROW_R":
+						GlobalReplacementAtlas.Instance.Replace(__instance, Instance.GetReplacementPrompt(SteamInputHook.SteamInputDigital.Right_Button));
 						break;
 				}
 			}
