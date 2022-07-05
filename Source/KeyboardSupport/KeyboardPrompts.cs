@@ -58,7 +58,7 @@ namespace SuisHack.KeyboardSupport
 						GlobalReplacementAtlas.Instance.Replace(__instance, Instance.GetReplacementPrompt(SteamInputHook.SteamInputDigital.LT));
 						break;
 					case "NX_Cont_Button_L":
-						GlobalReplacementAtlas.Instance.Replace(__instance, Instance.GetReplacementPrompt(SteamInputHook.SteamInputDigital.RB));
+						GlobalReplacementAtlas.Instance.Replace(__instance, Instance.GetReplacementPrompt(SteamInputHook.SteamInputDigital.LB));
 						break;
 					case "NX_Cont_Button_+":
 						GlobalReplacementAtlas.Instance.Replace(__instance, Instance.GetReplacementPrompt(SteamInputHook.SteamInputDigital.Start_Button));

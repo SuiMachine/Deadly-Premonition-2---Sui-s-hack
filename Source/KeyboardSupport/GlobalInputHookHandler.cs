@@ -308,7 +308,7 @@ namespace SuisHack.KeyboardSupport
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.B_Button] = KeyCode.Mouse0;
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.X_Button] = KeyCode.None;
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Y_Button] = KeyCode.Tab;
-			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.Mouse5;
+			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.KeypadMinus;
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RB] = KeyCode.KeypadPlus;
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Back_Button] = KeyCode.None;
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Start_Button] = KeyCode.None;
