@@ -272,6 +272,33 @@ namespace SuisHack
 				case RebindingActions.Fire_Weapon_Punch:
 					Settings.Input_Digital_RT.Value = tempKey;
 					break;
+				case RebindingActions.Cancel_Brake:
+					Settings.Input_Digital_B_Button.Value = tempKey;
+					break;
+				case RebindingActions.Dash_Dodge:
+					Settings.Input_Digital_RB.Value = tempKey;
+					break;
+				case RebindingActions.Interact_Reload_Accellerate:
+					Settings.Input_Digital_A_Button.Value = tempKey;
+					break;
+				case RebindingActions.Reset_Camera_Fighting_Style:
+					Settings.Input_Digital_R_Stick_Button.Value = tempKey;
+					break;
+				case RebindingActions.Skateboard:
+					Settings.Input_Digital_Y_Button.Value = tempKey;
+					break;
+				case RebindingActions.SwitchAlbumDisplayDown:
+					Settings.Input_Digital_Down_Button.Value = tempKey;
+					break;
+				case RebindingActions.SwitchAlbumDisplayUp:
+					Settings.Input_Digital_Up_Button.Value = tempKey;
+					break;
+				case RebindingActions.SwitchSlotLeft:
+					Settings.Input_Digital_Left_Button.Value = tempKey;
+					break;
+				case RebindingActions.SwitchSlotRight:
+					Settings.Input_Digital_Right_Button.Value = tempKey;
+					break;
 			}
 		}
 
