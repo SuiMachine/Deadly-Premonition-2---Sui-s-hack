@@ -267,7 +267,7 @@ namespace SuisHack
 					Settings.Input_Digital_LB.Value = tempKey;
 					break;
 				case RebindingActions.Crouch:
-					Settings.Input_Digital_Left_Button.Value = tempKey;
+					Settings.Input_Digital_L_Stick_Button.Value = tempKey;
 					break;
 				case RebindingActions.Fire_Weapon_Punch:
 					Settings.Input_Digital_RT.Value = tempKey;
