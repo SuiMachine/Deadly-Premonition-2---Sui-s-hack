@@ -52,8 +52,6 @@ namespace SuisHack
 		public MelonPreferences_Entry<bool> Entry_Quality_Use4ShadowCascades;
 		public MelonPreferences_Entry<ShadowQuality> Entry_Quality_ShadowsQuality;
 		public MelonPreferences_Entry<ShadowResolution> Entry_Quality_ShadowsResolution;
-		public MelonPreferences_Entry<ShadowmaskMode> Entry_Quality_ShadowMaskMode;
-		public MelonPreferences_Entry<ShadowProjection> Entry_Quality_ShadowProjectionMode;
 		public MelonPreferences_Entry<float> Entry_Quality_ShadowTwoSplitValue;
 		public MelonPreferences_Entry<float> Entry_Quality_ShadowFourSplitValue1;
 		public MelonPreferences_Entry<float> Entry_Quality_ShadowFourSplitValue2;
@@ -167,9 +165,6 @@ namespace SuisHack
 			Entry_Quality_Use4ShadowCascades = Category_graphicsSettings.CreateEntry("Use 4 Shadow cascades", false, description: "Makes it so the game uses 4 shadow cascades instead of 2. This should significently increase shadows quality in the game if used. By default in PC version the game uses 2 cascades.");
 			Entry_Quality_Use4ShadowCascades.OnValueChanged += (bool oldValue, bool newValue) => { QualitySettings.shadowCascades = newValue ? 4 : 2; };
 
-			Entry_Quality_ShadowMaskMode = Category_graphicsSettings.CreateEntry("Shadows mask mode", ShadowmaskMode.DistanceShadowmask, description: "Sets Unity\'s Shadowmask mode. Options are: Shadowmask / DistanceShadowmask. See https://docs.unity3d.com/ScriptReference/ShadowmaskMode.html cause I can't be bothered. By default the game uses DistanceShadowmask.");
-			Entry_Quality_ShadowMaskMode.OnValueChanged += (ShadowmaskMode oldValue, ShadowmaskMode newValue) => { QualitySettings.shadowmaskMode = newValue; };
-
 			Entry_Quality_LODBias = Category_graphicsSettings.CreateEntry("LODBias", 2f, description: "LOD Bias - affects how far from camera the LOD changes - bigger values, push the LOD change further from camera - min. 0.5, max. 4.0. Default game value is 2.0. Originally it was probably 1.0 on Nintendo Switch.", validator: new ValueRange<float>(0.5f, 4f));
 			Entry_Quality_LODBias.OnValueChanged += (float oldValue, float newValue) => { QualitySettings.lodBias = newValue; };
 
@@ -179,8 +174,6 @@ namespace SuisHack
 			Entry_Quality_ShadowFourSplitValue1 = Category_graphicsSettings.CreateEntry("Shadow split 4 percent 1", 0.06666667f, description: "See \"Shadow split 2 percent\" - this is the same, except used for 4 cascades - this one is percentage distance between cascade 1 and 2. Default value is 0.06666667f. Min value is 0.01, max is 0.5", validator: new ValueRange<float>(0.01f, 0.5f));
 			Entry_Quality_ShadowFourSplitValue2 = Category_graphicsSettings.CreateEntry("Shadow split 4 percent 2", 0.2f, description: "See \"Shadow split 2 percent\" - this is the same, except used for 4 cascades - this one is percentage distance between cascade 2 and 3. Default value is 0.2. Min value is 0.1, max is 0.8", validator: new ValueRange<float>(0.1f, 0.8f));
 			Entry_Quality_ShadowFourSplitValue3 = Category_graphicsSettings.CreateEntry("Shadow split 4 percent 3", 0.4666667f, description: "See \"Shadow split 2 percent\" - this is the same, except used for 4 cascades - this one is percentage distance between cascade 3 and 4. Default value is 0.4666667. Min value is 0.02, max is 0.9", validator: new ValueRange<float>(0.02f, 0.9f));
-			Entry_Quality_ShadowProjectionMode = Category_graphicsSettings.CreateEntry("Shadow project mode", ShadowProjection.StableFit, description: "Shadow projection mode. Options \"CloseFit\" / \"StableFit\". Default is StableFit. See https://docs.unity3d.com/ScriptReference/ShadowProjection.html");
-			Entry_Quality_ShadowProjectionMode.OnValueChanged += (ShadowProjection oldValue, ShadowProjection newValue) => { QualitySettings.shadowProjection = newValue; };
 
 			Entry_Quality_MirrorReflectionResolution = Category_graphicsSettings.CreateEntry("Mirrors reflection reflection", 512, description: "Overrides render texture resolution for planar reflections - the resolution has to be a number that is a power of 2 and at least 128 and at most 2048. Default is 512.", validator: new PowerOfTwoValidatorWithRange(128, 2048));
 			Entry_Quality_MirrorReflectionResolution.OnValueChanged += (int oldValue, int newValue) => { Hacks.MirrorReflectionHook.ReflectionSize = newValue; };

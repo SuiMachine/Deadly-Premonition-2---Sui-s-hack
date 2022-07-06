@@ -21,8 +21,6 @@ namespace SuisHack.Hacks
 			QualitySettings.pixelLightCount = Settings.Entry_Quality_PixelLightCount.Value;
 			QualitySettings.shadowDistance = Settings.Entry_Quality_ShadowDistance.Value;
 			QualitySettings.shadowCascade4Split = new Vector3(Settings.Entry_Quality_ShadowFourSplitValue1.Value, Settings.Entry_Quality_ShadowFourSplitValue2.Value, Settings.Entry_Quality_ShadowFourSplitValue3.Value);
-			QualitySettings.shadowmaskMode = Settings.Entry_Quality_ShadowMaskMode.Value;
-			QualitySettings.shadowProjection = Settings.Entry_Quality_ShadowProjectionMode.Value;
 			QualitySettings.shadows = Settings.Entry_Quality_ShadowsQuality.Value;
 			QualitySettings.shadowResolution = Settings.Entry_Quality_ShadowsResolution.Value;
 			QualitySettings.shadowCascade2Split = Settings.Entry_Quality_ShadowTwoSplitValue.Value;

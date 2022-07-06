@@ -564,34 +564,6 @@ namespace SuisHack
 					GUILayout.EndHorizontal();
 				}
 
-				//Shadow mask mode
-				if (Settings.Entry_Other_ShowAdvanced.Value)
-				{
-					GUILayout.BeginHorizontal(null);
-					GUILayout.Label($"Shadow mask mode ({QualitySettings.shadowmaskMode}):", null);
-					if (GUILayout.Button("Shadowmask", null))
-						Settings.Entry_Quality_ShadowMaskMode.Value = ShadowmaskMode.Shadowmask;
-
-					if (GUILayout.Button("Distance shadowmask", null))
-						Settings.Entry_Quality_ShadowMaskMode.Value = ShadowmaskMode.DistanceShadowmask;
-
-					GUILayout.EndHorizontal();
-				}
-
-				//Shadow Projection
-				if (Settings.Entry_Other_ShowAdvanced.Value)
-				{
-					GUILayout.BeginHorizontal(null);
-					GUILayout.Label($"Shadow projection mode ({QualitySettings.shadowProjection}):", null);
-					if (GUILayout.Button("Close Fit", null))
-						Settings.Entry_Quality_ShadowProjectionMode.Value = ShadowProjection.CloseFit;
-
-					if (GUILayout.Button("Stable fit", null))
-						Settings.Entry_Quality_ShadowProjectionMode.Value = ShadowProjection.StableFit;
-
-					GUILayout.EndHorizontal();
-				}
-
 				//Shadow distance
 				{
 					GUILayout.BeginHorizontal(null);
@@ -864,8 +836,6 @@ namespace SuisHack
 			Settings.Entry_Quality_ShadowFourSplitValue3.Value = Settings.Entry_Quality_ShadowFourSplitValue3.DefaultValue;
 			QualitySettings.shadowCascade4Split = new Vector3(Settings.Entry_Quality_ShadowFourSplitValue1.Value, Settings.Entry_Quality_ShadowFourSplitValue2.Value, Settings.Entry_Quality_ShadowFourSplitValue3.Value);
 
-			Settings.Entry_Quality_ShadowMaskMode.Value = Settings.Entry_Quality_ShadowMaskMode.DefaultValue;
-			Settings.Entry_Quality_ShadowProjectionMode.Value = Settings.Entry_Quality_ShadowProjectionMode.DefaultValue;
 			Settings.Entry_Quality_ShadowsQuality.Value = Settings.Entry_Quality_ShadowsQuality.DefaultValue;
 			Settings.Entry_Quality_ShadowsResolution.Value = Settings.Entry_Quality_ShadowsResolution.DefaultValue;
 			Settings.Entry_Quality_ShadowTwoSplitValue.Value = Settings.Entry_Quality_ShadowTwoSplitValue.DefaultValue;
