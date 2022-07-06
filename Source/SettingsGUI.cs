@@ -914,6 +914,9 @@ namespace SuisHack
 			{
 				var split = file.Split('\\', '/', '.');
 				var fileName = split[split.Length - 2];
+				if (fileName == "keyboard")
+					continue;
+
 				if (GUILayout.Button(fileName, null))
 				{
 					Settings.Entry_Other_Prompts.Value = fileName;
