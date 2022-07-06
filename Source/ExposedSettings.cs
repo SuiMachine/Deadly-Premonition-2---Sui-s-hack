@@ -17,8 +17,7 @@ namespace SuisHack
 		public enum GeometryImprovements
 		{
 			Disabled,
-			Minor,
-			All
+			Enabled,
 		}
 
 		public enum LightImprovements
@@ -141,7 +140,7 @@ namespace SuisHack
 		private void RegisterGraphicsSettings()
 		{
 			//I was originally planning on writting some wrapper to set up these events, but why should I when I can have a wall of text!
-			Entry_Antialiasing = Category_graphicsSettings.CreateEntry("Antialiasing", PostProcessLayer.Antialiasing.FastApproximateAntialiasing, description: "Experimental: Antialiasing used by the game. Options are: \"None\" (disables AA) / \"FastApproximateAntialiasing\" (FXAA) / \"SubpixelMorphologicalAntialiasing\" (SMAA) / \"TemporalAntialiasing\" (TAA). Default on PC is \"FastApproximateAntialiasing\". MSAA is not available due to the game using deferred rendering path.");
+			Entry_Antialiasing = Category_graphicsSettings.CreateEntry("Antialiasing", PostProcessLayer.Antialiasing.FastApproximateAntialiasing, description: "Experimental: Antialiasing used by the game. Options are: \"None\" (disables AA) / \"FastApproximateAntialiasing\" (FXAA) / \"SubpixelMorphologicalAntialiasing\" (SMAA) / \"TemporalAntialiasing\" (TAA). Default on PC is \"FastApproximateAntialiasing\". MSAA is not available due to the game using deferred rendering path. TAA causes issues with phantoms and as such SMAA is recommended.");
 			Entry_Antialiasing.OnValueChanged += (PostProcessLayer.Antialiasing oldVal, PostProcessLayer.Antialiasing newVal) => { Hacks.PostProcessLayerHook.Antialiasing = newVal; };
 
 			Entry_AnistropicFiltering = Category_graphicsSettings.CreateEntry("Anisotropic filtering", AnisotropicFiltering.ForceEnable, description: "Main anisotropic setting that applies to all textures. Options are \"Disable\" (disables all Anisotropic filtering) / \"Enable\" (makes it so the game uses per texture settings that were specified by the developer) / \"ForceEnable\" (Forces override - see \"Anisotropic filtering override min\" and \"Anisotropic filtering override max\"). Default on PC is ForceEnable (on Switch it was probably Enable)");
@@ -298,7 +297,7 @@ namespace SuisHack
 			Entry_Other_InterpolateMovement.OnValueChanged += (bool oldValue, bool newVal) => { Components.Interpolation.SmootherController.InterpolateMovement = newVal; };
 			Components.Interpolation.SmootherController.InterpolateMovement = Entry_Other_InterpolateMovement.Value;
 
-			Entry_Other_GeometryImprovements = Category_otherSettings.CreateEntry("Geometry improvements", GeometryImprovements.All, description: "Runs additional scripts and shader replacement to improve geometry. Options are: \"Disabled\" / \"Minor\" (only fixes some geometry issues and modifiers a few really bad LOD distance groups) / \"All\" (adds tesselation)");
+			Entry_Other_GeometryImprovements = Category_otherSettings.CreateEntry("Geometry improvements", GeometryImprovements.Enabled, description: "Runs additional scripts and shader replacement to improve geometry. Options are: \"Disabled\" / \"Enabled\" (only fixes some geometry issues and modifiers a few really bad LOD distance groups)");
 			Entry_Other_LightImprovements = Category_otherSettings.CreateEntry("Improve lights", LightImprovements.Minor, description: "Modifies light sources to improve the game's looks. Options are: Disabled / Minor / All - All can introduce some performance problems. Minor should be generally safe.");
 			Entry_Other_EnableCheats = Category_otherSettings.CreateEntry("Enable cheats", true, description: "Enables access to custom cheat menu.");
 		}

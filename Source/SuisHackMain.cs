@@ -77,7 +77,7 @@ namespace SuisHack
 				else if (sceneName == OPENWORLDSCENENAME)
 				{
 					GameStateMachine.Gameplay = true;
-					if (Settings.Entry_Other_GeometryImprovements.Value >= ExposedSettings.GeometryImprovements.Minor)
+					if (Settings.Entry_Other_GeometryImprovements.Value >= ExposedSettings.GeometryImprovements.Enabled)
 					{
 						if (GameObject.FindObjectOfType<Components.WireRenderCorrectionChecker>() == null)
 						{

@@ -44,7 +44,7 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 # Bugs
 * (BUG) Resolution is not applied to main window on startup, if focus is on console window.
 * (BUG) Final boss doesn't seem to display controller prompts correctly.
-* TAA causes some issues with shader of phantoms in the otherworld, so it has Jitter set to 0 to avoid that - because of that it doesn't produce great results.
+* (BUG) Epilepsy warning! TAA causes issues with shader of phantoms in the otherworld, so if you are prone to suffering epileptic seizures - use SMAA instead.
 
 # Notes
 * Replacing gamepad prompts requires generally requires modifying Steam Input profile, you generally want:

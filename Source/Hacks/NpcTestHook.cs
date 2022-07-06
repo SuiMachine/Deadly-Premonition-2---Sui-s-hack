@@ -7,7 +7,7 @@ namespace SuisHack.Hacks
 	{
 		public static void Initialize()
 		{
-			if (SuisHackMain.Settings.Entry_Other_GeometryImprovements.Value >= ExposedSettings.GeometryImprovements.Minor)
+			if (SuisHackMain.Settings.Entry_Other_GeometryImprovements.Value >= ExposedSettings.GeometryImprovements.Enabled)
 			{
 				var sourceHook = typeof(NpcTest).GetMethod(nameof(NpcTest.Init), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
 				var targetHook = typeof(NpcTestHook).GetMethod(nameof(NpcTestHook.InitPostfix), System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);

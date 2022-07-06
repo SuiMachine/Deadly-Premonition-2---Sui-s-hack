@@ -488,9 +488,12 @@ namespace SuisHack
 
 				if (GUILayout.Button("SMAA", null))
 					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.SubpixelMorphologicalAntialiasing;
+				if(Settings.Entry_Other_ShowAdvanced.Value)
+				{
+					if (GUILayout.Button("TAA (buggy!)", null))
+						Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.TemporalAntialiasing;
+				}
 
-				if (GUILayout.Button("TAA", null))
-					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.TemporalAntialiasing;
 
 				GUILayout.EndHorizontal();
 			}
@@ -887,10 +890,8 @@ namespace SuisHack
 			GUILayout.Label($"* Geometry improvements ({Settings.Entry_Other_GeometryImprovements.Value}):", null);
 			if (GUILayout.Button("Disabled", null))
 				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.Disabled;
-			if (GUILayout.Button("Minor (only fixes)", null))
-				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.Minor;
-			if (GUILayout.Button("All (tesselation etc.)", null))
-				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.All;
+			if (GUILayout.Button("Enabled", null))
+				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.Enabled;
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
 			GUILayout.Label($"* Light improvements ({Settings.Entry_Other_LightImprovements.Value}):", null);
