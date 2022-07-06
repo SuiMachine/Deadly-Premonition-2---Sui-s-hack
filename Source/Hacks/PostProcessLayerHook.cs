@@ -253,7 +253,7 @@ namespace SuisHack.Hacks
 					if (m_SSR_Enabled)
 					{
 						ssr.enabled.overrideState = true;
-						if(volume.gameObject.scene.name.ToLower() == "map_002_1_coldwarehouse")
+						if (volume.gameObject.scene.name.ToLower() == "map_002_1_coldwarehouse")
 						{
 							ssr.enabled.value = false;
 							ssr.active = false;

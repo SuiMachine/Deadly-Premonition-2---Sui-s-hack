@@ -51,7 +51,7 @@ namespace SuisHack.Components.Interpolation
 			if (!InterpolateMovement)
 				return;
 
-			if (DontInterpolate )
+			if (DontInterpolate)
 				return;
 
 			foreach (var obj in GameObjectInterpolation.ActiveObjects)

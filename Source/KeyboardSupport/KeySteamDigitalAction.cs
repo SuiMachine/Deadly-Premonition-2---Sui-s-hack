@@ -16,7 +16,7 @@ namespace SuisHack.KeyboardSupport
 
 		public InputDigitalActionData_t GetInput()
 		{
-			if(oneTap)
+			if (oneTap)
 				return new InputDigitalActionData_t() { bActive = 1, bState = (byte)(Input.GetKeyDown(key) ? 1 : 0) };
 			else
 				return new InputDigitalActionData_t() { bActive = 1, bState = (byte)(Input.GetKey(key) ? 1 : 0) };

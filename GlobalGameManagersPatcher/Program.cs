@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GlobalGameManagersPatcher
 {
@@ -16,18 +12,18 @@ namespace GlobalGameManagersPatcher
 
 		static void Main(string[] args)
 		{
-			if(File.Exists(PATH))
+			if (File.Exists(PATH))
 			{
 				if (LOOKUP_SIGNATURE.Length != REPLACEMENT.Length)
 					throw new Exception("What the fuck, can you even copy-paste?!");
 
 				var bytes = File.ReadAllBytes(PATH);
 				var find = FindSignature(bytes);
-				if(find > 0)
+				if (find > 0)
 				{
 					Console.WriteLine("This program will patch your \"globalgamemanagers\" to read Mouse input. If you experience any problems, a backup file will be created. Do you want to continue (press Y).");
 					var key = Console.ReadKey();
-					if(key.Key == ConsoleKey.Y)
+					if (key.Key == ConsoleKey.Y)
 					{
 						Console.WriteLine();
 						ReplaceBytes(bytes, find);
@@ -55,12 +51,12 @@ namespace GlobalGameManagersPatcher
 			var filename = Path.GetFileNameWithoutExtension(PATH);
 			var copyFile = Path.Combine(folder, filename + ".bak");
 
-			if(!File.Exists(copyFile))
+			if (!File.Exists(copyFile))
 			{
 				File.Copy(PATH, copyFile);
 				Console.WriteLine("Created a backup");
 			}
-			for (int i=0; i< REPLACEMENT.Length; i++)
+			for (int i = 0; i < REPLACEMENT.Length; i++)
 			{
 				bytes[index + i] = REPLACEMENT[i];
 			}
@@ -72,12 +68,12 @@ namespace GlobalGameManagersPatcher
 
 		private static int FindSignature(byte[] bytes)
 		{
-			for(int i=0; i<bytes.Length - LOOKUP_SIGNATURE.Length; i++)
+			for (int i = 0; i < bytes.Length - LOOKUP_SIGNATURE.Length; i++)
 			{
 				bool found = true;
-				for(int j=0; j< LOOKUP_SIGNATURE.Length; j++)
+				for (int j = 0; j < LOOKUP_SIGNATURE.Length; j++)
 				{
-					if(bytes[i+j] != LOOKUP_SIGNATURE[j])
+					if (bytes[i + j] != LOOKUP_SIGNATURE[j])
 					{
 						found = false;
 						break;

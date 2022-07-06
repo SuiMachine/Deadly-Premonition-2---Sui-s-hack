@@ -137,7 +137,7 @@ namespace SuisHack.KeyboardSupport
 		private InputDigitalActionData_t TranslateDigitalInputMap(SteamInputHook.SteamInputDigital digitalAction)
 		{
 			//Zoom in
-			if(digitalAction == SteamInputHook.SteamInputDigital.LB)
+			if (digitalAction == SteamInputHook.SteamInputDigital.LB)
 			{
 				if (Input.mouseScrollDelta.y < -0.5f)
 					return new InputDigitalActionData_t() { bActive = 1, bState = 1 };
@@ -148,7 +148,7 @@ namespace SuisHack.KeyboardSupport
 						bState = Input.GetKey(MapTranslateDigitalBackToInput[(int)digitalAction]) ? (byte)1 : (byte)0
 					};
 			}
-			else if(digitalAction == SteamInputHook.SteamInputDigital.RB)
+			else if (digitalAction == SteamInputHook.SteamInputDigital.RB)
 			{
 				if (Input.mouseScrollDelta.y > 0.5f)
 					return new InputDigitalActionData_t() { bActive = 1, bState = 1 };
@@ -197,7 +197,7 @@ namespace SuisHack.KeyboardSupport
 					return MapTranslateDigitalBackToInput[(int)gamepadKey];
 				default:
 					return DigitalInputToInput[gamepadKey].GetBind();
-			}			
+			}
 		}
 
 		private void Awake()
@@ -322,26 +322,26 @@ namespace SuisHack.KeyboardSupport
 			MapTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RT] = KeyCode.None;
 		}
 
-/*		private void Template()
-		{
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.None] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.A_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.B_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.X_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Y_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RB] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Back_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Start_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.L_Stick_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.R_Stick_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Up_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Right_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Down_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Left_Button] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LT] = KeyCode.None;
-			MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RT] = KeyCode.None;
-		}*/
+		/*		private void Template()
+				{
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.None] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.A_Button] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.B_Button] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.X_Button] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Y_Button] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RB] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Back_Button] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Start_Button] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.L_Stick_Button] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.R_Stick_Button] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Up_Button] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Right_Button] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Down_Button] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Left_Button] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LT] = KeyCode.None;
+					MenuTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RT] = KeyCode.None;
+				}*/
 
 		private void Update()
 		{

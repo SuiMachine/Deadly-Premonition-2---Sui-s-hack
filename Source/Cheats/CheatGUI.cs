@@ -1,9 +1,5 @@
 ﻿using MelonLoader;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace SuisHack.Cheats
@@ -47,7 +43,7 @@ namespace SuisHack.Cheats
 
 			internal bool HasAllReferences()
 			{
-				return Damage != null 
+				return Damage != null
 					&& Poison != null
 					&& Stench != null
 					&& Sunburn != null;
@@ -89,8 +85,8 @@ namespace SuisHack.Cheats
 			{
 				if (Character == null)
 					Character = new References();
-				
-				
+
+
 				Display = !Display;
 				if (Display)
 				{
@@ -153,7 +149,7 @@ namespace SuisHack.Cheats
 
 			GUILayout.BeginVertical(GUI.skin.box, null);
 			DisplaysCharacter.Abilities = GUILayout.Toggle(DisplaysCharacter.Abilities, "Display character abilities", null);
-			if(DisplaysCharacter.Abilities)
+			if (DisplaysCharacter.Abilities)
 			{
 				Character.__instance.EnableBoardRide = GUILayout.Toggle(Character.__instance.EnableBoardRide, "Enable Board Ride", null);
 				Character.__instance.IsNoDamageChara = GUILayout.Toggle(Character.__instance.IsNoDamageChara, "Is no damage character", null);

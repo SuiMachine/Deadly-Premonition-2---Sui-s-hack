@@ -12,14 +12,14 @@ namespace SuisHack.Components
 		public void OnEnable()
 		{
 			var skinnedMeshes = GetComponentsInChildren<SkinnedMeshRenderer>(true);
-			for(int i=0; i< skinnedMeshes.Length; i++)
+			for (int i = 0; i < skinnedMeshes.Length; i++)
 			{
 				var newBound = new Bounds();
 
 				var skinnedMesh = skinnedMeshes[i].transform;
 				var objectsToEnapsulateParent = skinnedMesh.transform.parent;
 
-				for (int j=0; j< objectsToEnapsulateParent.childCount; j++)
+				for (int j = 0; j < objectsToEnapsulateParent.childCount; j++)
 				{
 					var childToEncapsulate = objectsToEnapsulateParent.GetChild(j);
 					if (childToEncapsulate == skinnedMesh.transform)

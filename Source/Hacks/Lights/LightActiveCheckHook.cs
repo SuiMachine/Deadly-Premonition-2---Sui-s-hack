@@ -30,7 +30,7 @@ namespace SuisHack.Hacks.Lights
 
 		public static void StartPostifx(LightActiveCheck __instance)
 		{
-			if(__instance.m_light != null)
+			if (__instance.m_light != null)
 			{
 				__instance.m_light.shadows = UnityEngine.LightShadows.Soft;
 				__instance.m_light.renderMode = UnityEngine.LightRenderMode.Auto;

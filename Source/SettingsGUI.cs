@@ -146,7 +146,7 @@ namespace SuisHack
 				GUILayout.EndHorizontal();
 				GUILayout.EndVertical();
 			}
-			{ 
+			{
 				GUILayout.BeginVertical(GUI.skin.box, null);
 				GUILayout.Label("Options starting with * requires full game restart", null);
 				GUILayout.Label("For keyboard and mouse to work a controller is still required!", null);
@@ -202,7 +202,7 @@ namespace SuisHack
 					if (CurrentRebinding != RebindingActions.None)
 					{
 						Event e = Event.current;
-						if(e.type != EventType.Used)
+						if (e.type != EventType.Used)
 						{
 							var tempKey = KeyCode.None;
 							if (e.isKey)
@@ -240,7 +240,7 @@ namespace SuisHack
 
 		private void RebindingAction(RebindingActions currentRebinding, KeyCode tempKey)
 		{
-			switch(currentRebinding)
+			switch (currentRebinding)
 			{
 				case RebindingActions.Forward:
 					Settings.Input_Analog_LeftStick_Up.Value = tempKey;
@@ -310,13 +310,13 @@ namespace SuisHack
 			GUILayout.BeginHorizontal(null);
 			GUILayout.Label(text, fixedwidth);
 			GUILayout.Label(GlobalInputHookHandler.GetInputForRebinding(rebindingKey).ToString(), fixedwidth);
-			if(rebindingKey == CurrentRebinding)
+			if (rebindingKey == CurrentRebinding)
 			{
 				GUIStyle richText = GUI.skin.label;
 				richText.richText = true;
 				GUILayout.Label("<color=red>Awaiting key</color>", richText, fixedwidth);
 			}
-			else if(rebindingKey != RebindingActions.None)
+			else if (rebindingKey != RebindingActions.None)
 			{
 				if (GUILayout.Button("Rebind", fixedwidth))
 				{
@@ -768,7 +768,7 @@ namespace SuisHack
 						Settings.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.Supersampled;
 					GUILayout.EndHorizontal();
 
-					if(Settings.Entry_Other_ShowAdvanced.Value)
+					if (Settings.Entry_Other_ShowAdvanced.Value)
 					{
 						GUILayout.BeginHorizontal(null);
 						GUILayout.Label($"SSR Tickness ({Hacks.PostProcessLayerHook.SSR_Tickness:0.0}):", null);
@@ -843,7 +843,7 @@ namespace SuisHack
 
 			Settings.Entry_Quality_TextureQuality.Value = Settings.Entry_Quality_TextureQuality.DefaultValue;
 			Settings.Entry_Quality_Use4ShadowCascades.Value = Settings.Entry_Quality_Use4ShadowCascades.DefaultValue;
-			
+
 			Settings.Entry_Quality_SSR_Enable.Value = Settings.Entry_Quality_SSR_Enable.DefaultValue;
 			Settings.Entry_Quality_SSR_DistanceFade.Value = Settings.Entry_Quality_SSR_DistanceFade.DefaultValue;
 			Settings.Entry_Quality_SSR_MaxMarchingDistance.Value = Settings.Entry_Quality_SSR_MaxMarchingDistance.DefaultValue;

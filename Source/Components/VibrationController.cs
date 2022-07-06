@@ -1,5 +1,4 @@
 ﻿using MelonLoader;
-using RootMotion.Dynamics;
 using Steamworks;
 using System;
 using UnityEngine;
@@ -18,7 +17,7 @@ namespace SuisHack.Components
 
 		public static void Initialize()
 		{
-			if(Instance == null)
+			if (Instance == null)
 			{
 				var go = new GameObject("VibrationController");
 				GameObject.DontDestroyOnLoad(go);
@@ -77,7 +76,7 @@ namespace SuisHack.Components
 
 		public void TriggleRumble(ushort lStrenght, ushort rStrenght, float lenght)
 		{
-			if(UseRumble && ControllerHandle.m_InputHandle != 0)
+			if (UseRumble && ControllerHandle.m_InputHandle != 0)
 			{
 				if (RumbleRoutine != null)
 					MelonCoroutines.Stop(RumbleRoutine);
@@ -88,7 +87,7 @@ namespace SuisHack.Components
 		private System.Collections.IEnumerator ChargeRumble(ushort startRumble, ushort maxRumble, float lenght)
 		{
 			float t = 0;
-			while(t < lenght)
+			while (t < lenght)
 			{
 				t += Time.deltaTime;
 				var value = (ushort)Mathf.Lerp(startRumble, maxRumble, t);

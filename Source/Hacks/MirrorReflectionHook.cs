@@ -11,7 +11,7 @@ namespace SuisHack.Hacks
 		[HarmonyPatch(typeof(MirrorReflection), "OnWillRenderObject")]
 		public static void OnWillRenderObjectPostfix(MirrorReflection __instance)
 		{
-			if(__instance.m_TextureSize != ReflectionSize)
+			if (__instance.m_TextureSize != ReflectionSize)
 			{
 				__instance.m_TextureSize = ReflectionSize;
 			}

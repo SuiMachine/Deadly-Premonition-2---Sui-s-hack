@@ -7,7 +7,7 @@ namespace SuisHack.GamepadSupport
 	{
 		public static void Initialize()
 		{
-			if(SuisHackMain.Settings.Input_Override.Value == ExposedSettings.InputType.SteamInput)
+			if (SuisHackMain.Settings.Input_Override.Value == ExposedSettings.InputType.SteamInput)
 			{
 				var source = typeof(UISprite).GetMethod(nameof(UISprite.OnInit), System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
 				var target = typeof(GamepadPrompts).GetMethod(nameof(GamepadPrompts.UISpriteOn), System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);

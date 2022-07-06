@@ -11,7 +11,7 @@ namespace SuisHack.Hacks.Interpolation
 		public static void Init(BoatSceneSetup __instance)
 		{
 			var smoothers = GameObject.FindObjectsOfType<Components.Interpolation.SmootherController>();
-			for(int i=0; i<smoothers.Count; i++)
+			for (int i = 0; i < smoothers.Count; i++)
 			{
 				if (smoothers[i].GetComponent<Components.Interpolation.BoatFollowInterpolation>() == null)
 				{

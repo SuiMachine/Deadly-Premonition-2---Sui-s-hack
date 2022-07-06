@@ -1,5 +1,4 @@
 ﻿using MelonLoader;
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,7 +18,7 @@ namespace SuisHack
 			harmonyInst = HarmonyInstance;
 			LoggerInstance.Msg("Loading Sui's Hack loaded");
 			Settings = new ExposedSettings();
-			switch(Settings.Input_Override.Value)
+			switch (Settings.Input_Override.Value)
 			{
 				case ExposedSettings.InputType.SteamInput:
 					GamepadSupport.GamepadPrompts.Initialize();

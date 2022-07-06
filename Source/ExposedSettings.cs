@@ -240,7 +240,7 @@ namespace SuisHack
 			Input_Analog_LeftStick_Down.OnValueChanged += (KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance.AnalogInputToInput[SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up.Value, newValue, Input_Analog_LeftStick_Left.Value, Input_Analog_LeftStick_Right.Value, Input_Analog_LeftStickFloatTime.Value); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 			Input_Analog_LeftStick_Left = Category_inputSettings.CreateEntry("Left Stick Key Left", KeyCode.A, description: "Key used to as replacement for reading right on left analog's X axis");
 			Input_Analog_LeftStick_Left.OnValueChanged += (KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance.AnalogInputToInput[SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up.Value, Input_Analog_LeftStick_Down.Value, newValue, Input_Analog_LeftStick_Right.Value, Input_Analog_LeftStickFloatTime.Value); GlobalInputHookHandler.Instance?.InitializeInputs(); };
-			
+
 			Input_Digital_A_Button = Category_inputSettings.CreateEntry("Controller button B", KeyCode.Q, description: "Key used as replacement for Xbox's B key (originally Switch's A key) - generally cancel action");
 			Input_Digital_A_Button.OnValueChanged += (KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.A_Button] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 			Input_Digital_B_Button = Category_inputSettings.CreateEntry("Controller button A", KeyCode.E, description: "Key used as replacement for Xbox's A key (originally Switch's B key) - generally confirm and contextual action");

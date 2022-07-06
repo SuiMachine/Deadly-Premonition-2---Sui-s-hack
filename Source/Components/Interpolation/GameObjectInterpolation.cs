@@ -40,9 +40,9 @@ namespace SuisHack.Components.Interpolation
 				if (rigidBody != null)
 				{
 					this.velocity = rigidBody.velocity;
-					
+
 					//A stupid hack to prevent a player floating after interpolation :(
-					if(velocity.y == 0 && rigidBody.velocity.y == 0)
+					if (velocity.y == 0 && rigidBody.velocity.y == 0)
 						velocity += Physics.gravity * Time.deltaTime;
 
 					this.WasKinematic = rigidBody.isKinematic;

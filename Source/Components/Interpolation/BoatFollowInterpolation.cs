@@ -24,7 +24,7 @@ namespace SuisHack.Components.Interpolation
 
 		void Update()
 		{
-			if(boatFollowReference == null)
+			if (boatFollowReference == null)
 			{
 				interpolator.enabled = true;
 				Destroy(this);

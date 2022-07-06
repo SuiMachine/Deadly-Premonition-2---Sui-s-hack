@@ -185,7 +185,7 @@ namespace SuisHack.KeyboardSupport
 				__result = new InputDigitalActionData_t();
 				return false;
 			}
-			
+
 			__result = GlobalInputHookHandler.Instance.GetDigitalInputReplacement((SteamInputDigital)digitalActionHandle.m_InputDigitalActionHandle);
 
 			return false;
