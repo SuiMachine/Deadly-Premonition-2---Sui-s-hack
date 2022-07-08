@@ -96,6 +96,7 @@ namespace SuisHack
 		public MelonPreferences_Entry<KeyCode> Input_Digital_LT;
 		public MelonPreferences_Entry<KeyCode> Input_Digital_RT;
 		public MelonPreferences_Entry<float> Input_Mouse_Sensitivity;
+		public MelonPreferences_Entry<bool> Input_MouseYAxisInversion;
 		public MelonPreferences_Entry<bool> Input_Controller_Vibration;
 
 
@@ -281,6 +282,10 @@ namespace SuisHack
 			Input_Mouse_Sensitivity = Category_inputSettings.CreateEntry("Mouse sensitivity", 1.0f, description: "Mouse sensitivity multiplier.", validator: new ValueRange<float>(0.05f, 2f));
 			Input_Mouse_Sensitivity.OnValueChanged += (float oldValue, float newValue) => { MouseAnalog.Sensitivity = newValue; };
 			MouseAnalog.Sensitivity = Input_Mouse_Sensitivity.Value;
+
+			Input_MouseYAxisInversion = Category_inputSettings.CreateEntry("Mouse Y axis inversion", false, description: "Inverts mouse's Y axis.");
+			Input_MouseYAxisInversion.OnValueChanged += (bool oldValue, bool newValue) => { MouseAnalog.InvertYAxis = newValue; };
+			MouseAnalog.InvertYAxis = Input_MouseYAxisInversion.Value;
 
 			Input_Controller_Vibration = Category_inputSettings.CreateEntry("Controller vibration", false, description: "Adds controller vibration in few places.");
 			Input_Controller_Vibration.OnValueChanged += (bool oldValue, bool newValue) => { Components.VibrationController.UseRumble = newValue; };

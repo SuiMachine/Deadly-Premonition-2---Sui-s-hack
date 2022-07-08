@@ -79,7 +79,14 @@ namespace SuisHack.KeyboardSupport
 				case GameStateMachine.Gamestate.Map:
 					return MapTranslateAnalogInput(analogActionHandle);
 				default:
-					return TranslateAnalogBackToInput[(int)analogActionHandle].GetInput();
+					if(MouseAnalog.InvertYAxis)
+					{
+						var input = TranslateAnalogBackToInput[(int)analogActionHandle].GetInput();
+						input.y *= -1.0f;
+						return input;
+					}
+					else
+						return TranslateAnalogBackToInput[(int)analogActionHandle].GetInput();
 			}
 		}
 

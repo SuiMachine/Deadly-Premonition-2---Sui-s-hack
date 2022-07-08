@@ -19,6 +19,7 @@ namespace SuisHack.KeyboardSupport
 	public class MouseAnalog : KeySteamAnalogAction
 	{
 		public static float Sensitivity;
+		public static bool InvertYAxis;
 
 		public override InputAnalogActionData_t GetInput()
 		{

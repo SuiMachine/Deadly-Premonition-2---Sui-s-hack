@@ -160,6 +160,7 @@ namespace SuisHack
 				GUILayout.BeginHorizontal(null);
 				GUILayout.Label($"Mouse sensitivity: {Settings.Input_Mouse_Sensitivity.Value:0.00}", null);
 				Settings.Input_Mouse_Sensitivity.Value = GUILayout.HorizontalSlider(Settings.Input_Mouse_Sensitivity.Value, 0.05f, 2, null);
+				Settings.Input_MouseYAxisInversion.Value = GUILayout.Toggle(Settings.Input_MouseYAxisInversion.Value, "Mouse Y Axis inversion", null);
 				GUILayout.EndHorizontal();
 				GUILayout.EndVertical();
 			}
@@ -490,7 +491,7 @@ namespace SuisHack
 					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.SubpixelMorphologicalAntialiasing;
 				if(Settings.Entry_Other_ShowAdvanced.Value)
 				{
-					if (GUILayout.Button("TAA (seizure warning!)", null))
+					if (GUILayout.Button("TAA (Epilepsy warning!)", null))
 						Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.TemporalAntialiasing;
 				}
 
