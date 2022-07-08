@@ -490,7 +490,7 @@ namespace SuisHack
 					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.SubpixelMorphologicalAntialiasing;
 				if(Settings.Entry_Other_ShowAdvanced.Value)
 				{
-					if (GUILayout.Button("TAA (buggy!)", null))
+					if (GUILayout.Button("TAA (seizure warning!)", null))
 						Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.TemporalAntialiasing;
 				}
 
