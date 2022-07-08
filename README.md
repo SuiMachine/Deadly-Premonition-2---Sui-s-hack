@@ -15,8 +15,6 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
    * Shadow Distance
    * Shadow Quality
    * Shadow Resolution
-   * Shadow Mask Mode
-   * Shadow Projection Mode
    * Shadow cascade amount (and its distances)
    * LOD Bias
    * Pixel Light Count
@@ -27,9 +25,16 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 * Bugfix: Corrected Electrical Wires bounds to be rendered correctly (Fix geometry).
 * Movement interpolation.
 * A basic GUI available for configuring the mod available under F11.
+* Option to disable Edge detection (Outline) filter.
+* Options to enable and configure screen-space reflection.
+* An option to add shadows to lights used byt the game.
+* Options to configure HBAO.
+* Option to modify planar reflections resolution.
+* Rumble for controller when shooting
+* Basic Keyboard and Mouse support* (see notes)
 
 # Experimental features
-* Hook for SteamInput to read Keyboard and mouse input instead (set Input type to "KeyboardAndMouse" in config file).
+* Hook for SteamInput to read Keyboard and mouse input instead.
 
 # Requirements
 * Original copy of the game
