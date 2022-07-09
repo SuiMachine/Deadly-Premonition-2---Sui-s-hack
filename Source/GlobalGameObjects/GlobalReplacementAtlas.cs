@@ -98,7 +98,11 @@ namespace SuisHack.GlobalGameObjects
 
 		public void Replace(UISprite instance, Enum keyEnum)
 		{
+			if (Cache == null)
+				return;
+
 			var replacement = Cache.GetReplacement(keyEnum);
+
 			if (replacement != null)
 			{
 				instance.atlas = Atlas;
