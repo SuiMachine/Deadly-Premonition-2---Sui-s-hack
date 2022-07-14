@@ -16,6 +16,12 @@ namespace SuisHack.Components
 				{
 					new PoleDefinitionDisable("Pole Standard (9)", Vector3.zero),
 				}
+			},
+			{
+				"OpenWorld_L_07_Location_ElectricPole(Clone)", new List<PoleDefinitionProtoplast>()
+				{
+					new PoleDefinitionDisableRootInside("Pole Standard (5)", Vector3.zero, "Root", 0)
+				}
 			}
 		};
 
@@ -52,7 +58,7 @@ namespace SuisHack.Components
 					{
 						if (pole.Name == this.transform.name)
 						{
-							pole.Process(skinnedMeshes);
+							pole.Process(this.transform, skinnedMeshes);
 						}
 					}
 				}
@@ -80,7 +86,7 @@ namespace SuisHack.Components
 		}
 
 		protected abstract bool IsValidCompare(Transform transform);
-		public abstract void Process(UnhollowerBaseLib.Il2CppArrayBase<SkinnedMeshRenderer> skinnedMeshes);
+		public abstract void Process(Transform transform, Il2CppArrayBase<SkinnedMeshRenderer> skinnedMeshes);
 	}
 
 	public class PoleDefinitionDisable : PoleDefinitionProtoplast
@@ -97,12 +103,10 @@ namespace SuisHack.Components
 			return this.LocalEulerRotation == LocalEulerRotation && this.Name == transform.name;
 		}
 
-		public override void Process(Il2CppArrayBase<SkinnedMeshRenderer> skinnedMeshes)
+		public override void Process(Transform transform, Il2CppArrayBase<SkinnedMeshRenderer> skinnedMeshes)
 		{
-			if(skinnedMeshes.Length > 0)
-			{
-				skinnedMeshes[0].transform.parent.gameObject.SetActive(false);
-			}
+			SuisHackMain.loggerInst.Error("Implement that!");
+
 		}
 	}
 
@@ -120,9 +124,49 @@ namespace SuisHack.Components
 			return this.LocalEulerRotation == LocalEulerRotation && this.Name == transform.name;
 		}
 
-		public override void Process(Il2CppArrayBase<SkinnedMeshRenderer> skinnedMeshes)
+		public override void Process(Transform transform, Il2CppArrayBase<SkinnedMeshRenderer> skinnedMeshes)
 		{
 			SuisHackMain.loggerInst.Msg("Implement that!");
+		}
+	}
+
+	public class PoleDefinitionDisableRootInside : PoleDefinitionProtoplast
+	{
+		public Vector3 LocalEulerRotation { get; private set; }
+		public string RootName { get; private set; }
+		public int RootID { get; private set; }
+
+		public PoleDefinitionDisableRootInside(string Name, Vector3 LocalEulerRotation, string RootName, int RootID) : base(Name)
+		{
+			this.LocalEulerRotation = LocalEulerRotation;
+			this.RootName = RootName;
+			this.RootID = RootID;
+		}
+
+		protected override bool IsValidCompare(Transform transform)
+		{
+			return this.LocalEulerRotation == LocalEulerRotation && this.Name == transform.name;
+		}
+
+		public override void Process(Transform transform, Il2CppArrayBase<SkinnedMeshRenderer> skinnedMeshes)
+		{
+			int j = 0;
+			for(int i=0; i<transform.childCount; i++)
+			{
+				var child = transform.GetChild(i);
+				if (child.name == RootName)
+				{
+					if(j == RootID)
+					{
+						child.gameObject.SetActive(false);
+#if DEBUG
+						SuisHackMain.loggerInst.Msg($"[WireCorrection] Disabled broken child root at \"{child.transform.position.x}, {child.transform.position.y}, {child.transform.position.z}\"");
+#endif
+						break;
+					}
+					j++;
+				}
+			}
 		}
 	}
 }
