@@ -1,0 +1,70 @@
+Type: Appearance
+
+Method: System.Void Cinemachine.CinemachinePathBase/Appearance::.ctor():	Method Body (x86 ASM):
+		0x1808A1640 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A1642 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1808A1646 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1808A1649 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1808A164B lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1808A1650 call 0000000180B28A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A1655 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1808A1657 lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1808A165C movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1808A165F movups [rbx+10h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 16 | None ||| N/A | N/A
+		0x1808A1663 call 0000000180B28A20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A1668 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1808A166A mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1808A166D movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1808A1670 mov dword ptr [rbx+30h],3E4CCCCDh		; DEBUG: {Memory}/None {Immediate32}/None ||| RBX | 48 | None ||| N/A | 1045220557
+		0x1808A1677 movups [rbx+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 32 | None ||| N/A | N/A
+		0x1808A167B add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1808A167F pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A1680 jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A1685 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Cinemachine.CinemachinePathBase/Appearance::.ctor():
+		End of function at 0x1808A1686
+		Absolute End is at 0x1808A1686
+		Identified Jump Destination addresses:
+
+		0x1808A1640: Saves the content of rbx to the stack
+		0x1808A1646: Copies {'this' (function parameter, type Cinemachine.CinemachinePathBase/Appearance)} from rcx into rbx
+		0x1808A164B: Loads a pointer to stack offset 0x20 into register rcx as new constant constant1
+		0x1808A1650: [!] Calls static managed method UnityEngine.Color UnityEngine.Color::get_green() and stores the result in {'green' (type UnityEngine.Color)}
+
+		0x1808A1657: Loads a pointer to stack offset 0x20 into register rcx as new constant constant2
+		0x1808A165C: Loads the class pointer from green into a constant constant3 in register xmm0
+		0x1808A165F: [!] Sets the field pathColor (Type UnityEngine.Color) on local {'this' (function parameter, type Cinemachine.CinemachinePathBase/Appearance)} to the value stored in {'constant3' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}
+		0x1808A1663: [!] Calls managed method  on instance  ;  - Failed to resolve any matching method (there are 2 at this address)
+
+		0x1808A166A: Copies {'this' (function parameter, type Cinemachine.CinemachinePathBase/Appearance)} from rbx into rcx
+		0x1808A166D: Loads the class pointer from green into a constant constant4 in register xmm0
+		0x1808A1670: [!] Sets the field width (Type System.Single) on local {'this' (function parameter, type Cinemachine.CinemachinePathBase/Appearance)} to the value stored in 0,2
+		0x1808A1677: [!] Sets the field inactivePathColor (Type UnityEngine.Color) on local {'this' (function parameter, type Cinemachine.CinemachinePathBase/Appearance)} to the value stored in {'constant4' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}
+		0x1808A1680: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type Cinemachine.CinemachinePathBase/Appearance)}
+
+		0x1808A1680: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachinePathBase/Appearance
+	System.Void .ctor()
+
+		UnityEngine.Color green = UnityEngine.Color.green
+		this.pathColor = constant3
+
+		[instruction error - managed method being called is null]
+		this.width = 0,2
+		this.inactivePathColor = constant4
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.RegToFieldAction at (0x1808A165F) is corrupt (ConstantDefinition: Don't know how to get IL to load a Cpp2IL.Core.Analysis.Il2CppClassIdentifier) and cannot be created as IL. Aborting here.
+
+

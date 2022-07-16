@@ -1,0 +1,1206 @@
+Type: PatriciaFollowEventIntaraction
+
+Method: System.Void PatriciaFollowEventIntaraction::.ctor():	Method Body (x86 ASM):
+		0x180206670 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180206672 jmp near ptr 000000018044B1D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206677 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PatriciaFollowEventIntaraction::.ctor():
+		End of function at 0x180206678
+		Absolute End is at 0x180206678
+		Identified Jump Destination addresses:
+
+		0x180206672: [!] Calls managed method System.Void GeneralInteractionObject::.ctor() on instance {'this' (function parameter, type PatriciaFollowEventIntaraction)}
+
+		0x180206672: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PatriciaFollowEventIntaraction
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void GeneralInteractionObject::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void PatriciaFollowEventIntaraction::Init():	Method Body (x86 ASM):
+		0x180206410 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180206412 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180206416 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180206418 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18020641B call 00000001804489B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206420 mov rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x180206424 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180206427 je short 0000000180206438h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206429 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18020642C mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x18020642E add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180206432 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180206433 jmp near ptr 000000018110B080h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206438 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020643D int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PatriciaFollowEventIntaraction::Init():
+		End of function at 0x18020643E
+		Absolute End is at 0x18020643E
+		Identified Jump Destination addresses:
+
+		0x180206410: Saves the content of rbx to the stack
+		0x180206418: Copies {'this' (function parameter, type PatriciaFollowEventIntaraction)} from rcx into rbx
+		0x18020641B: [!] Calls managed method System.Void GeneralInteractionObject::Init() on instance {'this' (function parameter, type PatriciaFollowEventIntaraction)}
+
+		0x180206420: [!] Reads field m_collider from {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores in a new local {'m_collider' (type UnityEngine.Collider)}
+
+		0x180206424: [!] Compares {'m_collider' (type UnityEngine.Collider)} and 0
+		0x180206427: Jumps to 0x180206438 (which throws a NRE) if m_collider equals 0. Implicitly present in managed code, so ignored here.
+		0x18020642C: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x180206433: [!] Calls managed method System.Void UnityEngine.Collider::set_enabled(System.Boolean) on instance {'m_collider' (type UnityEngine.Collider)} with arguments [True]
+
+		0x180206433: [!] Returns from the function
+
+		0x180206438: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PatriciaFollowEventIntaraction
+	System.Void Init()
+
+		base.Init()
+		UnityEngine.Collider m_collider = this.m_collider
+
+		m_collider.enabled = True
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void GeneralInteractionObject::Init()
+	IL_0006: ldarg.0
+	IL_0007: ldfld UnityEngine.Collider IntaractionObjectBase::m_collider
+	IL_000c: ldc.i4.1
+	IL_000d: call System.Void UnityEngine.Collider::set_enabled(System.Boolean)
+	IL_0012: ret
+	IL_0013: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0018: throw
+	
+
+Method: System.Void PatriciaFollowEventIntaraction::OnSearch():	Method Body (x86 ASM):
+		0x1803F4310 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803F4312 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1803F4316 cmp byte ptr [18183E077h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870839 | None ||| N/A | 0
+		0x1803F431D mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4320 jne short 00000001803F4334h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4322 mov ecx,[181514C6Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464556140 | None ||| N/A | N/A
+		0x1803F4328 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F432D mov byte ptr [18183E077h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870839 | None ||| N/A | 1
+		0x1803F4334 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4336 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4339 call 0000000180B22650h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F433E test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1803F4340 je near ptr 00000001803F46FAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4346 mov [rsp+38h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 56 | None ||| N/A | N/A
+		0x1803F434B mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1803F4352 mov rdi,[rbx+70h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 112 | None ||| N/A | N/A
+		0x1803F4356 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803F435D je short 00000001803F436Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F435F cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803F4366 jne short 00000001803F436Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4368 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F436D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F4370 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4372 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F4375 call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F437A test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1803F437C je short 00000001803F43ACh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F437E mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1803F4385 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803F438C je short 00000001803F439Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F438E cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803F4395 jne short 00000001803F439Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4397 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F439C mov rcx,[181870398h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468076440 | None ||| N/A | N/A
+		0x1803F43A3 call 000000018090D630h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F43A8 mov [rbx+70h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 112 | None ||| N/A | N/A
+		0x1803F43AC mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1803F43B3 mov rdi,[rbx+50h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 80 | None ||| N/A | N/A
+		0x1803F43B7 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803F43BE je short 00000001803F43CEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F43C0 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803F43C7 jne short 00000001803F43CEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F43C9 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F43CE xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F43D0 mov [rsp+30h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 48 | None ||| N/A | N/A
+		0x1803F43D5 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F43D8 call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F43DD test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1803F43DF je short 00000001803F440Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F43E1 mov rcx,[rbx+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 80 | None ||| N/A | N/A
+		0x1803F43E5 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803F43E8 je near ptr 00000001803F4700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F43EE xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F43F0 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F43F5 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F43F8 je near ptr 00000001803F4700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F43FE xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F4401 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4403 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4406 call 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F440B mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1803F4412 mov rdi,[rbx+168h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 360 | None ||| N/A | N/A
+		0x1803F4419 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803F4420 je short 00000001803F4430h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4422 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803F4429 jne short 00000001803F4430h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F442B call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4430 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F4433 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4435 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F4438 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F443D test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1803F443F je near ptr 00000001803F4580h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4445 mov rdi,[rbx+168h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 360 | None ||| N/A | N/A
+		0x1803F444C mov esi,[rbx+170h]		; DEBUG: {Register}/ESI {Memory}/None ||| RBX | 368 | None ||| N/A | N/A
+		0x1803F4452 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F4455 je near ptr 00000001803F4700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F445B cmp byte ptr [18183E06Eh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870830 | None ||| N/A | 0
+		0x1803F4462 jne short 00000001803F4476h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4464 mov ecx,[181514CDCh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464556252 | None ||| N/A | N/A
+		0x1803F446A call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F446F mov byte ptr [18183E06Eh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870830 | None ||| N/A | 1
+		0x1803F4476 xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4478 mov [rdi+44h],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RDI | 68 | None ||| N/A | N/A
+		0x1803F447B mov [rdi+40h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDI | 64 | None ||| N/A | N/A
+		0x1803F447E mov [rdi+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDI | 56 | None ||| N/A | N/A
+		0x1803F4481 mov byte ptr [rdi+3Ch],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RDI | 60 | None ||| N/A | 0
+		0x1803F4485 mov rax,[18185ED28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468005160 | None ||| N/A | N/A
+		0x1803F448C test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1803F4493 je short 00000001803F44ADh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4495 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1803F449C jne short 00000001803F44ADh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F449E mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F44A1 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F44A6 mov rax,[18185ED28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468005160 | None ||| N/A | N/A
+		0x1803F44AD cmp byte ptr [18183E06Ah],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870826 | None ||| N/A | 0
+		0x1803F44B4 jne short 00000001803F44CFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F44B6 mov ecx,[181514D48h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464556360 | None ||| N/A | N/A
+		0x1803F44BC call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F44C1 mov rax,[18185ED28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468005160 | None ||| N/A | N/A
+		0x1803F44C8 mov byte ptr [18183E06Ah],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870826 | None ||| N/A | 1
+		0x1803F44CF test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1803F44D6 je short 00000001803F44F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F44D8 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1803F44DF jne short 00000001803F44F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F44E1 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F44E4 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F44E9 mov rax,[18185ED28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468005160 | None ||| N/A | N/A
+		0x1803F44F0 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1803F44F7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F44F9 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803F44FC mov byte ptr [rax],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 0 | None ||| N/A | 0
+		0x1803F44FF mov rdi,[rbx+168h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 360 | None ||| N/A | N/A
+		0x1803F4506 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F450B test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F450E je near ptr 00000001803F4700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4514 mov [rdi+48h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RDI | 72 | None ||| N/A | N/A
+		0x1803F4518 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1803F451F test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803F4526 je short 00000001803F4536h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4528 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803F452F jne short 00000001803F4536h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4531 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4536 mov rcx,[181870508h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468076808 | None ||| N/A | N/A
+		0x1803F453D call 000000018090D630h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4542 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4544 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4547 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F454A call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F454F test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1803F4551 je short 00000001803F4580h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4553 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F4556 je near ptr 00000001803F4700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F455C xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F455F xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4561 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F4564 call 0000000180B22710h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4569 mov rcx,[rdi+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x1803F456D test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4570 je near ptr 00000001803F4700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4576 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F4579 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F457B call 00000001803C2690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4580 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4582 mov byte ptr [rbx+98h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 152 | None ||| N/A | 0
+		0x1803F4589 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803F458C call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4591 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4594 je near ptr 00000001803F4700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F459A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F459D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F459F mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F45A2 call 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F45A7 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1803F45A9 call 00000001805E3860h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F45AE mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1803F45B5 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F45B8 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803F45BF je short 00000001803F45CFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F45C1 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803F45C8 jne short 00000001803F45CFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F45CA call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F45CF xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F45D2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F45D4 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F45D7 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F45DC test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1803F45DE je short 00000001803F45FDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F45E0 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1803F45E2 call 00000001805E3860h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F45E7 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F45EA je near ptr 00000001803F4700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F45F0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F45F3 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F45F5 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F45F8 call 00000001805E3760h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F45FD mov rcx,[181891300h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468211456 | None ||| N/A | N/A
+		0x1803F4604 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4609 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F460B mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F460E mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4611 call 0000000180B2E760h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4616 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4618 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803F461B call 0000000180EA64C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4620 mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x1803F4627 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F462A test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803F4631 je short 00000001803F4641h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4633 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803F463A jne short 00000001803F4641h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F463C call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4641 mov rdx,[181877F38h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468108088 | None ||| N/A | N/A
+		0x1803F4648 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F464B mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1803F464E call 0000000180D4D090h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4653 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F4656 je near ptr 00000001803F4700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F465C xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F465F mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4662 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F4665 call 0000000180EA68E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F466A mov rdx,[18186A1E8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468051432 | None ||| N/A | N/A
+		0x1803F4671 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F4674 call 000000018090CD10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4679 mov rcx,[181899F98h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468247448 | None ||| N/A | N/A
+		0x1803F4680 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4683 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4688 mov r8,[181868E28h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468046376 | None ||| N/A | N/A
+		0x1803F468F xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1803F4692 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4695 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4698 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F469B call 00000001802ED440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F46A0 cmp byte ptr [18183E079h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870841 | None ||| N/A | 0
+		0x1803F46A7 jne short 00000001803F46BBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F46A9 mov ecx,[181514C8Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464556172 | None ||| N/A | N/A
+		0x1803F46AF call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F46B4 mov byte ptr [18183E079h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870841 | None ||| N/A | 1
+		0x1803F46BB mov rcx,[1818603E0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468010976 | None ||| N/A | N/A
+		0x1803F46C2 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F46C7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F46C9 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F46CC mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F46CF call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F46D4 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803F46D7 je short 00000001803F4700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F46D9 mov [rbx+48h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RBX | 72 | None ||| N/A | N/A
+		0x1803F46DD test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F46E0 je short 00000001803F4700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F46E2 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F46E5 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803F46E8 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F46EB call 000000018058ED10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F46F0 mov rsi,[rsp+30h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1803F46F5 mov rdi,[rsp+38h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x1803F46FA add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1803F46FE pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803F46FF ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803F4700 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4702 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4707 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PatriciaFollowEventIntaraction::OnSearch():
+		End of function at 0x1803F4708
+		Absolute End is at 0x1803F4708
+		Identified Jump Destination addresses:
+
+		0x1803F4310: Saves the content of rbx to the stack
+		0x1803F4316: Compares {Unknown Global at 0x18183E077, first ten bytes are [1 64 107 1 0 166 107 1 0 60], or as chars "@k ¦k <"} and 0
+		0x1803F431D: Copies {'this' (function parameter, type PatriciaFollowEventIntaraction)} from rcx into rbx
+		0x1803F4320: Jumps to 0x1803F4334 if {Unknown Global at 0x18183E077, first ten bytes are [1 64 107 1 0 166 107 1 0 60], or as chars "@k ¦k <"} != 0
+
+		0x1803F4322: Loads string "°Q" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1803F4328: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1803F4336: Copies {'this' (function parameter, type PatriciaFollowEventIntaraction)} from rbx into rcx
+		0x1803F4339: [!] Calls managed method System.Boolean UnityEngine.Behaviour::get_enabled() on instance {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores the result in {'enabled' (type System.Boolean)}
+
+		0x1803F433E: [!] Compares {'enabled' (type System.Boolean)} and False
+		0x1803F4340: Jumps to 0x1803F46FA (which is an if statement's body) if enabled equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1803F434B: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1803F4352: [!] Reads field m_charaControl from {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores in a new local {'m_charaControl' (type CharaControl)}
+
+		0x1803F4356: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F435D: Jumps to 0x1803F436D if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803F435F: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F4366: Jumps to 0x1803F436D if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803F4368: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1803F4370: Clears register rdx, yielding zero-local {'local5' (type System.Int32)}
+		0x1803F4372: Copies {'m_charaControl' (type CharaControl)} from rdi into rcx
+		0x1803F4375: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'m_charaControl' (type CharaControl)}, {'local5' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1803F437A: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1803F437C: Jumps to 0x1803F43AC (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1803F437E: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1803F4385: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F438C: Jumps to 0x1803F439C if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803F438E: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F4395: Jumps to 0x1803F439C if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803F4397: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1803F439C: Loads the global generic method reference for method T UnityEngine.Object::FindObjectOfType<CharaControl>() on type UnityEngine.Object and stores the result in constant {'FindObjectOfType' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rcx
+		0x1803F43A3: [!] Calls static managed method T UnityEngine.Object::FindObjectOfType<CharaControl>() and stores the result in {'charaControl' (type CharaControl)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1803F43A8: [!] Sets the field m_charaControl (Type CharaControl) on local {'this' (function parameter, type PatriciaFollowEventIntaraction)} to the value stored in {'charaControl' (type CharaControl)}
+		0x1803F43AC: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1803F43B3: [!] Reads field m_circleObject from {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores in a new local {'m_circleObject' (type IntaractionCircleObject)}
+
+		0x1803F43B7: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F43BE: Jumps to 0x1803F43CE if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1803F43CE which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F43C0: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F43C7: Jumps to 0x1803F43CE if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1803F43CE which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F43C9: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1803F43D5: Copies {'m_circleObject' (type IntaractionCircleObject)} from rdi into rcx
+		0x1803F43D8: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'m_circleObject' (type IntaractionCircleObject)}] and stores the result in {'boolean2' (type System.Boolean)}
+
+		0x1803F43DD: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x1803F43DF: Jumps to 0x1803F440B if boolean2 equals False ;  - This is probably a goto, jumping to 0x1803F440B which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F43E1: [!] Reads field m_circleObject from {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores in a new local {'m_circleObject2' (type IntaractionCircleObject)}
+
+		0x1803F43E5: [!] Compares {'m_circleObject2' (type IntaractionCircleObject)} and 0
+		0x1803F43E8: Jumps to 0x1803F4700 (which throws a NRE) if m_circleObject2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F43F0: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'m_circleObject2' (type IntaractionCircleObject)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1803F43F5: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1803F43F8: Jumps to 0x1803F4700 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F4401: Clears register rdx, yielding zero-local {'local15' (type System.Int32)}
+		0x1803F4403: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1803F4406: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [{'local15' (type System.Int32)}]
+
+		0x1803F440B: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1803F4412: [!] Reads field m_followEvent from {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores in a new local {'m_followEvent' (type PatriciaFollowEvent)}
+
+		0x1803F4419: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F4420: Jumps to 0x1803F4430 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1803F4430 which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F4422: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F4429: Jumps to 0x1803F4430 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1803F4430 which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F442B: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1803F4433: Clears register rdx, yielding zero-local {'local18' (type System.Int32)}
+		0x1803F4435: Copies {'m_followEvent' (type PatriciaFollowEvent)} from rdi into rcx
+		0x1803F4438: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'m_followEvent' (type PatriciaFollowEvent)}, {'local18' (type System.Int32)}] and stores the result in {'boolean3' (type System.Boolean)}
+
+		0x1803F443D: [!] Compares {'boolean3' (type System.Boolean)} and False
+		0x1803F443F: Jumps to 0x1803F4580 if boolean3 equals False ;  - This is probably a goto, jumping to 0x1803F4580 which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F4445: [!] Reads field m_followEvent from {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores in a new local {'m_followEvent2' (type PatriciaFollowEvent)}
+
+		0x1803F444C: [!] Reads field m_rootType from {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores in a new local {'m_rootType' (type EPatriciaRootType)}
+
+		0x1803F4452: [!] Compares {'m_followEvent2' (type PatriciaFollowEvent)} and 0
+		0x1803F4455: Jumps to 0x1803F4700 (which throws a NRE) if m_followEvent2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F445B: Compares {Unknown Global at 0x18183E06E, first ten bytes are [1 0 52 107 1 0 224 60 103 1], or as chars " 4k à<g"} and 0
+		0x1803F4462: Jumps to 0x1803F4476 if {Unknown Global at 0x18183E06E, first ten bytes are [1 0 52 107 1 0 224 60 103 1], or as chars " 4k à<g"} != 0 ;  - This is probably a goto, jumping to 0x1803F4476 which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F4464: Loads string "·Q" into register rcx as constant {'constant34' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1803F446A: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1803F4476: Clears register rax, yielding zero-local {'local22' (type System.Int32)}
+		0x1803F4478: [!] Sets the field m_followRootType (Type EPatriciaRootType) on local {'m_followEvent2' (type PatriciaFollowEvent)} to the value stored in {'m_rootType' (type EPatriciaRootType)}
+		0x1803F447B: [!] Sets the field m_time (Type System.Single) on local {'m_followEvent2' (type PatriciaFollowEvent)} to the value stored in {'local22' (type System.Int32)}
+		0x1803F447E: [!] Sets the field m_state (Type PatriciaFollowEvent/EState) on local {'m_followEvent2' (type PatriciaFollowEvent)} to the value stored in {'local22' (type System.Int32)}
+		0x1803F4481: [!] Sets the field m_isEventStart (Type System.Boolean) on local {'m_followEvent2' (type PatriciaFollowEvent)} to the value stored in False
+		0x1803F4485: Loads the type definition for managed type PatriciaFollowEvent as a constant "PatriciaFollowEvent" in rax
+		0x1803F448C: Compares "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F4493: Jumps to 0x1803F44AD if "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1803F44AD which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F4495: Compares "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F449C: Jumps to 0x1803F44AD if "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1803F44AD which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F449E: Copies {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1803F44A1: Calls the il2cpp cctor for the type PatriciaFollowEvent
+		0x1803F44A6: Loads the type definition for managed type PatriciaFollowEvent as a constant "PatriciaFollowEvent" in rax
+		0x1803F44AD: Compares {Unknown Global at 0x18183E06A, first ten bytes are [103 1 0 107 1 0 52 107 1 0], or as chars "g k 4k "} and 0
+		0x1803F44B4: Jumps to 0x1803F44CF if {Unknown Global at 0x18183E06A, first ten bytes are [103 1 0 107 1 0 52 107 1 0], or as chars "g k 4k "} != 0 ;  - This is probably a goto, jumping to 0x1803F44CF which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F44B6: Reads {Unknown Global at 0x181514D48, first ten bytes are [190 81 0 0 190 17 0 0 190 49], or as chars "¾Q  ¾  ¾1"} into register rcx as a constant constant43
+		0x1803F44BC: Attempts to load the il2cpp metadata for this method (method id 20926) and init it cpp-side.
+
+		0x1803F44C1: Loads the type definition for managed type PatriciaFollowEvent as a constant "PatriciaFollowEvent" in rax
+		0x1803F44CF: Compares "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F44D6: Jumps to 0x1803F44F0 if "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1803F44F0 which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F44D8: Compares "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F44DF: Jumps to 0x1803F44F0 if "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1803F44F0 which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F44E1: Copies {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1803F44E4: Calls the il2cpp cctor for the type PatriciaFollowEvent
+		0x1803F44E9: Loads the type definition for managed type PatriciaFollowEvent as a constant "PatriciaFollowEvent" in rax
+		0x1803F44F0: Loads the pointer to the static fields for PatriciaFollowEvent and stores it in constant50 in register rax
+		0x1803F44F9: Copies {'this' (function parameter, type PatriciaFollowEventIntaraction)} from rbx into rcx
+		0x1803F44FF: [!] Reads field m_followEvent from {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores in a new local {'m_followEvent3' (type PatriciaFollowEvent)}
+
+		0x1803F4506: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores the result in {'gameObject2' (type UnityEngine.GameObject)}
+
+		0x1803F450B: [!] Compares {'m_followEvent3' (type PatriciaFollowEvent)} and 0
+		0x1803F450E: Jumps to 0x1803F4700 (which throws a NRE) if m_followEvent3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F4514: [!] Sets the field m_startIntaractionObject (Type UnityEngine.GameObject) on local {'m_followEvent3' (type PatriciaFollowEvent)} to the value stored in {'gameObject2' (type UnityEngine.GameObject)}
+		0x1803F4518: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1803F451F: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F4526: Jumps to 0x1803F4536 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1803F4536 which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F4528: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F452F: Jumps to 0x1803F4536 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1803F4536 which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F4531: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1803F4536: Loads the global generic method reference for method T UnityEngine.Object::FindObjectOfType<Npc_FollowPlayer>() on type UnityEngine.Object and stores the result in constant {'FindObjectOfType' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rcx
+		0x1803F453D: [!] Calls static managed method T UnityEngine.Object::FindObjectOfType<Npc_FollowPlayer>() and stores the result in {'npc_FollowPlayer' (type Npc_FollowPlayer)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1803F4544: Copies {'npc_FollowPlayer' (type Npc_FollowPlayer)} from rax into rcx
+		0x1803F4547: Copies {'npc_FollowPlayer' (type Npc_FollowPlayer)} from rax into rdi
+		0x1803F454A: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'npc_FollowPlayer' (type Npc_FollowPlayer)}] and stores the result in {'boolean4' (type System.Boolean)}
+
+		0x1803F454F: [!] Compares {'boolean4' (type System.Boolean)} and False
+		0x1803F4551: Jumps to 0x1803F4580 if boolean4 equals False ;  - This is probably a goto, jumping to 0x1803F4580 which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F4553: [!] Compares {'npc_FollowPlayer' (type Npc_FollowPlayer)} and 0
+		0x1803F4556: Jumps to 0x1803F4700 (which throws a NRE) if npc_FollowPlayer equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F455F: Clears register rdx, yielding zero-local {'local30' (type System.Int32)}
+		0x1803F4561: Copies {'npc_FollowPlayer' (type Npc_FollowPlayer)} from rdi into rcx
+		0x1803F4564: [!] Calls managed method System.Void UnityEngine.Behaviour::set_enabled(System.Boolean) on instance {'npc_FollowPlayer' (type Npc_FollowPlayer)} with arguments [{'local30' (type System.Int32)}]
+
+		0x1803F4569: [!] Reads field m_intaraction from {'npc_FollowPlayer' (type Npc_FollowPlayer)} and stores in a new local {'m_intaraction' (type IntaractionFollowPatricia)}
+
+		0x1803F456D: [!] Compares {'m_intaraction' (type IntaractionFollowPatricia)} and 0
+		0x1803F4570: Jumps to 0x1803F4700 (which throws a NRE) if m_intaraction equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F4579: Clears register rdx, yielding zero-local {'local33' (type System.Int32)}
+		0x1803F457B: [!] Calls managed method System.Void IntaractionFollowPatricia::SetActiveIntaraction(System.Boolean) on instance {'m_intaraction' (type IntaractionFollowPatricia)} with arguments [{'local33' (type System.Int32)}]
+
+		0x1803F4582: [!] Sets the field m_bEnter (Type System.Boolean) on local {'this' (function parameter, type PatriciaFollowEventIntaraction)} to the value stored in False
+		0x1803F4589: Copies {'this' (function parameter, type PatriciaFollowEventIntaraction)} from rbx into rcx
+		0x1803F458C: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores the result in {'gameObject3' (type UnityEngine.GameObject)}
+
+		0x1803F4591: [!] Compares {'gameObject3' (type UnityEngine.GameObject)} and 0
+		0x1803F4594: Jumps to 0x1803F4700 (which throws a NRE) if gameObject3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F459D: Clears register rdx, yielding zero-local {'local37' (type System.Int32)}
+		0x1803F459F: Copies {'gameObject3' (type UnityEngine.GameObject)} from rax into rcx
+		0x1803F45A2: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject3' (type UnityEngine.GameObject)} with arguments [{'local37' (type System.Int32)}]
+
+		0x1803F45A7: Clears register rcx, yielding zero-local {'local38' (type System.Int32)}
+		0x1803F45A9: [!] Calls static managed method EnemyRoot EnemyRoot::get_Instance() and stores the result in {'instance' (type EnemyRoot)}
+
+		0x1803F45AE: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1803F45B5: Copies {'instance' (type EnemyRoot)} from rax into rdi
+		0x1803F45B8: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F45BF: Jumps to 0x1803F45CF if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1803F45CF which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F45C1: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F45C8: Jumps to 0x1803F45CF if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1803F45CF which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F45CA: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1803F45D2: Clears register rdx, yielding zero-local {'local41' (type System.Int32)}
+		0x1803F45D4: Copies {'instance' (type EnemyRoot)} from rdi into rcx
+		0x1803F45D7: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'instance' (type EnemyRoot)}, {'local41' (type System.Int32)}] and stores the result in {'boolean5' (type System.Boolean)}
+
+		0x1803F45DC: [!] Compares {'boolean5' (type System.Boolean)} and False
+		0x1803F45DE: Jumps to 0x1803F45FD if boolean5 equals False ;  - This is probably a goto, jumping to 0x1803F45FD which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F45E0: Clears register rcx, yielding zero-local {'local43' (type System.Int32)}
+		0x1803F45E2: [!] Calls static managed method EnemyRoot EnemyRoot::get_Instance() and stores the result in {'instance2' (type EnemyRoot)}
+
+		0x1803F45E7: [!] Compares {'instance2' (type EnemyRoot)} and 0
+		0x1803F45EA: Jumps to 0x1803F4700 (which throws a NRE) if instance2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F45F3: Clears register rdx, yielding zero-local {'local46' (type System.Int32)}
+		0x1803F45F5: Copies {'instance2' (type EnemyRoot)} from rax into rcx
+		0x1803F45F8: [!] Calls managed method System.Void EnemyRoot::SetDispEnemy(System.Boolean) on instance {'instance2' (type EnemyRoot)} with arguments [{'local46' (type System.Int32)}]
+
+		0x1803F45FD: Loads the type definition for managed type UnityEngine.GameObject as a constant "GameObject" in rcx
+		0x1803F4604: [!] Allocates an instance of type UnityEngine.GameObject and stores it as gameObject4 in rax.
+
+		0x1803F460B: Copies {'gameObject4' (type UnityEngine.GameObject)} from rax into rcx
+		0x1803F460E: Copies {'gameObject4' (type UnityEngine.GameObject)} from rax into rdi
+		0x1803F4611: [!] Calls managed method System.Void UnityEngine.GameObject::.ctor() on instance {'gameObject4' (type UnityEngine.GameObject)}
+
+		0x1803F4618: Copies {'this' (function parameter, type PatriciaFollowEventIntaraction)} from rbx into rcx
+		0x1803F461B: [!] Calls managed method System.String UnityEngine.Object::get_name() on instance {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores the result in {'name' (type System.String)}
+
+		0x1803F4620: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x1803F4627: Copies {'name' (type System.String)} from rax into rsi
+		0x1803F462A: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F4631: Jumps to 0x1803F4641 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1803F4641 which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F4633: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F463A: Jumps to 0x1803F4641 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1803F4641 which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F463C: Calls the il2cpp cctor for the type System.String
+		0x1803F4641: Loads the string literal "_CoroutineObject_Unused" as a constant "constant75" in rdx
+		0x1803F464B: Copies {'name' (type System.String)} from rsi into rcx
+		0x1803F464E: [!] Calls static managed method System.String System.String::Concat(System.String,System.String) with arguments [{'name' (type System.String)}, "_CoroutineObject_Unused"] and stores the result in {'string' (type System.String)}
+
+		0x1803F4653: [!] Compares {'gameObject4' (type UnityEngine.GameObject)} and 0
+		0x1803F4656: Jumps to 0x1803F4700 (which throws a NRE) if gameObject4 equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F465F: Copies {'string' (type System.String)} from rax into rdx
+		0x1803F4662: Copies {'gameObject4' (type UnityEngine.GameObject)} from rdi into rcx
+		0x1803F4665: [!] Calls managed method System.Void UnityEngine.Object::set_name(System.String) on instance {'gameObject4' (type UnityEngine.GameObject)} with arguments [{'string' (type System.String)}]
+
+		0x1803F466A: Loads the global generic method reference for method T UnityEngine.GameObject::AddComponent<CoroutineObject>() on type UnityEngine.GameObject and stores the result in constant {'AddComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1803F4671: Copies {'gameObject4' (type UnityEngine.GameObject)} from rdi into rcx
+		0x1803F4674: [!] Calls managed method T UnityEngine.GameObject::AddComponent<CoroutineObject>() on instance {'gameObject4' (type UnityEngine.GameObject)} and stores the result in {'coroutineObject' (type CoroutineObject)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1803F4679: Loads the type definition for managed type System.Action as a constant "Action" in rcx
+		0x1803F4680: Copies {'coroutineObject' (type CoroutineObject)} from rax into rdi
+		0x1803F4683: [!] Allocates an instance of type System.Action and stores it as action in rax.
+
+		0x1803F4688: Loads the method definition for managed method System.Void PatriciaFollowEventIntaraction::StartFollowEvent() as a constant "StartFollowEvent"
+		0x1803F4692: Copies {'this' (function parameter, type PatriciaFollowEventIntaraction)} from rbx into rdx
+		0x1803F4695: Copies {'action' (type System.Action)} from rax into rcx
+		0x1803F4698: Copies {'action' (type System.Action)} from rax into rsi
+		0x1803F469B: [!] Calls managed method System.Void System.Action::.ctor(System.Object,System.IntPtr) on instance {'action' (type System.Action)} with arguments [{'this' (function parameter, type PatriciaFollowEventIntaraction)}, {'StartFollowEvent' (constant value of type Mono.Cecil.MethodReference)}]
+
+		0x1803F46A0: Compares {Unknown Global at 0x18183E079, first ten bytes are [107 1 0 166 107 1 0 60 61 103], or as chars "k ¦k <=g"} and 0
+		0x1803F46A7: Jumps to 0x1803F46BB if {Unknown Global at 0x18183E079, first ten bytes are [107 1 0 166 107 1 0 60 61 103], or as chars "k ¦k <=g"} != 0 ;  - This is probably a goto, jumping to 0x1803F46BB which is after end of current block @ 0x1803F43AC (started at 0x1803F437E)
+
+		0x1803F46A9: Reads {Unknown Global at 0x181514C8C, first ten bytes are [178 81 0 0 178 17 0 0 178 49], or as chars "²Q  ²  ²1"} into register rcx as a constant constant82
+		0x1803F46AF: Attempts to load the il2cpp metadata for this method (method id 20914) and init it cpp-side.
+
+		0x1803F46BB: Loads the type definition for managed type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0 as a constant "<UnusedAssets>c__Iterator0" in rcx
+		0x1803F46C2: [!] Allocates an instance of type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0 and stores it as enumeratorInstance in rax.
+
+		0x1803F46C9: Copies {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} from rax into rcx
+		0x1803F46CC: Copies {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} from rax into rbx
+		0x1803F46CF: [!] Calls managed method System.Void System.Object::.ctor() on instance {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} ;  - Leftover parameters detected, but first few match.
+
+		0x1803F46D4: [!] Compares {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} and 0
+		0x1803F46D7: Jumps to 0x1803F4700 (which throws a NRE) if enumeratorInstance equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F46D9: [!] Sets the field onFinish (Type System.Action) on local {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} to the value stored in {'action' (type System.Action)}
+		0x1803F46DD: [!] Compares {'coroutineObject' (type CoroutineObject)} and 0
+		0x1803F46E0: Jumps to 0x1803F4700 (which throws a NRE) if coroutineObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F46E5: Copies {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} from rbx into rdx
+		0x1803F46E8: Copies {'coroutineObject' (type CoroutineObject)} from rdi into rcx
+		0x1803F46EB: [!] Calls managed method System.Void CoroutineObject::ExecCoroutine(System.Collections.IEnumerator) on instance {'coroutineObject' (type CoroutineObject)} with arguments [{'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)}]
+
+		0x1803F46F0: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rsi as new constant constant86
+		0x1803F46F5: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rdi as new constant constant87
+		0x1803F46FF: [!] Returns from the function
+
+		0x1803F4702: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PatriciaFollowEventIntaraction
+	System.Void OnSearch()
+
+		System.Boolean enabled = base.enabled
+
+		if (enabled != False)
+		    CharaControl m_charaControl = this.m_charaControl
+		    ulong local5 = 0
+
+		    System.Boolean boolean = UnityEngine.Object.op_Equality(m_charaControl, local5) //(Object x, Object y)
+
+		    if (boolean != False)
+
+		        CharaControl charaControl = UnityEngine.Object.FindObjectOfType<CharaControl>()
+		        this.m_charaControl = charaControl
+		    endif
+            
+		    IntaractionCircleObject m_circleObject = this.m_circleObject
+
+		    System.Boolean boolean2 = UnityEngine.Object.op_Implicit(m_circleObject) //(Object exists)
+
+		    if (boolean2 == False)
+                goto INSN_1803F440B
+            endif
+		    IntaractionCircleObject m_circleObject2 = this.m_circleObject
+
+		    UnityEngine.GameObject gameObject = m_circleObject2.gameObject
+		    ulong local15 = 0
+
+		    gameObject.SetActive(local15) //(Boolean value)
+
+		    INSN_1803F440B:
+		    PatriciaFollowEvent m_followEvent = this.m_followEvent
+		    ulong local18 = 0
+
+		    System.Boolean boolean3 = UnityEngine.Object.op_Inequality(m_followEvent, local18) //(Object x, Object y)
+
+		    if (boolean3 == False)
+                goto INSN_1803F4580
+            endif
+		    PatriciaFollowEvent m_followEvent2 = this.m_followEvent
+		    EPatriciaRootType m_rootType = this.m_rootType
+		    ulong local22 = 0
+		    m_followEvent2.m_followRootType = m_rootType
+		    m_followEvent2.m_time = local22
+		    m_followEvent2.m_state = local22
+		    m_followEvent2.m_isEventStart = False
+		    PatriciaFollowEvent m_followEvent3 = this.m_followEvent
+
+		    UnityEngine.GameObject gameObject2 = base.gameObject
+		    m_followEvent3.m_startIntaractionObject = gameObject2
+
+		    Npc_FollowPlayer npc_FollowPlayer = UnityEngine.Object.FindObjectOfType<Npc_FollowPlayer>()
+
+		    System.Boolean boolean4 = UnityEngine.Object.op_Implicit(npc_FollowPlayer) //(Object exists)
+
+		    if (boolean4 == False)
+                goto INSN_1803F4580
+            endif
+		    ulong local30 = 0
+
+		    npc_FollowPlayer.enabled = local30
+		    IntaractionFollowPatricia m_intaraction = npc_FollowPlayer.m_intaraction
+		    ulong local33 = 0
+
+		    m_intaraction.SetActiveIntaraction(local33) //(Boolean value)
+
+		    INSN_1803F4580:
+		    this.m_bEnter = False
+
+		    UnityEngine.GameObject gameObject3 = base.gameObject
+		    ulong local37 = 0
+
+		    gameObject3.SetActive(local37) //(Boolean value)
+		    ulong local38 = 0
+
+		    EnemyRoot instance = EnemyRoot.Instance
+		    ulong local41 = 0
+
+		    System.Boolean boolean5 = UnityEngine.Object.op_Inequality(instance, local41) //(Object x, Object y)
+
+		    if (boolean5 == False)
+                goto INSN_1803F45FD
+            endif
+		    ulong local43 = 0
+
+		    EnemyRoot instance2 = EnemyRoot.Instance
+		    ulong local46 = 0
+
+		    instance2.SetDispEnemy(local46) //(Boolean disp)
+
+		    INSN_1803F45FD:
+		    UnityEngine.GameObject gameObject4 = new UnityEngine.GameObject()
+
+		    gameObject4..ctor()
+
+		    System.String name = base.name
+
+		    System.String string = System.String.Concat(name, "_CoroutineObject_Unused") //(String str0, String str1)
+
+		    gameObject4.name = string
+
+		    CoroutineObject coroutineObject = gameObject4.AddComponent<CoroutineObject>()
+		    System.Action action = new System.Action()
+
+		    action..ctor(this, {'StartFollowEvent' (constant value of type Mono.Cecil.MethodReference)}) //(Object object, IntPtr method)
+		    PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0 enumeratorInstance = new PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0()
+
+		    enumeratorInstance..ctor()
+		    enumeratorInstance.onFinish = action
+
+		    coroutineObject.ExecCoroutine(enumeratorInstance) //(IEnumerator coroutine)
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Boolean UnityEngine.Behaviour::get_enabled()
+	IL_0006: ldc.i4.0
+	IL_0007: beq IL_0188
+	IL_000c: ldarg.0
+	IL_000d: ldfld CharaControl GeneralInteractionObject::m_charaControl
+	IL_0012: stloc.0
+	IL_0013: ldc.i4.0
+	IL_0014: stloc.1
+	IL_0015: ldloc.0
+	IL_0016: ldloc.1
+	IL_0017: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+	IL_001c: ldc.i4.0
+	IL_001d: beq.s IL_002c
+	IL_001f: call T UnityEngine.Object::FindObjectOfType<CharaControl>()
+	IL_0024: stloc.2
+	IL_0025: ldarg.0
+	IL_0026: ldloc.2
+	IL_0027: stfld CharaControl GeneralInteractionObject::m_charaControl
+	IL_002c: ldarg.0
+	IL_002d: ldfld IntaractionCircleObject IntaractionObjectBase::m_circleObject
+	IL_0032: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+	IL_0037: ldc.i4.0
+	IL_0038: beq.s IL_0051
+	IL_003a: ldarg.0
+	IL_003b: ldfld IntaractionCircleObject IntaractionObjectBase::m_circleObject
+	IL_0040: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0045: stloc.3
+	IL_0046: ldc.i4.0
+	IL_0047: stloc.s V_4
+	IL_0049: ldloc.3
+	IL_004a: ldloc.s V_4
+	IL_004c: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0051: ldarg.0
+	IL_0052: ldfld PatriciaFollowEvent PatriciaFollowEventIntaraction::m_followEvent
+	IL_0057: stloc.s V_5
+	IL_0059: ldc.i4.0
+	IL_005a: stloc.s V_6
+	IL_005c: ldloc.s V_5
+	IL_005e: ldloc.s V_6
+	IL_0060: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_0065: ldc.i4.0
+	IL_0066: beq IL_00ec
+	IL_006b: ldarg.0
+	IL_006c: ldfld PatriciaFollowEvent PatriciaFollowEventIntaraction::m_followEvent
+	IL_0071: stloc.s V_7
+	IL_0073: ldarg.0
+	IL_0074: ldfld EPatriciaRootType PatriciaFollowEventIntaraction::m_rootType
+	IL_0079: stloc.s V_8
+	IL_007b: ldc.i4.0
+	IL_007c: stloc.s V_9
+	IL_007e: ldloc.s V_7
+	IL_0080: ldloc.s V_8
+	IL_0082: stfld EPatriciaRootType PatriciaFollowEvent::m_followRootType
+	IL_0087: ldloc.s V_7
+	IL_0089: ldloc.s V_9
+	IL_008b: stfld System.Single PatriciaFollowEvent::m_time
+	IL_0090: ldloc.s V_7
+	IL_0092: ldloc.s V_9
+	IL_0094: stfld PatriciaFollowEvent/EState PatriciaFollowEvent::m_state
+	IL_0099: ldloc.s V_7
+	IL_009b: ldc.i4.0
+	IL_009c: stfld System.Boolean PatriciaFollowEvent::m_isEventStart
+	IL_00a1: ldarg.0
+	IL_00a2: ldfld PatriciaFollowEvent PatriciaFollowEventIntaraction::m_followEvent
+	IL_00a7: stloc.s V_10
+	IL_00a9: ldarg.0
+	IL_00aa: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_00af: stloc.s V_11
+	IL_00b1: ldloc.s V_10
+	IL_00b3: ldloc.s V_11
+	IL_00b5: stfld UnityEngine.GameObject PatriciaFollowEvent::m_startIntaractionObject
+	IL_00ba: call T UnityEngine.Object::FindObjectOfType<Npc_FollowPlayer>()
+	IL_00bf: stloc.s V_12
+	IL_00c1: ldloc.s V_12
+	IL_00c3: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+	IL_00c8: ldc.i4.0
+	IL_00c9: beq.s IL_00ec
+	IL_00cb: ldc.i4.0
+	IL_00cc: stloc.s V_13
+	IL_00ce: ldloc.s V_12
+	IL_00d0: ldloc.s V_13
+	IL_00d2: call System.Void UnityEngine.Behaviour::set_enabled(System.Boolean)
+	IL_00d7: ldloc.s V_12
+	IL_00d9: ldfld IntaractionFollowPatricia Npc_FollowPlayer::m_intaraction
+	IL_00de: stloc.s V_14
+	IL_00e0: ldc.i4.0
+	IL_00e1: stloc.s V_15
+	IL_00e3: ldloc.s V_14
+	IL_00e5: ldloc.s V_15
+	IL_00e7: call System.Void IntaractionFollowPatricia::SetActiveIntaraction(System.Boolean)
+	IL_00ec: ldarg.0
+	IL_00ed: ldc.i4.0
+	IL_00ee: stfld System.Boolean GeneralInteractionObject::m_bEnter
+	IL_00f3: ldarg.0
+	IL_00f4: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_00f9: stloc.s V_16
+	IL_00fb: ldc.i4.0
+	IL_00fc: stloc.s V_17
+	IL_00fe: ldloc.s V_16
+	IL_0100: ldloc.s V_17
+	IL_0102: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0107: ldc.i4.0
+	IL_0108: stloc.s V_18
+	IL_010a: call EnemyRoot EnemyRoot::get_Instance()
+	IL_010f: stloc.s V_19
+	IL_0111: ldc.i4.0
+	IL_0112: stloc.s V_20
+	IL_0114: ldloc.s V_19
+	IL_0116: ldloc.s V_20
+	IL_0118: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_011d: ldc.i4.0
+	IL_011e: beq.s IL_0136
+	IL_0120: ldc.i4.0
+	IL_0121: stloc.s V_21
+	IL_0123: call EnemyRoot EnemyRoot::get_Instance()
+	IL_0128: stloc.s V_22
+	IL_012a: ldc.i4.0
+	IL_012b: stloc.s V_23
+	IL_012d: ldloc.s V_22
+	IL_012f: ldloc.s V_23
+	IL_0131: call System.Void EnemyRoot::SetDispEnemy(System.Boolean)
+	IL_0136: newobj System.Void UnityEngine.GameObject::.ctor()
+	IL_013b: stloc.s V_24
+	IL_013d: ldarg.0
+	IL_013e: call System.String UnityEngine.Object::get_name()
+	IL_0143: ldstr "_CoroutineObject_Unused"
+	IL_0148: call System.String System.String::Concat(System.String,System.String)
+	IL_014d: stloc.s V_25
+	IL_014f: ldloc.s V_24
+	IL_0151: ldloc.s V_25
+	IL_0153: call System.Void UnityEngine.Object::set_name(System.String)
+	IL_0158: ldloc.s V_24
+	IL_015a: call T UnityEngine.GameObject::AddComponent<CoroutineObject>()
+	IL_015f: stloc.s V_26
+	IL_0161: ldarg.0
+	IL_0162: ldftn System.Void PatriciaFollowEventIntaraction::StartFollowEvent()
+	IL_0168: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+	IL_016d: stloc.s V_27
+	IL_016f: newobj System.Void PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0::.ctor()
+	IL_0174: stloc.s V_28
+	IL_0176: ldloc.s V_28
+	IL_0178: ldloc.s V_27
+	IL_017a: stfld System.Action PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0::onFinish
+	IL_017f: ldloc.s V_26
+	IL_0181: ldloc.s V_28
+	IL_0183: call System.Void CoroutineObject::ExecCoroutine(System.Collections.IEnumerator)
+	IL_0188: ret
+	IL_0189: newobj System.Void System.NullReferenceException::.ctor()
+	IL_018e: throw
+	
+
+Method: System.Void PatriciaFollowEventIntaraction::StartFollowEvent():	Method Body (x86 ASM):
+		0x1803F4710 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1803F4715 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803F4716 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1803F471A cmp byte ptr [18183E078h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870840 | None ||| N/A | 0
+		0x1803F4721 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4724 jne short 00000001803F4738h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4726 mov ecx,[181514C78h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464556152 | None ||| N/A | N/A
+		0x1803F472C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4731 mov byte ptr [18183E078h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870840 | None ||| N/A | 1
+		0x1803F4738 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1803F473F mov rdi,[rbx+168h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 360 | None ||| N/A | N/A
+		0x1803F4746 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803F474D je short 00000001803F475Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F474F cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803F4756 jne short 00000001803F475Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4758 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F475D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F4760 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4762 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803F4765 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F476A test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1803F476C je near ptr 00000001803F4851h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4772 mov rbx,[rbx+168h]		; DEBUG: {Register}/RBX {Memory}/None ||| RBX | 360 | None ||| N/A | N/A
+		0x1803F4779 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803F477C je near ptr 00000001803F485Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4782 cmp byte ptr [18183E06Fh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870831 | None ||| N/A | 0
+		0x1803F4789 jne short 00000001803F479Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F478B mov ecx,[181514D04h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464556292 | None ||| N/A | N/A
+		0x1803F4791 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4796 mov byte ptr [18183E06Fh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870831 | None ||| N/A | 1
+		0x1803F479D mov byte ptr [rbx+3Ch],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 60 | None ||| N/A | 1
+		0x1803F47A1 mov dword ptr [rbx+38h],1		; DEBUG: {Memory}/None {Immediate32}/None ||| RBX | 56 | None ||| N/A | 1
+		0x1803F47A8 mov rax,[18185ED28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468005160 | None ||| N/A | N/A
+		0x1803F47AF test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1803F47B6 je short 00000001803F47D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F47B8 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1803F47BF jne short 00000001803F47D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F47C1 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F47C4 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F47C9 mov rax,[18185ED28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468005160 | None ||| N/A | N/A
+		0x1803F47D0 cmp byte ptr [18183E06Ah],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870826 | None ||| N/A | 0
+		0x1803F47D7 jne short 00000001803F47F2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F47D9 mov ecx,[181514D48h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464556360 | None ||| N/A | N/A
+		0x1803F47DF call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F47E4 mov rax,[18185ED28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468005160 | None ||| N/A | N/A
+		0x1803F47EB mov byte ptr [18183E06Ah],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870826 | None ||| N/A | 1
+		0x1803F47F2 test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1803F47F9 je short 00000001803F4813h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F47FB cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1803F4802 jne short 00000001803F4813h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4804 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4807 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F480C mov rax,[18185ED28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468005160 | None ||| N/A | N/A
+		0x1803F4813 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1803F481A mov byte ptr [rax],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 0 | None ||| N/A | 1
+		0x1803F481D mov rcx,[181899F58h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468247384 | None ||| N/A | N/A
+		0x1803F4824 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803F482B je short 00000001803F483Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F482D cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803F4834 jne short 00000001803F483Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4836 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F483B xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803F483E mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1803F4840 mov ecx,523h		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1315
+		0x1803F4845 call 00000001804467A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F484A xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1803F484C call 0000000180442F70h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4851 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1803F4856 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1803F485A pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803F485B ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803F485C xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1803F485E call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4863 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PatriciaFollowEventIntaraction::StartFollowEvent():
+		End of function at 0x1803F4864
+		Absolute End is at 0x1803F4864
+		Identified Jump Destination addresses:
+
+		0x1803F4715: Saves the content of rdi to the stack
+		0x1803F471A: Compares {Unknown Global at 0x18183E078, first ten bytes are [64 107 1 0 166 107 1 0 60 61], or as chars "@k ¦k <="} and 0
+		0x1803F4721: Copies {'this' (function parameter, type PatriciaFollowEventIntaraction)} from rcx into rbx
+		0x1803F4724: Jumps to 0x1803F4738 if {Unknown Global at 0x18183E078, first ten bytes are [64 107 1 0 166 107 1 0 60 61], or as chars "@k ¦k <="} != 0
+
+		0x1803F4726: Loads string "±Q" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1803F472C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1803F4738: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1803F473F: [!] Reads field m_followEvent from {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores in a new local {'m_followEvent' (type PatriciaFollowEvent)}
+
+		0x1803F4746: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F474D: Jumps to 0x1803F475D if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803F474F: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F4756: Jumps to 0x1803F475D if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803F4758: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1803F4760: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x1803F4762: Copies {'m_followEvent' (type PatriciaFollowEvent)} from rdi into rcx
+		0x1803F4765: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'m_followEvent' (type PatriciaFollowEvent)}, {'local3' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1803F476A: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1803F476C: Jumps to 0x1803F4851 (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1803F4772: [!] Reads field m_followEvent from {'this' (function parameter, type PatriciaFollowEventIntaraction)} and stores in a new local {'m_followEvent2' (type PatriciaFollowEvent)}
+
+		0x1803F4779: [!] Compares {'m_followEvent2' (type PatriciaFollowEvent)} and 0
+		0x1803F477C: Jumps to 0x1803F485C (which throws a NRE) if m_followEvent2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F4782: Compares {Unknown Global at 0x18183E06F, first ten bytes are [0 52 107 1 0 224 60 103 1 64], or as chars " 4k à<g@"} and 0
+		0x1803F4789: Jumps to 0x1803F479D if {Unknown Global at 0x18183E06F, first ten bytes are [0 52 107 1 0 224 60 103 1 64], or as chars " 4k à<g@"} != 0
+
+		0x1803F478B: Reads {Unknown Global at 0x181514D04, first ten bytes are [185 81 0 0 186 81 0 0 186 17], or as chars "¹Q  ºQ  º"} into register rcx as a constant constant13
+		0x1803F4791: Attempts to load the il2cpp metadata for this method (method id 20921) and init it cpp-side.
+
+		0x1803F479D: [!] Sets the field m_isEventStart (Type System.Boolean) on local {'m_followEvent2' (type PatriciaFollowEvent)} to the value stored in True
+		0x1803F47A1: [!] Sets the field m_state (Type PatriciaFollowEvent/EState) on local {'m_followEvent2' (type PatriciaFollowEvent)} to the value stored in 1
+		0x1803F47A8: Loads the type definition for managed type PatriciaFollowEvent as a constant "PatriciaFollowEvent" in rax
+		0x1803F47AF: Compares "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F47B6: Jumps to 0x1803F47D0 if "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803F47B8: Compares "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F47BF: Jumps to 0x1803F47D0 if "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803F47C1: Copies {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1803F47C4: Calls the il2cpp cctor for the type PatriciaFollowEvent
+		0x1803F47C9: Loads the type definition for managed type PatriciaFollowEvent as a constant "PatriciaFollowEvent" in rax
+		0x1803F47D0: Compares {Unknown Global at 0x18183E06A, first ten bytes are [103 1 0 107 1 0 52 107 1 0], or as chars "g k 4k "} and 0
+		0x1803F47D7: Jumps to 0x1803F47F2 if {Unknown Global at 0x18183E06A, first ten bytes are [103 1 0 107 1 0 52 107 1 0], or as chars "g k 4k "} != 0
+
+		0x1803F47D9: Reads {Unknown Global at 0x181514D48, first ten bytes are [190 81 0 0 190 17 0 0 190 49], or as chars "¾Q  ¾  ¾1"} into register rcx as a constant constant22
+		0x1803F47DF: Attempts to load the il2cpp metadata for this method (method id 20926) and init it cpp-side.
+
+		0x1803F47E4: Loads the type definition for managed type PatriciaFollowEvent as a constant "PatriciaFollowEvent" in rax
+		0x1803F47F2: Compares "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F47F9: Jumps to 0x1803F4813 if "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803F47FB: Compares "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F4802: Jumps to 0x1803F4813 if "{il2cpp field on {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803F4804: Copies {'PatriciaFollowEvent' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1803F4807: Calls the il2cpp cctor for the type PatriciaFollowEvent
+		0x1803F480C: Loads the type definition for managed type PatriciaFollowEvent as a constant "PatriciaFollowEvent" in rax
+		0x1803F4813: Loads the pointer to the static fields for PatriciaFollowEvent and stores it in constant29 in register rax
+		0x1803F481D: Loads the type definition for managed type GameStateManager as a constant "GameStateManager" in rcx
+		0x1803F4824: Compares "{il2cpp field on {'GameStateManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803F482B: Jumps to 0x1803F483B if "{il2cpp field on {'GameStateManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803F482D: Compares "{il2cpp field on {'GameStateManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803F4834: Jumps to 0x1803F483B if "{il2cpp field on {'GameStateManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803F4836: Calls the il2cpp cctor for the type GameStateManager
+		0x1803F483E: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1803F4840: [!] Writes the constant 0x523 into operand 0x523 (type UInt64) in register rcx
+		0x1803F4845: [!] Calls static managed method System.Void GameStateManager::SetFlag(EFlag,System.Boolean) with arguments [0x523, True]
+
+		0x1803F484A: Clears register rcx, yielding zero-local {'local7' (type System.Int32)}
+		0x1803F484C: [!] Calls static managed method System.Void GameStateManager::ExecCallback()
+
+		0x1803F4851: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant37
+		0x1803F485B: [!] Returns from the function
+
+		0x1803F485E: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PatriciaFollowEventIntaraction
+	System.Void StartFollowEvent()
+		PatriciaFollowEvent m_followEvent = this.m_followEvent
+		ulong local3 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(m_followEvent, local3) //(Object x, Object y)
+
+		if (boolean != False)
+		    PatriciaFollowEvent m_followEvent2 = this.m_followEvent
+		    m_followEvent2.m_isEventStart = True
+		    m_followEvent2.m_state = 1
+
+		    GameStateManager.SetFlag(0x523, True) //(EFlag flag, Boolean value)
+		    ulong local7 = 0
+
+		    GameStateManager.ExecCallback()
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld PatriciaFollowEvent PatriciaFollowEventIntaraction::m_followEvent
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_0010: ldc.i4.0
+	IL_0011: beq.s IL_003d
+	IL_0013: ldarg.0
+	IL_0014: ldfld PatriciaFollowEvent PatriciaFollowEventIntaraction::m_followEvent
+	IL_0019: stloc.2
+	IL_001a: ldloc.2
+	IL_001b: ldc.i4.1
+	IL_001c: stfld System.Boolean PatriciaFollowEvent::m_isEventStart
+	IL_0021: ldloc.2
+	IL_0022: ldc.i4.1
+	IL_0023: conv.i8
+	IL_0024: conv.u8
+	IL_0025: stfld PatriciaFollowEvent/EState PatriciaFollowEvent::m_state
+	IL_002a: ldc.i4 1315
+	IL_002f: conv.u4
+	IL_0030: ldc.i4.1
+	IL_0031: call System.Void GameStateManager::SetFlag(EFlag,System.Boolean)
+	IL_0036: ldc.i4.0
+	IL_0037: stloc.3
+	IL_0038: call System.Void GameStateManager::ExecCallback()
+	IL_003d: ret
+	IL_003e: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0043: throw
+	
+
+Method: System.Collections.IEnumerator PatriciaFollowEventIntaraction::UnusedAssets(System.Action):	Method Body (x86 ASM):
+		0x1803F4870 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1803F4875 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803F4876 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1803F487A cmp byte ptr [18183E079h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870841 | None ||| N/A | 0
+		0x1803F4881 mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F4884 jne short 00000001803F4898h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4886 mov ecx,[181514C8Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464556172 | None ||| N/A | N/A
+		0x1803F488C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F4891 mov byte ptr [18183E079h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870841 | None ||| N/A | 1
+		0x1803F4898 mov rcx,[1818603E0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468010976 | None ||| N/A | N/A
+		0x1803F489F call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F48A4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803F48A6 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F48A9 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803F48AC call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F48B1 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803F48B4 je short 00000001803F48C8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F48B6 mov [rbx+48h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 72 | None ||| N/A | N/A
+		0x1803F48BA mov rax,rbx		; DEBUG: {Register}/RAX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803F48BD mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1803F48C2 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1803F48C6 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803F48C7 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803F48C8 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1803F48CA call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803F48CF int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Collections.IEnumerator PatriciaFollowEventIntaraction::UnusedAssets(System.Action):
+		End of function at 0x1803F48D0
+		Absolute End is at 0x1803F48D0
+		Identified Jump Destination addresses:
+
+		0x1803F4875: Saves the content of rdi to the stack
+		0x1803F487A: Compares {Unknown Global at 0x18183E079, first ten bytes are [107 1 0 166 107 1 0 60 61 103], or as chars "k ¦k <=g"} and 0
+		0x1803F4881: Copies {'onFinish' (function parameter, type System.Action)} from rdx into rdi
+		0x1803F4884: Jumps to 0x1803F4898 if {Unknown Global at 0x18183E079, first ten bytes are [107 1 0 166 107 1 0 60 61 103], or as chars "k ¦k <=g"} != 0
+
+		0x1803F4886: Reads {Unknown Global at 0x181514C8C, first ten bytes are [178 81 0 0 178 17 0 0 178 49], or as chars "²Q  ²  ²1"} into register rcx as a constant constant3
+		0x1803F488C: Attempts to load the il2cpp metadata for this method (method id 20914) and init it cpp-side.
+
+		0x1803F4898: Loads the type definition for managed type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0 as a constant "<UnusedAssets>c__Iterator0" in rcx
+		0x1803F489F: [!] Allocates an instance of type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0 and stores it as enumeratorInstance in rax.
+
+		0x1803F48A6: Copies {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} from rax into rcx
+		0x1803F48A9: Copies {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} from rax into rbx
+		0x1803F48AC: [!] Calls managed method System.Void System.Object::.ctor() on instance {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} ;  - Leftover parameters detected, but first few match.
+
+		0x1803F48B1: [!] Compares {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} and 0
+		0x1803F48B4: Jumps to 0x1803F48C8 (which throws a NRE) if enumeratorInstance equals 0. Implicitly present in managed code, so ignored here.
+		0x1803F48B6: [!] Sets the field onFinish (Type System.Action) on local {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} to the value stored in {'onFinish' (function parameter, type System.Action)}
+		0x1803F48BA: Copies {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} from rbx into rax
+		0x1803F48BD: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant6
+		0x1803F48C7: [!] Returns {'enumeratorInstance' (type PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0)} from the function
+
+		0x1803F48CA: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PatriciaFollowEventIntaraction
+	System.Collections.IEnumerator UnusedAssets(System.Action onFinish)
+		PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0 enumeratorInstance = new PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0()
+
+		enumeratorInstance..ctor()
+		enumeratorInstance.onFinish = onFinish
+		return enumeratorInstance
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x1803F48C7) is corrupt (Return value has a type of PatriciaFollowEventIntaraction/<UnusedAssets>c__Iterator0, expecting an object of type System.Collections.IEnumerator) and cannot be created as IL. Aborting here.
+
+

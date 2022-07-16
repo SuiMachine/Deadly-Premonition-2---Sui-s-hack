@@ -1,0 +1,429 @@
+Type: UISkateStatusInfo
+
+Method: System.Void UISkateStatusInfo::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UISkateStatusInfo::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type UISkateStatusInfo)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UISkateStatusInfo
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void UISkateStatusInfo::Init(System.Int32,System.Int32):	Method Body (x86 ASM):
+		0x1804A36E0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1804A36E4 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x1804A36E8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804A36EB je short 00000001804A3708h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804A36ED movd xmm2,r8d		; DEBUG: {Register}/XMM2 {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804A36F2 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1804A36F5 movd xmm1,edx		; DEBUG: {Register}/XMM1 {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804A36F9 cvtdq2ps xmm2,xmm2		; DEBUG: {Register}/XMM2 {Register}/XMM2 ||| None | 0 | None ||| N/A | N/A
+		0x1804A36FC cvtdq2ps xmm1,xmm1		; DEBUG: {Register}/XMM1 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1804A36FF add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1804A3703 jmp near ptr 000000018041EF90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804A3708 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804A370D int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UISkateStatusInfo::Init(System.Int32,System.Int32):
+		End of function at 0x1804A370E
+		Absolute End is at 0x1804A370E
+		Identified Jump Destination addresses:
+
+		0x1804A36E4: [!] Reads field m_gauge from {'this' (function parameter, type UISkateStatusInfo)} and stores in a new local {'m_gauge' (type UIHudNumberGauge)}
+
+		0x1804A36E8: [!] Compares {'m_gauge' (type UIHudNumberGauge)} and 0
+		0x1804A36EB: Jumps to 0x1804A3708 (which throws a NRE) if m_gauge equals 0. Implicitly present in managed code, so ignored here.
+		0x1804A3703: [!] Calls managed method System.Void UIHudNumberGauge::Init(System.Single,System.Single) on instance {'m_gauge' (type UIHudNumberGauge)} with arguments [{'now' (function parameter, type System.Int32)}, {'max' (function parameter, type System.Int32)}]
+
+		0x1804A3703: [!] Returns from the function
+
+		0x1804A3708: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UISkateStatusInfo
+	System.Void Init(System.Int32 now, System.Int32 max)
+		UIHudNumberGauge m_gauge = this.m_gauge
+
+		m_gauge.Init(now, max) //(Single now, Single max)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UIHudNumberGauge UISkateStatusInfo::m_gauge
+	IL_0006: ldarg.1
+	IL_0007: ldarg.2
+	IL_0008: call System.Void UIHudNumberGauge::Init(System.Single,System.Single)
+	IL_000d: ret
+	IL_000e: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0013: throw
+	
+
+Method: System.Void UISkateStatusInfo::Disp():	Method Body (x86 ASM):
+		0x1806CCEB0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1806CCEB5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806CCEB6 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806CCEBA cmp byte ptr [18183F473h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875955 | None ||| N/A | 0
+		0x1806CCEC1 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCEC4 jne short 00000001806CCED8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCEC6 mov ecx,[1814B39D4h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464158164 | None ||| N/A | N/A
+		0x1806CCECC call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCED1 mov byte ptr [18183F473h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875955 | None ||| N/A | 1
+		0x1806CCED8 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1806CCEDF mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1806CCEE3 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806CCEEA je short 00000001806CCEFAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCEEC cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806CCEF3 jne short 00000001806CCEFAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCEF5 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCEFA xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806CCEFD xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCEFF mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF02 call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCF07 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF09 je short 00000001806CCF1Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCF0B mov rdx,[181868150h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468043088 | None ||| N/A | N/A
+		0x1806CCF12 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF15 call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCF1A mov [rbx+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 32 | None ||| N/A | N/A
+		0x1806CCF1E xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF20 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF23 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCF28 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF2B je short 00000001806CCF5Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCF2D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF30 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1806CCF32 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF35 call 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCF3A mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1806CCF3E test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF41 je short 00000001806CCF5Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCF43 mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x1806CCF46 mov rdx,[rax+180h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 384 | None ||| N/A | N/A
+		0x1806CCF4D mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806CCF52 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806CCF56 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF57 jmp qword ptr [rax+178h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 376 | None ||| N/A | N/A
+		0x1806CCF5E xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF60 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCF65 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UISkateStatusInfo::Disp():
+		End of function at 0x1806CCF66
+		Absolute End is at 0x1806CCF66
+		Identified Jump Destination addresses:
+
+		0x1806CCEB5: Saves the content of rdi to the stack
+		0x1806CCEBA: Compares {Unknown Global at 0x18183F473, first ten bytes are [0 90 25 2 0 52 61 103 1 96], or as chars " Z 4=g`"} and 0
+		0x1806CCEC1: Copies {'this' (function parameter, type UISkateStatusInfo)} from rcx into rbx
+		0x1806CCEC4: Jumps to 0x1806CCED8 if {Unknown Global at 0x18183F473, first ten bytes are [0 90 25 2 0 52 61 103 1 96], or as chars " Z 4=g`"} != 0
+
+		0x1806CCEC6: Loads string "by" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1806CCECC: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1806CCED8: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1806CCEDF: [!] Reads field m_effectAnimController from {'this' (function parameter, type UISkateStatusInfo)} and stores in a new local {'m_effectAnimController' (type AnimationController)}
+
+		0x1806CCEE3: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806CCEEA: Jumps to 0x1806CCEFA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806CCEEC: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806CCEF3: Jumps to 0x1806CCEFA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806CCEF5: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1806CCEFD: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x1806CCEFF: Copies {'m_effectAnimController' (type AnimationController)} from rdi into rcx
+		0x1806CCF02: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'m_effectAnimController' (type AnimationController)}, {'local3' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1806CCF07: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1806CCF09: Jumps to 0x1806CCF1E (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806CCF0B: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<AnimationController>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1806CCF12: Copies {'this' (function parameter, type UISkateStatusInfo)} from rbx into rcx
+		0x1806CCF15: [!] Calls managed method T UnityEngine.Component::GetComponent<AnimationController>() on instance {'this' (function parameter, type UISkateStatusInfo)} and stores the result in {'component' (type AnimationController)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1806CCF1A: [!] Sets the field m_effectAnimController (Type AnimationController) on local {'this' (function parameter, type UISkateStatusInfo)} to the value stored in {'component' (type AnimationController)}
+		0x1806CCF20: Copies {'this' (function parameter, type UISkateStatusInfo)} from rbx into rcx
+		0x1806CCF23: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type UISkateStatusInfo)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1806CCF28: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1806CCF2B: Jumps to 0x1806CCF5E (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1806CCF30: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1806CCF32: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1806CCF35: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [True]
+
+		0x1806CCF3A: [!] Reads field m_effectAnimController from {'this' (function parameter, type UISkateStatusInfo)} and stores in a new local {'m_effectAnimController2' (type AnimationController)}
+
+		0x1806CCF3E: [!] Compares {'m_effectAnimController2' (type AnimationController)} and 0
+		0x1806CCF41: Jumps to 0x1806CCF5E (which throws a NRE) if m_effectAnimController2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806CCF43: Loads the class pointer from m_effectAnimController2 into a constant constant14 in register rax
+		0x1806CCF46: Loads the pointer to the implementation of virtual function System.Void AnimationController::PlayInAnimation() specific to AnimationController from the class pointer in rax, slot 5 (from memory offset 384) and stores in constant constant15
+		0x1806CCF4D: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant16
+		0x1806CCF57: [!] Calls managed method System.Void System.ComponentModel.IContainer::Remove(System.ComponentModel.IComponent) on instance {'m_effectAnimController2' (type AnimationController)} ;  - Parameter mismatch, but there is only one method here for which the instance matches.
+
+		0x1806CCF57: [!] Returns from the function
+
+		0x1806CCF60: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UISkateStatusInfo
+	System.Void Disp()
+		AnimationController m_effectAnimController = this.m_effectAnimController
+		ulong local3 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Equality(m_effectAnimController, local3) //(Object x, Object y)
+
+		if (boolean != False)
+
+		    AnimationController component = base.GetComponent<AnimationController>()
+		    this.m_effectAnimController = component
+		endif
+        
+
+		UnityEngine.GameObject gameObject = base.gameObject
+
+		gameObject.SetActive(True) //(Boolean value)
+		AnimationController m_effectAnimController2 = this.m_effectAnimController
+
+		m_effectAnimController2.Remove()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1806CCF57) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (1)) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void UISkateStatusInfo::UnDisp():	Method Body (x86 ASM):
+		0x1806CCF70 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1806CCF75 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF76 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806CCF7A cmp byte ptr [18183F474h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875956 | None ||| N/A | 0
+		0x1806CCF81 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCF84 jne short 00000001806CCF98h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCF86 mov ecx,[1814B39E0h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464158176 | None ||| N/A | N/A
+		0x1806CCF8C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCF91 mov byte ptr [18183F474h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875956 | None ||| N/A | 1
+		0x1806CCF98 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1806CCF9F mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1806CCFA3 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806CCFAA je short 00000001806CCFBAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCFAC cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806CCFB3 jne short 00000001806CCFBAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCFB5 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCFBA xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806CCFBD xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCFBF mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806CCFC2 call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCFC7 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806CCFC9 je short 00000001806CCFDEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCFCB mov rdx,[181868150h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468043088 | None ||| N/A | N/A
+		0x1806CCFD2 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCFD5 call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCFDA mov [rbx+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 32 | None ||| N/A | N/A
+		0x1806CCFDE xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCFE0 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCFE3 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCFE8 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCFEB je short 00000001806CD004h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CCFED xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806CCFF0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCFF2 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806CCFF5 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806CCFFA add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806CCFFE pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806CCFFF jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CD004 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806CD006 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806CD00B int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UISkateStatusInfo::UnDisp():
+		End of function at 0x1806CD00C
+		Absolute End is at 0x1806CD00C
+		Identified Jump Destination addresses:
+
+		0x1806CCF75: Saves the content of rdi to the stack
+		0x1806CCF7A: Compares {Unknown Global at 0x18183F474, first ten bytes are [90 25 2 0 52 61 103 1 96 25], or as chars "Z 4=g`"} and 0
+		0x1806CCF81: Copies {'this' (function parameter, type UISkateStatusInfo)} from rcx into rbx
+		0x1806CCF84: Jumps to 0x1806CCF98 if {Unknown Global at 0x18183F474, first ten bytes are [90 25 2 0 52 61 103 1 96 25], or as chars "Z 4=g`"} != 0
+
+		0x1806CCF86: Loads string "cy" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1806CCF8C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1806CCF98: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1806CCF9F: [!] Reads field m_effectAnimController from {'this' (function parameter, type UISkateStatusInfo)} and stores in a new local {'m_effectAnimController' (type AnimationController)}
+
+		0x1806CCFA3: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806CCFAA: Jumps to 0x1806CCFBA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806CCFAC: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806CCFB3: Jumps to 0x1806CCFBA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806CCFB5: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1806CCFBD: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x1806CCFBF: Copies {'m_effectAnimController' (type AnimationController)} from rdi into rcx
+		0x1806CCFC2: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'m_effectAnimController' (type AnimationController)}, {'local3' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1806CCFC7: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1806CCFC9: Jumps to 0x1806CCFDE (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806CCFCB: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<AnimationController>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1806CCFD2: Copies {'this' (function parameter, type UISkateStatusInfo)} from rbx into rcx
+		0x1806CCFD5: [!] Calls managed method T UnityEngine.Component::GetComponent<AnimationController>() on instance {'this' (function parameter, type UISkateStatusInfo)} and stores the result in {'component' (type AnimationController)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1806CCFDA: [!] Sets the field m_effectAnimController (Type AnimationController) on local {'this' (function parameter, type UISkateStatusInfo)} to the value stored in {'component' (type AnimationController)}
+		0x1806CCFE0: Copies {'this' (function parameter, type UISkateStatusInfo)} from rbx into rcx
+		0x1806CCFE3: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type UISkateStatusInfo)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1806CCFE8: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1806CCFEB: Jumps to 0x1806CD004 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1806CCFF0: Clears register rdx, yielding zero-local {'local9' (type System.Int32)}
+		0x1806CCFF2: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1806CCFF5: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant12
+		0x1806CCFFF: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [{'local9' (type System.Int32)}]
+
+		0x1806CCFFF: [!] Returns from the function
+
+		0x1806CD006: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UISkateStatusInfo
+	System.Void UnDisp()
+		AnimationController m_effectAnimController = this.m_effectAnimController
+		ulong local3 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Equality(m_effectAnimController, local3) //(Object x, Object y)
+
+		if (boolean != False)
+
+		    AnimationController component = base.GetComponent<AnimationController>()
+		    this.m_effectAnimController = component
+		endif
+        
+
+		UnityEngine.GameObject gameObject = base.gameObject
+		ulong local9 = 0
+
+		gameObject.SetActive(local9) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld AnimationController UISkateStatusInfo::m_effectAnimController
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+	IL_0010: ldc.i4.0
+	IL_0011: beq.s IL_0021
+	IL_0013: ldarg.0
+	IL_0014: call T UnityEngine.Component::GetComponent<AnimationController>()
+	IL_0019: stloc.2
+	IL_001a: ldarg.0
+	IL_001b: ldloc.2
+	IL_001c: stfld AnimationController UISkateStatusInfo::m_effectAnimController
+	IL_0021: ldarg.0
+	IL_0022: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0027: stloc.3
+	IL_0028: ldc.i4.0
+	IL_0029: stloc.s V_4
+	IL_002b: ldloc.3
+	IL_002c: ldloc.s V_4
+	IL_002e: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0033: ret
+	IL_0034: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0039: throw
+	
+
+Method: System.Void UISkateStatusInfo::AddDurability(System.Int32):	Method Body (x86 ASM):
+		0x1804A3530 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1804A3534 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x1804A3538 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804A353B je short 00000001804A3550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804A353D movd xmm1,edx		; DEBUG: {Register}/XMM1 {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804A3541 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804A3544 cvtdq2ps xmm1,xmm1		; DEBUG: {Register}/XMM1 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1804A3547 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1804A354B jmp near ptr 000000018041EE50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804A3550 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804A3555 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UISkateStatusInfo::AddDurability(System.Int32):
+		End of function at 0x1804A3556
+		Absolute End is at 0x1804A3556
+		Identified Jump Destination addresses:
+
+		0x1804A3534: [!] Reads field m_gauge from {'this' (function parameter, type UISkateStatusInfo)} and stores in a new local {'m_gauge' (type UIHudNumberGauge)}
+
+		0x1804A3538: [!] Compares {'m_gauge' (type UIHudNumberGauge)} and 0
+		0x1804A353B: Jumps to 0x1804A3550 (which throws a NRE) if m_gauge equals 0. Implicitly present in managed code, so ignored here.
+		0x1804A354B: [!] Calls managed method System.Void UIHudNumberGauge::Add(System.Single) on instance {'m_gauge' (type UIHudNumberGauge)} with arguments [{'num' (function parameter, type System.Int32)}]
+
+		0x1804A354B: [!] Returns from the function
+
+		0x1804A3550: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UISkateStatusInfo
+	System.Void AddDurability(System.Int32 num)
+		UIHudNumberGauge m_gauge = this.m_gauge
+
+		m_gauge.Add(num) //(Single val)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UIHudNumberGauge UISkateStatusInfo::m_gauge
+	IL_0006: ldarg.1
+	IL_0007: call System.Void UIHudNumberGauge::Add(System.Single)
+	IL_000c: ret
+	IL_000d: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0012: throw
+	
+

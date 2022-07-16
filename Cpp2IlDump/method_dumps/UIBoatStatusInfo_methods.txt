@@ -1,0 +1,256 @@
+Type: UIBoatStatusInfo
+
+Method: System.Void UIBoatStatusInfo::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIBoatStatusInfo::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type UIBoatStatusInfo)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIBoatStatusInfo
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void UIBoatStatusInfo::Init(System.Int32):	Method Body (x86 ASM):
+		0x180687400 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180687404 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x180687408 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18068740B je short 000000018068741Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18068740D xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x180687410 mov r8d,edx		; DEBUG: {Register}/R8D {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180687413 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180687417 jmp near ptr 000000018041DBE0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18068741C call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180687421 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIBoatStatusInfo::Init(System.Int32):
+		End of function at 0x180687422
+		Absolute End is at 0x180687422
+		Identified Jump Destination addresses:
+
+		0x180687404: [!] Reads field m_gauge from {'this' (function parameter, type UIBoatStatusInfo)} and stores in a new local {'m_gauge' (type UIHudBoatHPGauge)}
+
+		0x180687408: [!] Compares {'m_gauge' (type UIHudBoatHPGauge)} and 0
+		0x18068740B: Jumps to 0x18068741C (which throws a NRE) if m_gauge equals 0. Implicitly present in managed code, so ignored here.
+		0x180687410: Copies {'max' (function parameter, type System.Int32)} from rdx into r8
+		0x180687417: [!] Calls managed method System.Void UIHudBoatHPGauge::Init(System.Int32,System.Int32) on instance {'m_gauge' (type UIHudBoatHPGauge)} with arguments [{'max' (function parameter, type System.Int32)}, {'max' (function parameter, type System.Int32)}]
+
+		0x180687417: [!] Returns from the function
+
+		0x18068741C: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIBoatStatusInfo
+	System.Void Init(System.Int32 max)
+		UIHudBoatHPGauge m_gauge = this.m_gauge
+
+		m_gauge.Init(max, max) //(Int32 now, Int32 max)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UIHudBoatHPGauge UIBoatStatusInfo::m_gauge
+	IL_0006: ldarg.1
+	IL_0007: ldarg.1
+	IL_0008: call System.Void UIHudBoatHPGauge::Init(System.Int32,System.Int32)
+	IL_000d: ret
+	IL_000e: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0013: throw
+	
+
+Method: System.Void UIBoatStatusInfo::Disp():	Method Body (x86 ASM):
+		0x1803464E0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1803464E4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803464E6 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803464EB test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803464EE je short 0000000180346501h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803464F0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803464F3 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1803464F5 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803464F8 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1803464FC jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180346501 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180346503 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180346508 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIBoatStatusInfo::Disp():
+		End of function at 0x180346509
+		Absolute End is at 0x180346509
+		Identified Jump Destination addresses:
+
+		0x1803464E6: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type UIBoatStatusInfo)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1803464EB: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1803464EE: Jumps to 0x180346501 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1803464F3: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1803464F5: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1803464FC: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [True]
+
+		0x1803464FC: [!] Returns from the function
+
+		0x180346503: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIBoatStatusInfo
+	System.Void Disp()
+
+		UnityEngine.GameObject gameObject = base.gameObject
+
+		gameObject.SetActive(True) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0006: ldc.i4.1
+	IL_0007: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_000c: ret
+	IL_000d: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0012: throw
+	
+
+Method: System.Void UIBoatStatusInfo::UnDisp():	Method Body (x86 ASM):
+		0x180257A10 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180257A14 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180257A16 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180257A1B test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180257A1E je short 0000000180257A31h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180257A20 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180257A23 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180257A25 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180257A28 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180257A2C jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180257A31 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180257A33 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180257A38 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIBoatStatusInfo::UnDisp():
+		End of function at 0x180257A39
+		Absolute End is at 0x180257A39
+		Identified Jump Destination addresses:
+
+		0x180257A16: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type UIBoatStatusInfo)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x180257A1B: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x180257A1E: Jumps to 0x180257A31 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x180257A23: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x180257A25: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x180257A2C: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [{'local4' (type System.Int32)}]
+
+		0x180257A2C: [!] Returns from the function
+
+		0x180257A33: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIBoatStatusInfo
+	System.Void UnDisp()
+
+		UnityEngine.GameObject gameObject = base.gameObject
+		ulong local4 = 0
+
+		gameObject.SetActive(local4) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0010: ret
+	IL_0011: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0016: throw
+	
+
+Method: System.Void UIBoatStatusInfo::AddDurability(System.Int32):	Method Body (x86 ASM):
+		0x1806873E0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1806873E4 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x1806873E8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806873EB je short 00000001806873F9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806873ED xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806873F0 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1806873F4 jmp near ptr 000000018041DA30h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806873F9 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806873FE int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIBoatStatusInfo::AddDurability(System.Int32):
+		End of function at 0x1806873FF
+		Absolute End is at 0x1806873FF
+		Identified Jump Destination addresses:
+
+		0x1806873E4: [!] Reads field m_gauge from {'this' (function parameter, type UIBoatStatusInfo)} and stores in a new local {'m_gauge' (type UIHudBoatHPGauge)}
+
+		0x1806873E8: [!] Compares {'m_gauge' (type UIHudBoatHPGauge)} and 0
+		0x1806873EB: Jumps to 0x1806873F9 (which throws a NRE) if m_gauge equals 0. Implicitly present in managed code, so ignored here.
+		0x1806873F4: [!] Calls managed method System.Void UIHudBoatHPGauge::Add(System.Int32) on instance {'m_gauge' (type UIHudBoatHPGauge)} with arguments [{'num' (function parameter, type System.Int32)}]
+
+		0x1806873F4: [!] Returns from the function
+
+		0x1806873F9: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIBoatStatusInfo
+	System.Void AddDurability(System.Int32 num)
+		UIHudBoatHPGauge m_gauge = this.m_gauge
+
+		m_gauge.Add(num) //(Int32 val)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UIHudBoatHPGauge UIBoatStatusInfo::m_gauge
+	IL_0006: ldarg.1
+	IL_0007: call System.Void UIHudBoatHPGauge::Add(System.Int32)
+	IL_000c: ret
+	IL_000d: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0012: throw
+	
+

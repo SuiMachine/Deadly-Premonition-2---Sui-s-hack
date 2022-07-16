@@ -1,0 +1,64 @@
+Type: MinMaxRangeAttribute
+
+Method: System.Void MinMaxRangeAttribute::.ctor(System.Single,System.Single):	Method Body (x86 ASM):
+		0x18063F960 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18063F962 sub rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x18063F966 movaps [rsp+30h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 48 | None ||| N/A | N/A
+		0x18063F96B xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18063F96D movaps [rsp+20h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 32 | None ||| N/A | N/A
+		0x18063F972 movaps xmm6,xmm1		; DEBUG: {Register}/XMM6 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x18063F975 movaps xmm7,xmm2		; DEBUG: {Register}/XMM7 {Register}/XMM2 ||| None | 0 | None ||| N/A | N/A
+		0x18063F978 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18063F97B call 0000000180256AB0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18063F980 movss dword ptr [rbx+10h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBX | 16 | None ||| N/A | N/A
+		0x18063F985 movaps xmm6,[rsp+30h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18063F98A movss dword ptr [rbx+14h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RBX | 20 | None ||| N/A | N/A
+		0x18063F98F movaps xmm7,[rsp+20h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18063F994 add rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x18063F998 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18063F999 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18063F99A int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MinMaxRangeAttribute::.ctor(System.Single,System.Single):
+		End of function at 0x18063F99B
+		Absolute End is at 0x18063F99B
+		Identified Jump Destination addresses:
+
+		0x18063F960: Saves the content of rbx to the stack
+		0x18063F972: Copies {'minLimit' (function parameter, type System.Single)} from xmm1 into xmm6
+		0x18063F975: Copies {'maxLimit' (function parameter, type System.Single)} from xmm2 into xmm7
+		0x18063F978: Copies {'this' (function parameter, type MinMaxRangeAttribute)} from rcx into rbx
+		0x18063F97B: [!] Calls managed method System.Void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() on instance {'this' (function parameter, type MinMaxRangeAttribute)} ;  - Leftover parameters detected, but first few match.
+
+		0x18063F980: [!] Sets the field minLimit (Type System.Single) on local {'this' (function parameter, type MinMaxRangeAttribute)} to the value stored in {'minLimit' (function parameter, type System.Single)}
+		0x18063F985: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register xmm6 as new constant constant1
+		0x18063F98A: [!] Sets the field maxLimit (Type System.Single) on local {'this' (function parameter, type MinMaxRangeAttribute)} to the value stored in {'maxLimit' (function parameter, type System.Single)}
+		0x18063F98F: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm7 as new constant constant2
+		0x18063F999: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MinMaxRangeAttribute
+	System.Void .ctor(System.Single minLimit, System.Single maxLimit)
+
+		base..ctor()
+		this.minLimit = minLimit
+		this.maxLimit = maxLimit
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Runtime.CompilerServices.ExtensionAttribute::.ctor()
+	IL_0006: ldarg.0
+	IL_0007: ldarg.1
+	IL_0008: stfld System.Single MinMaxRangeAttribute::minLimit
+	IL_000d: ldarg.0
+	IL_000e: ldarg.2
+	IL_000f: stfld System.Single MinMaxRangeAttribute::maxLimit
+	IL_0014: ret
+	
+

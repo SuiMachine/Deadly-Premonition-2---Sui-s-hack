@@ -1,0 +1,904 @@
+Type: UIRewardItem
+
+Method: System.Void UIRewardItem::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIRewardItem::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type UIRewardItem)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIRewardItem
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void UIRewardItem::Init():	Method Body (x86 ASM):
+		0x180207540 ret 0		; DEBUG: {Immediate16}/None {Register}/None ||| None | 0 | None ||| 0 | N/A
+		0x180207543 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIRewardItem::Init():
+		End of function at 0x180207544
+		Absolute End is at 0x180207544
+		Identified Jump Destination addresses:
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIRewardItem
+	System.Void Init()
+
+
+Generated IL:
+	
+
+Method: System.Void UIRewardItem::OffGetObj():	Method Body (x86 ASM):
+		0x180345230 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180345234 mov rcx,[rcx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x180345238 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18034523B je short 000000018034524Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034523D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180345240 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180345242 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180345246 jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034524B call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345250 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIRewardItem::OffGetObj():
+		End of function at 0x180345251
+		Absolute End is at 0x180345251
+		Identified Jump Destination addresses:
+
+		0x180345234: [!] Reads field m_getObj from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_getObj' (type UnityEngine.GameObject)}
+
+		0x180345238: [!] Compares {'m_getObj' (type UnityEngine.GameObject)} and 0
+		0x18034523B: Jumps to 0x18034524B (which throws a NRE) if m_getObj equals 0. Implicitly present in managed code, so ignored here.
+		0x180345240: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x180345246: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'m_getObj' (type UnityEngine.GameObject)} with arguments [{'local3' (type System.Int32)}]
+
+		0x180345246: [!] Returns from the function
+
+		0x18034524B: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIRewardItem
+	System.Void OffGetObj()
+		UnityEngine.GameObject m_getObj = this.m_getObj
+		ulong local3 = 0
+
+		m_getObj.SetActive(local3) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UnityEngine.GameObject UIRewardItem::m_getObj
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0010: ret
+	IL_0011: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0016: throw
+	
+
+Method: System.Void UIRewardItem::SetInfo(RewardParam,System.Boolean):	Method Body (x86 ASM):
+		0x180345290 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180345295 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x18034529A push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18034529B sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18034529F cmp byte ptr [18183DAE7h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869415 | None ||| N/A | 0
+		0x1803452A6 movzx esi,r8b		; DEBUG: {Register}/ESI {Register}/R8L ||| None | 0 | None ||| N/A | N/A
+		0x1803452AA mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1803452AD mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803452B0 jne short 00000001803452C4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803452B2 mov ecx,[18151B8CCh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464583884 | None ||| N/A | N/A
+		0x1803452B8 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803452BD mov byte ptr [18183DAE7h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869415 | None ||| N/A | 1
+		0x1803452C4 mov rcx,[rdi+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x1803452C8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803452CB je near ptr 0000000180345453h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803452D1 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803452D4 movzx edx,sil		; DEBUG: {Register}/EDX {Register}/SIL ||| None | 0 | None ||| N/A | N/A
+		0x1803452D8 call 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803452DD cmp byte ptr [18183DAE8h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869416 | None ||| N/A | 0
+		0x1803452E4 jne short 00000001803452F8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803452E6 mov ecx,[18151B8A4h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464583844 | None ||| N/A | N/A
+		0x1803452EC call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803452F1 mov byte ptr [18183DAE8h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869416 | None ||| N/A | 1
+		0x1803452F8 mov rax,[181864F28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468030248 | None ||| N/A | N/A
+		0x1803452FF mov rsi,[rdi+28h]		; DEBUG: {Register}/RSI {Memory}/None ||| RDI | 40 | None ||| N/A | N/A
+		0x180345303 test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x18034530A je short 0000000180345324h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034530C cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x180345313 jne short 0000000180345324h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345315 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180345318 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034531D mov rax,[181864F28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468030248 | None ||| N/A | N/A
+		0x180345324 mov rcx,[rax+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x18034532B test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18034532E je near ptr 0000000180345453h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345334 movups xmm0,[rcx]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x180345337 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18034533A lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18034533F mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180345342 movaps [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x180345347 call 0000000181198A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034534C mov rax,[181864F28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468030248 | None ||| N/A | N/A
+		0x180345353 mov rcx,[rdi+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x180345357 mov rdx,[rax+0B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x18034535E test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180345361 je near ptr 0000000180345453h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345367 movups xmm0,[rdx]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDX | 0 | None ||| N/A | N/A
+		0x18034536A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18034536D lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x180345372 movaps [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x180345377 call 0000000181198A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034537C mov rsi,[rdi+28h]		; DEBUG: {Register}/RSI {Memory}/None ||| RDI | 40 | None ||| N/A | N/A
+		0x180345380 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180345383 je near ptr 0000000180345453h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345389 lea rcx,[rbx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x18034538D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18034538F call 0000000180E86110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345394 test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180345397 je near ptr 0000000180345453h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034539D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803453A0 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803453A3 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1803453A6 call 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803453AB mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x1803453B2 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803453B9 je short 00000001803453C9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803453BB cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803453C2 jne short 00000001803453C9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803453C4 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803453C9 mov ebx,[rbx+14h]		; DEBUG: {Register}/EBX {Memory}/None ||| RBX | 20 | None ||| N/A | N/A
+		0x1803453CC mov rcx,[181899DE8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468247016 | None ||| N/A | N/A
+		0x1803453D3 cmp ebx,0FA0h		; DEBUG: {Register}/EBX {Immediate32}/None ||| None | 0 | None ||| N/A | 4000
+		0x1803453D9 jg short 00000001803453FDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803453DB test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803453E2 je short 00000001803453F2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803453E4 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803453EB jne short 00000001803453F2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803453ED call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803453F2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803453F4 mov ecx,ebx		; DEBUG: {Register}/ECX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1803453F6 call 000000018114D620h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803453FB jmp short 000000018034541Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803453FD test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180345404 je short 0000000180345414h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345406 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18034540D jne short 0000000180345414h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034540F call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345414 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180345416 mov ecx,ebx		; DEBUG: {Register}/ECX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x180345418 call 00000001811503A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034541D test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180345420 je short 0000000180345453h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345422 mov rcx,[rax+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 32 | None ||| N/A | N/A
+		0x180345426 mov rbx,[rdi+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18034542A xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18034542C call 00000001802D1460h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345431 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180345434 je short 0000000180345453h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345436 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180345439 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18034543C mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18034543F mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x180345444 mov rsi,[rsp+48h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x180345449 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18034544D pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18034544E jmp near ptr 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345453 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180345455 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034545A int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIRewardItem::SetInfo(RewardParam,System.Boolean):
+		End of function at 0x18034545B
+		Absolute End is at 0x18034545B
+		Identified Jump Destination addresses:
+			0x18034541D
+		0x18034529A: Saves the content of rdi to the stack
+		0x18034529F: Compares {Unknown Global at 0x18183DAE7, first ten bytes are [0 183 59 1 0 200 60 103 1 192], or as chars " ·; È<gÀ"} and 0
+		0x1803452A6: Copies {'isCleared' (function parameter, type System.Boolean)} from r8 into rsi
+		0x1803452AA: Copies {'reward' (function parameter, type RewardParam)} from rdx into rbx
+		0x1803452AD: Copies {'this' (function parameter, type UIRewardItem)} from rcx into rdi
+		0x1803452B0: Jumps to 0x1803452C4 if {Unknown Global at 0x18183DAE7, first ten bytes are [0 183 59 1 0 200 60 103 1 192], or as chars " ·; È<gÀ"} != 0
+
+		0x1803452B2: Loads string "vx" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1803452B8: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1803452C4: [!] Reads field m_getObj from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_getObj' (type UnityEngine.GameObject)}
+
+		0x1803452C8: [!] Compares {'m_getObj' (type UnityEngine.GameObject)} and 0
+		0x1803452CB: Jumps to 0x180345453 (which throws a NRE) if m_getObj equals 0. Implicitly present in managed code, so ignored here.
+		0x1803452D4: Copies {'isCleared' (function parameter, type System.Boolean)} from rsi into rdx
+		0x1803452D8: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'m_getObj' (type UnityEngine.GameObject)} with arguments [{'isCleared' (function parameter, type System.Boolean)}]
+
+		0x1803452DD: Compares {Unknown Global at 0x18183DAE8, first ten bytes are [183 59 1 0 200 60 103 1 192 59], or as chars "·; È<gÀ;"} and 0
+		0x1803452E4: Jumps to 0x1803452F8 if {Unknown Global at 0x18183DAE8, first ten bytes are [183 59 1 0 200 60 103 1 192 59], or as chars "·; È<gÀ;"} != 0
+
+		0x1803452E6: Loads string "tx" into register rcx as constant {'constant7' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1803452EC: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1803452F8: Loads the type definition for managed type UIRewardItem as a constant "UIRewardItem" in rax
+		0x1803452FF: [!] Reads field m_scoreLabel from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_scoreLabel' (type UILabel)}
+
+		0x180345303: Compares "{il2cpp field on {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18034530A: Jumps to 0x180345324 if "{il2cpp field on {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18034530C: Compares "{il2cpp field on {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180345313: Jumps to 0x180345324 if "{il2cpp field on {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180345315: Copies {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x180345318: Calls the il2cpp cctor for the type UIRewardItem
+		0x18034531D: Loads the type definition for managed type UIRewardItem as a constant "UIRewardItem" in rax
+		0x180345324: Loads the pointer to the static fields for UIRewardItem and stores it in constant14 in register rcx
+		0x18034532B: [!] Compares {'m_scoreLabel' (type UILabel)} and 0
+		0x18034532E: Jumps to 0x180345453 (which throws a NRE) if m_scoreLabel equals 0. Implicitly present in managed code, so ignored here.
+		0x180345334: [!] Reads the static field UnityEngine.Color UIRewardItem::scDisableColor into new local scDisableColor
+		0x18034533A: Loads a pointer to stack offset 0x20 into register rdx as new constant constant16
+		0x18034533F: Copies {'m_scoreLabel' (type UILabel)} from rsi into rcx
+		0x180345342: Moves scDisableColor (type UnityEngine.Color) from register xmm0 to the stack at offset 32 (0x20)
+		0x180345347: [!] Calls managed method System.Void UIWidget::set_color(UnityEngine.Color) on instance {'m_scoreLabel' (type UILabel)} with arguments [{'scDisableColor' (type UnityEngine.Color)}]
+
+		0x18034534C: Loads the type definition for managed type UIRewardItem as a constant "UIRewardItem" in rax
+		0x180345353: [!] Reads field m_itemLabel from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_itemLabel' (type UILabel)}
+
+		0x180345357: Loads the pointer to the static fields for UIRewardItem and stores it in constant18 in register rdx
+		0x18034535E: [!] Compares {'m_itemLabel' (type UILabel)} and 0
+		0x180345361: Jumps to 0x180345453 (which throws a NRE) if m_itemLabel equals 0. Implicitly present in managed code, so ignored here.
+		0x180345367: [!] Reads the static field UnityEngine.Color UIRewardItem::scDisableColor into new local scDisableColor2
+		0x18034536D: Loads a pointer to stack offset 0x20 into register rdx as new constant constant20
+		0x180345372: Moves scDisableColor2 (type UnityEngine.Color) from register xmm0 to the stack at offset 32 (0x20)
+		0x180345377: [!] Calls managed method System.Void UIWidget::set_color(UnityEngine.Color) on instance {'m_itemLabel' (type UILabel)} with arguments [{'scDisableColor2' (type UnityEngine.Color)}]
+
+		0x18034537C: [!] Reads field m_scoreLabel from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_scoreLabel2' (type UILabel)}
+
+		0x180345380: [!] Compares {'reward' (function parameter, type RewardParam)} and 0
+		0x180345383: Jumps to 0x180345453 (which throws a NRE) if reward equals 0. Implicitly present in managed code, so ignored here.
+		0x180345389: Loads the pointer to the field m_requiredScore on {'reward' (function parameter, type RewardParam)} into register rcx
+		0x180345394: [!] Compares {'m_scoreLabel2' (type UILabel)} and 0
+		0x180345397: Jumps to 0x180345453 (which throws a NRE) if m_scoreLabel2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1803453A0: Copies {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)} from rax into rdx
+		0x1803453A3: Copies {'m_scoreLabel2' (type UILabel)} from rsi into rcx
+		0x1803453A6: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'m_scoreLabel2' (type UILabel)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1803453AB: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x1803453B2: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803453B9: Jumps to 0x1803453C9 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803453BB: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803453C2: Jumps to 0x1803453C9 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803453C4: Calls the il2cpp cctor for the type System.String
+		0x1803453C9: [!] Reads field m_itemId from {'reward' (function parameter, type RewardParam)} and stores in a new local {'m_itemId' (type System.Int32)}
+
+		0x1803453CC: Loads the type definition for managed type DataManager as a constant "DataManager" in rcx
+		0x1803453D3: [!] Compares {'m_itemId' (type System.Int32)} and 0xFA0
+		0x1803453DB: Compares "{il2cpp field on {'DataManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803453E2: Jumps to 0x1803453F2 if "{il2cpp field on {'DataManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803453E4: Compares "{il2cpp field on {'DataManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803453EB: Jumps to 0x1803453F2 if "{il2cpp field on {'DataManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803453ED: Calls the il2cpp cctor for the type DataManager
+		0x1803453F4: Copies {'m_itemId' (type System.Int32)} from rbx into rcx
+		0x1803453F6: [!] Calls static managed method ItemDataParam/ItemParam DataManager::GetItemData(System.Int32) with arguments [{'m_itemId' (type System.Int32)}] and stores the result in {'itemData' (type ItemDataParam/ItemParam)}
+
+		0x1803453FB: Jumps to 0x18034541D (which is an function-local jump destination)
+
+		0x1803453FD: [!] Compares  and 2
+		0x180345404: Jumps to 0x180345414 (which is an if statement's body) if  equals 2 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180345406: [!] Compares  and 0
+		0x18034540D: Jumps to 0x180345414 (which is an if statement's body) if  != 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18034540F: Calls the il2cpp cctor for the type 
+		0x180345416: Copies {'m_itemId' (type System.Int32)} from rbx into rcx
+		0x180345418: [!] Calls static managed method VoodooItemDataParam/ItemParam DataManager::GetVoodooItemData(System.Int32) with arguments [{'m_itemId' (type System.Int32)}] and stores the result in {'voodooItemData' (type VoodooItemDataParam/ItemParam)}
+
+
+		Jump Destination (0x18034541D):
+		0x18034541D: [!] Compares {'voodooItemData' (type VoodooItemDataParam/ItemParam)} and 0
+		0x180345420: Jumps to 0x180345453 (which throws a NRE) if voodooItemData equals 0. Implicitly present in managed code, so ignored here.
+		0x180345422: [!] Reads field nameDisplayId from {'voodooItemData' (type VoodooItemDataParam/ItemParam)} and stores in a new local {'nameDisplayId' (type System.String)}
+
+		0x180345426: [!] Reads field m_itemLabel from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_itemLabel2' (type UILabel)}
+
+		0x18034542C: [!] Calls static managed method System.String DisplayManager::GetMessage(System.String) with arguments [{'nameDisplayId' (type System.String)}] and stores the result in {'message' (type System.String)}
+
+		0x180345431: [!] Compares {'m_itemLabel2' (type UILabel)} and 0
+		0x180345434: Jumps to 0x180345453 (which throws a NRE) if m_itemLabel2 equals 0. Implicitly present in managed code, so ignored here.
+		0x180345439: Copies {'message' (type System.String)} from rax into rdx
+		0x18034543C: Copies {'m_itemLabel2' (type UILabel)} from rbx into rcx
+		0x18034543F: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant39
+		0x180345444: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rsi as new constant constant40
+		0x18034544E: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'m_itemLabel2' (type UILabel)} with arguments [{'message' (type System.String)}]
+
+		0x18034544E: [!] Returns from the function
+
+		0x180345455: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIRewardItem
+	System.Void SetInfo(RewardParam reward, System.Boolean isCleared)
+		UnityEngine.GameObject m_getObj = this.m_getObj
+
+		m_getObj.SetActive(isCleared) //(Boolean value)
+		UILabel m_scoreLabel = this.m_scoreLabel
+		UnityEngine.Color scDisableColor = UIRewardItem.scDisableColor
+
+		m_scoreLabel.color = scDisableColor
+		UILabel m_itemLabel = this.m_itemLabel
+		UnityEngine.Color scDisableColor2 = UIRewardItem.scDisableColor
+
+		m_itemLabel.color = scDisableColor2
+		UILabel m_scoreLabel2 = this.m_scoreLabel
+
+		m_scoreLabel2.set_text()
+		System.Int32 m_itemId = reward.m_itemId
+
+		ItemDataParam/ItemParam itemData = DataManager.GetItemData(m_itemId) //(Int32 itemId)
+
+		if ( != 2)
+
+		    if ( == 0)
+		    endif
+            
+
+		    VoodooItemDataParam/ItemParam voodooItemData = DataManager.GetVoodooItemData(m_itemId) //(Int32 itemId)
+		    System.String nameDisplayId = voodooItemData.nameDisplayId
+		    UILabel m_itemLabel2 = this.m_itemLabel
+
+		    System.String message = DisplayManager.GetMessage(nameDisplayId) //(String enumStr)
+
+		    m_itemLabel2.text = message
+		    return
+		    throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1803453A6) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (1)) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void UIRewardItem::PlayGetAnim(System.Action):	Method Body (x86 ASM):
+		0x180345260 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180345264 mov [rcx+38h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RCX | 56 | None ||| N/A | N/A
+		0x180345268 mov byte ptr [rcx+40h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 64 | None ||| N/A | 1
+		0x18034526C mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x180345270 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180345273 je short 0000000180345280h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345275 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180345277 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18034527B jmp near ptr 00000001810F8B10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345280 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345285 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIRewardItem::PlayGetAnim(System.Action):
+		End of function at 0x180345286
+		Absolute End is at 0x180345286
+		Identified Jump Destination addresses:
+
+		0x180345264: [!] Sets the field m_onFinished (Type System.Action) on local {'this' (function parameter, type UIRewardItem)} to the value stored in {'onFinished' (function parameter, type System.Action)}
+		0x180345268: [!] Sets the field m_isStartAnim (Type System.Boolean) on local {'this' (function parameter, type UIRewardItem)} to the value stored in True
+		0x18034526C: [!] Reads field m_anim from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_anim' (type UnityEngine.Animation)}
+
+		0x180345270: [!] Compares {'m_anim' (type UnityEngine.Animation)} and 0
+		0x180345273: Jumps to 0x180345280 (which throws a NRE) if m_anim equals 0. Implicitly present in managed code, so ignored here.
+		0x18034527B: [!] Calls managed method System.Boolean UnityEngine.Animation::Play() on instance {'m_anim' (type UnityEngine.Animation)} and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18034527B: [!] Returns from the function
+
+		0x180345280: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIRewardItem
+	System.Void PlayGetAnim(System.Action onFinished)
+		this.m_onFinished = onFinished
+		this.m_isStartAnim = True
+		UnityEngine.Animation m_anim = this.m_anim
+
+		System.Boolean boolean = m_anim.Play()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: stfld System.Action UIRewardItem::m_onFinished
+	IL_0007: ldarg.0
+	IL_0008: ldc.i4.1
+	IL_0009: stfld System.Boolean UIRewardItem::m_isStartAnim
+	IL_000e: ldarg.0
+	IL_000f: ldfld UnityEngine.Animation UIRewardItem::m_anim
+	IL_0014: call System.Boolean UnityEngine.Animation::Play()
+	IL_0019: stloc.0
+	IL_001a: ret
+	IL_001b: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0020: throw
+	
+
+Method: System.Void UIRewardItem::DisableLabel():	Method Body (x86 ASM):
+		0x1803450B0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1803450B5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803450B6 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1803450BA cmp byte ptr [18183DAE8h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869416 | None ||| N/A | 0
+		0x1803450C1 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803450C4 jne short 00000001803450D8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803450C6 mov ecx,[18151B8A4h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464583844 | None ||| N/A | N/A
+		0x1803450CC call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803450D1 mov byte ptr [18183DAE8h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869416 | None ||| N/A | 1
+		0x1803450D8 mov rax,[181864F28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468030248 | None ||| N/A | N/A
+		0x1803450DF mov rdi,[rbx+28h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x1803450E3 test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1803450EA je short 0000000180345104h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803450EC cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1803450F3 jne short 0000000180345104h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803450F5 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803450F8 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803450FD mov rax,[181864F28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468030248 | None ||| N/A | N/A
+		0x180345104 mov rcx,[rax+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x18034510B test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18034510E je short 000000018034515Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345110 movups xmm0,[rcx]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x180345113 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180345116 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18034511B mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18034511E movaps [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x180345123 call 0000000181198A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345128 mov rax,[181864F28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468030248 | None ||| N/A | N/A
+		0x18034512F mov rcx,[rbx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x180345133 mov rdx,[rax+0B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x18034513A test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18034513D je short 000000018034515Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034513F movups xmm0,[rdx]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDX | 0 | None ||| N/A | N/A
+		0x180345142 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180345145 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18034514A movaps [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x18034514F call 0000000181198A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345154 mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x180345159 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18034515D pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18034515E ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18034515F xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180345161 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345166 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIRewardItem::DisableLabel():
+		End of function at 0x180345167
+		Absolute End is at 0x180345167
+		Identified Jump Destination addresses:
+
+		0x1803450B5: Saves the content of rdi to the stack
+		0x1803450BA: Compares {Unknown Global at 0x18183DAE8, first ten bytes are [183 59 1 0 200 60 103 1 192 59], or as chars "·; È<gÀ;"} and 0
+		0x1803450C1: Copies {'this' (function parameter, type UIRewardItem)} from rcx into rbx
+		0x1803450C4: Jumps to 0x1803450D8 if {Unknown Global at 0x18183DAE8, first ten bytes are [183 59 1 0 200 60 103 1 192 59], or as chars "·; È<gÀ;"} != 0
+
+		0x1803450C6: Loads string "tx" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1803450CC: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1803450D8: Loads the type definition for managed type UIRewardItem as a constant "UIRewardItem" in rax
+		0x1803450DF: [!] Reads field m_scoreLabel from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_scoreLabel' (type UILabel)}
+
+		0x1803450E3: Compares "{il2cpp field on {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803450EA: Jumps to 0x180345104 if "{il2cpp field on {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803450EC: Compares "{il2cpp field on {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803450F3: Jumps to 0x180345104 if "{il2cpp field on {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803450F5: Copies {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1803450F8: Calls the il2cpp cctor for the type UIRewardItem
+		0x1803450FD: Loads the type definition for managed type UIRewardItem as a constant "UIRewardItem" in rax
+		0x180345104: Loads the pointer to the static fields for UIRewardItem and stores it in constant10 in register rcx
+		0x18034510B: [!] Compares {'m_scoreLabel' (type UILabel)} and 0
+		0x18034510E: Jumps to 0x18034515F (which throws a NRE) if m_scoreLabel equals 0. Implicitly present in managed code, so ignored here.
+		0x180345110: [!] Reads the static field UnityEngine.Color UIRewardItem::scDisableColor into new local scDisableColor
+		0x180345116: Loads a pointer to stack offset 0x20 into register rdx as new constant constant12
+		0x18034511B: Copies {'m_scoreLabel' (type UILabel)} from rdi into rcx
+		0x18034511E: Moves scDisableColor (type UnityEngine.Color) from register xmm0 to the stack at offset 32 (0x20)
+		0x180345123: [!] Calls managed method System.Void UIWidget::set_color(UnityEngine.Color) on instance {'m_scoreLabel' (type UILabel)} with arguments [{'scDisableColor' (type UnityEngine.Color)}]
+
+		0x180345128: Loads the type definition for managed type UIRewardItem as a constant "UIRewardItem" in rax
+		0x18034512F: [!] Reads field m_itemLabel from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_itemLabel' (type UILabel)}
+
+		0x180345133: Loads the pointer to the static fields for UIRewardItem and stores it in constant14 in register rdx
+		0x18034513A: [!] Compares {'m_itemLabel' (type UILabel)} and 0
+		0x18034513D: Jumps to 0x18034515F (which throws a NRE) if m_itemLabel equals 0. Implicitly present in managed code, so ignored here.
+		0x18034513F: [!] Reads the static field UnityEngine.Color UIRewardItem::scDisableColor into new local scDisableColor2
+		0x180345145: Loads a pointer to stack offset 0x20 into register rdx as new constant constant16
+		0x18034514A: Moves scDisableColor2 (type UnityEngine.Color) from register xmm0 to the stack at offset 32 (0x20)
+		0x18034514F: [!] Calls managed method System.Void UIWidget::set_color(UnityEngine.Color) on instance {'m_itemLabel' (type UILabel)} with arguments [{'scDisableColor2' (type UnityEngine.Color)}]
+
+		0x180345154: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant17
+		0x18034515E: [!] Returns from the function
+
+		0x180345161: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIRewardItem
+	System.Void DisableLabel()
+		UILabel m_scoreLabel = this.m_scoreLabel
+		UnityEngine.Color scDisableColor = UIRewardItem.scDisableColor
+
+		m_scoreLabel.color = scDisableColor
+		UILabel m_itemLabel = this.m_itemLabel
+		UnityEngine.Color scDisableColor2 = UIRewardItem.scDisableColor
+
+		m_itemLabel.color = scDisableColor2
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UILabel UIRewardItem::m_scoreLabel
+	IL_0006: stloc.0
+	IL_0007: ldsfld UnityEngine.Color UIRewardItem::scDisableColor
+	IL_000c: stloc.1
+	IL_000d: ldloc.0
+	IL_000e: ldloc.1
+	IL_000f: call System.Void UIWidget::set_color(UnityEngine.Color)
+	IL_0014: ldarg.0
+	IL_0015: ldfld UILabel UIRewardItem::m_itemLabel
+	IL_001a: stloc.2
+	IL_001b: ldsfld UnityEngine.Color UIRewardItem::scDisableColor
+	IL_0020: stloc.3
+	IL_0021: ldloc.2
+	IL_0022: ldloc.3
+	IL_0023: call System.Void UIWidget::set_color(UnityEngine.Color)
+	IL_0028: ret
+	IL_0029: newobj System.Void System.NullReferenceException::.ctor()
+	IL_002e: throw
+	
+
+Method: System.Void UIRewardItem::EnableLabel():	Method Body (x86 ASM):
+		0x180345170 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180345175 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180345176 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18034517A cmp byte ptr [18183DAE9h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869417 | None ||| N/A | 0
+		0x180345181 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180345184 jne short 0000000180345198h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345186 mov ecx,[18151B8B8h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464583864 | None ||| N/A | N/A
+		0x18034518C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345191 mov byte ptr [18183DAE9h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869417 | None ||| N/A | 1
+		0x180345198 mov rax,[181864F28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468030248 | None ||| N/A | N/A
+		0x18034519F mov rdi,[rbx+28h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x1803451A3 test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1803451AA je short 00000001803451C4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803451AC cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1803451B3 jne short 00000001803451C4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803451B5 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803451B8 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803451BD mov rax,[181864F28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468030248 | None ||| N/A | N/A
+		0x1803451C4 mov rcx,[rax+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1803451CB test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803451CE je short 0000000180345221h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803451D0 movups xmm0,[rcx+10h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x1803451D4 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803451D7 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1803451DC mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803451DF movaps [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1803451E4 call 0000000181198A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803451E9 mov rax,[181864F28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468030248 | None ||| N/A | N/A
+		0x1803451F0 mov rcx,[rbx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x1803451F4 mov rdx,[rax+0B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1803451FB test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803451FE je short 0000000180345221h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345200 movups xmm0,[rdx+10h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDX | 16 | None ||| N/A | N/A
+		0x180345204 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180345207 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18034520C movaps [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x180345211 call 0000000181198A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345216 mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x18034521B add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18034521F pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180345220 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180345221 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180345223 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345228 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIRewardItem::EnableLabel():
+		End of function at 0x180345229
+		Absolute End is at 0x180345229
+		Identified Jump Destination addresses:
+
+		0x180345175: Saves the content of rdi to the stack
+		0x18034517A: Compares {Unknown Global at 0x18183DAE9, first ten bytes are [59 1 0 200 60 103 1 192 59 1], or as chars "; È<gÀ;"} and 0
+		0x180345181: Copies {'this' (function parameter, type UIRewardItem)} from rcx into rbx
+		0x180345184: Jumps to 0x180345198 if {Unknown Global at 0x18183DAE9, first ten bytes are [59 1 0 200 60 103 1 192 59 1], or as chars "; È<gÀ;"} != 0
+
+		0x180345186: Loads string "ux" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18034518C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x180345198: Loads the type definition for managed type UIRewardItem as a constant "UIRewardItem" in rax
+		0x18034519F: [!] Reads field m_scoreLabel from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_scoreLabel' (type UILabel)}
+
+		0x1803451A3: Compares "{il2cpp field on {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803451AA: Jumps to 0x1803451C4 if "{il2cpp field on {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803451AC: Compares "{il2cpp field on {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803451B3: Jumps to 0x1803451C4 if "{il2cpp field on {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803451B5: Copies {'UIRewardItem' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1803451B8: Calls the il2cpp cctor for the type UIRewardItem
+		0x1803451BD: Loads the type definition for managed type UIRewardItem as a constant "UIRewardItem" in rax
+		0x1803451C4: Loads the pointer to the static fields for UIRewardItem and stores it in constant10 in register rcx
+		0x1803451CB: [!] Compares {'m_scoreLabel' (type UILabel)} and 0
+		0x1803451CE: Jumps to 0x180345221 (which throws a NRE) if m_scoreLabel equals 0. Implicitly present in managed code, so ignored here.
+		0x1803451D0: [!] Reads the static field UnityEngine.Color UIRewardItem::scEnableColor into new local scEnableColor
+		0x1803451D7: Loads a pointer to stack offset 0x20 into register rdx as new constant constant12
+		0x1803451DC: Copies {'m_scoreLabel' (type UILabel)} from rdi into rcx
+		0x1803451DF: Moves scEnableColor (type UnityEngine.Color) from register xmm0 to the stack at offset 32 (0x20)
+		0x1803451E4: [!] Calls managed method System.Void UIWidget::set_color(UnityEngine.Color) on instance {'m_scoreLabel' (type UILabel)} with arguments [{'scEnableColor' (type UnityEngine.Color)}]
+
+		0x1803451E9: Loads the type definition for managed type UIRewardItem as a constant "UIRewardItem" in rax
+		0x1803451F0: [!] Reads field m_itemLabel from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_itemLabel' (type UILabel)}
+
+		0x1803451F4: Loads the pointer to the static fields for UIRewardItem and stores it in constant14 in register rdx
+		0x1803451FB: [!] Compares {'m_itemLabel' (type UILabel)} and 0
+		0x1803451FE: Jumps to 0x180345221 (which throws a NRE) if m_itemLabel equals 0. Implicitly present in managed code, so ignored here.
+		0x180345200: [!] Reads the static field UnityEngine.Color UIRewardItem::scEnableColor into new local scEnableColor2
+		0x180345207: Loads a pointer to stack offset 0x20 into register rdx as new constant constant16
+		0x18034520C: Moves scEnableColor2 (type UnityEngine.Color) from register xmm0 to the stack at offset 32 (0x20)
+		0x180345211: [!] Calls managed method System.Void UIWidget::set_color(UnityEngine.Color) on instance {'m_itemLabel' (type UILabel)} with arguments [{'scEnableColor2' (type UnityEngine.Color)}]
+
+		0x180345216: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant17
+		0x180345220: [!] Returns from the function
+
+		0x180345223: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIRewardItem
+	System.Void EnableLabel()
+		UILabel m_scoreLabel = this.m_scoreLabel
+		UnityEngine.Color scEnableColor = UIRewardItem.scEnableColor
+
+		m_scoreLabel.color = scEnableColor
+		UILabel m_itemLabel = this.m_itemLabel
+		UnityEngine.Color scEnableColor2 = UIRewardItem.scEnableColor
+
+		m_itemLabel.color = scEnableColor2
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UILabel UIRewardItem::m_scoreLabel
+	IL_0006: stloc.0
+	IL_0007: ldsfld UnityEngine.Color UIRewardItem::scEnableColor
+	IL_000c: stloc.1
+	IL_000d: ldloc.0
+	IL_000e: ldloc.1
+	IL_000f: call System.Void UIWidget::set_color(UnityEngine.Color)
+	IL_0014: ldarg.0
+	IL_0015: ldfld UILabel UIRewardItem::m_itemLabel
+	IL_001a: stloc.2
+	IL_001b: ldsfld UnityEngine.Color UIRewardItem::scEnableColor
+	IL_0020: stloc.3
+	IL_0021: ldloc.2
+	IL_0022: ldloc.3
+	IL_0023: call System.Void UIWidget::set_color(UnityEngine.Color)
+	IL_0028: ret
+	IL_0029: newobj System.Void System.NullReferenceException::.ctor()
+	IL_002e: throw
+	
+
+Method: System.Void UIRewardItem::Update():	Method Body (x86 ASM):
+		0x180345460 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180345462 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180345466 cmp byte ptr [rcx+40h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 64 | None ||| N/A | 0
+		0x18034546A mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18034546D je short 0000000180345497h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034546F mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x180345473 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180345476 je short 000000018034549Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345478 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18034547A call 00000001810F8C30h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034547F test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180345481 jne short 0000000180345497h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345483 mov rcx,[rbx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x180345487 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18034548A je short 000000018034549Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18034548C xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18034548E call 00000001802ED1F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180345493 mov byte ptr [rbx+40h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 64 | None ||| N/A | 0
+		0x180345497 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18034549B pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18034549C ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18034549D xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18034549F call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803454A4 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIRewardItem::Update():
+		End of function at 0x1803454A5
+		Absolute End is at 0x1803454A5
+		Identified Jump Destination addresses:
+
+		0x180345460: Saves the content of rbx to the stack
+		0x180345466: [!] Compares {field m_isStartAnim, read from local {'this' (function parameter, type UIRewardItem)}} and False
+		0x18034546A: Copies {'this' (function parameter, type UIRewardItem)} from rcx into rbx
+		0x18034546D: Jumps to 0x180345497 (which is an if statement's body) if this.m_isStartAnim equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18034546F: [!] Reads field m_anim from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_anim' (type UnityEngine.Animation)}
+
+		0x180345473: [!] Compares {'m_anim' (type UnityEngine.Animation)} and 0
+		0x180345476: Jumps to 0x18034549D (which throws a NRE) if m_anim equals 0. Implicitly present in managed code, so ignored here.
+		0x18034547A: [!] Calls managed method System.Boolean UnityEngine.Animation::get_isPlaying() on instance {'m_anim' (type UnityEngine.Animation)} and stores the result in {'isPlaying' (type System.Boolean)}
+
+		0x18034547F: [!] Compares {'isPlaying' (type System.Boolean)} and False
+		0x180345481: Jumps to 0x180345497 (which is an if statement's body) if {'isPlaying' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180345483: [!] Reads field m_onFinished from {'this' (function parameter, type UIRewardItem)} and stores in a new local {'m_onFinished' (type System.Action)}
+
+		0x180345487: [!] Compares {'m_onFinished' (type System.Action)} and 0
+		0x18034548A: Jumps to 0x18034549D (which throws a NRE) if m_onFinished equals 0. Implicitly present in managed code, so ignored here.
+		0x18034548E: [!] Calls managed method System.Void System.Action::Invoke() on instance {'m_onFinished' (type System.Action)}
+
+		0x180345493: [!] Sets the field m_isStartAnim (Type System.Boolean) on local {'this' (function parameter, type UIRewardItem)} to the value stored in False
+		0x18034549C: [!] Returns from the function
+
+		0x18034549F: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIRewardItem
+	System.Void Update()
+
+		if (this.m_isStartAnim != False)
+		    UnityEngine.Animation m_anim = this.m_anim
+
+		    System.Boolean isPlaying = m_anim.isPlaying
+
+		    if (isPlaying == False)
+		        System.Action m_onFinished = this.m_onFinished
+
+		        m_onFinished.Invoke()
+		        this.m_isStartAnim = False
+		    endif
+            
+		    return
+		    throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Boolean UIRewardItem::m_isStartAnim
+	IL_0006: ldc.i4.0
+	IL_0007: beq.s IL_0029
+	IL_0009: ldarg.0
+	IL_000a: ldfld UnityEngine.Animation UIRewardItem::m_anim
+	IL_000f: call System.Boolean UnityEngine.Animation::get_isPlaying()
+	IL_0014: ldc.i4.0
+	IL_0015: bne.un.s IL_0029
+	IL_0017: ldarg.0
+	IL_0018: ldfld System.Action UIRewardItem::m_onFinished
+	IL_001d: call System.Void System.Action::Invoke()
+	IL_0022: ldarg.0
+	IL_0023: ldc.i4.0
+	IL_0024: stfld System.Boolean UIRewardItem::m_isStartAnim
+	IL_0029: ret
+	IL_002a: newobj System.Void System.NullReferenceException::.ctor()
+	IL_002f: throw
+	
+
+Method: System.Void UIRewardItem::.cctor():	Method Body (x86 ASM):
+		0x1803454B0 sub rsp,38h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 56
+		0x1803454B4 cmp byte ptr [18183DAEAh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869418 | None ||| N/A | 0
+		0x1803454BB jne short 00000001803454CFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803454BD mov ecx,[18151B8DCh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464583900 | None ||| N/A | N/A
+		0x1803454C3 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803454C8 mov byte ptr [18183DAEAh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869418 | None ||| N/A | 1
+		0x1803454CF xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803454D1 lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1803454D6 call 0000000180B28A20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803454DB mov rcx,[181864F28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468030248 | None ||| N/A | N/A
+		0x1803454E2 movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1803454E5 mov rdx,[rcx+0B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RCX | 184 | None ||| N/A | N/A
+		0x1803454EC lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1803454F1 movups [rdx],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RDX | 0 | None ||| N/A | N/A
+		0x1803454F4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803454F6 call 0000000180B28BA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803454FB mov rcx,[181864F28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468030248 | None ||| N/A | N/A
+		0x180345502 movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x180345505 mov rdx,[rcx+0B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RCX | 184 | None ||| N/A | N/A
+		0x18034550C movups [rdx+10h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RDX | 16 | None ||| N/A | N/A
+		0x180345510 add rsp,38h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 56
+		0x180345514 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180345515 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.Void UIRewardItem::.cctor():
+		End of function at 0x180345516
+		Absolute End is at 0x180345516
+		Identified Jump Destination addresses:
+
+		0x1803454B4: Compares {Unknown Global at 0x18183DAEA, first ten bytes are [1 0 200 60 103 1 192 59 1 0], or as chars " È<gÀ; "} and 0
+		0x1803454BB: Jumps to 0x1803454CF if {Unknown Global at 0x18183DAEA, first ten bytes are [1 0 200 60 103 1 192 59 1 0], or as chars " È<gÀ; "} != 0
+
+		0x1803454BD: Loads string "wx" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1803454C3: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1803454D1: Loads a pointer to stack offset 0x20 into register rcx as new constant constant4
+		0x1803454D6: [!] Calls managed method  on instance  ;  - Failed to resolve any matching method (there are 2 at this address)
+
+		0x1803454DB: Loads the type definition for managed type UIRewardItem as a constant "UIRewardItem" in rcx
+		0x1803454E5: Loads the pointer to the static fields for UIRewardItem and stores it in constant6 in register rdx
+		0x1803454EC: Loads a pointer to stack offset 0x20 into register rcx as new constant constant7
+		0x1803454F1: [!] Sets static field UIRewardItem.scDisableColor to 
+		0x1803454F6: [!] Calls static managed method UnityEngine.Color UnityEngine.Color::get_white() and stores the result in {'white' (type UnityEngine.Color)}
+
+		0x1803454FB: Loads the type definition for managed type UIRewardItem as a constant "UIRewardItem" in rcx
+		0x180345502: Loads the class pointer from white into a constant constant9 in register xmm0
+		0x180345505: Loads the pointer to the static fields for UIRewardItem and stores it in constant10 in register rdx
+		0x18034550C: [!] Sets static field UIRewardItem.scEnableColor to {'constant9' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}
+		0x180345514: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIRewardItem
+	static System.Void .cctor()
+
+		[instruction error - managed method being called is null]
+		UIRewardItem.scDisableColor = 
+
+		UnityEngine.Color white = UnityEngine.Color.white
+		UIRewardItem.scEnableColor = constant9
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1803454D6) is corrupt (Don't know what method is being called) and cannot be created as IL. Aborting here.
+
+

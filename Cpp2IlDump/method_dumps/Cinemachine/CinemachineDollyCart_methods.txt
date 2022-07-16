@@ -1,0 +1,523 @@
+Type: CinemachineDollyCart
+
+Method: System.Void Cinemachine.CinemachineDollyCart::.ctor():	Method Body (x86 ASM):
+		0x1808A3220 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1808A3222 mov dword ptr [rcx+24h],1		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 36 | None ||| N/A | 1
+		0x1808A3229 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A322E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Cinemachine.CinemachineDollyCart::.ctor():
+		End of function at 0x1808A322F
+		Absolute End is at 0x1808A322F
+		Identified Jump Destination addresses:
+
+		0x1808A3222: [!] Sets the field m_PositionUnits (Type Cinemachine.CinemachinePathBase/PositionUnits) on local {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} to the value stored in 1
+		0x1808A3229: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type Cinemachine.CinemachineDollyCart)}
+
+		0x1808A3229: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachineDollyCart
+	System.Void .ctor()
+		this.m_PositionUnits = 1
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.1
+	IL_0002: conv.i8
+	IL_0003: conv.u8
+	IL_0004: stfld Cinemachine.CinemachinePathBase/PositionUnits Cinemachine.CinemachineDollyCart::m_PositionUnits
+	IL_0009: ldarg.0
+	IL_000a: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_000f: ret
+	
+
+Method: System.Void Cinemachine.CinemachineDollyCart::FixedUpdate():	Method Body (x86 ASM):
+		0x1808A2FA0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A2FA2 sub rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1808A2FA6 cmp dword ptr [rcx+20h],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 32 | None ||| N/A | 1
+		0x1808A2FAA mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1808A2FAD jne short 00000001808A2FEFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A2FAF movaps [rsp+30h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 48 | None ||| N/A | N/A
+		0x1808A2FB4 movss xmm6,dword ptr [rcx+28h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RCX | 40 | None ||| N/A | N/A
+		0x1808A2FB9 movaps [rsp+20h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 32 | None ||| N/A | N/A
+		0x1808A2FBE movss xmm7,dword ptr [rcx+2Ch]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RCX | 44 | None ||| N/A | N/A
+		0x1808A2FC3 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1808A2FC5 call 0000000180CDF9F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A2FCA mulss xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1808A2FCE xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1808A2FD1 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1808A2FD4 addss xmm0,xmm7		; DEBUG: {Register}/XMM0 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1808A2FD8 movaps xmm1,xmm0		; DEBUG: {Register}/XMM1 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1808A2FDB movss dword ptr [rbx+2Ch],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 44 | None ||| N/A | N/A
+		0x1808A2FE0 call 00000001808A3000h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A2FE5 movaps xmm7,[rsp+20h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1808A2FEA movaps xmm6,[rsp+30h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1808A2FEF add rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1808A2FF3 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A2FF4 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A2FF5 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Cinemachine.CinemachineDollyCart::FixedUpdate():
+		End of function at 0x1808A2FF6
+		Absolute End is at 0x1808A2FF6
+		Identified Jump Destination addresses:
+
+		0x1808A2FA0: Saves the content of rbx to the stack
+		0x1808A2FA6: [!] Compares {field m_UpdateMethod, read from local {'this' (function parameter, type Cinemachine.CinemachineDollyCart)}} and 1
+		0x1808A2FAA: Copies {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} from rcx into rbx
+		0x1808A2FAD: Jumps to 0x1808A2FEF (which is an if statement's body) if {field m_UpdateMethod, read from local {'this' (function parameter, type Cinemachine.CinemachineDollyCart)}} != 1 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1808A2FC3: Clears register rcx, yielding zero-local {'local3' (type System.Int32)}
+		0x1808A2FC5: [!] Calls static managed method System.Single UnityEngine.Time::get_deltaTime() and stores the result in {'deltaTime' (type System.Single)}
+
+		0x1808A2FD1: Copies {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} from rbx into rcx
+		0x1808A2FD8: Copies {'deltaTime' (type System.Single)} from xmm0 into xmm1
+		0x1808A2FDB: [!] Sets the field m_Position (Type System.Single) on local {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} to the value stored in {'deltaTime' (type System.Single)}
+		0x1808A2FE0: [!] Calls managed method System.Void Cinemachine.CinemachineDollyCart::SetCartPosition(System.Single) on instance {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} with arguments [{'deltaTime' (type System.Single)}]
+
+		0x1808A2FE5: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm7 as new constant constant2
+		0x1808A2FEA: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register xmm6 as new constant constant3
+		0x1808A2FF4: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachineDollyCart
+	System.Void FixedUpdate()
+
+		if (this.m_UpdateMethod == 1)
+		    ulong local3 = 0
+
+		    System.Single deltaTime = UnityEngine.Time.deltaTime
+		    this.m_Position = deltaTime
+
+		    this.SetCartPosition(deltaTime) //(Single distanceAlongPath)
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld Cinemachine.CinemachineDollyCart/UpdateMethod Cinemachine.CinemachineDollyCart::m_UpdateMethod
+	IL_0006: ldc.i4.1
+	IL_0007: bne.un.s IL_001f
+	IL_0009: ldc.i4.0
+	IL_000a: stloc.0
+	IL_000b: call System.Single UnityEngine.Time::get_deltaTime()
+	IL_0010: stloc.1
+	IL_0011: ldarg.0
+	IL_0012: ldloc.1
+	IL_0013: stfld System.Single Cinemachine.CinemachineDollyCart::m_Position
+	IL_0018: ldarg.0
+	IL_0019: ldloc.1
+	IL_001a: call System.Void Cinemachine.CinemachineDollyCart::SetCartPosition(System.Single)
+	IL_001f: ret
+	
+
+Method: System.Void Cinemachine.CinemachineDollyCart::Update():	Method Body (x86 ASM):
+		0x1808A31A0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A31A2 sub rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1808A31A6 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1808A31A9 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1808A31AB call 0000000180B20910h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A31B0 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1808A31B2 je short 00000001808A31FFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A31B4 cmp dword ptr [rbx+20h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 32 | None ||| N/A | 0
+		0x1808A31B8 jne short 00000001808A3214h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A31BA movaps [rsp+30h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 48 | None ||| N/A | N/A
+		0x1808A31BF xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1808A31C1 movss xmm6,dword ptr [rbx+28h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x1808A31C6 movaps [rsp+20h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 32 | None ||| N/A | N/A
+		0x1808A31CB movss xmm7,dword ptr [rbx+2Ch]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RBX | 44 | None ||| N/A | N/A
+		0x1808A31D0 call 0000000180CDF9F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A31D5 mulss xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1808A31D9 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1808A31DC mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1808A31DF addss xmm0,xmm7		; DEBUG: {Register}/XMM0 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1808A31E3 movaps xmm1,xmm0		; DEBUG: {Register}/XMM1 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1808A31E6 movss dword ptr [rbx+2Ch],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 44 | None ||| N/A | N/A
+		0x1808A31EB movaps xmm7,[rsp+20h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1808A31F0 movaps xmm6,[rsp+30h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1808A31F5 add rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1808A31F9 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A31FA jmp near ptr 00000001808A3000h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A31FF movss xmm1,dword ptr [rbx+2Ch]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RBX | 44 | None ||| N/A | N/A
+		0x1808A3204 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1808A3207 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1808A320A add rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1808A320E pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A320F jmp near ptr 00000001808A3000h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A3214 add rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1808A3218 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A3219 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A321A int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Cinemachine.CinemachineDollyCart::Update():
+		End of function at 0x1808A321B
+		Absolute End is at 0x1808A321B
+		Identified Jump Destination addresses:
+
+		0x1808A31A0: Saves the content of rbx to the stack
+		0x1808A31A6: Copies {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} from rcx into rbx
+		0x1808A31A9: Clears register rcx, yielding zero-local {'local1' (type System.Int32)}
+		0x1808A31AB: [!] Calls static managed method System.Boolean UnityEngine.Application::get_isPlaying() and stores the result in {'isPlaying' (type System.Boolean)}
+
+		0x1808A31B0: [!] Compares {'isPlaying' (type System.Boolean)} and False
+		0x1808A31B2: Jumps to 0x1808A31FF (which is an if statement's body) if isPlaying equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1808A31B4: [!] Compares {field m_UpdateMethod, read from local {'this' (function parameter, type Cinemachine.CinemachineDollyCart)}} and 0
+		0x1808A31B8: Jumps to 0x1808A3214 (which is an if statement's body) if {field m_UpdateMethod, read from local {'this' (function parameter, type Cinemachine.CinemachineDollyCart)}} != 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1808A31BF: Clears register rcx, yielding zero-local {'local3' (type System.Int32)}
+		0x1808A31D0: [!] Calls static managed method System.Single UnityEngine.Time::get_deltaTime() and stores the result in {'deltaTime' (type System.Single)}
+
+		0x1808A31DC: Copies {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} from rbx into rcx
+		0x1808A31E3: Copies {'deltaTime' (type System.Single)} from xmm0 into xmm1
+		0x1808A31E6: [!] Sets the field m_Position (Type System.Single) on local {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} to the value stored in {'deltaTime' (type System.Single)}
+		0x1808A31EB: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm7 as new constant constant3
+		0x1808A31F0: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register xmm6 as new constant constant4
+		0x1808A31FA: [!] Calls managed method System.Void Cinemachine.CinemachineDollyCart::SetCartPosition(System.Single) on instance {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} with arguments [{'deltaTime' (type System.Single)}]
+
+		0x1808A31FA: [!] Returns from the function
+
+		0x1808A31FF: [!] Reads field m_Position from {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} and stores in a new local {'m_Position' (type System.Single)}
+
+		0x1808A3207: Copies {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} from rbx into rcx
+		0x1808A320F: [!] Calls managed method System.Void Cinemachine.CinemachineDollyCart::SetCartPosition(System.Single) on instance {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} with arguments [{'m_Position' (type System.Single)}]
+
+		0x1808A320F: [!] Returns from the function
+
+		0x1808A3219: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachineDollyCart
+	System.Void Update()
+		ulong local1 = 0
+
+		System.Boolean isPlaying = UnityEngine.Application.isPlaying
+
+		if (isPlaying != False)
+
+		    if (this.m_UpdateMethod == 0)
+		        ulong local3 = 0
+
+		        System.Single deltaTime = UnityEngine.Time.deltaTime
+		        this.m_Position = deltaTime
+
+		        this.SetCartPosition(deltaTime) //(Single distanceAlongPath)
+		        return
+		    endif
+            
+		    System.Single m_Position = this.m_Position
+
+		    this.SetCartPosition(m_Position) //(Single distanceAlongPath)
+		    return
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: call System.Boolean UnityEngine.Application::get_isPlaying()
+	IL_0007: ldc.i4.0
+	IL_0008: beq.s IL_002a
+	IL_000a: ldarg.0
+	IL_000b: ldfld Cinemachine.CinemachineDollyCart/UpdateMethod Cinemachine.CinemachineDollyCart::m_UpdateMethod
+	IL_0010: ldc.i4.0
+	IL_0011: bne.un.s IL_0039
+	IL_0013: ldc.i4.0
+	IL_0014: stloc.1
+	IL_0015: call System.Single UnityEngine.Time::get_deltaTime()
+	IL_001a: stloc.2
+	IL_001b: ldarg.0
+	IL_001c: ldloc.2
+	IL_001d: stfld System.Single Cinemachine.CinemachineDollyCart::m_Position
+	IL_0022: ldarg.0
+	IL_0023: ldloc.2
+	IL_0024: call System.Void Cinemachine.CinemachineDollyCart::SetCartPosition(System.Single)
+	IL_0029: ret
+	IL_002a: ldarg.0
+	IL_002b: ldfld System.Single Cinemachine.CinemachineDollyCart::m_Position
+	IL_0030: stloc.3
+	IL_0031: ldarg.0
+	IL_0032: ldloc.3
+	IL_0033: call System.Void Cinemachine.CinemachineDollyCart::SetCartPosition(System.Single)
+	IL_0038: ret
+	IL_0039: ret
+	
+
+Method: System.Void Cinemachine.CinemachineDollyCart::SetCartPosition(System.Single):	Method Body (x86 ASM):
+		0x1808A3000 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x1808A3005 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A3006 sub rsp,50h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 80
+		0x1808A300A cmp byte ptr [181841FFFh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467887103 | None ||| N/A | 0
+		0x1808A3011 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1808A3014 movaps [rsp+40h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 64 | None ||| N/A | N/A
+		0x1808A3019 movaps xmm6,xmm1		; DEBUG: {Register}/XMM6 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1808A301C jne short 00000001808A3030h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A301E mov ecx,[18151989Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464575644 | None ||| N/A | N/A
+		0x1808A3024 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A3029 mov byte ptr [181841FFFh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467887103 | None ||| N/A | 1
+		0x1808A3030 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1808A3037 mov rdi,[rbx+18h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1808A303B test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1808A3042 je short 00000001808A3052h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A3044 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1808A304B jne short 00000001808A3052h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A304D call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A3052 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1808A3055 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1808A3057 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1808A305A call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A305F test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1808A3061 je near ptr 00000001808A3179h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A3067 mov rcx,[rbx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1808A306B mov [rsp+60h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 96 | None ||| N/A | N/A
+		0x1808A3070 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1808A3073 je near ptr 00000001808A3189h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A3079 mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x1808A307C movaps xmm1,xmm6		; DEBUG: {Register}/XMM1 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1808A307F mov r8d,[rbx+24h]		; DEBUG: {Register}/R8D {Memory}/None ||| RBX | 36 | None ||| N/A | N/A
+		0x1808A3083 mov r9,[rax+1F0h]		; DEBUG: {Register}/R9 {Memory}/None ||| RAX | 496 | None ||| N/A | N/A
+		0x1808A308A call qword ptr [rax+1E8h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 488 | None ||| N/A | N/A
+		0x1808A3090 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1808A3092 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1808A3095 movss dword ptr [rbx+2Ch],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 44 | None ||| N/A | N/A
+		0x1808A309A call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A309F mov rdi,[rbx+18h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1808A30A3 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1808A30A6 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1808A30A9 je near ptr 00000001808A3189h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A30AF cmp dword ptr [rbx+24h],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 36 | None ||| N/A | 1
+		0x1808A30B3 movss xmm0,dword ptr [rbx+2Ch]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 44 | None ||| N/A | N/A
+		0x1808A30B8 jne short 00000001808A30C8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A30BA xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1808A30BD movaps xmm1,xmm0		; DEBUG: {Register}/XMM1 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1808A30C0 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1808A30C3 call 00000001808B0690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A30C8 mov rax,[rdi]		; DEBUG: {Register}/RAX {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1808A30CB lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1808A30D0 movaps xmm2,xmm0		; DEBUG: {Register}/XMM2 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1808A30D3 mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1808A30D6 mov r9,[rax+1B0h]		; DEBUG: {Register}/R9 {Memory}/None ||| RAX | 432 | None ||| N/A | N/A
+		0x1808A30DD call qword ptr [rax+1A8h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 424 | None ||| N/A | N/A
+		0x1808A30E3 test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1808A30E6 je near ptr 00000001808A3189h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A30EC movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1808A30F0 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1808A30F5 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1808A30F8 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1808A30FB mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1808A30FE movsd qword ptr [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1808A3104 mov [rsp+28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 40 | None ||| N/A | N/A
+		0x1808A3108 call 0000000180CE3300h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A310D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1808A310F mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1808A3112 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A3117 mov rdi,[rbx+18h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1808A311B mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1808A311E test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1808A3121 je short 00000001808A3189h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A3123 cmp dword ptr [rbx+24h],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 36 | None ||| N/A | 1
+		0x1808A3127 movss xmm0,dword ptr [rbx+2Ch]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 44 | None ||| N/A | N/A
+		0x1808A312C jne short 00000001808A313Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A312E xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1808A3131 movaps xmm1,xmm0		; DEBUG: {Register}/XMM1 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1808A3134 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1808A3137 call 00000001808B0690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A313C mov rax,[rdi]		; DEBUG: {Register}/RAX {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1808A313F lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1808A3144 movaps xmm2,xmm0		; DEBUG: {Register}/XMM2 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1808A3147 mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1808A314A mov r9,[rax+1D0h]		; DEBUG: {Register}/R9 {Memory}/None ||| RAX | 464 | None ||| N/A | N/A
+		0x1808A3151 call qword ptr [rax+1C8h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 456 | None ||| N/A | N/A
+		0x1808A3157 test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1808A315A je short 00000001808A3189h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A315C movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1808A315F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1808A3162 lea rdx,[rsp+30h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1808A3167 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1808A316A movaps [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1808A316F call 0000000180CE33E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A3174 mov rsi,[rsp+60h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 96 | None ||| N/A | N/A
+		0x1808A3179 mov rbx,[rsp+68h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 104 | None ||| N/A | N/A
+		0x1808A317E movaps xmm6,[rsp+40h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1808A3183 add rsp,50h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 80
+		0x1808A3187 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A3188 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808A3189 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1808A318B call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808A3190 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Cinemachine.CinemachineDollyCart::SetCartPosition(System.Single):
+		End of function at 0x1808A3191
+		Absolute End is at 0x1808A3191
+		Identified Jump Destination addresses:
+
+		0x1808A3005: Saves the content of rdi to the stack
+		0x1808A300A: Compares {Unknown Global at 0x181841FFF, first ten bytes are [0 12 142 3 0 208 60 103 1 16], or as chars "  Ð<g"} and 0
+		0x1808A3011: Copies {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} from rcx into rbx
+		0x1808A3019: Copies {'distanceAlongPath' (function parameter, type System.Single)} from xmm1 into xmm6
+		0x1808A301C: Jumps to 0x1808A3030 if {Unknown Global at 0x181841FFF, first ten bytes are [0 12 142 3 0 208 60 103 1 16], or as chars "  Ð<g"} != 0
+
+		0x1808A301E: Loads string "s" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1808A3024: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1808A3030: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1808A3037: [!] Reads field m_Path from {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} and stores in a new local {'m_Path' (type Cinemachine.CinemachinePathBase)}
+
+		0x1808A303B: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1808A3042: Jumps to 0x1808A3052 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1808A3044: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1808A304B: Jumps to 0x1808A3052 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1808A304D: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1808A3055: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x1808A3057: Copies {'m_Path' (type Cinemachine.CinemachinePathBase)} from rdi into rcx
+		0x1808A305A: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'m_Path' (type Cinemachine.CinemachinePathBase)}, {'local4' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1808A305F: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1808A3061: Jumps to 0x1808A3179 (which throws a NRE) if boolean equals False. Implicitly present in managed code, so ignored here. ;  - Skipping if statement, is array type check
+		0x1808A3067: [!] Reads field m_Path from {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} and stores in a new local {'m_Path2' (type Cinemachine.CinemachinePathBase)}
+
+		0x1808A3070: [!] Compares {'m_Path2' (type Cinemachine.CinemachinePathBase)} and 0
+		0x1808A3073: Jumps to 0x1808A3189 (which throws a NRE) if m_Path2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1808A3079: Loads the class pointer from m_Path2 into a constant constant11 in register rax
+		0x1808A307C: Copies {'distanceAlongPath' (function parameter, type System.Single)} from xmm6 into xmm1
+		0x1808A307F: [!] Reads field m_PositionUnits from {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} and stores in a new local {'m_PositionUnits' (type Cinemachine.CinemachinePathBase/PositionUnits)}
+
+		0x1808A3083: Loads the pointer to the implementation of virtual function System.Single Cinemachine.CinemachinePathBase::NormalizeUnit(System.Single,Cinemachine.CinemachinePathBase/PositionUnits) specific to Cinemachine.CinemachinePathBase from the class pointer in rax, slot 12 (from memory offset 496) and stores in constant constant12
+		0x1808A308A: [!] Calls managed method System.Single Cinemachine.CinemachinePathBase::NormalizeUnit(System.Single,Cinemachine.CinemachinePathBase/PositionUnits) on instance {'m_Path2' (type Cinemachine.CinemachinePathBase)} with arguments [{'distanceAlongPath' (function parameter, type System.Single)}, {'m_PositionUnits' (type Cinemachine.CinemachinePathBase/PositionUnits)}] and stores the result in {'single' (type System.Single)}
+
+		0x1808A3092: Copies {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} from rbx into rcx
+		0x1808A3095: [!] Sets the field m_Position (Type System.Single) on local {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} to the value stored in {'single' (type System.Single)}
+		0x1808A309A: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x1808A309F: [!] Reads field m_Path from {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} and stores in a new local {'m_Path3' (type Cinemachine.CinemachinePathBase)}
+
+		0x1808A30A3: Copies {'transform' (type UnityEngine.Transform)} from rax into rsi
+		0x1808A30A6: [!] Compares {'m_Path3' (type Cinemachine.CinemachinePathBase)} and 0
+		0x1808A30A9: Jumps to 0x1808A3189 (which throws a NRE) if m_Path3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1808A30AF: [!] Compares {field m_PositionUnits, read from local {'this' (function parameter, type Cinemachine.CinemachineDollyCart)}} and 1
+		0x1808A30B8: Jumps to 0x1808A30C8 (which throws a NRE) if {field m_PositionUnits, read from local {'this' (function parameter, type Cinemachine.CinemachineDollyCart)}} != 1. Implicitly present in managed code, so ignored here. ;  - Skipping if statement, is array type check
+		0x1808A30BD: Copies {'local12' (type System.Single)} from xmm0 into xmm1
+		0x1808A30C0: Copies {'m_Path3' (type Cinemachine.CinemachinePathBase)} from rdi into rcx
+		0x1808A30C3: [!] Calls managed method System.Single Cinemachine.CinemachinePathBase::GetPathPositionFromDistance(System.Single) on instance {'m_Path3' (type Cinemachine.CinemachinePathBase)} with arguments [{'distanceAlongPath' (function parameter, type System.Single)}] and stores the result in {'pathPositionFromDistance' (type System.Single)}
+
+		0x1808A30C8: Loads the class pointer from m_Path3 into a constant constant15 in register rax
+		0x1808A30CB: Loads a pointer to stack offset 0x30 into register rcx as new constant constant16
+		0x1808A30D0: Copies {'pathPositionFromDistance' (type System.Single)} from xmm0 into xmm2
+		0x1808A30D3: Copies {'m_Path3' (type Cinemachine.CinemachinePathBase)} from rdi into rdx
+		0x1808A30D6: Loads the pointer to the implementation of virtual function UnityEngine.Vector3 Cinemachine.CinemachinePathBase::EvaluatePosition(System.Single) specific to Cinemachine.CinemachinePathBase from the class pointer in rax, slot 8 (from memory offset 432) and stores in constant constant17
+		0x1808A30DD: [!] Calls managed method UnityEngine.Vector3 Cinemachine.CinemachinePathBase::EvaluatePosition(System.Single) on instance  with arguments [{'distanceAlongPath' (function parameter, type System.Single)}] and stores the result in {'vector3' (type UnityEngine.Vector3)}
+
+		0x1808A30E3: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x1808A30E6: Jumps to 0x1808A3189 (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x1808A30F0: Loads a pointer to stack offset 0x20 into register rdx as new constant constant19
+		0x1808A30F5: [!] Reads field z from {'vector3' (type UnityEngine.Vector3)} and stores in a new local {'single2' (type System.Single)}
+
+		0x1808A30FB: Copies {'transform' (type UnityEngine.Transform)} from rsi into rcx
+		0x1808A3104: Moves single2 (type System.Single) from register rax to the stack at offset 40 (0x28)
+		0x1808A3108: [!] Calls managed method System.Void UnityEngine.Transform::set_position(UnityEngine.Vector3) on instance {'transform' (type UnityEngine.Transform)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1808A310F: Copies {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} from rbx into rcx
+		0x1808A3112: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} and stores the result in {'transform2' (type UnityEngine.Transform)}
+
+		0x1808A3117: [!] Reads field m_Path from {'this' (function parameter, type Cinemachine.CinemachineDollyCart)} and stores in a new local {'m_Path4' (type Cinemachine.CinemachinePathBase)}
+
+		0x1808A311B: Copies {'transform2' (type UnityEngine.Transform)} from rax into rsi
+		0x1808A311E: [!] Compares {'m_Path4' (type Cinemachine.CinemachinePathBase)} and 0
+		0x1808A3121: Jumps to 0x1808A3189 (which throws a NRE) if m_Path4 equals 0. Implicitly present in managed code, so ignored here.
+		0x1808A3123: [!] Compares {field m_PositionUnits, read from local {'this' (function parameter, type Cinemachine.CinemachineDollyCart)}} and 1
+		0x1808A312C: Jumps to 0x1808A313C (which throws a NRE) if {field m_PositionUnits, read from local {'this' (function parameter, type Cinemachine.CinemachineDollyCart)}} != 1. Implicitly present in managed code, so ignored here. ;  - Skipping if statement, is array type check
+		0x1808A3131: Copies {'local21' (type System.Single)} from xmm0 into xmm1
+		0x1808A3134: Copies {'m_Path4' (type Cinemachine.CinemachinePathBase)} from rdi into rcx
+		0x1808A3137: [!] Calls managed method System.Single Cinemachine.CinemachinePathBase::GetPathPositionFromDistance(System.Single) on instance {'m_Path4' (type Cinemachine.CinemachinePathBase)} with arguments [{'distanceAlongPath' (function parameter, type System.Single)}] and stores the result in {'pathPositionFromDistance2' (type System.Single)}
+
+		0x1808A313C: Loads the class pointer from m_Path4 into a constant constant22 in register rax
+		0x1808A313F: Loads a pointer to stack offset 0x30 into register rcx as new constant constant23
+		0x1808A3144: Copies {'pathPositionFromDistance2' (type System.Single)} from xmm0 into xmm2
+		0x1808A3147: Copies {'m_Path4' (type Cinemachine.CinemachinePathBase)} from rdi into rdx
+		0x1808A314A: Loads the pointer to the implementation of virtual function UnityEngine.Quaternion Cinemachine.CinemachinePathBase::EvaluateOrientation(System.Single) specific to Cinemachine.CinemachinePathBase from the class pointer in rax, slot 10 (from memory offset 464) and stores in constant constant24
+		0x1808A3151: [!] Calls managed method UnityEngine.Quaternion Cinemachine.CinemachinePathBase::EvaluateOrientation(System.Single) on instance  with arguments [{'distanceAlongPath' (function parameter, type System.Single)}] and stores the result in {'quaternion' (type UnityEngine.Quaternion)}
+
+		0x1808A3157: [!] Compares {'transform2' (type UnityEngine.Transform)} and 0
+		0x1808A315A: Jumps to 0x1808A3189 (which throws a NRE) if transform2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1808A315C: Loads the class pointer from quaternion into a constant constant26 in register xmm0
+		0x1808A3162: Loads a pointer to stack offset 0x30 into register rdx as new constant constant27
+		0x1808A3167: Copies {'transform2' (type UnityEngine.Transform)} from rsi into rcx
+		0x1808A316A: Moves constant26 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 48 (0x30) as a new local local26
+		0x1808A316F: [!] Calls managed method System.Void UnityEngine.Transform::set_rotation(UnityEngine.Quaternion) on instance {'transform2' (type UnityEngine.Transform)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1808A3174: Reads unknown value in stack, offset 96 (0x60) and stores the pointer in register rsi as new constant constant28
+		0x1808A3179: Reads unknown value in stack, offset 104 (0x68) and stores the pointer in register rbx as new constant constant29
+		0x1808A317E: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register xmm6 as new constant constant30
+		0x1808A3188: [!] Returns from the function
+
+		0x1808A318B: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachineDollyCart
+	System.Void SetCartPosition(System.Single distanceAlongPath)
+		Cinemachine.CinemachinePathBase m_Path = this.m_Path
+		ulong local4 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(m_Path, local4) //(Object x, Object y)
+		Cinemachine.CinemachinePathBase m_Path2 = this.m_Path
+		Cinemachine.CinemachinePathBase/PositionUnits m_PositionUnits = this.m_PositionUnits
+
+		System.Single single = m_Path2.NormalizeUnit(distanceAlongPath, m_PositionUnits) //(Single pos, PositionUnits units)
+		this.m_Position = single
+
+		UnityEngine.Transform transform = base.transform
+		Cinemachine.CinemachinePathBase m_Path3 = this.m_Path
+		distanceAlongPath = local12
+
+		System.Single pathPositionFromDistance = m_Path3.GetPathPositionFromDistance(distanceAlongPath) //(Single distance)
+
+		UnityEngine.Vector3 vector3 = .EvaluatePosition(distanceAlongPath) //(Single pos)
+		System.Single single2 = vector3.z
+
+		transform.set_position()
+
+		UnityEngine.Transform transform2 = base.transform
+		Cinemachine.CinemachinePathBase m_Path4 = this.m_Path
+		distanceAlongPath = local21
+
+		System.Single pathPositionFromDistance2 = m_Path4.GetPathPositionFromDistance(distanceAlongPath) //(Single distance)
+		pathPositionFromDistance = pathPositionFromDistance2
+
+		UnityEngine.Quaternion quaternion = .EvaluateOrientation(distanceAlongPath) //(Single pos)
+
+		transform2.set_rotation()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.RegToRegMoveAction at (0x1808A30BD) is corrupt (Local being overwritten, {'distanceAlongPath' (function parameter, type System.Single)} has been stripped or is a parameter) and cannot be created as IL. Aborting here.
+
+

@@ -1,0 +1,108 @@
+Type: <Init>c__AnonStorey0
+
+Method: System.Void NpcVehicleManager/<Init>c__AnonStorey0::.ctor():	Method Body (x86 ASM):
+		0x1802068B0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802068B2 jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802068B7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void NpcVehicleManager/<Init>c__AnonStorey0::.ctor():
+		End of function at 0x1802068B8
+		Absolute End is at 0x1802068B8
+		Identified Jump Destination addresses:
+
+		0x1802068B2: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type NpcVehicleManager/<Init>c__AnonStorey0)}
+
+		0x1802068B2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: NpcVehicleManager/<Init>c__AnonStorey0
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean NpcVehicleManager/<Init>c__AnonStorey0::<>m__0(NpcVehicle):	Method Body (x86 ASM):
+		0x180538E50 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180538E54 test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x180538E57 je short 0000000180538E80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180538E59 mov rcx,[rcx+10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x180538E5D test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180538E60 je short 0000000180538E80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180538E62 mov eax,[rcx+18h]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x180538E65 cmp [rdx+18h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDX | 24 | None ||| N/A | N/A
+		0x180538E68 je short 0000000180538E71h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180538E6A xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x180538E6C add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180538E70 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180538E71 movzx ecx,byte ptr [rcx+1Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RCX | 28 | None ||| N/A | N/A
+		0x180538E75 cmp [rdx+20h],cl		; DEBUG: {Memory}/None {Register}/CL ||| RDX | 32 | None ||| N/A | N/A
+		0x180538E78 sete al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180538E7B add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180538E7F ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180538E80 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180538E82 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180538E87 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean NpcVehicleManager/<Init>c__AnonStorey0::<>m__0(NpcVehicle):
+		End of function at 0x180538E88
+		Absolute End is at 0x180538E88
+		Identified Jump Destination addresses:
+
+		0x180538E54: [!] Compares {'v' (function parameter, type NpcVehicle)} and 0
+		0x180538E57: Jumps to 0x180538E80 (which throws a NRE) if v equals 0. Implicitly present in managed code, so ignored here.
+		0x180538E59: [!] Reads field rootData from {'this' (function parameter, type NpcVehicleManager/<Init>c__AnonStorey0)} and stores in a new local {'rootData' (type NpcVehicleRootData)}
+
+		0x180538E5D: [!] Compares {'rootData' (type NpcVehicleRootData)} and 0
+		0x180538E60: Jumps to 0x180538E80 (which throws a NRE) if rootData equals 0. Implicitly present in managed code, so ignored here.
+		0x180538E62: [!] Reads field m_charaID from {'rootData' (type NpcVehicleRootData)} and stores in a new local {'m_charaID' (type BehaviorTableDefine/EChara)}
+
+		0x180538E65: [!] Compares {field m_charaID, read from local {'v' (function parameter, type NpcVehicle)}} and {'m_charaID' (type BehaviorTableDefine/EChara)}
+		0x180538E68: Jumps to 0x180538E71 (which is an if statement's body) if v.m_charaID equals m_charaID ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180538E6A: Clears register rax, yielding zero-local {'local4' (type System.Int32)}
+		0x180538E70: [!] Returns {'local4' (type System.Int32)} from the function
+
+		0x180538E71: [!] Reads field m_isBoart from {'rootData' (type NpcVehicleRootData)} and stores in a new local {'m_isBoart' (type System.Boolean)}
+
+		0x180538E75: [!] Compares {field m_isBoart, read from local {'v' (function parameter, type NpcVehicle)}} and {'m_isBoart' (type System.Boolean)}
+		0x180538E78: [!] Sets the boolean {'local6' (type System.Boolean)} in rax to true if v.m_isBoart is equal to m_isBoart, otherwise false.
+		0x180538E7F: [!] Returns {'local6' (type System.Boolean)} from the function
+
+		0x180538E82: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: NpcVehicleManager/<Init>c__AnonStorey0
+	System.Boolean <>m__0(NpcVehicle v)
+		NpcVehicleRootData rootData = this.rootData
+		BehaviorTableDefine/EChara m_charaID = rootData.m_charaID
+
+		if (v.m_charaID != m_charaID)
+		    ulong local4 = 0
+		    return local4
+		endif
+        
+		System.Boolean m_isBoart = rootData.m_isBoart
+		System.Boolean local6 = v.m_isBoart == m_isBoart
+		return local6
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x180538E70) is corrupt (Return value has a type of System.Int32, expecting an object of type System.Boolean) and cannot be created as IL. Aborting here.
+
+

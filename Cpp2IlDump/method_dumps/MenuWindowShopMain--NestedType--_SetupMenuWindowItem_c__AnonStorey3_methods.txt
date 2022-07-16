@@ -1,0 +1,88 @@
+Type: <SetupMenuWindowItem>c__AnonStorey3
+
+Method: System.Void MenuWindowShopMain/<SetupMenuWindowItem>c__AnonStorey3::.ctor():	Method Body (x86 ASM):
+		0x1802068B0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802068B2 jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802068B7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MenuWindowShopMain/<SetupMenuWindowItem>c__AnonStorey3::.ctor():
+		End of function at 0x1802068B8
+		Absolute End is at 0x1802068B8
+		Identified Jump Destination addresses:
+
+		0x1802068B2: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type MenuWindowShopMain/<SetupMenuWindowItem>c__AnonStorey3)}
+
+		0x1802068B2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuWindowShopMain/<SetupMenuWindowItem>c__AnonStorey3
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean MenuWindowShopMain/<SetupMenuWindowItem>c__AnonStorey3::<>m__0(EItemSecondCategory):	Method Body (x86 ASM):
+		0x1806407F0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1806407F4 mov rax,[rcx+10h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x1806407F8 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806407FB je short 0000000180640808h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806407FD cmp edx,[rax+2Ch]		; DEBUG: {Register}/EDX {Memory}/None ||| RAX | 44 | None ||| N/A | N/A
+		0x180640800 sete al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180640803 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180640807 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180640808 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18064080A call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18064080F int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean MenuWindowShopMain/<SetupMenuWindowItem>c__AnonStorey3::<>m__0(EItemSecondCategory):
+		End of function at 0x180640810
+		Absolute End is at 0x180640810
+		Identified Jump Destination addresses:
+
+		0x1806407F4: [!] Reads field param from {'this' (function parameter, type MenuWindowShopMain/<SetupMenuWindowItem>c__AnonStorey3)} and stores in a new local {'param' (type ItemDataParam/ItemParam)}
+
+		0x1806407F8: [!] Compares {'param' (type ItemDataParam/ItemParam)} and 0
+		0x1806407FB: Jumps to 0x180640808 (which throws a NRE) if param equals 0. Implicitly present in managed code, so ignored here.
+		0x1806407FD: [!] Compares {'a' (function parameter, type EItemSecondCategory)} and {field itemSecondCategory, read from local {'param' (type ItemDataParam/ItemParam)}}
+		0x180640800: [!] Sets the boolean {'local3' (type System.Boolean)} in rax to true if a is equal to param.itemSecondCategory, otherwise false.
+		0x180640807: [!] Returns {'local3' (type System.Boolean)} from the function
+
+		0x18064080A: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuWindowShopMain/<SetupMenuWindowItem>c__AnonStorey3
+	System.Boolean <>m__0(EItemSecondCategory a)
+		ItemDataParam/ItemParam param = this.param
+		System.Boolean local3 = a == param.itemSecondCategory
+		return local3
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld ItemDataParam/ItemParam MenuWindowShopMain/<SetupMenuWindowItem>c__AnonStorey3::param
+	IL_0006: stloc.0
+	IL_0007: ldarg.1
+	IL_0008: ldloc.0
+	IL_0009: ldfld EItemSecondCategory ItemDataParam/ItemParam::itemSecondCategory
+	IL_000e: ceq
+	IL_0010: ret
+	IL_0011: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0016: throw
+	
+

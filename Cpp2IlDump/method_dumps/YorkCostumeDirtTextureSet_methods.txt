@@ -1,0 +1,648 @@
+Type: YorkCostumeDirtTextureSet
+
+Method: System.Void YorkCostumeDirtTextureSet::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void YorkCostumeDirtTextureSet::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type YorkCostumeDirtTextureSet)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: YorkCostumeDirtTextureSet
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: UnityEngine.Texture2D YorkCostumeDirtTextureSet::GetTexture(YorkCostumeDirtTextureSet/ETextureType):	Method Body (x86 ASM):
+		0x1802572D0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1802572D4 mov r8,[rcx+18h]		; DEBUG: {Register}/R8 {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x1802572D8 test r8,r8		; DEBUG: {Register}/R8 {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x1802572DB je short 00000001802572F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802572DD cmp edx,[r8+18h]		; DEBUG: {Register}/EDX {Memory}/None ||| R8 | 24 | None ||| N/A | N/A
+		0x1802572E1 jae short 00000001802572F8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802572E3 movsxd rax,edx		; DEBUG: {Register}/RAX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802572E6 mov rax,[r8+rax*8+20h]		; DEBUG: {Register}/RAX {Memory}/None ||| R8 | 32 | RAX ||| N/A | N/A
+		0x1802572EB add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1802572EF ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802572F0 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802572F2 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802572F7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method UnityEngine.Texture2D YorkCostumeDirtTextureSet::GetTexture(YorkCostumeDirtTextureSet/ETextureType):
+		End of function at 0x1802572F8
+		Absolute End is at 0x1802572F8
+		Identified Jump Destination addresses:
+
+		0x1802572D4: [!] Reads field m_texture from {'this' (function parameter, type YorkCostumeDirtTextureSet)} and stores in a new local {'m_texture' (type UnityEngine.Texture2D[])}
+
+		0x1802572D8: [!] Compares {'m_texture' (type UnityEngine.Texture2D[])} and 0
+		0x1802572DB: Jumps to 0x1802572F0 (which throws a NRE) if m_texture equals 0. Implicitly present in managed code, so ignored here.
+		0x1802572DD: [!] Compares {'textureType' (function parameter, type YorkCostumeDirtTextureSet/ETextureType)} and {Property System.Int32 System.Array::Length() on {'m_texture' (type UnityEngine.Texture2D[])}}
+		0x1802572E1: Jumps to 0x1802572F8 (which throws a NRE) if {'textureType' (function parameter, type YorkCostumeDirtTextureSet/ETextureType)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'m_texture' (type UnityEngine.Texture2D[])}}. Implicitly present in managed code, so ignored here.
+		0x1802572E3: [!] Implicitly reads field at offset 0 (which is value__) from struct textureType of type YorkCostumeDirtTextureSet/ETextureType and stores in new local {'local3' (type System.Int32)}
+		0x1802572E6: Copies the element in the array {'m_texture' (type UnityEngine.Texture2D[])} at the index specified by {'local3' (type System.Int32)} into new local {'texture2D' (type UnityEngine.Texture2D)}
+		0x1802572EF: [!] Returns {'texture2D' (type UnityEngine.Texture2D)} from the function
+
+		0x1802572F2: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: YorkCostumeDirtTextureSet
+	UnityEngine.Texture2D GetTexture(YorkCostumeDirtTextureSet/ETextureType textureType)
+		UnityEngine.Texture2D[] m_texture = this.m_texture
+		System.Int32 local3 = textureType.value__
+		UnityEngine.Texture2D texture2D = m_texture[local3]
+		return texture2D
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UnityEngine.Texture2D[] YorkCostumeDirtTextureSet::m_texture
+	IL_0006: stloc.0
+	IL_0007: ldarg.1
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: ldelem.any UnityEngine.Texture2D
+	IL_0010: ret
+	IL_0011: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0016: throw
+	
+
+Method: System.Void YorkCostumeDirtTextureSet::.cctor():	Method Body (x86 ASM):
+		0x181211280 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x181211282 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x181211286 cmp byte ptr [1818A2E3Eh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283966 | None ||| N/A | 0
+		0x18121128D jne short 00000001812112A1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121128F mov ecx,[1814BEDD4h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464204244 | None ||| N/A | N/A
+		0x181211295 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121129A mov byte ptr [1818A2E3Eh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283966 | None ||| N/A | 1
+		0x1812112A1 mov rcx,[181884ED8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468161240 | None ||| N/A | N/A
+		0x1812112A8 mov edx,4		; DEBUG: {Register}/EDX {Immediate32}/None ||| None | 0 | None ||| N/A | 4
+		0x1812112AD call 0000000180141320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812112B2 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812112B5 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812112B8 je near ptr 00000001812114CCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812112BE mov rax,[1818905B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208048 | None ||| N/A | N/A
+		0x1812112C5 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812112C8 je short 00000001812112E9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812112CA mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x1812112CD mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812112D0 mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x1812112D4 call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812112D9 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812112DC je near ptr 00000001812114D4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812112E2 mov rax,[1818905B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208048 | None ||| N/A | N/A
+		0x1812112E9 cmp dword ptr [rbx+18h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 0
+		0x1812112ED jbe near ptr 00000001812114E7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812112F3 mov [rbx+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 32 | None ||| N/A | N/A
+		0x1812112F7 mov rax,[1818905E8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208104 | None ||| N/A | N/A
+		0x1812112FE test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211301 je short 0000000181211322h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211303 mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x181211306 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211309 mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x18121130D call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211312 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211315 je near ptr 00000001812114FAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121131B mov rax,[1818905E8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208104 | None ||| N/A | N/A
+		0x181211322 cmp dword ptr [rbx+18h],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 1
+		0x181211326 jbe near ptr 000000018121150Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121132C mov [rbx+28h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 40 | None ||| N/A | N/A
+		0x181211330 mov rax,[181890610h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208144 | None ||| N/A | N/A
+		0x181211337 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18121133A je short 000000018121135Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121133C mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x18121133F mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211342 mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x181211346 call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121134B test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18121134E je near ptr 0000000181211520h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211354 mov rax,[181890610h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208144 | None ||| N/A | N/A
+		0x18121135B cmp dword ptr [rbx+18h],2		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 2
+		0x18121135F jbe near ptr 0000000181211533h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211365 mov [rbx+30h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 48 | None ||| N/A | N/A
+		0x181211369 mov rax,[181890630h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208176 | None ||| N/A | N/A
+		0x181211370 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211373 je short 0000000181211394h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211375 mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x181211378 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18121137B mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x18121137F call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211384 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211387 je near ptr 0000000181211546h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121138D mov rax,[181890630h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208176 | None ||| N/A | N/A
+		0x181211394 cmp dword ptr [rbx+18h],3		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 3
+		0x181211398 jbe near ptr 0000000181211559h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121139E mov [rbx+38h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 56 | None ||| N/A | N/A
+		0x1812113A2 mov edx,4		; DEBUG: {Register}/EDX {Immediate32}/None ||| None | 0 | None ||| N/A | 4
+		0x1812113A7 mov rax,[1818671A0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468039072 | None ||| N/A | N/A
+		0x1812113AE mov rcx,[rax+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1812113B5 mov [rcx],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RCX | 0 | None ||| N/A | N/A
+		0x1812113B8 mov rcx,[181884ED8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468161240 | None ||| N/A | N/A
+		0x1812113BF call 0000000180141320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812113C4 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812113C7 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812113CA je near ptr 00000001812114CCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812113D0 mov rax,[1818905B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208048 | None ||| N/A | N/A
+		0x1812113D7 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812113DA je short 00000001812113FBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812113DC mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x1812113DF mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812113E2 mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x1812113E6 call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812113EB test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812113EE je near ptr 000000018121156Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812113F4 mov rax,[1818905B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208048 | None ||| N/A | N/A
+		0x1812113FB cmp dword ptr [rbx+18h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 0
+		0x1812113FF jbe near ptr 000000018121157Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211405 mov [rbx+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 32 | None ||| N/A | N/A
+		0x181211409 mov rax,[1818905E8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208104 | None ||| N/A | N/A
+		0x181211410 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211413 je short 0000000181211434h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211415 mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x181211418 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18121141B mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x18121141F call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211424 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211427 je near ptr 0000000181211592h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121142D mov rax,[1818905E8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208104 | None ||| N/A | N/A
+		0x181211434 cmp dword ptr [rbx+18h],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 1
+		0x181211438 jbe near ptr 00000001812115A5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121143E mov [rbx+28h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 40 | None ||| N/A | N/A
+		0x181211442 mov rax,[181890660h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208224 | None ||| N/A | N/A
+		0x181211449 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18121144C je short 000000018121146Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121144E mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x181211451 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211454 mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x181211458 call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121145D test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211460 je near ptr 00000001812115B8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211466 mov rax,[181890660h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208224 | None ||| N/A | N/A
+		0x18121146D cmp dword ptr [rbx+18h],2		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 2
+		0x181211471 jbe near ptr 00000001812115CBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211477 mov [rbx+30h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 48 | None ||| N/A | N/A
+		0x18121147B mov rax,[181890630h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208176 | None ||| N/A | N/A
+		0x181211482 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211485 je short 00000001812114A6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211487 mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x18121148A mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18121148D mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x181211491 call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211496 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211499 je near ptr 00000001812115DEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121149F mov rax,[181890630h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468208176 | None ||| N/A | N/A
+		0x1812114A6 cmp dword ptr [rbx+18h],3		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 3
+		0x1812114AA jbe near ptr 00000001812115F1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812114B0 mov [rbx+38h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 56 | None ||| N/A | N/A
+		0x1812114B4 mov rax,[1818671A0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468039072 | None ||| N/A | N/A
+		0x1812114BB mov rcx,[rax+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1812114C2 mov [rcx+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RCX | 8 | None ||| N/A | N/A
+		0x1812114C6 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1812114CA pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1812114CB ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1812114CC xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1812114CE call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812114D3 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1812114D4 call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812114D9 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812114DC xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1812114DF xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1812114E1 call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812114E6 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1812114FA call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812114FF mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211502 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x181211505 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181211507 call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121150C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x181211520 call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211525 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211528 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18121152B xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18121152D call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211532 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x181211546 call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121154B mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18121154E xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x181211551 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181211553 call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211558 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18121156C call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211571 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181211574 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x181211577 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181211579 call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18121157E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x181211592 call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181211597 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18121159A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18121159D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18121159F call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812115A4 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1812115B8 call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812115BD mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812115C0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1812115C3 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1812115C5 call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812115CA int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1812115DE call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812115E3 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1812115E6 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1812115E9 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1812115EB call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1812115F0 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.Void YorkCostumeDirtTextureSet::.cctor():
+		End of function at 0x1812115F1
+		Absolute End is at 0x1812115F1
+		Identified Jump Destination addresses:
+
+		0x181211280: Saves the content of rbx to the stack
+		0x181211286: Compares {Unknown Global at 0x1818A2E3E, first ten bytes are [127 0 132 240 127 0 232 61 103 1], or as chars " ð è=g"} and 0
+		0x18121128D: Jumps to 0x1812112A1 if {Unknown Global at 0x1818A2E3E, first ten bytes are [127 0 132 240 127 0 232 61 103 1], or as chars " ð è=g"} != 0
+
+		0x18121128F: Reads {Unknown Global at 0x1814BEDD4, first ten bytes are [189 131 0 0 189 35 0 0 189 3], or as chars "½  ½#  ½"} into register rcx as a constant constant3
+		0x181211295: Attempts to load the il2cpp metadata for this method (method id 33725) and init it cpp-side.
+
+		0x1812112A1: Loads the type definition for managed type System.String[] as a constant "String[]" in rcx
+		0x1812112A8: [!] Writes the constant 0x4 into operand 4 (type UInt64) in register rdx
+		0x1812112AD: [!] Allocates an array of type System.String[] of size 4 and stores the result as local0 in register rax
+
+		0x1812112B2: Copies {'local0' (type System.String[])} from rax into rbx
+		0x1812112B5: [!] Compares {'local0' (type System.String[])} and 0
+		0x1812112B8: Jumps to 0x1812114CC (which throws a NRE) if local0 equals 0. Implicitly present in managed code, so ignored here.
+		0x1812112BE: Loads the string literal "jacket" as a constant "constant7" in rax
+		0x1812112C5: [!] Compares "jacket" and 0
+		0x1812112C8: Jumps to 0x1812112E9 (which is an if statement's body) if "jacket" equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1812112CA: Loads the class pointer from local0 into a constant constant9 in register rdx
+		0x1812112CD: Copies "jacket" from rax into rcx
+		0x1812112D0: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x1812112D9: [!] Compares "jacket" and 0
+		0x1812112DC: Jumps to 0x1812114D4 if "jacket" equals 0 ;  - This is probably a goto, jumping to 0x1812114D4 which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x1812112E2: Loads the string literal "jacket" as a constant "constant11" in rax
+		0x1812112E9: [!] Compares {Property System.Int32 System.Array::Length() on {'local0' (type System.String[])}} and 0
+		0x1812112ED: Jumps to 0x1812114E7 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local0' (type System.String[])}} is less than or equal to 0. Implicitly present in managed code, so ignored here.
+		0x1812112F3: Sets the value at offset 0 in array local0 to "jacket"
+		0x1812112F7: Loads the string literal "pants" as a constant "constant13" in rax
+		0x1812112FE: [!] Compares "pants" and 0
+		0x181211301: Jumps to 0x181211322 if "pants" equals 0 ;  - This is probably a goto, jumping to 0x181211322 which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x181211303: Loads the class pointer from local0 into a constant constant15 in register rdx
+		0x181211306: Copies "pants" from rax into rcx
+		0x181211309: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x181211312: [!] Compares "pants" and 0
+		0x181211315: Jumps to 0x1812114FA if "pants" equals 0 ;  - This is probably a goto, jumping to 0x1812114FA which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x18121131B: Loads the string literal "pants" as a constant "constant17" in rax
+		0x181211322: [!] Compares {Property System.Int32 System.Array::Length() on {'local0' (type System.String[])}} and 1
+		0x181211326: Jumps to 0x18121150D (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local0' (type System.String[])}} is less than or equal to 1. Implicitly present in managed code, so ignored here.
+		0x18121132C: Sets the value at offset 1 in array local0 to "pants"
+		0x181211330: Loads the string literal "shirts" as a constant "constant19" in rax
+		0x181211337: [!] Compares "shirts" and 0
+		0x18121133A: Jumps to 0x18121135B if "shirts" equals 0 ;  - This is probably a goto, jumping to 0x18121135B which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x18121133C: Loads the class pointer from local0 into a constant constant21 in register rdx
+		0x18121133F: Copies "shirts" from rax into rcx
+		0x181211342: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x18121134B: [!] Compares "shirts" and 0
+		0x18121134E: Jumps to 0x181211520 if "shirts" equals 0 ;  - This is probably a goto, jumping to 0x181211520 which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x181211354: Loads the string literal "shirts" as a constant "constant23" in rax
+		0x18121135B: [!] Compares {Property System.Int32 System.Array::Length() on {'local0' (type System.String[])}} and 2
+		0x18121135F: Jumps to 0x181211533 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local0' (type System.String[])}} is less than or equal to 2. Implicitly present in managed code, so ignored here.
+		0x181211365: Sets the value at offset 2 in array local0 to "shirts"
+		0x181211369: Loads the string literal "shoes" as a constant "constant25" in rax
+		0x181211370: [!] Compares "shoes" and 0
+		0x181211373: Jumps to 0x181211394 if "shoes" equals 0 ;  - This is probably a goto, jumping to 0x181211394 which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x181211375: Loads the class pointer from local0 into a constant constant27 in register rdx
+		0x181211378: Copies "shoes" from rax into rcx
+		0x18121137B: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x181211384: [!] Compares "shoes" and 0
+		0x181211387: Jumps to 0x181211546 if "shoes" equals 0 ;  - This is probably a goto, jumping to 0x181211546 which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x18121138D: Loads the string literal "shoes" as a constant "constant29" in rax
+		0x181211394: [!] Compares {Property System.Int32 System.Array::Length() on {'local0' (type System.String[])}} and 3
+		0x181211398: Jumps to 0x181211559 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local0' (type System.String[])}} is less than or equal to 3. Implicitly present in managed code, so ignored here.
+		0x18121139E: Sets the value at offset 3 in array local0 to "shoes"
+		0x1812113A2: [!] Writes the constant 0x4 into operand 4 (type UInt64) in register rdx
+		0x1812113A7: Loads the type definition for managed type YorkCostumeDirtTextureSet as a constant "YorkCostumeDirtTextureSet" in rax
+		0x1812113AE: Loads the pointer to the static fields for YorkCostumeDirtTextureSet and stores it in constant33 in register rcx
+		0x1812113B5: [!] Sets static field YorkCostumeDirtTextureSet.scPartString to {'local0' (type System.String[])}
+		0x1812113B8: Loads the type definition for managed type System.String[] as a constant "String[]" in rcx
+		0x1812113BF: [!] Allocates an array of type System.String[] of size 4 and stores the result as local1 in register rax
+
+		0x1812113C4: Copies {'local1' (type System.String[])} from rax into rbx
+		0x1812113C7: [!] Compares {'local1' (type System.String[])} and 0
+		0x1812113CA: Jumps to 0x1812114CC (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x1812113D0: Loads the string literal "jacket" as a constant "constant36" in rax
+		0x1812113D7: [!] Compares "jacket" and 0
+		0x1812113DA: Jumps to 0x1812113FB if "jacket" equals 0 ;  - This is probably a goto, jumping to 0x1812113FB which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x1812113DC: Loads the class pointer from local1 into a constant constant38 in register rdx
+		0x1812113DF: Copies "jacket" from rax into rcx
+		0x1812113E2: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x1812113EB: [!] Compares "jacket" and 0
+		0x1812113EE: Jumps to 0x18121156C if "jacket" equals 0 ;  - This is probably a goto, jumping to 0x18121156C which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x1812113F4: Loads the string literal "jacket" as a constant "constant40" in rax
+		0x1812113FB: [!] Compares {Property System.Int32 System.Array::Length() on {'local1' (type System.String[])}} and 0
+		0x1812113FF: Jumps to 0x18121157F (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local1' (type System.String[])}} is less than or equal to 0. Implicitly present in managed code, so ignored here.
+		0x181211405: Sets the value at offset 0 in array local1 to "jacket"
+		0x181211409: Loads the string literal "pants" as a constant "constant42" in rax
+		0x181211410: [!] Compares "pants" and 0
+		0x181211413: Jumps to 0x181211434 if "pants" equals 0 ;  - This is probably a goto, jumping to 0x181211434 which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x181211415: Loads the class pointer from local1 into a constant constant44 in register rdx
+		0x181211418: Copies "pants" from rax into rcx
+		0x18121141B: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x181211424: [!] Compares "pants" and 0
+		0x181211427: Jumps to 0x181211592 if "pants" equals 0 ;  - This is probably a goto, jumping to 0x181211592 which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x18121142D: Loads the string literal "pants" as a constant "constant46" in rax
+		0x181211434: [!] Compares {Property System.Int32 System.Array::Length() on {'local1' (type System.String[])}} and 1
+		0x181211438: Jumps to 0x1812115A5 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local1' (type System.String[])}} is less than or equal to 1. Implicitly present in managed code, so ignored here.
+		0x18121143E: Sets the value at offset 1 in array local1 to "pants"
+		0x181211442: Loads the string literal "shirt" as a constant "constant48" in rax
+		0x181211449: [!] Compares "shirt" and 0
+		0x18121144C: Jumps to 0x18121146D if "shirt" equals 0 ;  - This is probably a goto, jumping to 0x18121146D which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x18121144E: Loads the class pointer from local1 into a constant constant50 in register rdx
+		0x181211451: Copies "shirt" from rax into rcx
+		0x181211454: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x18121145D: [!] Compares "shirt" and 0
+		0x181211460: Jumps to 0x1812115B8 if "shirt" equals 0 ;  - This is probably a goto, jumping to 0x1812115B8 which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x181211466: Loads the string literal "shirt" as a constant "constant52" in rax
+		0x18121146D: [!] Compares {Property System.Int32 System.Array::Length() on {'local1' (type System.String[])}} and 2
+		0x181211471: Jumps to 0x1812115CB (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local1' (type System.String[])}} is less than or equal to 2. Implicitly present in managed code, so ignored here.
+		0x181211477: Sets the value at offset 2 in array local1 to "shirt"
+		0x18121147B: Loads the string literal "shoes" as a constant "constant54" in rax
+		0x181211482: [!] Compares "shoes" and 0
+		0x181211485: Jumps to 0x1812114A6 if "shoes" equals 0 ;  - This is probably a goto, jumping to 0x1812114A6 which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x181211487: Loads the class pointer from local1 into a constant constant56 in register rdx
+		0x18121148A: Copies "shoes" from rax into rcx
+		0x18121148D: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x181211496: [!] Compares "shoes" and 0
+		0x181211499: Jumps to 0x1812115DE if "shoes" equals 0 ;  - This is probably a goto, jumping to 0x1812115DE which is after end of current block @ 0x1812112E9 (started at 0x1812112CA)
+
+		0x18121149F: Loads the string literal "shoes" as a constant "constant58" in rax
+		0x1812114A6: [!] Compares {Property System.Int32 System.Array::Length() on {'local1' (type System.String[])}} and 3
+		0x1812114AA: Jumps to 0x1812115F1 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local1' (type System.String[])}} is less than or equal to 3. Implicitly present in managed code, so ignored here.
+		0x1812114B0: Sets the value at offset 3 in array local1 to "shoes"
+		0x1812114B4: Loads the type definition for managed type YorkCostumeDirtTextureSet as a constant "YorkCostumeDirtTextureSet" in rax
+		0x1812114BB: Loads the pointer to the static fields for YorkCostumeDirtTextureSet and stores it in constant61 in register rcx
+		0x1812114C2: [!] Sets static field YorkCostumeDirtTextureSet.scPartString_A to {'local1' (type System.String[])}
+		0x1812114CB: [!] Returns from the function
+
+		0x1812114CE: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+		0x1812114D9: Copies {'local3' (type System.NullReferenceException)} from rax into rcx
+		0x1812114FF: Copies {'local3' (type System.NullReferenceException)} from rax into rcx
+		0x181211525: Copies {'local3' (type System.NullReferenceException)} from rax into rcx
+		0x18121154B: Copies {'local3' (type System.NullReferenceException)} from rax into rcx
+		0x181211571: Copies {'local3' (type System.NullReferenceException)} from rax into rcx
+		0x181211597: Copies {'local3' (type System.NullReferenceException)} from rax into rcx
+		0x1812115BD: Copies {'local3' (type System.NullReferenceException)} from rax into rcx
+		0x1812115E3: Copies {'local3' (type System.NullReferenceException)} from rax into rcx
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: YorkCostumeDirtTextureSet
+	static System.Void .cctor()
+		System.String[] local0 = new System.String[4]
+
+		if ("jacket" != 0)
+
+		    if ("jacket" == 0)
+                goto INSN_1812114D4
+            endif
+		endif
+        
+		local0[0] = "jacket"
+
+		if ("pants" == 0)
+            goto INSN_181211322
+        endif
+
+		if ("pants" == 0)
+            goto INSN_1812114FA
+        endif
+
+		INSN_181211322:
+		local0[1] = "pants"
+
+		if ("shirts" == 0)
+            goto INSN_18121135B
+        endif
+
+		if ("shirts" == 0)
+            goto INSN_181211520
+        endif
+
+		INSN_18121135B:
+		local0[2] = "shirts"
+
+		if ("shoes" == 0)
+            goto INSN_181211394
+        endif
+
+		if ("shoes" == 0)
+            goto INSN_181211546
+        endif
+
+		INSN_181211394:
+		local0[3] = "shoes"
+		YorkCostumeDirtTextureSet.scPartString = local0
+		System.String[] local1 = new System.String[4]
+
+		if ("jacket" == 0)
+            goto INSN_1812113FB
+        endif
+
+		if ("jacket" == 0)
+            goto INSN_18121156C
+        endif
+
+		INSN_1812113FB:
+		local1[0] = "jacket"
+
+		if ("pants" == 0)
+            goto INSN_181211434
+        endif
+
+		if ("pants" == 0)
+            goto INSN_181211592
+        endif
+
+		INSN_181211434:
+		local1[1] = "pants"
+
+		if ("shirt" == 0)
+            goto INSN_18121146D
+        endif
+
+		if ("shirt" == 0)
+            goto INSN_1812115B8
+        endif
+
+		INSN_18121146D:
+		local1[2] = "shirt"
+
+		if ("shoes" == 0)
+            goto INSN_1812114A6
+        endif
+
+		if ("shoes" == 0)
+            goto INSN_1812115DE
+        endif
+
+		INSN_1812114A6:
+		local1[3] = "shoes"
+		YorkCostumeDirtTextureSet.scPartString_A = local1
+		return
+		throw new System.NullReferenceException()
+
+		INSN_1812114D4:
+
+		INSN_1812114FA:
+
+		INSN_181211520:
+
+		INSN_181211546:
+
+		INSN_18121156C:
+
+		INSN_181211592:
+
+		INSN_1812115B8:
+
+		INSN_1812115DE:
+
+
+Generated IL:
+	IL_0000: ldc.i4.4
+	IL_0001: newarr System.String
+	IL_0006: stloc.0
+	IL_0007: ldstr "jacket"
+	IL_000c: ldc.i4.0
+	IL_000d: beq.s IL_0017
+	IL_000f: ldstr "jacket"
+	IL_0014: ldc.i4.0
+	IL_0015: beq.s IL_0000
+	IL_0017: ldloc.0
+	IL_0018: ldc.i4.0
+	IL_0019: ldstr "jacket"
+	IL_001e: stelem.any System.String
+	IL_0023: ldstr "pants"
+	IL_0028: ldc.i4.0
+	IL_0029: beq.s IL_0033
+	IL_002b: ldstr "pants"
+	IL_0030: ldc.i4.0
+	IL_0031: beq.s IL_0000
+	IL_0033: ldloc.0
+	IL_0034: ldc.i4.1
+	IL_0035: ldstr "pants"
+	IL_003a: stelem.any System.String
+	IL_003f: ldstr "shirts"
+	IL_0044: ldc.i4.0
+	IL_0045: beq.s IL_004f
+	IL_0047: ldstr "shirts"
+	IL_004c: ldc.i4.0
+	IL_004d: beq.s IL_0000
+	IL_004f: ldloc.0
+	IL_0050: ldc.i4.2
+	IL_0051: ldstr "shirts"
+	IL_0056: stelem.any System.String
+	IL_005b: ldstr "shoes"
+	IL_0060: ldc.i4.0
+	IL_0061: beq.s IL_006b
+	IL_0063: ldstr "shoes"
+	IL_0068: ldc.i4.0
+	IL_0069: beq.s IL_0000
+	IL_006b: ldloc.0
+	IL_006c: ldc.i4.3
+	IL_006d: ldstr "shoes"
+	IL_0072: stelem.any System.String
+	IL_0077: ldloc.0
+	IL_0078: stsfld System.String[] YorkCostumeDirtTextureSet::scPartString
+	IL_007d: ldc.i4.4
+	IL_007e: newarr System.String
+	IL_0083: stloc.1
+	IL_0084: ldstr "jacket"
+	IL_0089: ldc.i4.0
+	IL_008a: beq.s IL_0097
+	IL_008c: ldstr "jacket"
+	IL_0091: ldc.i4.0
+	IL_0092: beq IL_0000
+	IL_0097: ldloc.1
+	IL_0098: ldc.i4.0
+	IL_0099: ldstr "jacket"
+	IL_009e: stelem.any System.String
+	IL_00a3: ldstr "pants"
+	IL_00a8: ldc.i4.0
+	IL_00a9: beq.s IL_00b6
+	IL_00ab: ldstr "pants"
+	IL_00b0: ldc.i4.0
+	IL_00b1: beq IL_0000
+	IL_00b6: ldloc.1
+	IL_00b7: ldc.i4.1
+	IL_00b8: ldstr "pants"
+	IL_00bd: stelem.any System.String
+	IL_00c2: ldstr "shirt"
+	IL_00c7: ldc.i4.0
+	IL_00c8: beq.s IL_00d5
+	IL_00ca: ldstr "shirt"
+	IL_00cf: ldc.i4.0
+	IL_00d0: beq IL_0000
+	IL_00d5: ldloc.1
+	IL_00d6: ldc.i4.2
+	IL_00d7: ldstr "shirt"
+	IL_00dc: stelem.any System.String
+	IL_00e1: ldstr "shoes"
+	IL_00e6: ldc.i4.0
+	IL_00e7: beq.s IL_00f4
+	IL_00e9: ldstr "shoes"
+	IL_00ee: ldc.i4.0
+	IL_00ef: beq IL_0000
+	IL_00f4: ldloc.1
+	IL_00f5: ldc.i4.3
+	IL_00f6: ldstr "shoes"
+	IL_00fb: stelem.any System.String
+	IL_0100: ldloc.1
+	IL_0101: stsfld System.String[] YorkCostumeDirtTextureSet::scPartString_A
+	IL_0106: ret
+	IL_0107: newobj System.Void System.NullReferenceException::.ctor()
+	IL_010c: throw
+	
+

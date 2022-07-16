@@ -1,0 +1,471 @@
+Type: AnimatedWidget
+
+Method: System.Void AnimatedWidget::.ctor():	Method Body (x86 ASM):
+		0x180368480 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180368482 mov dword ptr [rcx+18h],3F800000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 24 | None ||| N/A | 1065353216
+		0x180368489 mov dword ptr [rcx+1Ch],3F800000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 28 | None ||| N/A | 1065353216
+		0x180368490 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368495 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void AnimatedWidget::.ctor():
+		End of function at 0x180368496
+		Absolute End is at 0x180368496
+		Identified Jump Destination addresses:
+
+		0x180368482: [!] Sets the field width (Type System.Single) on local {'this' (function parameter, type AnimatedWidget)} to the value stored in 1
+		0x180368489: [!] Sets the field height (Type System.Single) on local {'this' (function parameter, type AnimatedWidget)} to the value stored in 1
+		0x180368490: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type AnimatedWidget)}
+
+		0x180368490: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: AnimatedWidget
+	System.Void .ctor()
+		this.width = 1
+		this.height = 1
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.r4 1
+	IL_0006: stfld System.Single AnimatedWidget::width
+	IL_000b: ldarg.0
+	IL_000c: ldc.r4 1
+	IL_0011: stfld System.Single AnimatedWidget::height
+	IL_0016: ldarg.0
+	IL_0017: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_001c: ret
+	
+
+Method: System.Void AnimatedWidget::OnEnable():	Method Body (x86 ASM):
+		0x180368370 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180368375 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180368376 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18036837A cmp byte ptr [18183DC33h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869747 | None ||| N/A | 0
+		0x180368381 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180368384 jne short 0000000180368398h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368386 mov ecx,[1814BC364h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464193380 | None ||| N/A | N/A
+		0x18036838C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368391 mov byte ptr [18183DC33h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869747 | None ||| N/A | 1
+		0x180368398 mov rdx,[181868FF0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468046832 | None ||| N/A | N/A
+		0x18036839F mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803683A2 call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803683A7 cmp byte ptr [18183DC34h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869748 | None ||| N/A | 0
+		0x1803683AE mov [rbx+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 32 | None ||| N/A | N/A
+		0x1803683B2 jne short 00000001803683C6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803683B4 mov ecx,[1814BC354h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464193364 | None ||| N/A | N/A
+		0x1803683BA call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803683BF mov byte ptr [18183DC34h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869748 | None ||| N/A | 1
+		0x1803683C6 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1803683CD mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1803683D1 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803683D8 je short 00000001803683E8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803683DA cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803683E1 jne short 00000001803683E8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803683E3 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803683E8 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803683EB xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803683ED mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803683F0 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803683F5 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1803683F7 je short 0000000180368468h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803683F9 mov rcx,[18188DA20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x180368400 mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x180368404 movaps [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x180368409 movss xmm6,dword ptr [rbx+18h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x18036840E test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180368415 je short 0000000180368425h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368417 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18036841E jne short 0000000180368425h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368420 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368425 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180368427 movaps xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x18036842A call 0000000180E9C850h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036842F movaps xmm6,[rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x180368434 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180368437 je short 0000000180368473h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368439 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18036843C mov edx,eax		; DEBUG: {Register}/EDX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18036843E mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180368441 call 0000000181199570h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368446 movss xmm0,dword ptr [rbx+1Ch]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 28 | None ||| N/A | N/A
+		0x18036844B xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18036844D mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x180368451 call 0000000180E9C850h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368456 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180368459 je short 0000000180368473h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036845B xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18036845E mov edx,eax		; DEBUG: {Register}/EDX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x180368460 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180368463 call 0000000181198CF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368468 mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x18036846D add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x180368471 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180368472 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180368473 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180368475 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036847A int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void AnimatedWidget::OnEnable():
+		End of function at 0x18036847B
+		Absolute End is at 0x18036847B
+		Identified Jump Destination addresses:
+
+		0x180368375: Saves the content of rdi to the stack
+		0x18036837A: Compares {Unknown Global at 0x18183DC33, first ten bytes are [1 32 71 1 0 121 71 1 0 216], or as chars " G yG Ø"} and 0
+		0x180368381: Copies {'this' (function parameter, type AnimatedWidget)} from rcx into rbx
+		0x180368384: Jumps to 0x180368398 if {Unknown Global at 0x18183DC33, first ten bytes are [1 32 71 1 0 121 71 1 0 216], or as chars " G yG Ø"} != 0
+
+		0x180368386: Reads {Unknown Global at 0x1814BC364, first ten bytes are [157 1 0 0 157 129 0 0 157 33], or as chars "    !"} into register rcx as a constant constant3
+		0x18036838C: Attempts to load the il2cpp metadata for this method (method id 413) and init it cpp-side.
+
+		0x180368398: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<UIWidget>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18036839F: Copies {'this' (function parameter, type AnimatedWidget)} from rbx into rcx
+		0x1803683A2: [!] Calls managed method T UnityEngine.Component::GetComponent<UIWidget>() on instance {'this' (function parameter, type AnimatedWidget)} and stores the result in {'component' (type UIWidget)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1803683A7: Compares {Unknown Global at 0x18183DC34, first ten bytes are [32 71 1 0 121 71 1 0 216 60], or as chars " G yG Ø<"} and 0
+		0x1803683AE: [!] Sets the field mWidget (Type UIWidget) on local {'this' (function parameter, type AnimatedWidget)} to the value stored in {'component' (type UIWidget)}
+		0x1803683B2: Jumps to 0x1803683C6 if {Unknown Global at 0x18183DC34, first ten bytes are [32 71 1 0 121 71 1 0 216 60], or as chars " G yG Ø<"} != 0
+
+		0x1803683B4: Reads {Unknown Global at 0x1814BC354, first ten bytes are [156 1 0 0 156 129 0 0 156 65], or as chars "    A"} into register rcx as a constant constant7
+		0x1803683BA: Attempts to load the il2cpp metadata for this method (method id 412) and init it cpp-side.
+
+		0x1803683C6: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1803683CD: [!] Reads field mWidget from {'this' (function parameter, type AnimatedWidget)} and stores in a new local {'mWidget' (type UIWidget)}
+
+		0x1803683D1: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803683D8: Jumps to 0x1803683E8 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803683DA: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803683E1: Jumps to 0x1803683E8 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803683E3: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1803683EB: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x1803683ED: Copies {'mWidget' (type UIWidget)} from rdi into rcx
+		0x1803683F0: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'mWidget' (type UIWidget)}, {'local4' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1803683F5: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1803683F7: Jumps to 0x180368468 (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1803683F9: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rcx
+		0x180368400: [!] Reads field mWidget from {'this' (function parameter, type AnimatedWidget)} and stores in a new local {'mWidget2' (type UIWidget)}
+
+		0x180368409: [!] Reads field width from {'this' (function parameter, type AnimatedWidget)} and stores in a new local {'width' (type System.Single)}
+
+		0x18036840E: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180368415: Jumps to 0x180368425 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180368417: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18036841E: Jumps to 0x180368425 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180368420: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x180368427: Copies {'width' (type System.Single)} from xmm6 into xmm0
+		0x18036842A: [!] Calls static managed method System.Int32 UnityEngine.Mathf::RoundToInt(System.Single) with arguments [{'width' (type System.Single)}] and stores the result in {'int32' (type System.Int32)}
+
+		0x18036842F: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm6 as new constant constant19
+		0x180368434: [!] Compares {'mWidget2' (type UIWidget)} and 0
+		0x180368437: Jumps to 0x180368473 (which throws a NRE) if mWidget2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18036843C: Copies {'int32' (type System.Int32)} from rax into rdx
+		0x18036843E: Copies {'mWidget2' (type UIWidget)} from rdi into rcx
+		0x180368441: [!] Calls managed method System.Void UIWidget::set_width(System.Int32) on instance {'mWidget2' (type UIWidget)} with arguments [{'int32' (type System.Int32)}]
+
+		0x180368446: [!] Reads field height from {'this' (function parameter, type AnimatedWidget)} and stores in a new local {'height' (type System.Single)}
+
+		0x18036844D: [!] Reads field mWidget from {'this' (function parameter, type AnimatedWidget)} and stores in a new local {'mWidget3' (type UIWidget)}
+
+		0x180368451: [!] Calls static managed method System.Int32 UnityEngine.Mathf::RoundToInt(System.Single) with arguments [{'height' (type System.Single)}] and stores the result in {'int322' (type System.Int32)}
+
+		0x180368456: [!] Compares {'mWidget3' (type UIWidget)} and 0
+		0x180368459: Jumps to 0x180368473 (which throws a NRE) if mWidget3 equals 0. Implicitly present in managed code, so ignored here.
+		0x18036845E: Copies {'int322' (type System.Int32)} from rax into rdx
+		0x180368460: Copies {'mWidget3' (type UIWidget)} from rdi into rcx
+		0x180368463: [!] Calls managed method System.Void UIWidget::set_height(System.Int32) on instance {'mWidget3' (type UIWidget)} with arguments [{'int322' (type System.Int32)}]
+
+		0x180368468: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant22
+		0x180368472: [!] Returns from the function
+
+		0x180368475: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: AnimatedWidget
+	System.Void OnEnable()
+
+		UIWidget component = base.GetComponent<UIWidget>()
+		this.mWidget = component
+		UIWidget mWidget = this.mWidget
+		ulong local4 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(mWidget, local4) //(Object x, Object y)
+
+		if (boolean != False)
+		    UIWidget mWidget2 = this.mWidget
+		    System.Single width = this.width
+
+		    System.Int32 int32 = UnityEngine.Mathf.RoundToInt(width) //(Single f)
+
+		    mWidget2.width = int32
+		    System.Single height = this.height
+		    UIWidget mWidget3 = this.mWidget
+
+		    System.Int32 int322 = UnityEngine.Mathf.RoundToInt(height) //(Single f)
+
+		    mWidget3.height = int322
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call T UnityEngine.Component::GetComponent<UIWidget>()
+	IL_0006: stloc.0
+	IL_0007: ldarg.0
+	IL_0008: ldloc.0
+	IL_0009: stfld UIWidget AnimatedWidget::mWidget
+	IL_000e: ldarg.0
+	IL_000f: ldfld UIWidget AnimatedWidget::mWidget
+	IL_0014: stloc.1
+	IL_0015: ldc.i4.0
+	IL_0016: stloc.2
+	IL_0017: ldloc.1
+	IL_0018: ldloc.2
+	IL_0019: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_001e: ldc.i4.0
+	IL_001f: beq.s IL_005f
+	IL_0021: ldarg.0
+	IL_0022: ldfld UIWidget AnimatedWidget::mWidget
+	IL_0027: stloc.3
+	IL_0028: ldarg.0
+	IL_0029: ldfld System.Single AnimatedWidget::width
+	IL_002e: call System.Int32 UnityEngine.Mathf::RoundToInt(System.Single)
+	IL_0033: stloc.s V_4
+	IL_0035: ldloc.3
+	IL_0036: ldloc.s V_4
+	IL_0038: call System.Void UIWidget::set_width(System.Int32)
+	IL_003d: ldarg.0
+	IL_003e: ldfld System.Single AnimatedWidget::height
+	IL_0043: stloc.s V_5
+	IL_0045: ldarg.0
+	IL_0046: ldfld UIWidget AnimatedWidget::mWidget
+	IL_004b: stloc.s V_6
+	IL_004d: ldloc.s V_5
+	IL_004f: call System.Int32 UnityEngine.Mathf::RoundToInt(System.Single)
+	IL_0054: stloc.s V_7
+	IL_0056: ldloc.s V_6
+	IL_0058: ldloc.s V_7
+	IL_005a: call System.Void UIWidget::set_height(System.Int32)
+	IL_005f: ret
+	IL_0060: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0065: throw
+	
+
+Method: System.Void AnimatedWidget::LateUpdate():	Method Body (x86 ASM):
+		0x180368290 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180368295 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180368296 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18036829A cmp byte ptr [18183DC34h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869748 | None ||| N/A | 0
+		0x1803682A1 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803682A4 jne short 00000001803682B8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803682A6 mov ecx,[1814BC354h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464193364 | None ||| N/A | N/A
+		0x1803682AC call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803682B1 mov byte ptr [18183DC34h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869748 | None ||| N/A | 1
+		0x1803682B8 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1803682BF mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1803682C3 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803682CA je short 00000001803682DAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803682CC cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803682D3 jne short 00000001803682DAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803682D5 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803682DA xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803682DD xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803682DF mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1803682E2 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803682E7 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1803682E9 je short 000000018036835Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803682EB mov rcx,[18188DA20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1803682F2 mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1803682F6 movaps [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x1803682FB movss xmm6,dword ptr [rbx+18h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x180368300 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180368307 je short 0000000180368317h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368309 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180368310 jne short 0000000180368317h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368312 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368317 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180368319 movaps xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x18036831C call 0000000180E9C850h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368321 movaps xmm6,[rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x180368326 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180368329 je short 0000000180368365h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036832B xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18036832E mov edx,eax		; DEBUG: {Register}/EDX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x180368330 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180368333 call 0000000181199570h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368338 movss xmm0,dword ptr [rbx+1Ch]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 28 | None ||| N/A | N/A
+		0x18036833D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18036833F mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x180368343 call 0000000180E9C850h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180368348 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18036834B je short 0000000180368365h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036834D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180368350 mov edx,eax		; DEBUG: {Register}/EDX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x180368352 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180368355 call 0000000181198CF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036835A mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x18036835F add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x180368363 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180368364 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180368365 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180368367 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036836C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void AnimatedWidget::LateUpdate():
+		End of function at 0x18036836D
+		Absolute End is at 0x18036836D
+		Identified Jump Destination addresses:
+
+		0x180368295: Saves the content of rdi to the stack
+		0x18036829A: Compares {Unknown Global at 0x18183DC34, first ten bytes are [32 71 1 0 121 71 1 0 216 60], or as chars " G yG Ø<"} and 0
+		0x1803682A1: Copies {'this' (function parameter, type AnimatedWidget)} from rcx into rbx
+		0x1803682A4: Jumps to 0x1803682B8 if {Unknown Global at 0x18183DC34, first ten bytes are [32 71 1 0 121 71 1 0 216 60], or as chars " G yG Ø<"} != 0
+
+		0x1803682A6: Reads {Unknown Global at 0x1814BC354, first ten bytes are [156 1 0 0 156 129 0 0 156 65], or as chars "    A"} into register rcx as a constant constant3
+		0x1803682AC: Attempts to load the il2cpp metadata for this method (method id 412) and init it cpp-side.
+
+		0x1803682B8: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1803682BF: [!] Reads field mWidget from {'this' (function parameter, type AnimatedWidget)} and stores in a new local {'mWidget' (type UIWidget)}
+
+		0x1803682C3: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803682CA: Jumps to 0x1803682DA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803682CC: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803682D3: Jumps to 0x1803682DA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803682D5: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1803682DD: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x1803682DF: Copies {'mWidget' (type UIWidget)} from rdi into rcx
+		0x1803682E2: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'mWidget' (type UIWidget)}, {'local3' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1803682E7: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1803682E9: Jumps to 0x18036835A (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1803682EB: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rcx
+		0x1803682F2: [!] Reads field mWidget from {'this' (function parameter, type AnimatedWidget)} and stores in a new local {'mWidget2' (type UIWidget)}
+
+		0x1803682FB: [!] Reads field width from {'this' (function parameter, type AnimatedWidget)} and stores in a new local {'width' (type System.Single)}
+
+		0x180368300: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180368307: Jumps to 0x180368317 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180368309: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180368310: Jumps to 0x180368317 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180368312: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x180368319: Copies {'width' (type System.Single)} from xmm6 into xmm0
+		0x18036831C: [!] Calls static managed method System.Int32 UnityEngine.Mathf::RoundToInt(System.Single) with arguments [{'width' (type System.Single)}] and stores the result in {'int32' (type System.Int32)}
+
+		0x180368321: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm6 as new constant constant15
+		0x180368326: [!] Compares {'mWidget2' (type UIWidget)} and 0
+		0x180368329: Jumps to 0x180368365 (which throws a NRE) if mWidget2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18036832E: Copies {'int32' (type System.Int32)} from rax into rdx
+		0x180368330: Copies {'mWidget2' (type UIWidget)} from rdi into rcx
+		0x180368333: [!] Calls managed method System.Void UIWidget::set_width(System.Int32) on instance {'mWidget2' (type UIWidget)} with arguments [{'int32' (type System.Int32)}]
+
+		0x180368338: [!] Reads field height from {'this' (function parameter, type AnimatedWidget)} and stores in a new local {'height' (type System.Single)}
+
+		0x18036833F: [!] Reads field mWidget from {'this' (function parameter, type AnimatedWidget)} and stores in a new local {'mWidget3' (type UIWidget)}
+
+		0x180368343: [!] Calls static managed method System.Int32 UnityEngine.Mathf::RoundToInt(System.Single) with arguments [{'height' (type System.Single)}] and stores the result in {'int322' (type System.Int32)}
+
+		0x180368348: [!] Compares {'mWidget3' (type UIWidget)} and 0
+		0x18036834B: Jumps to 0x180368365 (which throws a NRE) if mWidget3 equals 0. Implicitly present in managed code, so ignored here.
+		0x180368350: Copies {'int322' (type System.Int32)} from rax into rdx
+		0x180368352: Copies {'mWidget3' (type UIWidget)} from rdi into rcx
+		0x180368355: [!] Calls managed method System.Void UIWidget::set_height(System.Int32) on instance {'mWidget3' (type UIWidget)} with arguments [{'int322' (type System.Int32)}]
+
+		0x18036835A: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant18
+		0x180368364: [!] Returns from the function
+
+		0x180368367: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: AnimatedWidget
+	System.Void LateUpdate()
+		UIWidget mWidget = this.mWidget
+		ulong local3 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(mWidget, local3) //(Object x, Object y)
+
+		if (boolean != False)
+		    UIWidget mWidget2 = this.mWidget
+		    System.Single width = this.width
+
+		    System.Int32 int32 = UnityEngine.Mathf.RoundToInt(width) //(Single f)
+
+		    mWidget2.width = int32
+		    System.Single height = this.height
+		    UIWidget mWidget3 = this.mWidget
+
+		    System.Int32 int322 = UnityEngine.Mathf.RoundToInt(height) //(Single f)
+
+		    mWidget3.height = int322
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UIWidget AnimatedWidget::mWidget
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_0010: ldc.i4.0
+	IL_0011: beq.s IL_004f
+	IL_0013: ldarg.0
+	IL_0014: ldfld UIWidget AnimatedWidget::mWidget
+	IL_0019: stloc.2
+	IL_001a: ldarg.0
+	IL_001b: ldfld System.Single AnimatedWidget::width
+	IL_0020: call System.Int32 UnityEngine.Mathf::RoundToInt(System.Single)
+	IL_0025: stloc.3
+	IL_0026: ldloc.2
+	IL_0027: ldloc.3
+	IL_0028: call System.Void UIWidget::set_width(System.Int32)
+	IL_002d: ldarg.0
+	IL_002e: ldfld System.Single AnimatedWidget::height
+	IL_0033: stloc.s V_4
+	IL_0035: ldarg.0
+	IL_0036: ldfld UIWidget AnimatedWidget::mWidget
+	IL_003b: stloc.s V_5
+	IL_003d: ldloc.s V_4
+	IL_003f: call System.Int32 UnityEngine.Mathf::RoundToInt(System.Single)
+	IL_0044: stloc.s V_6
+	IL_0046: ldloc.s V_5
+	IL_0048: ldloc.s V_6
+	IL_004a: call System.Void UIWidget::set_height(System.Int32)
+	IL_004f: ret
+	IL_0050: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0055: throw
+	
+

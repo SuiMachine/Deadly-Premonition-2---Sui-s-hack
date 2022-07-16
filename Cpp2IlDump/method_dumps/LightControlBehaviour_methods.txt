@@ -1,0 +1,62 @@
+Type: LightControlBehaviour
+
+Method: System.Void LightControlBehaviour::.ctor():	Method Body (x86 ASM):
+		0x1805B3380 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805B3382 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1805B3386 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1805B3389 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805B338B lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1805B3390 call 0000000180B28BA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805B3395 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805B3397 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805B339A movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1805B339D mov dword ptr [rbx+20h],3F800000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RBX | 32 | None ||| N/A | 1065353216
+		0x1805B33A4 mov dword ptr [rbx+24h],3F800000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RBX | 36 | None ||| N/A | 1065353216
+		0x1805B33AB movups [rbx+10h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 16 | None ||| N/A | N/A
+		0x1805B33AF mov dword ptr [rbx+28h],41200000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RBX | 40 | None ||| N/A | 1092616192
+		0x1805B33B6 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1805B33BA pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805B33BB jmp near ptr 00000001802068B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void LightControlBehaviour::.ctor():
+		End of function at 0x1805B33C0
+		Absolute End is at 0x1805B33C0
+		Identified Jump Destination addresses:
+
+		0x1805B3380: Saves the content of rbx to the stack
+		0x1805B3386: Copies {'this' (function parameter, type LightControlBehaviour)} from rcx into rbx
+		0x1805B338B: Loads a pointer to stack offset 0x20 into register rcx as new constant constant1
+		0x1805B3390: [!] Calls static managed method UnityEngine.Color UnityEngine.Color::get_white() and stores the result in {'white' (type UnityEngine.Color)}
+
+		0x1805B3397: Copies {'this' (function parameter, type LightControlBehaviour)} from rbx into rcx
+		0x1805B339A: Loads the class pointer from white into a constant constant2 in register xmm0
+		0x1805B339D: [!] Sets the field intensity (Type System.Single) on local {'this' (function parameter, type LightControlBehaviour)} to the value stored in 1
+		0x1805B33A4: [!] Sets the field bounceIntensity (Type System.Single) on local {'this' (function parameter, type LightControlBehaviour)} to the value stored in 1
+		0x1805B33AB: [!] Sets the field color (Type UnityEngine.Color) on local {'this' (function parameter, type LightControlBehaviour)} to the value stored in {'constant2' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}
+		0x1805B33AF: [!] Sets the field range (Type System.Single) on local {'this' (function parameter, type LightControlBehaviour)} to the value stored in 10
+		0x1805B33BB: [!] Calls managed method System.Void UnityEngine.Playables.PlayableBehaviour::.ctor() on instance {'this' (function parameter, type LightControlBehaviour)}
+
+		0x1805B33BB: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: LightControlBehaviour
+	System.Void .ctor()
+
+		UnityEngine.Color white = UnityEngine.Color.white
+		this.intensity = 1
+		this.bounceIntensity = 1
+		this.color = constant2
+		this.range = 10
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.RegToFieldAction at (0x1805B33AB) is corrupt (ConstantDefinition: Don't know how to get IL to load a Cpp2IL.Core.Analysis.Il2CppClassIdentifier) and cannot be created as IL. Aborting here.
+
+

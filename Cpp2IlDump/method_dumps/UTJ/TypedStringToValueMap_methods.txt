@@ -1,0 +1,1077 @@
+Type: TypedStringToValueMap
+
+Method: System.Void UTJ.TypedStringToValueMap::.ctor(System.Type,System.Collections.Generic.Dictionary`2<System.String,System.Object>,System.Object):	Method Body (x86 ASM):
+		0x1811B6170 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1811B6175 mov [rsp+10h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 16 | None ||| N/A | N/A
+		0x1811B617A mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x1811B617F push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B6180 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1811B6184 mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B6187 mov rbp,r9		; DEBUG: {Register}/RBP {Register}/R9 ||| None | 0 | None ||| N/A | N/A
+		0x1811B618A xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B618C mov rsi,r8		; DEBUG: {Register}/RSI {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x1811B618F mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1811B6192 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6197 mov [rdi+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RDI | 16 | None ||| N/A | N/A
+		0x1811B619B mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B61A0 mov [rdi+20h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RDI | 32 | None ||| N/A | N/A
+		0x1811B61A4 mov rsi,[rsp+40h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B61A9 mov [rdi+18h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RDI | 24 | None ||| N/A | N/A
+		0x1811B61AD mov rbp,[rsp+38h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x1811B61B2 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1811B61B6 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B61B7 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B61B8 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UTJ.TypedStringToValueMap::.ctor(System.Type,System.Collections.Generic.Dictionary`2<System.String,System.Object>,System.Object):
+		End of function at 0x1811B61B9
+		Absolute End is at 0x1811B61B9
+		Identified Jump Destination addresses:
+
+		0x1811B617F: Saves the content of rdi to the stack
+		0x1811B6184: Copies {'inputType' (function parameter, type System.Type)} from rdx into rbx
+		0x1811B6187: Copies {'inputDefaultValue' (function parameter, type System.Object)} from r9 into rbp
+		0x1811B618C: Copies {'inputMap' (function parameter, type System.Collections.Generic.Dictionary`2<System.String,System.Object>)} from r8 into rsi
+		0x1811B618F: Copies {'this' (function parameter, type UTJ.TypedStringToValueMap)} from rcx into rdi
+		0x1811B6192: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type UTJ.TypedStringToValueMap)} ;  - Leftover parameters detected, but first few match.
+
+		0x1811B6197: [!] Sets the field <Type>k__BackingField (Type System.Type) on local {'this' (function parameter, type UTJ.TypedStringToValueMap)} to the value stored in {'inputType' (function parameter, type System.Type)}
+		0x1811B619B: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant1
+		0x1811B61A0: [!] Sets the field map (Type System.Collections.Generic.Dictionary`2<System.String,System.Object>) on local {'this' (function parameter, type UTJ.TypedStringToValueMap)} to the value stored in {'inputMap' (function parameter, type System.Collections.Generic.Dictionary`2<System.String,System.Object>)}
+		0x1811B61A4: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rsi as new constant constant2
+		0x1811B61A9: [!] Sets the field <DefaultValue>k__BackingField (Type System.Object) on local {'this' (function parameter, type UTJ.TypedStringToValueMap)} to the value stored in {'inputDefaultValue' (function parameter, type System.Object)}
+		0x1811B61AD: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbp as new constant constant3
+		0x1811B61B7: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	System.Void .ctor(System.Type inputType, System.Collections.Generic.Dictionary`2<System.String,System.Object> inputMap, System.Object inputDefaultValue)
+
+		base..ctor()
+		this.<Type>k__BackingField = inputType
+		this.map = inputMap
+		this.<DefaultValue>k__BackingField = inputDefaultValue
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ldarg.0
+	IL_0007: ldarg.1
+	IL_0008: stfld System.Type UTJ.TypedStringToValueMap::<Type>k__BackingField
+	IL_000d: ldarg.0
+	IL_000e: ldarg.2
+	IL_000f: stfld System.Collections.Generic.Dictionary`2<System.String,System.Object> UTJ.TypedStringToValueMap::map
+	IL_0014: ldarg.0
+	IL_0015: ldarg.3
+	IL_0016: stfld System.Object UTJ.TypedStringToValueMap::<DefaultValue>k__BackingField
+	IL_001b: ret
+	
+
+Method: UTJ.TypedStringToValueMap UTJ.TypedStringToValueMap::Create(System.Collections.Generic.Dictionary`2<System.String,T>,T):	Method Body (x86 ASM):
+		0x18090F0D0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18090F0D5 mov [rsp+10h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 16 | None ||| N/A | N/A
+		0x18090F0DA mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x18090F0DF mov [rsp+20h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 32 | None ||| N/A | N/A
+		0x18090F0E4 push r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18090F0E6 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18090F0EA cmp byte ptr [181842529h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467888425 | None ||| N/A | 0
+		0x18090F0F1 mov rdi,r8		; DEBUG: {Register}/RDI {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x18090F0F4 mov rbp,rdx		; DEBUG: {Register}/RBP {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18090F0F7 mov r14,rcx		; DEBUG: {Register}/R14 {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18090F0FA jne short 000000018090F10Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F0FC mov ecx,[1814CAFCCh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464253900 | None ||| N/A | N/A
+		0x18090F102 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F107 mov byte ptr [181842529h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467888425 | None ||| N/A | 1
+		0x18090F10E mov rax,[rdi+30h]		; DEBUG: {Register}/RAX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18090F112 mov rbx,[rax+8]		; DEBUG: {Register}/RBX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x18090F116 test byte ptr [rbx+126h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 294 | None ||| N/A | 1
+		0x18090F11D jne short 000000018090F127h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F11F mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090F122 call 00000001800F6690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F127 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090F12A call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F12F mov r8,[rdi+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18090F133 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18090F135 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F138 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F13B mov r10,[r8+10h]		; DEBUG: {Register}/R10 {Memory}/None ||| R8 | 16 | None ||| N/A | N/A
+		0x18090F13F mov r8,[r8]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 0 | None ||| N/A | N/A
+		0x18090F142 mov r9,r10		; DEBUG: {Register}/R9 {Register}/R10 ||| None | 0 | None ||| N/A | N/A
+		0x18090F145 call qword ptr [r10]		; DEBUG: {Memory}/None {Register}/None ||| R10 | 0 | None ||| N/A | N/A
+		0x18090F148 mov rcx,[rdi+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18090F14C mov rbx,[rcx+20h]		; DEBUG: {Register}/RBX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x18090F150 test byte ptr [rbx+126h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 294 | None ||| N/A | 1
+		0x18090F157 jne short 000000018090F161h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F159 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090F15C call 00000001800F6690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F161 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090F164 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F169 mov r8,[rdi+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18090F16D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18090F16F mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F172 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F175 mov r10,[r8+28h]		; DEBUG: {Register}/R10 {Memory}/None ||| R8 | 40 | None ||| N/A | N/A
+		0x18090F179 mov r8,[r8+18h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 24 | None ||| N/A | N/A
+		0x18090F17D mov r9,r10		; DEBUG: {Register}/R9 {Register}/R10 ||| None | 0 | None ||| N/A | N/A
+		0x18090F180 call qword ptr [r10]		; DEBUG: {Memory}/None {Register}/None ||| R10 | 0 | None ||| N/A | N/A
+		0x18090F183 mov rcx,[rdi+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18090F187 mov r8,rbx		; DEBUG: {Register}/R8 {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090F18A mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18090F18D mov r10,[rcx+30h]		; DEBUG: {Register}/R10 {Memory}/None ||| RCX | 48 | None ||| N/A | N/A
+		0x18090F191 mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x18090F194 mov r9,r10		; DEBUG: {Register}/R9 {Register}/R10 ||| None | 0 | None ||| N/A | N/A
+		0x18090F197 call qword ptr [r10]		; DEBUG: {Memory}/None {Register}/None ||| R10 | 0 | None ||| N/A | N/A
+		0x18090F19A mov rcx,[181884228h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157992 | None ||| N/A | N/A
+		0x18090F1A1 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F1A4 mov rbx,[rdi+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18090F1A8 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18090F1AF mov rbx,[rbx+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x18090F1B3 je short 000000018090F1C3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F1B5 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18090F1BC jne short 000000018090F1C3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F1BE call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F1C3 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18090F1C5 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090F1C8 call 00000001810EC160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F1CD mov rcx,[181866988h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468037000 | None ||| N/A | N/A
+		0x18090F1D4 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F1D7 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F1DC mov r9,rbp		; DEBUG: {Register}/R9 {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x18090F1DF mov qword ptr [rsp+20h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RSP | 32 | None ||| N/A | 0
+		0x18090F1E8 mov r8,rsi		; DEBUG: {Register}/R8 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18090F1EB mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18090F1EE mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F1F1 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F1F4 call 00000001811B6170h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F1F9 mov rbp,[rsp+48h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x18090F1FE mov rax,rbx		; DEBUG: {Register}/RAX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090F201 mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x18090F206 mov rsi,[rsp+50h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x18090F20B mov rdi,[rsp+58h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 88 | None ||| N/A | N/A
+		0x18090F210 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18090F214 pop r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18090F216 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18090F217 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method UTJ.TypedStringToValueMap UTJ.TypedStringToValueMap::Create(System.Collections.Generic.Dictionary`2<System.String,T>,T):
+		End of function at 0x18090F218
+		Absolute End is at 0x18090F218
+		Identified Jump Destination addresses:
+
+		0x18090F0E4: Saves the content of r14 to the stack
+		0x18090F0EA: Compares {Unknown Global at 0x181842529, first ten bytes are [188 3 0 192 60 103 1 64 188 3], or as chars "¼ À<g@¼"} and 0
+		0x18090F0F1: Copies {'il2cppMethodInfo' (type )} from r8 into rdi
+		0x18090F0F4: Copies {'inputDefaultValue' (function parameter, type T)} from rdx into rbp
+		0x18090F0F7: Copies {'inputMap' (function parameter, type System.Collections.Generic.Dictionary`2<System.String,T>)} from rcx into r14
+		0x18090F0FA: Jumps to 0x18090F10E if {Unknown Global at 0x181842529, first ten bytes are [188 3 0 192 60 103 1 64 188 3], or as chars "¼ À<g@¼"} != 0
+
+		0x18090F0FC: Reads {Unknown Global at 0x1814CAFCC, first ten bytes are [158 111 0 0 158 47 0 0 158 15], or as chars "o  /  "} into register rcx as a constant constant3
+		0x18090F102: Attempts to load the il2cpp metadata for this method (method id 28574) and init it cpp-side.
+
+		0x18090F116: [!] Compares  and 1
+		0x18090F11D: Jumps to 0x18090F127 (which throws a NRE) if  != 1. Implicitly present in managed code, so ignored here. ;  - Skipping if statement, is array type check
+		0x18090F12A: [!] Allocates an instance of type  and stores it as  in rax.
+
+		0x18090F13F: Loads the class pointer from il2cppMethodInfo into a constant constant5 in register r8
+		0x18090F150: [!] Compares  and 1
+		0x18090F157: Jumps to 0x18090F161 (which throws a NRE) if  != 1. Implicitly present in managed code, so ignored here. ;  - Skipping if statement, is array type check
+		0x18090F164: [!] Allocates an instance of type  and stores it as  in rax.
+
+		0x18090F175: [!!] Reads value at unknown offset 40 (0x28) on a klass pointer
+		0x18090F179: [!!] Reads value at unknown offset 24 (0x18) on a klass pointer
+		0x18090F191: Copies {'inputMap' (function parameter, type System.Collections.Generic.Dictionary`2<System.String,T>)} from r14 into rcx
+		0x18090F19A: Loads the type definition for managed type System.Type as a constant "Type" in rcx
+		0x18090F1A8: Compares "{il2cpp field on {'Type' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18090F1B3: Jumps to 0x18090F1C3 if "{il2cpp field on {'Type' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18090F1B5: Compares "{il2cpp field on {'Type' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18090F1BC: Jumps to 0x18090F1C3 if "{il2cpp field on {'Type' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18090F1BE: Calls the il2cpp cctor for the type System.Type
+		0x18090F1C8: [!] Calls static managed method System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle) with arguments [{'Type' (constant value of type Mono.Cecil.TypeReference)}] and stores the result in {'typeFromHandle' (type System.Type)}
+
+		0x18090F1CD: Loads the type definition for managed type UTJ.TypedStringToValueMap as a constant "TypedStringToValueMap" in rcx
+		0x18090F1D4: Copies {'typeFromHandle' (type System.Type)} from rax into rdi
+		0x18090F1D7: [!] Allocates an instance of type UTJ.TypedStringToValueMap and stores it as typedStringToValueMap in rax.
+
+		0x18090F1DC: Copies {'inputDefaultValue' (function parameter, type T)} from rbp into r9
+		0x18090F1DF: Moves 0 (immediate ulong value) to the stack at offset 32 as a new local local7
+		0x18090F1EB: Copies {'typeFromHandle' (type System.Type)} from rdi into rdx
+		0x18090F1EE: Copies {'typedStringToValueMap' (type UTJ.TypedStringToValueMap)} from rax into rcx
+		0x18090F1F1: Copies {'typedStringToValueMap' (type UTJ.TypedStringToValueMap)} from rax into rbx
+		0x18090F1F4: [!] Calls managed method System.Void UTJ.TypedStringToValueMap::.ctor(System.Type,System.Collections.Generic.Dictionary`2<System.String,System.Object>,System.Object) on instance {'typedStringToValueMap' (type UTJ.TypedStringToValueMap)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x18090F1F9: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rbp as new constant constant13
+		0x18090F1FE: Copies {'typedStringToValueMap' (type UTJ.TypedStringToValueMap)} from rbx into rax
+		0x18090F201: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant14
+		0x18090F206: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register rsi as new constant constant15
+		0x18090F20B: Reads unknown value in stack, offset 88 (0x58) and stores the pointer in register rdi as new constant constant16
+		0x18090F216: [!] Returns {'typedStringToValueMap' (type UTJ.TypedStringToValueMap)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	static UTJ.TypedStringToValueMap Create(System.Collections.Generic.Dictionary`2<System.String,T> inputMap, T inputDefaultValue)
+		  = new ()
+		  = new ()
+		//UNKNOWN CLASS OFFSET READ HERE
+		//UNKNOWN CLASS OFFSET READ HERE
+
+		System.Type typeFromHandle = System.Type.GetTypeFromHandle({'Type' (constant value of type Mono.Cecil.TypeReference)}) //(RuntimeTypeHandle handle)
+		UTJ.TypedStringToValueMap typedStringToValueMap = new UTJ.TypedStringToValueMap()
+
+		typedStringToValueMap..ctor()
+		return typedStringToValueMap
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AllocateInstanceAction at (0x18090F12A) is corrupt (Local being returned, or type being allocated, couldn't be determined.) and cannot be created as IL. Aborting here.
+
+
+Method: UTJ.TypedStringToValueMap UTJ.TypedStringToValueMap::Create(System.Collections.Generic.Dictionary`2<System.String,T>):	Method Body (x86 ASM):
+		0x18090EF90 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18090EF95 mov [rsp+10h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 16 | None ||| N/A | N/A
+		0x18090EF9A mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x18090EF9F push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18090EFA0 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18090EFA4 cmp byte ptr [181842528h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467888424 | None ||| N/A | 0
+		0x18090EFAB mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18090EFAE mov rbp,rcx		; DEBUG: {Register}/RBP {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18090EFB1 jne short 000000018090EFC5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090EFB3 mov ecx,[1814CAFC4h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464253892 | None ||| N/A | N/A
+		0x18090EFB9 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090EFBE mov byte ptr [181842528h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467888424 | None ||| N/A | 1
+		0x18090EFC5 mov rax,[rdi+30h]		; DEBUG: {Register}/RAX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18090EFC9 mov rbx,[rax+8]		; DEBUG: {Register}/RBX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x18090EFCD test byte ptr [rbx+126h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 294 | None ||| N/A | 1
+		0x18090EFD4 jne short 000000018090EFDEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090EFD6 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090EFD9 call 00000001800F6690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090EFDE mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090EFE1 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090EFE6 mov r8,[rdi+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18090EFEA xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18090EFEC mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090EFEF mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090EFF2 mov r10,[r8+10h]		; DEBUG: {Register}/R10 {Memory}/None ||| R8 | 16 | None ||| N/A | N/A
+		0x18090EFF6 mov r8,[r8]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 0 | None ||| N/A | N/A
+		0x18090EFF9 mov r9,r10		; DEBUG: {Register}/R9 {Register}/R10 ||| None | 0 | None ||| N/A | N/A
+		0x18090EFFC call qword ptr [r10]		; DEBUG: {Memory}/None {Register}/None ||| R10 | 0 | None ||| N/A | N/A
+		0x18090EFFF mov rcx,[rdi+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18090F003 mov rbx,[rcx+20h]		; DEBUG: {Register}/RBX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x18090F007 test byte ptr [rbx+126h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 294 | None ||| N/A | 1
+		0x18090F00E jne short 000000018090F018h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F010 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090F013 call 00000001800F6690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F018 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090F01B call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F020 mov r8,[rdi+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18090F024 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18090F026 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F029 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F02C mov r10,[r8+28h]		; DEBUG: {Register}/R10 {Memory}/None ||| R8 | 40 | None ||| N/A | N/A
+		0x18090F030 mov r8,[r8+18h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 24 | None ||| N/A | N/A
+		0x18090F034 mov r9,r10		; DEBUG: {Register}/R9 {Register}/R10 ||| None | 0 | None ||| N/A | N/A
+		0x18090F037 call qword ptr [r10]		; DEBUG: {Memory}/None {Register}/None ||| R10 | 0 | None ||| N/A | N/A
+		0x18090F03A mov rcx,[rdi+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18090F03E mov r8,rbx		; DEBUG: {Register}/R8 {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090F041 mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18090F044 mov r10,[rcx+30h]		; DEBUG: {Register}/R10 {Memory}/None ||| RCX | 48 | None ||| N/A | N/A
+		0x18090F048 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x18090F04B mov r9,r10		; DEBUG: {Register}/R9 {Register}/R10 ||| None | 0 | None ||| N/A | N/A
+		0x18090F04E call qword ptr [r10]		; DEBUG: {Memory}/None {Register}/None ||| R10 | 0 | None ||| N/A | N/A
+		0x18090F051 mov rcx,[181884228h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157992 | None ||| N/A | N/A
+		0x18090F058 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F05B mov rbx,[rdi+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18090F05F test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18090F066 mov rbx,[rbx+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x18090F06A je short 000000018090F07Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F06C cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18090F073 jne short 000000018090F07Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F075 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F07A xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18090F07C mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090F07F call 00000001810EC160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F084 mov rcx,[181866988h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468037000 | None ||| N/A | N/A
+		0x18090F08B mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F08E call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F093 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x18090F096 mov qword ptr [rsp+20h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RSP | 32 | None ||| N/A | 0
+		0x18090F09F mov r8,rsi		; DEBUG: {Register}/R8 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18090F0A2 mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18090F0A5 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F0A8 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18090F0AB call 00000001811B6170h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18090F0B0 mov rbp,[rsp+48h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x18090F0B5 mov rax,rbx		; DEBUG: {Register}/RAX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18090F0B8 mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x18090F0BD mov rsi,[rsp+50h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x18090F0C2 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18090F0C6 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18090F0C7 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18090F0C8 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method UTJ.TypedStringToValueMap UTJ.TypedStringToValueMap::Create(System.Collections.Generic.Dictionary`2<System.String,T>):
+		End of function at 0x18090F0C9
+		Absolute End is at 0x18090F0C9
+		Identified Jump Destination addresses:
+
+		0x18090EF9F: Saves the content of rdi to the stack
+		0x18090EFA4: Compares {Unknown Global at 0x181842528, first ten bytes are [59 188 3 0 192 60 103 1 64 188], or as chars ";¼ À<g@¼"} and 0
+		0x18090EFAB: Copies {'il2cppMethodInfo' (type )} from rdx into rdi
+		0x18090EFAE: Copies {'inputMap' (function parameter, type System.Collections.Generic.Dictionary`2<System.String,T>)} from rcx into rbp
+		0x18090EFB1: Jumps to 0x18090EFC5 if {Unknown Global at 0x181842528, first ten bytes are [59 188 3 0 192 60 103 1 64 188], or as chars ";¼ À<g@¼"} != 0
+
+		0x18090EFB3: Reads {Unknown Global at 0x1814CAFC4, first ten bytes are [157 111 0 0 157 47 0 0 158 111], or as chars "o  /  o"} into register rcx as a constant constant3
+		0x18090EFB9: Attempts to load the il2cpp metadata for this method (method id 28573) and init it cpp-side.
+
+		0x18090EFCD: [!] Compares  and 1
+		0x18090EFD4: Jumps to 0x18090EFDE (which throws a NRE) if  != 1. Implicitly present in managed code, so ignored here. ;  - Skipping if statement, is array type check
+		0x18090EFE1: [!] Allocates an instance of type  and stores it as  in rax.
+
+		0x18090F007: [!] Compares  and 1
+		0x18090F00E: Jumps to 0x18090F018 (which throws a NRE) if  != 1. Implicitly present in managed code, so ignored here. ;  - Skipping if statement, is array type check
+		0x18090F01B: [!] Allocates an instance of type  and stores it as  in rax.
+
+		0x18090F048: Copies {'inputMap' (function parameter, type System.Collections.Generic.Dictionary`2<System.String,T>)} from rbp into rcx
+		0x18090F051: Loads the type definition for managed type System.Type as a constant "Type" in rcx
+		0x18090F05F: Compares "{il2cpp field on {'Type' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18090F06A: Jumps to 0x18090F07A if "{il2cpp field on {'Type' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18090F06C: Compares "{il2cpp field on {'Type' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18090F073: Jumps to 0x18090F07A if "{il2cpp field on {'Type' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18090F075: Calls the il2cpp cctor for the type System.Type
+		0x18090F07F: [!] Calls static managed method System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle) with arguments [{'Type' (constant value of type Mono.Cecil.TypeReference)}] and stores the result in {'typeFromHandle' (type System.Type)}
+
+		0x18090F084: Loads the type definition for managed type UTJ.TypedStringToValueMap as a constant "TypedStringToValueMap" in rcx
+		0x18090F08B: Copies {'typeFromHandle' (type System.Type)} from rax into rdi
+		0x18090F08E: [!] Allocates an instance of type UTJ.TypedStringToValueMap and stores it as typedStringToValueMap in rax.
+
+		0x18090F093: Clears register r9, yielding zero-local {'local6' (type System.Int32)}
+		0x18090F096: Moves 0 (immediate ulong value) to the stack at offset 32 as a new local local7
+		0x18090F0A2: Copies {'typeFromHandle' (type System.Type)} from rdi into rdx
+		0x18090F0A5: Copies {'typedStringToValueMap' (type UTJ.TypedStringToValueMap)} from rax into rcx
+		0x18090F0A8: Copies {'typedStringToValueMap' (type UTJ.TypedStringToValueMap)} from rax into rbx
+		0x18090F0AB: [!] Calls managed method System.Void UTJ.TypedStringToValueMap::.ctor(System.Type,System.Collections.Generic.Dictionary`2<System.String,System.Object>,System.Object) on instance {'typedStringToValueMap' (type UTJ.TypedStringToValueMap)} with arguments [{'typeFromHandle' (type System.Type)}, , {'local6' (type System.Int32)}]
+
+		0x18090F0B0: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rbp as new constant constant12
+		0x18090F0B5: Copies {'typedStringToValueMap' (type UTJ.TypedStringToValueMap)} from rbx into rax
+		0x18090F0B8: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant13
+		0x18090F0BD: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register rsi as new constant constant14
+		0x18090F0C7: [!] Returns {'typedStringToValueMap' (type UTJ.TypedStringToValueMap)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	static UTJ.TypedStringToValueMap Create(System.Collections.Generic.Dictionary`2<System.String,T> inputMap)
+		  = new ()
+		  = new ()
+
+		System.Type typeFromHandle = System.Type.GetTypeFromHandle({'Type' (constant value of type Mono.Cecil.TypeReference)}) //(RuntimeTypeHandle handle)
+		UTJ.TypedStringToValueMap typedStringToValueMap = new UTJ.TypedStringToValueMap()
+		ulong local6 = 0
+
+		typedStringToValueMap..ctor(typeFromHandle, null, local6) //(Type inputType, Dictionary`2 inputMap, Object inputDefaultValue)
+		return typedStringToValueMap
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AllocateInstanceAction at (0x18090EFE1) is corrupt (Local being returned, or type being allocated, couldn't be determined.) and cannot be created as IL. Aborting here.
+
+
+Method: System.Type UTJ.TypedStringToValueMap::get_Type():	Method Body (x86 ASM):
+		0x18029AA00 mov rax,[rcx+10h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x18029AA04 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18029AA05 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Type UTJ.TypedStringToValueMap::get_Type():
+		End of function at 0x18029AA06
+		Absolute End is at 0x18029AA06
+		Identified Jump Destination addresses:
+
+		0x18029AA00: [!] Reads field <Type>k__BackingField from {'this' (function parameter, type UTJ.TypedStringToValueMap)} and stores in a new local {'Type' (type System.Type)}
+
+		0x18029AA04: [!] Returns {'Type' (type System.Type)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	System.Type get_Type()
+		System.Type Type = this.<Type>k__BackingField
+		return Type
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Type UTJ.TypedStringToValueMap::<Type>k__BackingField
+	IL_0006: ret
+	
+
+Method: System.Void UTJ.TypedStringToValueMap::set_Type(System.Type):	Method Body (x86 ASM):
+		0x18039ADB0 mov [rcx+10h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RCX | 16 | None ||| N/A | N/A
+		0x18039ADB4 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18039ADB5 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UTJ.TypedStringToValueMap::set_Type(System.Type):
+		End of function at 0x18039ADB6
+		Absolute End is at 0x18039ADB6
+		Identified Jump Destination addresses:
+
+		0x18039ADB0: [!] Sets the field <Type>k__BackingField (Type System.Type) on local {'this' (function parameter, type UTJ.TypedStringToValueMap)} to the value stored in {'value' (function parameter, type System.Type)}
+		0x18039ADB4: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	System.Void set_Type(System.Type value)
+		this.<Type>k__BackingField = value
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: stfld System.Type UTJ.TypedStringToValueMap::<Type>k__BackingField
+	IL_0007: ret
+	
+
+Method: System.Object UTJ.TypedStringToValueMap::get_DefaultValue():	Method Body (x86 ASM):
+		0x180213220 mov rax,[rcx+18h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x180213224 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180213225 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Object UTJ.TypedStringToValueMap::get_DefaultValue():
+		End of function at 0x180213226
+		Absolute End is at 0x180213226
+		Identified Jump Destination addresses:
+
+		0x180213220: [!] Reads field <DefaultValue>k__BackingField from {'this' (function parameter, type UTJ.TypedStringToValueMap)} and stores in a new local {'DefaultValue' (type System.Object)}
+
+		0x180213224: [!] Returns {'DefaultValue' (type System.Object)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	System.Object get_DefaultValue()
+		System.Object DefaultValue = this.<DefaultValue>k__BackingField
+		return DefaultValue
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Object UTJ.TypedStringToValueMap::<DefaultValue>k__BackingField
+	IL_0006: ret
+	
+
+Method: System.Void UTJ.TypedStringToValueMap::set_DefaultValue(System.Object):	Method Body (x86 ASM):
+		0x18025ED20 mov [rcx+18h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RCX | 24 | None ||| N/A | N/A
+		0x18025ED24 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18025ED25 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UTJ.TypedStringToValueMap::set_DefaultValue(System.Object):
+		End of function at 0x18025ED26
+		Absolute End is at 0x18025ED26
+		Identified Jump Destination addresses:
+
+		0x18025ED20: [!] Sets the field <DefaultValue>k__BackingField (Type System.Object) on local {'this' (function parameter, type UTJ.TypedStringToValueMap)} to the value stored in {'value' (function parameter, type System.Object)}
+		0x18025ED24: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	System.Void set_DefaultValue(System.Object value)
+		this.<DefaultValue>k__BackingField = value
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: stfld System.Object UTJ.TypedStringToValueMap::<DefaultValue>k__BackingField
+	IL_0007: ret
+	
+
+Method: System.Object UTJ.TypedStringToValueMap::get_Item(System.String):	Method Body (x86 ASM):
+		0x1811B61C0 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x1811B61C5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B61C6 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1811B61CA cmp byte ptr [1818A2C4Eh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283470 | None ||| N/A | 0
+		0x1811B61D1 mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B61D4 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1811B61D7 jne short 00000001811B61EBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B61D9 mov ecx,[1814CAFFCh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464253948 | None ||| N/A | N/A
+		0x1811B61DF call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B61E4 mov byte ptr [1818A2C4Eh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283470 | None ||| N/A | 1
+		0x1811B61EB mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1811B61EF mov rax,[rbx+18h]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1811B61F3 mov [rsp+30h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B61F8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1811B61FB je near ptr 00000001811B628Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6201 mov r9,[181887030h]		; DEBUG: {Register}/R9 {Memory}/None ||| RIP | 6468169776 | None ||| N/A | N/A
+		0x1811B6208 lea r8,[rsp+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B620D mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1811B6210 call 0000000180FFAF40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6215 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1811B6217 jne short 00000001811B627Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6219 mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x1811B6220 mov rax,[rbx+18h]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1811B6224 mov [rsp+30h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B6229 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1811B6230 je short 00000001811B6240h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6232 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1811B6239 jne short 00000001811B6240h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B623B call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6240 mov rcx,[18188FE00h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468206080 | None ||| N/A | N/A
+		0x1811B6247 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1811B624A mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1811B624D call 0000000180D4D090h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6252 mov rcx,[18188D688h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468195976 | None ||| N/A | N/A
+		0x1811B6259 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B625C test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1811B6263 je short 00000001811B6273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6265 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1811B626C jne short 00000001811B6273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B626E call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6273 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B6275 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1811B6278 call 0000000180B2BE30h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B627D mov rax,[rsp+30h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B6282 mov rbx,[rsp+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x1811B6287 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1811B628B pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B628C ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B628D call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6292 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Object UTJ.TypedStringToValueMap::get_Item(System.String):
+		End of function at 0x1811B6293
+		Absolute End is at 0x1811B6293
+		Identified Jump Destination addresses:
+
+		0x1811B61C5: Saves the content of rdi to the stack
+		0x1811B61CA: Compares {Unknown Global at 0x1818A2C4E, first ten bytes are [103 1 16 215 127 0 206 215 127 0], or as chars "g× Î× "} and 0
+		0x1811B61D1: Copies {'key' (function parameter, type System.String)} from rdx into rdi
+		0x1811B61D4: Copies {'this' (function parameter, type UTJ.TypedStringToValueMap)} from rcx into rbx
+		0x1811B61D7: Jumps to 0x1811B61EB if {Unknown Global at 0x1818A2C4E, first ten bytes are [103 1 16 215 127 0 206 215 127 0], or as chars "g× Î× "} != 0
+
+		0x1811B61D9: Loads string "¡o" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1811B61DF: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1811B61EB: [!] Reads field map from {'this' (function parameter, type UTJ.TypedStringToValueMap)} and stores in a new local {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.Object>)}
+
+		0x1811B61EF: [!] Reads field <DefaultValue>k__BackingField from {'this' (function parameter, type UTJ.TypedStringToValueMap)} and stores in a new local {'DefaultValue' (type System.Object)}
+
+		0x1811B61F3: Moves DefaultValue (type System.Object) from register rax to the stack at offset 48 (0x30)
+		0x1811B61F8: [!] Compares {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.Object>)} and 0
+		0x1811B61FB: Jumps to 0x1811B628D (which throws a NRE) if dictionary equals 0. Implicitly present in managed code, so ignored here.
+		0x1811B6201: Loads the global generic method reference for method System.Boolean System.Collections.Generic.Dictionary`2::TryGetValue(TKey,TValue&) on type System.Collections.Generic.Dictionary`2<System.String,System.Object> and stores the result in constant {'TryGetValue' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r9
+		0x1811B6208: Loads a pointer to stack offset 0x30 into register r8 as new constant constant6
+		0x1811B620D: Copies {'key' (function parameter, type System.String)} from rdi into rdx
+		0x1811B6210: [!] Calls managed method System.Boolean System.Collections.Generic.Dictionary`2::TryGetValue(TKey,TValue&) on instance {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.Object>)} and stores the result in {'boolean' (type System.Boolean)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation. - parameters do not match, but concrete method was resolved from a constant in a register.
+
+		0x1811B6215: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1811B6217: Jumps to 0x1811B627D (which is an if statement's body) if {'boolean' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1811B6219: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x1811B6220: [!] Reads field <DefaultValue>k__BackingField from {'this' (function parameter, type UTJ.TypedStringToValueMap)} and stores in a new local {'DefaultValue2' (type System.Object)}
+
+		0x1811B6224: Moves DefaultValue2 (type System.Object) from register rax to the stack at offset 48 (0x30)
+		0x1811B6229: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1811B6230: Jumps to 0x1811B6240 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1811B6232: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1811B6239: Jumps to 0x1811B6240 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1811B623B: Calls the il2cpp cctor for the type System.String
+		0x1811B6240: Loads the string literal "Value not found: " as a constant "constant13" in rcx
+		0x1811B624A: Copies {'key' (function parameter, type System.String)} from rdi into rdx
+		0x1811B624D: [!] Calls static managed method System.String System.String::Concat(System.String,System.String) with arguments ["Value not found: ", {'key' (function parameter, type System.String)}] and stores the result in {'string' (type System.String)}
+
+		0x1811B6252: Loads the type definition for managed type UnityEngine.Debug as a constant "Debug" in rcx
+		0x1811B6259: Copies {'string' (type System.String)} from rax into rbx
+		0x1811B625C: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1811B6263: Jumps to 0x1811B6273 if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1811B6265: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1811B626C: Jumps to 0x1811B6273 if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1811B626E: Calls the il2cpp cctor for the type UnityEngine.Debug
+		0x1811B6275: Copies {'string' (type System.String)} from rbx into rcx
+		0x1811B6278: [!] Calls static managed method System.Void UnityEngine.Debug::LogError(System.Object) with arguments [{'string' (type System.String)}]
+
+		0x1811B627D: Reads local {'DefaultValue' (type System.Object)} from stack offset 48 (0x30) into register rax
+		0x1811B6282: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbx as new constant constant19
+		0x1811B628C: [!] Returns {'DefaultValue' (type System.Object)} from the function
+
+		0x1811B628D: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	System.Object get_Item(System.String key)
+		System.Collections.Generic.Dictionary`2<System.String,System.Object> dictionary = this.map
+		System.Object DefaultValue = this.<DefaultValue>k__BackingField
+
+		System.Boolean boolean = dictionary.TryGetValue()
+
+		if (boolean == False)
+		    System.Object DefaultValue2 = this.<DefaultValue>k__BackingField
+
+		    System.String string = System.String.Concat("Value not found: ", key) //(String str0, String str1)
+
+		    UnityEngine.Debug.LogError(string) //(Object message)
+		endif
+        
+		return DefaultValue
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1811B6210) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (2)) and cannot be created as IL. Aborting here.
+
+
+Method: System.String UTJ.TypedStringToValueMap::GetKey(System.Object):	Method Body (x86 ASM):
+		0x1811B5FC0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1811B5FC5 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x1811B5FCA push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B5FCB sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1811B5FCF cmp byte ptr [1818A2C4Fh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283471 | None ||| N/A | 0
+		0x1811B5FD6 mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B5FD9 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1811B5FDC jne short 00000001811B5FF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B5FDE mov ecx,[1814CAFDCh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464253916 | None ||| N/A | N/A
+		0x1811B5FE4 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B5FE9 mov byte ptr [1818A2C4Fh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283471 | None ||| N/A | 1
+		0x1811B5FF0 mov rcx,[181866940h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468036928 | None ||| N/A | N/A
+		0x1811B5FF7 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B5FFC xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B5FFE mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B6001 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B6004 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6009 test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1811B600C je near ptr 00000001811B6119h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6012 mov [rsi+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSI | 16 | None ||| N/A | N/A
+		0x1811B6016 mov rcx,[181866968h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468036968 | None ||| N/A | N/A
+		0x1811B601D mov rdi,[rdi+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x1811B6021 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6026 mov r9,[18185C840h]		; DEBUG: {Register}/R9 {Memory}/None ||| RIP | 6467995712 | None ||| N/A | N/A
+		0x1811B602D mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1811B6030 mov r8,[18188DD30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468197680 | None ||| N/A | N/A
+		0x1811B6037 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B603A mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B603D call 00000001802ED440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6042 mov r8,[181890DB0h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468210096 | None ||| N/A | N/A
+		0x1811B6049 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1811B604C mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1811B604F call 000000018078D860h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6054 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B6057 mov rax,[181866988h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468037000 | None ||| N/A | N/A
+		0x1811B605E mov rcx,[rax+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1811B6065 cmp qword ptr [rcx],0		; DEBUG: {Memory}/None {Immediate8to64}/None ||| RCX | 0 | None ||| N/A | 0
+		0x1811B6069 jne short 00000001811B60AAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B606B mov rcx,[1818669A8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468037032 | None ||| N/A | N/A
+		0x1811B6072 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6077 mov r9,[18185C850h]		; DEBUG: {Register}/R9 {Memory}/None ||| RIP | 6467995728 | None ||| N/A | N/A
+		0x1811B607E xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B6080 mov r8,[18185ED80h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468005248 | None ||| N/A | N/A
+		0x1811B6087 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B608A mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B608D call 00000001802ED440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6092 mov rcx,[181866988h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468037000 | None ||| N/A | N/A
+		0x1811B6099 mov rdx,[rcx+0B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RCX | 184 | None ||| N/A | N/A
+		0x1811B60A0 mov [rdx],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RDX | 0 | None ||| N/A | N/A
+		0x1811B60A3 mov rax,[181866988h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468037000 | None ||| N/A | N/A
+		0x1811B60AA mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1811B60B1 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1811B60B4 mov r8,[181891108h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468210952 | None ||| N/A | N/A
+		0x1811B60BB mov rdx,[rax]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B60BE call 000000018078D7D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B60C3 mov rdx,[181868058h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468042840 | None ||| N/A | N/A
+		0x1811B60CA mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B60CD call 000000018090B490h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B60D2 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B60D5 jne short 00000001811B6109h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B60D7 mov rax,[181883F70h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x1811B60DE test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1811B60E5 je short 00000001811B60FFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B60E7 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1811B60EE jne short 00000001811B60FFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B60F0 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B60F3 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B60F8 mov rax,[181883F70h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x1811B60FF mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1811B6106 mov rax,[rax]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B6109 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B610E mov rsi,[rsp+38h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x1811B6113 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1811B6117 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B6118 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B6119 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1811B611B call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6120 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.String UTJ.TypedStringToValueMap::GetKey(System.Object):
+		End of function at 0x1811B6121
+		Absolute End is at 0x1811B6121
+		Identified Jump Destination addresses:
+
+		0x1811B5FCA: Saves the content of rdi to the stack
+		0x1811B5FCF: Compares {Unknown Global at 0x1818A2C4F, first ten bytes are [1 16 215 127 0 206 215 127 0 240], or as chars "× Î× ð"} and 0
+		0x1811B5FD6: Copies {'value' (function parameter, type System.Object)} from rdx into rbx
+		0x1811B5FD9: Copies {'this' (function parameter, type UTJ.TypedStringToValueMap)} from rcx into rdi
+		0x1811B5FDC: Jumps to 0x1811B5FF0 if {Unknown Global at 0x1818A2C4F, first ten bytes are [1 16 215 127 0 206 215 127 0 240], or as chars "× Î× ð"} != 0
+
+		0x1811B5FDE: Reads {Unknown Global at 0x1814CAFDC, first ten bytes are [159 111 0 0 159 47 0 0 159 15], or as chars "o  /  "} into register rcx as a constant constant3
+		0x1811B5FE4: Attempts to load the il2cpp metadata for this method (method id 28575) and init it cpp-side.
+
+		0x1811B5FF0: Loads the type definition for managed type UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0 as a constant "<GetKey>c__AnonStorey0" in rcx
+		0x1811B5FF7: [!] Allocates an instance of type UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0 and stores it as enumeratorInstance in rax.
+
+		0x1811B5FFE: Copies {'enumeratorInstance' (type UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0)} from rax into rcx
+		0x1811B6001: Copies {'enumeratorInstance' (type UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0)} from rax into rsi
+		0x1811B6004: [!] Calls managed method System.Void System.Object::.ctor() on instance {'enumeratorInstance' (type UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0)} ;  - Leftover parameters detected, but first few match.
+
+		0x1811B6009: [!] Compares {'enumeratorInstance' (type UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0)} and 0
+		0x1811B600C: Jumps to 0x1811B6119 (which throws a NRE) if enumeratorInstance equals 0. Implicitly present in managed code, so ignored here.
+		0x1811B6012: [!] Sets the field value (Type System.Object) on local {'enumeratorInstance' (type UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0)} to the value stored in {'value' (function parameter, type System.Object)}
+		0x1811B6016: Loads the type definition for managed type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.Boolean> as a constant "Func`2" in rcx
+		0x1811B601D: [!] Reads field map from {'this' (function parameter, type UTJ.TypedStringToValueMap)} and stores in a new local {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.Object>)}
+
+		0x1811B6021: [!] Allocates an instance of type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.Boolean> and stores it as func in rax.
+
+		0x1811B6026: Loads the global generic method reference for method System.Void System.Func`2::.ctor(System.Object,System.IntPtr) on type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.Boolean> and stores the result in constant {'.ctor' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r9
+		0x1811B602D: Copies {'enumeratorInstance' (type UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0)} from rsi into rdx
+		0x1811B6030: Loads the method definition for managed method System.Boolean UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0::<>m__0(System.Collections.Generic.KeyValuePair`2<System.String,System.Object>) as a constant "<>m__0"
+		0x1811B6037: Copies {'func' (type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.Boolean>)} from rax into rcx
+		0x1811B603A: Copies {'func' (type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.Boolean>)} from rax into rbx
+		0x1811B603D: [!] Calls managed method System.Void System.Func`2::.ctor(System.Object,System.IntPtr) on instance {'func' (type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.Boolean>)} with arguments [{'enumeratorInstance' (type UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0)}, {'<>m__0' (constant value of type Mono.Cecil.MethodReference)}] ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1811B6042: Loads the global generic method reference for method System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Where<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>) on type System.Linq.Enumerable and stores the result in constant {'Where' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x1811B6049: Copies {'func' (type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.Boolean>)} from rbx into rdx
+		0x1811B604C: Copies {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.Object>)} from rdi into rcx
+		0x1811B604F: [!] Calls static managed method System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Where<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>) with arguments [{'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.Object>)}, {'func' (type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.Boolean>)}] and stores the result in {'iEnumerable' (type System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>>)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1811B6054: Copies {'iEnumerable' (type System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>>)} from rax into rdi
+		0x1811B6057: Loads the type definition for managed type UTJ.TypedStringToValueMap as a constant "TypedStringToValueMap" in rax
+		0x1811B605E: Loads the pointer to the static fields for UTJ.TypedStringToValueMap and stores it in constant11 in register rcx
+		0x1811B6065: Compares "{il2cpp field on {'constant11' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StaticFieldsPtr)}, offset 0x0}" and 0
+		0x1811B6069: Jumps to 0x1811B60AA if "{il2cpp field on {'constant11' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StaticFieldsPtr)}, offset 0x0}" != 0
+
+		0x1811B606B: Loads the type definition for managed type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String> as a constant "Func`2" in rcx
+		0x1811B6072: [!] Allocates an instance of type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String> and stores it as func2 in rax.
+
+		0x1811B6077: Loads the global generic method reference for method System.Void System.Func`2::.ctor(System.Object,System.IntPtr) on type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String> and stores the result in constant {'.ctor' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r9
+		0x1811B607E: Clears register rdx, yielding zero-local {'local8' (type System.Int32)}
+		0x1811B6080: Loads the method definition for managed method System.String UTJ.TypedStringToValueMap::<GetKey>m__4(System.Collections.Generic.KeyValuePair`2<System.String,System.Object>) as a constant "<GetKey>m__4"
+		0x1811B6087: Copies {'func2' (type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String>)} from rax into rcx
+		0x1811B608A: Copies {'func2' (type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String>)} from rax into rbx
+		0x1811B608D: [!] Calls managed method System.Void System.Func`2::.ctor(System.Object,System.IntPtr) on instance {'func2' (type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String>)} with arguments [{'local8' (type System.Int32)}, {'<GetKey>m__4' (constant value of type Mono.Cecil.MethodReference)}] ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1811B6092: Loads the type definition for managed type UTJ.TypedStringToValueMap as a constant "TypedStringToValueMap" in rcx
+		0x1811B6099: Loads the pointer to the static fields for UTJ.TypedStringToValueMap and stores it in constant18 in register rdx
+		0x1811B60A0: [!] Sets static field UTJ.TypedStringToValueMap.<>f__am$cache0 to {'func2' (type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String>)}
+		0x1811B60A3: Loads the type definition for managed type UTJ.TypedStringToValueMap as a constant "TypedStringToValueMap" in rax
+		0x1811B60AA: Loads the pointer to the static fields for UTJ.TypedStringToValueMap and stores it in constant20 in register rax
+		0x1811B60B1: Copies {'iEnumerable' (type System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>>)} from rdi into rcx
+		0x1811B60B4: Loads the global generic method reference for method System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>) on type System.Linq.Enumerable and stores the result in constant {'Select' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x1811B60BB: [!] Reads the static field System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String> UTJ.TypedStringToValueMap::<>f__am$cache0 into new local <>f__am$cache0
+		0x1811B60BE: [!] Calls static managed method System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>) with arguments [{'iEnumerable' (type System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>>)}, {'<>f__am$cache0' (type System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String>)}] and stores the result in {'iEnumerable2' (type System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>>)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1811B60C3: Loads the global generic method reference for method TSource System.Linq.Enumerable::FirstOrDefault<System.String>(System.Collections.Generic.IEnumerable`1<TSource>) on type System.Linq.Enumerable and stores the result in constant {'FirstOrDefault' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1811B60CA: Copies {'iEnumerable2' (type System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>>)} from rax into rcx
+		0x1811B60CD: [!] Calls static managed method TSource System.Linq.Enumerable::FirstOrDefault<System.String>(System.Collections.Generic.IEnumerable`1<TSource>) with arguments [{'iEnumerable2' (type System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>>)}] and stores the result in {'string' (type System.String)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1811B60D2: [!] Compares {'string' (type System.String)} and 0
+		0x1811B60D5: Jumps to 0x1811B6109 (which is an if statement's body) if {'string' (type System.String)} != 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1811B60D7: Loads the type definition for managed type System.String as a constant "String" in rax
+		0x1811B60DE: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1811B60E5: Jumps to 0x1811B60FF if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1811B60E7: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1811B60EE: Jumps to 0x1811B60FF if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1811B60F0: Copies {'String' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1811B60F3: Calls the il2cpp cctor for the type System.String
+		0x1811B60F8: Loads the type definition for managed type System.String as a constant "String" in rax
+		0x1811B60FF: Loads the pointer to the static fields for System.String and stores it in constant30 in register rax
+		0x1811B6106: [!] Reads the static field System.String System.String::Empty into new local empty
+		0x1811B6109: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant31
+		0x1811B610E: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rsi as new constant constant32
+		0x1811B6118: [!] Returns {'string' (type System.String)} from the function
+
+		0x1811B611B: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	System.String GetKey(System.Object value)
+		UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0 enumeratorInstance = new UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0()
+
+		enumeratorInstance..ctor()
+		enumeratorInstance.value = value
+		System.Collections.Generic.Dictionary`2<System.String,System.Object> dictionary = this.map
+		System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.Boolean> func = new System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.Boolean>()
+
+		func..ctor(enumeratorInstance, {'<>m__0' (constant value of type Mono.Cecil.MethodReference)}) //(Object object, IntPtr method)
+
+		System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>> iEnumerable = System.Linq.Enumerable.Where<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>>(dictionary, func) //(IEnumerable`1 source, Func`2 predicate)
+		System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String> func2 = new System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String>()
+		ulong local8 = 0
+
+		func2..ctor(local8, {'<GetKey>m__4' (constant value of type Mono.Cecil.MethodReference)}) //(Object object, IntPtr method)
+		UTJ.TypedStringToValueMap.<>f__am$cache0 = func2
+		System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String> <>f__am$cache0 = UTJ.TypedStringToValueMap.<>f__am$cache0
+
+		System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>> iEnumerable2 = System.Linq.Enumerable.Select<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>, System.String>(iEnumerable, <>f__am$cache0) //(IEnumerable`1 source, Func`2 selector)
+
+		System.String string = System.Linq.Enumerable.FirstOrDefault<System.String>(iEnumerable2) //(IEnumerable`1 source)
+
+		if (string == 0)
+		    System.String empty = System.String.Empty
+		endif
+        
+		return string
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: newobj System.Void UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0::.ctor()
+	IL_0005: stloc.0
+	IL_0006: ldloc.0
+	IL_0007: ldarg.1
+	IL_0008: stfld System.Object UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0::value
+	IL_000d: ldarg.0
+	IL_000e: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> UTJ.TypedStringToValueMap::map
+	IL_0013: stloc.1
+	IL_0014: ldloc.0
+	IL_0015: ldftn System.Boolean UTJ.TypedStringToValueMap/<GetKey>c__AnonStorey0::<>m__0(System.Collections.Generic.KeyValuePair`2<System.String,System.Object>)
+	IL_001b: newobj System.Void System.Func`2::.ctor(System.Object,System.IntPtr)
+	IL_0020: stloc.2
+	IL_0021: ldloc.1
+	IL_0022: ldloc.2
+	IL_0023: call System.Collections.Generic.IEnumerable`1 System.Linq.Enumerable::Where<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>>(System.Collections.Generic.IEnumerable`1,System.Func`2)
+	IL_0028: stloc.3
+	IL_0029: ldloc.s V_5
+	IL_002b: ldftn System.String UTJ.TypedStringToValueMap::<GetKey>m__4(System.Collections.Generic.KeyValuePair`2<System.String,System.Object>)
+	IL_0031: newobj System.Void System.Func`2::.ctor(System.Object,System.IntPtr)
+	IL_0036: stloc.s V_4
+	IL_0038: ldc.i4.0
+	IL_0039: stloc.s V_5
+	IL_003b: ldloc.s V_4
+	IL_003d: stsfld System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String> UTJ.TypedStringToValueMap::<>f__am$cache0
+	IL_0042: ldsfld System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String> UTJ.TypedStringToValueMap::<>f__am$cache0
+	IL_0047: stloc.s V_6
+	IL_0049: ldloc.3
+	IL_004a: ldloc.s V_6
+	IL_004c: call System.Collections.Generic.IEnumerable`1 System.Linq.Enumerable::Select<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>,System.String>(System.Collections.Generic.IEnumerable`1,System.Func`2)
+	IL_0051: call TSource System.Linq.Enumerable::FirstOrDefault<System.String>(System.Collections.Generic.IEnumerable`1)
+	IL_0056: stloc.s V_7
+	IL_0058: ldloc.s V_7
+	IL_005a: ldc.i4.0
+	IL_005b: bne.un.s IL_005d
+	IL_005d: ldloc.s V_7
+	IL_005f: ret
+	IL_0060: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0065: throw
+	
+
+Method: System.String UTJ.TypedStringToValueMap::<Create`1>m__0(System.Collections.Generic.KeyValuePair`2<System.String,T>):	Method Body (x86 ASM):
+		0x1808613B0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1808613B4 mov rax,[rdx+30h]		; DEBUG: {Register}/RAX {Memory}/None ||| RDX | 48 | None ||| N/A | N/A
+		0x1808613B8 mov rdx,[rax]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1808613BB call 00000001808A0850h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808613C0 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1808613C4 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808613C5 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.String UTJ.TypedStringToValueMap::<Create`1>m__0(System.Collections.Generic.KeyValuePair`2<System.String,T>):
+		End of function at 0x1808613C6
+		Absolute End is at 0x1808613C6
+		Identified Jump Destination addresses:
+
+		0x1808613C4: [!] Returns  from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	static System.String <Create`1>m__0(System.Collections.Generic.KeyValuePair`2<System.String,T> item)
+		return 
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x1808613C4) is corrupt (Return value is missing) and cannot be created as IL. Aborting here.
+
+
+Method: System.Object UTJ.TypedStringToValueMap::<Create`1>m__1(System.Collections.Generic.KeyValuePair`2<System.String,T>):	Method Body (x86 ASM):
+		0x1808613D0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1808613D4 mov rax,[rdx+30h]		; DEBUG: {Register}/RAX {Memory}/None ||| RDX | 48 | None ||| N/A | N/A
+		0x1808613D8 mov rdx,[rax]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1808613DB call 00000001808A08A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808613E0 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1808613E4 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808613E5 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.Object UTJ.TypedStringToValueMap::<Create`1>m__1(System.Collections.Generic.KeyValuePair`2<System.String,T>):
+		End of function at 0x1808613E6
+		Absolute End is at 0x1808613E6
+		Identified Jump Destination addresses:
+
+		0x1808613E4: [!] Returns  from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	static System.Object <Create`1>m__1(System.Collections.Generic.KeyValuePair`2<System.String,T> item)
+		return 
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x1808613E4) is corrupt (Return value is missing) and cannot be created as IL. Aborting here.
+
+
+Method: System.String UTJ.TypedStringToValueMap::<Create`1>m__2(System.Collections.Generic.KeyValuePair`2<System.String,T>):	Method Body (x86 ASM):
+		0x1808613B0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1808613B4 mov rax,[rdx+30h]		; DEBUG: {Register}/RAX {Memory}/None ||| RDX | 48 | None ||| N/A | N/A
+		0x1808613B8 mov rdx,[rax]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1808613BB call 00000001808A0850h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808613C0 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1808613C4 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808613C5 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.String UTJ.TypedStringToValueMap::<Create`1>m__2(System.Collections.Generic.KeyValuePair`2<System.String,T>):
+		End of function at 0x1808613C6
+		Absolute End is at 0x1808613C6
+		Identified Jump Destination addresses:
+
+		0x1808613C4: [!] Returns  from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	static System.String <Create`1>m__2(System.Collections.Generic.KeyValuePair`2<System.String,T> item)
+		return 
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x1808613C4) is corrupt (Return value is missing) and cannot be created as IL. Aborting here.
+
+
+Method: System.Object UTJ.TypedStringToValueMap::<Create`1>m__3(System.Collections.Generic.KeyValuePair`2<System.String,T>):	Method Body (x86 ASM):
+		0x1808613D0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1808613D4 mov rax,[rdx+30h]		; DEBUG: {Register}/RAX {Memory}/None ||| RDX | 48 | None ||| N/A | N/A
+		0x1808613D8 mov rdx,[rax]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1808613DB call 00000001808A08A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808613E0 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1808613E4 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808613E5 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.Object UTJ.TypedStringToValueMap::<Create`1>m__3(System.Collections.Generic.KeyValuePair`2<System.String,T>):
+		End of function at 0x1808613E6
+		Absolute End is at 0x1808613E6
+		Identified Jump Destination addresses:
+
+		0x1808613E4: [!] Returns  from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	static System.Object <Create`1>m__3(System.Collections.Generic.KeyValuePair`2<System.String,T> item)
+		return 
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x1808613E4) is corrupt (Return value is missing) and cannot be created as IL. Aborting here.
+
+
+Method: System.String UTJ.TypedStringToValueMap::<GetKey>m__4(System.Collections.Generic.KeyValuePair`2<System.String,System.Object>):	Method Body (x86 ASM):
+		0x1811B6130 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B6132 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1811B6136 cmp byte ptr [1818A2C50h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283472 | None ||| N/A | 0
+		0x1811B613D mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1811B6140 jne short 00000001811B6154h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6142 mov ecx,[1814CAFF0h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464253936 | None ||| N/A | N/A
+		0x1811B6148 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B614D mov byte ptr [1818A2C50h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283472 | None ||| N/A | 1
+		0x1811B6154 mov rdx,[181872F58h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468087640 | None ||| N/A | N/A
+		0x1811B615B mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1811B615E call 00000001808A0850h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B6163 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1811B6167 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B6168 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B6169 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.String UTJ.TypedStringToValueMap::<GetKey>m__4(System.Collections.Generic.KeyValuePair`2<System.String,System.Object>):
+		End of function at 0x1811B616A
+		Absolute End is at 0x1811B616A
+		Identified Jump Destination addresses:
+
+		0x1811B6130: Saves the content of rbx to the stack
+		0x1811B6136: Compares {Unknown Global at 0x1818A2C50, first ten bytes are [16 215 127 0 206 215 127 0 240 60], or as chars "× Î× ð<"} and 0
+		0x1811B613D: Copies {'item' (function parameter, type System.Collections.Generic.KeyValuePair`2<System.String,System.Object>)} from rcx into rbx
+		0x1811B6140: Jumps to 0x1811B6154 if {Unknown Global at 0x1818A2C50, first ten bytes are [16 215 127 0 206 215 127 0 240 60], or as chars "× Î× ð<"} != 0
+
+		0x1811B6142: Loads string " o" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1811B6148: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1811B6154: Loads the global generic method reference for method TKey System.Collections.Generic.KeyValuePair`2::get_Key() on type System.Collections.Generic.KeyValuePair`2<System.String,System.Object> and stores the result in constant {'get_Key' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1811B615B: Copies {'item' (function parameter, type System.Collections.Generic.KeyValuePair`2<System.String,System.Object>)} from rbx into rcx
+		0x1811B6168: [!] Returns  from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.TypedStringToValueMap
+	static System.String <GetKey>m__4(System.Collections.Generic.KeyValuePair`2<System.String,System.Object> item)
+		return 
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x1811B6168) is corrupt (Return value is missing) and cannot be created as IL. Aborting here.
+
+

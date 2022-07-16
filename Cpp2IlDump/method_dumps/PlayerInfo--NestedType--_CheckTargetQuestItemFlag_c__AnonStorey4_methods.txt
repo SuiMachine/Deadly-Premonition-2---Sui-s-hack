@@ -1,0 +1,88 @@
+Type: <CheckTargetQuestItemFlag>c__AnonStorey4
+
+Method: System.Void PlayerInfo/<CheckTargetQuestItemFlag>c__AnonStorey4::.ctor():	Method Body (x86 ASM):
+		0x1802068B0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802068B2 jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802068B7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PlayerInfo/<CheckTargetQuestItemFlag>c__AnonStorey4::.ctor():
+		End of function at 0x1802068B8
+		Absolute End is at 0x1802068B8
+		Identified Jump Destination addresses:
+
+		0x1802068B2: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type PlayerInfo/<CheckTargetQuestItemFlag>c__AnonStorey4)}
+
+		0x1802068B2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PlayerInfo/<CheckTargetQuestItemFlag>c__AnonStorey4
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean PlayerInfo/<CheckTargetQuestItemFlag>c__AnonStorey4::<>m__0(QuestStatusInfo):	Method Body (x86 ASM):
+		0x1802CEF00 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1802CEF04 test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1802CEF07 je short 00000001802CEF17h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802CEF09 mov eax,[rcx+10h]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x1802CEF0C cmp [rdx+10h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDX | 16 | None ||| N/A | N/A
+		0x1802CEF0F sete al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802CEF12 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1802CEF16 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802CEF17 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802CEF19 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802CEF1E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean PlayerInfo/<CheckTargetQuestItemFlag>c__AnonStorey4::<>m__0(QuestStatusInfo):
+		End of function at 0x1802CEF1F
+		Absolute End is at 0x1802CEF1F
+		Identified Jump Destination addresses:
+
+		0x1802CEF04: [!] Compares {'x' (function parameter, type QuestStatusInfo)} and 0
+		0x1802CEF07: Jumps to 0x1802CEF17 (which throws a NRE) if x equals 0. Implicitly present in managed code, so ignored here.
+		0x1802CEF09: [!] Reads field sideQuestID from {'this' (function parameter, type PlayerInfo/<CheckTargetQuestItemFlag>c__AnonStorey4)} and stores in a new local {'sideQuestID' (type System.Int32)}
+
+		0x1802CEF0C: [!] Compares {field m_questId, read from local {'x' (function parameter, type QuestStatusInfo)}} and {'sideQuestID' (type System.Int32)}
+		0x1802CEF0F: [!] Sets the boolean {'local3' (type System.Boolean)} in rax to true if x.m_questId is equal to sideQuestID, otherwise false.
+		0x1802CEF16: [!] Returns {'local3' (type System.Boolean)} from the function
+
+		0x1802CEF19: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PlayerInfo/<CheckTargetQuestItemFlag>c__AnonStorey4
+	System.Boolean <>m__0(QuestStatusInfo x)
+		System.Int32 sideQuestID = this.sideQuestID
+		System.Boolean local3 = x.m_questId == sideQuestID
+		return local3
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Int32 PlayerInfo/<CheckTargetQuestItemFlag>c__AnonStorey4::sideQuestID
+	IL_0006: stloc.0
+	IL_0007: ldarg.1
+	IL_0008: ldfld System.Int32 QuestStatusInfo::m_questId
+	IL_000d: ldloc.0
+	IL_000e: ceq
+	IL_0010: ret
+	IL_0011: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0016: throw
+	
+

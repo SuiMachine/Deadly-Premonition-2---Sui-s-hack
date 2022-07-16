@@ -1,0 +1,719 @@
+Type: ApartmentEventStart
+
+Method: System.Void ApartmentEventStart::.ctor():	Method Body (x86 ASM):
+		0x180206670 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180206672 jmp near ptr 000000018044B1D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206677 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ApartmentEventStart::.ctor():
+		End of function at 0x180206678
+		Absolute End is at 0x180206678
+		Identified Jump Destination addresses:
+
+		0x180206672: [!] Calls managed method System.Void GeneralInteractionObject::.ctor() on instance {'this' (function parameter, type ApartmentEventStart)}
+
+		0x180206672: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ApartmentEventStart
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void GeneralInteractionObject::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void ApartmentEventStart::Init(System.Action):	Method Body (x86 ASM):
+		0x18036A290 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18036A295 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A296 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18036A29A mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18036A29D mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18036A2A0 mov rcx,[rcx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 40 | None ||| N/A | N/A
+		0x18036A2A4 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18036A2A7 je short 000000018036A2C5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A2A9 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18036A2AC mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x18036A2AE call 000000018110B080h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A2B3 mov [rbx+1A0h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 416 | None ||| N/A | N/A
+		0x18036A2BA mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18036A2BF add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18036A2C3 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A2C4 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A2C5 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A2CA int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ApartmentEventStart::Init(System.Action):
+		End of function at 0x18036A2CB
+		Absolute End is at 0x18036A2CB
+		Identified Jump Destination addresses:
+
+		0x18036A295: Saves the content of rdi to the stack
+		0x18036A29A: Copies {'this' (function parameter, type ApartmentEventStart)} from rcx into rbx
+		0x18036A29D: Copies {'OnFinishEvent' (function parameter, type System.Action)} from rdx into rdi
+		0x18036A2A0: [!] Reads field m_collider from {'this' (function parameter, type ApartmentEventStart)} and stores in a new local {'m_collider' (type UnityEngine.Collider)}
+
+		0x18036A2A4: [!] Compares {'m_collider' (type UnityEngine.Collider)} and 0
+		0x18036A2A7: Jumps to 0x18036A2C5 (which throws a NRE) if m_collider equals 0. Implicitly present in managed code, so ignored here.
+		0x18036A2AC: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x18036A2AE: [!] Calls managed method System.Void UnityEngine.Collider::set_enabled(System.Boolean) on instance {'m_collider' (type UnityEngine.Collider)} with arguments [True]
+
+		0x18036A2B3: [!] Sets the field m_onFinishEvent (Type System.Action) on local {'this' (function parameter, type ApartmentEventStart)} to the value stored in {'OnFinishEvent' (function parameter, type System.Action)}
+		0x18036A2BA: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant3
+		0x18036A2C4: [!] Returns from the function
+
+		0x18036A2C5: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ApartmentEventStart
+	System.Void Init(System.Action OnFinishEvent)
+		UnityEngine.Collider m_collider = this.m_collider
+
+		m_collider.enabled = True
+		this.m_onFinishEvent = OnFinishEvent
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UnityEngine.Collider IntaractionObjectBase::m_collider
+	IL_0006: ldc.i4.1
+	IL_0007: call System.Void UnityEngine.Collider::set_enabled(System.Boolean)
+	IL_000c: ldarg.0
+	IL_000d: ldarg.1
+	IL_000e: stfld System.Action ApartmentEventStart::m_onFinishEvent
+	IL_0013: ret
+	IL_0014: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0019: throw
+	
+
+Method: System.Collections.IEnumerator ApartmentEventStart::WaitStopBGM():	Method Body (x86 ASM):
+		0x18036A580 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18036A585 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A586 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18036A58A cmp byte ptr [18183DC45h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869765 | None ||| N/A | 0
+		0x18036A591 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18036A594 jne short 000000018036A5A8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A596 mov ecx,[1814BCE7Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464196220 | None ||| N/A | N/A
+		0x18036A59C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A5A1 mov byte ptr [18183DC45h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869765 | None ||| N/A | 1
+		0x18036A5A8 mov rcx,[18189A4E0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468248800 | None ||| N/A | N/A
+		0x18036A5AF call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A5B4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18036A5B6 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18036A5B9 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18036A5BC call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A5C1 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18036A5C4 je short 000000018036A5D8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A5C6 mov [rbx+18h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 24 | None ||| N/A | N/A
+		0x18036A5CA mov rax,rbx		; DEBUG: {Register}/RAX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18036A5CD mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18036A5D2 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18036A5D6 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A5D7 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A5D8 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18036A5DA call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A5DF int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Collections.IEnumerator ApartmentEventStart::WaitStopBGM():
+		End of function at 0x18036A5E0
+		Absolute End is at 0x18036A5E0
+		Identified Jump Destination addresses:
+
+		0x18036A585: Saves the content of rdi to the stack
+		0x18036A58A: Compares {Unknown Global at 0x18183DC45, first ten bytes are [71 1 0 60 61 103 1 0 72 1], or as chars "G <=g H"} and 0
+		0x18036A591: Copies {'this' (function parameter, type ApartmentEventStart)} from rcx into rdi
+		0x18036A594: Jumps to 0x18036A5A8 if {Unknown Global at 0x18183DC45, first ten bytes are [71 1 0 60 61 103 1 0 72 1], or as chars "G <=g H"} != 0
+
+		0x18036A596: Loads string "+" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18036A59C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18036A5A8: Loads the type definition for managed type ApartmentEventStart/<WaitStopBGM>c__Iterator0 as a constant "<WaitStopBGM>c__Iterator0" in rcx
+		0x18036A5AF: [!] Allocates an instance of type ApartmentEventStart/<WaitStopBGM>c__Iterator0 and stores it as enumeratorInstance in rax.
+
+		0x18036A5B6: Copies {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)} from rax into rcx
+		0x18036A5B9: Copies {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)} from rax into rbx
+		0x18036A5BC: [!] Calls managed method System.Void System.Object::.ctor() on instance {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)}
+
+		0x18036A5C1: [!] Compares {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)} and 0
+		0x18036A5C4: Jumps to 0x18036A5D8 (which throws a NRE) if enumeratorInstance equals 0. Implicitly present in managed code, so ignored here.
+		0x18036A5C6: [!] Sets the field $this (Type ApartmentEventStart) on local {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)} to the value stored in {'this' (function parameter, type ApartmentEventStart)}
+		0x18036A5CA: Copies {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)} from rbx into rax
+		0x18036A5CD: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant6
+		0x18036A5D7: [!] Returns {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)} from the function
+
+		0x18036A5DA: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ApartmentEventStart
+	System.Collections.IEnumerator WaitStopBGM()
+		ApartmentEventStart/<WaitStopBGM>c__Iterator0 enumeratorInstance = new ApartmentEventStart/<WaitStopBGM>c__Iterator0()
+
+		enumeratorInstance..ctor()
+		enumeratorInstance.$this = this
+		return enumeratorInstance
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x18036A5D7) is corrupt (Return value has a type of ApartmentEventStart/<WaitStopBGM>c__Iterator0, expecting an object of type System.Collections.IEnumerator) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void ApartmentEventStart::OnSearch():	Method Body (x86 ASM):
+		0x18036A390 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18036A395 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A396 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18036A39A cmp byte ptr [18183DC45h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869765 | None ||| N/A | 0
+		0x18036A3A1 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18036A3A4 jne short 000000018036A3B8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A3A6 mov ecx,[1814BCE7Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464196220 | None ||| N/A | N/A
+		0x18036A3AC call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A3B1 mov byte ptr [18183DC45h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869765 | None ||| N/A | 1
+		0x18036A3B8 mov rcx,[18189A4E0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468248800 | None ||| N/A | N/A
+		0x18036A3BF call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A3C4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18036A3C6 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18036A3C9 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18036A3CC call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A3D1 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18036A3D4 je short 000000018036A3F2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A3D6 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18036A3D9 mov [rbx+18h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 24 | None ||| N/A | N/A
+		0x18036A3DD mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18036A3E0 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18036A3E3 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18036A3E8 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18036A3EC pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A3ED jmp near ptr 0000000180EA4310h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A3F2 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18036A3F4 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A3F9 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ApartmentEventStart::OnSearch():
+		End of function at 0x18036A3FA
+		Absolute End is at 0x18036A3FA
+		Identified Jump Destination addresses:
+
+		0x18036A395: Saves the content of rdi to the stack
+		0x18036A39A: Compares {Unknown Global at 0x18183DC45, first ten bytes are [71 1 0 60 61 103 1 0 72 1], or as chars "G <=g H"} and 0
+		0x18036A3A1: Copies {'this' (function parameter, type ApartmentEventStart)} from rcx into rdi
+		0x18036A3A4: Jumps to 0x18036A3B8 if {Unknown Global at 0x18183DC45, first ten bytes are [71 1 0 60 61 103 1 0 72 1], or as chars "G <=g H"} != 0
+
+		0x18036A3A6: Loads string "+" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18036A3AC: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18036A3B8: Loads the type definition for managed type ApartmentEventStart/<WaitStopBGM>c__Iterator0 as a constant "<WaitStopBGM>c__Iterator0" in rcx
+		0x18036A3BF: [!] Allocates an instance of type ApartmentEventStart/<WaitStopBGM>c__Iterator0 and stores it as enumeratorInstance in rax.
+
+		0x18036A3C6: Copies {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)} from rax into rcx
+		0x18036A3C9: Copies {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)} from rax into rbx
+		0x18036A3CC: [!] Calls managed method System.Void System.Object::.ctor() on instance {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)}
+
+		0x18036A3D1: [!] Compares {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)} and 0
+		0x18036A3D4: Jumps to 0x18036A3F2 (which throws a NRE) if enumeratorInstance equals 0. Implicitly present in managed code, so ignored here.
+		0x18036A3D9: [!] Sets the field $this (Type ApartmentEventStart) on local {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)} to the value stored in {'this' (function parameter, type ApartmentEventStart)}
+		0x18036A3DD: Copies {'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)} from rbx into rdx
+		0x18036A3E0: Copies {'this' (function parameter, type ApartmentEventStart)} from rdi into rcx
+		0x18036A3E3: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant6
+		0x18036A3ED: [!] Calls managed method UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine(System.Collections.IEnumerator) on instance {'this' (function parameter, type ApartmentEventStart)} with arguments [{'enumeratorInstance' (type ApartmentEventStart/<WaitStopBGM>c__Iterator0)}] and stores the result in {'coroutine' (type UnityEngine.Coroutine)}
+
+		0x18036A3ED: [!] Returns from the function
+
+		0x18036A3F4: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ApartmentEventStart
+	System.Void OnSearch()
+		ApartmentEventStart/<WaitStopBGM>c__Iterator0 enumeratorInstance = new ApartmentEventStart/<WaitStopBGM>c__Iterator0()
+
+		enumeratorInstance..ctor()
+		enumeratorInstance.$this = this
+
+		UnityEngine.Coroutine coroutine = base.StartCoroutine(enumeratorInstance) //(IEnumerator routine)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: newobj System.Void ApartmentEventStart/<WaitStopBGM>c__Iterator0::.ctor()
+	IL_0005: stloc.0
+	IL_0006: ldloc.0
+	IL_0007: ldarg.0
+	IL_0008: stfld ApartmentEventStart ApartmentEventStart/<WaitStopBGM>c__Iterator0::$this
+	IL_000d: ldarg.0
+	IL_000e: ldloc.0
+	IL_000f: call UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine(System.Collections.IEnumerator)
+	IL_0014: stloc.1
+	IL_0015: ret
+	IL_0016: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001b: throw
+	
+
+Method: System.Collections.IEnumerator ApartmentEventStart::OnFinishedCutScene():	Method Body (x86 ASM):
+		0x18036A2D0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18036A2D5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A2D6 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18036A2DA cmp byte ptr [18183DC46h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869766 | None ||| N/A | 0
+		0x18036A2E1 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18036A2E4 jne short 000000018036A2F8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A2E6 mov ecx,[1814BCE30h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464196144 | None ||| N/A | N/A
+		0x18036A2EC call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A2F1 mov byte ptr [18183DC46h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869766 | None ||| N/A | 1
+		0x18036A2F8 mov rcx,[18189A500h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468248832 | None ||| N/A | N/A
+		0x18036A2FF call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A304 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18036A306 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18036A309 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18036A30C call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A311 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18036A314 je short 000000018036A328h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A316 mov [rbx+20h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 32 | None ||| N/A | N/A
+		0x18036A31A mov rax,rbx		; DEBUG: {Register}/RAX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18036A31D mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18036A322 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18036A326 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A327 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A328 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18036A32A call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A32F int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Collections.IEnumerator ApartmentEventStart::OnFinishedCutScene():
+		End of function at 0x18036A330
+		Absolute End is at 0x18036A330
+		Identified Jump Destination addresses:
+
+		0x18036A2D5: Saves the content of rdi to the stack
+		0x18036A2DA: Compares {Unknown Global at 0x18183DC46, first ten bytes are [1 0 60 61 103 1 0 72 1 0], or as chars " <=g H "} and 0
+		0x18036A2E1: Copies {'this' (function parameter, type ApartmentEventStart)} from rcx into rdi
+		0x18036A2E4: Jumps to 0x18036A2F8 if {Unknown Global at 0x18183DC46, first ten bytes are [1 0 60 61 103 1 0 72 1 0], or as chars " <=g H "} != 0
+
+		0x18036A2E6: Loads string "'" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18036A2EC: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18036A2F8: Loads the type definition for managed type ApartmentEventStart/<OnFinishedCutScene>c__Iterator1 as a constant "<OnFinishedCutScene>c__Iterator1" in rcx
+		0x18036A2FF: [!] Allocates an instance of type ApartmentEventStart/<OnFinishedCutScene>c__Iterator1 and stores it as enumeratorInstance in rax.
+
+		0x18036A306: Copies {'enumeratorInstance' (type ApartmentEventStart/<OnFinishedCutScene>c__Iterator1)} from rax into rcx
+		0x18036A309: Copies {'enumeratorInstance' (type ApartmentEventStart/<OnFinishedCutScene>c__Iterator1)} from rax into rbx
+		0x18036A30C: [!] Calls managed method System.Void System.Object::.ctor() on instance {'enumeratorInstance' (type ApartmentEventStart/<OnFinishedCutScene>c__Iterator1)}
+
+		0x18036A311: [!] Compares {'enumeratorInstance' (type ApartmentEventStart/<OnFinishedCutScene>c__Iterator1)} and 0
+		0x18036A314: Jumps to 0x18036A328 (which throws a NRE) if enumeratorInstance equals 0. Implicitly present in managed code, so ignored here.
+		0x18036A316: [!] Sets the field $this (Type ApartmentEventStart) on local {'enumeratorInstance' (type ApartmentEventStart/<OnFinishedCutScene>c__Iterator1)} to the value stored in {'this' (function parameter, type ApartmentEventStart)}
+		0x18036A31A: Copies {'enumeratorInstance' (type ApartmentEventStart/<OnFinishedCutScene>c__Iterator1)} from rbx into rax
+		0x18036A31D: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant6
+		0x18036A327: [!] Returns {'enumeratorInstance' (type ApartmentEventStart/<OnFinishedCutScene>c__Iterator1)} from the function
+
+		0x18036A32A: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ApartmentEventStart
+	System.Collections.IEnumerator OnFinishedCutScene()
+		ApartmentEventStart/<OnFinishedCutScene>c__Iterator1 enumeratorInstance = new ApartmentEventStart/<OnFinishedCutScene>c__Iterator1()
+
+		enumeratorInstance..ctor()
+		enumeratorInstance.$this = this
+		return enumeratorInstance
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x18036A327) is corrupt (Return value has a type of ApartmentEventStart/<OnFinishedCutScene>c__Iterator1, expecting an object of type System.Collections.IEnumerator) and cannot be created as IL. Aborting here.
+
+
+Method: System.Collections.IEnumerator ApartmentEventStart::OnInterrogationStart():	Method Body (x86 ASM):
+		0x18036A330 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18036A335 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A336 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18036A33A cmp byte ptr [18183DC47h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869767 | None ||| N/A | 0
+		0x18036A341 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18036A344 jne short 000000018036A358h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A346 mov ecx,[1814BCE44h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464196164 | None ||| N/A | N/A
+		0x18036A34C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A351 mov byte ptr [18183DC47h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869767 | None ||| N/A | 1
+		0x18036A358 mov rcx,[18189A520h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468248864 | None ||| N/A | N/A
+		0x18036A35F call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A364 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18036A366 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18036A369 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18036A36C call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A371 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18036A374 je short 000000018036A388h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A376 mov [rbx+10h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 16 | None ||| N/A | N/A
+		0x18036A37A mov rax,rbx		; DEBUG: {Register}/RAX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18036A37D mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18036A382 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18036A386 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A387 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A388 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18036A38A call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A38F int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Collections.IEnumerator ApartmentEventStart::OnInterrogationStart():
+		End of function at 0x18036A390
+		Absolute End is at 0x18036A390
+		Identified Jump Destination addresses:
+
+		0x18036A335: Saves the content of rdi to the stack
+		0x18036A33A: Compares {Unknown Global at 0x18183DC47, first ten bytes are [0 60 61 103 1 0 72 1 0 105], or as chars " <=g H i"} and 0
+		0x18036A341: Copies {'this' (function parameter, type ApartmentEventStart)} from rcx into rdi
+		0x18036A344: Jumps to 0x18036A358 if {Unknown Global at 0x18183DC47, first ten bytes are [0 60 61 103 1 0 72 1 0 105], or as chars " <=g H i"} != 0
+
+		0x18036A346: Loads string "(" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18036A34C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18036A358: Loads the type definition for managed type ApartmentEventStart/<OnInterrogationStart>c__Iterator2 as a constant "<OnInterrogationStart>c__Iterator2" in rcx
+		0x18036A35F: [!] Allocates an instance of type ApartmentEventStart/<OnInterrogationStart>c__Iterator2 and stores it as enumeratorInstance in rax.
+
+		0x18036A366: Copies {'enumeratorInstance' (type ApartmentEventStart/<OnInterrogationStart>c__Iterator2)} from rax into rcx
+		0x18036A369: Copies {'enumeratorInstance' (type ApartmentEventStart/<OnInterrogationStart>c__Iterator2)} from rax into rbx
+		0x18036A36C: [!] Calls managed method System.Void System.Object::.ctor() on instance {'enumeratorInstance' (type ApartmentEventStart/<OnInterrogationStart>c__Iterator2)}
+
+		0x18036A371: [!] Compares {'enumeratorInstance' (type ApartmentEventStart/<OnInterrogationStart>c__Iterator2)} and 0
+		0x18036A374: Jumps to 0x18036A388 (which throws a NRE) if enumeratorInstance equals 0. Implicitly present in managed code, so ignored here.
+		0x18036A376: [!] Sets the field $this (Type ApartmentEventStart) on local {'enumeratorInstance' (type ApartmentEventStart/<OnInterrogationStart>c__Iterator2)} to the value stored in {'this' (function parameter, type ApartmentEventStart)}
+		0x18036A37A: Copies {'enumeratorInstance' (type ApartmentEventStart/<OnInterrogationStart>c__Iterator2)} from rbx into rax
+		0x18036A37D: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant6
+		0x18036A387: [!] Returns {'enumeratorInstance' (type ApartmentEventStart/<OnInterrogationStart>c__Iterator2)} from the function
+
+		0x18036A38A: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ApartmentEventStart
+	System.Collections.IEnumerator OnInterrogationStart()
+		ApartmentEventStart/<OnInterrogationStart>c__Iterator2 enumeratorInstance = new ApartmentEventStart/<OnInterrogationStart>c__Iterator2()
+
+		enumeratorInstance..ctor()
+		enumeratorInstance.$this = this
+		return enumeratorInstance
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x18036A387) is corrupt (Return value has a type of ApartmentEventStart/<OnInterrogationStart>c__Iterator2, expecting an object of type System.Collections.IEnumerator) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void ApartmentEventStart::SetInfo():	Method Body (x86 ASM):
+		0x18036A4A0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18036A4A5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A4A6 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18036A4AA cmp byte ptr [18183DC48h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869768 | None ||| N/A | 0
+		0x18036A4B1 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18036A4B4 jne short 000000018036A4C8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A4B6 mov ecx,[1814BCE74h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464196212 | None ||| N/A | N/A
+		0x18036A4BC call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A4C1 mov byte ptr [18183DC48h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869768 | None ||| N/A | 1
+		0x18036A4C8 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18036A4CF mov rdi,[rbx+38h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x18036A4D3 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18036A4DA je short 000000018036A4EAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A4DC cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18036A4E3 jne short 000000018036A4EAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A4E5 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A4EA xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18036A4EC mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18036A4EF call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A4F4 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18036A4F6 je short 000000018036A562h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A4F8 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18036A4FA mov ecx,2E636h		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 190006
+		0x18036A4FF call 00000001802D1410h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A504 mov r9,[181883F70h]		; DEBUG: {Register}/R9 {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x18036A50B mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18036A50E test byte ptr [r9+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| R9 | 295 | None ||| N/A | 2
+		0x18036A516 je short 000000018036A531h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A518 cmp dword ptr [r9+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| R9 | 216 | None ||| N/A | 0
+		0x18036A520 jne short 000000018036A531h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A522 mov rcx,r9		; DEBUG: {Register}/RCX {Register}/R9 ||| None | 0 | None ||| N/A | N/A
+		0x18036A525 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A52A mov r9,[181883F70h]		; DEBUG: {Register}/R9 {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x18036A531 mov rcx,[rbx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x18036A535 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18036A538 je short 000000018036A56Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A53A mov r10,[rcx]		; DEBUG: {Register}/R10 {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x18036A53D mov r8,rdi		; DEBUG: {Register}/R8 {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18036A540 mov r9,[r9+0B8h]		; DEBUG: {Register}/R9 {Memory}/None ||| R9 | 184 | None ||| N/A | N/A
+		0x18036A547 mov edx,1		; DEBUG: {Register}/EDX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x18036A54C mov rax,[r10+1B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| R10 | 432 | None ||| N/A | N/A
+		0x18036A553 mov r9,[r9]		; DEBUG: {Register}/R9 {Memory}/None ||| R9 | 0 | None ||| N/A | N/A
+		0x18036A556 mov [rsp+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 32 | None ||| N/A | N/A
+		0x18036A55B call qword ptr [r10+1A8h]		; DEBUG: {Memory}/None {Register}/None ||| R10 | 424 | None ||| N/A | N/A
+		0x18036A562 mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x18036A567 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18036A56B pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A56C ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A56D call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A572 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ApartmentEventStart::SetInfo():
+		End of function at 0x18036A573
+		Absolute End is at 0x18036A573
+		Identified Jump Destination addresses:
+
+		0x18036A4A5: Saves the content of rdi to the stack
+		0x18036A4AA: Compares {Unknown Global at 0x18183DC48, first ten bytes are [60 61 103 1 0 72 1 0 105 72], or as chars "<=g H iH"} and 0
+		0x18036A4B1: Copies {'this' (function parameter, type ApartmentEventStart)} from rcx into rbx
+		0x18036A4B4: Jumps to 0x18036A4C8 if {Unknown Global at 0x18183DC48, first ten bytes are [60 61 103 1 0 72 1 0 105 72], or as chars "<=g H iH"} != 0
+
+		0x18036A4B6: Loads string "*" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18036A4BC: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18036A4C8: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18036A4CF: [!] Reads field m_destinationItem from {'this' (function parameter, type ApartmentEventStart)} and stores in a new local {'m_destinationItem' (type UIDestinationItem)}
+
+		0x18036A4D3: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18036A4DA: Jumps to 0x18036A4EA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18036A4DC: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18036A4E3: Jumps to 0x18036A4EA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18036A4E5: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18036A4EC: Copies {'m_destinationItem' (type UIDestinationItem)} from rdi into rcx
+		0x18036A4EF: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'m_destinationItem' (type UIDestinationItem)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18036A4F4: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18036A4F6: Jumps to 0x18036A562 (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18036A4FA: [!] Writes the constant 0x2E636 into operand 0x2E636 (type UInt64) in register rcx
+		0x18036A4FF: [!] Calls static managed method System.String DisplayManager::GetMessage(EDisplay) with arguments [0x2E636] and stores the result in {'message' (type System.String)}
+
+		0x18036A504: Loads the type definition for managed type System.String as a constant "String" in r9
+		0x18036A50B: Copies {'message' (type System.String)} from rax into rdi
+		0x18036A50E: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18036A516: Jumps to 0x18036A531 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18036A518: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18036A520: Jumps to 0x18036A531 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18036A522: Copies {'String' (constant value of type Mono.Cecil.TypeReference)} from r9 into rcx
+		0x18036A525: Calls the il2cpp cctor for the type System.String
+		0x18036A52A: Loads the type definition for managed type System.String as a constant "String" in r9
+		0x18036A531: [!] Reads field m_destinationItem from {'this' (function parameter, type ApartmentEventStart)} and stores in a new local {'m_destinationItem2' (type UIDestinationItem)}
+
+		0x18036A535: [!] Compares {'m_destinationItem2' (type UIDestinationItem)} and 0
+		0x18036A538: Jumps to 0x18036A56D (which throws a NRE) if m_destinationItem2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18036A53A: Loads the class pointer from m_destinationItem2 into a constant constant18 in register r10
+		0x18036A53D: Copies {'message' (type System.String)} from rdi into r8
+		0x18036A540: Loads the pointer to the static fields for System.String and stores it in constant19 in register r9
+		0x18036A547: [!] Writes the constant 0x1 into operand 1 (type UInt64) in register rdx
+		0x18036A54C: Loads the pointer to the implementation of virtual function System.Void UIDestinationItem::SetInfo(UIDestinationItemPlaceInfo/EInfoType,System.String,System.String) specific to UIDestinationItem from the class pointer in r10, slot 8 (from memory offset 432) and stores in constant constant21
+		0x18036A553: [!] Reads the static field System.String System.String::Empty into new local empty
+		0x18036A556: Moves UIDestinationItem.SetInfo (type Mono.Cecil.MethodDefinition) from register rax to the stack at offset 32 (0x20) as a new local local8
+		0x18036A55B: [!] Calls managed method System.Void UIDestinationItem::SetInfo(UIDestinationItemPlaceInfo/EInfoType,System.String,System.String) on instance {'m_destinationItem2' (type UIDestinationItem)} with arguments [1, {'message' (type System.String)}, {'empty' (type System.String)}]
+
+		0x18036A562: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant22
+		0x18036A56C: [!] Returns from the function
+
+		0x18036A56D: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ApartmentEventStart
+	System.Void SetInfo()
+		UIDestinationItem m_destinationItem = this.m_destinationItem
+
+		System.Boolean boolean = UnityEngine.Object.op_Implicit(m_destinationItem) //(Object exists)
+
+		if (boolean != False)
+
+		    System.String message = DisplayManager.GetMessage(0x2E636) //(EDisplay msgId)
+		    UIDestinationItem m_destinationItem2 = this.m_destinationItem
+		    System.String empty = System.String.Empty
+
+		    m_destinationItem2.SetInfo(1, message, empty) //(EInfoType type, String place, String status)
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UIDestinationItem IntaractionObjectBase::m_destinationItem
+	IL_0006: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+	IL_000b: ldc.i4.0
+	IL_000c: beq.s IL_0031
+	IL_000e: ldc.i4 190006
+	IL_0013: conv.u4
+	IL_0014: call System.String DisplayManager::GetMessage(EDisplay)
+	IL_0019: stloc.0
+	IL_001a: ldarg.0
+	IL_001b: ldfld UIDestinationItem IntaractionObjectBase::m_destinationItem
+	IL_0020: stloc.1
+	IL_0021: ldsfld System.String System.String::Empty
+	IL_0026: stloc.2
+	IL_0027: ldloc.1
+	IL_0028: ldc.i4.1
+	IL_0029: conv.u4
+	IL_002a: ldloc.0
+	IL_002b: ldloc.2
+	IL_002c: callvirt System.Void UIDestinationItem::SetInfo(UIDestinationItemPlaceInfo/EInfoType,System.String,System.String)
+	IL_0031: ret
+	IL_0032: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0037: throw
+	
+
+Method: System.Void ApartmentEventStart::SetButtonGuide():	Method Body (x86 ASM):
+		0x18036A400 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18036A405 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A406 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18036A40A cmp byte ptr [18183DC49h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869769 | None ||| N/A | 0
+		0x18036A411 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18036A414 jne short 000000018036A428h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A416 mov ecx,[1814BCE5Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464196188 | None ||| N/A | N/A
+		0x18036A41C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A421 mov byte ptr [18183DC49h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869769 | None ||| N/A | 1
+		0x18036A428 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18036A42F mov rdi,[rbx+38h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x18036A433 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18036A43A je short 000000018036A44Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A43C cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18036A443 jne short 000000018036A44Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A445 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A44A xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18036A44C mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18036A44F call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A454 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18036A456 je short 000000018036A488h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A458 mov rcx,[rbx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x18036A45C test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18036A45F je short 000000018036A493h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A461 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18036A464 lea edx,[r8+1]		; DEBUG: {Register}/EDX {Memory}/None ||| R8 | 1 | None ||| N/A | N/A
+		0x18036A468 call 0000000180728320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A46D mov rcx,[rbx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x18036A471 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18036A474 je short 000000018036A493h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A476 mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x18036A479 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x18036A47B mov r8,[rax+190h]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 400 | None ||| N/A | N/A
+		0x18036A482 call qword ptr [rax+188h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 392 | None ||| N/A | N/A
+		0x18036A488 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18036A48D add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18036A491 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A492 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18036A493 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18036A495 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18036A49A int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ApartmentEventStart::SetButtonGuide():
+		End of function at 0x18036A49B
+		Absolute End is at 0x18036A49B
+		Identified Jump Destination addresses:
+
+		0x18036A405: Saves the content of rdi to the stack
+		0x18036A40A: Compares {Unknown Global at 0x18183DC49, first ten bytes are [61 103 1 0 72 1 0 105 72 1], or as chars "=g H iH"} and 0
+		0x18036A411: Copies {'this' (function parameter, type ApartmentEventStart)} from rcx into rbx
+		0x18036A414: Jumps to 0x18036A428 if {Unknown Global at 0x18183DC49, first ten bytes are [61 103 1 0 72 1 0 105 72 1], or as chars "=g H iH"} != 0
+
+		0x18036A416: Loads string ")" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18036A41C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18036A428: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18036A42F: [!] Reads field m_destinationItem from {'this' (function parameter, type ApartmentEventStart)} and stores in a new local {'m_destinationItem' (type UIDestinationItem)}
+
+		0x18036A433: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18036A43A: Jumps to 0x18036A44A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18036A43C: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18036A443: Jumps to 0x18036A44A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18036A445: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18036A44C: Copies {'m_destinationItem' (type UIDestinationItem)} from rdi into rcx
+		0x18036A44F: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'m_destinationItem' (type UIDestinationItem)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18036A454: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18036A456: Jumps to 0x18036A488 (which throws a NRE) if boolean equals False. Implicitly present in managed code, so ignored here. ;  - Skipping if statement, is array type check
+		0x18036A458: [!] Reads field m_destinationItem from {'this' (function parameter, type ApartmentEventStart)} and stores in a new local {'m_destinationItem2' (type UIDestinationItem)}
+
+		0x18036A45C: [!] Compares {'m_destinationItem2' (type UIDestinationItem)} and 0
+		0x18036A45F: Jumps to 0x18036A493 (which throws a NRE) if m_destinationItem2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18036A464: [!] Loads the constant value 1 into the register rdx as constant constant11 using an LEA instruction
+		0x18036A468: [!] Calls managed method System.Void UIDestinationItem::SetGuide(UIDestinationItem/EGuideType) on instance {'m_destinationItem2' (type UIDestinationItem)} with arguments [1]
+
+		0x18036A46D: [!] Reads field m_destinationItem from {'this' (function parameter, type ApartmentEventStart)} and stores in a new local {'m_destinationItem3' (type UIDestinationItem)}
+
+		0x18036A471: [!] Compares {'m_destinationItem3' (type UIDestinationItem)} and 0
+		0x18036A474: Jumps to 0x18036A493 (which throws a NRE) if m_destinationItem3 equals 0. Implicitly present in managed code, so ignored here.
+		0x18036A476: Loads the class pointer from m_destinationItem3 into a constant constant13 in register rax
+		0x18036A479: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x18036A47B: Loads the pointer to the implementation of virtual function System.Void UIDestinationItem::SetInfoActive(System.Boolean) specific to UIDestinationItem from the class pointer in rax, slot 6 (from memory offset 400) and stores in constant constant15
+		0x18036A482: [!] Calls managed method System.Void UIDestinationItem::SetInfoActive(System.Boolean) on instance {'m_destinationItem3' (type UIDestinationItem)} with arguments [True]
+
+		0x18036A488: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant16
+		0x18036A492: [!] Returns from the function
+
+		0x18036A495: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ApartmentEventStart
+	System.Void SetButtonGuide()
+		UIDestinationItem m_destinationItem = this.m_destinationItem
+
+		System.Boolean boolean = UnityEngine.Object.op_Implicit(m_destinationItem) //(Object exists)
+		UIDestinationItem m_destinationItem2 = this.m_destinationItem
+		System.Int32 1 = 1
+
+		m_destinationItem2.SetGuide(1) //(EGuideType guideType)
+		UIDestinationItem m_destinationItem3 = this.m_destinationItem
+
+		m_destinationItem3.SetInfoActive(True) //(Boolean active)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UIDestinationItem IntaractionObjectBase::m_destinationItem
+	IL_0006: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+	IL_000b: stloc.0
+	IL_000c: ldarg.0
+	IL_000d: ldfld UIDestinationItem IntaractionObjectBase::m_destinationItem
+	IL_0012: ldc.i4.1
+	IL_0013: call System.Void UIDestinationItem::SetGuide(UIDestinationItem/EGuideType)
+	IL_0018: ldarg.0
+	IL_0019: ldfld UIDestinationItem IntaractionObjectBase::m_destinationItem
+	IL_001e: ldc.i4.1
+	IL_001f: callvirt System.Void UIDestinationItem::SetInfoActive(System.Boolean)
+	IL_0024: ret
+	IL_0025: newobj System.Void System.NullReferenceException::.ctor()
+	IL_002a: throw
+	
+

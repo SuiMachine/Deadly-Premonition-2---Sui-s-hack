@@ -1,0 +1,426 @@
+Type: MoveDelegate
+
+Method: System.Void UICamera/MoveDelegate::.ctor(System.Object,System.IntPtr):	Method Body (x86 ASM):
+		0x1802ED440 mov rax,[r8]		; DEBUG: {Register}/RAX {Memory}/None ||| R8 | 0 | None ||| N/A | N/A
+		0x1802ED443 mov [rcx+10h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 16 | None ||| N/A | N/A
+		0x1802ED447 mov [rcx+28h],r8		; DEBUG: {Memory}/None {Register}/R8 ||| RCX | 40 | None ||| N/A | N/A
+		0x1802ED44B mov [rcx+20h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RCX | 32 | None ||| N/A | N/A
+		0x1802ED44F ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UICamera/MoveDelegate::.ctor(System.Object,System.IntPtr):
+		End of function at 0x1802ED450
+		Absolute End is at 0x1802ED450
+		Identified Jump Destination addresses:
+
+		0x1802ED440: Loads the class pointer from method into a constant constant1 in register rax
+		0x1802ED443: [!] Sets the field method_ptr (Type System.IntPtr) on local {'this' (function parameter, type UICamera/MoveDelegate)} to the value stored in {'constant1' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}
+		0x1802ED447: [!] Sets the field method (Type System.IntPtr) on local {'this' (function parameter, type UICamera/MoveDelegate)} to the value stored in {'method' (function parameter, type System.IntPtr)}
+		0x1802ED44B: [!] Sets the field m_target (Type System.Object) on local {'this' (function parameter, type UICamera/MoveDelegate)} to the value stored in {'object' (function parameter, type System.Object)}
+		0x1802ED44F: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UICamera/MoveDelegate
+	System.Void .ctor(System.Object object, System.IntPtr method)
+		this.method_ptr = constant1
+		this.method = method
+		this.m_target = object
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.RegToFieldAction at (0x1802ED443) is corrupt (ConstantDefinition: Don't know how to get IL to load a Cpp2IL.Core.Analysis.Il2CppClassIdentifier) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void UICamera/MoveDelegate::Invoke(UnityEngine.Vector2):	Method Body (x86 ASM):
+		0x1807174B0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1807174B5 mov [rsp+10h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 16 | None ||| N/A | N/A
+		0x1807174BA mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x1807174BF mov [rsp+20h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 32 | None ||| N/A | N/A
+		0x1807174C4 push r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1807174C6 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1807174CA mov rsi,rcx		; DEBUG: {Register}/RSI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1807174CD movaps [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x1807174D2 mov rcx,[rcx+58h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 88 | None ||| N/A | N/A
+		0x1807174D6 movq xmm6,rdx		; DEBUG: {Register}/XMM6 {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1807174DB test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1807174DE je short 00000001807174EAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807174E0 movq rdx,xmm6		; DEBUG: {Register}/RDX {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1807174E5 call 00000001807174B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807174EA mov rbx,[rsi+28h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSI | 40 | None ||| N/A | N/A
+		0x1807174EE mov r14d,0FFFFh		; DEBUG: {Register}/R14D {Immediate32}/None ||| None | 0 | None ||| N/A | 65535
+		0x1807174F4 mov rbp,[rsi+10h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSI | 16 | None ||| N/A | N/A
+		0x1807174F8 mov rdi,[rsi+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSI | 32 | None ||| N/A | N/A
+		0x1807174FC cmp [rbx+48h],r14w		; DEBUG: {Memory}/None {Register}/R14W ||| RBX | 72 | None ||| N/A | N/A
+		0x180717501 jne short 000000018071750Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717503 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180717506 call 00000001801102D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18071750B mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18071750E call 0000000180141DF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717513 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180717515 jne short 0000000180717530h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717517 cmp byte ptr [rbx+4Ah],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 74 | None ||| N/A | 1
+		0x18071751B jne near ptr 0000000180717603h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717521 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180717524 movq rcx,xmm6		; DEBUG: {Register}/RCX {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x180717529 call rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18071752B jmp near ptr 0000000180717610h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717530 cmp [rbx+48h],r14w		; DEBUG: {Memory}/None {Register}/R14W ||| RBX | 72 | None ||| N/A | N/A
+		0x180717535 je near ptr 0000000180717603h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18071753B test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18071753E je short 0000000180717553h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717540 mov rax,[rdi]		; DEBUG: {Register}/RAX {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x180717543 test dword ptr [rax+108h],100h		; DEBUG: {Memory}/None {Immediate32}/None ||| RAX | 264 | None ||| N/A | 256
+		0x18071754D jne near ptr 0000000180717603h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717553 cmp qword ptr [rsi+18h],0		; DEBUG: {Memory}/None {Immediate8to64}/None ||| RSI | 24 | None ||| N/A | 0
+		0x180717558 je near ptr 0000000180717603h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18071755E test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180717561 je short 0000000180717521h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717563 mov rax,[rdi]		; DEBUG: {Register}/RAX {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x180717566 test dword ptr [rax+108h],100h		; DEBUG: {Memory}/None {Immediate32}/None ||| RAX | 264 | None ||| N/A | 256
+		0x180717570 jne near ptr 0000000180717610h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717576 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180717579 call 0000000180141DC0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18071757E mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180717581 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180717583 je short 00000001807175AFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717585 call 000000018005DA10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18071758A mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18071758D call 00000001800F6DD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717592 movq r8,xmm6		; DEBUG: {Register}/R8 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x180717597 mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18071759A mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18071759D test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18071759F je short 00000001807175A8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807175A1 call 0000000180059E50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807175A6 jmp short 0000000180717610h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807175A8 call 000000018005A010h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807175AD jmp short 0000000180717610h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807175AF call 000000018005DA10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807175B4 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1807175B7 call 00000001800F6DD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807175BC test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1807175BE je short 00000001807175DEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807175C0 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1807175C3 call 000000018005DA10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807175C8 movzx ecx,word ptr [rbx+48h]		; DEBUG: {Register}/ECX {Memory}/None ||| RBX | 72 | None ||| N/A | N/A
+		0x1807175CC movq r9,xmm6		; DEBUG: {Register}/R9 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1807175D1 mov r8,rdi		; DEBUG: {Register}/R8 {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1807175D4 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1807175D7 call 000000018005A0B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807175DC jmp short 0000000180717610h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807175DE movzx r9d,word ptr [rbx+48h]		; DEBUG: {Register}/R9D {Memory}/None ||| RBX | 72 | None ||| N/A | N/A
+		0x1807175E3 movq rdx,xmm6		; DEBUG: {Register}/RDX {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1807175E8 mov rax,[rdi]		; DEBUG: {Register}/RAX {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1807175EB add r9,r9		; DEBUG: {Register}/R9 {Register}/R9 ||| None | 0 | None ||| N/A | N/A
+		0x1807175EE mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1807175F1 mov r8,[rax+r9*8+130h]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 304 | R9 ||| N/A | N/A
+		0x1807175F9 call qword ptr [rax+r9*8+128h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 296 | R9 ||| N/A | N/A
+		0x180717601 jmp short 0000000180717610h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717603 mov r8,rbx		; DEBUG: {Register}/R8 {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180717606 movq rdx,xmm6		; DEBUG: {Register}/RDX {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x18071760B mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18071760E call rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180717610 mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x180717615 mov rbp,[rsp+48h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x18071761A mov rsi,[rsp+50h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x18071761F mov rdi,[rsp+58h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 88 | None ||| N/A | N/A
+		0x180717624 movaps xmm6,[rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x180717629 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18071762D pop r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18071762F ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UICamera/MoveDelegate::Invoke(UnityEngine.Vector2):
+		End of function at 0x180717630
+		Absolute End is at 0x180717630
+		Identified Jump Destination addresses:
+			0x180717610
+		0x1807174C4: Saves the content of r14 to the stack
+		0x1807174CA: Copies {'this' (function parameter, type UICamera/MoveDelegate)} from rcx into rsi
+		0x1807174D2: [!] Reads field prev from {'this' (function parameter, type UICamera/MoveDelegate)} and stores in a new local {'prev' (type System.MulticastDelegate)}
+
+		0x1807174DB: [!] Compares {'prev' (type System.MulticastDelegate)} and 0
+		0x1807174DE: Jumps to 0x1807174EA (which is an if statement's body) if prev equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1807174E5: [!] Calls managed method System.Void UICamera/MoveDelegate::Invoke(UnityEngine.Vector2) on instance {'prev' (type System.MulticastDelegate)} with arguments [{'delta' (function parameter, type UnityEngine.Vector2)}] ;  - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting MoveDelegate, actually System.MulticastDelegate
+
+		0x1807174EA: [!] Reads field method from {'this' (function parameter, type UICamera/MoveDelegate)} and stores in a new local {'method' (type System.IntPtr)}
+
+		0x1807174EE: [!] Writes the constant 0xFFFF into operand {'local4' (type System.UInt32)} (type UInt64) in register r14
+		0x1807174F8: [!] Reads field m_target from {'this' (function parameter, type UICamera/MoveDelegate)} and stores in a new local {'m_target' (type System.Object)}
+
+		0x1807174FC: [!] Compares  and {'local4' (type System.UInt32)}
+		0x180717501: Jumps to 0x18071750B if  != {'local4' (type System.UInt32)} ;  - This is probably a goto, jumping to 0x18071750B which is after end of current block @ 0x1807174EA (started at 0x1807174E0)
+
+		0x180717503: Copies {'method' (type System.IntPtr)} from rbx into rcx
+		0x180717506: [!] Constructs and throws an exception of kind System.ExecutionEngineException
+
+		0x18071750B: Copies {'method' (type System.IntPtr)} from rbx into rcx
+		0x180717513: [!] Compares {'local7' (type System.ExecutionEngineException)} and 0
+		0x180717515: Jumps to 0x180717530 if {'local7' (type System.ExecutionEngineException)} != 0 ;  - This is probably a goto, jumping to 0x180717530 which is after end of current block @ 0x1807174EA (started at 0x1807174E0)
+
+		0x180717517: [!] Compares  and 1
+		0x18071751B: Jumps to 0x180717603 if  != 1 ;  - This is probably a goto, jumping to 0x180717603 which is after end of current block @ 0x1807174EA (started at 0x1807174E0)
+
+		0x180717521: Copies {'method' (type System.IntPtr)} from rbx into rdx
+		0x18071752B: Jumps to 0x180717610 (which is an function-local jump destination)
+
+		0x180717530: [!] Compares  and {'local4' (type System.UInt32)}
+		0x180717535: Jumps to 0x180717603 if  equals local4 ;  - This is probably a goto, jumping to 0x180717603 which is after end of current block @ 0x1807174EA (started at 0x1807174E0)
+
+		0x18071753B: [!] Compares {'m_target' (type System.Object)} and 0
+		0x18071753E: Jumps to 0x180717553 if m_target equals 0 ;  - This is probably a goto, jumping to 0x180717553 which is after end of current block @ 0x1807174EA (started at 0x1807174E0)
+
+		0x180717540: Loads the class pointer from m_target into a constant constant5 in register rax
+		0x180717543: Compares "{il2cpp field on {'constant5' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}, offset 0x108}" and 256
+		0x18071754D: Jumps to 0x180717603 if "{il2cpp field on {'constant5' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}, offset 0x108}" != 256 ;  - This is probably a goto, jumping to 0x180717603 which is after end of current block @ 0x1807174EA (started at 0x1807174E0)
+
+		0x180717553: [!] Compares  and 0
+		0x180717558: Jumps to 0x180717603 if  equals 0 ;  - This is probably a goto, jumping to 0x180717603 which is after end of current block @ 0x1807174EA (started at 0x1807174E0)
+
+		0x18071755E: [!] Compares {'m_target' (type System.Object)} and 0
+		0x180717561: Jumps to 0x180717521 if m_target equals 0 ;  - This is probably a goto, jumping to 0x180717521 which is after end of current block @ 0x1807174EA (started at 0x1807174E0)
+
+		0x180717563: Loads the class pointer from m_target into a constant constant10 in register rax
+		0x180717566: Compares "{il2cpp field on {'constant10' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}, offset 0x108}" and 256
+		0x180717570: Jumps to 0x180717610 if "{il2cpp field on {'constant10' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}, offset 0x108}" != 256 ;  - This is probably a goto, jumping to 0x180717610 which is after end of current block @ 0x1807174EA (started at 0x1807174E0)
+
+		0x180717576: Copies {'method' (type System.IntPtr)} from rbx into rcx
+		0x18071757E: Copies {'method' (type System.IntPtr)} from rbx into rcx
+		0x180717581: [!] Compares {'constant10' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} and 0
+		0x180717583: Jumps to 0x1807175AF if constant10 equals 0 ;  - This is probably a goto, jumping to 0x1807175AF which is after end of current block @ 0x1807174EA (started at 0x1807174E0)
+
+		0x180717585: [!] Calls managed method  on instance {'method' (type System.IntPtr)} ;  - Failed to resolve any matching method (there are 3 at this address)
+
+		0x18071758A: Copies {'constant10' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} from rax into rcx
+		0x180717597: Copies {'m_target' (type System.Object)} from rdi into rdx
+		0x18071759A: Copies {'method' (type System.IntPtr)} from rbx into rcx
+		0x18071759D: [!] Compares {'constant10' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} and 0
+		0x18071759F: Jumps to 0x1807175A8 if constant10 equals 0 ;  - This is probably a goto, jumping to 0x1807175A8 which is after end of current block @ 0x1807174EA (started at 0x1807174E0)
+
+		0x1807175A6: Jumps to 0x180717610 (which is an function-local jump destination)
+
+		0x1807175AD: Jumps to 0x180717610 (which is an function-local jump destination)
+
+		0x1807175AF: [!] Calls managed method  on instance {'method' (type System.IntPtr)} ;  - Failed to resolve any matching method (there are 3 at this address)
+
+		0x1807175B4: Copies {'constant10' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} from rax into rcx
+		0x1807175BC: [!] Compares {'constant10' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} and 0
+		0x1807175BE: Jumps to 0x1807175DE if constant10 equals 0 ;  - This is probably a goto, jumping to 0x1807175DE which is after end of current block @ 0x1807174EA (started at 0x1807174E0)
+
+		0x1807175C0: Copies {'method' (type System.IntPtr)} from rbx into rcx
+		0x1807175C3: [!] Calls managed method  on instance {'method' (type System.IntPtr)} ;  - Failed to resolve any matching method (there are 3 at this address)
+
+		0x1807175C8: [!] Reads field  from {'method' (type System.IntPtr)} and stores in a new local 
+
+		0x1807175D1: Copies {'m_target' (type System.Object)} from rdi into r8
+		0x1807175D4: Copies {'constant10' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} from rax into rdx
+		0x1807175DC: Jumps to 0x180717610 (which is an function-local jump destination)
+
+		0x1807175DE: [!] Reads field  from {'method' (type System.IntPtr)} and stores in a new local 
+
+		0x1807175E8: Loads the class pointer from m_target into a constant constant16 in register rax
+		0x1807175EB: [!] Adds  and  and stores the result in 
+		0x1807175EE: Copies {'m_target' (type System.Object)} from rdi into rcx
+		0x1807175F1: Loads the pointer to the implementation of virtual function  specific to System.Object from the class pointer in rax, slot -1 (from memory offset 304) and stores in constant 
+		0x180717601: Jumps to 0x180717610 (which is an function-local jump destination)
+
+		0x180717603: Copies {'method' (type System.IntPtr)} from rbx into r8
+		0x18071760B: Copies {'m_target' (type System.Object)} from rdi into rcx
+
+		Jump Destination (0x180717610):
+		0x180717610: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant17
+		0x180717615: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rbp as new constant constant18
+		0x18071761A: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register rsi as new constant constant19
+		0x18071761F: Reads unknown value in stack, offset 88 (0x58) and stores the pointer in register rdi as new constant constant20
+		0x180717624: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm6 as new constant constant21
+		0x18071762F: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UICamera/MoveDelegate
+	System.Void Invoke(UnityEngine.Vector2 delta)
+		System.MulticastDelegate prev = this.prev
+
+		if (prev != 0)
+
+		    prev.Invoke(delta) //(Vector2 delta)
+		endif
+        
+		System.IntPtr method = this.method
+		System.Int64 local4 = 0xFFFF
+		System.Object m_target = this.m_target
+
+		if ( != local4)
+            goto INSN_18071750B
+        endif
+		throw new System.ExecutionEngineException()
+
+		INSN_18071750B:
+
+		if (local7 != 0)
+            goto INSN_180717530
+        endif
+
+		if ( != 1)
+            goto INSN_180717603
+        endif
+
+		INSN_180717530:
+
+		if ( == local4)
+            goto INSN_180717603
+        endif
+
+		if (m_target == 0)
+            goto INSN_180717553
+        endif
+
+		INSN_180717553:
+
+		if ( == 0)
+            goto INSN_180717603
+        endif
+
+		if (m_target == 0)
+            goto INSN_180717521
+        endif
+
+		if (constant10 == 0)
+            goto INSN_1807175AF
+        endif
+
+		[instruction error - managed method being called is null]
+
+		if (constant10 == 0)
+            goto INSN_1807175A8
+        endif
+
+		INSN_1807175A8:
+
+		INSN_1807175AF:
+
+		[instruction error - managed method being called is null]
+
+		if (constant10 == 0)
+            goto INSN_1807175DE
+        endif
+
+		[instruction error - managed method being called is null]
+		  = method.
+
+		INSN_1807175DE:
+		  = method.
+		 += 
+
+		INSN_180717603:
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1807174E5) is corrupt (Mismatched instance parameter. Expecting an instance of UICamera/MoveDelegate, actually {'prev' (type System.MulticastDelegate)}) and cannot be created as IL. Aborting here.
+
+
+Method: System.IAsyncResult UICamera/MoveDelegate::BeginInvoke(UnityEngine.Vector2,System.AsyncCallback,System.Object):	Method Body (x86 ASM):
+		0x180717430 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180717435 mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x18071743A push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18071743B sub rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x18071743F cmp byte ptr [18183F69Dh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467876509 | None ||| N/A | 0
+		0x180717446 mov rbx,r9		; DEBUG: {Register}/RBX {Register}/R9 ||| None | 0 | None ||| N/A | N/A
+		0x180717449 mov rdi,r8		; DEBUG: {Register}/RDI {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x18071744C mov [rsp+20h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RSP | 32 | None ||| N/A | N/A
+		0x180717451 mov rsi,rcx		; DEBUG: {Register}/RSI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180717454 jne short 0000000180717468h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717456 mov ecx,[1814C5608h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464230920 | None ||| N/A | N/A
+		0x18071745C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717461 mov byte ptr [18183F69Dh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467876509 | None ||| N/A | 1
+		0x180717468 mov rcx,[18188D960h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196704 | None ||| N/A | N/A
+		0x18071746F lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x180717474 mov qword ptr [rsp+30h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RSP | 48 | None ||| N/A | 0
+		0x18071747D call 000000018013A7F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717482 mov r9,rbx		; DEBUG: {Register}/R9 {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180717485 mov [rsp+28h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 40 | None ||| N/A | N/A
+		0x18071748A mov r8,rdi		; DEBUG: {Register}/R8 {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18071748D lea rdx,[rsp+28h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 40 | None ||| N/A | N/A
+		0x180717492 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180717495 call 000000018010D170h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18071749A mov rbx,[rsp+50h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x18071749F mov rsi,[rsp+60h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 96 | None ||| N/A | N/A
+		0x1807174A4 add rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1807174A8 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1807174A9 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1807174AA int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.IAsyncResult UICamera/MoveDelegate::BeginInvoke(UnityEngine.Vector2,System.AsyncCallback,System.Object):
+		End of function at 0x1807174AB
+		Absolute End is at 0x1807174AB
+		Identified Jump Destination addresses:
+
+		0x18071743A: Saves the content of rdi to the stack
+		0x18071743F: Compares {Unknown Global at 0x18183F69D, first ten bytes are [43 2 0 52 61 103 1 224 43 2], or as chars "+ 4=gà+"} and 0
+		0x180717446: Copies {'object' (function parameter, type System.Object)} from r9 into rbx
+		0x180717449: Copies {'callback' (function parameter, type System.AsyncCallback)} from r8 into rdi
+		0x18071744C: Moves delta (type UnityEngine.Vector2) from register rdx to the stack at offset 32 (0x20)
+		0x180717451: Copies {'this' (function parameter, type UICamera/MoveDelegate)} from rcx into rsi
+		0x180717454: Jumps to 0x180717468 if {Unknown Global at 0x18183F69D, first ten bytes are [43 2 0 52 61 103 1 224 43 2], or as chars "+ 4=gà+"} != 0
+
+		0x180717456: Loads string "ÿI" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18071745C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x180717468: Loads the type definition for managed type UnityEngine.Vector2 as a constant "Vector2" in rcx
+		0x18071746F: Loads a pointer to stack offset 0x20 into register rdx as new constant constant5
+		0x180717474: Moves 0 (immediate ulong value) to the stack at offset 48 as a new local local4
+		0x18071747D: Boxes a cpp primitive value {'delta' (function parameter, type UnityEngine.Vector2)} to managed type UnityEngine.Vector2 and stores the result in new local  in register rax.
+		0x180717482: Copies {'object' (function parameter, type System.Object)} from rbx into r9
+		0x18071748A: Copies {'callback' (function parameter, type System.AsyncCallback)} from rdi into r8
+		0x18071748D: Loads a pointer to stack offset 0x28 into register rdx as new constant constant6
+		0x180717492: Copies {'this' (function parameter, type UICamera/MoveDelegate)} from rsi into rcx
+		0x18071749A: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register rbx as new constant constant7
+		0x18071749F: Reads unknown value in stack, offset 96 (0x60) and stores the pointer in register rsi as new constant constant8
+		0x1807174A9: [!] Returns  from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UICamera/MoveDelegate
+	System.IAsyncResult BeginInvoke(UnityEngine.Vector2 delta, System.AsyncCallback callback, System.Object object)
+		return 
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x1807174A9) is corrupt (Return value is missing) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void UICamera/MoveDelegate::EndInvoke(System.IAsyncResult):	Method Body (x86 ASM):
+		0x1802ED1E0 mov rcx,rdx		; DEBUG: {Register}/RCX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1802ED1E3 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802ED1E5 jmp near ptr 000000018010DD90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802ED1EA int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UICamera/MoveDelegate::EndInvoke(System.IAsyncResult):
+		End of function at 0x1802ED1EB
+		Absolute End is at 0x1802ED1EB
+		Identified Jump Destination addresses:
+
+		0x1802ED1E0: Copies {'result' (function parameter, type System.IAsyncResult)} from rdx into rcx
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UICamera/MoveDelegate
+	System.Void EndInvoke(System.IAsyncResult result)
+
+
+Generated IL:
+	
+

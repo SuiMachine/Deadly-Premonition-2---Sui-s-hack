@@ -1,0 +1,392 @@
+Type: RFX1_RotationFreeze
+
+Method: System.Void RFX1_RotationFreeze::.ctor():	Method Body (x86 ASM):
+		0x180393380 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180393382 mov word ptr [rcx+18h],101h		; DEBUG: {Memory}/None {Immediate16}/None ||| RCX | 24 | None ||| N/A | 257
+		0x180393388 mov byte ptr [rcx+1Ah],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 26 | None ||| N/A | 1
+		0x18039338C jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393391 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void RFX1_RotationFreeze::.ctor():
+		End of function at 0x180393392
+		Absolute End is at 0x180393392
+		Identified Jump Destination addresses:
+
+		0x180393382: [!] Sets the field LockX (Type System.Boolean) on local {'this' (function parameter, type RFX1_RotationFreeze)} to the value stored in True
+		0x180393388: [!] Sets the field LockZ (Type System.Boolean) on local {'this' (function parameter, type RFX1_RotationFreeze)} to the value stored in True
+		0x18039338C: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type RFX1_RotationFreeze)}
+
+		0x18039338C: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: RFX1_RotationFreeze
+	System.Void .ctor()
+		this.LockX = True
+		this.LockZ = True
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.1
+	IL_0002: stfld System.Boolean RFX1_RotationFreeze::LockX
+	IL_0007: ldarg.0
+	IL_0008: ldc.i4.1
+	IL_0009: stfld System.Boolean RFX1_RotationFreeze::LockZ
+	IL_000e: ldarg.0
+	IL_000f: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0014: ret
+	
+
+Method: System.Void RFX1_RotationFreeze::Start():	Method Body (x86 ASM):
+		0x180393130 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180393132 sub rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x180393136 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180393138 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18039313B call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393140 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180393143 je short 0000000180393184h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393145 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180393148 lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18039314D mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180393150 call 0000000180CE2370h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393155 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180393158 lea rdx,[rsp+30h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18039315D lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x180393162 movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x180393165 movups [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x18039316A call 0000000180EAFFD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039316F movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x180393173 movsd qword ptr [rbx+1Ch],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 28 | None ||| N/A | N/A
+		0x180393178 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x18039317B mov [rbx+24h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBX | 36 | None ||| N/A | N/A
+		0x18039317E add rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x180393182 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180393183 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180393184 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180393186 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039318B int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void RFX1_RotationFreeze::Start():
+		End of function at 0x18039318C
+		Absolute End is at 0x18039318C
+		Identified Jump Destination addresses:
+
+		0x180393130: Saves the content of rbx to the stack
+		0x180393138: Copies {'this' (function parameter, type RFX1_RotationFreeze)} from rcx into rbx
+		0x18039313B: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type RFX1_RotationFreeze)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x180393140: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x180393143: Jumps to 0x180393184 (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x180393148: Loads a pointer to stack offset 0x20 into register rcx as new constant constant2
+		0x18039314D: Copies {'transform' (type UnityEngine.Transform)} from rax into rdx
+		0x180393150: [!] Calls managed method UnityEngine.Quaternion UnityEngine.Transform::get_localRotation() on instance  and stores the result in {'localRotation' (type UnityEngine.Quaternion)}
+
+		0x180393158: Loads a pointer to stack offset 0x30 into register rdx as new constant constant3
+		0x18039315D: Loads a pointer to stack offset 0x20 into register rcx as new constant constant4
+		0x180393162: Loads the class pointer from localRotation into a constant constant5 in register xmm0
+		0x180393165: Moves constant5 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 48 (0x30) as a new local local6
+		0x180393178: [!] Reads field z from {'localRotation' (type UnityEngine.Quaternion)} and stores in a new local {'single' (type System.Single)}
+
+		0x18039317B: [!] Sets the field startRotation.z (Type System.Single) on local {'this' (function parameter, type RFX1_RotationFreeze)} to the value stored in {'single' (type System.Single)}
+		0x180393183: [!] Returns from the function
+
+		0x180393186: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: RFX1_RotationFreeze
+	System.Void Start()
+
+		UnityEngine.Transform transform = base.transform
+
+		UnityEngine.Quaternion localRotation = .localRotation
+		System.Single single = localRotation.z
+		this.startRotation.z = single
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x180393150) is corrupt (Method is non-static but don't have an instance) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void RFX1_RotationFreeze::Update():	Method Body (x86 ASM):
+		0x180393190 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180393195 push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180393196 lea rbp,[rsp-57h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 18446744073709551529 | None ||| N/A | N/A
+		0x18039319B sub rsp,0B0h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 176
+		0x1803931A2 cmp byte ptr [18183DD44h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870020 | None ||| N/A | 0
+		0x1803931A9 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803931AC jne short 00000001803931C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803931AE mov ecx,[1815198E0h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464575712 | None ||| N/A | N/A
+		0x1803931B4 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803931B9 mov byte ptr [18183DD44h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467870020 | None ||| N/A | 1
+		0x1803931C0 cmp byte ptr [rbx+18h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 24 | None ||| N/A | 0
+		0x1803931C4 xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1803931C7 movaps [rsp+0A0h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 160 | None ||| N/A | N/A
+		0x1803931CF xorps xmm1,xmm1		; DEBUG: {Register}/XMM1 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1803931D2 movaps [rsp+90h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 144 | None ||| N/A | N/A
+		0x1803931DA movaps [rsp+80h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RSP | 128 | None ||| N/A | N/A
+		0x1803931E3 movups [rbp-9],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1803931E7 movups [rbp+7],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RBP | 7 | None ||| N/A | N/A
+		0x1803931EB movups [rbp+17h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 23 | None ||| N/A | N/A
+		0x1803931EF jne short 000000018039323Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803931F1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803931F3 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803931F6 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803931FB test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803931FE je near ptr 0000000180393373h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393204 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180393207 lea rcx,[rbp-19h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x18039320B mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18039320E call 0000000180CE2960h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393213 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180393216 lea rdx,[rbp-9]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x18039321A lea rcx,[rbp-29h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x18039321E movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x180393221 movups [rbp-9],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x180393225 call 0000000180EAFFD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039322A movsd xmm7,qword ptr [rax]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x18039322E mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x180393231 mov [rbp-21h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551583 | None ||| N/A | N/A
+		0x180393234 movsd qword ptr [rbp-29h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x180393239 jmp short 0000000180393240h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039323B movss xmm7,dword ptr [rbx+1Ch]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RBX | 28 | None ||| N/A | N/A
+		0x180393240 cmp byte ptr [rbx+19h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 25 | None ||| N/A | 0
+		0x180393244 jne short 000000018039328Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393246 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180393248 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18039324B call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393250 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180393253 je near ptr 0000000180393373h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393259 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18039325C lea rcx,[rbp-19h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x180393260 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180393263 call 0000000180CE2960h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393268 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18039326B lea rdx,[rbp+7]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x18039326F lea rcx,[rbp-29h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x180393273 movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x180393276 movups [rbp+7],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 7 | None ||| N/A | N/A
+		0x18039327A call 0000000180EAFFD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039327F movsd xmm6,qword ptr [rax]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x180393283 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x180393286 mov [rbp-21h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551583 | None ||| N/A | N/A
+		0x180393289 shufps xmm6,xmm6,55h		; DEBUG: {Register}/XMM6 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x18039328D jmp short 0000000180393294h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039328F movss xmm6,dword ptr [rbx+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x180393294 cmp byte ptr [rbx+1Ah],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 26 | None ||| N/A | 0
+		0x180393298 jne short 00000001803932E1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039329A xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18039329C mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18039329F call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803932A4 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803932A7 je near ptr 0000000180393373h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803932AD xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803932B0 lea rcx,[rbp-19h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x1803932B4 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803932B7 call 0000000180CE2960h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803932BC xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803932BF lea rdx,[rbp+17h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 23 | None ||| N/A | N/A
+		0x1803932C3 lea rcx,[rbp-19h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x1803932C7 movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1803932CA movups [rbp+17h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 23 | None ||| N/A | N/A
+		0x1803932CE call 0000000180EAFFD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803932D3 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1803932D6 mov [rbp-21h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551583 | None ||| N/A | N/A
+		0x1803932D9 movss xmm8,dword ptr [rbp-21h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RBP | 18446744073709551583 | None ||| N/A | N/A
+		0x1803932DF jmp short 00000001803932E7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803932E1 movss xmm8,dword ptr [rbx+24h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RBX | 36 | None ||| N/A | N/A
+		0x1803932E7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803932E9 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803932EC call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803932F1 mov rcx,[18188DFC0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468198336 | None ||| N/A | N/A
+		0x1803932F8 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803932FB test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180393302 je short 0000000180393312h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393304 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18039330B jne short 0000000180393312h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039330D call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393312 movaps xmm3,xmm8		; DEBUG: {Register}/XMM3 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x180393316 mov qword ptr [rsp+20h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RSP | 32 | None ||| N/A | 0
+		0x18039331F movaps xmm2,xmm6		; DEBUG: {Register}/XMM2 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x180393322 lea rcx,[rbp-19h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x180393326 movaps xmm1,xmm7		; DEBUG: {Register}/XMM1 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x180393329 call 0000000180EAE780h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039332E test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180393331 je short 0000000180393373h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393333 movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x180393336 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180393339 lea rdx,[rbp-19h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x18039333D mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180393340 movaps [rbp-19h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x180393344 call 0000000180CE33E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180393349 movaps xmm8,[rsp+80h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x180393352 movaps xmm7,[rsp+90h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 144 | None ||| N/A | N/A
+		0x18039335A movaps xmm6,[rsp+0A0h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 160 | None ||| N/A | N/A
+		0x180393362 mov rbx,[rsp+0C0h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 192 | None ||| N/A | N/A
+		0x18039336A add rsp,0B0h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 176
+		0x180393371 pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180393372 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180393373 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180393375 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039337A int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void RFX1_RotationFreeze::Update():
+		End of function at 0x18039337B
+		Absolute End is at 0x18039337B
+		Identified Jump Destination addresses:
+			0x180393240
+			0x180393294
+			0x1803932E7
+		0x180393195: Saves the content of rbp to the stack
+		0x180393196: Loads a pointer to stack offset 0xFFFFFFA9 into register rbp as new constant constant1
+		0x1803931A2: Compares {Unknown Global at 0x18183DD44, first ten bytes are [224 65 103 1 240 79 1 0 87 80], or as chars "àAgðO WP"} and 0
+		0x1803931A9: Copies {'this' (function parameter, type RFX1_RotationFreeze)} from rcx into rbx
+		0x1803931AC: Jumps to 0x1803931C0 if {Unknown Global at 0x18183DD44, first ten bytes are [224 65 103 1 240 79 1 0 87 80], or as chars "àAgðO WP"} != 0
+
+		0x1803931AE: Loads string "wV" into register rcx as constant {'constant4' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1803931B4: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1803931C0: [!] Compares {field LockX, read from local {'this' (function parameter, type RFX1_RotationFreeze)}} and False
+		0x1803931EF: Jumps to 0x18039323B if {field LockX, read from local {'this' (function parameter, type RFX1_RotationFreeze)}} != False ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x1803931F3: Copies {'this' (function parameter, type RFX1_RotationFreeze)} from rbx into rcx
+		0x1803931F6: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type RFX1_RotationFreeze)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x1803931FB: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x1803931FE: Jumps to 0x180393373 (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x18039320B: Copies {'transform' (type UnityEngine.Transform)} from rax into rdx
+		0x18039320E: [!] Calls managed method UnityEngine.Quaternion UnityEngine.Transform::get_rotation() on instance {'this' (function parameter, type RFX1_RotationFreeze)} and stores the result in {'rotation' (type UnityEngine.Quaternion)} ;  - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting Transform, actually RFX1_RotationFreeze
+
+		0x18039321E: Loads the class pointer from rotation into a constant constant7 in register xmm0
+		0x180393239: Jumps to 0x180393240 (which is an function-local jump destination)
+
+
+		End Of If-Else Block (at 0x180393240) where the else started at 0x18039323B
+		0x180393240: [!] Compares {field LockY, read from local {'this' (function parameter, type RFX1_RotationFreeze)}} and False
+		0x180393244: Jumps to 0x18039328F if {field LockY, read from local {'this' (function parameter, type RFX1_RotationFreeze)}} != False ;  - This is probably a goto, jumping to 0x18039328F which is after end of current block @ 0x180393240 (started at 0x18039323B)
+
+		0x180393248: Copies {'this' (function parameter, type RFX1_RotationFreeze)} from rbx into rcx
+		0x18039324B: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type RFX1_RotationFreeze)} and stores the result in {'transform2' (type UnityEngine.Transform)}
+
+		0x180393250: [!] Compares {'transform2' (type UnityEngine.Transform)} and 0
+		0x180393253: Jumps to 0x180393373 (which throws a NRE) if transform2 equals 0. Implicitly present in managed code, so ignored here.
+		0x180393260: Copies {'transform2' (type UnityEngine.Transform)} from rax into rdx
+		0x180393263: [!] Calls managed method UnityEngine.Quaternion UnityEngine.Transform::get_rotation() on instance {'this' (function parameter, type RFX1_RotationFreeze)} and stores the result in {'rotation2' (type UnityEngine.Quaternion)} ;  - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting Transform, actually RFX1_RotationFreeze
+
+		0x180393273: Loads the class pointer from rotation2 into a constant constant10 in register xmm0
+		0x18039328D: Jumps to 0x180393294 (which is an function-local jump destination)
+
+
+		Jump Destination (0x180393294):
+		0x180393294: [!] Compares {field LockZ, read from local {'this' (function parameter, type RFX1_RotationFreeze)}} and False
+		0x180393298: Jumps to 0x1803932E1 if {field LockZ, read from local {'this' (function parameter, type RFX1_RotationFreeze)}} != False ;  - This is probably a goto, jumping to 0x1803932E1 which is after end of current block @ 0x180393240 (started at 0x18039323B)
+
+		0x18039329C: Copies {'this' (function parameter, type RFX1_RotationFreeze)} from rbx into rcx
+		0x18039329F: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type RFX1_RotationFreeze)} and stores the result in {'transform3' (type UnityEngine.Transform)}
+
+		0x1803932A4: [!] Compares {'transform3' (type UnityEngine.Transform)} and 0
+		0x1803932A7: Jumps to 0x180393373 (which throws a NRE) if transform3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1803932B4: Copies {'transform3' (type UnityEngine.Transform)} from rax into rdx
+		0x1803932B7: [!] Calls managed method UnityEngine.Quaternion UnityEngine.Transform::get_rotation() on instance {'this' (function parameter, type RFX1_RotationFreeze)} and stores the result in {'rotation3' (type UnityEngine.Quaternion)} ;  - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting Transform, actually RFX1_RotationFreeze
+
+		0x1803932C7: Loads the class pointer from rotation3 into a constant constant13 in register xmm0
+		0x1803932DF: Jumps to 0x1803932E7 (which is an function-local jump destination)
+
+
+		Jump Destination (0x1803932E7):
+		0x1803932E7: Clears register rdx, yielding zero-local {'local24' (type System.Int32)}
+		0x1803932E9: Copies {'this' (function parameter, type RFX1_RotationFreeze)} from rbx into rcx
+		0x1803932EC: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type RFX1_RotationFreeze)} and stores the result in {'transform4' (type UnityEngine.Transform)}
+
+		0x1803932F1: Loads the type definition for managed type UnityEngine.Quaternion as a constant "Quaternion" in rcx
+		0x1803932F8: Copies {'transform4' (type UnityEngine.Transform)} from rax into rbx
+		0x1803932FB: Compares "{il2cpp field on {'Quaternion' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180393302: Jumps to 0x180393312 if "{il2cpp field on {'Quaternion' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x180393312 which is after end of current block @ 0x180393240 (started at 0x18039323B)
+
+		0x180393304: Compares "{il2cpp field on {'Quaternion' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18039330B: Jumps to 0x180393312 if "{il2cpp field on {'Quaternion' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x180393312 which is after end of current block @ 0x180393240 (started at 0x18039323B)
+
+		0x18039330D: Calls the il2cpp cctor for the type UnityEngine.Quaternion
+		0x180393312: Copies {'local23' (type System.Single)} from xmm8 into xmm3
+		0x180393316: Moves 0 (immediate ulong value) to the stack at offset 32 as a new local local26
+		0x18039331F: Copies {'local16' (type System.Single)} from xmm6 into xmm2
+		0x180393326: Copies {'local9' (type UnityEngine.Vector3)} from xmm7 into xmm1
+		0x180393329: [!] Calls static managed method UnityEngine.Quaternion UnityEngine.Quaternion::Euler(System.Single,System.Single,System.Single) and stores the result in {'quaternion' (type UnityEngine.Quaternion)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x18039332E: [!] Compares {'transform4' (type UnityEngine.Transform)} and 0
+		0x180393331: Jumps to 0x180393373 (which throws a NRE) if transform4 equals 0. Implicitly present in managed code, so ignored here.
+		0x180393333: Loads the class pointer from quaternion into a constant constant20 in register xmm0
+		0x18039333D: Copies {'transform4' (type UnityEngine.Transform)} from rbx into rcx
+		0x180393344: [!] Calls managed method System.Void UnityEngine.Transform::set_rotation(UnityEngine.Quaternion) on instance {'transform4' (type UnityEngine.Transform)} with arguments [{'local24' (type System.Int32)}]
+
+		0x180393349: Reads unknown value in stack, offset 128 (0x80) and stores the pointer in register xmm8 as new constant constant21
+		0x180393352: Reads unknown value in stack, offset 144 (0x90) and stores the pointer in register xmm7 as new constant constant22
+		0x18039335A: Reads unknown value in stack, offset 160 (0xA0) and stores the pointer in register xmm6 as new constant constant23
+		0x180393362: Reads unknown value in stack, offset 192 (0xC0) and stores the pointer in register rbx as new constant constant24
+		0x180393372: [!] Returns from the function
+
+		0x180393375: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: RFX1_RotationFreeze
+	System.Void Update()
+
+		if (this.LockX == False)
+
+		    UnityEngine.Transform transform = base.transform
+
+		    UnityEngine.Quaternion rotation = this.rotation
+		else
+		endif
+        
+
+		if (this.LockY != False)
+            goto INSN_18039328F
+        endif
+
+		UnityEngine.Transform transform2 = base.transform
+
+		UnityEngine.Quaternion rotation2 = this.rotation
+
+		INSN_18039328F:
+
+		if (this.LockZ != False)
+            goto INSN_1803932E1
+        endif
+
+		UnityEngine.Transform transform3 = base.transform
+
+		UnityEngine.Quaternion rotation3 = this.rotation
+
+		INSN_1803932E1:
+		ulong local24 = 0
+
+		UnityEngine.Transform transform4 = base.transform
+
+		UnityEngine.Quaternion quaternion = UnityEngine.Quaternion.Euler()
+
+		transform4.rotation = local24
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x18039320E) is corrupt (Mismatched instance parameter. Expecting an instance of UnityEngine.Transform, actually {'this' (function parameter, type RFX1_RotationFreeze)}) and cannot be created as IL. Aborting here.
+
+

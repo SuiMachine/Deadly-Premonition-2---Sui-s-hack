@@ -1,0 +1,513 @@
+Type: EnvelopContent
+
+Method: System.Void EnvelopContent::.ctor():	Method Body (x86 ASM):
+		0x1805EC650 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC652 mov byte ptr [rcx+30h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 48 | None ||| N/A | 1
+		0x1805EC656 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC65B int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EnvelopContent::.ctor():
+		End of function at 0x1805EC65C
+		Absolute End is at 0x1805EC65C
+		Identified Jump Destination addresses:
+
+		0x1805EC652: [!] Sets the field ignoreDisabled (Type System.Boolean) on local {'this' (function parameter, type EnvelopContent)} to the value stored in True
+		0x1805EC656: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type EnvelopContent)}
+
+		0x1805EC656: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EnvelopContent
+	System.Void .ctor()
+		this.ignoreDisabled = True
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.1
+	IL_0002: stfld System.Boolean EnvelopContent::ignoreDisabled
+	IL_0007: ldarg.0
+	IL_0008: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_000d: ret
+	
+
+Method: System.Void EnvelopContent::Start():	Method Body (x86 ASM):
+		0x1805EC640 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC642 mov byte ptr [rcx+31h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 49 | None ||| N/A | 1
+		0x1805EC646 jmp near ptr 00000001805EC330h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC64B int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EnvelopContent::Start():
+		End of function at 0x1805EC64C
+		Absolute End is at 0x1805EC64C
+		Identified Jump Destination addresses:
+
+		0x1805EC642: [!] Sets the field mStarted (Type System.Boolean) on local {'this' (function parameter, type EnvelopContent)} to the value stored in True
+		0x1805EC646: [!] Calls managed method System.Void EnvelopContent::Execute() on instance {'this' (function parameter, type EnvelopContent)}
+
+		0x1805EC646: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EnvelopContent
+	System.Void Start()
+		this.mStarted = True
+
+		this.Execute()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.1
+	IL_0002: stfld System.Boolean EnvelopContent::mStarted
+	IL_0007: ldarg.0
+	IL_0008: call System.Void EnvelopContent::Execute()
+	IL_000d: ret
+	
+
+Method: System.Void EnvelopContent::OnEnable():	Method Body (x86 ASM):
+		0x1805EC630 cmp byte ptr [rcx+31h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 49 | None ||| N/A | 0
+		0x1805EC634 je short 00000001805EC63Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC636 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC638 jmp near ptr 00000001805EC330h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC63D ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805EC63E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EnvelopContent::OnEnable():
+		End of function at 0x1805EC63F
+		Absolute End is at 0x1805EC63F
+		Identified Jump Destination addresses:
+
+		0x1805EC630: [!] Compares {field mStarted, read from local {'this' (function parameter, type EnvelopContent)}} and False
+		0x1805EC634: Jumps to 0x1805EC63D (which is an if statement's body) if this.mStarted equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1805EC638: [!] Calls managed method System.Void EnvelopContent::Execute() on instance {'this' (function parameter, type EnvelopContent)}
+
+		0x1805EC638: [!] Returns from the function
+
+		0x1805EC63D: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EnvelopContent
+	System.Void OnEnable()
+
+		if (this.mStarted != False)
+
+		    this.Execute()
+		    return
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Boolean EnvelopContent::mStarted
+	IL_0006: ldc.i4.0
+	IL_0007: beq.s IL_0010
+	IL_0009: ldarg.0
+	IL_000a: call System.Void EnvelopContent::Execute()
+	IL_000f: ret
+	IL_0010: ret
+	
+
+Method: System.Void EnvelopContent::Execute():	Method Body (x86 ASM):
+		0x1805EC330 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1805EC335 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x1805EC33A push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805EC33B sub rsp,0A0h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 160
+		0x1805EC342 cmp byte ptr [18183EE39h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467874361 | None ||| N/A | 0
+		0x1805EC349 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC34C jne short 00000001805EC360h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC34E mov ecx,[1814C6EA0h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464237216 | None ||| N/A | N/A
+		0x1805EC354 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC359 mov byte ptr [18183EE39h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467874361 | None ||| N/A | 1
+		0x1805EC360 mov rdi,[rbx+18h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1805EC364 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC366 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC369 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC36E mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1805EC375 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC378 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1805EC37F je short 00000001805EC38Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC381 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1805EC388 jne short 00000001805EC38Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC38A call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC38F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805EC392 mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1805EC395 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1805EC398 call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC39D test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1805EC39F jne near ptr 00000001805EC5EDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC3A5 mov rdi,[rbx+18h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1805EC3A9 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC3AB mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC3AE call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC3B3 mov rcx,[181899E98h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468247192 | None ||| N/A | N/A
+		0x1805EC3BA mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC3BD test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1805EC3C4 je short 00000001805EC3D4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC3C6 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1805EC3CD jne short 00000001805EC3D4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC3CF call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC3D4 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805EC3D7 mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1805EC3DA mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1805EC3DD call 0000000180471B00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC3E2 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1805EC3E4 jne near ptr 00000001805EC5BBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC3EA movaps [rsp+90h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 144 | None ||| N/A | N/A
+		0x1805EC3F2 movaps [rsp+80h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 128 | None ||| N/A | N/A
+		0x1805EC3FA xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC3FC mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC3FF call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC404 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC407 je near ptr 00000001805EC61Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC40D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC40F mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC412 call 0000000180CE03D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC417 cmp byte ptr [rbx+30h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 48 | None ||| N/A | 0
+		0x1805EC41B lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1805EC420 mov r8,[rbx+18h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1805EC424 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC427 sete r9b		; DEBUG: {Register}/R9L {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805EC42B mov qword ptr [rsp+28h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RSP | 40 | None ||| N/A | 0
+		0x1805EC434 mov byte ptr [rsp+20h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RSP | 32 | None ||| N/A | 1
+		0x1805EC439 call 000000018079F070h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC43E xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805EC441 lea rdx,[rsp+68h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 104 | None ||| N/A | N/A
+		0x1805EC446 lea rcx,[rsp+40h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1805EC44B movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1805EC44E movups [rsp+68h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 104 | None ||| N/A | N/A
+		0x1805EC453 movsd xmm1,qword ptr [rax+10h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RAX | 16 | None ||| N/A | N/A
+		0x1805EC458 movsd qword ptr [rsp+78h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 120 | None ||| N/A | N/A
+		0x1805EC45E call 0000000180B23630h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC463 movd xmm6,dword ptr [rbx+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1805EC468 lea rdx,[rsp+68h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 104 | None ||| N/A | N/A
+		0x1805EC46D cvtdq2ps xmm6,xmm6		; DEBUG: {Register}/XMM6 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC470 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805EC473 lea rcx,[rsp+40h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1805EC478 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1805EC47C mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1805EC47F addss xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC483 mov [rsp+48h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 72 | None ||| N/A | N/A
+		0x1805EC487 movsd qword ptr [rsp+40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 64 | None ||| N/A | N/A
+		0x1805EC48D call 0000000180B23630h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC492 movd xmm7,dword ptr [rbx+28h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x1805EC497 lea rdx,[rsp+68h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 104 | None ||| N/A | N/A
+		0x1805EC49C cvtdq2ps xmm7,xmm7		; DEBUG: {Register}/XMM7 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC49F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805EC4A2 lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1805EC4A7 movsd xmm1,qword ptr [rax]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1805EC4AB movaps xmm0,xmm1		; DEBUG: {Register}/XMM0 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC4AE movsd qword ptr [rsp+40h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 64 | None ||| N/A | N/A
+		0x1805EC4B4 shufps xmm0,xmm0,55h		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC4B8 addss xmm7,xmm0		; DEBUG: {Register}/XMM7 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC4BC call 0000000180B23560h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC4C1 mov edi,[rbx+24h]		; DEBUG: {Register}/EDI {Memory}/None ||| RBX | 36 | None ||| N/A | N/A
+		0x1805EC4C4 lea rdx,[rsp+68h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 104 | None ||| N/A | N/A
+		0x1805EC4C9 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805EC4CC lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1805EC4D1 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1805EC4D5 movsd qword ptr [rsp+40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 64 | None ||| N/A | N/A
+		0x1805EC4DB call 0000000180B23560h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC4E0 mov rdx,[181868FF0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468046832 | None ||| N/A | N/A
+		0x1805EC4E7 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC4EA mov esi,[rbx+2Ch]		; DEBUG: {Register}/ESI {Memory}/None ||| RBX | 44 | None ||| N/A | N/A
+		0x1805EC4ED movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1805EC4F1 movsd qword ptr [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1805EC4F7 call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC4FC mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC4FF test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC502 je near ptr 00000001805EC61Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC508 mov rdx,[rax]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1805EC50B movaps xmm2,xmm7		; DEBUG: {Register}/XMM2 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC50E movd xmm0,esi		; DEBUG: {Register}/XMM0 {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x1805EC512 movaps xmm1,xmm6		; DEBUG: {Register}/XMM1 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC515 cvtdq2ps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC518 mov rax,[rdx+260h]		; DEBUG: {Register}/RAX {Memory}/None ||| RDX | 608 | None ||| N/A | N/A
+		0x1805EC51F mov [rsp+28h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 40 | None ||| N/A | N/A
+		0x1805EC524 movd xmm3,edi		; DEBUG: {Register}/XMM3 {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x1805EC528 addss xmm0,dword ptr [rsp+34h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSP | 52 | None ||| N/A | N/A
+		0x1805EC52E cvtdq2ps xmm3,xmm3		; DEBUG: {Register}/XMM3 {Register}/XMM3 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC531 subss xmm0,xmm7		; DEBUG: {Register}/XMM0 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC535 addss xmm3,dword ptr [rsp+40h]		; DEBUG: {Register}/XMM3 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1805EC53B movss dword ptr [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1805EC541 subss xmm3,xmm6		; DEBUG: {Register}/XMM3 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC545 call qword ptr [rdx+258h]		; DEBUG: {Memory}/None {Register}/None ||| RDX | 600 | None ||| N/A | N/A
+		0x1805EC54B mov rdx,[181876A00h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468102656 | None ||| N/A | N/A
+		0x1805EC552 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1805EC555 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC558 lea r8d,[r9+1]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 1 | None ||| N/A | N/A
+		0x1805EC55C call 0000000180B29060h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC561 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC563 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC566 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC56B mov rcx,[181899E98h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468247192 | None ||| N/A | N/A
+		0x1805EC572 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC575 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1805EC57C je short 00000001805EC58Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC57E cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1805EC585 jne short 00000001805EC58Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC587 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC58C xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC58E mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC591 call 0000000180474990h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC596 movaps xmm6,[rsp+90h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 144 | None ||| N/A | N/A
+		0x1805EC59E movaps xmm7,[rsp+80h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x1805EC5A6 lea r11,[rsp+0A0h]		; DEBUG: {Register}/R11 {Memory}/None ||| RSP | 160 | None ||| N/A | N/A
+		0x1805EC5AE mov rbx,[r11+10h]		; DEBUG: {Register}/RBX {Memory}/None ||| R11 | 16 | None ||| N/A | N/A
+		0x1805EC5B2 mov rsi,[r11+18h]		; DEBUG: {Register}/RSI {Memory}/None ||| R11 | 24 | None ||| N/A | N/A
+		0x1805EC5B6 mov rsp,r11		; DEBUG: {Register}/RSP {Register}/R11 ||| None | 0 | None ||| N/A | N/A
+		0x1805EC5B9 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805EC5BA ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805EC5BB mov rcx,[18188D688h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468195976 | None ||| N/A | N/A
+		0x1805EC5C2 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1805EC5C9 je short 00000001805EC5D9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC5CB cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1805EC5D2 jne short 00000001805EC5D9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC5D4 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC5D9 mov rcx,[1818769E8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468102632 | None ||| N/A | N/A
+		0x1805EC5E0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805EC5E3 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC5E6 call 0000000180B2BF00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC5EB jmp short 00000001805EC5A6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC5ED mov rcx,[18188D688h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468195976 | None ||| N/A | N/A
+		0x1805EC5F4 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1805EC5FB je short 00000001805EC60Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC5FD cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1805EC604 jne short 00000001805EC60Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC606 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC60B mov rcx,[1818769A0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468102560 | None ||| N/A | N/A
+		0x1805EC612 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805EC615 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC618 call 0000000180B2BF00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC61D jmp short 00000001805EC5A6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC61F xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1805EC621 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EC626 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EnvelopContent::Execute():
+		End of function at 0x1805EC627
+		Absolute End is at 0x1805EC627
+		Identified Jump Destination addresses:
+
+		0x1805EC33A: Saves the content of rdi to the stack
+		0x1805EC342: Compares {Unknown Global at 0x18183EE39, first ten bytes are [228 1 0 224 60 103 1 112 228 1], or as chars "ä à<gpä"} and 0
+		0x1805EC349: Copies {'this' (function parameter, type EnvelopContent)} from rcx into rbx
+		0x1805EC34C: Jumps to 0x1805EC360 if {Unknown Global at 0x18183EE39, first ten bytes are [228 1 0 224 60 103 1 112 228 1], or as chars "ä à<gpä"} != 0
+
+		0x1805EC34E: Reads {Unknown Global at 0x1814C6EA0, first ten bytes are [137 43 0 0 137 107 0 0 137 75], or as chars "+  k  K"} into register rcx as a constant constant3
+		0x1805EC354: Attempts to load the il2cpp metadata for this method (method id 11145) and init it cpp-side.
+
+		0x1805EC360: [!] Reads field targetRoot from {'this' (function parameter, type EnvelopContent)} and stores in a new local {'targetRoot' (type UnityEngine.Transform)}
+
+		0x1805EC366: Copies {'this' (function parameter, type EnvelopContent)} from rbx into rcx
+		0x1805EC369: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type EnvelopContent)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x1805EC36E: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1805EC375: Copies {'transform' (type UnityEngine.Transform)} from rax into rsi
+		0x1805EC378: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1805EC37F: Jumps to 0x1805EC38F if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1805EC381: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1805EC388: Jumps to 0x1805EC38F if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1805EC38A: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1805EC392: Copies {'transform' (type UnityEngine.Transform)} from rsi into rdx
+		0x1805EC395: Copies {'targetRoot' (type UnityEngine.Transform)} from rdi into rcx
+		0x1805EC398: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'targetRoot' (type UnityEngine.Transform)}, {'transform' (type UnityEngine.Transform)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1805EC39D: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1805EC39F: Jumps to 0x1805EC5ED (which is an if statement's body) if {'boolean' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1805EC3A5: [!] Reads field targetRoot from {'this' (function parameter, type EnvelopContent)} and stores in a new local {'targetRoot2' (type UnityEngine.Transform)}
+
+		0x1805EC3AB: Copies {'this' (function parameter, type EnvelopContent)} from rbx into rcx
+		0x1805EC3AE: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type EnvelopContent)} and stores the result in {'transform2' (type UnityEngine.Transform)}
+
+		0x1805EC3B3: Loads the type definition for managed type NGUITools as a constant "NGUITools" in rcx
+		0x1805EC3BA: Copies {'transform2' (type UnityEngine.Transform)} from rax into rsi
+		0x1805EC3BD: Compares "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1805EC3C4: Jumps to 0x1805EC3D4 if "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1805EC3C6: Compares "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1805EC3CD: Jumps to 0x1805EC3D4 if "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1805EC3CF: Calls the il2cpp cctor for the type NGUITools
+		0x1805EC3D7: Copies {'transform2' (type UnityEngine.Transform)} from rsi into rdx
+		0x1805EC3DA: Copies {'targetRoot2' (type UnityEngine.Transform)} from rdi into rcx
+		0x1805EC3DD: [!] Calls static managed method System.Boolean NGUITools::IsChild(UnityEngine.Transform,UnityEngine.Transform) with arguments [{'targetRoot2' (type UnityEngine.Transform)}, {'transform2' (type UnityEngine.Transform)}] and stores the result in {'isChild' (type System.Boolean)}
+
+		0x1805EC3E2: [!] Compares {'isChild' (type System.Boolean)} and False
+		0x1805EC3E4: Jumps to 0x1805EC5BB (which is an if statement's body) if {'isChild' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1805EC3FC: Copies {'this' (function parameter, type EnvelopContent)} from rbx into rcx
+		0x1805EC3FF: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type EnvelopContent)} and stores the result in {'transform3' (type UnityEngine.Transform)}
+
+		0x1805EC404: [!] Compares {'transform3' (type UnityEngine.Transform)} and 0
+		0x1805EC407: Jumps to 0x1805EC61F (which throws a NRE) if transform3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1805EC40F: Copies {'transform3' (type UnityEngine.Transform)} from rax into rcx
+		0x1805EC412: [!] Calls managed method UnityEngine.Transform UnityEngine.Transform::get_parent() on instance {'transform3' (type UnityEngine.Transform)} and stores the result in {'parent' (type UnityEngine.Transform)}
+
+		0x1805EC417: [!] Compares {field ignoreDisabled, read from local {'this' (function parameter, type EnvelopContent)}} and False
+		0x1805EC41B: Loads a pointer to stack offset 0x50 into register rcx as new constant constant18
+		0x1805EC424: Copies {'parent' (type UnityEngine.Transform)} from rax into rdx
+		0x1805EC427: [!] Sets the boolean {'local16' (type System.Boolean)} in r9 to true if this.ignoreDisabled is equal to False, otherwise false.
+		0x1805EC42B: Moves 0 (immediate ulong value) to the stack at offset 40 as a new local local17
+		0x1805EC434: Moves 1 (immediate ulong value) to the stack at offset 32 as a new local local18
+		0x1805EC439: [!] Calls static managed method UnityEngine.Bounds NGUIMath::CalculateRelativeWidgetBounds(UnityEngine.Transform,UnityEngine.Transform,System.Boolean,System.Boolean) and stores the result in {'bounds' (type UnityEngine.Bounds)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1805EC441: Loads a pointer to stack offset 0x68 into register rdx as new constant constant19
+		0x1805EC446: Loads a pointer to stack offset 0x40 into register rcx as new constant constant20
+		0x1805EC44B: Loads the class pointer from bounds into a constant constant21 in register xmm0
+		0x1805EC44E: Moves constant21 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 104 (0x68) as a new local local21
+		0x1805EC468: Loads a pointer to stack offset 0x68 into register rdx as new constant constant22
+		0x1805EC473: Loads a pointer to stack offset 0x40 into register rcx as new constant constant23
+		0x1805EC47C: [!] Reads field  from {'bounds' (type UnityEngine.Bounds)} and stores in a new local 
+
+		0x1805EC483: Moves bounds (type UnityEngine.Bounds) from register rax to the stack at offset 72 (0x48)
+		0x1805EC497: Loads a pointer to stack offset 0x68 into register rdx as new constant constant24
+		0x1805EC4A2: Loads a pointer to stack offset 0x30 into register rcx as new constant constant25
+		0x1805EC4C4: Loads a pointer to stack offset 0x68 into register rdx as new constant constant26
+		0x1805EC4CC: Loads a pointer to stack offset 0x50 into register rcx as new constant constant27
+		0x1805EC4E0: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<UIWidget>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1805EC4E7: Copies {'this' (function parameter, type EnvelopContent)} from rbx into rcx
+		0x1805EC4F7: [!] Calls managed method T UnityEngine.Component::GetComponent<UIWidget>() on instance {'this' (function parameter, type EnvelopContent)} and stores the result in {'component' (type UIWidget)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1805EC4FC: Copies {'component' (type UIWidget)} from rax into rcx
+		0x1805EC4FF: [!] Compares {'component' (type UIWidget)} and 0
+		0x1805EC502: Jumps to 0x1805EC61F (which throws a NRE) if component equals 0. Implicitly present in managed code, so ignored here.
+		0x1805EC508: Loads the class pointer from component into a constant constant30 in register rdx
+		0x1805EC518: Loads the pointer to the implementation of virtual function System.Void UIWidget::SetRect(System.Single,System.Single,System.Single,System.Single) specific to UIWidget from the class pointer in rdx, slot 19 (from memory offset 608) and stores in constant constant31
+		0x1805EC51F: Moves UIWidget.SetRect (type Mono.Cecil.MethodDefinition) from register rax to the stack at offset 40 (0x28) as a new local local28
+		0x1805EC53B: Moves constant21 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 32 (0x20) as a new local local29
+		0x1805EC545: [!] Calls managed method System.Void UIWidget::SetRect(System.Single,System.Single,System.Single,System.Single) on instance {'component' (type UIWidget)} ;  - Arguments are incorrect?
+
+		0x1805EC54B: Loads the string literal "UpdateAnchors" as a constant "constant32" in rdx
+		0x1805EC555: Copies {'this' (function parameter, type EnvelopContent)} from rbx into rcx
+		0x1805EC558: [!] Loads the constant value 1 into the register r8 as constant constant33 using an LEA instruction
+		0x1805EC55C: [!] Calls managed method System.Void UnityEngine.Component::BroadcastMessage(System.String,UnityEngine.SendMessageOptions) on instance {'this' (function parameter, type EnvelopContent)} with arguments ["UpdateAnchors", 1]
+
+		0x1805EC563: Copies {'this' (function parameter, type EnvelopContent)} from rbx into rcx
+		0x1805EC566: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type EnvelopContent)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1805EC56B: Loads the type definition for managed type NGUITools as a constant "NGUITools" in rcx
+		0x1805EC572: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rbx
+		0x1805EC575: Compares "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1805EC57C: Jumps to 0x1805EC58C if "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1805EC57E: Compares "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1805EC585: Jumps to 0x1805EC58C if "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1805EC587: Calls the il2cpp cctor for the type NGUITools
+		0x1805EC58E: Copies {'gameObject' (type UnityEngine.GameObject)} from rbx into rcx
+		0x1805EC591: [!] Calls static managed method System.Void NGUITools::UpdateWidgetCollider(UnityEngine.GameObject) with arguments [{'gameObject' (type UnityEngine.GameObject)}]
+
+		0x1805EC596: Reads unknown value in stack, offset 144 (0x90) and stores the pointer in register xmm6 as new constant constant39
+		0x1805EC59E: Reads unknown value in stack, offset 128 (0x80) and stores the pointer in register xmm7 as new constant constant40
+
+		Potential Loop Start (0x1805EC5A6):
+		0x1805EC5A6: Loads a pointer to stack offset 0xA0 into register r11 as new constant constant41
+		0x1805EC5B6: Copies {'constant41' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from r11 into rsp
+		0x1805EC5BA: [!] Returns from the function
+
+		0x1805EC5BB: Loads the type definition for managed type UnityEngine.Debug as a constant "Debug" in rcx
+		0x1805EC5C2: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1805EC5C9: Jumps to 0x1805EC5D9 if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1805EC5D9 which is after end of current block @ 0x1805EC5BB (started at 0x1805EC3EA)
+
+		0x1805EC5CB: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1805EC5D2: Jumps to 0x1805EC5D9 if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1805EC5D9 which is after end of current block @ 0x1805EC5BB (started at 0x1805EC3EA)
+
+		0x1805EC5D4: Calls the il2cpp cctor for the type UnityEngine.Debug
+		0x1805EC5D9: Loads the string literal "Target Root object should not be a parent of Envelop Content. Make it a sibling instead." as a constant "constant47" in rcx
+		0x1805EC5E3: Copies {'this' (function parameter, type EnvelopContent)} from rbx into rdx
+		0x1805EC5E6: [!] Calls static managed method System.Void UnityEngine.Debug::LogError(System.Object,UnityEngine.Object) with arguments ["Target Root object should not be a parent of Envelop Content. Make it a sibling instead.", {'this' (function parameter, type EnvelopContent)}]
+
+		0x1805EC5EB: Jumps to 0x1805EC5A6 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x1805EC5ED: Loads the type definition for managed type UnityEngine.Debug as a constant "Debug" in rcx
+		0x1805EC5F4: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1805EC5FB: Jumps to 0x1805EC60B if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1805EC60B which is after end of current block @ 0x1805EC5BB (started at 0x1805EC3EA)
+
+		0x1805EC5FD: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1805EC604: Jumps to 0x1805EC60B if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1805EC60B which is after end of current block @ 0x1805EC5BB (started at 0x1805EC3EA)
+
+		0x1805EC606: Calls the il2cpp cctor for the type UnityEngine.Debug
+		0x1805EC60B: Loads the string literal "Target Root object cannot be the same object that has Envelop Content. Make it a sibling instead." as a constant "constant53" in rcx
+		0x1805EC615: Copies {'this' (function parameter, type EnvelopContent)} from rbx into rdx
+		0x1805EC618: [!] Calls static managed method System.Void UnityEngine.Debug::LogError(System.Object,UnityEngine.Object) with arguments ["Target Root object cannot be the same object that has Envelop Content. Make it a sibling instead.", {'this' (function parameter, type EnvelopContent)}]
+
+		0x1805EC61D: Jumps to 0x1805EC5A6 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x1805EC621: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EnvelopContent
+	System.Void Execute()
+		UnityEngine.Transform targetRoot = this.targetRoot
+
+		UnityEngine.Transform transform = base.transform
+
+		System.Boolean boolean = UnityEngine.Object.op_Equality(targetRoot, transform) //(Object x, Object y)
+
+		if (boolean == False)
+		    UnityEngine.Transform targetRoot2 = this.targetRoot
+
+		    UnityEngine.Transform transform2 = base.transform
+
+		    System.Boolean isChild = NGUITools.IsChild(targetRoot2, transform2) //(Transform parent, Transform child)
+
+		    if (isChild == False)
+
+		        UnityEngine.Transform transform3 = base.transform
+
+		        UnityEngine.Transform parent = transform3.parent
+		        System.Boolean local16 = this.ignoreDisabled == False
+
+		        UnityEngine.Bounds bounds = NGUIMath.CalculateRelativeWidgetBounds()
+		          = bounds.
+
+		        UIWidget component = base.GetComponent<UIWidget>()
+
+		        component.SetRect()
+		        System.Int32 1 = 1
+
+		        base.BroadcastMessage("UpdateAnchors", 1) //(String methodName, SendMessageOptions options)
+
+		        UnityEngine.GameObject gameObject = base.gameObject
+
+		        NGUITools.UpdateWidgetCollider(gameObject) //(GameObject go)
+		        return
+		    endif
+            
+
+		    UnityEngine.Debug.LogError("Target Root object should not be a parent of Envelop Content. Make it a sibling instead.", this) //(Object message, Object context)
+		endif
+        
+
+		UnityEngine.Debug.LogError("Target Root object cannot be the same object that has Envelop Content. Make it a sibling instead.", this) //(Object message, Object context)
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.EqualRegisterSetAction at (0x1805EC427) is corrupt (Destination local has been stripped) and cannot be created as IL. Aborting here.
+
+

@@ -1,0 +1,273 @@
+Type: FollowAudioListener
+
+Method: System.Void FollowAudioListener::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void FollowAudioListener::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type FollowAudioListener)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: FollowAudioListener
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void FollowAudioListener::Init(UnityEngine.Vector3):	Method Body (x86 ASM):
+		0x180241210 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180241212 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x180241216 mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x180241219 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18024121B call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180241220 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180241223 je short 000000018024124Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180241225 mov ecx,[rbx+8]		; DEBUG: {Register}/ECX {Memory}/None ||| RBX | 8 | None ||| N/A | N/A
+		0x180241228 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18024122D movsd xmm0,qword ptr [rbx]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x180241231 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180241234 mov [rsp+28h],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RSP | 40 | None ||| N/A | N/A
+		0x180241238 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18024123B movsd qword ptr [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x180241241 call 0000000180CE3300h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180241246 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18024124A pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18024124B ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18024124C xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18024124E call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180241253 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void FollowAudioListener::Init(UnityEngine.Vector3):
+		End of function at 0x180241254
+		Absolute End is at 0x180241254
+		Identified Jump Destination addresses:
+
+		0x180241210: Saves the content of rbx to the stack
+		0x180241216: Copies {'position' (function parameter, type UnityEngine.Vector3)} from rdx into rbx
+		0x18024121B: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type FollowAudioListener)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x180241220: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x180241223: Jumps to 0x18024124C (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x180241225: [!] Reads field z from {'position' (function parameter, type UnityEngine.Vector3)} and stores in a new local {'single' (type System.Single)}
+
+		0x180241228: Loads a pointer to stack offset 0x20 into register rdx as new constant constant2
+		0x180241234: Moves single (type System.Single) from register rcx to the stack at offset 40 (0x28)
+		0x180241238: Copies {'transform' (type UnityEngine.Transform)} from rax into rcx
+		0x180241241: [!] Calls managed method System.Void UnityEngine.Transform::set_position(UnityEngine.Vector3) on instance {'transform' (type UnityEngine.Transform)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x18024124B: [!] Returns from the function
+
+		0x18024124E: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: FollowAudioListener
+	System.Void Init(UnityEngine.Vector3 position)
+
+		UnityEngine.Transform transform = base.transform
+		System.Single single = position.z
+
+		transform.set_position()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x180241241) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (1)) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void FollowAudioListener::LateUpdate():	Method Body (x86 ASM):
+		0x1804370C0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1804370C5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804370C6 sub rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1804370CA cmp byte ptr [18183E2C6h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467871430 | None ||| N/A | 0
+		0x1804370D1 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804370D4 jne short 00000001804370E8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804370D6 mov ecx,[1814C9ADCh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464248540 | None ||| N/A | N/A
+		0x1804370DC call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804370E1 mov byte ptr [18183E2C6h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467871430 | None ||| N/A | 1
+		0x1804370E8 cmp byte ptr [18183E2D8h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467871448 | None ||| N/A | 0
+		0x1804370EF jne short 0000000180437103h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804370F1 mov ecx,[1814CB128h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464254248 | None ||| N/A | N/A
+		0x1804370F7 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804370FC mov byte ptr [18183E2D8h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467871448 | None ||| N/A | 1
+		0x180437103 mov rax,[1818A21D8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468280792 | None ||| N/A | N/A
+		0x18043710A mov rcx,[rax+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x180437111 mov rdi,[rcx+10h]		; DEBUG: {Register}/RDI {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x180437115 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18043711C test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180437123 je short 0000000180437133h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180437125 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18043712C jne short 0000000180437133h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18043712E call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180437133 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180437135 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180437138 call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18043713D test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18043713F je near ptr 00000001804371C6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180437145 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180437147 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18043714A call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18043714F cmp byte ptr [18183E2D8h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467871448 | None ||| N/A | 0
+		0x180437156 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180437159 jne short 000000018043716Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18043715B mov ecx,[1814CB128h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464254248 | None ||| N/A | N/A
+		0x180437161 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180437166 mov byte ptr [18183E2D8h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467871448 | None ||| N/A | 1
+		0x18043716D mov rcx,[1818A21D8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468280792 | None ||| N/A | N/A
+		0x180437174 mov rdx,[rcx+0B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RCX | 184 | None ||| N/A | N/A
+		0x18043717B mov rcx,[rdx+10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDX | 16 | None ||| N/A | N/A
+		0x18043717F test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180437182 je short 00000001804371D1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180437184 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180437186 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18043718B test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18043718E je short 00000001804371D1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180437190 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180437193 lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x180437198 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18043719B call 0000000180CE2700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804371A0 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1804371A3 je short 00000001804371D1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804371A5 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1804371A9 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1804371AE mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1804371B1 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804371B4 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1804371B7 movsd qword ptr [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1804371BD mov [rsp+28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 40 | None ||| N/A | N/A
+		0x1804371C1 call 0000000180CE3300h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804371C6 mov rbx,[rsp+50h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1804371CB add rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1804371CF pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804371D0 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804371D1 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1804371D3 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804371D8 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void FollowAudioListener::LateUpdate():
+		End of function at 0x1804371D9
+		Absolute End is at 0x1804371D9
+		Identified Jump Destination addresses:
+
+		0x1804370C5: Saves the content of rdi to the stack
+		0x1804370CA: Compares {Unknown Global at 0x18183E2C6, first ten bytes are [1 0 168 127 1 0 192 60 103 1], or as chars " ¨ À<g"} and 0
+		0x1804370D1: Copies {'this' (function parameter, type FollowAudioListener)} from rcx into rbx
+		0x1804370D4: Jumps to 0x1804370E8 if {Unknown Global at 0x18183E2C6, first ten bytes are [1 0 168 127 1 0 192 60 103 1], or as chars " ¨ À<g"} != 0
+
+		0x1804370D6: Loads string "M." into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1804370DC: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1804370E8: Compares {Unknown Global at 0x18183E2D8, first ten bytes are [216 60 103 1 48 128 1 0 141 128], or as chars "Ø<g0 "} and 0
+		0x1804370EF: Jumps to 0x180437103 if {Unknown Global at 0x18183E2D8, first ten bytes are [216 60 103 1 48 128 1 0 141 128], or as chars "Ø<g0 "} != 0
+
+		0x1804370F1: Reads {Unknown Global at 0x1814CB128, first ten bytes are [179 47 0 0 180 111 0 0 180 15], or as chars "³/  ´o  ´"} into register rcx as a constant constant6
+		0x1804370F7: Attempts to load the il2cpp metadata for this method (method id 12211) and init it cpp-side.
+
+		0x180437103: Loads the type definition for managed type GameCameraManager as a constant "GameCameraManager" in rax
+		0x18043710A: Loads the pointer to the static fields for GameCameraManager and stores it in constant8 in register rcx
+		0x180437111: [!] Reads the static field UnityEngine.Camera GameCameraManager::<CullingCamera>k__BackingField into new local CullingCamera
+		0x180437115: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18043711C: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180437123: Jumps to 0x180437133 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180437125: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18043712C: Jumps to 0x180437133 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18043712E: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x180437135: Copies {'CullingCamera' (type UnityEngine.Camera)} from rdi into rcx
+		0x180437138: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'CullingCamera' (type UnityEngine.Camera)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18043713D: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18043713F: Jumps to 0x1804371C6 (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180437147: Copies {'this' (function parameter, type FollowAudioListener)} from rbx into rcx
+		0x18043714A: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type FollowAudioListener)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x18043714F: Compares {Unknown Global at 0x18183E2D8, first ten bytes are [216 60 103 1 48 128 1 0 141 128], or as chars "Ø<g0 "} and 0
+		0x180437156: Copies {'transform' (type UnityEngine.Transform)} from rax into rbx
+		0x180437159: Jumps to 0x18043716D if {Unknown Global at 0x18183E2D8, first ten bytes are [216 60 103 1 48 128 1 0 141 128], or as chars "Ø<g0 "} != 0
+
+		0x18043715B: Reads {Unknown Global at 0x1814CB128, first ten bytes are [179 47 0 0 180 111 0 0 180 15], or as chars "³/  ´o  ´"} into register rcx as a constant constant17
+		0x180437161: Attempts to load the il2cpp metadata for this method (method id 12211) and init it cpp-side.
+
+		0x18043716D: Loads the type definition for managed type GameCameraManager as a constant "GameCameraManager" in rcx
+		0x180437174: Loads the pointer to the static fields for GameCameraManager and stores it in constant19 in register rdx
+		0x18043717B: [!] Reads the static field UnityEngine.Camera GameCameraManager::<CullingCamera>k__BackingField into new local CullingCamera2
+		0x18043717F: [!] Compares {'CullingCamera2' (type UnityEngine.Camera)} and 0
+		0x180437182: Jumps to 0x1804371D1 (which throws a NRE) if CullingCamera2 equals 0. Implicitly present in managed code, so ignored here.
+		0x180437186: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'CullingCamera2' (type UnityEngine.Camera)} and stores the result in {'transform2' (type UnityEngine.Transform)}
+
+		0x18043718B: [!] Compares {'transform2' (type UnityEngine.Transform)} and 0
+		0x18043718E: Jumps to 0x1804371D1 (which throws a NRE) if transform2 equals 0. Implicitly present in managed code, so ignored here.
+		0x180437193: Loads a pointer to stack offset 0x30 into register rcx as new constant constant22
+		0x180437198: Copies {'transform2' (type UnityEngine.Transform)} from rax into rdx
+		0x18043719B: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::get_position() on instance  and stores the result in {'position' (type UnityEngine.Vector3)}
+
+		0x1804371A0: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x1804371A3: Jumps to 0x1804371D1 (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x1804371A9: Loads a pointer to stack offset 0x20 into register rdx as new constant constant24
+		0x1804371AE: [!] Reads field z from {'position' (type UnityEngine.Vector3)} and stores in a new local {'single' (type System.Single)}
+
+		0x1804371B4: Copies {'transform' (type UnityEngine.Transform)} from rbx into rcx
+		0x1804371BD: Moves single (type System.Single) from register rax to the stack at offset 40 (0x28)
+		0x1804371C1: [!] Calls managed method System.Void UnityEngine.Transform::set_position(UnityEngine.Vector3) on instance {'transform' (type UnityEngine.Transform)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1804371C6: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register rbx as new constant constant25
+		0x1804371D0: [!] Returns from the function
+
+		0x1804371D3: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: FollowAudioListener
+	System.Void LateUpdate()
+		UnityEngine.Camera CullingCamera = GameCameraManager.<CullingCamera>k__BackingField
+
+		System.Boolean boolean = UnityEngine.Object.op_Implicit(CullingCamera) //(Object exists)
+
+		if (boolean != False)
+
+		    UnityEngine.Transform transform = base.transform
+		    UnityEngine.Camera CullingCamera2 = GameCameraManager.<CullingCamera>k__BackingField
+
+		    UnityEngine.Transform transform2 = CullingCamera2.transform
+
+		    UnityEngine.Vector3 position = .position
+		    System.Single single = position.z
+
+		    transform.set_position()
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x18043719B) is corrupt (Method is non-static but don't have an instance) and cannot be created as IL. Aborting here.
+
+

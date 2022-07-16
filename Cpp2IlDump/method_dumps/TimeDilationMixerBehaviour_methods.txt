@@ -1,0 +1,500 @@
+Type: TimeDilationMixerBehaviour
+
+Method: System.Void TimeDilationMixerBehaviour::.ctor():	Method Body (x86 ASM):
+		0x1802B8490 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8492 mov dword ptr [rcx+10h],3F800000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 16 | None ||| N/A | 1065353216
+		0x1802B8499 jmp near ptr 00000001802068B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B849E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void TimeDilationMixerBehaviour::.ctor():
+		End of function at 0x1802B849F
+		Absolute End is at 0x1802B849F
+		Identified Jump Destination addresses:
+
+		0x1802B8492: [!] Sets the field m_OldTimeScale (Type System.Single) on local {'this' (function parameter, type TimeDilationMixerBehaviour)} to the value stored in 1
+		0x1802B8499: [!] Calls managed method System.Void UnityEngine.Playables.PlayableBehaviour::.ctor() on instance {'this' (function parameter, type TimeDilationMixerBehaviour)}
+
+		0x1802B8499: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: TimeDilationMixerBehaviour
+	System.Void .ctor()
+		this.m_OldTimeScale = 1
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.r4 1
+	IL_0006: stfld System.Single TimeDilationMixerBehaviour::m_OldTimeScale
+	IL_000b: ldarg.0
+	IL_000c: call System.Void UnityEngine.Playables.PlayableBehaviour::.ctor()
+	IL_0011: ret
+	
+
+Method: System.Void TimeDilationMixerBehaviour::OnPlayableCreate(UnityEngine.Playables.Playable):	Method Body (x86 ASM):
+		0x1802B85D0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B85D2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802B85D6 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802B85D9 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802B85DB call 0000000180CDFC70h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B85E0 movss dword ptr [rbx+10h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 16 | None ||| N/A | N/A
+		0x1802B85E5 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802B85E9 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B85EA ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B85EB int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void TimeDilationMixerBehaviour::OnPlayableCreate(UnityEngine.Playables.Playable):
+		End of function at 0x1802B85EC
+		Absolute End is at 0x1802B85EC
+		Identified Jump Destination addresses:
+
+		0x1802B85D0: Saves the content of rbx to the stack
+		0x1802B85D6: Copies {'this' (function parameter, type TimeDilationMixerBehaviour)} from rcx into rbx
+		0x1802B85D9: Clears register rcx, yielding zero-local {'local2' (type System.Int32)}
+		0x1802B85DB: [!] Calls static managed method System.Single UnityEngine.Time::get_timeScale() and stores the result in {'timeScale' (type System.Single)}
+
+		0x1802B85E0: [!] Sets the field m_OldTimeScale (Type System.Single) on local {'this' (function parameter, type TimeDilationMixerBehaviour)} to the value stored in {'timeScale' (type System.Single)}
+		0x1802B85EA: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: TimeDilationMixerBehaviour
+	System.Void OnPlayableCreate(UnityEngine.Playables.Playable playable)
+		ulong local2 = 0
+
+		System.Single timeScale = UnityEngine.Time.timeScale
+		this.m_OldTimeScale = timeScale
+		return
+
+
+Generated IL:
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: call System.Single UnityEngine.Time::get_timeScale()
+	IL_0007: stloc.1
+	IL_0008: ldarg.0
+	IL_0009: ldloc.1
+	IL_000a: stfld System.Single TimeDilationMixerBehaviour::m_OldTimeScale
+	IL_000f: ret
+	
+
+Method: System.Void TimeDilationMixerBehaviour::ProcessFrame(UnityEngine.Playables.Playable,UnityEngine.Playables.FrameData,System.Object):	Method Body (x86 ASM):
+		0x1802B8600 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1802B8605 mov [rsp+10h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 16 | None ||| N/A | N/A
+		0x1802B860A mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x1802B860F push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8610 sub rsp,90h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 144
+		0x1802B8617 cmp byte ptr [18183D6C1h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868353 | None ||| N/A | 0
+		0x1802B861E mov rsi,rdx		; DEBUG: {Register}/RSI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8621 movaps [rsp+70h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 112 | None ||| N/A | N/A
+		0x1802B8626 mov rbp,rcx		; DEBUG: {Register}/RBP {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8629 movaps [rsp+60h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RSP | 96 | None ||| N/A | N/A
+		0x1802B862F jne short 00000001802B8643h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8631 mov ecx,[1814C794Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464239948 | None ||| N/A | N/A
+		0x1802B8637 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B863C mov byte ptr [18183D6C1h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868353 | None ||| N/A | 1
+		0x1802B8643 mov rdx,[1818A1700h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468278016 | None ||| N/A | N/A
+		0x1802B864A lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802B864F xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1802B8652 movaps [rsp+80h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 128 | None ||| N/A | N/A
+		0x1802B865A movups [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1802B865F movups xmm0,[rsi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSI | 0 | None ||| N/A | N/A
+		0x1802B8662 movaps [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1802B8667 call 0000000180860A50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B866C xor ebx,ebx		; DEBUG: {Register}/EBX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1802B866E mov edi,eax		; DEBUG: {Register}/EDI {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8670 xorps xmm7,xmm7		; DEBUG: {Register}/XMM7 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1802B8673 xorps xmm8,xmm8		; DEBUG: {Register}/XMM8 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1802B8677 test eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8679 jle near ptr 00000001802B873Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B867F nop		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8680 movups xmm0,[rsi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSI | 0 | None ||| N/A | N/A
+		0x1802B8683 mov r8,[18185D7E8h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6467999720 | None ||| N/A | N/A
+		0x1802B868A lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802B868F mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8691 movaps [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1802B8696 call 0000000180860A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B869B movups xmm1,[rsi]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RSI | 0 | None ||| N/A | N/A
+		0x1802B869E mov r9,[181873AF8h]		; DEBUG: {Register}/R9 {Memory}/None ||| RIP | 6468090616 | None ||| N/A | N/A
+		0x1802B86A5 lea rdx,[rsp+30h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802B86AA movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1802B86AD lea rcx,[rsp+40h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1802B86B2 mov r8d,ebx		; DEBUG: {Register}/R8D {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1802B86B5 movaps [rsp+30h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 48 | None ||| N/A | N/A
+		0x1802B86BA addss xmm8,xmm6		; DEBUG: {Register}/XMM8 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1802B86BF call 000000018090DFE0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B86C4 mov rcx,[181863558h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468023640 | None ||| N/A | N/A
+		0x1802B86CB test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802B86D2 je short 00000001802B86E2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B86D4 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1802B86DB jne short 00000001802B86E2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B86DD call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B86E2 movaps xmm0,[rsp+40h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1802B86E7 lea rdx,[rsp+30h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802B86EC mov r8,[1818749D8h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468094424 | None ||| N/A | N/A
+		0x1802B86F3 lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1802B86F8 movdqa [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1802B86FE call 0000000180E29D60h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8703 movaps xmm0,[rsp+50h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1802B8708 lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1802B870D mov rdx,[181879538h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468113720 | None ||| N/A | N/A
+		0x1802B8714 movdqa [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1802B871A call 0000000180E29B20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B871F test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8722 je near ptr 00000001802B889Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8728 mulss xmm6,dword ptr [rax+10h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RAX | 16 | None ||| N/A | N/A
+		0x1802B872D inc ebx		; DEBUG: {Register}/EBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B872F addss xmm7,xmm6		; DEBUG: {Register}/XMM7 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1802B8733 cmp ebx,edi		; DEBUG: {Register}/EBX {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x1802B8735 jl near ptr 00000001802B8680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B873B movss xmm0,dword ptr [181261D04h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RIP | 6461725956 | None ||| N/A | N/A
+		0x1802B8743 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8745 subss xmm0,xmm8		; DEBUG: {Register}/XMM0 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1802B874A mulss xmm0,dword ptr [rbp+10h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBP | 16 | None ||| N/A | N/A
+		0x1802B874F addss xmm0,xmm7		; DEBUG: {Register}/XMM0 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1802B8753 call 0000000180CDFE60h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8758 mov rax,[18189B0E0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468251872 | None ||| N/A | N/A
+		0x1802B875F test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1802B8766 je short 00000001802B8780h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8768 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1802B876F jne short 00000001802B8780h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8771 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8774 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8779 mov rax,[18189B0E0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468251872 | None ||| N/A | N/A
+		0x1802B8780 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1802B8787 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1802B878E test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802B8795 mov rbx,[rax+8]		; DEBUG: {Register}/RBX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1802B8799 je short 00000001802B87A9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B879B cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1802B87A2 jne short 00000001802B87A9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B87A4 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B87A9 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B87AB mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802B87AE call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B87B3 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1802B87B5 je short 00000001802B8835h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B87B7 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802B87B9 call 0000000180CDFC70h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B87BE mov rcx,[18188DA20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1802B87C5 movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1802B87C8 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802B87CF je short 00000001802B87DFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B87D1 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1802B87D8 jne short 00000001802B87DFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B87DA call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B87DF xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802B87E2 xorps xmm1,xmm1		; DEBUG: {Register}/XMM1 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1802B87E5 movaps xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1802B87E8 call 0000000180E9BD20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B87ED test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1802B87EF mov rax,[18189B0E0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468251872 | None ||| N/A | N/A
+		0x1802B87F6 jne short 00000001802B8860h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B87F8 test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1802B87FF je short 00000001802B8819h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8801 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1802B8808 jne short 00000001802B8819h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B880A mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B880D call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8812 mov rax,[18189B0E0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468251872 | None ||| N/A | N/A
+		0x1802B8819 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1802B8820 mov rcx,[rax+8]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1802B8824 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8827 je short 00000001802B889Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8829 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802B882C lea edx,[r8+1]		; DEBUG: {Register}/EDX {Memory}/None ||| R8 | 1 | None ||| N/A | N/A
+		0x1802B8830 call 0000000181149610h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8835 movaps xmm6,[rsp+80h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x1802B883D lea r11,[rsp+90h]		; DEBUG: {Register}/R11 {Memory}/None ||| RSP | 144 | None ||| N/A | N/A
+		0x1802B8845 mov rbx,[r11+10h]		; DEBUG: {Register}/RBX {Memory}/None ||| R11 | 16 | None ||| N/A | N/A
+		0x1802B8849 mov rbp,[r11+18h]		; DEBUG: {Register}/RBP {Memory}/None ||| R11 | 24 | None ||| N/A | N/A
+		0x1802B884D mov rsi,[r11+20h]		; DEBUG: {Register}/RSI {Memory}/None ||| R11 | 32 | None ||| N/A | N/A
+		0x1802B8851 movaps xmm8,[r11-30h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| R11 | 18446744073709551568 | None ||| N/A | N/A
+		0x1802B8856 movaps xmm7,[rsp+70h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 112 | None ||| N/A | N/A
+		0x1802B885B mov rsp,r11		; DEBUG: {Register}/RSP {Register}/R11 ||| None | 0 | None ||| N/A | N/A
+		0x1802B885E pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B885F ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8860 test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1802B8867 je short 00000001802B8881h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8869 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1802B8870 jne short 00000001802B8881h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8872 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8875 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B887A mov rax,[18189B0E0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468251872 | None ||| N/A | N/A
+		0x1802B8881 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1802B8888 mov rcx,[rax+8]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1802B888C test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802B888F je short 00000001802B889Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8891 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802B8894 lea edx,[r8+2]		; DEBUG: {Register}/EDX {Memory}/None ||| R8 | 2 | None ||| N/A | N/A
+		0x1802B8898 jmp short 00000001802B8830h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B889A xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802B889C call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B88A1 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void TimeDilationMixerBehaviour::ProcessFrame(UnityEngine.Playables.Playable,UnityEngine.Playables.FrameData,System.Object):
+		End of function at 0x1802B88A2
+		Absolute End is at 0x1802B88A2
+		Identified Jump Destination addresses:
+
+		0x1802B860F: Saves the content of rdi to the stack
+		0x1802B8617: Compares {Unknown Global at 0x18183D6C1, first ten bytes are [61 103 1 192 22 1 0 18 23 1], or as chars "=gÀ "} and 0
+		0x1802B861E: Copies {'playable' (function parameter, type UnityEngine.Playables.Playable)} from rdx into rsi
+		0x1802B8626: Copies {'this' (function parameter, type TimeDilationMixerBehaviour)} from rcx into rbp
+		0x1802B862F: Jumps to 0x1802B8643 if {Unknown Global at 0x18183D6C1, first ten bytes are [61 103 1 192 22 1 0 18 23 1], or as chars "=gÀ "} != 0
+
+		0x1802B8631: Loads string "3l" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1802B8637: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1802B8643: Loads the global generic method reference for method System.Int32 UnityEngine.Playables.PlayableExtensions::GetInputCount<UnityEngine.Playables.Playable>(U) on type UnityEngine.Playables.PlayableExtensions and stores the result in constant {'GetInputCount' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1802B864A: Loads a pointer to stack offset 0x30 into register rcx as new constant constant5
+		0x1802B864F: Clears register xmm0, yielding zero-local {'local4' (type System.Int32)}
+		0x1802B865A: Moves local4 (type System.Int32) from register xmm0 to the stack at offset 32 (0x20)
+		0x1802B865F: Loads the class pointer from playable into a constant constant6 in register xmm0
+		0x1802B8662: Moves constant6 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 48 (0x30) as a new local local5
+		0x1802B8667: [!] Calls static managed method System.Int32 UnityEngine.Playables.PlayableExtensions::GetInputCount<UnityEngine.Playables.Playable>(U) and stores the result in {'inputCount' (type System.Int32)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation. - parameters do not match, but concrete method was resolved from a constant in a register.
+
+		0x1802B866C: Clears register rbx, yielding zero-local {'local7' (type System.Int32)}
+		0x1802B866E: Copies {'inputCount' (type System.Int32)} from rax into rdi
+		0x1802B8677: [!] Compares {'inputCount' (type System.Int32)} and 0
+		0x1802B8679: Jumps to 0x1802B873B (which is an if statement's body) if {'inputCount' (type System.Int32)} is less than or equal to 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1802B8680: Loads the class pointer from playable into a constant constant8 in register xmm0
+		0x1802B8683: Loads the global generic method reference for method System.Single UnityEngine.Playables.PlayableExtensions::GetInputWeight<UnityEngine.Playables.Playable>(U,System.Int32) on type UnityEngine.Playables.PlayableExtensions and stores the result in constant {'GetInputWeight' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x1802B868A: Loads a pointer to stack offset 0x30 into register rcx as new constant constant10
+		0x1802B868F: Copies {'local7' (type System.Int32)} from rbx into rdx
+		0x1802B8691: Moves constant8 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 48 (0x30) as a new local local10
+		0x1802B8696: [!] Calls static managed method System.Single UnityEngine.Playables.PlayableExtensions::GetInputWeight<UnityEngine.Playables.Playable>(U,System.Int32) and stores the result in {'inputWeight' (type System.Single)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation. - parameters do not match, but concrete method was resolved from a constant in a register.
+
+		0x1802B869B: Loads the class pointer from playable into a constant constant11 in register xmm1
+		0x1802B869E: Loads the global generic method reference for method UnityEngine.Playables.Playable UnityEngine.Playables.PlayableExtensions::GetInput<UnityEngine.Playables.Playable>(U,System.Int32) on type UnityEngine.Playables.PlayableExtensions and stores the result in constant {'GetInput' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r9
+		0x1802B86A5: Loads a pointer to stack offset 0x30 into register rdx as new constant constant13
+		0x1802B86AA: Copies {'inputWeight' (type System.Single)} from xmm0 into xmm6
+		0x1802B86AD: Loads a pointer to stack offset 0x40 into register rcx as new constant constant14
+		0x1802B86B2: Copies {'local7' (type System.Int32)} from rbx into r8
+		0x1802B86B5: Moves constant11 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm1 to the stack at offset 48 (0x30) as a new local local12
+		0x1802B86BF: [!] Calls static managed method UnityEngine.Playables.Playable UnityEngine.Playables.PlayableExtensions::GetInput<UnityEngine.Playables.Playable>(U,System.Int32) and stores the result in {'input' (type UnityEngine.Playables.Playable)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation. - parameters do not match, but concrete method was resolved from a constant in a register.
+
+		0x1802B86C4: Loads the type definition for managed type UnityEngine.Playables.ScriptPlayable`1<TimeDilationBehaviour> as a constant "ScriptPlayable`1" in rcx
+		0x1802B86CB: Compares "{il2cpp field on {'ScriptPlayable`1' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802B86D2: Jumps to 0x1802B86E2 if "{il2cpp field on {'ScriptPlayable`1' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802B86D4: Compares "{il2cpp field on {'ScriptPlayable`1' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802B86DB: Jumps to 0x1802B86E2 if "{il2cpp field on {'ScriptPlayable`1' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1802B86DD: Calls the il2cpp cctor for the type UnityEngine.Playables.ScriptPlayable`1<TimeDilationBehaviour>
+		0x1802B86E2: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register xmm0 as new constant constant20
+		0x1802B86E7: Loads a pointer to stack offset 0x30 into register rdx as new constant constant21
+		0x1802B86EC: Loads the global generic method reference for method UnityEngine.Playables.ScriptPlayable`1<T> UnityEngine.Playables.ScriptPlayable`1::op_Explicit(UnityEngine.Playables.Playable) on type UnityEngine.Playables.ScriptPlayable`1<TimeDilationBehaviour> and stores the result in constant {'op_Explicit' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x1802B86F3: Loads a pointer to stack offset 0x50 into register rcx as new constant constant23
+		0x1802B86F8: Moves constant20 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register xmm0 to the stack at offset 48 (0x30) as a new local local14
+		0x1802B86FE: [!] Calls static managed method UnityEngine.Playables.ScriptPlayable`1<T> UnityEngine.Playables.ScriptPlayable`1::op_Explicit(UnityEngine.Playables.Playable) and stores the result in {'scriptPlayable' (type UnityEngine.Playables.ScriptPlayable`1<T>)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation. - parameters do not match, but concrete method was resolved from a constant in a register. - Failed to resolve return type generic arguments.
+
+		0x1802B8703: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register xmm0 as new constant constant24
+		0x1802B8708: Loads a pointer to stack offset 0x20 into register rcx as new constant constant25
+		0x1802B870D: Loads the global generic method reference for method T UnityEngine.Playables.ScriptPlayable`1::GetBehaviour() on type UnityEngine.Playables.ScriptPlayable`1<TimeDilationBehaviour> and stores the result in constant {'GetBehaviour' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1802B8714: Moves constant24 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register xmm0 to the stack at offset 32 (0x20) as a new local local16
+		0x1802B871F: [!] Compares {'scriptPlayable' (type UnityEngine.Playables.ScriptPlayable`1<T>)} and 0
+		0x1802B8722: Jumps to 0x1802B889A (which throws a NRE) if scriptPlayable equals 0. Implicitly present in managed code, so ignored here.
+		0x1802B8728: Multiplies {'inputWeight' (type System.Single)} by the field  from {'scriptPlayable' (type UnityEngine.Playables.ScriptPlayable`1<T>)}, and stores the result in new local  in register xmm6
+		0x1802B872D: [!] Adds 1 to the value {'local7' (type System.Int32)}, stored in rbx
+		0x1802B8733: [!] Compares {'local7' (type System.Int32)} and {'inputCount' (type System.Int32)}
+		0x1802B873B: Reads {Unknown Global at 0x181261D04, first ten bytes are [0 0 128 63 154 153 153 63 0 0], or as chars "  ??  "} into register xmm0 as a constant constant28
+		0x1802B874A: Multiplies  by the field m_OldTimeScale from {'this' (function parameter, type TimeDilationMixerBehaviour)}, and stores the result in new local {'local18' (type System.Single)} in register xmm0
+		0x1802B8753: [!] Calls static managed method System.Void UnityEngine.Time::set_timeScale(System.Single) with arguments [{'local18' (type System.Single)}]
+
+		0x1802B8758: Loads the type definition for managed type CutScenePlayer as a constant "CutScenePlayer" in rax
+		0x1802B875F: Compares "{il2cpp field on {'CutScenePlayer' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802B8766: Jumps to 0x1802B8780 if "{il2cpp field on {'CutScenePlayer' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1802B8780 which is after end of current block @ 0x1802B873B (started at 0x1802B867F)
+
+		0x1802B8768: Compares "{il2cpp field on {'CutScenePlayer' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802B876F: Jumps to 0x1802B8780 if "{il2cpp field on {'CutScenePlayer' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1802B8780 which is after end of current block @ 0x1802B873B (started at 0x1802B867F)
+
+		0x1802B8771: Copies {'CutScenePlayer' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1802B8774: Calls the il2cpp cctor for the type CutScenePlayer
+		0x1802B8779: Loads the type definition for managed type CutScenePlayer as a constant "CutScenePlayer" in rax
+		0x1802B8780: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1802B8787: Loads the pointer to the static fields for CutScenePlayer and stores it in constant36 in register rax
+		0x1802B878E: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802B8795: [!] Reads the static field CutScenePlayer CutScenePlayer::Instance into new local instance
+		0x1802B8799: Jumps to 0x1802B87A9 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1802B87A9 which is after end of current block @ 0x1802B873B (started at 0x1802B867F)
+
+		0x1802B879B: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802B87A2: Jumps to 0x1802B87A9 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1802B87A9 which is after end of current block @ 0x1802B873B (started at 0x1802B867F)
+
+		0x1802B87A4: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1802B87AB: Copies {'instance' (type CutScenePlayer)} from rbx into rcx
+		0x1802B87AE: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'instance' (type CutScenePlayer)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1802B87B3: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1802B87B5: Jumps to 0x1802B8835 if boolean equals False ;  - This is probably a goto, jumping to 0x1802B8835 which is after end of current block @ 0x1802B873B (started at 0x1802B867F)
+
+		0x1802B87B7: Clears register rcx, yielding zero-local {'local22' (type System.Int32)}
+		0x1802B87B9: [!] Calls static managed method System.Single UnityEngine.Time::get_timeScale() and stores the result in {'timeScale' (type System.Single)}
+
+		0x1802B87BE: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rcx
+		0x1802B87C5: Copies {'timeScale' (type System.Single)} from xmm0 into xmm6
+		0x1802B87C8: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802B87CF: Jumps to 0x1802B87DF if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1802B87DF which is after end of current block @ 0x1802B873B (started at 0x1802B867F)
+
+		0x1802B87D1: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802B87D8: Jumps to 0x1802B87DF if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1802B87DF which is after end of current block @ 0x1802B873B (started at 0x1802B867F)
+
+		0x1802B87DA: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x1802B87E2: Clears register xmm1, yielding zero-local {'local25' (type System.Int32)}
+		0x1802B87E5: Copies {'timeScale' (type System.Single)} from xmm6 into xmm0
+		0x1802B87E8: [!] Calls static managed method System.Boolean UnityEngine.Mathf::Approximately(System.Single,System.Single) with arguments [{'timeScale' (type System.Single)}, {'local25' (type System.Int32)}] and stores the result in {'boolean2' (type System.Boolean)}
+
+		0x1802B87ED: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x1802B87EF: Loads the type definition for managed type CutScenePlayer as a constant "CutScenePlayer" in rax
+		0x1802B87F6: Jumps to 0x1802B8860 if {'boolean2' (type System.Boolean)} != False ;  - This is probably a goto, jumping to 0x1802B8860 which is after end of current block @ 0x1802B873B (started at 0x1802B867F)
+
+		0x1802B87F8: Compares "{il2cpp field on {'CutScenePlayer' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802B87FF: Jumps to 0x1802B8819 if "{il2cpp field on {'CutScenePlayer' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1802B8819 which is after end of current block @ 0x1802B873B (started at 0x1802B867F)
+
+		0x1802B8801: Compares "{il2cpp field on {'CutScenePlayer' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802B8808: Jumps to 0x1802B8819 if "{il2cpp field on {'CutScenePlayer' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1802B8819 which is after end of current block @ 0x1802B873B (started at 0x1802B867F)
+
+		0x1802B880A: Copies {'CutScenePlayer' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1802B880D: Calls the il2cpp cctor for the type CutScenePlayer
+		0x1802B8812: Loads the type definition for managed type CutScenePlayer as a constant "CutScenePlayer" in rax
+		0x1802B8819: Loads the pointer to the static fields for CutScenePlayer and stores it in constant54 in register rax
+		0x1802B8820: [!] Reads the static field CutScenePlayer CutScenePlayer::Instance into new local instance2
+		0x1802B8824: [!] Compares {'instance2' (type CutScenePlayer)} and 0
+		0x1802B8827: Jumps to 0x1802B889A (which throws a NRE) if instance2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802B882C: [!] Loads the constant value 1 into the register rdx as constant constant56 using an LEA instruction
+
+		Potential Loop Start (0x1802B8830):
+		0x1802B8830: [!] Calls managed method System.Void CutScenePlayer::SetUpdateMethod(UnityEngine.Playables.DirectorUpdateMode) on instance {'instance2' (type CutScenePlayer)} with arguments [1]
+
+		0x1802B8835: Reads unknown value in stack, offset 128 (0x80) and stores the pointer in register xmm6 as new constant constant57
+		0x1802B883D: Loads a pointer to stack offset 0x90 into register r11 as new constant constant58
+		0x1802B8856: Reads unknown value in stack, offset 112 (0x70) and stores the pointer in register xmm7 as new constant constant59
+		0x1802B885B: Copies {'constant58' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from r11 into rsp
+		0x1802B885F: [!] Returns from the function
+
+		0x1802B8860: Compares "{il2cpp field on {'constant54' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StaticFieldsPtr)}, offset 0x127}" and 2
+		0x1802B8867: Jumps to 0x1802B8881 if "{il2cpp field on {'constant54' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StaticFieldsPtr)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1802B8881 which is after end of current block @ 0x1802B873B (started at 0x1802B867F)
+
+		0x1802B8869: Compares "{il2cpp field on {'constant54' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StaticFieldsPtr)}, offset 0xD8}" and 0
+		0x1802B8870: Jumps to 0x1802B8881 if "{il2cpp field on {'constant54' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StaticFieldsPtr)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1802B8881 which is after end of current block @ 0x1802B873B (started at 0x1802B867F)
+
+		0x1802B8872: Copies {'constant54' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StaticFieldsPtr)} from rax into rcx
+		0x1802B8875: Calls the il2cpp cctor for the type 
+		0x1802B887A: Loads the type definition for managed type CutScenePlayer as a constant "CutScenePlayer" in rax
+		0x1802B8881: Loads the pointer to the static fields for CutScenePlayer and stores it in constant65 in register rax
+		0x1802B8888: [!] Reads the static field CutScenePlayer CutScenePlayer::Instance into new local instance3
+		0x1802B888C: [!] Compares {'instance3' (type CutScenePlayer)} and 0
+		0x1802B888F: Jumps to 0x1802B889A (which throws a NRE) if instance3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802B8894: [!] Loads the constant value 2 into the register rdx as constant constant67 using an LEA instruction
+		0x1802B8898: Jumps to 0x1802B8830 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x1802B889C: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: TimeDilationMixerBehaviour
+	System.Void ProcessFrame(UnityEngine.Playables.Playable playable, UnityEngine.Playables.FrameData info, System.Object playerData)
+		ulong local4 = 0
+
+		System.Int32 inputCount = UnityEngine.Playables.PlayableExtensions.GetInputCount<UnityEngine.Playables.Playable>()
+		ulong local7 = 0
+
+		if (inputCount > 0)
+
+		    System.Single inputWeight = UnityEngine.Playables.PlayableExtensions.GetInputWeight<UnityEngine.Playables.Playable>()
+
+		    UnityEngine.Playables.Playable input = UnityEngine.Playables.PlayableExtensions.GetInput<UnityEngine.Playables.Playable>()
+
+		    UnityEngine.Playables.ScriptPlayable`1<T> scriptPlayable = UnityEngine.Playables.ScriptPlayable`1.op_Explicit()
+		      = inputWeight * scriptPlayable.
+		    local7 += 1
+		endif
+        
+		System.Single local18 =  * this.m_OldTimeScale
+
+		UnityEngine.Time.timeScale = local18
+		CutScenePlayer instance = CutScenePlayer.Instance
+
+		System.Boolean boolean = UnityEngine.Object.op_Implicit(instance) //(Object exists)
+
+		if (boolean == False)
+            goto INSN_1802B8835
+        endif
+		ulong local22 = 0
+
+		System.Single timeScale = UnityEngine.Time.timeScale
+		ulong local25 = 0
+
+		System.Boolean boolean2 = UnityEngine.Mathf.Approximately(timeScale, local25) //(Single a, Single b)
+
+		if (boolean2 != False)
+            goto INSN_1802B8860
+        endif
+		CutScenePlayer instance2 = CutScenePlayer.Instance
+		System.Int32 1 = 1
+
+		instance2.SetUpdateMethod(1) //(DirectorUpdateMode mode)
+
+		INSN_1802B8835:
+		return
+
+		INSN_1802B8860:
+		CutScenePlayer instance3 = CutScenePlayer.Instance
+		System.Int32 2 = 2
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1802B8667) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (1)) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void TimeDilationMixerBehaviour::OnPlayableDestroy(UnityEngine.Playables.Playable):	Method Body (x86 ASM):
+		0x1802B85F0 movss xmm0,dword ptr [rcx+10h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x1802B85F5 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B85F7 jmp near ptr 0000000180CDFE60h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B85FC int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void TimeDilationMixerBehaviour::OnPlayableDestroy(UnityEngine.Playables.Playable):
+		End of function at 0x1802B85FD
+		Absolute End is at 0x1802B85FD
+		Identified Jump Destination addresses:
+
+		0x1802B85F0: [!] Reads field m_OldTimeScale from {'this' (function parameter, type TimeDilationMixerBehaviour)} and stores in a new local {'m_OldTimeScale' (type System.Single)}
+
+		0x1802B85F7: [!] Calls static managed method System.Void UnityEngine.Time::set_timeScale(System.Single) with arguments [{'m_OldTimeScale' (type System.Single)}]
+
+		0x1802B85F7: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: TimeDilationMixerBehaviour
+	System.Void OnPlayableDestroy(UnityEngine.Playables.Playable playable)
+		System.Single m_OldTimeScale = this.m_OldTimeScale
+
+		UnityEngine.Time.timeScale = m_OldTimeScale
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Single TimeDilationMixerBehaviour::m_OldTimeScale
+	IL_0006: call System.Void UnityEngine.Time::set_timeScale(System.Single)
+	IL_000b: ret
+	
+

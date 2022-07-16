@@ -1,0 +1,1936 @@
+Type: UIScrollBar
+
+Method: System.Void UIScrollBar::.ctor():	Method Body (x86 ASM):
+		0x1806C0830 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0832 mov dword ptr [rcx+88h],3F800000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 136 | None ||| N/A | 1065353216
+		0x1806C083C mov dword ptr [rcx+90h],2		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 144 | None ||| N/A | 2
+		0x1806C0846 mov dword ptr [rcx+78h],3F800000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 120 | None ||| N/A | 1065353216
+		0x1806C084D mov dword ptr [rcx+7Ch],2		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 124 | None ||| N/A | 2
+		0x1806C0854 jmp near ptr 0000000180340690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0859 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIScrollBar::.ctor():
+		End of function at 0x1806C085A
+		Absolute End is at 0x1806C085A
+		Identified Jump Destination addresses:
+
+		0x1806C0832: [!] Sets the field mSize (Type System.Single) on local {'this' (function parameter, type UIScrollBar)} to the value stored in 1
+		0x1806C083C: [!] Sets the field mDir (Type UIScrollBar/Direction) on local {'this' (function parameter, type UIScrollBar)} to the value stored in 2
+		0x1806C0846: [!] Sets the field rawValue (Type System.Single) on local {'this' (function parameter, type UIScrollBar)} to the value stored in 1
+		0x1806C084D: [!] Sets the field direction (Type UISlider/Direction) on local {'this' (function parameter, type UIScrollBar)} to the value stored in 2
+		0x1806C0854: [!] Calls managed method System.Void UIProgressBar::.ctor() on instance {'this' (function parameter, type UIScrollBar)}
+
+		0x1806C0854: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIScrollBar
+	System.Void .ctor()
+		this.mSize = 1
+		this.mDir = 2
+		this.rawValue = 1
+		this.direction = 2
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.r4 1
+	IL_0006: stfld System.Single UIScrollBar::mSize
+	IL_000b: ldarg.0
+	IL_000c: ldc.i4.2
+	IL_000d: conv.i8
+	IL_000e: conv.u8
+	IL_000f: stfld UIScrollBar/Direction UIScrollBar::mDir
+	IL_0014: ldarg.0
+	IL_0015: ldc.r4 1
+	IL_001a: stfld System.Single UISlider::rawValue
+	IL_001f: ldarg.0
+	IL_0020: ldc.i4.2
+	IL_0021: conv.i8
+	IL_0022: conv.u8
+	IL_0023: stfld UISlider/Direction UISlider::direction
+	IL_0028: ldarg.0
+	IL_0029: call System.Void UIProgressBar::.ctor()
+	IL_002e: ret
+	
+
+Method: System.Single UIScrollBar::get_scrollValue():	Method Body (x86 ASM):
+		0x1806C0860 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0862 jmp near ptr 0000000180340960h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0867 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Single UIScrollBar::get_scrollValue():
+		End of function at 0x1806C0868
+		Absolute End is at 0x1806C0868
+		Identified Jump Destination addresses:
+
+		0x1806C0862: [!] Calls managed method System.Single UIProgressBar::get_value() on instance {'this' (function parameter, type UIScrollBar)} and stores the result in {'value' (type System.Single)}
+
+		0x1806C0862: [!] Returns {'value' (type System.Single)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIScrollBar
+	System.Single get_scrollValue()
+
+		System.Single value = base.value
+		return value
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Single UIProgressBar::get_value()
+	IL_0006: ret
+	
+
+Method: System.Void UIScrollBar::set_scrollValue(System.Single):	Method Body (x86 ASM):
+		0x1806C09E0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C09E3 jmp near ptr 0000000180341060h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C09E8 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIScrollBar::set_scrollValue(System.Single):
+		End of function at 0x1806C09E9
+		Absolute End is at 0x1806C09E9
+		Identified Jump Destination addresses:
+
+		0x1806C09E3: [!] Calls managed method System.Void UIProgressBar::set_value(System.Single) on instance {'this' (function parameter, type UIScrollBar)} with arguments [{'value' (function parameter, type System.Single)}]
+
+		0x1806C09E3: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIScrollBar
+	System.Void set_scrollValue(System.Single value)
+
+		base.value = value
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: call System.Void UIProgressBar::set_value(System.Single)
+	IL_0007: ret
+	
+
+Method: System.Single UIScrollBar::get_barSize():	Method Body (x86 ASM):
+		0x180234370 movss xmm0,dword ptr [rcx+88h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RCX | 136 | None ||| N/A | N/A
+		0x180234378 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180234379 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Single UIScrollBar::get_barSize():
+		End of function at 0x18023437A
+		Absolute End is at 0x18023437A
+		Identified Jump Destination addresses:
+
+		0x180234370: [!] Reads field mSize from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'mSize' (type System.Single)}
+
+		0x180234378: [!] Returns {'mSize' (type System.Single)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIScrollBar
+	System.Single get_barSize()
+		System.Single mSize = this.mSize
+		return mSize
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Single UIScrollBar::mSize
+	IL_0006: ret
+	
+
+Method: System.Void UIScrollBar::set_barSize(System.Single):	Method Body (x86 ASM):
+		0x1806C0870 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C0872 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1806C0876 cmp byte ptr [18183F41Ch],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875868 | None ||| N/A | 0
+		0x1806C087D mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0880 movaps [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x1806C0885 movaps xmm6,xmm1		; DEBUG: {Register}/XMM6 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0888 jne short 00000001806C089Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C088A mov ecx,[18151C2D4h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464586452 | None ||| N/A | N/A
+		0x1806C0890 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0895 mov byte ptr [18183F41Ch],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875868 | None ||| N/A | 1
+		0x1806C089C mov rcx,[18188DA20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1806C08A3 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C08AA je short 00000001806C08BAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C08AC cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C08B3 jne short 00000001806C08BAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C08B5 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C08BA xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C08BC movaps xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806C08BF call 0000000180E9BE70h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C08C4 movss xmm1,dword ptr [rbx+88h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RBX | 136 | None ||| N/A | N/A
+		0x1806C08CC ucomiss xmm1,xmm0		; DEBUG: {Register}/XMM1 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C08CF movaps xmm6,[rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806C08D4 jp short 00000001806C08DCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C08D6 je near ptr 00000001806C09CEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C08DC movss dword ptr [rbx+88h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 136 | None ||| N/A | N/A
+		0x1806C08E4 mov byte ptr [rbx+50h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 80 | None ||| N/A | 1
+		0x1806C08E8 mov rcx,[181899E98h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468247192 | None ||| N/A | N/A
+		0x1806C08EF test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C08F6 je short 00000001806C0906h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C08F8 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C08FF jne short 00000001806C0906h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0901 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0906 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0908 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806C090B call 000000018046FD10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0910 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C0912 je near ptr 00000001806C09CEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0918 mov rax,[181864850h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468028496 | None ||| N/A | N/A
+		0x1806C091F mov [rsp+40h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 64 | None ||| N/A | N/A
+		0x1806C0924 mov rcx,[rax+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1806C092B mov rdi,[rcx]		; DEBUG: {Register}/RDI {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x1806C092E mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1806C0935 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C093C je short 00000001806C094Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C093E cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C0945 jne short 00000001806C094Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0947 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C094C xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C094F xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0951 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C0954 call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0959 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C095B je short 00000001806C09B6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C095D cmp qword ptr [rbx+68h],0		; DEBUG: {Memory}/None {Immediate8to64}/None ||| RBX | 104 | None ||| N/A | 0
+		0x1806C0962 je short 00000001806C09B6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0964 mov rax,[181864850h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468028496 | None ||| N/A | N/A
+		0x1806C096B mov rcx,[rax+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1806C0972 mov [rcx],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RCX | 0 | None ||| N/A | N/A
+		0x1806C0975 mov rcx,[181899E60h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468247136 | None ||| N/A | N/A
+		0x1806C097C mov rdi,[rbx+68h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 104 | None ||| N/A | N/A
+		0x1806C0980 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C0987 je short 00000001806C0997h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0989 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C0990 jne short 00000001806C0997h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0992 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0997 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0999 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C099C call 0000000180431BE0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C09A1 mov rax,[181864850h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468028496 | None ||| N/A | N/A
+		0x1806C09A8 mov rcx,[rax+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1806C09AF mov qword ptr [rcx],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RCX | 0 | None ||| N/A | 0
+		0x1806C09B6 mov rax,[rbx]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x1806C09B9 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806C09BC mov rdx,[rax+1A0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 416 | None ||| N/A | N/A
+		0x1806C09C3 call qword ptr [rax+198h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 408 | None ||| N/A | N/A
+		0x1806C09C9 mov rdi,[rsp+40h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1806C09CE add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1806C09D2 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C09D3 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C09D4 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIScrollBar::set_barSize(System.Single):
+		End of function at 0x1806C09D5
+		Absolute End is at 0x1806C09D5
+		Identified Jump Destination addresses:
+
+		0x1806C0870: Saves the content of rbx to the stack
+		0x1806C0876: Compares {Unknown Global at 0x18183F41C, first ten bytes are [224 21 2 0 52 22 2 0 216 60], or as chars "à 4 Ø<"} and 0
+		0x1806C087D: Copies {'this' (function parameter, type UIScrollBar)} from rcx into rbx
+		0x1806C0885: Copies {'value' (function parameter, type System.Single)} from xmm1 into xmm6
+		0x1806C0888: Jumps to 0x1806C089C if {Unknown Global at 0x18183F41C, first ten bytes are [224 21 2 0 52 22 2 0 216 60], or as chars "à 4 Ø<"} != 0
+
+		0x1806C088A: Reads {Unknown Global at 0x18151C2D4, first ten bytes are [23 121 0 0 23 25 0 0 23 89], or as chars "y    Y"} into register rcx as a constant constant3
+		0x1806C0890: Attempts to load the il2cpp metadata for this method (method id 30999) and init it cpp-side.
+
+		0x1806C089C: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rcx
+		0x1806C08A3: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C08AA: Jumps to 0x1806C08BA if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806C08AC: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C08B3: Jumps to 0x1806C08BA if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806C08B5: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x1806C08BC: Copies {'value' (function parameter, type System.Single)} from xmm6 into xmm0
+		0x1806C08BF: [!] Calls static managed method System.Single UnityEngine.Mathf::Clamp01(System.Single) with arguments [{'value' (function parameter, type System.Single)}] and stores the result in {'single' (type System.Single)}
+
+		0x1806C08CF: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm6 as new constant constant9
+		0x1806C08D6: Jumps to 0x1806C09CE if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" equals 0
+
+		0x1806C08DC: [!] Sets the field mSize (Type System.Single) on local {'this' (function parameter, type UIScrollBar)} to the value stored in {'single' (type System.Single)}
+		0x1806C08E4: [!] Sets the field mIsDirty (Type System.Boolean) on local {'this' (function parameter, type UIScrollBar)} to the value stored in True
+		0x1806C08E8: Loads the type definition for managed type NGUITools as a constant "NGUITools" in rcx
+		0x1806C08EF: Compares "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C08F6: Jumps to 0x1806C0906 if "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806C08F8: Compares "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C08FF: Jumps to 0x1806C0906 if "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806C0901: Calls the il2cpp cctor for the type NGUITools
+		0x1806C0908: Copies {'this' (function parameter, type UIScrollBar)} from rbx into rcx
+		0x1806C090B: [!] Calls static managed method System.Boolean NGUITools::GetActive(UnityEngine.Behaviour) with arguments [{'this' (function parameter, type UIScrollBar)}] and stores the result in {'active' (type System.Boolean)}
+
+		0x1806C0910: [!] Compares {'active' (type System.Boolean)} and False
+		0x1806C0912: Jumps to 0x1806C09CE (which is an if statement's body) if active equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806C0918: Loads the type definition for managed type UIProgressBar as a constant "UIProgressBar" in rax
+		0x1806C0924: Loads the pointer to the static fields for UIProgressBar and stores it in constant17 in register rcx
+		0x1806C092B: [!] Reads the static field UIProgressBar UIProgressBar::current into new local current
+		0x1806C092E: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1806C0935: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C093C: Jumps to 0x1806C094C if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806C093E: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C0945: Jumps to 0x1806C094C if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806C0947: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1806C094F: Clears register rdx, yielding zero-local {'local9' (type System.Int32)}
+		0x1806C0951: Copies {'current' (type UIProgressBar)} from rdi into rcx
+		0x1806C0954: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'current' (type UIProgressBar)}, {'local9' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1806C0959: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1806C095B: Jumps to 0x1806C09B6 (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806C095D: [!] Compares  and 0
+		0x1806C0962: Jumps to 0x1806C09B6 (which is an if statement's body) if  equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806C0964: Loads the type definition for managed type UIProgressBar as a constant "UIProgressBar" in rax
+		0x1806C096B: Loads the pointer to the static fields for UIProgressBar and stores it in constant26 in register rcx
+		0x1806C0972: [!] Sets static field UIProgressBar.current to {'this' (function parameter, type UIScrollBar)}
+		0x1806C0975: Loads the type definition for managed type EventDelegate as a constant "EventDelegate" in rcx
+		0x1806C097C: [!] Reads field onChange from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'onChange' (type System.Collections.Generic.List`1<EventDelegate>)}
+
+		0x1806C0980: Compares "{il2cpp field on {'EventDelegate' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C0987: Jumps to 0x1806C0997 if "{il2cpp field on {'EventDelegate' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806C0989: Compares "{il2cpp field on {'EventDelegate' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C0990: Jumps to 0x1806C0997 if "{il2cpp field on {'EventDelegate' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806C0992: Calls the il2cpp cctor for the type EventDelegate
+		0x1806C0999: Copies {'onChange' (type System.Collections.Generic.List`1<EventDelegate>)} from rdi into rcx
+		0x1806C099C: [!] Calls static managed method System.Void EventDelegate::Execute(System.Collections.Generic.List`1<EventDelegate>) with arguments [{'onChange' (type System.Collections.Generic.List`1<EventDelegate>)}]
+
+		0x1806C09A1: Loads the type definition for managed type UIProgressBar as a constant "UIProgressBar" in rax
+		0x1806C09A8: Loads the pointer to the static fields for UIProgressBar and stores it in constant33 in register rcx
+		0x1806C09B6: Loads the class pointer from this into a constant constant34 in register rax
+		0x1806C09B9: Copies {'this' (function parameter, type UIScrollBar)} from rbx into rcx
+		0x1806C09BC: Loads the pointer to the implementation of virtual function System.Void UIScrollBar::ForceUpdate() specific to UIScrollBar from the class pointer in rax, slot 7 (from memory offset 416) and stores in constant constant35
+		0x1806C09C3: [!] Calls managed method System.Void UIScrollBar::ForceUpdate() on instance {'this' (function parameter, type UIScrollBar)}
+
+		0x1806C09C9: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rdi as new constant constant36
+		0x1806C09D3: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIScrollBar
+	System.Void set_barSize(System.Single value)
+
+		System.Single single = UnityEngine.Mathf.Clamp01(value) //(Single value)
+		this.mSize = single
+		this.mIsDirty = True
+
+		System.Boolean active = NGUITools.GetActive(this) //(Behaviour mb)
+
+		if (active != False)
+		    UIProgressBar current = UIProgressBar.current
+		    ulong local9 = 0
+
+		    System.Boolean boolean = UnityEngine.Object.op_Equality(current, local9) //(Object x, Object y)
+
+		    if (boolean != False)
+
+		        if ( != 0)
+		            UIProgressBar.current = this
+		            System.Collections.Generic.List`1<EventDelegate> onChange = this.onChange
+
+		            EventDelegate.Execute(onChange) //(List`1 list)
+		        endif
+                
+
+		        this.ForceUpdate()
+		    endif
+            
+		    return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.JumpIfZeroOrNullAction at (0x1806C0962) is corrupt (One of the arguments is null) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void UIScrollBar::Upgrade():	Method Body (x86 ASM):
+		0x1806C07E0 mov r8d,[rcx+90h]		; DEBUG: {Register}/R8D {Memory}/None ||| RCX | 144 | None ||| N/A | N/A
+		0x1806C07E7 cmp r8d,2		; DEBUG: {Register}/R8D {Immediate8to32}/None ||| None | 0 | None ||| N/A | 2
+		0x1806C07EB je short 00000001806C082Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C07ED mov eax,[rcx+8Ch]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 140 | None ||| N/A | N/A
+		0x1806C07F3 movzx edx,byte ptr [rcx+80h]		; DEBUG: {Register}/EDX {Memory}/None ||| RCX | 128 | None ||| N/A | N/A
+		0x1806C07FA mov [rcx+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RCX | 56 | None ||| N/A | N/A
+		0x1806C07FD test r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C0800 je short 00000001806C0817h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0802 neg dl		; DEBUG: {Register}/DL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C0804 sbb eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0806 add eax,3		; DEBUG: {Register}/EAX {Immediate8to32}/None ||| None | 0 | None ||| N/A | 3
+		0x1806C0809 mov [rcx+3Ch],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RCX | 60 | None ||| N/A | N/A
+		0x1806C080C mov dword ptr [rcx+90h],2		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 144 | None ||| N/A | 2
+		0x1806C0816 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C0817 xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0819 test dl,dl		; DEBUG: {Register}/DL {Register}/DL ||| None | 0 | None ||| N/A | N/A
+		0x1806C081B setne al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C081E mov [rcx+3Ch],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RCX | 60 | None ||| N/A | N/A
+		0x1806C0821 mov dword ptr [rcx+90h],2		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 144 | None ||| N/A | 2
+		0x1806C082B ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C082C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIScrollBar::Upgrade():
+		End of function at 0x1806C082D
+		Absolute End is at 0x1806C082D
+		Identified Jump Destination addresses:
+
+		0x1806C07E0: [!] Reads field mDir from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'mDir' (type UIScrollBar/Direction)}
+
+		0x1806C07E7: [!] Compares {'mDir' (type UIScrollBar/Direction)} and 2
+		0x1806C07EB: Jumps to 0x1806C082B (which is an if statement's body) if mDir equals 2 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806C07ED: [!] Reads field mScroll from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'mScroll' (type System.Single)}
+
+		0x1806C07F3: [!] Reads field mInverted from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'mInverted' (type System.Boolean)}
+
+		0x1806C07FA: [!] Sets the field mValue (Type System.Single) on local {'this' (function parameter, type UIScrollBar)} to the value stored in {'mScroll' (type System.Single)}
+		0x1806C07FD: [!] Compares {'mDir' (type UIScrollBar/Direction)} and 0
+		0x1806C0800: Jumps to 0x1806C0817 (which is an if statement's body) if mDir equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806C0806: [!] Adds 3 to the value {'mScroll' (type System.Single)}, stored in rax
+		0x1806C0809: [!] Sets the field mFill (Type UIProgressBar/FillDirection) on local {'this' (function parameter, type UIScrollBar)} to the value stored in {'mScroll' (type System.Single)}
+		0x1806C080C: [!] Sets the field mDir (Type UIScrollBar/Direction) on local {'this' (function parameter, type UIScrollBar)} to the value stored in 2
+		0x1806C0816: [!] Returns from the function
+
+		0x1806C0819: [!] Compares {'mInverted' (type System.Boolean)} and False
+		0x1806C081B: [!] Sets the boolean {'local5' (type System.Boolean)} in rax to true if mInverted isn't equal to False, otherwise false.
+		0x1806C081E: [!] Sets the field mFill (Type UIProgressBar/FillDirection) on local {'this' (function parameter, type UIScrollBar)} to the value stored in {'local5' (type System.Boolean)}
+		0x1806C0821: [!] Sets the field mDir (Type UIScrollBar/Direction) on local {'this' (function parameter, type UIScrollBar)} to the value stored in 2
+		0x1806C082B: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIScrollBar
+	System.Void Upgrade()
+		UIScrollBar/Direction mDir = this.mDir
+
+		if (mDir != 2)
+		    System.Single mScroll = this.mScroll
+		    System.Boolean mInverted = this.mInverted
+		    this.mValue = mScroll
+
+		    if (mDir != 0)
+		        mScroll += 3
+		        this.mFill = mScroll
+		        this.mDir = 2
+		        return
+		    endif
+            
+		    System.Boolean local5 = mInverted != False
+		    this.mFill = local5
+		    this.mDir = 2
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UIScrollBar/Direction UIScrollBar::mDir
+	IL_0006: stloc.0
+	IL_0007: ldloc.0
+	IL_0008: ldc.i4.2
+	IL_0009: beq.s IL_0055
+	IL_000b: ldarg.0
+	IL_000c: ldfld System.Single UIScrollBar::mScroll
+	IL_0011: stloc.1
+	IL_0012: ldarg.0
+	IL_0013: ldfld System.Boolean UISlider::mInverted
+	IL_0018: stloc.2
+	IL_0019: ldarg.0
+	IL_001a: ldloc.1
+	IL_001b: stfld System.Single UIProgressBar::mValue
+	IL_0020: ldloc.0
+	IL_0021: ldc.i4.0
+	IL_0022: beq.s IL_003d
+	IL_0024: ldloc.1
+	IL_0025: ldc.r4 4E-45
+	IL_002a: add
+	IL_002b: stloc.1
+	IL_002c: ldarg.0
+	IL_002d: ldloc.1
+	IL_002e: stfld UIProgressBar/FillDirection UIProgressBar::mFill
+	IL_0033: ldarg.0
+	IL_0034: ldc.i4.2
+	IL_0035: conv.i8
+	IL_0036: conv.u8
+	IL_0037: stfld UIScrollBar/Direction UIScrollBar::mDir
+	IL_003c: ret
+	IL_003d: ldloc.2
+	IL_003e: ldc.i4.0
+	IL_003f: ceq
+	IL_0041: ldc.i4.0
+	IL_0042: ceq
+	IL_0044: stloc.3
+	IL_0045: ldarg.0
+	IL_0046: ldloc.3
+	IL_0047: stfld UIProgressBar/FillDirection UIProgressBar::mFill
+	IL_004c: ldarg.0
+	IL_004d: ldc.i4.2
+	IL_004e: conv.i8
+	IL_004f: conv.u8
+	IL_0050: stfld UIScrollBar/Direction UIScrollBar::mDir
+	IL_0055: ret
+	
+
+Method: System.Void UIScrollBar::OnStart():	Method Body (x86 ASM):
+		0x1806C0550 mov [rsp+20h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 32 | None ||| N/A | N/A
+		0x1806C0555 push rsi		; DEBUG: {Register}/RSI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C0556 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806C055A cmp byte ptr [18183F41Dh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875869 | None ||| N/A | 0
+		0x1806C0561 mov rsi,rcx		; DEBUG: {Register}/RSI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0564 jne short 00000001806C0578h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0566 mov ecx,[18151C2C4h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464586436 | None ||| N/A | N/A
+		0x1806C056C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0571 mov byte ptr [18183F41Dh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875869 | None ||| N/A | 1
+		0x1806C0578 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C057A mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1806C057D call 00000001806CD4F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0582 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1806C0589 mov rbx,[rsi+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSI | 48 | None ||| N/A | N/A
+		0x1806C058D test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C0594 je short 00000001806C05A4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0596 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C059D jne short 00000001806C05A4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C059F call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C05A4 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C05A7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C05A9 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806C05AC call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C05B1 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C05B3 je near ptr 00000001806C07B5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C05B9 mov rcx,[rsi+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSI | 48 | None ||| N/A | N/A
+		0x1806C05BD mov [rsp+30h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 48 | None ||| N/A | N/A
+		0x1806C05C2 mov [rsp+38h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 56 | None ||| N/A | N/A
+		0x1806C05C7 mov [rsp+40h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 64 | None ||| N/A | N/A
+		0x1806C05CC test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806C05CF je near ptr 00000001806C07C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C05D5 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C05D7 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C05DC xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C05DE mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1806C05E1 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C05E4 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C05E9 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1806C05F0 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C05F3 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C05FA je short 00000001806C060Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C05FC cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C0603 jne short 00000001806C060Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0605 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C060A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C060D mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C0610 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0613 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0618 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C061A je near ptr 00000001806C07A6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0620 mov rcx,[rsi+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSI | 48 | None ||| N/A | N/A
+		0x1806C0624 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0627 je near ptr 00000001806C07C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C062D mov rdx,[1818691E0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468047328 | None ||| N/A | N/A
+		0x1806C0634 call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0639 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1806C0640 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0643 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C064A je short 00000001806C065Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C064C cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C0653 jne short 00000001806C065Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0655 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C065A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C065D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C065F mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0662 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0667 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C0669 jne short 00000001806C06BDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C066B mov rcx,[rsi+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSI | 48 | None ||| N/A | N/A
+		0x1806C066F test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0672 je near ptr 00000001806C07C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0678 mov rdx,[1818691C0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468047296 | None ||| N/A | N/A
+		0x1806C067F call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0684 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1806C068B mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C068E test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C0695 je short 00000001806C06A5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0697 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C069E jne short 00000001806C06A5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C06A0 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C06A5 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C06A8 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C06AA mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806C06AD call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C06B2 movzx eax,al		; DEBUG: {Register}/EAX {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C06B5 test eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C06B7 je near ptr 00000001806C07A6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C06BD mov rcx,[rsi+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSI | 48 | None ||| N/A | N/A
+		0x1806C06C1 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806C06C4 je near ptr 00000001806C07C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C06CA xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C06CC call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C06D1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C06D3 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C06D6 call 0000000180412110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C06DB mov r14,rax		; DEBUG: {Register}/R14 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C06DE test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C06E1 je near ptr 00000001806C07C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C06E7 mov rcx,[181864E98h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468030104 | None ||| N/A | N/A
+		0x1806C06EE mov rdi,[rax+40h]		; DEBUG: {Register}/RDI {Memory}/None ||| RAX | 64 | None ||| N/A | N/A
+		0x1806C06F2 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C06F7 mov r8,[1818639E8h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468024808 | None ||| N/A | N/A
+		0x1806C06FE xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1806C0701 mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1806C0704 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0707 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C070A call 00000001802ED440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C070F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C0712 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0715 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C0718 call 0000000180DC28C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C071D mov rdx,[181864E98h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468030104 | None ||| N/A | N/A
+		0x1806C0724 xor ebp,ebp		; DEBUG: {Register}/EBP {Register}/EBP ||| None | 0 | None ||| N/A | N/A
+		0x1806C0726 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0729 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C072C mov eax,ebp		; DEBUG: {Register}/EAX {Register}/EBP ||| None | 0 | None ||| N/A | N/A
+		0x1806C072E je short 00000001806C0740h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0730 cmp [rcx],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RCX | 0 | None ||| N/A | N/A
+		0x1806C0733 cmove rax,rcx		; DEBUG: {Register}/RAX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0737 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C073A je near ptr 00000001806C07D1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0740 mov [r14+40h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| R14 | 64 | None ||| N/A | N/A
+		0x1806C0744 mov rcx,[1818652F8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468031224 | None ||| N/A | N/A
+		0x1806C074B mov rdi,[r14+60h]		; DEBUG: {Register}/RDI {Memory}/None ||| R14 | 96 | None ||| N/A | N/A
+		0x1806C074F call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0754 mov r8,[181863990h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468024720 | None ||| N/A | N/A
+		0x1806C075B xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1806C075E mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1806C0761 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0764 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0767 call 00000001802ED440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C076C xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C076F mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0772 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C0775 call 0000000180DC28C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C077A mov rdx,[1818652F8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468031224 | None ||| N/A | N/A
+		0x1806C0781 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0784 je short 00000001806C0792h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0786 cmp [rax],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RAX | 0 | None ||| N/A | N/A
+		0x1806C0789 cmove rbp,rax		; DEBUG: {Register}/RBP {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C078D test rbp,rbp		; DEBUG: {Register}/RBP {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x1806C0790 je short 00000001806C07C8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0792 mov [r14+60h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| R14 | 96 | None ||| N/A | N/A
+		0x1806C0796 mov rax,[rsi+30h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSI | 48 | None ||| N/A | N/A
+		0x1806C079A test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C079D je short 00000001806C07C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C079F mov byte ptr [rax+0D0h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 208 | None ||| N/A | 1
+		0x1806C07A6 mov rdi,[rsp+38h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x1806C07AB mov rbp,[rsp+30h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806C07B0 mov r14,[rsp+40h]		; DEBUG: {Register}/R14 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1806C07B5 mov rbx,[rsp+48h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x1806C07BA add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806C07BE pop rsi		; DEBUG: {Register}/RSI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C07BF ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C07C0 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806C07C2 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C07C7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C07D1 call 0000000180058270h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C07D6 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIScrollBar::OnStart():
+		End of function at 0x1806C07D7
+		Absolute End is at 0x1806C07D7
+		Identified Jump Destination addresses:
+
+		0x1806C0555: Saves the content of rsi to the stack
+		0x1806C055A: Compares {Unknown Global at 0x18183F41D, first ten bytes are [21 2 0 52 22 2 0 216 60 103], or as chars " 4 Ø<g"} and 0
+		0x1806C0561: Copies {'this' (function parameter, type UIScrollBar)} from rcx into rsi
+		0x1806C0564: Jumps to 0x1806C0578 if {Unknown Global at 0x18183F41D, first ten bytes are [21 2 0 52 22 2 0 216 60 103], or as chars " 4 Ø<g"} != 0
+
+		0x1806C0566: Reads {Unknown Global at 0x18151C2C4, first ten bytes are [22 121 0 0 22 89 0 0 22 57], or as chars "y  Y  9"} into register rcx as a constant constant3
+		0x1806C056C: Attempts to load the il2cpp metadata for this method (method id 30998) and init it cpp-side.
+
+		0x1806C057A: Copies {'this' (function parameter, type UIScrollBar)} from rsi into rcx
+		0x1806C057D: [!] Calls managed method System.Void UISlider::OnStart() on instance {'this' (function parameter, type UIScrollBar)}
+
+		0x1806C0582: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1806C0589: [!] Reads field mFG from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'uIWidget' (type UIWidget)}
+
+		0x1806C058D: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C0594: Jumps to 0x1806C05A4 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806C0596: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C059D: Jumps to 0x1806C05A4 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806C059F: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1806C05A7: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x1806C05A9: Copies {'uIWidget' (type UIWidget)} from rbx into rcx
+		0x1806C05AC: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'uIWidget' (type UIWidget)}, {'local4' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1806C05B1: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1806C05B3: Jumps to 0x1806C07B5 (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806C05B9: [!] Reads field mFG from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'uIWidget2' (type UIWidget)}
+
+		0x1806C05CC: [!] Compares {'uIWidget2' (type UIWidget)} and 0
+		0x1806C05CF: Jumps to 0x1806C07C0 (which throws a NRE) if uIWidget2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C05D7: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'uIWidget2' (type UIWidget)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1806C05DE: Copies {'this' (function parameter, type UIScrollBar)} from rsi into rcx
+		0x1806C05E1: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rbx
+		0x1806C05E4: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type UIScrollBar)} and stores the result in {'gameObject2' (type UnityEngine.GameObject)}
+
+		0x1806C05E9: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1806C05F0: Copies {'gameObject2' (type UnityEngine.GameObject)} from rax into rdi
+		0x1806C05F3: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C05FA: Jumps to 0x1806C060A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806C05FC: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C0603: Jumps to 0x1806C060A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806C0605: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1806C060D: Copies {'gameObject2' (type UnityEngine.GameObject)} from rdi into rdx
+		0x1806C0610: Copies {'gameObject' (type UnityEngine.GameObject)} from rbx into rcx
+		0x1806C0613: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'gameObject' (type UnityEngine.GameObject)}, {'gameObject2' (type UnityEngine.GameObject)}] and stores the result in {'boolean2' (type System.Boolean)}
+
+		0x1806C0618: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x1806C061A: Jumps to 0x1806C07A6 (which is an if statement's body) if boolean2 equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806C0620: [!] Reads field mFG from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'uIWidget3' (type UIWidget)}
+
+		0x1806C0624: [!] Compares {'uIWidget3' (type UIWidget)} and 0
+		0x1806C0627: Jumps to 0x1806C07C0 (which throws a NRE) if uIWidget3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C062D: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<UnityEngine.Collider>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1806C0634: [!] Calls managed method T UnityEngine.Component::GetComponent<UnityEngine.Collider>() on instance {'uIWidget3' (type UIWidget)} and stores the result in {'component' (type UnityEngine.Collider)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1806C0639: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1806C0640: Copies {'component' (type UnityEngine.Collider)} from rax into rbx
+		0x1806C0643: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C064A: Jumps to 0x1806C065A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806C064C: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C0653: Jumps to 0x1806C065A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806C0655: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1806C065D: Clears register rdx, yielding zero-local {'local16' (type System.Int32)}
+		0x1806C065F: Copies {'component' (type UnityEngine.Collider)} from rbx into rcx
+		0x1806C0662: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'component' (type UnityEngine.Collider)}, {'local16' (type System.Int32)}] and stores the result in {'boolean3' (type System.Boolean)}
+
+		0x1806C0667: [!] Compares {'boolean3' (type System.Boolean)} and False
+		0x1806C0669: Jumps to 0x1806C06BD (which is an if statement's body) if {'boolean3' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806C066B: [!] Reads field mFG from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'uIWidget4' (type UIWidget)}
+
+		0x1806C066F: [!] Compares {'uIWidget4' (type UIWidget)} and 0
+		0x1806C0672: Jumps to 0x1806C07C0 (which throws a NRE) if uIWidget4 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C0678: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<UnityEngine.Collider2D>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1806C067F: [!] Calls managed method T UnityEngine.Component::GetComponent<UnityEngine.Collider2D>() on instance {'uIWidget4' (type UIWidget)} and stores the result in {'component2' (type UnityEngine.Collider2D)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1806C0684: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1806C068B: Copies {'component2' (type UnityEngine.Collider2D)} from rax into rbx
+		0x1806C068E: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C0695: Jumps to 0x1806C06A5 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806C0697: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C069E: Jumps to 0x1806C06A5 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806C06A0: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1806C06A8: Clears register rdx, yielding zero-local {'local21' (type System.Int32)}
+		0x1806C06AA: Copies {'component2' (type UnityEngine.Collider2D)} from rbx into rcx
+		0x1806C06AD: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'component2' (type UnityEngine.Collider2D)}, {'local21' (type System.Int32)}] and stores the result in {'boolean4' (type System.Boolean)}
+
+		0x1806C06B2: Copies {'boolean4' (type System.Boolean)} from rax into rax
+		0x1806C06B5: [!] Compares {'boolean4' (type System.Boolean)} and False
+		0x1806C06B7: Jumps to 0x1806C07A6 if boolean4 equals False ;  - This is probably a goto, jumping to 0x1806C07A6 which is after end of current block @ 0x1806C06BD (started at 0x1806C066B)
+
+		0x1806C06BD: [!] Reads field mFG from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'uIWidget5' (type UIWidget)}
+
+		0x1806C06C1: [!] Compares {'uIWidget5' (type UIWidget)} and 0
+		0x1806C06C4: Jumps to 0x1806C07C0 (which throws a NRE) if uIWidget5 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C06CC: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'uIWidget5' (type UIWidget)} and stores the result in {'gameObject3' (type UnityEngine.GameObject)}
+
+		0x1806C06D3: Copies {'gameObject3' (type UnityEngine.GameObject)} from rax into rcx
+		0x1806C06D6: [!] Calls static managed method UIEventListener UIEventListener::Get(UnityEngine.GameObject) with arguments [{'gameObject3' (type UnityEngine.GameObject)}] and stores the result in {'uIEventListener' (type UIEventListener)}
+
+		0x1806C06DB: Copies {'uIEventListener' (type UIEventListener)} from rax into r14
+		0x1806C06DE: [!] Compares {'uIEventListener' (type UIEventListener)} and 0
+		0x1806C06E1: Jumps to 0x1806C07C0 (which throws a NRE) if uIEventListener equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C06E7: Loads the type definition for managed type UIEventListener/BoolDelegate as a constant "BoolDelegate" in rcx
+		0x1806C06EE: [!] Reads field onPress from {'uIEventListener' (type UIEventListener)} and stores in a new local {'onPress' (type UIEventListener/BoolDelegate)}
+
+		0x1806C06F2: [!] Allocates an instance of type UIEventListener/BoolDelegate and stores it as boolDelegate in rax.
+
+		0x1806C06F7: Loads the method definition for managed method System.Void UISlider::OnPressForeground(UnityEngine.GameObject,System.Boolean) as a constant "OnPressForeground"
+		0x1806C0701: Copies {'this' (function parameter, type UIScrollBar)} from rsi into rdx
+		0x1806C0704: Copies {'boolDelegate' (type UIEventListener/BoolDelegate)} from rax into rcx
+		0x1806C0707: Copies {'boolDelegate' (type UIEventListener/BoolDelegate)} from rax into rbx
+		0x1806C070A: [!] Calls managed method System.Void UIEventListener/BoolDelegate::.ctor(System.Object,System.IntPtr) on instance {'boolDelegate' (type UIEventListener/BoolDelegate)} with arguments [{'this' (function parameter, type UIScrollBar)}, {'OnPressForeground' (constant value of type Mono.Cecil.MethodReference)}]
+
+		0x1806C0712: Copies {'boolDelegate' (type UIEventListener/BoolDelegate)} from rbx into rdx
+		0x1806C0715: Copies {'onPress' (type UIEventListener/BoolDelegate)} from rdi into rcx
+		0x1806C0718: [!] Calls static managed method System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate) with arguments [{'onPress' (type UIEventListener/BoolDelegate)}, {'boolDelegate' (type UIEventListener/BoolDelegate)}] and stores the result in {'delegate' (type System.Delegate)}
+
+		0x1806C071D: Loads the type definition for managed type UIEventListener/BoolDelegate as a constant "BoolDelegate" in rdx
+		0x1806C0726: [!] Compares {'delegate' (type System.Delegate)} and 0
+		0x1806C0729: Copies {'delegate' (type System.Delegate)} from rax into rcx
+		0x1806C072C: Copies {'local33' (type System.Int32)} from rbp into rax
+		0x1806C072E: Jumps to 0x1806C0740 if delegate equals 0 ;  - This is probably a goto, jumping to 0x1806C0740 which is after end of current block @ 0x1806C06BD (started at 0x1806C066B)
+
+		0x1806C0730: [!] Compares {'constant39' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} and {'BoolDelegate' (constant value of type Mono.Cecil.TypeReference)}
+		0x1806C0733: [!] Copies {'delegate' (type System.Delegate)} from rcx into rax based on previous comparison
+		0x1806C0737: [!] Compares {'delegate' (type System.Delegate)} and 0
+		0x1806C073A: Jumps to 0x1806C07D1 if delegate equals 0 ;  - This is probably a goto, jumping to 0x1806C07D1 which is after end of current block @ 0x1806C06BD (started at 0x1806C066B)
+
+		0x1806C0740: [!] Sets the field onPress (Type UIEventListener/BoolDelegate) on local {'uIEventListener' (type UIEventListener)} to the value stored in {'delegate' (type System.Delegate)}
+		0x1806C0744: Loads the type definition for managed type UIEventListener/VectorDelegate as a constant "VectorDelegate" in rcx
+		0x1806C074B: [!] Reads field onDrag from {'uIEventListener' (type UIEventListener)} and stores in a new local {'onDrag' (type UIEventListener/VectorDelegate)}
+
+		0x1806C074F: [!] Allocates an instance of type UIEventListener/VectorDelegate and stores it as vectorDelegate in rax.
+
+		0x1806C0754: Loads the method definition for managed method System.Void UISlider::OnDragForeground(UnityEngine.GameObject,UnityEngine.Vector2) as a constant "OnDragForeground"
+		0x1806C075E: Copies {'this' (function parameter, type UIScrollBar)} from rsi into rdx
+		0x1806C0761: Copies {'vectorDelegate' (type UIEventListener/VectorDelegate)} from rax into rcx
+		0x1806C0764: Copies {'vectorDelegate' (type UIEventListener/VectorDelegate)} from rax into rbx
+		0x1806C0767: [!] Calls managed method System.Void UIEventListener/VectorDelegate::.ctor(System.Object,System.IntPtr) on instance {'vectorDelegate' (type UIEventListener/VectorDelegate)} with arguments [{'this' (function parameter, type UIScrollBar)}, {'OnDragForeground' (constant value of type Mono.Cecil.MethodReference)}]
+
+		0x1806C076F: Copies {'vectorDelegate' (type UIEventListener/VectorDelegate)} from rbx into rdx
+		0x1806C0772: Copies {'onDrag' (type UIEventListener/VectorDelegate)} from rdi into rcx
+		0x1806C0775: [!] Calls static managed method System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate) with arguments [{'onDrag' (type UIEventListener/VectorDelegate)}, {'vectorDelegate' (type UIEventListener/VectorDelegate)}] and stores the result in {'delegate2' (type System.Delegate)}
+
+		0x1806C077A: Loads the type definition for managed type UIEventListener/VectorDelegate as a constant "VectorDelegate" in rdx
+		0x1806C0781: [!] Compares {'delegate2' (type System.Delegate)} and 0
+		0x1806C0784: Jumps to 0x1806C0792 if delegate2 equals 0 ;  - This is probably a goto, jumping to 0x1806C0792 which is after end of current block @ 0x1806C06BD (started at 0x1806C066B)
+
+		0x1806C0786: [!] Compares {'constant45' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} and {'VectorDelegate' (constant value of type Mono.Cecil.TypeReference)}
+		0x1806C0789: [!] Copies {'delegate2' (type System.Delegate)} from rax into rbp based on previous comparison
+		0x1806C078D: [!] Compares {'delegate2' (type System.Delegate)} and 0
+		0x1806C0790: Jumps to 0x1806C07C8 if delegate2 equals 0 ;  - This is probably a goto, jumping to 0x1806C07C8 which is after end of current block @ 0x1806C06BD (started at 0x1806C066B)
+
+		0x1806C0792: [!] Sets the field onDrag (Type UIEventListener/VectorDelegate) on local {'uIEventListener' (type UIEventListener)} to the value stored in {'delegate2' (type System.Delegate)}
+		0x1806C0796: [!] Reads field mFG from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'uIWidget6' (type UIWidget)}
+
+		0x1806C079A: [!] Compares {'uIWidget6' (type UIWidget)} and 0
+		0x1806C079D: Jumps to 0x1806C07C0 (which throws a NRE) if uIWidget6 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C079F: [!] Sets the field autoResizeBoxCollider (Type System.Boolean) on local {'uIWidget6' (type UIWidget)} to the value stored in True
+		0x1806C07A6: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rdi as new constant constant48
+		0x1806C07AB: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbp as new constant constant49
+		0x1806C07B0: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register r14 as new constant constant50
+		0x1806C07B5: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rbx as new constant constant51
+		0x1806C07BF: [!] Returns from the function
+
+		0x1806C07C2: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+		0x1806C07D1: [!] Constructs and throws an exception of kind System.InvalidCastException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIScrollBar
+	System.Void OnStart()
+
+		base.OnStart()
+		UIWidget uIWidget = this.mFG
+		ulong local4 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(uIWidget, local4) //(Object x, Object y)
+
+		if (boolean != False)
+		    UIWidget uIWidget2 = this.mFG
+
+		    UnityEngine.GameObject gameObject = uIWidget2.gameObject
+
+		    UnityEngine.GameObject gameObject2 = base.gameObject
+
+		    System.Boolean boolean2 = UnityEngine.Object.op_Inequality(gameObject, gameObject2) //(Object x, Object y)
+
+		    if (boolean2 != False)
+		        UIWidget uIWidget3 = this.mFG
+
+		        UnityEngine.Collider component = uIWidget3.GetComponent<UnityEngine.Collider>()
+		        ulong local16 = 0
+
+		        System.Boolean boolean3 = UnityEngine.Object.op_Inequality(component, local16) //(Object x, Object y)
+
+		        if (boolean3 == False)
+		            UIWidget uIWidget4 = this.mFG
+
+		            UnityEngine.Collider2D component2 = uIWidget4.GetComponent<UnityEngine.Collider2D>()
+		            ulong local21 = 0
+
+		            System.Boolean boolean4 = UnityEngine.Object.op_Inequality(component2, local21) //(Object x, Object y)
+
+		            if (boolean4 == False)
+                        goto INSN_1806C07A6
+                    endif
+		        endif
+                
+		        UIWidget uIWidget5 = this.mFG
+
+		        UnityEngine.GameObject gameObject3 = uIWidget5.gameObject
+
+		        UIEventListener uIEventListener = UIEventListener.Get(gameObject3) //(GameObject go)
+		        UIEventListener/BoolDelegate onPress = uIEventListener.onPress
+		        UIEventListener/BoolDelegate boolDelegate = new UIEventListener/BoolDelegate()
+
+		        boolDelegate..ctor(this, {'OnPressForeground' (constant value of type Mono.Cecil.MethodReference)}) //(Object object, IntPtr method)
+
+		        System.Delegate delegate = System.Delegate.Combine(onPress, boolDelegate) //(Delegate a, Delegate b)
+
+		        if (delegate == 0)
+                    goto INSN_1806C0740
+                endif
+
+		        if (delegate == 0)
+                    goto INSN_1806C07D1
+                endif
+
+		        INSN_1806C0740:
+		        uIEventListener.onPress = delegate
+		        UIEventListener/VectorDelegate onDrag = uIEventListener.onDrag
+		        UIEventListener/VectorDelegate vectorDelegate = new UIEventListener/VectorDelegate()
+
+		        vectorDelegate..ctor(this, {'OnDragForeground' (constant value of type Mono.Cecil.MethodReference)}) //(Object object, IntPtr method)
+
+		        System.Delegate delegate2 = System.Delegate.Combine(onDrag, vectorDelegate) //(Delegate a, Delegate b)
+
+		        if (delegate2 == 0)
+                    goto INSN_1806C0792
+                endif
+
+		        if (delegate2 == 0)
+                    goto INSN_1806C07C8
+                endif
+
+		        INSN_1806C0792:
+		        uIEventListener.onDrag = delegate2
+		        UIWidget uIWidget6 = this.mFG
+		        uIWidget6.autoResizeBoxCollider = True
+		    endif
+            
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+		INSN_1806C07D1:
+		throw new System.InvalidCastException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UISlider::OnStart()
+	IL_0006: ldarg.0
+	IL_0007: ldfld UIWidget UIProgressBar::mFG
+	IL_000c: stloc.0
+	IL_000d: ldc.i4.0
+	IL_000e: stloc.1
+	IL_000f: ldloc.0
+	IL_0010: ldloc.1
+	IL_0011: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_0016: ldc.i4.0
+	IL_0017: beq IL_00ff
+	IL_001c: ldarg.0
+	IL_001d: ldfld UIWidget UIProgressBar::mFG
+	IL_0022: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0027: stloc.2
+	IL_0028: ldarg.0
+	IL_0029: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_002e: stloc.3
+	IL_002f: ldloc.2
+	IL_0030: ldloc.3
+	IL_0031: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_0036: ldc.i4.0
+	IL_0037: beq IL_00ff
+	IL_003c: ldarg.0
+	IL_003d: ldfld UIWidget UIProgressBar::mFG
+	IL_0042: call T UnityEngine.Component::GetComponent<UnityEngine.Collider>()
+	IL_0047: stloc.s V_4
+	IL_0049: ldc.i4.0
+	IL_004a: stloc.s V_5
+	IL_004c: ldloc.s V_4
+	IL_004e: ldloc.s V_5
+	IL_0050: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_0055: ldc.i4.0
+	IL_0056: bne.un.s IL_0077
+	IL_0058: ldarg.0
+	IL_0059: ldfld UIWidget UIProgressBar::mFG
+	IL_005e: call T UnityEngine.Component::GetComponent<UnityEngine.Collider2D>()
+	IL_0063: stloc.s V_6
+	IL_0065: ldc.i4.0
+	IL_0066: stloc.s V_7
+	IL_0068: ldloc.s V_6
+	IL_006a: ldloc.s V_7
+	IL_006c: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_0071: ldc.i4.0
+	IL_0072: beq IL_00ff
+	IL_0077: ldarg.0
+	IL_0078: ldfld UIWidget UIProgressBar::mFG
+	IL_007d: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0082: call UIEventListener UIEventListener::Get(UnityEngine.GameObject)
+	IL_0087: stloc.s V_8
+	IL_0089: ldloc.s V_8
+	IL_008b: ldfld UIEventListener/BoolDelegate UIEventListener::onPress
+	IL_0090: stloc.s V_9
+	IL_0092: ldarg.0
+	IL_0093: ldftn System.Void UISlider::OnPressForeground(UnityEngine.GameObject,System.Boolean)
+	IL_0099: newobj System.Void UIEventListener/BoolDelegate::.ctor(System.Object,System.IntPtr)
+	IL_009e: stloc.s V_10
+	IL_00a0: ldloc.s V_9
+	IL_00a2: ldloc.s V_10
+	IL_00a4: call System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate)
+	IL_00a9: stloc.s V_11
+	IL_00ab: ldloc.s V_11
+	IL_00ad: ldc.i4.0
+	IL_00ae: beq.s IL_00b5
+	IL_00b0: ldloc.s V_11
+	IL_00b2: ldc.i4.0
+	IL_00b3: beq.s IL_0106
+	IL_00b5: ldloc.s V_8
+	IL_00b7: ldloc.s V_11
+	IL_00b9: stfld UIEventListener/BoolDelegate UIEventListener::onPress
+	IL_00be: ldloc.s V_8
+	IL_00c0: ldfld UIEventListener/VectorDelegate UIEventListener::onDrag
+	IL_00c5: stloc.s V_12
+	IL_00c7: ldarg.0
+	IL_00c8: ldftn System.Void UISlider::OnDragForeground(UnityEngine.GameObject,UnityEngine.Vector2)
+	IL_00ce: newobj System.Void UIEventListener/VectorDelegate::.ctor(System.Object,System.IntPtr)
+	IL_00d3: stloc.s V_13
+	IL_00d5: ldloc.s V_12
+	IL_00d7: ldloc.s V_13
+	IL_00d9: call System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate)
+	IL_00de: stloc.s V_14
+	IL_00e0: ldloc.s V_14
+	IL_00e2: ldc.i4.0
+	IL_00e3: beq.s IL_00ea
+	IL_00e5: ldloc.s V_14
+	IL_00e7: ldc.i4.0
+	IL_00e8: beq.s IL_0106
+	IL_00ea: ldloc.s V_8
+	IL_00ec: ldloc.s V_14
+	IL_00ee: stfld UIEventListener/VectorDelegate UIEventListener::onDrag
+	IL_00f3: ldarg.0
+	IL_00f4: ldfld UIWidget UIProgressBar::mFG
+	IL_00f9: ldc.i4.1
+	IL_00fa: stfld System.Boolean UIWidget::autoResizeBoxCollider
+	IL_00ff: ret
+	IL_0100: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0105: throw
+	IL_0106: newobj System.Void System.InvalidCastException::.ctor()
+	IL_010b: throw
+	
+
+Method: System.Single UIScrollBar::LocalToValue(UnityEngine.Vector2):	Method Body (x86 ASM):
+		0x1806C0200 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1806C0205 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C0206 sub rsp,70h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 112
+		0x1806C020A cmp byte ptr [18183F41Eh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875870 | None ||| N/A | 0
+		0x1806C0211 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0214 movaps [rsp+60h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 96 | None ||| N/A | N/A
+		0x1806C0219 movq xmm6,rdx		; DEBUG: {Register}/XMM6 {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C021E movsd qword ptr [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x1806C0224 jne short 00000001806C0238h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0226 mov ecx,[18151C2B4h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464586420 | None ||| N/A | N/A
+		0x1806C022C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0231 mov byte ptr [18183F41Eh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875870 | None ||| N/A | 1
+		0x1806C0238 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1806C023F mov rbx,[rdi+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x1806C0243 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C024A je short 00000001806C025Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C024C cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C0253 jne short 00000001806C025Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0255 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C025A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C025D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C025F mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0262 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0267 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C0269 jne short 00000001806C028Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C026B xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C026E movq rdx,xmm6		; DEBUG: {Register}/RDX {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0273 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C0276 mov rbx,[rsp+80h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x1806C027E movaps xmm6,[rsp+60h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 96 | None ||| N/A | N/A
+		0x1806C0283 add rsp,70h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 112
+		0x1806C0287 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C0288 jmp near ptr 000000018033F850h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C028D mov rcx,[18188DA20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1806C0294 movss xmm6,dword ptr [rdi+88h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RDI | 136 | None ||| N/A | N/A
+		0x1806C029C movaps [rsp+50h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 80 | None ||| N/A | N/A
+		0x1806C02A1 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C02A8 je short 00000001806C02B8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C02AA cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C02B1 jne short 00000001806C02B8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C02B3 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C02B8 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C02BA movaps xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806C02BD call 0000000180E9BE70h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C02C2 mov rcx,[rdi+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x1806C02C6 movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C02C9 mulss xmm6,dword ptr [181261CF8h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RIP | 6461725944 | None ||| N/A | N/A
+		0x1806C02D1 movss xmm7,dword ptr [181261D04h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RIP | 6461725956 | None ||| N/A | N/A
+		0x1806C02D9 subss xmm7,xmm6		; DEBUG: {Register}/XMM7 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806C02DD test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806C02E0 je near ptr 00000001806C04BCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C02E6 mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x1806C02E9 mov rdx,[rax+1D0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 464 | None ||| N/A | N/A
+		0x1806C02F0 call qword ptr [rax+1C8h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 456 | None ||| N/A | N/A
+		0x1806C02F6 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C02F8 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C02FB mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C02FE call 0000000180340920h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0303 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0306 je near ptr 00000001806C04BCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C030C movaps [rsp+40h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RSP | 64 | None ||| N/A | N/A
+		0x1806C0312 movaps [rsp+30h],xmm9		; DEBUG: {Memory}/None {Register}/XMM9 ||| RSP | 48 | None ||| N/A | N/A
+		0x1806C0318 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C031A mov eax,[rbx+18h]		; DEBUG: {Register}/EAX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1806C031D jne near ptr 00000001806C03F9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0323 test eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0325 je near ptr 00000001806C04C4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C032B movss xmm8,dword ptr [rbx+24h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RBX | 36 | None ||| N/A | N/A
+		0x1806C0331 cmp eax,1		; DEBUG: {Register}/EAX {Immediate8to32}/None ||| None | 0 | None ||| N/A | 1
+		0x1806C0334 jbe near ptr 00000001806C04D7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C033A mov rcx,[18188DA20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1806C0341 movss xmm9,dword ptr [rbx+30h]		; DEBUG: {Register}/XMM9 {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x1806C0347 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C034E je short 00000001806C035Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0350 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C0357 jne short 00000001806C035Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0359 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C035E xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1806C0361 movaps xmm2,xmm6		; DEBUG: {Register}/XMM2 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0364 movaps xmm1,xmm9		; DEBUG: {Register}/XMM1 {Register}/XMM9 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0368 movaps xmm0,xmm8		; DEBUG: {Register}/XMM0 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1806C036C call 0000000180E9C320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0371 cmp dword ptr [rbx+18h],3		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 3
+		0x1806C0375 movaps xmm8,xmm0		; DEBUG: {Register}/XMM8 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0379 jbe near ptr 00000001806C04EAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C037F movss xmm1,dword ptr [rbx+3Ch]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RBX | 60 | None ||| N/A | N/A
+		0x1806C0384 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1806C0387 movss xmm0,dword ptr [rbx+48h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 72 | None ||| N/A | N/A
+		0x1806C038C movaps xmm2,xmm7		; DEBUG: {Register}/XMM2 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1806C038F call 0000000180E9C320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0394 movaps xmm7,xmm0		; DEBUG: {Register}/XMM7 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0397 movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C039A subss xmm7,xmm8		; DEBUG: {Register}/XMM7 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1806C039F xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C03A2 ucomiss xmm7,xmm0		; DEBUG: {Register}/XMM7 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C03A5 jp short 00000001806C03ADh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C03A7 je near ptr 00000001806C0489h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C03AD xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C03AF mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C03B2 call 0000000180340940h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C03B7 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C03B9 jne short 00000001806C03F1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C03BB movss xmm6,dword ptr [rsp+24h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 36 | None ||| N/A | N/A
+		0x1806C03C1 subss xmm6,xmm8		; DEBUG: {Register}/XMM6 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1806C03C6 divss xmm6,xmm7		; DEBUG: {Register}/XMM6 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1806C03CA movaps xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806C03CD movaps xmm8,[rsp+40h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1806C03D3 movaps xmm9,[rsp+30h]		; DEBUG: {Register}/XMM9 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806C03D9 movaps xmm7,[rsp+50h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1806C03DE mov rbx,[rsp+80h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x1806C03E6 movaps xmm6,[rsp+60h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 96 | None ||| N/A | N/A
+		0x1806C03EB add rsp,70h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 112
+		0x1806C03EF pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C03F0 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C03F1 subss xmm6,dword ptr [rsp+24h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 36 | None ||| N/A | N/A
+		0x1806C03F7 jmp short 00000001806C03C6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C03F9 test eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C03FB je near ptr 00000001806C04FDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0401 movss xmm8,dword ptr [rbx+20h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1806C0407 cmp eax,2		; DEBUG: {Register}/EAX {Immediate8to32}/None ||| None | 0 | None ||| N/A | 2
+		0x1806C040A jbe near ptr 00000001806C0510h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0410 mov rcx,[18188DA20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1806C0417 movss xmm9,dword ptr [rbx+38h]		; DEBUG: {Register}/XMM9 {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x1806C041D test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C0424 je short 00000001806C0434h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0426 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C042D jne short 00000001806C0434h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C042F call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0434 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1806C0437 movaps xmm2,xmm6		; DEBUG: {Register}/XMM2 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806C043A movaps xmm1,xmm9		; DEBUG: {Register}/XMM1 {Register}/XMM9 ||| None | 0 | None ||| N/A | N/A
+		0x1806C043E movaps xmm0,xmm8		; DEBUG: {Register}/XMM0 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0442 call 0000000180E9C320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0447 mov eax,[rbx+18h]		; DEBUG: {Register}/EAX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1806C044A movaps xmm8,xmm0		; DEBUG: {Register}/XMM8 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C044E test eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0450 je near ptr 00000001806C0523h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0456 cmp eax,2		; DEBUG: {Register}/EAX {Immediate8to32}/None ||| None | 0 | None ||| N/A | 2
+		0x1806C0459 jbe near ptr 00000001806C0536h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C045F movss xmm1,dword ptr [rbx+38h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x1806C0464 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1806C0467 movss xmm0,dword ptr [rbx+20h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1806C046C movaps xmm2,xmm7		; DEBUG: {Register}/XMM2 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1806C046F call 0000000180E9C320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0474 movaps xmm7,xmm0		; DEBUG: {Register}/XMM7 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0477 movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C047A subss xmm7,xmm8		; DEBUG: {Register}/XMM7 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1806C047F xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0482 ucomiss xmm7,xmm0		; DEBUG: {Register}/XMM7 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0485 jp short 00000001806C0498h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0487 jne short 00000001806C0498h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0489 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C048B mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C048E call 0000000180340960h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0493 jmp near ptr 00000001806C03CDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0498 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C049A mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C049D call 0000000180340940h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C04A2 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C04A4 jne short 00000001806C04B1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C04A6 movss xmm6,dword ptr [rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806C04AC jmp near ptr 00000001806C03C1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C04B1 subss xmm6,dword ptr [rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806C04B7 jmp near ptr 00000001806C03C6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C04BC xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806C04BE call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C04C3 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Single UIScrollBar::LocalToValue(UnityEngine.Vector2):
+		End of function at 0x1806C04C4
+		Absolute End is at 0x1806C04C4
+		Identified Jump Destination addresses:
+
+		0x1806C0205: Saves the content of rdi to the stack
+		0x1806C020A: Compares {Unknown Global at 0x18183F41E, first ten bytes are [2 0 52 22 2 0 216 60 103 1], or as chars " 4 Ø<g"} and 0
+		0x1806C0211: Copies {'this' (function parameter, type UIScrollBar)} from rcx into rdi
+		0x1806C0224: Jumps to 0x1806C0238 if {Unknown Global at 0x18183F41E, first ten bytes are [2 0 52 22 2 0 216 60 103 1], or as chars " 4 Ø<g"} != 0
+
+		0x1806C0226: Reads {Unknown Global at 0x18151C2B4, first ten bytes are [21 121 0 0 21 25 0 0 21 89], or as chars "y    Y"} into register rcx as a constant constant3
+		0x1806C022C: Attempts to load the il2cpp metadata for this method (method id 30997) and init it cpp-side.
+
+		0x1806C0238: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1806C023F: [!] Reads field mFG from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'uIWidget' (type UIWidget)}
+
+		0x1806C0243: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C024A: Jumps to 0x1806C025A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806C024C: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C0253: Jumps to 0x1806C025A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806C0255: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1806C025D: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x1806C025F: Copies {'uIWidget' (type UIWidget)} from rbx into rcx
+		0x1806C0262: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'uIWidget' (type UIWidget)}, {'local4' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1806C0267: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1806C0269: Jumps to 0x1806C028D (which is an if statement's body) if {'boolean' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806C0273: Copies {'this' (function parameter, type UIScrollBar)} from rdi into rcx
+		0x1806C0276: Reads unknown value in stack, offset 128 (0x80) and stores the pointer in register rbx as new constant constant10
+		0x1806C027E: Reads unknown value in stack, offset 96 (0x60) and stores the pointer in register xmm6 as new constant constant11
+		0x1806C0288: [!] Calls managed method System.Single UIProgressBar::LocalToValue(UnityEngine.Vector2) on instance {'this' (function parameter, type UIScrollBar)} with arguments [{'local4' (type System.Int32)}] and stores the result in {'single' (type System.Single)}
+
+		0x1806C0288: [!] Returns {'single' (type System.Single)} from the function
+
+		0x1806C028D: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rcx
+		0x1806C0294: [!] Reads field mSize from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'mSize' (type System.Single)}
+
+		0x1806C02A1: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C02A8: Jumps to 0x1806C02B8 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1806C02B8 which is after end of current block @ 0x1806C028D (started at 0x1806C026B)
+
+		0x1806C02AA: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C02B1: Jumps to 0x1806C02B8 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1806C02B8 which is after end of current block @ 0x1806C028D (started at 0x1806C026B)
+
+		0x1806C02B3: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x1806C02BA: Copies {'mSize' (type System.Single)} from xmm6 into xmm0
+		0x1806C02BD: [!] Calls static managed method System.Single UnityEngine.Mathf::Clamp01(System.Single) with arguments [{'mSize' (type System.Single)}] and stores the result in {'single2' (type System.Single)}
+
+		0x1806C02C2: [!] Reads field mFG from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'uIWidget2' (type UIWidget)}
+
+		0x1806C02C6: Copies {'single2' (type System.Single)} from xmm0 into xmm6
+		0x1806C02C9: Multiplies {'mSize' (type System.Single)} by the constant value at 0x181261CF8 in the binary, which is 0,5, and stores the result in new local {'local12' (type System.Single)} in register xmm6
+		0x1806C02D1: Reads {Unknown Global at 0x181261D04, first ten bytes are [0 0 128 63 154 153 153 63 0 0], or as chars "  ??  "} into register xmm7 as a constant constant17
+		0x1806C02DD: [!] Compares {'uIWidget2' (type UIWidget)} and 0
+		0x1806C02E0: Jumps to 0x1806C04BC (which throws a NRE) if uIWidget2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C02E6: Loads the class pointer from uIWidget2 into a constant constant19 in register rax
+		0x1806C02E9: Loads the pointer to the implementation of virtual function UnityEngine.Vector3[] UIWidget::get_localCorners() specific to UIWidget from the class pointer in rax, slot 10 (from memory offset 464) and stores in constant constant20
+		0x1806C02F0: [!] Calls managed method UnityEngine.Vector3[] UIWidget::get_localCorners() on instance {'uIWidget2' (type UIWidget)} and stores the result in {'localCorners' (type UnityEngine.Vector3[])}
+
+		0x1806C02F8: Copies {'this' (function parameter, type UIScrollBar)} from rdi into rcx
+		0x1806C02FB: Copies {'localCorners' (type UnityEngine.Vector3[])} from rax into rbx
+		0x1806C02FE: [!] Calls managed method System.Boolean UIProgressBar::get_isHorizontal() on instance {'this' (function parameter, type UIScrollBar)} and stores the result in {'isHorizontal' (type System.Boolean)}
+
+		0x1806C0303: [!] Compares {'localCorners' (type UnityEngine.Vector3[])} and 0
+		0x1806C0306: Jumps to 0x1806C04BC (which throws a NRE) if localCorners equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C0318: [!] Compares {'isHorizontal' (type System.Boolean)} and False
+		0x1806C031A: Reads the length of the array "{'localCorners' (type UnityEngine.Vector3[])}" and stores it in new local {'length' (type System.Int32)} in register rax
+		0x1806C031D: Jumps to 0x1806C03F9 if {'isHorizontal' (type System.Boolean)} != False ;  - This is probably a goto, jumping to 0x1806C03F9 which is after end of current block @ 0x1806C028D (started at 0x1806C026B)
+
+		0x1806C0323: [!] Compares {'length' (type System.Int32)} and 0
+		0x1806C0325: Jumps to 0x1806C04C4 (which throws a NRE) if length equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C032B: [!] Reads a value from the array {'localCorners' (type UnityEngine.Vector3[])} at index 0, into a new local {'local17' (type UnityEngine.Vector3)}
+
+		0x1806C0331: [!] Compares {'length' (type System.Int32)} and 1
+		0x1806C0334: Jumps to 0x1806C04D7 (which throws a NRE) if {'length' (type System.Int32)} is less than or equal to 1. Implicitly present in managed code, so ignored here.
+		0x1806C033A: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rcx
+		0x1806C0341: [!] Reads a value from the array {'localCorners' (type UnityEngine.Vector3[])} at index 2, into a new local {'local18' (type UnityEngine.Vector3)}
+
+		0x1806C0347: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C034E: Jumps to 0x1806C035E if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1806C035E which is after end of current block @ 0x1806C028D (started at 0x1806C026B)
+
+		0x1806C0350: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C0357: Jumps to 0x1806C035E if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1806C035E which is after end of current block @ 0x1806C028D (started at 0x1806C026B)
+
+		0x1806C0359: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x1806C0361: Copies {'local12' (type System.Single)} from xmm6 into xmm2
+		0x1806C0364: Copies {'local18' (type UnityEngine.Vector3)} from xmm9 into xmm1
+		0x1806C0368: Copies {'local17' (type UnityEngine.Vector3)} from xmm8 into xmm0
+		0x1806C036C: [!] Calls static managed method System.Single UnityEngine.Mathf::Lerp(System.Single,System.Single,System.Single) and stores the result in {'single3' (type System.Single)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806C0371: [!] Compares {Property System.Int32 System.Array::Length() on {'localCorners' (type UnityEngine.Vector3[])}} and 3
+		0x1806C0375: Copies {'single3' (type System.Single)} from xmm0 into xmm8
+		0x1806C0379: Jumps to 0x1806C04EA (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'localCorners' (type UnityEngine.Vector3[])}} is less than or equal to 3. Implicitly present in managed code, so ignored here.
+		0x1806C037F: [!] Reads a value from the array {'localCorners' (type UnityEngine.Vector3[])} at index 3, into a new local {'local21' (type UnityEngine.Vector3)}
+
+		0x1806C0387: [!] Reads a value from the array {'localCorners' (type UnityEngine.Vector3[])} at index 5, into a new local {'local23' (type UnityEngine.Vector3)}
+
+		0x1806C038C: Copies {Unknown Global at 0x181261D04, first ten bytes are [0 0 128 63 154 153 153 63 0 0], or as chars "  ??  "} from xmm7 into xmm2
+		0x1806C038F: [!] Calls static managed method System.Single UnityEngine.Mathf::Lerp(System.Single,System.Single,System.Single) and stores the result in {'single4' (type System.Single)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806C0394: Copies {'single4' (type System.Single)} from xmm0 into xmm7
+		0x1806C0397: Copies {'single4' (type System.Single)} from xmm0 into xmm6
+		0x1806C03A7: Jumps to 0x1806C0489 if localCorners.Length equals 3 ;  - This is probably a goto, jumping to 0x1806C0489 which is after end of current block @ 0x1806C028D (started at 0x1806C026B)
+
+		0x1806C03AF: Copies {'this' (function parameter, type UIScrollBar)} from rdi into rcx
+		0x1806C03B2: [!] Calls managed method System.Boolean UIProgressBar::get_isInverted() on instance {'this' (function parameter, type UIScrollBar)} and stores the result in {'isInverted' (type System.Boolean)}
+
+		0x1806C03B7: [!] Compares {'isInverted' (type System.Boolean)} and False
+		0x1806C03B9: Jumps to 0x1806C03F1 if {'isInverted' (type System.Boolean)} != False ;  - This is probably a goto, jumping to 0x1806C03F1 which is after end of current block @ 0x1806C028D (started at 0x1806C026B)
+
+		0x1806C03BB: Reads unknown value in stack, offset 36 (0x24) and stores the pointer in register xmm6 as new constant constant32
+
+		Potential Loop Start (0x1806C03C6):
+		0x1806C03CA: Copies {'constant32' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from xmm6 into xmm0
+
+		Potential Loop Start (0x1806C03CD):
+		0x1806C03CD: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register xmm8 as new constant constant33
+		0x1806C03D3: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register xmm9 as new constant constant34
+		0x1806C03D9: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register xmm7 as new constant constant35
+		0x1806C03DE: Reads unknown value in stack, offset 128 (0x80) and stores the pointer in register rbx as new constant constant36
+		0x1806C03E6: Reads unknown value in stack, offset 96 (0x60) and stores the pointer in register xmm6 as new constant constant37
+		0x1806C03F0: [!] Returns {'constant32' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from the function
+
+		0x1806C03F7: Jumps to 0x1806C03C6 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x1806C03F9: [!] Compares {'isInverted' (type System.Boolean)} and False
+		0x1806C03FB: Jumps to 0x1806C04FD (which throws a NRE) if isInverted equals False. Implicitly present in managed code, so ignored here.
+		0x1806C0407: [!] Compares {'isInverted' (type System.Boolean)} and True
+		0x1806C040A: Jumps to 0x1806C0510 (which throws a NRE) if {'isInverted' (type System.Boolean)} is less than or equal to True. Implicitly present in managed code, so ignored here.
+		0x1806C0410: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rcx
+		0x1806C041D: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C0424: Jumps to 0x1806C0434 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1806C0434 which is after end of current block @ 0x1806C028D (started at 0x1806C026B)
+
+		0x1806C0426: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C042D: Jumps to 0x1806C0434 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1806C0434 which is after end of current block @ 0x1806C028D (started at 0x1806C026B)
+
+		0x1806C042F: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x1806C0437: Copies {'constant37' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from xmm6 into xmm2
+		0x1806C043A: Copies {'constant34' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from xmm9 into xmm1
+		0x1806C043E: Copies {'constant33' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from xmm8 into xmm0
+		0x1806C0442: [!] Calls static managed method System.Single UnityEngine.Mathf::Lerp(System.Single,System.Single,System.Single) and stores the result in {'single5' (type System.Single)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806C044A: Copies {'single5' (type System.Single)} from xmm0 into xmm8
+		0x1806C044E: [!] Compares {'isInverted' (type System.Boolean)} and False
+		0x1806C0450: Jumps to 0x1806C0523 (which throws a NRE) if isInverted equals False. Implicitly present in managed code, so ignored here.
+		0x1806C0456: [!] Compares {'isInverted' (type System.Boolean)} and True
+		0x1806C0459: Jumps to 0x1806C0536 (which throws a NRE) if {'isInverted' (type System.Boolean)} is less than or equal to True. Implicitly present in managed code, so ignored here.
+		0x1806C046C: Copies {'constant35' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from xmm7 into xmm2
+		0x1806C046F: [!] Calls static managed method System.Single UnityEngine.Mathf::Lerp(System.Single,System.Single,System.Single) and stores the result in {'single6' (type System.Single)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806C0474: Copies {'single6' (type System.Single)} from xmm0 into xmm7
+		0x1806C0477: Copies {'single6' (type System.Single)} from xmm0 into xmm6
+		0x1806C0487: Jumps to 0x1806C0498 if {'isInverted' (type System.Boolean)} != True ;  - This is probably a goto, jumping to 0x1806C0498 which is after end of current block @ 0x1806C028D (started at 0x1806C026B)
+
+		0x1806C048B: Copies {'this' (function parameter, type UIScrollBar)} from rdi into rcx
+		0x1806C048E: [!] Calls managed method System.Single UIProgressBar::get_value() on instance {'this' (function parameter, type UIScrollBar)} and stores the result in {'value' (type System.Single)}
+
+		0x1806C0493: Jumps to 0x1806C03CD - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x1806C049A: Copies {'this' (function parameter, type UIScrollBar)} from rdi into rcx
+		0x1806C049D: [!] Calls managed method System.Boolean UIProgressBar::get_isInverted() on instance {'this' (function parameter, type UIScrollBar)} and stores the result in {'isInverted2' (type System.Boolean)}
+
+		0x1806C04A2: [!] Compares {'isInverted2' (type System.Boolean)} and False
+		0x1806C04A4: Jumps to 0x1806C04B1 if {'isInverted2' (type System.Boolean)} != False ;  - This is probably a goto, jumping to 0x1806C04B1 which is after end of current block @ 0x1806C028D (started at 0x1806C026B)
+
+		0x1806C04A6: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm6 as new constant constant48
+		0x1806C04AC: Jumps to 0x1806C03C1 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x1806C04B7: Jumps to 0x1806C03C6 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x1806C04BE: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIScrollBar
+	System.Single LocalToValue(UnityEngine.Vector2 localPos)
+		UIWidget uIWidget = this.mFG
+		ulong local4 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(uIWidget, local4) //(Object x, Object y)
+
+		if (boolean == False)
+
+		    System.Single single = base.LocalToValue(local4) //(Vector2 localPos)
+		    return single
+		endif
+        
+		System.Single mSize = this.mSize
+
+		System.Single single2 = UnityEngine.Mathf.Clamp01(mSize) //(Single value)
+		UIWidget uIWidget2 = this.mFG
+		mSize = single2
+		System.Single local12 = mSize * 0,5
+
+		UnityEngine.Vector3[] localCorners = uIWidget2.localCorners
+
+		System.Boolean isHorizontal = base.isHorizontal
+		System.Int32 length = localCorners.Length
+
+		if (isHorizontal != False)
+            goto INSN_1806C03F9
+        endif
+		UnityEngine.Vector3 local17 = localCorners[0]
+		UnityEngine.Vector3 local18 = localCorners[2]
+
+		System.Single single3 = UnityEngine.Mathf.Lerp()
+		UnityEngine.Vector3 local21 = localCorners[3]
+		UnityEngine.Vector3 local23 = localCorners[5]
+
+		System.Single single4 = UnityEngine.Mathf.Lerp()
+		local12 = single4
+
+		if (localCorners.Length == 3)
+            goto INSN_1806C0489
+        endif
+
+		System.Boolean isInverted = base.isInverted
+
+		if (isInverted != False)
+            goto INSN_1806C03F1
+        endif
+		return constant32
+
+		INSN_1806C03F1:
+
+		INSN_1806C03F9:
+
+		System.Single single5 = UnityEngine.Mathf.Lerp()
+
+		System.Single single6 = UnityEngine.Mathf.Lerp()
+
+		if (isInverted != True)
+            goto INSN_1806C0498
+        endif
+
+		INSN_1806C0489:
+
+		System.Single value = base.value
+
+		INSN_1806C0498:
+
+		System.Boolean isInverted2 = base.isInverted
+
+		if (isInverted2 != False)
+            goto INSN_1806C04B1
+        endif
+
+		INSN_1806C04B1:
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.MultiplyRegByGlobalAction at (0x1806C02C9) is corrupt (Operand we were multiplying by is null or local made was stripped) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void UIScrollBar::ForceUpdate():	Method Body (x86 ASM):
+		0x1806BFED0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1806BFED5 mov [rsp+10h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 16 | None ||| N/A | N/A
+		0x1806BFEDA push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806BFEDB lea rbp,[rsp-57h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 18446744073709551529 | None ||| N/A | N/A
+		0x1806BFEE0 sub rsp,0A0h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 160
+		0x1806BFEE7 cmp byte ptr [18183F41Fh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875871 | None ||| N/A | 0
+		0x1806BFEEE mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806BFEF1 jne short 00000001806BFF05h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFEF3 mov ecx,[18151C2ACh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464586412 | None ||| N/A | N/A
+		0x1806BFEF9 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFEFE mov byte ptr [18183F41Fh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875871 | None ||| N/A | 1
+		0x1806BFF05 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1806BFF0C xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1806BFF0E mov rdi,[rbx+30h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x1806BFF12 mov [rbp-19h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x1806BFF16 mov [rbp-11h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551599 | None ||| N/A | N/A
+		0x1806BFF19 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806BFF20 je short 00000001806BFF2Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFF22 cmp [rcx+0D8h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RCX | 216 | None ||| N/A | N/A
+		0x1806BFF28 jne short 00000001806BFF2Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFF2A call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFF2F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806BFF32 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806BFF34 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806BFF37 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFF3C test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806BFF3E jne short 00000001806BFF4Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFF40 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806BFF42 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806BFF45 call 000000018033EE90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFF4A jmp near ptr 00000001806C01E3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFF4F movaps [rsp+90h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 144 | None ||| N/A | N/A
+		0x1806BFF57 movss xmm6,dword ptr [rbx+88h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 136 | None ||| N/A | N/A
+		0x1806BFF5F mov byte ptr [rbx+50h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 80 | None ||| N/A | 0
+		0x1806BFF63 mov rcx,[18188DA20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1806BFF6A movaps [rsp+80h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 128 | None ||| N/A | N/A
+		0x1806BFF72 movaps [rsp+70h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RSP | 112 | None ||| N/A | N/A
+		0x1806BFF78 movaps [rsp+60h],xmm9		; DEBUG: {Memory}/None {Register}/XMM9 ||| RSP | 96 | None ||| N/A | N/A
+		0x1806BFF7E test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806BFF85 je short 00000001806BFF95h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFF87 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806BFF8E jne short 00000001806BFF95h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFF90 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFF95 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806BFF97 movaps xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806BFF9A call 0000000180E9BE70h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFF9F movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFA2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFA4 mulss xmm6,dword ptr [181261CF8h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RIP | 6461725944 | None ||| N/A | N/A
+		0x1806BFFAC mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFAF call 0000000180340960h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFFB4 movss xmm7,dword ptr [181261D04h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RIP | 6461725956 | None ||| N/A | N/A
+		0x1806BFFBC movaps xmm2,xmm0		; DEBUG: {Register}/XMM2 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFBF movaps xmm1,xmm7		; DEBUG: {Register}/XMM1 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFC2 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFC5 subss xmm1,xmm6		; DEBUG: {Register}/XMM1 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFC9 movaps xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFCC call 0000000180E9C320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFFD1 movaps xmm8,xmm0		; DEBUG: {Register}/XMM8 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFD5 movaps xmm9,xmm0		; DEBUG: {Register}/XMM9 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFD9 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFDB subss xmm9,xmm6		; DEBUG: {Register}/XMM9 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFE0 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFE3 addss xmm8,xmm6		; DEBUG: {Register}/XMM8 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFE8 call 0000000180340920h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFFED mov rdi,[rbx+30h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x1806BFFF1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFF3 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFF6 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806BFFF8 jne short 00000001806C0045h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFFFA call 0000000180340940h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BFFFF mov qword ptr [rsp+28h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RSP | 40 | None ||| N/A | 0
+		0x1806C0008 xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C000B lea rcx,[rbp+7]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x1806C000F movaps xmm3,xmm7		; DEBUG: {Register}/XMM3 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0012 movups [rbp+7],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 7 | None ||| N/A | N/A
+		0x1806C0016 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C0018 jne short 00000001806C002Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C001A movss dword ptr [rsp+20h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RSP | 32 | None ||| N/A | N/A
+		0x1806C0021 movaps xmm2,xmm9		; DEBUG: {Register}/XMM2 {Register}/XMM9 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0025 xorps xmm1,xmm1		; DEBUG: {Register}/XMM1 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0028 jmp short 00000001806C0085h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C002A movaps xmm1,xmm7		; DEBUG: {Register}/XMM1 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1806C002D movaps xmm2,xmm7		; DEBUG: {Register}/XMM2 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0030 subss xmm1,xmm9		; DEBUG: {Register}/XMM1 {Register}/XMM9 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0035 subss xmm2,xmm8		; DEBUG: {Register}/XMM2 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1806C003A movss dword ptr [rsp+20h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 32 | None ||| N/A | N/A
+		0x1806C0040 xorps xmm1,xmm1		; DEBUG: {Register}/XMM1 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0043 jmp short 00000001806C0085h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0045 call 0000000180340940h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C004A mov qword ptr [rsp+28h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RSP | 40 | None ||| N/A | 0
+		0x1806C0053 xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0056 movss dword ptr [rsp+20h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 32 | None ||| N/A | N/A
+		0x1806C005C xorps xmm2,xmm2		; DEBUG: {Register}/XMM2 {Register}/XMM2 ||| None | 0 | None ||| N/A | N/A
+		0x1806C005F lea rcx,[rbp+7]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x1806C0063 movups [rbp+7],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 7 | None ||| N/A | N/A
+		0x1806C0067 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C0069 jne short 00000001806C0075h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C006B movaps xmm3,xmm8		; DEBUG: {Register}/XMM3 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1806C006F movaps xmm1,xmm9		; DEBUG: {Register}/XMM1 {Register}/XMM9 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0073 jmp short 00000001806C0085h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0075 movaps xmm3,xmm7		; DEBUG: {Register}/XMM3 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0078 movaps xmm1,xmm7		; DEBUG: {Register}/XMM1 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1806C007B subss xmm3,xmm9		; DEBUG: {Register}/XMM3 {Register}/XMM9 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0080 subss xmm1,xmm8		; DEBUG: {Register}/XMM1 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0085 call 0000000180B28970h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C008A movups xmm0,[rbp+7]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x1806C008E test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C0091 je near ptr 00000001806C01F8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0097 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C009A movdqa [rbp+7],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 7 | None ||| N/A | N/A
+		0x1806C009F lea rdx,[rbp+7]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x1806C00A3 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C00A6 call 0000000181198C30h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C00AB mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1806C00B2 mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1806C00B6 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C00BD je short 00000001806C00CDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C00BF cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C00C6 jne short 00000001806C00CDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C00C8 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C00CD xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C00D0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C00D2 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806C00D5 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C00DA test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806C00DC je near ptr 00000001806C01C7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C00E2 mov rdx,[rbx+30h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x1806C00E6 test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C00E9 je near ptr 00000001806C01F8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C00EF mov rax,[rdx]		; DEBUG: {Register}/RAX {Memory}/None ||| RDX | 0 | None ||| N/A | N/A
+		0x1806C00F2 lea rcx,[rbp+7]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x1806C00F6 mov r8,[rax+2B0h]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 688 | None ||| N/A | N/A
+		0x1806C00FD call qword ptr [rax+2A8h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 680 | None ||| N/A | N/A
+		0x1806C0103 mov rcx,[18188DA20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1806C010A movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1806C010D test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806C0114 movups [rbp+7],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 7 | None ||| N/A | N/A
+		0x1806C0118 je short 00000001806C0128h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C011A cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806C0121 jne short 00000001806C0128h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0123 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0128 movss xmm2,dword ptr [181261CF8h]		; DEBUG: {Register}/XMM2 {Memory}/None ||| RIP | 6461725944 | None ||| N/A | N/A
+		0x1806C0130 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1806C0133 movss xmm1,dword ptr [rbp+0Fh]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RBP | 15 | None ||| N/A | N/A
+		0x1806C0138 movss xmm0,dword ptr [rbp+7]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x1806C013D call 0000000180E9C320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0142 movss xmm2,dword ptr [181261CF8h]		; DEBUG: {Register}/XMM2 {Memory}/None ||| RIP | 6461725944 | None ||| N/A | N/A
+		0x1806C014A movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C014D movss xmm0,dword ptr [rbp+0Bh]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBP | 11 | None ||| N/A | N/A
+		0x1806C0152 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1806C0155 movss xmm1,dword ptr [rbp+13h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RBP | 19 | None ||| N/A | N/A
+		0x1806C015A call 0000000180E9C320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C015F xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1806C0162 lea rcx,[rbp-19h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x1806C0166 movaps xmm2,xmm0		; DEBUG: {Register}/XMM2 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1806C0169 movaps xmm1,xmm6		; DEBUG: {Register}/XMM1 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806C016C call 0000000180CE6FE0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0171 mov rcx,[rbx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x1806C0175 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0178 je short 00000001806C01F8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C017A xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806C017C call 0000000180343C10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0181 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C0184 je short 00000001806C01F8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C0186 mov ecx,[rbp-11h]		; DEBUG: {Register}/ECX {Memory}/None ||| RBP | 18446744073709551599 | None ||| N/A | N/A
+		0x1806C0189 lea r8,[rbp-9]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1806C018D movsd xmm0,qword ptr [rbp-19h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x1806C0192 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1806C0195 mov [rbp-1],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RBP | 18446744073709551615 | None ||| N/A | N/A
+		0x1806C0198 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806C019B lea rcx,[rbp+7]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x1806C019F movsd qword ptr [rbp-9],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1806C01A4 call 0000000180CE1A00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C01A9 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806C01AC lea rdx,[rbp-9]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1806C01B0 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806C01B3 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1806C01B7 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1806C01BA movsd qword ptr [rbp-9],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1806C01BF mov [rbp-1],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551615 | None ||| N/A | N/A
+		0x1806C01C2 call 0000000180340090h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C01C7 movaps xmm8,[rsp+70h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RSP | 112 | None ||| N/A | N/A
+		0x1806C01CD movaps xmm7,[rsp+80h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x1806C01D5 movaps xmm6,[rsp+90h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 144 | None ||| N/A | N/A
+		0x1806C01DD movaps xmm9,[rsp+60h]		; DEBUG: {Register}/XMM9 {Memory}/None ||| RSP | 96 | None ||| N/A | N/A
+		0x1806C01E3 lea r11,[rsp+0A0h]		; DEBUG: {Register}/R11 {Memory}/None ||| RSP | 160 | None ||| N/A | N/A
+		0x1806C01EB mov rbx,[r11+10h]		; DEBUG: {Register}/RBX {Memory}/None ||| R11 | 16 | None ||| N/A | N/A
+		0x1806C01EF mov rdi,[r11+18h]		; DEBUG: {Register}/RDI {Memory}/None ||| R11 | 24 | None ||| N/A | N/A
+		0x1806C01F3 mov rsp,r11		; DEBUG: {Register}/RSP {Register}/R11 ||| None | 0 | None ||| N/A | N/A
+		0x1806C01F6 pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C01F7 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806C01F8 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806C01FA call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806C01FF int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIScrollBar::ForceUpdate():
+		End of function at 0x1806C0200
+		Absolute End is at 0x1806C0200
+		Identified Jump Destination addresses:
+			0x1806C01E3
+			0x1806C0085
+		0x1806BFEDA: Saves the content of rbp to the stack
+		0x1806BFEDB: Loads a pointer to stack offset 0xFFFFFFA9 into register rbp as new constant constant1
+		0x1806BFEE7: Compares {Unknown Global at 0x18183F41F, first ten bytes are [0 52 22 2 0 216 60 103 1 64], or as chars " 4 Ø<g@"} and 0
+		0x1806BFEEE: Copies {'this' (function parameter, type UIScrollBar)} from rcx into rbx
+		0x1806BFEF1: Jumps to 0x1806BFF05 if {Unknown Global at 0x18183F41F, first ten bytes are [0 52 22 2 0 216 60 103 1 64], or as chars " 4 Ø<g@"} != 0
+
+		0x1806BFEF3: Reads {Unknown Global at 0x18151C2AC, first ten bytes are [20 121 0 0 21 57 0 0 21 121], or as chars "y  9  y"} into register rcx as a constant constant4
+		0x1806BFEF9: Attempts to load the il2cpp metadata for this method (method id 30996) and init it cpp-side.
+
+		0x1806BFF05: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1806BFF0C: Clears register rax, yielding zero-local {'local1' (type System.Int32)}
+		0x1806BFF0E: [!] Reads field mFG from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'uIWidget' (type UIWidget)}
+
+		0x1806BFF19: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806BFF20: Jumps to 0x1806BFF2F if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806BFF22: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and {'local1' (type System.Int32)}
+		0x1806BFF28: Jumps to 0x1806BFF2F if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != {'local1' (type System.Int32)}
+
+		0x1806BFF2A: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1806BFF32: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x1806BFF34: Copies {'uIWidget' (type UIWidget)} from rdi into rcx
+		0x1806BFF37: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'uIWidget' (type UIWidget)}, {'local4' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1806BFF3C: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1806BFF3E: Jumps to 0x1806BFF4F if {'boolean' (type System.Boolean)} != False ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x1806BFF42: Copies {'this' (function parameter, type UIScrollBar)} from rbx into rcx
+		0x1806BFF45: [!] Calls managed method System.Void UIProgressBar::ForceUpdate() on instance {'this' (function parameter, type UIScrollBar)}
+
+		0x1806BFF4A: Jumps to 0x1806C01E3 (which is an function-local jump destination)
+
+		0x1806BFF57: [!] Reads field mSize from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'mSize' (type System.Single)}
+
+		0x1806BFF5F: [!] Sets the field mIsDirty (Type System.Boolean) on local {'this' (function parameter, type UIScrollBar)} to the value stored in False
+		0x1806BFF63: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rcx
+		0x1806BFF7E: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806BFF85: Jumps to 0x1806BFF95 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806BFF87: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806BFF8E: Jumps to 0x1806BFF95 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806BFF90: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x1806BFF97: Copies {'mSize' (type System.Single)} from xmm6 into xmm0
+		0x1806BFF9A: [!] Calls static managed method System.Single UnityEngine.Mathf::Clamp01(System.Single) with arguments [{'mSize' (type System.Single)}] and stores the result in {'single' (type System.Single)}
+
+		0x1806BFF9F: Copies {'single' (type System.Single)} from xmm0 into xmm6
+		0x1806BFFA4: Multiplies {'mSize' (type System.Single)} by the constant value at 0x181261CF8 in the binary, which is 0,5, and stores the result in new local {'local11' (type System.Single)} in register xmm6
+		0x1806BFFAC: Copies {'this' (function parameter, type UIScrollBar)} from rbx into rcx
+		0x1806BFFAF: [!] Calls managed method System.Single UIProgressBar::get_value() on instance {'this' (function parameter, type UIScrollBar)} and stores the result in {'value' (type System.Single)}
+
+		0x1806BFFB4: Reads {Unknown Global at 0x181261D04, first ten bytes are [0 0 128 63 154 153 153 63 0 0], or as chars "  ??  "} into register xmm7 as a constant constant15
+		0x1806BFFBC: Copies {'value' (type System.Single)} from xmm0 into xmm2
+		0x1806BFFBF: Copies 1 from xmm7 into xmm1
+		0x1806BFFC9: Copies {'local11' (type System.Single)} from xmm6 into xmm0
+		0x1806BFFCC: [!] Calls static managed method System.Single UnityEngine.Mathf::Lerp(System.Single,System.Single,System.Single) with arguments [{'value' (type System.Single)}, 1, {'value' (type System.Single)}] and stores the result in {'single2' (type System.Single)}
+
+		0x1806BFFD1: Copies {'single2' (type System.Single)} from xmm0 into xmm8
+		0x1806BFFD5: Copies {'single2' (type System.Single)} from xmm0 into xmm9
+		0x1806BFFE0: Copies {'this' (function parameter, type UIScrollBar)} from rbx into rcx
+		0x1806BFFE8: [!] Calls managed method System.Boolean UIProgressBar::get_isHorizontal() on instance {'this' (function parameter, type UIScrollBar)} and stores the result in {'isHorizontal' (type System.Boolean)}
+
+		0x1806BFFED: [!] Reads field mFG from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'uIWidget2' (type UIWidget)}
+
+		0x1806BFFF1: Clears register rdx, yielding zero-local {'local18' (type System.Int32)}
+		0x1806BFFF3: Copies {'this' (function parameter, type UIScrollBar)} from rbx into rcx
+		0x1806BFFF6: [!] Compares {'isHorizontal' (type System.Boolean)} and False
+		0x1806BFFF8: Jumps to 0x1806C0045 if {'isHorizontal' (type System.Boolean)} != False ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x1806BFFFA: [!] Calls managed method System.Boolean UIProgressBar::get_isInverted() on instance {'this' (function parameter, type UIScrollBar)} and stores the result in {'isInverted' (type System.Boolean)}
+
+		0x1806BFFFF: Moves 0 (immediate ulong value) to the stack at offset 40 as a new local local20
+		0x1806C000F: Copies 1 from xmm7 into xmm3
+		0x1806C0016: [!] Compares {'isInverted' (type System.Boolean)} and False
+		0x1806C0018: Jumps to 0x1806C002A if {'isInverted' (type System.Boolean)} != False ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x1806C001A: Moves single2 (type System.Single) from register xmm8 to the stack at offset 32 (0x20)
+		0x1806C0021: Copies {'single2' (type System.Single)} from xmm9 into xmm2
+		0x1806C0028: Jumps to 0x1806C0085 (which is an function-local jump destination)
+
+		0x1806C002A: Copies 1 from xmm7 into xmm1
+		0x1806C002D: Copies 1 from xmm7 into xmm2
+		0x1806C003A: Moves 1 (type System.Single) from register xmm1 to the stack at offset 32 (0x20) as a new local local23
+		0x1806C0043: Jumps to 0x1806C0085 (which is an function-local jump destination)
+
+		0x1806C0045: [!] Calls managed method System.Boolean UIProgressBar::get_isInverted() on instance {'this' (function parameter, type UIScrollBar)} and stores the result in {'isInverted2' (type System.Boolean)}
+
+		0x1806C004A: Moves 0 (immediate ulong value) to the stack at offset 40 as a new local local26
+		0x1806C0056: Moves 1 (type System.Single) from register xmm7 to the stack at offset 32 (0x20) as a new local local28
+		0x1806C0067: [!] Compares {'isInverted2' (type System.Boolean)} and False
+		0x1806C0069: Jumps to 0x1806C0075 if {'isInverted2' (type System.Boolean)} != False ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x1806C006B: Copies {'single2' (type System.Single)} from xmm8 into xmm3
+		0x1806C006F: Copies {'single2' (type System.Single)} from xmm9 into xmm1
+		0x1806C0073: Jumps to 0x1806C0085 (which is an function-local jump destination)
+
+		0x1806C0075: Copies 1 from xmm7 into xmm3
+		0x1806C0078: Copies 1 from xmm7 into xmm1
+
+		End Of If-Else Block (at 0x1806C0085) where the else started at 0x1806C0045
+		0x1806C008E: [!] Compares {'uIWidget2' (type UIWidget)} and 0
+		0x1806C0091: Jumps to 0x1806C01F8 (which throws a NRE) if uIWidget2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C00A3: Copies {'uIWidget2' (type UIWidget)} from rdi into rcx
+		0x1806C00A6: [!] Calls managed method System.Void UIWidget::set_drawRegion(UnityEngine.Vector4) on instance {'uIWidget2' (type UIWidget)} with arguments [{'local18' (type System.Int32)}]
+
+		0x1806C00AB: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1806C00B2: [!] Reads field thumb from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'thumb' (type UnityEngine.Transform)}
+
+		0x1806C00B6: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C00BD: Jumps to 0x1806C00CD if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1806C00CD which is after end of current block @ 0x1806C0085 (started at 0x1806C0075)
+
+		0x1806C00BF: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C00C6: Jumps to 0x1806C00CD if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1806C00CD which is after end of current block @ 0x1806C0085 (started at 0x1806C0075)
+
+		0x1806C00C8: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1806C00D0: Clears register rdx, yielding zero-local {'local33' (type System.Int32)}
+		0x1806C00D2: Copies {'thumb' (type UnityEngine.Transform)} from rdi into rcx
+		0x1806C00D5: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'thumb' (type UnityEngine.Transform)}, {'local33' (type System.Int32)}] and stores the result in {'boolean2' (type System.Boolean)}
+
+		0x1806C00DA: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x1806C00DC: Jumps to 0x1806C01C7 if boolean2 equals False ;  - This is probably a goto, jumping to 0x1806C01C7 which is after end of current block @ 0x1806C0085 (started at 0x1806C0075)
+
+		0x1806C00E2: [!] Reads field mFG from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'uIWidget3' (type UIWidget)}
+
+		0x1806C00E6: [!] Compares {'uIWidget3' (type UIWidget)} and 0
+		0x1806C00E9: Jumps to 0x1806C01F8 (which throws a NRE) if uIWidget3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C00EF: Loads the class pointer from uIWidget3 into a constant constant27 in register rax
+		0x1806C00F6: Loads the pointer to the implementation of virtual function UnityEngine.Vector4 UIWidget::get_drawingDimensions() specific to UIWidget from the class pointer in rax, slot 24 (from memory offset 688) and stores in constant constant28
+		0x1806C00FD: [!] Calls managed method UnityEngine.Vector4 UIWidget::get_drawingDimensions() on instance {'thumb' (type UnityEngine.Transform)} and stores the result in {'drawingDimensions' (type UnityEngine.Vector4)}
+
+		0x1806C0103: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rcx
+		0x1806C010A: Loads the class pointer from drawingDimensions into a constant constant30 in register xmm0
+		0x1806C010D: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806C0118: Jumps to 0x1806C0128 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1806C0128 which is after end of current block @ 0x1806C0085 (started at 0x1806C0075)
+
+		0x1806C011A: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806C0121: Jumps to 0x1806C0128 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1806C0128 which is after end of current block @ 0x1806C0085 (started at 0x1806C0075)
+
+		0x1806C0123: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x1806C0128: Reads {Unknown Global at 0x181261CF8, first ten bytes are [0 0 0 63 0 0 64 63 164 112], or as chars "   ?  @?¤p"} into register xmm2 as a constant constant35
+		0x1806C013D: [!] Calls static managed method System.Single UnityEngine.Mathf::Lerp(System.Single,System.Single,System.Single) and stores the result in {'single3' (type System.Single)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806C0142: Reads {Unknown Global at 0x181261CF8, first ten bytes are [0 0 0 63 0 0 64 63 164 112], or as chars "   ?  @?¤p"} into register xmm2 as a constant constant36
+		0x1806C014A: Copies {'single3' (type System.Single)} from xmm0 into xmm6
+		0x1806C015A: [!] Calls static managed method System.Single UnityEngine.Mathf::Lerp(System.Single,System.Single,System.Single) with arguments [{'single3' (type System.Single)}, 1, 0.5] and stores the result in {'single4' (type System.Single)}
+
+		0x1806C0166: Copies {'single4' (type System.Single)} from xmm0 into xmm2
+		0x1806C0169: Copies {'local11' (type System.Single)} from xmm6 into xmm1
+		0x1806C0171: [!] Reads field mFG from {'this' (function parameter, type UIScrollBar)} and stores in a new local {'uIWidget4' (type UIWidget)}
+
+		0x1806C0175: [!] Compares {'uIWidget4' (type UIWidget)} and 0
+		0x1806C0178: Jumps to 0x1806C01F8 (which throws a NRE) if uIWidget4 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C017C: [!] Calls managed method UnityEngine.Transform UIRect::get_cachedTransform() on instance {'uIWidget4' (type UIWidget)} and stores the result in {'cachedTransform' (type UnityEngine.Transform)}
+
+		0x1806C0181: [!] Compares {'cachedTransform' (type UnityEngine.Transform)} and 0
+		0x1806C0184: Jumps to 0x1806C01F8 (which throws a NRE) if cachedTransform equals 0. Implicitly present in managed code, so ignored here.
+		0x1806C0198: Copies {'cachedTransform' (type UnityEngine.Transform)} from rax into rdx
+		0x1806C01A4: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::TransformPoint(UnityEngine.Vector3) on instance {'uIWidget4' (type UIWidget)} and stores the result in {'vector3' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address. - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting Transform, actually UIWidget
+
+		0x1806C01B0: Copies {'this' (function parameter, type UIScrollBar)} from rbx into rcx
+		0x1806C01B7: [!] Reads field z from {'vector3' (type UnityEngine.Vector3)} and stores in a new local {'single5' (type System.Single)}
+
+		0x1806C01C2: [!] Calls managed method System.Void UIProgressBar::SetThumbPosition(UnityEngine.Vector3) on instance {'this' (function parameter, type UIScrollBar)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806C01C7: Reads unknown value in stack, offset 112 (0x70) and stores the pointer in register xmm8 as new constant constant39
+		0x1806C01CD: Reads unknown value in stack, offset 128 (0x80) and stores the pointer in register xmm7 as new constant constant40
+		0x1806C01D5: Reads unknown value in stack, offset 144 (0x90) and stores the pointer in register xmm6 as new constant constant41
+		0x1806C01DD: Reads unknown value in stack, offset 96 (0x60) and stores the pointer in register xmm9 as new constant constant42
+
+		End Of If-Else Block (at 0x1806C01E3) where the else started at 0x1806BFF4F
+		0x1806C01E3: Loads a pointer to stack offset 0xA0 into register r11 as new constant constant43
+		0x1806C01F3: Copies {'constant43' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from r11 into rsp
+		0x1806C01F7: [!] Returns from the function
+
+		0x1806C01FA: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIScrollBar
+	System.Void ForceUpdate()
+		ulong local1 = 0
+		UIWidget uIWidget = this.mFG
+		ulong local4 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(uIWidget, local4) //(Object x, Object y)
+
+		if (boolean == False)
+
+		    base.ForceUpdate()
+		else
+		    System.Single mSize = this.mSize
+		    this.mIsDirty = False
+
+		    System.Single single = UnityEngine.Mathf.Clamp01(mSize) //(Single value)
+		    mSize = single
+		    System.Single local11 = mSize * 0,5
+
+		    System.Single value = base.value
+		    value = local11
+
+		    System.Single single2 = UnityEngine.Mathf.Lerp(value, 1, value) //(Single a, Single b, Single t)
+
+		    System.Boolean isHorizontal = base.isHorizontal
+		    UIWidget uIWidget2 = this.mFG
+		    ulong local18 = 0
+
+		    if (isHorizontal == False)
+
+		        System.Boolean isInverted = base.isInverted
+
+		        if (isInverted == False)
+		            value = single2
+		        else
+		        else
+
+		            System.Boolean isInverted2 = base.isInverted
+
+		            if (isInverted2 == False)
+		            else
+		            endif
+                    
+
+		            uIWidget2.drawRegion = local18
+		            UnityEngine.Transform thumb = this.thumb
+		            ulong local33 = 0
+
+		            System.Boolean boolean2 = UnityEngine.Object.op_Inequality(thumb, local33) //(Object x, Object y)
+
+		            if (boolean2 == False)
+                        goto INSN_1806C01C7
+                    endif
+		            UIWidget uIWidget3 = this.mFG
+
+		            UnityEngine.Vector4 drawingDimensions = thumb.drawingDimensions
+
+		            System.Single single3 = UnityEngine.Mathf.Lerp()
+		            local11 = single3
+
+		            System.Single single4 = UnityEngine.Mathf.Lerp(single3, 1, 0.5) //(Single a, Single b, Single t)
+		            UIWidget uIWidget4 = this.mFG
+
+		            UnityEngine.Transform cachedTransform = uIWidget4.cachedTransform
+
+		            UnityEngine.Vector3 vector3 = uIWidget4.TransformPoint()
+		            System.Single single5 = vector3.z
+
+		            base.SetThumbPosition()
+
+		            INSN_1806C01C7:
+		        endif
+                
+		        return
+		        throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.MultiplyRegByGlobalAction at (0x1806BFFA4) is corrupt (Operand we were multiplying by is null or local made was stripped) and cannot be created as IL. Aborting here.
+
+

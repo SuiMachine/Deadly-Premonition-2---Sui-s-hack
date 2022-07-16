@@ -1,0 +1,399 @@
+Type: EnemyBossWallCheck
+
+Method: System.Void EnemyBossWallCheck::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EnemyBossWallCheck::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type EnemyBossWallCheck)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EnemyBossWallCheck
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean EnemyBossWallCheck::get_IsHitWall():	Method Body (x86 ASM):
+		0x1803D4190 movzx eax,byte ptr [rcx+1Ch]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 28 | None ||| N/A | N/A
+		0x1803D4194 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803D4195 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean EnemyBossWallCheck::get_IsHitWall():
+		End of function at 0x1803D4196
+		Absolute End is at 0x1803D4196
+		Identified Jump Destination addresses:
+
+		0x1803D4190: [!] Reads field <IsHitWall>k__BackingField from {'this' (function parameter, type EnemyBossWallCheck)} and stores in a new local {'IsHitWall' (type System.Boolean)}
+
+		0x1803D4194: [!] Returns {'IsHitWall' (type System.Boolean)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EnemyBossWallCheck
+	System.Boolean get_IsHitWall()
+		System.Boolean IsHitWall = this.<IsHitWall>k__BackingField
+		return IsHitWall
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Boolean EnemyBossWallCheck::<IsHitWall>k__BackingField
+	IL_0006: ret
+	
+
+Method: System.Void EnemyBossWallCheck::set_IsHitWall(System.Boolean):	Method Body (x86 ASM):
+		0x1803D41A0 mov [rcx+1Ch],dl		; DEBUG: {Memory}/None {Register}/DL ||| RCX | 28 | None ||| N/A | N/A
+		0x1803D41A3 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803D41A4 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EnemyBossWallCheck::set_IsHitWall(System.Boolean):
+		End of function at 0x1803D41A5
+		Absolute End is at 0x1803D41A5
+		Identified Jump Destination addresses:
+
+		0x1803D41A0: [!] Sets the field <IsHitWall>k__BackingField (Type System.Boolean) on local {'this' (function parameter, type EnemyBossWallCheck)} to the value stored in {'value' (function parameter, type System.Boolean)}
+		0x1803D41A3: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EnemyBossWallCheck
+	System.Void set_IsHitWall(System.Boolean value)
+		this.<IsHitWall>k__BackingField = value
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: stfld System.Boolean EnemyBossWallCheck::<IsHitWall>k__BackingField
+	IL_0007: ret
+	
+
+Method: System.Void EnemyBossWallCheck::OnTriggerEnter(UnityEngine.Collider):	Method Body (x86 ASM):
+		0x1806E6C90 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806E6C92 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806E6C96 cmp byte ptr [rcx+1Ch],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 28 | None ||| N/A | 0
+		0x1806E6C9A mov rax,rdx		; DEBUG: {Register}/RAX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6C9D mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CA0 jne short 00000001806E6CE9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CA2 test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CA5 je short 00000001806E6CEFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CA7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CA9 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CAC call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CB1 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CB4 je short 00000001806E6CEFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CB6 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CB8 mov [rsp+30h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 48 | None ||| N/A | N/A
+		0x1806E6CBD mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CC0 call 0000000180B2E9D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CC5 and eax,1Fh		; DEBUG: {Register}/EAX {Immediate8to32}/None ||| None | 0 | None ||| N/A | 31
+		0x1806E6CC8 mov ebx,1		; DEBUG: {Register}/EBX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x1806E6CCD movzx ecx,al		; DEBUG: {Register}/ECX {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CD0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CD2 shl ebx,cl		; DEBUG: {Register}/EBX {Register}/CL ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CD4 mov ecx,[rdi+18h]		; DEBUG: {Register}/ECX {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x1806E6CD7 call 0000000180B33770h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CDC test ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CDE mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806E6CE3 je short 00000001806E6CE9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CE5 mov byte ptr [rdi+1Ch],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RDI | 28 | None ||| N/A | 1
+		0x1806E6CE9 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806E6CED pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CEE ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CEF xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CF1 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CF6 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EnemyBossWallCheck::OnTriggerEnter(UnityEngine.Collider):
+		End of function at 0x1806E6CF7
+		Absolute End is at 0x1806E6CF7
+		Identified Jump Destination addresses:
+
+		0x1806E6C90: Saves the content of rdi to the stack
+		0x1806E6C96: [!] Compares {field <IsHitWall>k__BackingField, read from local {'this' (function parameter, type EnemyBossWallCheck)}} and False
+		0x1806E6C9A: Copies {'other' (function parameter, type UnityEngine.Collider)} from rdx into rax
+		0x1806E6C9D: Copies {'this' (function parameter, type EnemyBossWallCheck)} from rcx into rdi
+		0x1806E6CA0: Jumps to 0x1806E6CE9 (which is an if statement's body) if {field <IsHitWall>k__BackingField, read from local {'this' (function parameter, type EnemyBossWallCheck)}} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806E6CA2: [!] Compares {'other' (function parameter, type UnityEngine.Collider)} and 0
+		0x1806E6CA5: Jumps to 0x1806E6CEF (which throws a NRE) if other equals 0. Implicitly present in managed code, so ignored here.
+		0x1806E6CA9: Copies {'other' (function parameter, type UnityEngine.Collider)} from rax into rcx
+		0x1806E6CAC: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'other' (function parameter, type UnityEngine.Collider)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1806E6CB1: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1806E6CB4: Jumps to 0x1806E6CEF (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1806E6CBD: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1806E6CC0: [!] Calls managed method System.Int32 UnityEngine.GameObject::get_layer() on instance {'gameObject' (type UnityEngine.GameObject)} and stores the result in {'layer' (type System.Int32)}
+
+		0x1806E6CC8: [!] Writes the constant 0x1 into operand 1 (type UInt64) in register rbx
+		0x1806E6CCD: Copies {'layer' (type System.Int32)} from rax into rcx
+		0x1806E6CD4: [!] Reads field m_layerMask from {'this' (function parameter, type EnemyBossWallCheck)} and stores in a new local {'m_layerMask' (type UnityEngine.LayerMask)}
+
+		0x1806E6CD7: [!] Calls managed method  on instance {'m_layerMask' (type UnityEngine.LayerMask)} ;  - Failed to resolve any matching method (there are 3 at this address)
+
+		0x1806E6CDC: [!] Compares 1 and {'layer' (type System.Int32)}
+		0x1806E6CDE: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant5
+		0x1806E6CE3: Jumps to 0x1806E6CE9 (which is an if statement's body) if 1 equals layer ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806E6CE5: [!] Sets the field <IsHitWall>k__BackingField (Type System.Boolean) on local {'this' (function parameter, type EnemyBossWallCheck)} to the value stored in True
+		0x1806E6CEE: [!] Returns from the function
+
+		0x1806E6CF1: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EnemyBossWallCheck
+	System.Void OnTriggerEnter(UnityEngine.Collider other)
+
+		if (this.<IsHitWall>k__BackingField == False)
+
+		    UnityEngine.GameObject gameObject = other.gameObject
+
+		    System.Int32 layer = gameObject.layer
+		    UnityEngine.LayerMask m_layerMask = this.m_layerMask
+
+		    [instruction error - managed method being called is null]
+
+		    if (1 != layer)
+		        this.<IsHitWall>k__BackingField = True
+		    endif
+            
+		    return
+		    throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1806E6CD7) is corrupt (Don't know what method is being called) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void EnemyBossWallCheck::OnTriggerStay(UnityEngine.Collider):	Method Body (x86 ASM):
+		0x1806E6C90 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806E6C92 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806E6C96 cmp byte ptr [rcx+1Ch],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 28 | None ||| N/A | 0
+		0x1806E6C9A mov rax,rdx		; DEBUG: {Register}/RAX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6C9D mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CA0 jne short 00000001806E6CE9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CA2 test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CA5 je short 00000001806E6CEFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CA7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CA9 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CAC call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CB1 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CB4 je short 00000001806E6CEFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CB6 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CB8 mov [rsp+30h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 48 | None ||| N/A | N/A
+		0x1806E6CBD mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CC0 call 0000000180B2E9D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CC5 and eax,1Fh		; DEBUG: {Register}/EAX {Immediate8to32}/None ||| None | 0 | None ||| N/A | 31
+		0x1806E6CC8 mov ebx,1		; DEBUG: {Register}/EBX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x1806E6CCD movzx ecx,al		; DEBUG: {Register}/ECX {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CD0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CD2 shl ebx,cl		; DEBUG: {Register}/EBX {Register}/CL ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CD4 mov ecx,[rdi+18h]		; DEBUG: {Register}/ECX {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x1806E6CD7 call 0000000180B33770h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CDC test ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CDE mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806E6CE3 je short 00000001806E6CE9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CE5 mov byte ptr [rdi+1Ch],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RDI | 28 | None ||| N/A | 1
+		0x1806E6CE9 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806E6CED pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CEE ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CEF xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CF1 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CF6 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EnemyBossWallCheck::OnTriggerStay(UnityEngine.Collider):
+		End of function at 0x1806E6CF7
+		Absolute End is at 0x1806E6CF7
+		Identified Jump Destination addresses:
+
+		0x1806E6C90: Saves the content of rdi to the stack
+		0x1806E6C96: [!] Compares {field <IsHitWall>k__BackingField, read from local {'this' (function parameter, type EnemyBossWallCheck)}} and False
+		0x1806E6C9A: Copies {'other' (function parameter, type UnityEngine.Collider)} from rdx into rax
+		0x1806E6C9D: Copies {'this' (function parameter, type EnemyBossWallCheck)} from rcx into rdi
+		0x1806E6CA0: Jumps to 0x1806E6CE9 (which is an if statement's body) if {field <IsHitWall>k__BackingField, read from local {'this' (function parameter, type EnemyBossWallCheck)}} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806E6CA2: [!] Compares {'other' (function parameter, type UnityEngine.Collider)} and 0
+		0x1806E6CA5: Jumps to 0x1806E6CEF (which throws a NRE) if other equals 0. Implicitly present in managed code, so ignored here.
+		0x1806E6CA9: Copies {'other' (function parameter, type UnityEngine.Collider)} from rax into rcx
+		0x1806E6CAC: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'other' (function parameter, type UnityEngine.Collider)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1806E6CB1: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1806E6CB4: Jumps to 0x1806E6CEF (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1806E6CBD: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1806E6CC0: [!] Calls managed method System.Int32 UnityEngine.GameObject::get_layer() on instance {'gameObject' (type UnityEngine.GameObject)} and stores the result in {'layer' (type System.Int32)}
+
+		0x1806E6CC8: [!] Writes the constant 0x1 into operand 1 (type UInt64) in register rbx
+		0x1806E6CCD: Copies {'layer' (type System.Int32)} from rax into rcx
+		0x1806E6CD4: [!] Reads field m_layerMask from {'this' (function parameter, type EnemyBossWallCheck)} and stores in a new local {'m_layerMask' (type UnityEngine.LayerMask)}
+
+		0x1806E6CD7: [!] Calls managed method  on instance {'m_layerMask' (type UnityEngine.LayerMask)} ;  - Failed to resolve any matching method (there are 3 at this address)
+
+		0x1806E6CDC: [!] Compares 1 and {'layer' (type System.Int32)}
+		0x1806E6CDE: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant5
+		0x1806E6CE3: Jumps to 0x1806E6CE9 (which is an if statement's body) if 1 equals layer ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806E6CE5: [!] Sets the field <IsHitWall>k__BackingField (Type System.Boolean) on local {'this' (function parameter, type EnemyBossWallCheck)} to the value stored in True
+		0x1806E6CEE: [!] Returns from the function
+
+		0x1806E6CF1: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EnemyBossWallCheck
+	System.Void OnTriggerStay(UnityEngine.Collider other)
+
+		if (this.<IsHitWall>k__BackingField == False)
+
+		    UnityEngine.GameObject gameObject = other.gameObject
+
+		    System.Int32 layer = gameObject.layer
+		    UnityEngine.LayerMask m_layerMask = this.m_layerMask
+
+		    [instruction error - managed method being called is null]
+
+		    if (1 != layer)
+		        this.<IsHitWall>k__BackingField = True
+		    endif
+            
+		    return
+		    throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1806E6CD7) is corrupt (Don't know what method is being called) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void EnemyBossWallCheck::OnCheck(UnityEngine.Collider):	Method Body (x86 ASM):
+		0x1806E6C90 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806E6C92 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806E6C96 cmp byte ptr [rcx+1Ch],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 28 | None ||| N/A | 0
+		0x1806E6C9A mov rax,rdx		; DEBUG: {Register}/RAX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6C9D mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CA0 jne short 00000001806E6CE9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CA2 test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CA5 je short 00000001806E6CEFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CA7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CA9 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CAC call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CB1 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CB4 je short 00000001806E6CEFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CB6 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CB8 mov [rsp+30h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 48 | None ||| N/A | N/A
+		0x1806E6CBD mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CC0 call 0000000180B2E9D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CC5 and eax,1Fh		; DEBUG: {Register}/EAX {Immediate8to32}/None ||| None | 0 | None ||| N/A | 31
+		0x1806E6CC8 mov ebx,1		; DEBUG: {Register}/EBX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x1806E6CCD movzx ecx,al		; DEBUG: {Register}/ECX {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CD0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CD2 shl ebx,cl		; DEBUG: {Register}/EBX {Register}/CL ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CD4 mov ecx,[rdi+18h]		; DEBUG: {Register}/ECX {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x1806E6CD7 call 0000000180B33770h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CDC test ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CDE mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806E6CE3 je short 00000001806E6CE9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CE5 mov byte ptr [rdi+1Ch],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RDI | 28 | None ||| N/A | 1
+		0x1806E6CE9 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806E6CED pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CEE ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CEF xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806E6CF1 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806E6CF6 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EnemyBossWallCheck::OnCheck(UnityEngine.Collider):
+		End of function at 0x1806E6CF7
+		Absolute End is at 0x1806E6CF7
+		Identified Jump Destination addresses:
+
+		0x1806E6C90: Saves the content of rdi to the stack
+		0x1806E6C96: [!] Compares {field <IsHitWall>k__BackingField, read from local {'this' (function parameter, type EnemyBossWallCheck)}} and False
+		0x1806E6C9A: Copies {'other' (function parameter, type UnityEngine.Collider)} from rdx into rax
+		0x1806E6C9D: Copies {'this' (function parameter, type EnemyBossWallCheck)} from rcx into rdi
+		0x1806E6CA0: Jumps to 0x1806E6CE9 (which is an if statement's body) if {field <IsHitWall>k__BackingField, read from local {'this' (function parameter, type EnemyBossWallCheck)}} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806E6CA2: [!] Compares {'other' (function parameter, type UnityEngine.Collider)} and 0
+		0x1806E6CA5: Jumps to 0x1806E6CEF (which throws a NRE) if other equals 0. Implicitly present in managed code, so ignored here.
+		0x1806E6CA9: Copies {'other' (function parameter, type UnityEngine.Collider)} from rax into rcx
+		0x1806E6CAC: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'other' (function parameter, type UnityEngine.Collider)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1806E6CB1: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1806E6CB4: Jumps to 0x1806E6CEF (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1806E6CBD: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1806E6CC0: [!] Calls managed method System.Int32 UnityEngine.GameObject::get_layer() on instance {'gameObject' (type UnityEngine.GameObject)} and stores the result in {'layer' (type System.Int32)}
+
+		0x1806E6CC8: [!] Writes the constant 0x1 into operand 1 (type UInt64) in register rbx
+		0x1806E6CCD: Copies {'layer' (type System.Int32)} from rax into rcx
+		0x1806E6CD4: [!] Reads field m_layerMask from {'this' (function parameter, type EnemyBossWallCheck)} and stores in a new local {'m_layerMask' (type UnityEngine.LayerMask)}
+
+		0x1806E6CD7: [!] Calls managed method  on instance {'m_layerMask' (type UnityEngine.LayerMask)} ;  - Failed to resolve any matching method (there are 3 at this address)
+
+		0x1806E6CDC: [!] Compares 1 and {'layer' (type System.Int32)}
+		0x1806E6CDE: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant5
+		0x1806E6CE3: Jumps to 0x1806E6CE9 (which is an if statement's body) if 1 equals layer ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806E6CE5: [!] Sets the field <IsHitWall>k__BackingField (Type System.Boolean) on local {'this' (function parameter, type EnemyBossWallCheck)} to the value stored in True
+		0x1806E6CEE: [!] Returns from the function
+
+		0x1806E6CF1: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EnemyBossWallCheck
+	System.Void OnCheck(UnityEngine.Collider other)
+
+		if (this.<IsHitWall>k__BackingField == False)
+
+		    UnityEngine.GameObject gameObject = other.gameObject
+
+		    System.Int32 layer = gameObject.layer
+		    UnityEngine.LayerMask m_layerMask = this.m_layerMask
+
+		    [instruction error - managed method being called is null]
+
+		    if (1 != layer)
+		        this.<IsHitWall>k__BackingField = True
+		    endif
+            
+		    return
+		    throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1806E6CD7) is corrupt (Don't know what method is being called) and cannot be created as IL. Aborting here.
+
+

@@ -1,0 +1,71 @@
+Type: Node
+
+Method: System.Void NpcActionPlan/Node::.ctor(NpcActionPlan/Node,System.Single,System.Collections.Generic.HashSet`1<System.Collections.Generic.KeyValuePair`2<ENpcCondition,System.Object>>,NpcAction):	Method Body (x86 ASM):
+		0x1804758B0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1804758B5 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x1804758BA push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804758BB sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1804758BF mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1804758C2 movaps [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x1804758C7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804758C9 mov rsi,r9		; DEBUG: {Register}/RSI {Register}/R9 ||| None | 0 | None ||| N/A | N/A
+		0x1804758CC movaps xmm6,xmm2		; DEBUG: {Register}/XMM6 {Register}/XMM2 ||| None | 0 | None ||| N/A | N/A
+		0x1804758CF mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804758D2 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804758D7 mov rax,[rsp+60h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 96 | None ||| N/A | N/A
+		0x1804758DC movss dword ptr [rdi+18h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RDI | 24 | None ||| N/A | N/A
+		0x1804758E1 movaps xmm6,[rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1804758E6 mov [rdi+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RDI | 16 | None ||| N/A | N/A
+		0x1804758EA mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1804758EF mov [rdi+20h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RDI | 32 | None ||| N/A | N/A
+		0x1804758F3 mov rsi,[rsp+48h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x1804758F8 mov [rdi+28h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RDI | 40 | None ||| N/A | N/A
+		0x1804758FC add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x180475900 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180475901 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180475902 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void NpcActionPlan/Node::.ctor(NpcActionPlan/Node,System.Single,System.Collections.Generic.HashSet`1<System.Collections.Generic.KeyValuePair`2<ENpcCondition,System.Object>>,NpcAction):
+		End of function at 0x180475903
+		Absolute End is at 0x180475903
+		Identified Jump Destination addresses:
+
+		0x1804758BA: Saves the content of rdi to the stack
+		0x1804758BF: Copies {'parent' (function parameter, type NpcActionPlan/Node)} from rdx into rbx
+		0x1804758C7: Clears register rdx, yielding zero-local {'local5' (type System.Int32)}
+		0x1804758C9: Copies {'state' (function parameter, type System.Collections.Generic.HashSet`1<System.Collections.Generic.KeyValuePair`2<ENpcCondition,System.Object>>)} from r9 into rsi
+		0x1804758CC: Copies {'runningCost' (function parameter, type System.Single)} from xmm2 into xmm6
+		0x1804758CF: Copies {'this' (function parameter, type NpcActionPlan/Node)} from rcx into rdi
+		0x1804758D2: [!] Calls managed method System.Void System.Object::FieldGetter(System.String,System.String,System.Object&) on instance {'this' (function parameter, type NpcActionPlan/Node)} with arguments [{'local5' (type System.Int32)}, , {'state' (function parameter, type System.Collections.Generic.HashSet`1<System.Collections.Generic.KeyValuePair`2<ENpcCondition,System.Object>>)}]
+
+		0x1804758D7: Reads unknown value in stack, offset 96 (0x60) and stores the pointer in register rax as new constant constant1
+		0x1804758DC: [!] Sets the field runningCost (Type System.Single) on local {'this' (function parameter, type NpcActionPlan/Node)} to the value stored in {'runningCost' (function parameter, type System.Single)}
+		0x1804758E1: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm6 as new constant constant2
+		0x1804758E6: [!] Sets the field parent (Type NpcActionPlan/Node) on local {'this' (function parameter, type NpcActionPlan/Node)} to the value stored in {'parent' (function parameter, type NpcActionPlan/Node)}
+		0x1804758EA: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant3
+		0x1804758EF: [!] Sets the field state (Type System.Collections.Generic.HashSet`1<System.Collections.Generic.KeyValuePair`2<ENpcCondition,System.Object>>) on local {'this' (function parameter, type NpcActionPlan/Node)} to the value stored in {'state' (function parameter, type System.Collections.Generic.HashSet`1<System.Collections.Generic.KeyValuePair`2<ENpcCondition,System.Object>>)}
+		0x1804758F3: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rsi as new constant constant4
+		0x1804758F8: [!] Sets the field action (Type NpcAction) on local {'this' (function parameter, type NpcActionPlan/Node)} to the value stored in 0
+		0x180475901: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: NpcActionPlan/Node
+	System.Void .ctor(NpcActionPlan/Node parent, System.Single runningCost, System.Collections.Generic.HashSet`1<System.Collections.Generic.KeyValuePair`2<ENpcCondition,System.Object>> state, NpcAction action)
+		ulong local5 = 0
+
+		base.FieldGetter(local5, null, state) //(String typeName, String fieldName, Object& val)
+		this.runningCost = runningCost
+		this.parent = parent
+		this.state = state
+		this.action = 0
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1804758D2) is corrupt (Found null operand in Arguments: [{'local5' (type System.Int32)}, , {'state' (function parameter, type System.Collections.Generic.HashSet`1<System.Collections.Generic.KeyValuePair`2<ENpcCondition,System.Object>>)}]) and cannot be created as IL. Aborting here.
+
+

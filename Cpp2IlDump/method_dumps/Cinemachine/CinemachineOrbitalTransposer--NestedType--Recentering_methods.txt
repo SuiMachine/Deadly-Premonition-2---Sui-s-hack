@@ -1,0 +1,129 @@
+Type: Recentering
+
+Method: System.Void Cinemachine.CinemachineOrbitalTransposer/Recentering::.ctor(System.Boolean,System.Single,System.Single):	Method Body (x86 ASM):
+		0x180092F00 movss dword ptr [rcx+14h],xmm2		; DEBUG: {Memory}/None {Register}/XMM2 ||| RCX | 20 | None ||| N/A | N/A
+		0x180092F05 movss dword ptr [rcx+18h],xmm3		; DEBUG: {Memory}/None {Register}/XMM3 ||| RCX | 24 | None ||| N/A | N/A
+		0x180092F0A mov [rcx+10h],dl		; DEBUG: {Memory}/None {Register}/DL ||| RCX | 16 | None ||| N/A | N/A
+		0x180092F0D mov qword ptr [rcx+1Ch],0FFFFFFFFFFFFFFFFh		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RCX | 28 | None ||| N/A | 18446744073709551615
+		0x180092F15 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180092F16 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Cinemachine.CinemachineOrbitalTransposer/Recentering::.ctor(System.Boolean,System.Single,System.Single):
+		End of function at 0x180092F17
+		Absolute End is at 0x180092F17
+		Identified Jump Destination addresses:
+
+		0x180092F00: [!] Sets the field  (Type ) on local {'this' (function parameter, type Cinemachine.CinemachineOrbitalTransposer/Recentering)} to the value stored in {'recenterWaitTime' (function parameter, type System.Single)}
+		0x180092F05: [!] Sets the field  (Type ) on local {'this' (function parameter, type Cinemachine.CinemachineOrbitalTransposer/Recentering)} to the value stored in {'recenteringSpeed' (function parameter, type System.Single)}
+		0x180092F0A: [!] Sets the field m_LegacyVelocityFilterStrength (Type System.Int32) on local {'this' (function parameter, type Cinemachine.CinemachineOrbitalTransposer/Recentering)} to the value stored in {'enabled' (function parameter, type System.Boolean)}
+		0x180092F0D: [!] Sets the field  (Type ) on local {'this' (function parameter, type Cinemachine.CinemachineOrbitalTransposer/Recentering)} to the value stored in 18446744073709551615
+		0x180092F15: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachineOrbitalTransposer/Recentering
+	System.Void .ctor(System.Boolean enabled, System.Single recenterWaitTime, System.Single recenteringSpeed)
+		this. = recenterWaitTime
+		this. = recenteringSpeed
+		this.m_LegacyVelocityFilterStrength = enabled
+		this. = 18446744073709551615
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.RegToFieldAction at (0x180092F00) is corrupt (Instance or field is null) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void Cinemachine.CinemachineOrbitalTransposer/Recentering::Validate():	Method Body (x86 ASM):
+		0x180092EF0 add rcx,10h		; DEBUG: {Register}/RCX {Immediate8to64}/None ||| None | 0 | None ||| N/A | 16
+		0x180092EF4 jmp near ptr 00000001808BF5B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180092EF9 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Cinemachine.CinemachineOrbitalTransposer/Recentering::Validate():
+		End of function at 0x180092EFA
+		Absolute End is at 0x180092EFA
+		Identified Jump Destination addresses:
+
+		0x180092EF0: Loads the pointer to the field m_LegacyVelocityFilterStrength on {'this' (function parameter, type Cinemachine.CinemachineOrbitalTransposer/Recentering)} into register rcx
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachineOrbitalTransposer/Recentering
+	System.Void Validate()
+
+
+Generated IL:
+	
+
+Method: System.Boolean Cinemachine.CinemachineOrbitalTransposer/Recentering::LegacyUpgrade(Cinemachine.CinemachineOrbitalTransposer/Heading/HeadingDefinition&,System.Int32&):	Method Body (x86 ASM):
+		0x180092EC0 mov eax,[rcx+1Ch]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 28 | None ||| N/A | N/A
+		0x180092EC3 cmp eax,0FFFFFFFFh		; DEBUG: {Register}/EAX {Immediate8to32}/None ||| None | 0 | None ||| N/A | 18446744073709551615
+		0x180092EC6 je short 0000000180092EE1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180092EC8 cmp dword ptr [rcx+20h],0FFFFFFFFh		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 32 | None ||| N/A | 18446744073709551615
+		0x180092ECC je short 0000000180092EE1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180092ECE mov [rdx],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDX | 0 | None ||| N/A | N/A
+		0x180092ED0 mov eax,[rcx+20h]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x180092ED3 mov [r8],eax		; DEBUG: {Memory}/None {Register}/EAX ||| R8 | 0 | None ||| N/A | N/A
+		0x180092ED6 mov al,1		; DEBUG: {Register}/AL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x180092ED8 mov qword ptr [rcx+1Ch],0FFFFFFFFFFFFFFFFh		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RCX | 28 | None ||| N/A | 18446744073709551615
+		0x180092EE0 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180092EE1 xor al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180092EE3 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180092EE4 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean Cinemachine.CinemachineOrbitalTransposer/Recentering::LegacyUpgrade(Cinemachine.CinemachineOrbitalTransposer/Heading/HeadingDefinition&,System.Int32&):
+		End of function at 0x180092EE5
+		Absolute End is at 0x180092EE5
+		Identified Jump Destination addresses:
+
+		0x180092EC0: [!] Reads field  from {'this' (function parameter, type Cinemachine.CinemachineOrbitalTransposer/Recentering)} and stores in a new local 
+
+		0x180092EC3: [!] Compares  and 0xFFFFFFFFFFFFFFFF
+		0x180092EC6: Jumps to 0x180092EE1 (which is an if statement's body) if  equals 0xFFFFFFFFFFFFFFFF ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180092EC8: [!] Compares  and 0xFFFFFFFFFFFFFFFF
+		0x180092ECC: Jumps to 0x180092EE1 (which is an if statement's body) if  equals 0xFFFFFFFFFFFFFFFF ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180092ECE: [!] Sets the field value__ (Type System.Int32) on local {'heading' (function parameter, type Cinemachine.CinemachineOrbitalTransposer/Heading/HeadingDefinition&)} to the value stored in 
+		0x180092ED0: [!] Reads field  from {'this' (function parameter, type Cinemachine.CinemachineOrbitalTransposer/Recentering)} and stores in a new local 
+
+		0x180092ED3: [!] Sets the field m_value (Type System.Int32) on local {'velocityFilter' (function parameter, type System.Int32&)} to the value stored in 
+		0x180092ED6: [!] Writes the constant 0x1 into operand True (type UInt64) in register rax
+		0x180092ED8: [!] Sets the field  (Type ) on local {'this' (function parameter, type Cinemachine.CinemachineOrbitalTransposer/Recentering)} to the value stored in 18446744073709551615
+		0x180092EE0: [!] Returns True from the function
+
+		0x180092EE1: Clears register rax, yielding zero-local {'local3' (type System.Int32)}
+		0x180092EE3: [!] Returns {'local3' (type System.Int32)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachineOrbitalTransposer/Recentering
+	System.Boolean LegacyUpgrade(Cinemachine.CinemachineOrbitalTransposer/Heading/HeadingDefinition& heading, System.Int32& velocityFilter)
+		  = this.
+
+		if ( != 0xFFFFFFFFFFFFFFFF)
+
+		    if ( != 0xFFFFFFFFFFFFFFFF)
+		        heading.value__ = 
+		          = this.
+		        velocityFilter.m_value = 
+		        this. = 18446744073709551615
+		        return True
+		    endif
+            
+		    ulong local3 = 0
+		    return local3
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.FieldToLocalAction at (0x180092EC0) is corrupt (No further info) and cannot be created as IL. Aborting here.
+
+

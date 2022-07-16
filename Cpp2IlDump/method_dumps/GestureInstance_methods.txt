@@ -1,0 +1,284 @@
+Type: GestureInstance
+
+Method: System.Void GestureInstance::.ctor(System.String,UnityEngine.AnimationClip,System.String):	Method Body (x86 ASM):
+		0x1804E3280 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1804E3285 mov [rsp+10h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 16 | None ||| N/A | N/A
+		0x1804E328A mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x1804E328F push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804E3290 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804E3294 mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1804E3297 mov rbp,r9		; DEBUG: {Register}/RBP {Register}/R9 ||| None | 0 | None ||| N/A | N/A
+		0x1804E329A xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804E329C mov rsi,r8		; DEBUG: {Register}/RSI {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x1804E329F mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804E32A2 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E32A7 mov [rdi+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RDI | 16 | None ||| N/A | N/A
+		0x1804E32AB mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1804E32B0 mov [rdi+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RDI | 24 | None ||| N/A | N/A
+		0x1804E32B4 mov rsi,[rsp+40h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1804E32B9 mov [rdi+20h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RDI | 32 | None ||| N/A | N/A
+		0x1804E32BD mov rbp,[rsp+38h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x1804E32C2 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804E32C6 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804E32C7 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804E32C8 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void GestureInstance::.ctor(System.String,UnityEngine.AnimationClip,System.String):
+		End of function at 0x1804E32C9
+		Absolute End is at 0x1804E32C9
+		Identified Jump Destination addresses:
+
+		0x1804E328F: Saves the content of rdi to the stack
+		0x1804E3294: Copies {'gesture' (function parameter, type System.String)} from rdx into rbx
+		0x1804E3297: Copies {'triggerName' (function parameter, type System.String)} from r9 into rbp
+		0x1804E329C: Copies {'clip' (function parameter, type UnityEngine.AnimationClip)} from r8 into rsi
+		0x1804E329F: Copies {'this' (function parameter, type GestureInstance)} from rcx into rdi
+		0x1804E32A2: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type GestureInstance)} ;  - Leftover parameters detected, but first few match.
+
+		0x1804E32A7: [!] Sets the field gesture (Type System.String) on local {'this' (function parameter, type GestureInstance)} to the value stored in {'gesture' (function parameter, type System.String)}
+		0x1804E32AB: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant1
+		0x1804E32B0: [!] Sets the field clip (Type UnityEngine.AnimationClip) on local {'this' (function parameter, type GestureInstance)} to the value stored in {'clip' (function parameter, type UnityEngine.AnimationClip)}
+		0x1804E32B4: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rsi as new constant constant2
+		0x1804E32B9: [!] Sets the field triggerName (Type System.String) on local {'this' (function parameter, type GestureInstance)} to the value stored in {'triggerName' (function parameter, type System.String)}
+		0x1804E32BD: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbp as new constant constant3
+		0x1804E32C7: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: GestureInstance
+	System.Void .ctor(System.String gesture, UnityEngine.AnimationClip clip, System.String triggerName)
+
+		base..ctor()
+		this.gesture = gesture
+		this.clip = clip
+		this.triggerName = triggerName
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ldarg.0
+	IL_0007: ldarg.1
+	IL_0008: stfld System.String GestureInstance::gesture
+	IL_000d: ldarg.0
+	IL_000e: ldarg.2
+	IL_000f: stfld UnityEngine.AnimationClip GestureInstance::clip
+	IL_0014: ldarg.0
+	IL_0015: ldarg.3
+	IL_0016: stfld System.String GestureInstance::triggerName
+	IL_001b: ret
+	
+
+Method: System.Boolean GestureInstance::IsValid(UnityEngine.Animator):	Method Body (x86 ASM):
+		0x1804E3170 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x1804E3175 mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x1804E317A mov [rsp+20h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 32 | None ||| N/A | N/A
+		0x1804E317F push r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804E3181 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804E3185 cmp byte ptr [18183E7F7h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872759 | None ||| N/A | 0
+		0x1804E318C mov rsi,rdx		; DEBUG: {Register}/RSI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1804E318F mov r14,rcx		; DEBUG: {Register}/R14 {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804E3192 jne short 00000001804E31A6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E3194 mov ecx,[181513C6Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464552044 | None ||| N/A | N/A
+		0x1804E319A call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E319F mov byte ptr [18183E7F7h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872759 | None ||| N/A | 1
+		0x1804E31A6 xor ebx,ebx		; DEBUG: {Register}/EBX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1804E31A8 mov [rsp+30h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 48 | None ||| N/A | N/A
+		0x1804E31AD mov edi,ebx		; DEBUG: {Register}/EDI {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1804E31AF test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1804E31B2 je near ptr 00000001804E3265h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E31B8 nop dword ptr [rax+rax]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 0 | RAX ||| N/A | N/A
+		0x1804E31C0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804E31C2 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1804E31C5 call 00000001810FB2B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E31CA test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804E31CD je near ptr 00000001804E3265h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E31D3 cmp edi,[rax+18h]		; DEBUG: {Register}/EDI {Memory}/None ||| RAX | 24 | None ||| N/A | N/A
+		0x1804E31D6 jge near ptr 00000001804E3261h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E31DC xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804E31DE mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1804E31E1 call 00000001810FB2B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E31E6 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804E31E9 je short 00000001804E3265h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E31EB cmp ebx,[rax+18h]		; DEBUG: {Register}/EBX {Memory}/None ||| RAX | 24 | None ||| N/A | N/A
+		0x1804E31EE jae short 00000001804E326Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E31F0 movsxd rcx,ebx		; DEBUG: {Register}/RCX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1804E31F3 mov rcx,[rax+rcx*8+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 32 | RCX ||| N/A | N/A
+		0x1804E31F8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804E31FB je short 00000001804E3265h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E31FD xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804E31FF call 00000001809FBD00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E3204 mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x1804E320B mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804E320E mov rbp,[r14+20h]		; DEBUG: {Register}/RBP {Memory}/None ||| R14 | 32 | None ||| N/A | N/A
+		0x1804E3212 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1804E3219 je short 00000001804E3229h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E321B cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1804E3222 jne short 00000001804E3229h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E3224 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E3229 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804E322C mov rdx,rbp		; DEBUG: {Register}/RDX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x1804E322F mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1804E3232 call 0000000180D56230h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E3237 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1804E3239 jne short 00000001804E3244h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E323B inc ebx		; DEBUG: {Register}/EBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804E323D mov edi,ebx		; DEBUG: {Register}/EDI {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1804E323F jmp near ptr 00000001804E31C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E3244 mov al,1		; DEBUG: {Register}/AL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1804E3246 mov rbp,[rsp+30h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1804E324B mov rbx,[rsp+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x1804E3250 mov rsi,[rsp+40h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1804E3255 mov rdi,[rsp+48h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x1804E325A add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804E325E pop r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804E3260 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804E3261 xor al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1804E3263 jmp short 00000001804E3246h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E3265 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1804E3267 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E326C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean GestureInstance::IsValid(UnityEngine.Animator):
+		End of function at 0x1804E326D
+		Absolute End is at 0x1804E326D
+		Identified Jump Destination addresses:
+
+		0x1804E317F: Saves the content of r14 to the stack
+		0x1804E3185: Compares {Unknown Global at 0x18183E7F7, first ten bytes are [1 240 175 1 0 14 176 1 0 200], or as chars "ð¯ ° È"} and 0
+		0x1804E318C: Copies {'animator' (function parameter, type UnityEngine.Animator)} from rdx into rsi
+		0x1804E318F: Copies {'this' (function parameter, type GestureInstance)} from rcx into r14
+		0x1804E3192: Jumps to 0x1804E31A6 if {Unknown Global at 0x18183E7F7, first ten bytes are [1 240 175 1 0 14 176 1 0 200], or as chars "ð¯ ° È"} != 0
+
+		0x1804E3194: Loads string "¯0" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1804E319A: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1804E31A6: Clears register rbx, yielding zero-local {'local2' (type System.Int32)}
+		0x1804E31AD: Copies {'local2' (type System.Int32)} from rbx into rdi
+		0x1804E31AF: [!] Compares {'animator' (function parameter, type UnityEngine.Animator)} and 0
+		0x1804E31B2: Jumps to 0x1804E3265 (which throws a NRE) if animator equals 0. Implicitly present in managed code, so ignored here.
+
+		Potential Loop Start (0x1804E31C0):
+		0x1804E31C2: Copies {'animator' (function parameter, type UnityEngine.Animator)} from rsi into rcx
+		0x1804E31C5: [!] Calls managed method UnityEngine.AnimatorControllerParameter[] UnityEngine.Animator::get_parameters() on instance {'animator' (function parameter, type UnityEngine.Animator)} and stores the result in {'parameters' (type UnityEngine.AnimatorControllerParameter[])}
+
+		0x1804E31CA: [!] Compares {'parameters' (type UnityEngine.AnimatorControllerParameter[])} and 0
+		0x1804E31CD: Jumps to 0x1804E3265 (which throws a NRE) if parameters equals 0. Implicitly present in managed code, so ignored here.
+		0x1804E31D3: [!] Compares {'local2' (type System.Int32)} and {Property System.Int32 System.Array::Length() on {'parameters' (type UnityEngine.AnimatorControllerParameter[])}}
+		0x1804E31D6: Jumps to 0x1804E3261 (which is an if statement's body) if {'local2' (type System.Int32)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'parameters' (type UnityEngine.AnimatorControllerParameter[])}} ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1804E31DE: Copies {'animator' (function parameter, type UnityEngine.Animator)} from rsi into rcx
+		0x1804E31E1: [!] Calls managed method UnityEngine.AnimatorControllerParameter[] UnityEngine.Animator::get_parameters() on instance {'animator' (function parameter, type UnityEngine.Animator)} and stores the result in {'parameters2' (type UnityEngine.AnimatorControllerParameter[])}
+
+		0x1804E31E6: [!] Compares {'parameters2' (type UnityEngine.AnimatorControllerParameter[])} and 0
+		0x1804E31E9: Jumps to 0x1804E3265 (which throws a NRE) if parameters2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1804E31EB: [!] Compares {'local2' (type System.Int32)} and {Property System.Int32 System.Array::Length() on {'parameters2' (type UnityEngine.AnimatorControllerParameter[])}}
+		0x1804E31EE: Jumps to 0x1804E326D (which throws a NRE) if {'local2' (type System.Int32)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'parameters2' (type UnityEngine.AnimatorControllerParameter[])}}. Implicitly present in managed code, so ignored here.
+		0x1804E31F0: Copies {'local2' (type System.Int32)} from rbx into rcx
+		0x1804E31F3: Copies the element in the array {'parameters2' (type UnityEngine.AnimatorControllerParameter[])} at the index specified by {'local2' (type System.Int32)} into new local {'animatorControllerParameter' (type UnityEngine.AnimatorControllerParameter)}
+		0x1804E31F8: [!] Compares {'animatorControllerParameter' (type UnityEngine.AnimatorControllerParameter)} and 0
+		0x1804E31FB: Jumps to 0x1804E3265 (which throws a NRE) if animatorControllerParameter equals 0. Implicitly present in managed code, so ignored here.
+		0x1804E31FF: [!] Calls managed method System.String UnityEngine.AnimatorControllerParameter::get_name() on instance {'animatorControllerParameter' (type UnityEngine.AnimatorControllerParameter)} and stores the result in {'name' (type System.String)}
+
+		0x1804E3204: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x1804E320B: Copies {'name' (type System.String)} from rax into rdi
+		0x1804E320E: [!] Reads field triggerName from {'this' (function parameter, type GestureInstance)} and stores in a new local {'triggerName' (type System.String)}
+
+		0x1804E3212: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1804E3219: Jumps to 0x1804E3229 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1804E321B: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1804E3222: Jumps to 0x1804E3229 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1804E3224: Calls the il2cpp cctor for the type System.String
+		0x1804E322C: Copies {'triggerName' (type System.String)} from rbp into rdx
+		0x1804E322F: Copies {'name' (type System.String)} from rdi into rcx
+		0x1804E3232: [!] Calls static managed method System.Boolean System.String::op_Equality(System.String,System.String) with arguments [{'name' (type System.String)}, {'triggerName' (type System.String)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1804E3237: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1804E3239: Jumps to 0x1804E3244 (which is an if statement's body) if {'boolean' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1804E323B: [!] Adds 1 to the value {'local2' (type System.Int32)}, stored in rbx
+		0x1804E323D: Copies {'local2' (type System.Int32)} from rbx into rdi
+		0x1804E323F: Jumps to 0x1804E31C0 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x1804E3244: [!] Writes the constant 0x1 into operand True (type UInt64) in register rax
+
+		Potential Loop Start (0x1804E3246):
+		0x1804E3246: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbp as new constant constant15
+		0x1804E324B: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbx as new constant constant16
+		0x1804E3250: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rsi as new constant constant17
+		0x1804E3255: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rdi as new constant constant18
+		0x1804E3260: [!] Returns True from the function
+
+		0x1804E3263: Jumps to 0x1804E3246 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x1804E3267: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: GestureInstance
+	System.Boolean IsValid(UnityEngine.Animator animator)
+		ulong local2 = 0
+
+		UnityEngine.AnimatorControllerParameter[] parameters = animator.parameters
+
+		if (local2 < parameters.Length)
+
+		    UnityEngine.AnimatorControllerParameter[] parameters2 = animator.parameters
+		    UnityEngine.AnimatorControllerParameter animatorControllerParameter = parameters2[local2]
+
+		    System.String name = animatorControllerParameter.name
+		    System.String triggerName = this.triggerName
+
+		    System.Boolean boolean = System.String.op_Equality(name, triggerName) //(String a, String b)
+
+		    if (boolean == False)
+		        local2 += 1
+		    endif
+            
+		    return True
+		endif
+        
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: ldarg.1
+	IL_0003: call UnityEngine.AnimatorControllerParameter[] UnityEngine.Animator::get_parameters()
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: call System.Int32 System.Array::get_Length()
+	IL_0010: bge.s IL_003b
+	IL_0012: ldarg.1
+	IL_0013: call UnityEngine.AnimatorControllerParameter[] UnityEngine.Animator::get_parameters()
+	IL_0018: ldloc.0
+	IL_0019: ldelem.any UnityEngine.AnimatorControllerParameter
+	IL_001e: call System.String UnityEngine.AnimatorControllerParameter::get_name()
+	IL_0023: stloc.2
+	IL_0024: ldarg.0
+	IL_0025: ldfld System.String GestureInstance::triggerName
+	IL_002a: stloc.3
+	IL_002b: ldloc.2
+	IL_002c: ldloc.3
+	IL_002d: call System.Boolean System.String::op_Equality(System.String,System.String)
+	IL_0032: ldc.i4.0
+	IL_0033: bne.un.s IL_0039
+	IL_0035: ldloc.0
+	IL_0036: ldc.i4.1
+	IL_0037: add
+	IL_0038: stloc.0
+	IL_0039: ldc.i4.1
+	IL_003a: ret
+	IL_003b: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0040: throw
+	
+

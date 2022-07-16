@@ -1,0 +1,64 @@
+Type: HBAO_MinMaxSliderAttribute
+
+Method: System.Void HBAO_MinMaxSliderAttribute::.ctor(System.Single,System.Single):	Method Body (x86 ASM):
+		0x1804F1610 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804F1612 sub rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1804F1616 movaps [rsp+30h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 48 | None ||| N/A | N/A
+		0x1804F161B xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804F161D movaps [rsp+20h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 32 | None ||| N/A | N/A
+		0x1804F1622 movaps xmm6,xmm1		; DEBUG: {Register}/XMM6 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1804F1625 movaps xmm7,xmm2		; DEBUG: {Register}/XMM7 {Register}/XMM2 ||| None | 0 | None ||| N/A | N/A
+		0x1804F1628 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804F162B call 0000000180256AB0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804F1630 movss dword ptr [rbx+14h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBX | 20 | None ||| N/A | N/A
+		0x1804F1635 movaps xmm6,[rsp+30h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1804F163A movss dword ptr [rbx+10h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RBX | 16 | None ||| N/A | N/A
+		0x1804F163F movaps xmm7,[rsp+20h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1804F1644 add rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1804F1648 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804F1649 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804F164A int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void HBAO_MinMaxSliderAttribute::.ctor(System.Single,System.Single):
+		End of function at 0x1804F164B
+		Absolute End is at 0x1804F164B
+		Identified Jump Destination addresses:
+
+		0x1804F1610: Saves the content of rbx to the stack
+		0x1804F1622: Copies {'min' (function parameter, type System.Single)} from xmm1 into xmm6
+		0x1804F1625: Copies {'max' (function parameter, type System.Single)} from xmm2 into xmm7
+		0x1804F1628: Copies {'this' (function parameter, type HBAO_MinMaxSliderAttribute)} from rcx into rbx
+		0x1804F162B: [!] Calls managed method System.Void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() on instance {'this' (function parameter, type HBAO_MinMaxSliderAttribute)} ;  - Leftover parameters detected, but first few match.
+
+		0x1804F1630: [!] Sets the field min (Type System.Single) on local {'this' (function parameter, type HBAO_MinMaxSliderAttribute)} to the value stored in {'min' (function parameter, type System.Single)}
+		0x1804F1635: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register xmm6 as new constant constant1
+		0x1804F163A: [!] Sets the field max (Type System.Single) on local {'this' (function parameter, type HBAO_MinMaxSliderAttribute)} to the value stored in {'max' (function parameter, type System.Single)}
+		0x1804F163F: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm7 as new constant constant2
+		0x1804F1649: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: HBAO_MinMaxSliderAttribute
+	System.Void .ctor(System.Single min, System.Single max)
+
+		base..ctor()
+		this.min = min
+		this.max = max
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Runtime.CompilerServices.ExtensionAttribute::.ctor()
+	IL_0006: ldarg.0
+	IL_0007: ldarg.1
+	IL_0008: stfld System.Single HBAO_MinMaxSliderAttribute::min
+	IL_000d: ldarg.0
+	IL_000e: ldarg.2
+	IL_000f: stfld System.Single HBAO_MinMaxSliderAttribute::max
+	IL_0014: ret
+	
+

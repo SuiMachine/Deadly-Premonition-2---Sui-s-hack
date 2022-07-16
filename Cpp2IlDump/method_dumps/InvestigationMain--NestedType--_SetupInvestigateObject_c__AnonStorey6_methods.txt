@@ -1,0 +1,97 @@
+Type: <SetupInvestigateObject>c__AnonStorey6
+
+Method: System.Void InvestigationMain/<SetupInvestigateObject>c__AnonStorey6::.ctor():	Method Body (x86 ASM):
+		0x1802068B0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802068B2 jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802068B7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void InvestigationMain/<SetupInvestigateObject>c__AnonStorey6::.ctor():
+		End of function at 0x1802068B8
+		Absolute End is at 0x1802068B8
+		Identified Jump Destination addresses:
+
+		0x1802068B2: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type InvestigationMain/<SetupInvestigateObject>c__AnonStorey6)}
+
+		0x1802068B2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: InvestigationMain/<SetupInvestigateObject>c__AnonStorey6
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean InvestigationMain/<SetupInvestigateObject>c__AnonStorey6::<>m__0(InvestigationObject):	Method Body (x86 ASM):
+		0x1803B30F0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1803B30F4 test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1803B30F7 je short 00000001803B3110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803B30F9 mov rax,[rcx+10h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x1803B30FD test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803B3100 je short 00000001803B3110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803B3102 mov eax,[rax+14h]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 20 | None ||| N/A | N/A
+		0x1803B3105 cmp [rdx+18h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDX | 24 | None ||| N/A | N/A
+		0x1803B3108 sete al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803B310B add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1803B310F ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803B3110 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1803B3112 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803B3117 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean InvestigationMain/<SetupInvestigateObject>c__AnonStorey6::<>m__0(InvestigationObject):
+		End of function at 0x1803B3118
+		Absolute End is at 0x1803B3118
+		Identified Jump Destination addresses:
+
+		0x1803B30F4: [!] Compares {'o' (function parameter, type InvestigationObject)} and 0
+		0x1803B30F7: Jumps to 0x1803B3110 (which throws a NRE) if o equals 0. Implicitly present in managed code, so ignored here.
+		0x1803B30F9: [!] Reads field flowData from {'this' (function parameter, type InvestigationMain/<SetupInvestigateObject>c__AnonStorey6)} and stores in a new local {'flowData' (type InvestigationOperationParam)}
+
+		0x1803B30FD: [!] Compares {'flowData' (type InvestigationOperationParam)} and 0
+		0x1803B3100: Jumps to 0x1803B3110 (which throws a NRE) if flowData equals 0. Implicitly present in managed code, so ignored here.
+		0x1803B3102: [!] Reads field m_objectId from {'flowData' (type InvestigationOperationParam)} and stores in a new local {'m_objectId' (type System.Int32)}
+
+		0x1803B3105: [!] Compares {field m_objIndex, read from local {'o' (function parameter, type InvestigationObject)}} and {'m_objectId' (type System.Int32)}
+		0x1803B3108: [!] Sets the boolean {'local4' (type System.Boolean)} in rax to true if o.m_objIndex is equal to m_objectId, otherwise false.
+		0x1803B310F: [!] Returns {'local4' (type System.Boolean)} from the function
+
+		0x1803B3112: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: InvestigationMain/<SetupInvestigateObject>c__AnonStorey6
+	System.Boolean <>m__0(InvestigationObject o)
+		InvestigationOperationParam flowData = this.flowData
+		System.Int32 m_objectId = flowData.m_objectId
+		System.Boolean local4 = o.m_objIndex == m_objectId
+		return local4
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld InvestigationOperationParam InvestigationMain/<SetupInvestigateObject>c__AnonStorey6::flowData
+	IL_0006: ldfld System.Int32 InvestigationOperationParam::m_objectId
+	IL_000b: stloc.0
+	IL_000c: ldarg.1
+	IL_000d: ldfld System.Int32 InvestigationObject::m_objIndex
+	IL_0012: ldloc.0
+	IL_0013: ceq
+	IL_0015: ret
+	IL_0016: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001b: throw
+	
+

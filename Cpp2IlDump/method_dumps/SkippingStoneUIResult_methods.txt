@@ -1,0 +1,861 @@
+Type: SkippingStoneUIResult
+
+Method: System.Void SkippingStoneUIResult::.ctor():	Method Body (x86 ASM):
+		0x18025F090 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18025F092 jmp near ptr 0000000180203000h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18025F097 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void SkippingStoneUIResult::.ctor():
+		End of function at 0x18025F098
+		Absolute End is at 0x18025F098
+		Identified Jump Destination addresses:
+
+		0x18025F092: [!] Calls managed method System.Void UnityEngine.EventSystems.UIBehaviour::.ctor() on instance {'this' (function parameter, type SkippingStoneUIResult)}
+
+		0x18025F092: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkippingStoneUIResult
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.EventSystems.UIBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void SkippingStoneUIResult::SetStoneName(System.String):	Method Body (x86 ASM):
+		0x1802A8750 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1802A8754 mov rcx,[rcx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x1802A8758 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A875B je short 00000001802A8769h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A875D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A8760 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1802A8764 jmp near ptr 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8769 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A876E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void SkippingStoneUIResult::SetStoneName(System.String):
+		End of function at 0x1802A876F
+		Absolute End is at 0x1802A876F
+		Identified Jump Destination addresses:
+
+		0x1802A8754: [!] Reads field m_stageLabel from {'this' (function parameter, type SkippingStoneUIResult)} and stores in a new local {'m_stageLabel' (type UILabel)}
+
+		0x1802A8758: [!] Compares {'m_stageLabel' (type UILabel)} and 0
+		0x1802A875B: Jumps to 0x1802A8769 (which throws a NRE) if m_stageLabel equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8764: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'m_stageLabel' (type UILabel)} with arguments [{'stoneName' (function parameter, type System.String)}]
+
+		0x1802A8764: [!] Returns from the function
+
+		0x1802A8769: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkippingStoneUIResult
+	System.Void SetStoneName(System.String stoneName)
+		UILabel m_stageLabel = this.m_stageLabel
+
+		m_stageLabel.text = stoneName
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UILabel UIResultBase::m_stageLabel
+	IL_0006: ldarg.1
+	IL_0007: call System.Void UILabel::set_text(System.String)
+	IL_000c: ret
+	IL_000d: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0012: throw
+	
+
+Method: System.Void SkippingStoneUIResult::SetupTotalScore(System.Int32):	Method Body (x86 ASM):
+		0x1802A8A10 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1802A8A15 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A16 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802A8A1A mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A1D mov edi,edx		; DEBUG: {Register}/EDI {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A1F mov rcx,[rcx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 56 | None ||| N/A | N/A
+		0x1802A8A23 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A26 je short 00000001802A8A6Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8A28 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A2B xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A2D mov r8d,5F5E0FFh		; DEBUG: {Register}/R8D {Immediate32}/None ||| None | 0 | None ||| N/A | 99999999
+		0x1802A8A33 call 0000000180344EB0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8A38 mov rcx,[rbx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x1802A8A3C test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A3F je short 00000001802A8A6Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8A41 movss xmm1,dword ptr [181261D0Ch]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RIP | 6461725964 | None ||| N/A | N/A
+		0x1802A8A49 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A4C call 0000000180344F60h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8A51 mov rcx,[rbx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x1802A8A55 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A58 je short 00000001802A8A6Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8A5A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A5D mov edx,edi		; DEBUG: {Register}/EDX {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A5F mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802A8A64 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802A8A68 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A69 jmp near ptr 0000000180344C70h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8A6E xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A70 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8A75 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void SkippingStoneUIResult::SetupTotalScore(System.Int32):
+		End of function at 0x1802A8A76
+		Absolute End is at 0x1802A8A76
+		Identified Jump Destination addresses:
+
+		0x1802A8A15: Saves the content of rdi to the stack
+		0x1802A8A1A: Copies {'this' (function parameter, type SkippingStoneUIResult)} from rcx into rbx
+		0x1802A8A1D: Copies {'totalScore' (function parameter, type System.Int32)} from rdx into rdi
+		0x1802A8A1F: [!] Reads field m_totalScore from {'this' (function parameter, type SkippingStoneUIResult)} and stores in a new local {'m_totalScore' (type UIResultTotalScore)}
+
+		0x1802A8A23: [!] Compares {'m_totalScore' (type UIResultTotalScore)} and 0
+		0x1802A8A26: Jumps to 0x1802A8A6E (which throws a NRE) if m_totalScore equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8A2B: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x1802A8A2D: [!] Writes the constant 0x5F5E0FF into operand 0x5F5E0FF (type UInt64) in register r8
+		0x1802A8A33: [!] Calls managed method System.Void UIResultTotalScore::Init(System.Int32,System.Int32) on instance {'m_totalScore' (type UIResultTotalScore)} with arguments [{'local4' (type System.Int32)}, 0x5F5E0FF]
+
+		0x1802A8A38: [!] Reads field m_totalScore from {'this' (function parameter, type SkippingStoneUIResult)} and stores in a new local {'m_totalScore2' (type UIResultTotalScore)}
+
+		0x1802A8A3C: [!] Compares {'m_totalScore2' (type UIResultTotalScore)} and 0
+		0x1802A8A3F: Jumps to 0x1802A8A6E (which throws a NRE) if m_totalScore2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8A41: Reads {Unknown Global at 0x181261D0C, first ten bytes are [0 0 192 63 0 0 0 64 0 0], or as chars "  À?   @  "} into register xmm1 as a constant constant4
+		0x1802A8A4C: [!] Calls managed method System.Void UIResultTotalScore::SetTime(System.Single) on instance {'m_totalScore2' (type UIResultTotalScore)} with arguments [1.5]
+
+		0x1802A8A51: [!] Reads field m_totalScore from {'this' (function parameter, type SkippingStoneUIResult)} and stores in a new local {'m_totalScore3' (type UIResultTotalScore)}
+
+		0x1802A8A55: [!] Compares {'m_totalScore3' (type UIResultTotalScore)} and 0
+		0x1802A8A58: Jumps to 0x1802A8A6E (which throws a NRE) if m_totalScore3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8A5D: Copies {'totalScore' (function parameter, type System.Int32)} from rdi into rdx
+		0x1802A8A5F: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant6
+		0x1802A8A69: [!] Calls managed method System.Void UIResultTotalScore::AddValue(System.Int32) on instance {'m_totalScore3' (type UIResultTotalScore)} with arguments [{'totalScore' (function parameter, type System.Int32)}]
+
+		0x1802A8A69: [!] Returns from the function
+
+		0x1802A8A70: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkippingStoneUIResult
+	System.Void SetupTotalScore(System.Int32 totalScore)
+		UIResultTotalScore m_totalScore = this.m_totalScore
+		ulong local4 = 0
+
+		m_totalScore.Init(local4, 0x5F5E0FF) //(Int32 now, Int32 max)
+		UIResultTotalScore m_totalScore2 = this.m_totalScore
+
+		m_totalScore2.SetTime(1.5) //(Single time)
+		UIResultTotalScore m_totalScore3 = this.m_totalScore
+
+		m_totalScore3.AddValue(totalScore) //(Int32 val)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UIResultTotalScore SkippingStoneUIResult::m_totalScore
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: ldc.i4 99999999
+	IL_0010: call System.Void UIResultTotalScore::Init(System.Int32,System.Int32)
+	IL_0015: ldarg.0
+	IL_0016: ldfld UIResultTotalScore SkippingStoneUIResult::m_totalScore
+	IL_001b: ldc.r4 1,5
+	IL_0020: call System.Void UIResultTotalScore::SetTime(System.Single)
+	IL_0025: ldarg.0
+	IL_0026: ldfld UIResultTotalScore SkippingStoneUIResult::m_totalScore
+	IL_002b: ldarg.1
+	IL_002c: call System.Void UIResultTotalScore::AddValue(System.Int32)
+	IL_0031: ret
+	IL_0032: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0037: throw
+	
+
+Method: System.Void SkippingStoneUIResult::SetupTotalSkip(System.Int32):	Method Body (x86 ASM):
+		0x1802A8A80 mov [rsp+10h],edx		; DEBUG: {Memory}/None {Register}/EDX ||| RSP | 16 | None ||| N/A | N/A
+		0x1802A8A84 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A85 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802A8A89 mov rbx,[rcx+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RCX | 64 | None ||| N/A | N/A
+		0x1802A8A8D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A8F lea rcx,[rsp+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x1802A8A94 call 0000000180E86110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8A99 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8A9C je short 00000001802A8AB2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8A9E xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A8AA1 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8AA4 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8AA7 call 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8AAC add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802A8AB0 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8AB1 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8AB2 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8AB4 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8AB9 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void SkippingStoneUIResult::SetupTotalSkip(System.Int32):
+		End of function at 0x1802A8ABA
+		Absolute End is at 0x1802A8ABA
+		Identified Jump Destination addresses:
+
+		0x1802A8A80: Moves totalSkip (type System.Int32) from register rdx to the stack at offset 16 (0x10)
+		0x1802A8A84: Saves the content of rbx to the stack
+		0x1802A8A89: [!] Reads field m_totalSkipLabel from {'this' (function parameter, type SkippingStoneUIResult)} and stores in a new local {'m_totalSkipLabel' (type UILabel)}
+
+		0x1802A8A8D: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x1802A8A8F: Loads a pointer to stack offset 0x38 into register rcx as new constant constant1
+		0x1802A8A99: [!] Compares {'m_totalSkipLabel' (type UILabel)} and 0
+		0x1802A8A9C: Jumps to 0x1802A8AB2 (which throws a NRE) if m_totalSkipLabel equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8AA4: Copies {'m_totalSkipLabel' (type UILabel)} from rbx into rcx
+		0x1802A8AA7: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'m_totalSkipLabel' (type UILabel)} with arguments [{'local3' (type System.Int32)}]
+
+		0x1802A8AB1: [!] Returns from the function
+
+		0x1802A8AB4: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkippingStoneUIResult
+	System.Void SetupTotalSkip(System.Int32 totalSkip)
+		UILabel m_totalSkipLabel = this.m_totalSkipLabel
+		ulong local3 = 0
+
+		m_totalSkipLabel.text = local3
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UILabel SkippingStoneUIResult::m_totalSkipLabel
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: call System.Void UILabel::set_text(System.String)
+	IL_0010: ret
+	IL_0011: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0016: throw
+	
+
+Method: System.Void SkippingStoneUIResult::SetupSkipByGrade(System.Int32[]):	Method Body (x86 ASM):
+		0x1802A8770 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8772 push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8773 push rsi		; DEBUG: {Register}/RSI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8774 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8775 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1802A8779 cmp byte ptr [18183D653h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868243 | None ||| N/A | 0
+		0x1802A8780 mov rsi,rdx		; DEBUG: {Register}/RSI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8783 mov rbp,rcx		; DEBUG: {Register}/RBP {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8786 jne short 00000001802A879Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8788 mov ecx,[1814BD760h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464198496 | None ||| N/A | N/A
+		0x1802A878E call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8793 mov byte ptr [18183D653h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868243 | None ||| N/A | 1
+		0x1802A879A mov rax,[rbp+48h]		; DEBUG: {Register}/RAX {Memory}/None ||| RBP | 72 | None ||| N/A | N/A
+		0x1802A879E xor ebx,ebx		; DEBUG: {Register}/EBX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1802A87A0 mov [rsp+58h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 88 | None ||| N/A | N/A
+		0x1802A87A5 mov edi,ebx		; DEBUG: {Register}/EDI {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1802A87A7 mov [rsp+20h],r15		; DEBUG: {Memory}/None {Register}/R15 ||| RSP | 32 | None ||| N/A | N/A
+		0x1802A87AC mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1802A87AE mov [rsp+50h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 80 | None ||| N/A | N/A
+		0x1802A87B2 mov [rsp+68h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 104 | None ||| N/A | N/A
+		0x1802A87B6 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A87B9 je near ptr 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A87BF mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A87C2 cmp edx,[rax+18h]		; DEBUG: {Register}/EDX {Memory}/None ||| RAX | 24 | None ||| N/A | N/A
+		0x1802A87C5 jge near ptr 00000001802A88B2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A87CB test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1802A87CE je near ptr 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A87D4 movsxd rdx,edi		; DEBUG: {Register}/RDX {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x1802A87D7 cmp edi,[rsi+18h]		; DEBUG: {Register}/EDI {Memory}/None ||| RSI | 24 | None ||| N/A | N/A
+		0x1802A87DA jae near ptr 00000001802A89C3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A87E0 mov eax,[rsi+rdx*4+20h]		; DEBUG: {Register}/EAX {Memory}/None ||| RSI | 32 | RDX ||| N/A | N/A
+		0x1802A87E4 mov [rsp+50h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 80 | None ||| N/A | N/A
+		0x1802A87E8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A87EB je near ptr 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A87F1 cmp edi,[rcx+18h]		; DEBUG: {Register}/EDI {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x1802A87F4 jae near ptr 00000001802A89B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A87FA lea r15,[rdx*8+20h]		; DEBUG: {Register}/R15 {Memory}/None ||| None | 32 | RDX ||| N/A | N/A
+		0x1802A8802 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8804 mov r14,[r15+rcx]		; DEBUG: {Register}/R14 {Memory}/None ||| R15 | 0 | RCX ||| N/A | N/A
+		0x1802A8808 lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1802A880D call 0000000180E86110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8812 test r14,r14		; DEBUG: {Register}/R14 {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x1802A8815 je near ptr 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A881B xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A881E mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8821 mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x1802A8824 call 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8829 mov rax,[rbp+50h]		; DEBUG: {Register}/RAX {Memory}/None ||| RBP | 80 | None ||| N/A | N/A
+		0x1802A882D test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8830 je near ptr 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8836 cmp edi,[rax+18h]		; DEBUG: {Register}/EDI {Memory}/None ||| RAX | 24 | None ||| N/A | N/A
+		0x1802A8839 jae near ptr 00000001802A899Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A883F mov rcx,[181862B78h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468021112 | None ||| N/A | N/A
+		0x1802A8846 mov r14,[r15+rax]		; DEBUG: {Register}/R14 {Memory}/None ||| R15 | 0 | RAX ||| N/A | N/A
+		0x1802A884A mov r15d,[rsp+50h]		; DEBUG: {Register}/R15D {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1802A884F test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802A8856 je short 00000001802A8865h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8858 cmp [rcx+0D8h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RCX | 216 | None ||| N/A | N/A
+		0x1802A885E jne short 00000001802A8865h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8860 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8865 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A8868 mov edx,edi		; DEBUG: {Register}/EDX {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x1802A886A mov ecx,r15d		; DEBUG: {Register}/ECX {Register}/R15D ||| None | 0 | None ||| N/A | N/A
+		0x1802A886D call 00000001802A86B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8872 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8874 mov [rsp+68h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 104 | None ||| N/A | N/A
+		0x1802A8878 lea rcx,[rsp+68h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 104 | None ||| N/A | N/A
+		0x1802A887D call 0000000180E86110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8882 test r14,r14		; DEBUG: {Register}/R14 {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x1802A8885 je near ptr 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A888B xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A888E mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8891 mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x1802A8894 call 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8899 mov rax,[rbp+48h]		; DEBUG: {Register}/RAX {Memory}/None ||| RBP | 72 | None ||| N/A | N/A
+		0x1802A889D inc edi		; DEBUG: {Register}/EDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A889F mov edx,edi		; DEBUG: {Register}/EDX {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x1802A88A1 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A88A4 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A88A7 je near ptr 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A88AD jmp near ptr 00000001802A87C2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A88B2 mov rax,[rbp+58h]		; DEBUG: {Register}/RAX {Memory}/None ||| RBP | 88 | None ||| N/A | N/A
+		0x1802A88B6 mov ecx,ebx		; DEBUG: {Register}/ECX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1802A88B8 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A88BB je near ptr 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A88C1 cmp ecx,[rax+18h]		; DEBUG: {Register}/ECX {Memory}/None ||| RAX | 24 | None ||| N/A | N/A
+		0x1802A88C4 jge near ptr 00000001802A8982h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A88CA mov rax,[181862B78h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468021112 | None ||| N/A | N/A
+		0x1802A88D1 test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1802A88D8 je short 00000001802A88F2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A88DA cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1802A88E1 jne short 00000001802A88F2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A88E3 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A88E6 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A88EB mov rax,[181862B78h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468021112 | None ||| N/A | N/A
+		0x1802A88F2 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1802A88F9 mov rcx,[rax]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1802A88FC test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A88FF je near ptr 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8905 movsxd rdi,ebx		; DEBUG: {Register}/RDI {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8908 cmp ebx,[rcx+18h]		; DEBUG: {Register}/EBX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x1802A890B jae near ptr 00000001802A89FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8911 lea rcx,[rcx+rdi*4]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 0 | RDI ||| N/A | N/A
+		0x1802A8915 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8917 add rcx,20h		; DEBUG: {Register}/RCX {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802A891B call 0000000180E86110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8920 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8923 mov rax,[181862B78h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468021112 | None ||| N/A | N/A
+		0x1802A892A mov rcx,[rax+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1802A8931 mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x1802A8934 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8937 je short 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8939 cmp ebx,[rax+18h]		; DEBUG: {Register}/EBX {Memory}/None ||| RAX | 24 | None ||| N/A | N/A
+		0x1802A893C jae near ptr 00000001802A89E9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8942 cmp dword ptr [rax+rdi*4+20h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 32 | RDI ||| N/A | 0
+		0x1802A8947 cmove rdx,[18187FC08h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468140040 | None ||| N/A | N/A
+		0x1802A894F mov rax,[rbp+58h]		; DEBUG: {Register}/RAX {Memory}/None ||| RBP | 88 | None ||| N/A | N/A
+		0x1802A8953 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8956 je short 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8958 cmp ebx,[rax+18h]		; DEBUG: {Register}/EBX {Memory}/None ||| RAX | 24 | None ||| N/A | N/A
+		0x1802A895B jae short 00000001802A89D6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A895D mov rcx,[rax+rdi*8+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 32 | RDI ||| N/A | N/A
+		0x1802A8962 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8965 je short 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8967 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A896A call 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A896F mov rax,[rbp+58h]		; DEBUG: {Register}/RAX {Memory}/None ||| RBP | 88 | None ||| N/A | N/A
+		0x1802A8973 inc ebx		; DEBUG: {Register}/EBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8975 mov ecx,ebx		; DEBUG: {Register}/ECX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8977 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A897A jne near ptr 00000001802A88C1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8980 jmp short 00000001802A8995h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8982 mov r15,[rsp+20h]		; DEBUG: {Register}/R15 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1802A8987 mov r14,[rsp+58h]		; DEBUG: {Register}/R14 {Memory}/None ||| RSP | 88 | None ||| N/A | N/A
+		0x1802A898C add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1802A8990 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8991 pop rsi		; DEBUG: {Register}/RSI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8992 pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8993 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8994 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8995 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8997 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A899C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void SkippingStoneUIResult::SetupSkipByGrade(System.Int32[]):
+		End of function at 0x1802A899D
+		Absolute End is at 0x1802A899D
+		Identified Jump Destination addresses:
+			0x1802A8995
+		0x1802A8770: Saves the content of rbx to the stack
+		0x1802A8772: Saves the content of rbp to the stack
+		0x1802A8773: Saves the content of rsi to the stack
+		0x1802A8774: Saves the content of rdi to the stack
+		0x1802A8779: Compares {Unknown Global at 0x18183D653, first ten bytes are [0 200 60 103 1 240 19 1 0 16], or as chars " È<gð "} and 0
+		0x1802A8780: Copies {'skipByGrade' (function parameter, type System.Int32[])} from rdx into rsi
+		0x1802A8783: Copies {'this' (function parameter, type SkippingStoneUIResult)} from rcx into rbp
+		0x1802A8786: Jumps to 0x1802A879A if {Unknown Global at 0x18183D653, first ten bytes are [0 200 60 103 1 240 19 1 0 16], or as chars " È<gð "} != 0
+
+		0x1802A8788: Reads {Unknown Global at 0x1814BD760, first ten bytes are [157 98 0 0 157 130 0 0 157 2], or as chars "b    "} into register rcx as a constant constant3
+		0x1802A878E: Attempts to load the il2cpp metadata for this method (method id 25245) and init it cpp-side.
+
+		0x1802A879A: [!] Reads field m_skipLabels from {'this' (function parameter, type SkippingStoneUIResult)} and stores in a new local {'m_skipLabels' (type UILabel[])}
+
+		0x1802A879E: Clears register rbx, yielding zero-local {'local3' (type System.Int32)}
+		0x1802A87A5: Copies {'local3' (type System.Int32)} from rbx into rdi
+		0x1802A87AC: Copies {'local3' (type System.Int32)} from rbx into rdx
+		0x1802A87AE: Moves local3 (type System.Int32) from register rbx to the stack at offset 80 (0x50)
+		0x1802A87B2: Moves local3 (type System.Int32) from register rbx to the stack at offset 104 (0x68)
+		0x1802A87B6: [!] Compares {'m_skipLabels' (type UILabel[])} and 0
+		0x1802A87B9: Jumps to 0x1802A8995 (which throws a NRE) if m_skipLabels equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A87BF: Copies {'m_skipLabels' (type UILabel[])} from rax into rcx
+
+		Potential Loop Start (0x1802A87C2):
+		0x1802A87C2: [!] Compares {'local3' (type System.Int32)} and {Property System.Int32 System.Array::Length() on {'m_skipLabels' (type UILabel[])}}
+		0x1802A87C5: Jumps to 0x1802A88B2 if {'local3' (type System.Int32)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'m_skipLabels' (type UILabel[])}} ;  - Increasing indentation - is while loop, unimportant is False
+
+		0x1802A87CB: [!] Compares {'skipByGrade' (function parameter, type System.Int32[])} and 0
+		0x1802A87CE: Jumps to 0x1802A8995 (which throws a NRE) if skipByGrade equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A87D4: Copies {'local3' (type System.Int32)} from rdi into rdx
+		0x1802A87D7: [!] Compares {'local3' (type System.Int32)} and {Property System.Int32 System.Array::Length() on {'skipByGrade' (function parameter, type System.Int32[])}}
+		0x1802A87DA: Jumps to 0x1802A89C3 (which throws a NRE) if {'local3' (type System.Int32)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'skipByGrade' (function parameter, type System.Int32[])}}. Implicitly present in managed code, so ignored here.
+		0x1802A87E0: Copies the element in the array {'skipByGrade' (function parameter, type System.Int32[])} at the index specified by {'local3' (type System.Int32)} into new local {'int32' (type System.Int32)}
+		0x1802A87E4: Moves int32 (type System.Int32) from register rax to the stack at offset 80 (0x50)
+		0x1802A87E8: [!] Compares {'m_skipLabels' (type UILabel[])} and 0
+		0x1802A87EB: Jumps to 0x1802A8995 (which throws a NRE) if m_skipLabels equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A87F1: [!] Compares {'local3' (type System.Int32)} and {Property System.Int32 System.Array::Length() on {'m_skipLabels' (type UILabel[])}}
+		0x1802A87F4: Jumps to 0x1802A89B0 (which throws a NRE) if {'local3' (type System.Int32)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'m_skipLabels' (type UILabel[])}}. Implicitly present in managed code, so ignored here.
+		0x1802A8804: [!] Reads a value from the array {'m_skipLabels' (type UILabel[])} at an index specified by the value in , into a new local {'local6' (type UILabel)}
+
+		0x1802A8808: Loads a pointer to stack offset 0x50 into register rcx as new constant constant7
+		0x1802A8812: [!] Compares {'local6' (type UILabel)} and 0
+		0x1802A8815: Jumps to 0x1802A8995 (which throws a NRE) if local6 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A881E: Copies {'int32' (type System.Int32)} from rax into rdx
+		0x1802A8821: Copies {'local6' (type UILabel)} from r14 into rcx
+		0x1802A8824: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'local6' (type UILabel)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1802A8829: [!] Reads field m_eachTotalLabels from {'this' (function parameter, type SkippingStoneUIResult)} and stores in a new local {'m_eachTotalLabels' (type UILabel[])}
+
+		0x1802A882D: [!] Compares {'m_eachTotalLabels' (type UILabel[])} and 0
+		0x1802A8830: Jumps to 0x1802A8995 (which throws a NRE) if m_eachTotalLabels equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8836: [!] Compares {'local3' (type System.Int32)} and {Property System.Int32 System.Array::Length() on {'m_eachTotalLabels' (type UILabel[])}}
+		0x1802A8839: Jumps to 0x1802A899D (which throws a NRE) if {'local3' (type System.Int32)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'m_eachTotalLabels' (type UILabel[])}}. Implicitly present in managed code, so ignored here.
+		0x1802A883F: Loads the type definition for managed type SkippingStoneUIResult as a constant "SkippingStoneUIResult" in rcx
+		0x1802A8846: [!] Reads a value from the array {'m_eachTotalLabels' (type UILabel[])} at an index specified by the value in , into a new local {'local9' (type UILabel)}
+
+		0x1802A884A: Reads local {'int32' (type System.Int32)} from stack offset 80 (0x50) into register r15
+		0x1802A884F: Compares "{il2cpp field on {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802A8856: Jumps to 0x1802A8865 if "{il2cpp field on {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802A8858: Compares "{il2cpp field on {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and {'local3' (type System.Int32)}
+		0x1802A885E: Jumps to 0x1802A8865 if "{il2cpp field on {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != {'local3' (type System.Int32)}
+
+		0x1802A8860: Calls the il2cpp cctor for the type SkippingStoneUIResult
+		0x1802A8868: Copies {'local3' (type System.Int32)} from rdi into rdx
+		0x1802A886A: Copies {'int32' (type System.Int32)} from r15 into rcx
+		0x1802A886D: [!] Calls static managed method System.Int32 SkippingStoneUIResult::GetTotalPoints(System.Int32,System.Int32) with arguments [{'int32' (type System.Int32)}, {'local3' (type System.Int32)}] and stores the result in {'totalPoints' (type System.Int32)}
+
+		0x1802A8874: Moves totalPoints (type System.Int32) from register rax to the stack at offset 104 (0x68)
+		0x1802A8878: Loads a pointer to stack offset 0x68 into register rcx as new constant constant14
+		0x1802A8882: [!] Compares {'local9' (type UILabel)} and 0
+		0x1802A8885: Jumps to 0x1802A8995 (which throws a NRE) if local9 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A888E: Copies {'totalPoints' (type System.Int32)} from rax into rdx
+		0x1802A8891: Copies {'local9' (type UILabel)} from r14 into rcx
+		0x1802A8894: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'local9' (type UILabel)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1802A8899: [!] Reads field m_skipLabels from {'this' (function parameter, type SkippingStoneUIResult)} and stores in a new local {'m_skipLabels2' (type UILabel[])}
+
+		0x1802A889D: [!] Adds 1 to the value {'local3' (type System.Int32)}, stored in rdi
+		0x1802A889F: Copies {'local3' (type System.Int32)} from rdi into rdx
+		0x1802A88A1: Copies {'m_skipLabels2' (type UILabel[])} from rax into rcx
+		0x1802A88A4: [!] Compares {'m_skipLabels2' (type UILabel[])} and 0
+		0x1802A88A7: Jumps to 0x1802A8995 (which throws a NRE) if m_skipLabels2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A88AD: Jumps to 0x1802A87C2 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x1802A88B2: [!] Reads field m_magnifyLabels from {'this' (function parameter, type SkippingStoneUIResult)} and stores in a new local {'m_magnifyLabels' (type UILabel[])}
+
+		0x1802A88B6: Copies {'local3' (type System.Int32)} from rbx into rcx
+		0x1802A88B8: [!] Compares {'m_magnifyLabels' (type UILabel[])} and 0
+		0x1802A88BB: Jumps to 0x1802A8995 (which throws a NRE) if m_magnifyLabels equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A88C1: [!] Compares {'local3' (type System.Int32)} and {Property System.Int32 System.Array::Length() on {'m_magnifyLabels' (type UILabel[])}}
+		0x1802A88C4: Jumps to 0x1802A8982 if {'local3' (type System.Int32)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'m_magnifyLabels' (type UILabel[])}} ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x1802A88CA: Loads the type definition for managed type SkippingStoneUIResult as a constant "SkippingStoneUIResult" in rax
+		0x1802A88D1: Compares "{il2cpp field on {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802A88D8: Jumps to 0x1802A88F2 if "{il2cpp field on {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802A88DA: Compares "{il2cpp field on {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802A88E1: Jumps to 0x1802A88F2 if "{il2cpp field on {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1802A88E3: Copies {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1802A88E6: Calls the il2cpp cctor for the type SkippingStoneUIResult
+		0x1802A88EB: Loads the type definition for managed type SkippingStoneUIResult as a constant "SkippingStoneUIResult" in rax
+		0x1802A88F2: Loads the pointer to the static fields for SkippingStoneUIResult and stores it in constant24 in register rax
+		0x1802A88F9: [!] Reads the static field System.Int32[] SkippingStoneUIResult::scMagnify into new local scMagnify
+		0x1802A88FC: [!] Compares {'scMagnify' (type System.Int32[])} and 0
+		0x1802A88FF: Jumps to 0x1802A8995 (which throws a NRE) if scMagnify equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8905: Copies {'local3' (type System.Int32)} from rbx into rdi
+		0x1802A8908: [!] Compares {'local3' (type System.Int32)} and {Property System.Int32 System.Array::Length() on {'scMagnify' (type System.Int32[])}}
+		0x1802A890B: Jumps to 0x1802A89FC (which throws a NRE) if {'local3' (type System.Int32)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'scMagnify' (type System.Int32[])}}. Implicitly present in managed code, so ignored here.
+		0x1802A8917: [!] Adds 32 to the value {'scMagnify' (type System.Int32[])}, stored in rcx
+		0x1802A8920: Copies {'constant24' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StaticFieldsPtr)} from rax into rdx
+		0x1802A8923: Loads the type definition for managed type SkippingStoneUIResult as a constant "SkippingStoneUIResult" in rax
+		0x1802A892A: Loads the pointer to the static fields for SkippingStoneUIResult and stores it in constant27 in register rcx
+		0x1802A8931: [!] Reads the static field System.Int32[] SkippingStoneUIResult::scMagnify into new local scMagnify2
+		0x1802A8934: [!] Compares {'scMagnify2' (type System.Int32[])} and 0
+		0x1802A8937: Jumps to 0x1802A8995 (which throws a NRE) if scMagnify2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8939: [!] Compares {'local3' (type System.Int32)} and {Property System.Int32 System.Array::Length() on {'scMagnify2' (type System.Int32[])}}
+		0x1802A893C: Jumps to 0x1802A89E9 (which throws a NRE) if {'local3' (type System.Int32)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'scMagnify2' (type System.Int32[])}}. Implicitly present in managed code, so ignored here.
+		0x1802A8942: [!] Compares "{il2cpp array field local18->}" and 0
+		0x1802A8947: [!] Sets local  in  to "-" if "{il2cpp array field local18->}" == 0 else it sets the local to "[Unknown (ANALYSIS ERROR)]" ;  - Could not find associated string load. Bailing out.
+		0x1802A894F: [!] Reads field m_magnifyLabels from {'this' (function parameter, type SkippingStoneUIResult)} and stores in a new local {'m_magnifyLabels2' (type UILabel[])}
+
+		0x1802A8953: [!] Compares {'m_magnifyLabels2' (type UILabel[])} and 0
+		0x1802A8956: Jumps to 0x1802A8995 (which throws a NRE) if m_magnifyLabels2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8958: [!] Compares {'local3' (type System.Int32)} and {Property System.Int32 System.Array::Length() on {'m_magnifyLabels2' (type UILabel[])}}
+		0x1802A895B: Jumps to 0x1802A89D6 (which throws a NRE) if {'local3' (type System.Int32)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'m_magnifyLabels2' (type UILabel[])}}. Implicitly present in managed code, so ignored here.
+		0x1802A895D: Copies the element in the array {'m_magnifyLabels2' (type UILabel[])} at the index specified by {'local3' (type System.Int32)} into new local {'uILabel' (type UILabel)}
+		0x1802A8962: [!] Compares {'uILabel' (type UILabel)} and 0
+		0x1802A8965: Jumps to 0x1802A8995 (which throws a NRE) if uILabel equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A896A: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'uILabel' (type UILabel)} with arguments ["-"]
+
+		0x1802A896F: [!] Reads field m_magnifyLabels from {'this' (function parameter, type SkippingStoneUIResult)} and stores in a new local {'m_magnifyLabels3' (type UILabel[])}
+
+		0x1802A8973: [!] Adds 1 to the value {'local3' (type System.Int32)}, stored in rbx
+		0x1802A8975: Copies {'local3' (type System.Int32)} from rbx into rcx
+		0x1802A8977: [!] Compares {'m_magnifyLabels3' (type UILabel[])} and 0
+		0x1802A897A: Jumps to 0x1802A88C1 (which is an if statement's body) if {'m_magnifyLabels3' (type UILabel[])} != 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1802A8980: Jumps to 0x1802A8995 (which is an function-local jump destination)
+
+		0x1802A8982: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register r15 as new constant constant35
+		0x1802A8987: Reads unknown value in stack, offset 88 (0x58) and stores the pointer in register r14 as new constant constant36
+		0x1802A8994: [!] Returns from the function
+
+
+		End Of If-Else Block (at 0x1802A8995) where the else started at 0x1802A8982
+		0x1802A8997: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkippingStoneUIResult
+	System.Void SetupSkipByGrade(System.Int32[] skipByGrade)
+		UILabel[] m_skipLabels = this.m_skipLabels
+		ulong local3 = 0
+
+		while (local3 < m_skipLabels.Length)
+		    System.Int32 int32 = skipByGrade[local3]
+		    UILabel local6 = m_skipLabels[]
+
+		    local6.set_text()
+		    UILabel[] m_eachTotalLabels = this.m_eachTotalLabels
+		    UILabel local9 = m_eachTotalLabels[]
+
+		    System.Int32 totalPoints = SkippingStoneUIResult.GetTotalPoints(int32, local3) //(Int32 skipCount, Int32 idx)
+
+		    local9.set_text()
+		    UILabel[] m_skipLabels2 = this.m_skipLabels
+		    local3 += 1
+		endwhile
+        
+		UILabel[] m_magnifyLabels = this.m_magnifyLabels
+
+		if (local3 < m_magnifyLabels.Length)
+		    System.Int32[] scMagnify = SkippingStoneUIResult.scMagnify
+		    scMagnify += 32
+		    System.Int32[] scMagnify2 = SkippingStoneUIResult.scMagnify
+		    string  = "{il2cpp array field local18->}" == 0 ? "-" : ""
+		    UILabel[] m_magnifyLabels2 = this.m_magnifyLabels
+		    UILabel uILabel = m_magnifyLabels2[local3]
+
+		    uILabel.text = "-"
+		    UILabel[] m_magnifyLabels3 = this.m_magnifyLabels
+		    local3 += 1
+
+		    if (m_magnifyLabels3 == 0)
+		    endwhile
+            
+		    goto INSN_1802A8982
+            
+		else
+		    return
+		endif
+        
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Don't know how to write IL for Cpp2IL.Core.Analysis.Actions.x86.Important.RegOffsetArrayValueReadRegToRegAction. Aborting here.
+
+
+Method: System.Int32 SkippingStoneUIResult::GetTotalPoints(System.Int32,System.Int32):	Method Body (x86 ASM):
+		0x1802A86B0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1802A86B5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A86B6 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802A86BA cmp byte ptr [18183D654h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868244 | None ||| N/A | 0
+		0x1802A86C1 mov ebx,ecx		; DEBUG: {Register}/EBX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802A86C3 movsxd rdi,edx		; DEBUG: {Register}/RDI {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A86C6 jne short 00000001802A86DAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A86C8 mov ecx,[1814BD74Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464198476 | None ||| N/A | N/A
+		0x1802A86CE call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A86D3 mov byte ptr [18183D654h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868244 | None ||| N/A | 1
+		0x1802A86DA mov rax,[181862B78h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468021112 | None ||| N/A | N/A
+		0x1802A86E1 test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1802A86E8 je short 00000001802A8702h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A86EA cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1802A86F1 jne short 00000001802A8702h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A86F3 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A86F6 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A86FB mov rax,[181862B78h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468021112 | None ||| N/A | N/A
+		0x1802A8702 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1802A8709 mov rcx,[rax]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1802A870C test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A870F je short 00000001802A8728h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8711 cmp edi,[rcx+18h]		; DEBUG: {Register}/EDI {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x1802A8714 jae short 00000001802A872Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8716 imul ebx,[rcx+rdi*4+20h]		; DEBUG: {Register}/EBX {Memory}/None ||| RCX | 32 | RDI ||| N/A | N/A
+		0x1802A871B mov eax,ebx		; DEBUG: {Register}/EAX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1802A871D mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802A8722 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802A8726 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8727 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8728 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A872D int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.Int32 SkippingStoneUIResult::GetTotalPoints(System.Int32,System.Int32):
+		End of function at 0x1802A872E
+		Absolute End is at 0x1802A872E
+		Identified Jump Destination addresses:
+
+		0x1802A86B5: Saves the content of rdi to the stack
+		0x1802A86BA: Compares {Unknown Global at 0x18183D654, first ten bytes are [200 60 103 1 240 19 1 0 16 20], or as chars "È<gð "} and 0
+		0x1802A86C1: Copies {'skipCount' (function parameter, type System.Int32)} from rcx into rbx
+		0x1802A86C3: Copies {'idx' (function parameter, type System.Int32)} from rdx into rdi
+		0x1802A86C6: Jumps to 0x1802A86DA if {Unknown Global at 0x18183D654, first ten bytes are [200 60 103 1 240 19 1 0 16 20], or as chars "È<gð "} != 0
+
+		0x1802A86C8: Reads {Unknown Global at 0x1814BD74C, first ten bytes are [156 98 0 0 156 66 0 0 156 2], or as chars "b  B  "} into register rcx as a constant constant3
+		0x1802A86CE: Attempts to load the il2cpp metadata for this method (method id 25244) and init it cpp-side.
+
+		0x1802A86DA: Loads the type definition for managed type SkippingStoneUIResult as a constant "SkippingStoneUIResult" in rax
+		0x1802A86E1: Compares "{il2cpp field on {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802A86E8: Jumps to 0x1802A8702 if "{il2cpp field on {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802A86EA: Compares "{il2cpp field on {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802A86F1: Jumps to 0x1802A8702 if "{il2cpp field on {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1802A86F3: Copies {'SkippingStoneUIResult' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1802A86F6: Calls the il2cpp cctor for the type SkippingStoneUIResult
+		0x1802A86FB: Loads the type definition for managed type SkippingStoneUIResult as a constant "SkippingStoneUIResult" in rax
+		0x1802A8702: Loads the pointer to the static fields for SkippingStoneUIResult and stores it in constant10 in register rax
+		0x1802A8709: [!] Reads the static field System.Int32[] SkippingStoneUIResult::scMagnify into new local scMagnify
+		0x1802A870C: [!] Compares {'scMagnify' (type System.Int32[])} and 0
+		0x1802A870F: Jumps to 0x1802A8728 (which throws a NRE) if scMagnify equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8711: [!] Compares {'idx' (function parameter, type System.Int32)} and {Property System.Int32 System.Array::Length() on {'scMagnify' (type System.Int32[])}}
+		0x1802A8714: Jumps to 0x1802A872E (which throws a NRE) if {'idx' (function parameter, type System.Int32)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'scMagnify' (type System.Int32[])}}. Implicitly present in managed code, so ignored here.
+		0x1802A871B: Copies {'skipCount' (function parameter, type System.Int32)} from rbx into rax
+		0x1802A871D: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant12
+		0x1802A8727: [!] Returns {'skipCount' (function parameter, type System.Int32)} from the function
+
+		0x1802A8728: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkippingStoneUIResult
+	static System.Int32 GetTotalPoints(System.Int32 skipCount, System.Int32 idx)
+		System.Int32[] scMagnify = SkippingStoneUIResult.scMagnify
+		return skipCount
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldsfld System.Int32[] SkippingStoneUIResult::scMagnify
+	IL_0005: stloc.0
+	IL_0006: ldarg.0
+	IL_0007: ret
+	IL_0008: newobj System.Void System.NullReferenceException::.ctor()
+	IL_000d: throw
+	
+
+Method: System.Void SkippingStoneUIResult::CountupEvent():	Method Body (x86 ASM):
+		0x180264360 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180264364 mov rcx,[rcx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 56 | None ||| N/A | N/A
+		0x180264368 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18026436B je short 0000000180264378h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18026436D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18026436F add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180264373 jmp near ptr 0000000180344C80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180264378 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18026437D int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void SkippingStoneUIResult::CountupEvent():
+		End of function at 0x18026437E
+		Absolute End is at 0x18026437E
+		Identified Jump Destination addresses:
+
+		0x180264364: [!] Reads field m_totalScore from {'this' (function parameter, type SkippingStoneUIResult)} and stores in a new local {'m_totalScore' (type UIResultTotalScore)}
+
+		0x180264368: [!] Compares {'m_totalScore' (type UIResultTotalScore)} and 0
+		0x18026436B: Jumps to 0x180264378 (which throws a NRE) if m_totalScore equals 0. Implicitly present in managed code, so ignored here.
+		0x180264373: [!] Calls managed method System.Void UIResultTotalScore::ExecAdd() on instance {'m_totalScore' (type UIResultTotalScore)}
+
+		0x180264373: [!] Returns from the function
+
+		0x180264378: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkippingStoneUIResult
+	System.Void CountupEvent()
+		UIResultTotalScore m_totalScore = this.m_totalScore
+
+		m_totalScore.ExecAdd()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UIResultTotalScore SkippingStoneUIResult::m_totalScore
+	IL_0006: call System.Void UIResultTotalScore::ExecAdd()
+	IL_000b: ret
+	IL_000c: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0011: throw
+	
+
+Method: System.Void SkippingStoneUIResult::.cctor():	Method Body (x86 ASM):
+		0x1802A8AC0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1802A8AC4 cmp byte ptr [18183D655h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868245 | None ||| N/A | 0
+		0x1802A8ACB jne short 00000001802A8ADFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8ACD mov ecx,[1814BD774h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464198516 | None ||| N/A | N/A
+		0x1802A8AD3 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8AD8 mov byte ptr [18183D655h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868245 | None ||| N/A | 1
+		0x1802A8ADF mov rcx,[181884308h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468158216 | None ||| N/A | N/A
+		0x1802A8AE6 mov edx,3		; DEBUG: {Register}/EDX {Immediate32}/None ||| None | 0 | None ||| N/A | 3
+		0x1802A8AEB call 0000000180141320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8AF0 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8AF3 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8AF6 je short 00000001802A8B28h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8AF8 mov eax,[rax+18h]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 24 | None ||| N/A | N/A
+		0x1802A8AFB test eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8AFD je short 00000001802A8B30h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8AFF mov dword ptr [rdx+20h],64h		; DEBUG: {Memory}/None {Immediate32}/None ||| RDX | 32 | None ||| N/A | 100
+		0x1802A8B06 cmp eax,1		; DEBUG: {Register}/EAX {Immediate8to32}/None ||| None | 0 | None ||| N/A | 1
+		0x1802A8B09 jbe short 00000001802A8B43h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8B0B mov dword ptr [rdx+24h],32h		; DEBUG: {Memory}/None {Immediate32}/None ||| RDX | 36 | None ||| N/A | 50
+		0x1802A8B12 mov rax,[181862B78h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468021112 | None ||| N/A | N/A
+		0x1802A8B19 mov rcx,[rax+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1802A8B20 mov [rcx],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RCX | 0 | None ||| N/A | N/A
+		0x1802A8B23 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1802A8B27 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8B28 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8B2A call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8B2F int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.Void SkippingStoneUIResult::.cctor():
+		End of function at 0x1802A8B30
+		Absolute End is at 0x1802A8B30
+		Identified Jump Destination addresses:
+
+		0x1802A8AC4: Compares {Unknown Global at 0x18183D655, first ten bytes are [60 103 1 240 19 1 0 16 20 1], or as chars "<gð "} and 0
+		0x1802A8ACB: Jumps to 0x1802A8ADF if {Unknown Global at 0x18183D655, first ten bytes are [60 103 1 240 19 1 0 16 20 1], or as chars "<gð "} != 0
+
+		0x1802A8ACD: Reads {Unknown Global at 0x1814BD774, first ten bytes are [158 98 0 0 158 130 0 0 158 34], or as chars "b    ""} into register rcx as a constant constant3
+		0x1802A8AD3: Attempts to load the il2cpp metadata for this method (method id 25246) and init it cpp-side.
+
+		0x1802A8ADF: Loads the type definition for managed type System.Int32[] as a constant "Int32[]" in rcx
+		0x1802A8AE6: [!] Writes the constant 0x3 into operand 3 (type UInt64) in register rdx
+		0x1802A8AEB: [!] Allocates an array of type System.Int32[] of size 3 and stores the result as local0 in register rax
+
+		0x1802A8AF0: Copies {'local0' (type System.Int32[])} from rax into rdx
+		0x1802A8AF3: [!] Compares {'local0' (type System.Int32[])} and 0
+		0x1802A8AF6: Jumps to 0x1802A8B28 (which throws a NRE) if local0 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8AF8: Reads the length of the array "{'local0' (type System.Int32[])}" and stores it in new local {'length' (type System.Int32)} in register rax
+		0x1802A8AFB: [!] Compares {'length' (type System.Int32)} and 0
+		0x1802A8AFD: Jumps to 0x1802A8B30 (which throws a NRE) if length equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8AFF: Sets the value at offset 0 in array local0 to 100
+		0x1802A8B06: [!] Compares {'length' (type System.Int32)} and 1
+		0x1802A8B09: Jumps to 0x1802A8B43 (which throws a NRE) if {'length' (type System.Int32)} is less than or equal to 1. Implicitly present in managed code, so ignored here.
+		0x1802A8B0B: Sets the value at offset 0 in array local0 to 50
+		0x1802A8B12: Loads the type definition for managed type SkippingStoneUIResult as a constant "SkippingStoneUIResult" in rax
+		0x1802A8B19: Loads the pointer to the static fields for SkippingStoneUIResult and stores it in constant10 in register rcx
+		0x1802A8B20: [!] Sets static field SkippingStoneUIResult.scMagnify to {'local0' (type System.Int32[])}
+		0x1802A8B27: [!] Returns from the function
+
+		0x1802A8B2A: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkippingStoneUIResult
+	static System.Void .cctor()
+		System.Int32[] local0 = new System.Int32[3]
+		System.Int32 length = local0.Length
+		local0[0] = 100
+		local0[0] = 50
+		SkippingStoneUIResult.scMagnify = local0
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldc.i4.3
+	IL_0001: newarr System.Int32
+	IL_0006: stloc.0
+	IL_0007: ldloc.0
+	IL_0008: call System.Int32 System.Array::get_Length()
+	IL_000d: stloc.1
+	IL_000e: ldloc.0
+	IL_000f: ldc.i4.0
+	IL_0010: ldc.i4.s 100
+	IL_0012: conv.i8
+	IL_0013: conv.u8
+	IL_0014: stelem.any System.Int32
+	IL_0019: ldloc.0
+	IL_001a: ldc.i4.0
+	IL_001b: ldc.i4.s 50
+	IL_001d: conv.i8
+	IL_001e: conv.u8
+	IL_001f: stelem.any System.Int32
+	IL_0024: ldloc.0
+	IL_0025: stsfld System.Int32[] SkippingStoneUIResult::scMagnify
+	IL_002a: ret
+	IL_002b: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0030: throw
+	
+

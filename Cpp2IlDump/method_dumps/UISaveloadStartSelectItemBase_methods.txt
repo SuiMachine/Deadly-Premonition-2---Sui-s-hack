@@ -1,0 +1,410 @@
+Type: UISaveloadStartSelectItemBase
+
+Method: System.Void UISaveloadStartSelectItemBase::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UISaveloadStartSelectItemBase::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type UISaveloadStartSelectItemBase)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UISaveloadStartSelectItemBase
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void UISaveloadStartSelectItemBase::Init(UISaveloadStartSelect):	Method Body (x86 ASM):
+		0x1806BDA80 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1806BDA84 mov [rcx+38h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RCX | 56 | None ||| N/A | N/A
+		0x1806BDA88 mov rcx,[rcx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 48 | None ||| N/A | N/A
+		0x1806BDA8C test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA8F je short 00000001806BDA9Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BDA91 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA93 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1806BDA97 jmp near ptr 0000000181192E10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BDA9C call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BDAA1 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UISaveloadStartSelectItemBase::Init(UISaveloadStartSelect):
+		End of function at 0x1806BDAA2
+		Absolute End is at 0x1806BDAA2
+		Identified Jump Destination addresses:
+
+		0x1806BDA84: [!] Sets the field m_parentScr (Type UISaveloadStartSelect) on local {'this' (function parameter, type UISaveloadStartSelectItemBase)} to the value stored in {'parentScr' (function parameter, type UISaveloadStartSelect)}
+		0x1806BDA88: [!] Reads field m_lineTweenScale from {'this' (function parameter, type UISaveloadStartSelectItemBase)} and stores in a new local {'m_lineTweenScale' (type TweenScale)}
+
+		0x1806BDA8C: [!] Compares {'m_lineTweenScale' (type TweenScale)} and 0
+		0x1806BDA8F: Jumps to 0x1806BDA9C (which throws a NRE) if m_lineTweenScale equals 0. Implicitly present in managed code, so ignored here.
+		0x1806BDA97: [!] Calls managed method System.Void UITweener::ResetToBeginning() on instance {'m_lineTweenScale' (type TweenScale)}
+
+		0x1806BDA97: [!] Returns from the function
+
+		0x1806BDA9C: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UISaveloadStartSelectItemBase
+	System.Void Init(UISaveloadStartSelect parentScr)
+		this.m_parentScr = parentScr
+		TweenScale m_lineTweenScale = this.m_lineTweenScale
+
+		m_lineTweenScale.ResetToBeginning()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: stfld UISaveloadStartSelect UISaveloadStartSelectItemBase::m_parentScr
+	IL_0007: ldarg.0
+	IL_0008: ldfld TweenScale UISaveloadStartSelectItemBase::m_lineTweenScale
+	IL_000d: call System.Void UITweener::ResetToBeginning()
+	IL_0012: ret
+	IL_0013: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0018: throw
+	
+
+Method: System.Void UISaveloadStartSelectItemBase::Hovered(System.Boolean):	Method Body (x86 ASM):
+		0x1806BD8D0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1806BD8D5 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x1806BD8DA push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806BD8DB sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1806BD8DF cmp byte ptr [18183F400h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875840 | None ||| N/A | 0
+		0x1806BD8E6 movzx esi,dl		; DEBUG: {Register}/ESI {Register}/DL ||| None | 0 | None ||| N/A | N/A
+		0x1806BD8E9 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806BD8EC jne short 00000001806BD900h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD8EE mov ecx,[18151C140h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464586048 | None ||| N/A | N/A
+		0x1806BD8F4 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD8F9 mov byte ptr [18183F400h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875840 | None ||| N/A | 1
+		0x1806BD900 mov rdi,[rbx+18h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1806BD904 mov rax,[181865220h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468031008 | None ||| N/A | N/A
+		0x1806BD90B test sil,sil		; DEBUG: {Register}/SIL {Register}/SIL ||| None | 0 | None ||| N/A | N/A
+		0x1806BD90E jne near ptr 00000001806BD9BFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD914 test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1806BD91B je short 00000001806BD935h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD91D cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1806BD924 jne short 00000001806BD935h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD926 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806BD929 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD92E mov rax,[181865220h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468031008 | None ||| N/A | N/A
+		0x1806BD935 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1806BD93C lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806BD941 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806BD944 mov edx,[rax+4]		; DEBUG: {Register}/EDX {Memory}/None ||| RAX | 4 | None ||| N/A | N/A
+		0x1806BD947 call 0000000180B27F10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD94C test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806BD94F je near ptr 00000001806BDA6Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD955 movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1806BD958 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806BD95B lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806BD960 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806BD963 movaps [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1806BD968 call 0000000181198A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD96D mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1806BD971 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806BD974 je near ptr 00000001806BDA6Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD97A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806BD97D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806BD97F call 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD984 mov rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x1806BD988 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806BD98B je near ptr 00000001806BDA6Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD991 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806BD994 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806BD996 call 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD99B mov rcx,[rbx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x1806BD99F test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806BD9A2 je near ptr 00000001806BDA6Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD9A8 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806BD9AA call 0000000181192E10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD9AF mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1806BD9B4 mov rsi,[rsp+48h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x1806BD9B9 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1806BD9BD pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806BD9BE ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806BD9BF test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1806BD9C6 je short 00000001806BD9E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD9C8 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1806BD9CF jne short 00000001806BD9E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD9D1 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806BD9D4 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD9D9 mov rax,[181865220h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468031008 | None ||| N/A | N/A
+		0x1806BD9E0 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1806BD9E7 lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806BD9EC xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806BD9EF mov edx,[rax]		; DEBUG: {Register}/EDX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1806BD9F1 call 0000000180B27F10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD9F6 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806BD9F9 je short 00000001806BDA6Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BD9FB movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1806BD9FE xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA01 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806BDA06 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA09 movaps [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1806BDA0E call 0000000181198A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BDA13 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1806BDA17 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA1A je short 00000001806BDA6Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BDA1C xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA1F mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1806BDA21 call 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BDA26 mov rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x1806BDA2A test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA2D je short 00000001806BDA6Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BDA2F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA32 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1806BDA34 call 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BDA39 mov rcx,[rbx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x1806BDA3D test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA40 je short 00000001806BDA6Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BDA42 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA44 call 0000000180C1B830h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BDA49 mov rax,[rbx]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x1806BDA4C mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA4F mov rdx,[rax+1A0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 416 | None ||| N/A | N/A
+		0x1806BDA56 mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1806BDA5B mov rsi,[rsp+48h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x1806BDA60 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1806BDA64 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA65 jmp qword ptr [rax+198h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 408 | None ||| N/A | N/A
+		0x1806BDA6C xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806BDA6E call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806BDA73 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UISaveloadStartSelectItemBase::Hovered(System.Boolean):
+		End of function at 0x1806BDA74
+		Absolute End is at 0x1806BDA74
+		Identified Jump Destination addresses:
+
+		0x1806BD8DA: Saves the content of rdi to the stack
+		0x1806BD8DF: Compares {Unknown Global at 0x18183F400, first ten bytes are [120 64 103 1 0 21 2 0 85 21], or as chars "x@g  U"} and 0
+		0x1806BD8E6: Copies {'isOver' (function parameter, type System.Boolean)} from rdx into rsi
+		0x1806BD8E9: Copies {'this' (function parameter, type UISaveloadStartSelectItemBase)} from rcx into rbx
+		0x1806BD8EC: Jumps to 0x1806BD900 if {Unknown Global at 0x18183F400, first ten bytes are [120 64 103 1 0 21 2 0 85 21], or as chars "x@g  U"} != 0
+
+		0x1806BD8EE: Loads string "þx" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1806BD8F4: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1806BD900: [!] Reads field m_text from {'this' (function parameter, type UISaveloadStartSelectItemBase)} and stores in a new local {'m_text' (type UILabel)}
+
+		0x1806BD904: Loads the type definition for managed type UISaveloadStartSelect as a constant "UISaveloadStartSelect" in rax
+		0x1806BD90B: [!] Compares {'isOver' (function parameter, type System.Boolean)} and False
+		0x1806BD90E: Jumps to 0x1806BD9BF (which is an if statement's body) if {'isOver' (function parameter, type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806BD914: Compares "{il2cpp field on {'UISaveloadStartSelect' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806BD91B: Jumps to 0x1806BD935 if "{il2cpp field on {'UISaveloadStartSelect' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806BD91D: Compares "{il2cpp field on {'UISaveloadStartSelect' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806BD924: Jumps to 0x1806BD935 if "{il2cpp field on {'UISaveloadStartSelect' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806BD926: Copies {'UISaveloadStartSelect' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1806BD929: Calls the il2cpp cctor for the type UISaveloadStartSelect
+		0x1806BD92E: Loads the type definition for managed type UISaveloadStartSelect as a constant "UISaveloadStartSelect" in rax
+		0x1806BD935: Loads the pointer to the static fields for UISaveloadStartSelect and stores it in constant11 in register rax
+		0x1806BD93C: Loads a pointer to stack offset 0x20 into register rcx as new constant constant12
+		0x1806BD944: [!] Reads the static field UnityEngine.Color32 UISaveloadStartSelect::scNotSelectColor into new local scNotSelectColor
+		0x1806BD947: [!] Calls static managed method UnityEngine.Color UnityEngine.Color32::op_Implicit(UnityEngine.Color32) and stores the result in {'color' (type UnityEngine.Color)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806BD94C: [!] Compares {'m_text' (type UILabel)} and 0
+		0x1806BD94F: Jumps to 0x1806BDA6C (which throws a NRE) if m_text equals 0. Implicitly present in managed code, so ignored here.
+		0x1806BD955: Loads the class pointer from color into a constant constant14 in register xmm0
+		0x1806BD95B: Loads a pointer to stack offset 0x20 into register rdx as new constant constant15
+		0x1806BD960: Copies {'m_text' (type UILabel)} from rdi into rcx
+		0x1806BD963: Moves constant14 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 32 (0x20) as a new local local7
+		0x1806BD968: [!] Calls managed method System.Void UIWidget::set_color(UnityEngine.Color) on instance {'m_text' (type UILabel)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806BD96D: [!] Reads field m_checkObj from {'this' (function parameter, type UISaveloadStartSelectItemBase)} and stores in a new local {'m_checkObj' (type UnityEngine.GameObject)}
+
+		0x1806BD971: [!] Compares {'m_checkObj' (type UnityEngine.GameObject)} and 0
+		0x1806BD974: Jumps to 0x1806BDA6C (which throws a NRE) if m_checkObj equals 0. Implicitly present in managed code, so ignored here.
+		0x1806BD97D: Clears register rdx, yielding zero-local {'local10' (type System.Int32)}
+		0x1806BD97F: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'m_checkObj' (type UnityEngine.GameObject)} with arguments [{'local10' (type System.Int32)}]
+
+		0x1806BD984: [!] Reads field m_lineObj from {'this' (function parameter, type UISaveloadStartSelectItemBase)} and stores in a new local {'m_lineObj' (type UnityEngine.GameObject)}
+
+		0x1806BD988: [!] Compares {'m_lineObj' (type UnityEngine.GameObject)} and 0
+		0x1806BD98B: Jumps to 0x1806BDA6C (which throws a NRE) if m_lineObj equals 0. Implicitly present in managed code, so ignored here.
+		0x1806BD994: Clears register rdx, yielding zero-local {'local13' (type System.Int32)}
+		0x1806BD996: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'m_lineObj' (type UnityEngine.GameObject)} with arguments [{'local13' (type System.Int32)}]
+
+		0x1806BD99B: [!] Reads field m_lineTweenScale from {'this' (function parameter, type UISaveloadStartSelectItemBase)} and stores in a new local {'m_lineTweenScale' (type TweenScale)}
+
+		0x1806BD99F: [!] Compares {'m_lineTweenScale' (type TweenScale)} and 0
+		0x1806BD9A2: Jumps to 0x1806BDA6C (which throws a NRE) if m_lineTweenScale equals 0. Implicitly present in managed code, so ignored here.
+		0x1806BD9AA: [!] Calls managed method System.Void UITweener::ResetToBeginning() on instance {'m_lineTweenScale' (type TweenScale)}
+
+		0x1806BD9AF: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant19
+		0x1806BD9B4: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rsi as new constant constant20
+		0x1806BD9BE: [!] Returns from the function
+
+		0x1806BD9BF: Compares "{il2cpp field on {'UISaveloadStartSelect' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806BD9C6: Jumps to 0x1806BD9E0 if "{il2cpp field on {'UISaveloadStartSelect' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1806BD9E0 which is after end of current block @ 0x1806BD9BF (started at 0x1806BD914)
+
+		0x1806BD9C8: Compares "{il2cpp field on {'UISaveloadStartSelect' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806BD9CF: Jumps to 0x1806BD9E0 if "{il2cpp field on {'UISaveloadStartSelect' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1806BD9E0 which is after end of current block @ 0x1806BD9BF (started at 0x1806BD914)
+
+		0x1806BD9D1: Copies {'UISaveloadStartSelect' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1806BD9D4: Calls the il2cpp cctor for the type UISaveloadStartSelect
+		0x1806BD9D9: Loads the type definition for managed type UISaveloadStartSelect as a constant "UISaveloadStartSelect" in rax
+		0x1806BD9E0: Loads the pointer to the static fields for UISaveloadStartSelect and stores it in constant26 in register rax
+		0x1806BD9E7: Loads a pointer to stack offset 0x20 into register rcx as new constant constant27
+		0x1806BD9EF: [!] Reads the static field UnityEngine.Color32 UISaveloadStartSelect::scSelectColor into new local scSelectColor
+		0x1806BD9F1: [!] Calls static managed method UnityEngine.Color UnityEngine.Color32::op_Implicit(UnityEngine.Color32) and stores the result in {'color2' (type UnityEngine.Color)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806BD9F6: [!] Compares {'m_text' (type UILabel)} and 0
+		0x1806BD9F9: Jumps to 0x1806BDA6C (which throws a NRE) if m_text equals 0. Implicitly present in managed code, so ignored here.
+		0x1806BD9FB: Loads the class pointer from color2 into a constant constant29 in register xmm0
+		0x1806BDA01: Loads a pointer to stack offset 0x20 into register rdx as new constant constant30
+		0x1806BDA06: Copies {'m_text' (type UILabel)} from rdi into rcx
+		0x1806BDA09: Moves constant29 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 32 (0x20) as a new local local20
+		0x1806BDA0E: [!] Calls managed method System.Void UIWidget::set_color(UnityEngine.Color) on instance {'m_text' (type UILabel)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806BDA13: [!] Reads field m_checkObj from {'this' (function parameter, type UISaveloadStartSelectItemBase)} and stores in a new local {'m_checkObj2' (type UnityEngine.GameObject)}
+
+		0x1806BDA17: [!] Compares {'m_checkObj2' (type UnityEngine.GameObject)} and 0
+		0x1806BDA1A: Jumps to 0x1806BDA6C (which throws a NRE) if m_checkObj2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806BDA1F: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1806BDA21: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'m_checkObj2' (type UnityEngine.GameObject)} with arguments [True]
+
+		0x1806BDA26: [!] Reads field m_lineObj from {'this' (function parameter, type UISaveloadStartSelectItemBase)} and stores in a new local {'m_lineObj2' (type UnityEngine.GameObject)}
+
+		0x1806BDA2A: [!] Compares {'m_lineObj2' (type UnityEngine.GameObject)} and 0
+		0x1806BDA2D: Jumps to 0x1806BDA6C (which throws a NRE) if m_lineObj2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806BDA32: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1806BDA34: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'m_lineObj2' (type UnityEngine.GameObject)} with arguments [True]
+
+		0x1806BDA39: [!] Reads field m_lineTweenScale from {'this' (function parameter, type UISaveloadStartSelectItemBase)} and stores in a new local {'m_lineTweenScale2' (type TweenScale)}
+
+		0x1806BDA3D: [!] Compares {'m_lineTweenScale2' (type TweenScale)} and 0
+		0x1806BDA40: Jumps to 0x1806BDA6C (which throws a NRE) if m_lineTweenScale2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806BDA44: [!] Calls managed method System.Void UITweener::Play() on instance {'m_lineTweenScale2' (type TweenScale)}
+
+		0x1806BDA49: Loads the class pointer from this into a constant constant36 in register rax
+		0x1806BDA4C: Copies {'this' (function parameter, type UISaveloadStartSelectItemBase)} from rbx into rcx
+		0x1806BDA4F: Loads the pointer to the implementation of virtual function System.Void UISaveloadStartSelectItemBase::SetGuideText() specific to UISaveloadStartSelectItemBase from the class pointer in rax, slot 7 (from memory offset 416) and stores in constant constant37
+		0x1806BDA56: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant38
+		0x1806BDA5B: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rsi as new constant constant39
+		0x1806BDA65: [!] Calls managed method System.Void System.ComponentModel.IContainer::Remove(System.ComponentModel.IComponent) on instance {'this' (function parameter, type UISaveloadStartSelectItemBase)} ;  - Parameter mismatch, but there is only one method here for which the instance matches.
+
+		0x1806BDA65: [!] Returns from the function
+
+		0x1806BDA6E: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UISaveloadStartSelectItemBase
+	System.Void Hovered(System.Boolean isOver)
+		UILabel m_text = this.m_text
+
+		if (isOver == False)
+		    UnityEngine.Color32 scNotSelectColor = UISaveloadStartSelect.scNotSelectColor
+
+		    UnityEngine.Color color = UnityEngine.Color32.op_Implicit()
+
+		    m_text.set_color()
+		    UnityEngine.GameObject m_checkObj = this.m_checkObj
+		    ulong local10 = 0
+
+		    m_checkObj.SetActive(local10) //(Boolean value)
+		    UnityEngine.GameObject m_lineObj = this.m_lineObj
+		    ulong local13 = 0
+
+		    m_lineObj.SetActive(local13) //(Boolean value)
+		    TweenScale m_lineTweenScale = this.m_lineTweenScale
+
+		    m_lineTweenScale.ResetToBeginning()
+		    return
+		endif
+        
+		UnityEngine.Color32 scSelectColor = UISaveloadStartSelect.scSelectColor
+
+		UnityEngine.Color color2 = UnityEngine.Color32.op_Implicit()
+
+		m_text.set_color()
+		UnityEngine.GameObject m_checkObj2 = this.m_checkObj
+
+		m_checkObj2.SetActive(True) //(Boolean value)
+		UnityEngine.GameObject m_lineObj2 = this.m_lineObj
+
+		m_lineObj2.SetActive(True) //(Boolean value)
+		TweenScale m_lineTweenScale2 = this.m_lineTweenScale
+
+		m_lineTweenScale2.Play()
+
+		base.Remove()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1806BD947) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (1)) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void UISaveloadStartSelectItemBase::Selected():	Method Body (x86 ASM):
+		0x180207540 ret 0		; DEBUG: {Immediate16}/None {Register}/None ||| None | 0 | None ||| 0 | N/A
+		0x180207543 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UISaveloadStartSelectItemBase::Selected():
+		End of function at 0x180207544
+		Absolute End is at 0x180207544
+		Identified Jump Destination addresses:
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UISaveloadStartSelectItemBase
+	System.Void Selected()
+
+
+Generated IL:
+	
+
+Method: System.Void UISaveloadStartSelectItemBase::SetGuideText():	Method Body (x86 ASM):
+		0x180207540 ret 0		; DEBUG: {Immediate16}/None {Register}/None ||| None | 0 | None ||| 0 | N/A
+		0x180207543 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UISaveloadStartSelectItemBase::SetGuideText():
+		End of function at 0x180207544
+		Absolute End is at 0x180207544
+		Identified Jump Destination addresses:
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UISaveloadStartSelectItemBase
+	System.Void SetGuideText()
+
+
+Generated IL:
+	
+

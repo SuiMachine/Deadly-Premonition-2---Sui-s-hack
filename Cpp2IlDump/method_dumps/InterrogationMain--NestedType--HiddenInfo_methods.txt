@@ -1,0 +1,64 @@
+Type: HiddenInfo
+
+Method: System.Void InterrogationMain/HiddenInfo::.ctor(UnityEngine.GameObject,System.Boolean):	Method Body (x86 ASM):
+		0x1804A9450 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1804A9455 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x1804A945A push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804A945B sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804A945F mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1804A9462 movzx esi,r8b		; DEBUG: {Register}/ESI {Register}/R8L ||| None | 0 | None ||| N/A | N/A
+		0x1804A9466 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804A9468 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804A946B call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804A9470 mov [rdi+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RDI | 16 | None ||| N/A | N/A
+		0x1804A9474 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1804A9479 mov [rdi+18h],sil		; DEBUG: {Memory}/None {Register}/SIL ||| RDI | 24 | None ||| N/A | N/A
+		0x1804A947D mov rsi,[rsp+38h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x1804A9482 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804A9486 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804A9487 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804A9488 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void InterrogationMain/HiddenInfo::.ctor(UnityEngine.GameObject,System.Boolean):
+		End of function at 0x1804A9489
+		Absolute End is at 0x1804A9489
+		Identified Jump Destination addresses:
+
+		0x1804A945A: Saves the content of rdi to the stack
+		0x1804A945F: Copies {'target' (function parameter, type UnityEngine.GameObject)} from rdx into rbx
+		0x1804A9462: Copies {'isHidden' (function parameter, type System.Boolean)} from r8 into rsi
+		0x1804A9468: Copies {'this' (function parameter, type InterrogationMain/HiddenInfo)} from rcx into rdi
+		0x1804A946B: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type InterrogationMain/HiddenInfo)} ;  - Leftover parameters detected, but first few match.
+
+		0x1804A9470: [!] Sets the field m_target (Type UnityEngine.GameObject) on local {'this' (function parameter, type InterrogationMain/HiddenInfo)} to the value stored in {'target' (function parameter, type UnityEngine.GameObject)}
+		0x1804A9474: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant1
+		0x1804A9479: [!] Sets the field m_isHidden (Type System.Boolean) on local {'this' (function parameter, type InterrogationMain/HiddenInfo)} to the value stored in {'isHidden' (function parameter, type System.Boolean)}
+		0x1804A947D: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rsi as new constant constant2
+		0x1804A9487: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: InterrogationMain/HiddenInfo
+	System.Void .ctor(UnityEngine.GameObject target, System.Boolean isHidden)
+
+		base..ctor()
+		this.m_target = target
+		this.m_isHidden = isHidden
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ldarg.0
+	IL_0007: ldarg.1
+	IL_0008: stfld UnityEngine.GameObject InterrogationMain/HiddenInfo::m_target
+	IL_000d: ldarg.0
+	IL_000e: ldarg.2
+	IL_000f: stfld System.Boolean InterrogationMain/HiddenInfo::m_isHidden
+	IL_0014: ret
+	
+

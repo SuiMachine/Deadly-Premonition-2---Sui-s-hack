@@ -1,0 +1,53 @@
+Type: BlendSystemButton
+
+Method: System.Void RogoDigital.Lipsync.BlendSystemButton::.ctor(System.String):	Method Body (x86 ASM):
+		0x1802ED180 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1802ED185 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802ED186 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802ED18A mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1802ED18D mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802ED190 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802ED192 call 00000001802068B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802ED197 mov [rbx+10h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 16 | None ||| N/A | N/A
+		0x1802ED19B mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802ED1A0 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802ED1A4 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802ED1A5 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802ED1A6 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void RogoDigital.Lipsync.BlendSystemButton::.ctor(System.String):
+		End of function at 0x1802ED1A7
+		Absolute End is at 0x1802ED1A7
+		Identified Jump Destination addresses:
+
+		0x1802ED185: Saves the content of rdi to the stack
+		0x1802ED18A: Copies {'displayName' (function parameter, type System.String)} from rdx into rdi
+		0x1802ED18D: Copies {'this' (function parameter, type RogoDigital.Lipsync.BlendSystemButton)} from rcx into rbx
+		0x1802ED192: [!] Calls managed method System.Void System.Attribute::.ctor() on instance {'this' (function parameter, type RogoDigital.Lipsync.BlendSystemButton)} ;  - Leftover parameters detected, but first few match.
+
+		0x1802ED197: [!] Sets the field displayName (Type System.String) on local {'this' (function parameter, type RogoDigital.Lipsync.BlendSystemButton)} to the value stored in {'displayName' (function parameter, type System.String)}
+		0x1802ED19B: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant1
+		0x1802ED1A5: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: RogoDigital.Lipsync.BlendSystemButton
+	System.Void .ctor(System.String displayName)
+
+		base..ctor()
+		this.displayName = displayName
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Attribute::.ctor()
+	IL_0006: ldarg.0
+	IL_0007: ldarg.1
+	IL_0008: stfld System.String RogoDigital.Lipsync.BlendSystemButton::displayName
+	IL_000d: ret
+	
+

@@ -1,0 +1,91 @@
+Type: CustomizeSelectUIManager
+
+Method: System.Void CustomizeSelectUIManager::.ctor():	Method Body (x86 ASM):
+		0x18044DCB0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18044DCB2 jmp near ptr 0000000180613E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DCB7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void CustomizeSelectUIManager::.ctor():
+		End of function at 0x18044DCB8
+		Absolute End is at 0x18044DCB8
+		Identified Jump Destination addresses:
+
+		0x18044DCB2: [!] Calls managed method System.Void UIMenuObjSelectUIRootBase::.ctor() on instance {'this' (function parameter, type CustomizeSelectUIManager)}
+
+		0x18044DCB2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: CustomizeSelectUIManager
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UIMenuObjSelectUIRootBase::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void CustomizeSelectUIManager::Init():	Method Body (x86 ASM):
+		0x1804A3100 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804A3102 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804A3106 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804A3108 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804A310B call 00000001806130C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804A3110 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804A3112 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1804A3115 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804A311A mov [rbx+28h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 40 | None ||| N/A | N/A
+		0x1804A311E add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804A3122 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804A3123 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804A3124 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void CustomizeSelectUIManager::Init():
+		End of function at 0x1804A3125
+		Absolute End is at 0x1804A3125
+		Identified Jump Destination addresses:
+
+		0x1804A3100: Saves the content of rbx to the stack
+		0x1804A3108: Copies {'this' (function parameter, type CustomizeSelectUIManager)} from rcx into rbx
+		0x1804A310B: [!] Calls managed method System.Void UIMenuObjSelectUIRootBase::Init() on instance {'this' (function parameter, type CustomizeSelectUIManager)}
+
+		0x1804A3112: Copies {'this' (function parameter, type CustomizeSelectUIManager)} from rbx into rcx
+		0x1804A3115: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type CustomizeSelectUIManager)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x1804A311A: [!] Sets the field m_uiRoot (Type UnityEngine.Transform) on local {'this' (function parameter, type CustomizeSelectUIManager)} to the value stored in {'transform' (type UnityEngine.Transform)}
+		0x1804A3123: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: CustomizeSelectUIManager
+	System.Void Init()
+
+		base.Init()
+
+		UnityEngine.Transform transform = base.transform
+		this.m_uiRoot = transform
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UIMenuObjSelectUIRootBase::Init()
+	IL_0006: ldarg.0
+	IL_0007: call UnityEngine.Transform UnityEngine.Component::get_transform()
+	IL_000c: stloc.0
+	IL_000d: ldarg.0
+	IL_000e: ldloc.0
+	IL_000f: stfld UnityEngine.Transform UIMenuObjSelectUIRootBase::m_uiRoot
+	IL_0014: ret
+	
+

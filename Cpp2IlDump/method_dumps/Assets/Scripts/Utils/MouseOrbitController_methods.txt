@@ -1,0 +1,627 @@
+Type: MouseOrbitController
+
+Method: System.Void Assets.Scripts.Utils.MouseOrbitController::.ctor():	Method Body (x86 ASM):
+		0x1804E0270 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804E0272 mov dword ptr [rcx+20h],40A00000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 32 | None ||| N/A | 1084227584
+		0x1804E0279 mov dword ptr [rcx+24h],42F00000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 36 | None ||| N/A | 1123024896
+		0x1804E0280 mov dword ptr [rcx+28h],42F00000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 40 | None ||| N/A | 1123024896
+		0x1804E0287 mov dword ptr [rcx+2Ch],41A00000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 44 | None ||| N/A | 1101004800
+		0x1804E028E mov dword ptr [rcx+30h],42A00000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 48 | None ||| N/A | 1117782016
+		0x1804E0295 mov dword ptr [rcx+34h],3F000000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 52 | None ||| N/A | 1056964608
+		0x1804E029C mov dword ptr [rcx+38h],41700000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 56 | None ||| N/A | 1097859072
+		0x1804E02A3 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E02A8 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Assets.Scripts.Utils.MouseOrbitController::.ctor():
+		End of function at 0x1804E02A9
+		Absolute End is at 0x1804E02A9
+		Identified Jump Destination addresses:
+
+		0x1804E0272: [!] Sets the field Distance (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in 5
+		0x1804E0279: [!] Sets the field XSpeed (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in 120
+		0x1804E0280: [!] Sets the field YSpeed (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in 120
+		0x1804E0287: [!] Sets the field YMinLimit (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in 20
+		0x1804E028E: [!] Sets the field YMaxLimit (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in 80
+		0x1804E0295: [!] Sets the field DistanceMin (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in 0,5
+		0x1804E029C: [!] Sets the field DistanceMax (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in 15
+		0x1804E02A3: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)}
+
+		0x1804E02A3: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Assets.Scripts.Utils.MouseOrbitController
+	System.Void .ctor()
+		this.Distance = 5
+		this.XSpeed = 120
+		this.YSpeed = 120
+		this.YMinLimit = 20
+		this.YMaxLimit = 80
+		this.DistanceMin = 0,5
+		this.DistanceMax = 15
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.r4 5
+	IL_0006: stfld System.Single Assets.Scripts.Utils.MouseOrbitController::Distance
+	IL_000b: ldarg.0
+	IL_000c: ldc.r4 120
+	IL_0011: stfld System.Single Assets.Scripts.Utils.MouseOrbitController::XSpeed
+	IL_0016: ldarg.0
+	IL_0017: ldc.r4 120
+	IL_001c: stfld System.Single Assets.Scripts.Utils.MouseOrbitController::YSpeed
+	IL_0021: ldarg.0
+	IL_0022: ldc.r4 20
+	IL_0027: stfld System.Single Assets.Scripts.Utils.MouseOrbitController::YMinLimit
+	IL_002c: ldarg.0
+	IL_002d: ldc.r4 80
+	IL_0032: stfld System.Single Assets.Scripts.Utils.MouseOrbitController::YMaxLimit
+	IL_0037: ldarg.0
+	IL_0038: ldc.r4 0,5
+	IL_003d: stfld System.Single Assets.Scripts.Utils.MouseOrbitController::DistanceMin
+	IL_0042: ldarg.0
+	IL_0043: ldc.r4 15
+	IL_0048: stfld System.Single Assets.Scripts.Utils.MouseOrbitController::DistanceMax
+	IL_004d: ldarg.0
+	IL_004e: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0053: ret
+	
+
+Method: System.Void Assets.Scripts.Utils.MouseOrbitController::Start():	Method Body (x86 ASM):
+		0x1804E0220 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804E0222 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1804E0226 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804E0228 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804E022B call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0230 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804E0233 je short 00000001804E0260h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0235 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804E0238 lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1804E023D mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804E0240 call 0000000180CE1F00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0245 movsd xmm1,qword ptr [rax]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1804E0249 movaps xmm0,xmm1		; DEBUG: {Register}/XMM0 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1804E024C movss dword ptr [rbx+40h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RBX | 64 | None ||| N/A | N/A
+		0x1804E0251 shufps xmm0,xmm0,55h		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1804E0255 movss dword ptr [rbx+3Ch],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 60 | None ||| N/A | N/A
+		0x1804E025A add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1804E025E pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804E025F ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804E0260 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1804E0262 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0267 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Assets.Scripts.Utils.MouseOrbitController::Start():
+		End of function at 0x1804E0268
+		Absolute End is at 0x1804E0268
+		Identified Jump Destination addresses:
+
+		0x1804E0220: Saves the content of rbx to the stack
+		0x1804E0228: Copies {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} from rcx into rbx
+		0x1804E022B: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x1804E0230: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x1804E0233: Jumps to 0x1804E0260 (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x1804E0238: Loads a pointer to stack offset 0x20 into register rcx as new constant constant2
+		0x1804E023D: Copies {'transform' (type UnityEngine.Transform)} from rax into rdx
+		0x1804E0240: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::get_eulerAngles() on instance  and stores the result in {'eulerAngles' (type UnityEngine.Vector3)}
+
+		0x1804E024C: [!] Sets the field _y (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in 
+		0x1804E0255: [!] Sets the field _x (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in 
+		0x1804E025F: [!] Returns from the function
+
+		0x1804E0262: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Assets.Scripts.Utils.MouseOrbitController
+	System.Void Start()
+
+		UnityEngine.Transform transform = base.transform
+
+		UnityEngine.Vector3 eulerAngles = .eulerAngles
+		this._y = 
+		this._x = 
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1804E0240) is corrupt (Method is non-static but don't have an instance) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void Assets.Scripts.Utils.MouseOrbitController::LateUpdate():	Method Body (x86 ASM):
+		0x1804DFF30 mov [rsp+18h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 24 | None ||| N/A | N/A
+		0x1804DFF35 push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804DFF36 lea rbp,[rsp-57h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 18446744073709551529 | None ||| N/A | N/A
+		0x1804DFF3B sub rsp,0A0h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 160
+		0x1804DFF42 cmp byte ptr [18183E74Bh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872587 | None ||| N/A | 0
+		0x1804DFF49 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFF4C jne short 00000001804DFF60h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFF4E mov ecx,[1814C5564h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464230756 | None ||| N/A | N/A
+		0x1804DFF54 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFF59 mov byte ptr [18183E74Bh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872587 | None ||| N/A | 1
+		0x1804DFF60 xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFF62 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFF64 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFF66 mov [rbp-19h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x1804DFF6A mov [rbp-11h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551599 | None ||| N/A | N/A
+		0x1804DFF6D call 0000000180B324C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFF72 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1804DFF74 je near ptr 00000001804E0202h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFF7A mov [rsp+0B0h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 176 | None ||| N/A | N/A
+		0x1804DFF82 mov [rsp+0B8h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 184 | None ||| N/A | N/A
+		0x1804DFF8A movaps [rsp+90h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 144 | None ||| N/A | N/A
+		0x1804DFF92 movaps [rsp+80h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 128 | None ||| N/A | N/A
+		0x1804DFF9A movaps [rsp+70h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RSP | 112 | None ||| N/A | N/A
+		0x1804DFFA0 mov rcx,[181865DF8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468034040 | None ||| N/A | N/A
+		0x1804DFFA7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFFA9 movss xmm6,dword ptr [rbx+3Ch]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 60 | None ||| N/A | N/A
+		0x1804DFFAE call 0000000180B32210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFFB3 mulss xmm0,dword ptr [rbx+24h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 36 | None ||| N/A | N/A
+		0x1804DFFB8 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFFBA mulss xmm0,dword ptr [rbx+20h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1804DFFBF mulss xmm0,dword ptr [181261F0Ch]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RIP | 6461726476 | None ||| N/A | N/A
+		0x1804DFFC7 addss xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFFCB movss xmm6,dword ptr [rbx+40h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 64 | None ||| N/A | N/A
+		0x1804DFFD0 movss dword ptr [rbx+3Ch],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 60 | None ||| N/A | N/A
+		0x1804DFFD5 mov rcx,[181865E28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468034088 | None ||| N/A | N/A
+		0x1804DFFDC call 0000000180B32210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFFE1 cmp byte ptr [18183E74Ch],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872588 | None ||| N/A | 0
+		0x1804DFFE8 mulss xmm0,dword ptr [rbx+28h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x1804DFFED movss xmm7,dword ptr [rbx+2Ch]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RBX | 44 | None ||| N/A | N/A
+		0x1804DFFF2 movss xmm8,dword ptr [rbx+30h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x1804DFFF8 mulss xmm0,dword ptr [181261F0Ch]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RIP | 6461726476 | None ||| N/A | N/A
+		0x1804E0000 subss xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1804E0004 movss dword ptr [rbx+40h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBX | 64 | None ||| N/A | N/A
+		0x1804E0009 jne short 00000001804E001Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E000B mov ecx,[1814C5548h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464230728 | None ||| N/A | N/A
+		0x1804E0011 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0016 mov byte ptr [18183E74Ch],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872588 | None ||| N/A | 1
+		0x1804E001D movss xmm1,dword ptr [181261E7Ch]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RIP | 6461726332 | None ||| N/A | N/A
+		0x1804E0025 comiss xmm1,xmm6		; DEBUG: {Register}/XMM1 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1804E0028 movss xmm0,dword ptr [181261DB8h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RIP | 6461726136 | None ||| N/A | N/A
+		0x1804E0030 jbe short 00000001804E0036h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0032 addss xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1804E0036 comiss xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1804E0039 jbe short 00000001804E003Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E003B addss xmm6,xmm1		; DEBUG: {Register}/XMM6 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1804E003F mov rcx,[18188DA20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1804E0046 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1804E004D je short 00000001804E005Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E004F cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1804E0056 jne short 00000001804E005Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0058 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E005D xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1804E0060 movaps xmm2,xmm8		; DEBUG: {Register}/XMM2 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1804E0064 movaps xmm1,xmm7		; DEBUG: {Register}/XMM1 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1804E0067 movaps xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1804E006A call 0000000180E9BE90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E006F movss xmm7,dword ptr [rbx+3Ch]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RBX | 60 | None ||| N/A | N/A
+		0x1804E0074 movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1804E0077 movss dword ptr [rbx+40h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBX | 64 | None ||| N/A | N/A
+		0x1804E007C mov rcx,[18188DFC0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468198336 | None ||| N/A | N/A
+		0x1804E0083 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1804E008A je short 00000001804E009Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E008C cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1804E0093 jne short 00000001804E009Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0095 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E009A xor edi,edi		; DEBUG: {Register}/EDI {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x1804E009C lea rcx,[rbp+17h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 23 | None ||| N/A | N/A
+		0x1804E00A0 xorps xmm3,xmm3		; DEBUG: {Register}/XMM3 {Register}/XMM3 ||| None | 0 | None ||| N/A | N/A
+		0x1804E00A3 mov [rsp+20h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 32 | None ||| N/A | N/A
+		0x1804E00A8 movaps xmm2,xmm7		; DEBUG: {Register}/XMM2 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1804E00AB movaps xmm1,xmm6		; DEBUG: {Register}/XMM1 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1804E00AE call 0000000180EAE780h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E00B3 mov rcx,[181865E48h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468034120 | None ||| N/A | N/A
+		0x1804E00BA xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804E00BC movss xmm6,dword ptr [rbx+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1804E00C1 movups xmm7,[rax]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1804E00C4 call 0000000180B32210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E00C9 mulss xmm0,dword ptr [181261D1Ch]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RIP | 6461725980 | None ||| N/A | N/A
+		0x1804E00D1 lea rcx,[rbp-19h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x1804E00D5 mov [rsp+20h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 32 | None ||| N/A | N/A
+		0x1804E00DA xorps xmm2,xmm2		; DEBUG: {Register}/XMM2 {Register}/XMM2 ||| None | 0 | None ||| N/A | N/A
+		0x1804E00DD xorps xmm1,xmm1		; DEBUG: {Register}/XMM1 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1804E00E0 subss xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1804E00E4 movss dword ptr [rbx+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBX | 32 | None ||| N/A | N/A
+		0x1804E00E9 xorps xmm6,[181261D30h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RIP | 6461726000 | None ||| N/A | N/A
+		0x1804E00F0 movaps xmm3,xmm6		; DEBUG: {Register}/XMM3 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1804E00F3 call 0000000180CE6790h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E00F8 movsd xmm0,qword ptr [rbp-19h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x1804E00FD lea r8,[rbp-9]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1804E0101 mov eax,[rbp-11h]		; DEBUG: {Register}/EAX {Memory}/None ||| RBP | 18446744073709551599 | None ||| N/A | N/A
+		0x1804E0104 lea rdx,[rbp+17h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 23 | None ||| N/A | N/A
+		0x1804E0108 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1804E010B movsd qword ptr [rbp-9],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1804E0110 lea rcx,[rbp+7]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x1804E0114 mov [rbp-1],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551615 | None ||| N/A | N/A
+		0x1804E0117 movdqa [rbp+17h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RBP | 23 | None ||| N/A | N/A
+		0x1804E011C call 0000000180EB03D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0121 mov rdx,[rbx+18h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1804E0125 movsd xmm8,qword ptr [rax]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1804E012A mov esi,[rax+8]		; DEBUG: {Register}/ESI {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1804E012D test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1804E0130 je near ptr 00000001804E0213h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0136 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804E0139 lea rcx,[rbp+7]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x1804E013D call 0000000180CE2700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0142 mov rcx,[18188D900h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196608 | None ||| N/A | N/A
+		0x1804E0149 movsd xmm6,qword ptr [rax]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1804E014D test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1804E0154 mov edi,[rax+8]		; DEBUG: {Register}/EDI {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1804E0157 je short 00000001804E0167h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0159 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1804E0160 jne short 00000001804E0167h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0162 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E0167 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1804E016A movsd qword ptr [rbp-9],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1804E016F lea r8,[rbp-9]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1804E0173 mov [rbp-1],edi		; DEBUG: {Memory}/None {Register}/EDI ||| RBP | 18446744073709551615 | None ||| N/A | N/A
+		0x1804E0176 lea rdx,[rbp+7]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x1804E017A movsd qword ptr [rbp+7],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RBP | 7 | None ||| N/A | N/A
+		0x1804E0180 lea rcx,[rbp+17h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 23 | None ||| N/A | N/A
+		0x1804E0184 mov [rbp+0Fh],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RBP | 15 | None ||| N/A | N/A
+		0x1804E0187 call 0000000180CE77B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E018C xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804E018E mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1804E0191 movsd xmm6,qword ptr [rax]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1804E0195 mov edi,[rax+8]		; DEBUG: {Register}/EDI {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1804E0198 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E019D test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804E01A0 je short 00000001804E0213h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E01A2 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804E01A5 movdqa [rbp+17h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RBP | 23 | None ||| N/A | N/A
+		0x1804E01AA lea rdx,[rbp+17h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 23 | None ||| N/A | N/A
+		0x1804E01AE mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804E01B1 call 0000000180CE33E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E01B6 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804E01B8 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1804E01BB call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E01C0 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804E01C3 je short 00000001804E0213h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E01C5 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804E01C8 movsd qword ptr [rbp+7],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBP | 7 | None ||| N/A | N/A
+		0x1804E01CD lea rdx,[rbp+7]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x1804E01D1 mov [rbp+0Fh],edi		; DEBUG: {Memory}/None {Register}/EDI ||| RBP | 15 | None ||| N/A | N/A
+		0x1804E01D4 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804E01D7 call 0000000180CE3300h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E01DC movaps xmm7,[rsp+80h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x1804E01E4 movaps xmm6,[rsp+90h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 144 | None ||| N/A | N/A
+		0x1804E01EC mov rdi,[rsp+0B8h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 184 | None ||| N/A | N/A
+		0x1804E01F4 mov rsi,[rsp+0B0h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 176 | None ||| N/A | N/A
+		0x1804E01FC movaps xmm8,[rsp+70h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RSP | 112 | None ||| N/A | N/A
+		0x1804E0202 mov rbx,[rsp+0C0h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 192 | None ||| N/A | N/A
+		0x1804E020A add rsp,0A0h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 160
+		0x1804E0211 pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804E0212 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804E0213 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1804E0215 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804E021A int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Assets.Scripts.Utils.MouseOrbitController::LateUpdate():
+		End of function at 0x1804E021B
+		Absolute End is at 0x1804E021B
+		Identified Jump Destination addresses:
+
+		0x1804DFF35: Saves the content of rbp to the stack
+		0x1804DFF36: Loads a pointer to stack offset 0xFFFFFFA9 into register rbp as new constant constant1
+		0x1804DFF42: Compares {Unknown Global at 0x18183E74B, first ten bytes are [0 216 60 103 1 48 170 1 0 138], or as chars " Ø<g0ª "} and 0
+		0x1804DFF49: Copies {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} from rcx into rbx
+		0x1804DFF4C: Jumps to 0x1804DFF60 if {Unknown Global at 0x18183E74B, first ten bytes are [0 216 60 103 1 48 170 1 0 138], or as chars " Ø<g0ª "} != 0
+
+		0x1804DFF4E: Loads string "ôI" into register rcx as constant {'constant4' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1804DFF54: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1804DFF64: Clears register rcx, yielding zero-local {'local3' (type System.Int32)}
+		0x1804DFF6D: [!] Calls static managed method System.Boolean UnityEngine.Input::GetMouseButton(System.Int32) with arguments [{'local3' (type System.Int32)}] and stores the result in {'mouseButton' (type System.Boolean)}
+
+		0x1804DFF72: [!] Compares {'mouseButton' (type System.Boolean)} and False
+		0x1804DFF74: Jumps to 0x1804E0202 (which is an if statement's body) if mouseButton equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1804DFFA0: Loads the string literal "Mouse X" as a constant "constant6" in rcx
+		0x1804DFFAE: [!] Calls static managed method System.Single UnityEngine.Input::GetAxis(System.String) with arguments ["Mouse X"] and stores the result in {'axis' (type System.Single)}
+
+		0x1804DFFB3: Multiplies {'axis' (type System.Single)} by the field XSpeed from {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)}, and stores the result in new local {'local8' (type System.Single)} in register xmm0
+		0x1804DFFBA: Multiplies {'local8' (type System.Single)} by the field Distance from {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)}, and stores the result in new local {'local10' (type System.Single)} in register xmm0
+		0x1804DFFBF: Multiplies {'local10' (type System.Single)} by the constant value at 0x181261F0C in the binary, which is 0,02, and stores the result in new local {'local11' (type System.Single)} in register xmm0
+		0x1804DFFCB: [!] Reads field _y from {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} and stores in a new local {'single' (type System.Single)}
+
+		0x1804DFFD0: [!] Sets the field _x (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in {'local11' (type System.Single)}
+		0x1804DFFD5: Loads the string literal "Mouse Y" as a constant "constant7" in rcx
+		0x1804DFFDC: [!] Calls static managed method System.Single UnityEngine.Input::GetAxis(System.String) with arguments ["Mouse Y"] and stores the result in {'axis2' (type System.Single)}
+
+		0x1804DFFE1: Compares {Unknown Global at 0x18183E74C, first ten bytes are [216 60 103 1 48 170 1 0 138 170], or as chars "Ø<g0ª ª"} and 0
+		0x1804DFFE8: Multiplies {'axis2' (type System.Single)} by the field YSpeed from {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)}, and stores the result in new local {'local14' (type System.Single)} in register xmm0
+		0x1804DFFED: [!] Reads field YMinLimit from {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} and stores in a new local {'yMinLimit' (type System.Single)}
+
+		0x1804DFFF2: [!] Reads field YMaxLimit from {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} and stores in a new local {'yMaxLimit' (type System.Single)}
+
+		0x1804DFFF8: Multiplies {'local14' (type System.Single)} by the constant value at 0x181261F0C in the binary, which is 0,02, and stores the result in new local {'local17' (type System.Single)} in register xmm0
+		0x1804E0004: [!] Sets the field _y (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in {'single' (type System.Single)}
+		0x1804E0009: Jumps to 0x1804E001D if {Unknown Global at 0x18183E74C, first ten bytes are [216 60 103 1 48 170 1 0 138 170], or as chars "Ø<g0ª ª"} != 0
+
+		0x1804E000B: Loads string "óI" into register rcx as constant {'constant10' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1804E0011: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1804E001D: Reads {Unknown Global at 0x181261E7C, first ten bytes are [0 0 180 195 205 204 76 63 219 15], or as chars "  ´ÃÍÌL?Û"} into register xmm1 as a constant constant11
+		0x1804E0025: Compares {Unknown Global at 0x181261E7C, first ten bytes are [0 0 180 195 205 204 76 63 219 15], or as chars "  ´ÃÍÌL?Û"} and {'single' (type System.Single)}
+		0x1804E0028: Reads {Unknown Global at 0x181261DB8, first ten bytes are [0 0 180 67 0 0 122 68 10 215], or as chars "  ´C  zD
+×"} into register xmm0 as a constant constant12
+		0x1804E0030: Jumps to 0x1804E0036 if {Unknown Global at 0x181261E7C, first ten bytes are [0 0 180 195 205 204 76 63 219 15], or as chars "  ´ÃÍÌL?Û"} is less than or equal to {'single' (type System.Single)}
+
+		0x1804E0036: [!] Compares {'single' (type System.Single)} and 360
+		0x1804E0039: Jumps to 0x1804E003F (which is an if statement's body) if {'single' (type System.Single)} is less than or equal to 360 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1804E003F: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rcx
+		0x1804E0046: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1804E004D: Jumps to 0x1804E005D if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1804E005D which is after end of current block @ 0x1804E003F (started at 0x1804E003B)
+
+		0x1804E004F: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1804E0056: Jumps to 0x1804E005D if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1804E005D which is after end of current block @ 0x1804E003F (started at 0x1804E003B)
+
+		0x1804E0058: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x1804E0060: Copies {'yMaxLimit' (type System.Single)} from xmm8 into xmm2
+		0x1804E0064: Copies {'yMinLimit' (type System.Single)} from xmm7 into xmm1
+		0x1804E0067: Copies {'single' (type System.Single)} from xmm6 into xmm0
+		0x1804E006A: [!] Calls static managed method System.Single UnityEngine.Mathf::Clamp(System.Single,System.Single,System.Single) with arguments [{'single' (type System.Single)}, {'yMinLimit' (type System.Single)}, {'yMaxLimit' (type System.Single)}] and stores the result in {'single2' (type System.Single)}
+
+		0x1804E0074: Copies {'single2' (type System.Single)} from xmm0 into xmm6
+		0x1804E0077: [!] Sets the field _y (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in {'single' (type System.Single)}
+		0x1804E007C: Loads the type definition for managed type UnityEngine.Quaternion as a constant "Quaternion" in rcx
+		0x1804E0083: Compares "{il2cpp field on {'Quaternion' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1804E008A: Jumps to 0x1804E009A if "{il2cpp field on {'Quaternion' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1804E009A which is after end of current block @ 0x1804E003F (started at 0x1804E003B)
+
+		0x1804E008C: Compares "{il2cpp field on {'Quaternion' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1804E0093: Jumps to 0x1804E009A if "{il2cpp field on {'Quaternion' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1804E009A which is after end of current block @ 0x1804E003F (started at 0x1804E003B)
+
+		0x1804E0095: Calls the il2cpp cctor for the type UnityEngine.Quaternion
+		0x1804E009A: Clears register rdi, yielding zero-local {'local21' (type System.Int32)}
+		0x1804E00A3: Moves local21 (type System.Int32) from register rdi to the stack at offset 32 (0x20)
+		0x1804E00A8: Copies {'local20' (type System.Single)} from xmm7 into xmm2
+		0x1804E00AB: Copies {'single' (type System.Single)} from xmm6 into xmm1
+		0x1804E00AE: [!] Calls static managed method UnityEngine.Quaternion UnityEngine.Quaternion::Euler(System.Single,System.Single,System.Single) with arguments [{'single2' (type System.Single)}, {'yMinLimit' (type System.Single)}, {'yMaxLimit' (type System.Single)}] and stores the result in {'quaternion' (type UnityEngine.Quaternion)}
+
+		0x1804E00B3: Loads the string literal "Mouse ScrollWheel" as a constant "constant23" in rcx
+		0x1804E00BC: [!] Reads field Distance from {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} and stores in a new local {'distance' (type System.Single)}
+
+		0x1804E00C1: Loads the class pointer from quaternion into a constant constant24 in register xmm7
+		0x1804E00C4: [!] Calls static managed method System.Single UnityEngine.Input::GetAxis(System.String) with arguments ["Mouse ScrollWheel"] and stores the result in {'axis3' (type System.Single)}
+
+		0x1804E00C9: Multiplies {'axis3' (type System.Single)} by the constant value at 0x181261D1C in the binary, which is 5, and stores the result in new local {'local27' (type System.Single)} in register xmm0
+		0x1804E00D5: Moves local21 (type System.Int32) from register rdi to the stack at offset 32 (0x20)
+		0x1804E00E4: [!] Sets the field Distance (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} to the value stored in {'distance' (type System.Single)}
+		0x1804E00F0: Copies {'distance' (type System.Single)} from xmm6 into xmm3
+		0x1804E011C: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Quaternion::op_Multiply(UnityEngine.Quaternion,UnityEngine.Vector3) and stores the result in {'vector3' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1804E0121: [!] Reads field Target from {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} and stores in a new local {'target' (type UnityEngine.Transform)}
+
+		0x1804E012D: [!] Compares {'target' (type UnityEngine.Transform)} and 0
+		0x1804E0130: Jumps to 0x1804E0213 (which throws a NRE) if target equals 0. Implicitly present in managed code, so ignored here.
+		0x1804E013D: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::get_position() on instance  and stores the result in {'position' (type UnityEngine.Vector3)}
+
+		0x1804E0142: Loads the type definition for managed type UnityEngine.Vector3 as a constant "Vector3" in rcx
+		0x1804E014D: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1804E0157: Jumps to 0x1804E0167 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1804E0167 which is after end of current block @ 0x1804E003F (started at 0x1804E003B)
+
+		0x1804E0159: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1804E0160: Jumps to 0x1804E0167 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1804E0167 which is after end of current block @ 0x1804E003F (started at 0x1804E003B)
+
+		0x1804E0162: Calls the il2cpp cctor for the type UnityEngine.Vector3
+		0x1804E0187: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Addition(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'vector32' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1804E018C: Clears register rdx, yielding zero-local {'local39' (type System.Int32)}
+		0x1804E018E: Copies {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} from rbx into rcx
+		0x1804E0198: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x1804E019D: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x1804E01A0: Jumps to 0x1804E0213 (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x1804E01AE: Copies {'transform' (type UnityEngine.Transform)} from rax into rcx
+		0x1804E01B1: [!] Calls managed method System.Void UnityEngine.Transform::set_rotation(UnityEngine.Quaternion) on instance {'transform' (type UnityEngine.Transform)} with arguments [{'local39' (type System.Int32)}]
+
+		0x1804E01B6: Clears register rdx, yielding zero-local {'local43' (type System.Int32)}
+		0x1804E01B8: Copies {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} from rbx into rcx
+		0x1804E01BB: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type Assets.Scripts.Utils.MouseOrbitController)} and stores the result in {'transform2' (type UnityEngine.Transform)}
+
+		0x1804E01C0: [!] Compares {'transform2' (type UnityEngine.Transform)} and 0
+		0x1804E01C3: Jumps to 0x1804E0213 (which throws a NRE) if transform2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1804E01D4: Copies {'transform2' (type UnityEngine.Transform)} from rax into rcx
+		0x1804E01D7: [!] Calls managed method System.Void UnityEngine.Transform::set_position(UnityEngine.Vector3) on instance {'transform2' (type UnityEngine.Transform)} with arguments [{'local43' (type System.Int32)}]
+
+		0x1804E01DC: Reads unknown value in stack, offset 128 (0x80) and stores the pointer in register xmm7 as new constant constant33
+		0x1804E01E4: Reads unknown value in stack, offset 144 (0x90) and stores the pointer in register xmm6 as new constant constant34
+		0x1804E01EC: Reads unknown value in stack, offset 184 (0xB8) and stores the pointer in register rdi as new constant constant35
+		0x1804E01F4: Reads unknown value in stack, offset 176 (0xB0) and stores the pointer in register rsi as new constant constant36
+		0x1804E01FC: Reads unknown value in stack, offset 112 (0x70) and stores the pointer in register xmm8 as new constant constant37
+		0x1804E0202: Reads unknown value in stack, offset 192 (0xC0) and stores the pointer in register rbx as new constant constant38
+		0x1804E0212: [!] Returns from the function
+
+		0x1804E0215: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Assets.Scripts.Utils.MouseOrbitController
+	System.Void LateUpdate()
+		ulong local3 = 0
+
+		System.Boolean mouseButton = UnityEngine.Input.GetMouseButton(local3) //(Int32 button)
+
+		if (mouseButton != False)
+
+		    System.Single axis = UnityEngine.Input.GetAxis("Mouse X") //(String axisName)
+		    System.Single local8 = axis * this.XSpeed
+		    System.Single local10 = local8 * this.Distance
+		    System.Single local11 = local10 * 0,02
+		    System.Single single = this._y
+		    this._x = local11
+
+		    System.Single axis2 = UnityEngine.Input.GetAxis("Mouse Y") //(String axisName)
+		    System.Single local14 = axis2 * this.YSpeed
+		    System.Single yMinLimit = this.YMinLimit
+		    System.Single yMaxLimit = this.YMaxLimit
+		    System.Single local17 = local14 * 0,02
+		    this._y = single
+
+		    if (single > 360)
+		    endif
+            
+
+		    System.Single single2 = UnityEngine.Mathf.Clamp(single, yMinLimit, yMaxLimit) //(Single value, Single min, Single max)
+		    single = single2
+		    this._y = single
+		    ulong local21 = 0
+		    yMaxLimit = local20
+		    yMinLimit = single
+
+		    UnityEngine.Quaternion quaternion = UnityEngine.Quaternion.Euler(single2, yMinLimit, yMaxLimit) //(Single x, Single y, Single z)
+		    System.Single distance = this.Distance
+
+		    System.Single axis3 = UnityEngine.Input.GetAxis("Mouse ScrollWheel") //(String axisName)
+		    System.Single local27 = axis3 * 5
+		    this.Distance = distance
+
+		    UnityEngine.Vector3 vector3 = UnityEngine.Quaternion.op_Multiply()
+		    UnityEngine.Transform target = this.Target
+
+		    UnityEngine.Vector3 position = .position
+
+		    UnityEngine.Vector3 vector32 = UnityEngine.Vector3.op_Addition()
+		    ulong local39 = 0
+
+		    UnityEngine.Transform transform = base.transform
+
+		    transform.rotation = local39
+		    ulong local43 = 0
+
+		    UnityEngine.Transform transform2 = base.transform
+
+		    transform2.position = local43
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.MultiplyRegByGlobalAction at (0x1804DFFF8) is corrupt (Operand we were multiplying by is null or local made was stripped) and cannot be created as IL. Aborting here.
+
+
+Method: System.Single Assets.Scripts.Utils.MouseOrbitController::ClampAngle(System.Single,System.Single,System.Single):	Method Body (x86 ASM):
+		0x1804DFE90 sub rsp,58h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 88
+		0x1804DFE94 cmp byte ptr [18183E74Ch],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872588 | None ||| N/A | 0
+		0x1804DFE9B movaps [rsp+40h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 64 | None ||| N/A | N/A
+		0x1804DFEA0 movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFEA3 movaps [rsp+30h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 48 | None ||| N/A | N/A
+		0x1804DFEA8 movaps xmm7,xmm2		; DEBUG: {Register}/XMM7 {Register}/XMM2 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFEAB movaps [rsp+20h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RSP | 32 | None ||| N/A | N/A
+		0x1804DFEB1 movaps xmm8,xmm1		; DEBUG: {Register}/XMM8 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFEB5 jne short 00000001804DFEC9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFEB7 mov ecx,[1814C5548h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464230728 | None ||| N/A | N/A
+		0x1804DFEBD call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFEC2 mov byte ptr [18183E74Ch],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872588 | None ||| N/A | 1
+		0x1804DFEC9 movss xmm3,dword ptr [181261E7Ch]		; DEBUG: {Register}/XMM3 {Memory}/None ||| RIP | 6461726332 | None ||| N/A | N/A
+		0x1804DFED1 comiss xmm3,xmm6		; DEBUG: {Register}/XMM3 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFED4 movss xmm0,dword ptr [181261DB8h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RIP | 6461726136 | None ||| N/A | N/A
+		0x1804DFEDC jbe short 00000001804DFEE2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFEDE addss xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFEE2 comiss xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFEE5 jbe short 00000001804DFEEBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFEE7 addss xmm6,xmm3		; DEBUG: {Register}/XMM6 {Register}/XMM3 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFEEB mov rcx,[18188DA20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1804DFEF2 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1804DFEF9 je short 00000001804DFF09h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFEFB cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1804DFF02 jne short 00000001804DFF09h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFF04 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFF09 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1804DFF0C movaps xmm2,xmm7		; DEBUG: {Register}/XMM2 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFF0F movaps xmm1,xmm8		; DEBUG: {Register}/XMM1 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFF13 movaps xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFF16 movaps xmm6,[rsp+40h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1804DFF1B movaps xmm7,[rsp+30h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1804DFF20 movaps xmm8,[rsp+20h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1804DFF26 add rsp,58h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 88
+		0x1804DFF2A jmp near ptr 0000000180E9BE90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFF2F int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.Single Assets.Scripts.Utils.MouseOrbitController::ClampAngle(System.Single,System.Single,System.Single):
+		End of function at 0x1804DFF30
+		Absolute End is at 0x1804DFF30
+		Identified Jump Destination addresses:
+
+		0x1804DFE94: Compares {Unknown Global at 0x18183E74C, first ten bytes are [216 60 103 1 48 170 1 0 138 170], or as chars "Ø<g0ª ª"} and 0
+		0x1804DFEA0: Copies {'angle' (function parameter, type System.Single)} from xmm0 into xmm6
+		0x1804DFEA8: Copies {'max' (function parameter, type System.Single)} from xmm2 into xmm7
+		0x1804DFEB1: Copies {'min' (function parameter, type System.Single)} from xmm1 into xmm8
+		0x1804DFEB5: Jumps to 0x1804DFEC9 if {Unknown Global at 0x18183E74C, first ten bytes are [216 60 103 1 48 170 1 0 138 170], or as chars "Ø<g0ª ª"} != 0
+
+		0x1804DFEB7: Loads string "óI" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1804DFEBD: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1804DFEC9: Reads {Unknown Global at 0x181261E7C, first ten bytes are [0 0 180 195 205 204 76 63 219 15], or as chars "  ´ÃÍÌL?Û"} into register xmm3 as a constant constant4
+		0x1804DFED1: Compares {Unknown Global at 0x181261E7C, first ten bytes are [0 0 180 195 205 204 76 63 219 15], or as chars "  ´ÃÍÌL?Û"} and {'angle' (function parameter, type System.Single)}
+		0x1804DFED4: Reads {Unknown Global at 0x181261DB8, first ten bytes are [0 0 180 67 0 0 122 68 10 215], or as chars "  ´C  zD
+×"} into register xmm0 as a constant constant5
+		0x1804DFEDC: Jumps to 0x1804DFEE2 if {Unknown Global at 0x181261E7C, first ten bytes are [0 0 180 195 205 204 76 63 219 15], or as chars "  ´ÃÍÌL?Û"} is less than or equal to {'angle' (function parameter, type System.Single)}
+
+		0x1804DFEE2: [!] Compares {'angle' (function parameter, type System.Single)} and 360
+		0x1804DFEE5: Jumps to 0x1804DFEEB (which is an if statement's body) if {'angle' (function parameter, type System.Single)} is less than or equal to 360 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1804DFEEB: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rcx
+		0x1804DFEF2: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1804DFEF9: Jumps to 0x1804DFF09 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1804DFF09 which is after end of current block @ 0x1804DFEEB (started at 0x1804DFEE7)
+
+		0x1804DFEFB: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1804DFF02: Jumps to 0x1804DFF09 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1804DFF09 which is after end of current block @ 0x1804DFEEB (started at 0x1804DFEE7)
+
+		0x1804DFF04: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x1804DFF0C: Copies {'max' (function parameter, type System.Single)} from xmm7 into xmm2
+		0x1804DFF0F: Copies {'min' (function parameter, type System.Single)} from xmm8 into xmm1
+		0x1804DFF13: Copies {'angle' (function parameter, type System.Single)} from xmm6 into xmm0
+		0x1804DFF16: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register xmm6 as new constant constant11
+		0x1804DFF1B: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register xmm7 as new constant constant12
+		0x1804DFF20: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm8 as new constant constant13
+		0x1804DFF2A: [!] Calls static managed method System.Single UnityEngine.Mathf::Clamp(System.Single,System.Single,System.Single) with arguments [{'angle' (function parameter, type System.Single)}, {'min' (function parameter, type System.Single)}, {'max' (function parameter, type System.Single)}] and stores the result in {'single' (type System.Single)}
+
+		0x1804DFF2A: [!] Returns {'single' (type System.Single)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Assets.Scripts.Utils.MouseOrbitController
+	static System.Single ClampAngle(System.Single angle, System.Single min, System.Single max)
+
+		if (angle > 360)
+		endif
+        
+
+		System.Single single = UnityEngine.Mathf.Clamp(angle, min, max) //(Single value, Single min, Single max)
+		return single
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.r4 360
+	IL_0006: ble.s IL_0008
+	IL_0008: ldarg.0
+	IL_0009: ldarg.1
+	IL_000a: ldarg.2
+	IL_000b: call System.Single UnityEngine.Mathf::Clamp(System.Single,System.Single,System.Single)
+	IL_0010: ret
+	
+

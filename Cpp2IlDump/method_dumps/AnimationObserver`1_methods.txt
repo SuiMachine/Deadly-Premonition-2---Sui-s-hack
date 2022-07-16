@@ -1,0 +1,110 @@
+Type: AnimationObserver`1
+
+Method: System.Void AnimationObserver`1::.ctor():	Method Body (x86 ASM):
+		0x1808CDE20 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1808CDE24 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1808CDE27 je short 00000001808CDE34h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808CDE29 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1808CDE2B add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1808CDE2F jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808CDE34 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808CDE39 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void AnimationObserver`1::.ctor():
+		End of function at 0x1808CDE3A
+		Absolute End is at 0x1808CDE3A
+		Identified Jump Destination addresses:
+
+		0x1808CDE24: [!] Compares {'this' (function parameter, type AnimationObserver`1)} and 0
+		0x1808CDE27: Jumps to 0x1808CDE34 (which throws a NRE) if this equals 0. Implicitly present in managed code, so ignored here.
+		0x1808CDE2F: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type AnimationObserver`1)}
+
+		0x1808CDE2F: [!] Returns from the function
+
+		0x1808CDE34: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: AnimationObserver`1
+	System.Void .ctor()
+
+		base..ctor()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ret
+	IL_0007: newobj System.Void System.NullReferenceException::.ctor()
+	IL_000c: throw
+	
+
+Method: System.Void AnimationObserver`1::Notify(T):	Method Body (x86 ASM):
+		0x180B0AF20 mov rcx,[rcx+10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x180B0AF24 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180B0AF27 je short 0000000180B0AF3Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B0AF29 mov rax,[r8+18h]		; DEBUG: {Register}/RAX {Memory}/None ||| R8 | 24 | None ||| N/A | N/A
+		0x180B0AF2D mov r8,[rax+0C0h]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 192 | None ||| N/A | N/A
+		0x180B0AF34 mov rax,[r8]		; DEBUG: {Register}/RAX {Memory}/None ||| R8 | 0 | None ||| N/A | N/A
+		0x180B0AF37 mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180B0AF3A jmp qword ptr [rax]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x180B0AF3D ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180B0AF3E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void AnimationObserver`1::Notify(T):
+		End of function at 0x180B0AF3F
+		Absolute End is at 0x180B0AF3F
+		Identified Jump Destination addresses:
+
+		0x180B0AF20: [!] Reads field m_notify from {'this' (function parameter, type AnimationObserver`1)} and stores in a new local {'m_notify' (type System.Action`1<T>)}
+
+		0x180B0AF24: [!] Compares {'m_notify' (type System.Action`1<T>)} and 0
+		0x180B0AF27: Jumps to 0x180B0AF3D (which is an if statement's body) if m_notify equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180B0AF29: Reads the klass pointer representing the declaring type of this method (which is AnimationObserver`1) and stores in new constant constant2 in register rax
+		0x180B0AF2D: Reads RGCTX data for class AnimationObserver`1 which has 1 entries/s and stores in new constant constant3 in register r8
+		0x180B0AF34: Reads the RGCTX data at index 0 in the array constant3, which has datapoint 34257 and is of type IL2CPP_RGCTX_DATA_METHOD (mapping to actual value System.Void System.Action`1<T>.Invoke), and stores the result in new constant constant4 in register rax
+		0x180B0AF37: Copies {'constant4' (constant value of type LibCpp2IL.BinaryStructures.Il2CppMethodSpec)} from rax into r8
+		0x180B0AF3A: [!] Calls managed method System.Object System.ICloneable::Clone() on instance {'m_notify' (type System.Action`1<T>)} and stores the result in {'object' (type System.Object)} ;  - Leftover parameters detected, but first few match.
+
+		0x180B0AF3A: [!] Returns from the function
+
+		0x180B0AF3D: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: AnimationObserver`1
+	System.Void Notify(T arg)
+		System.Action`1<T> m_notify = this.m_notify
+
+		if (m_notify != 0)
+
+		    System.Object object = m_notify.Clone()
+		    return
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Action`1<T> AnimationObserver`1::m_notify
+	IL_0006: stloc.0
+	IL_0007: ldloc.0
+	IL_0008: ldc.i4.0
+	IL_0009: beq.s IL_0013
+	IL_000b: ldloc.0
+	IL_000c: call System.Object System.ICloneable::Clone()
+	IL_0011: stloc.1
+	IL_0012: ret
+	IL_0013: ret
+	
+

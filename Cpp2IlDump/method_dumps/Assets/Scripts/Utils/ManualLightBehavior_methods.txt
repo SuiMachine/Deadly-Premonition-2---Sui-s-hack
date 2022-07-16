@@ -1,0 +1,327 @@
+Type: ManualLightBehavior
+
+Method: System.Void Assets.Scripts.Utils.ManualLightBehavior::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Assets.Scripts.Utils.ManualLightBehavior::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Assets.Scripts.Utils.ManualLightBehavior
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void Assets.Scripts.Utils.ManualLightBehavior::Play():	Method Body (x86 ASM):
+		0x1804DFDA0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804DFDA2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804DFDA6 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFDA9 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFDAB call 0000000180CDFD10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFDB0 mov rcx,[rbx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x1804DFDB4 movss dword ptr [rbx+2Ch],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 44 | None ||| N/A | N/A
+		0x1804DFDB9 mov byte ptr [rbx+28h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 40 | None ||| N/A | 1
+		0x1804DFDBD test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFDC0 je short 00000001804DFDD1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFDC2 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804DFDC5 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1804DFDC7 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804DFDCB pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804DFDCC jmp near ptr 0000000180B22710h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFDD1 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFDD6 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Assets.Scripts.Utils.ManualLightBehavior::Play():
+		End of function at 0x1804DFDD7
+		Absolute End is at 0x1804DFDD7
+		Identified Jump Destination addresses:
+
+		0x1804DFDA0: Saves the content of rbx to the stack
+		0x1804DFDA6: Copies {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} from rcx into rbx
+		0x1804DFDA9: Clears register rcx, yielding zero-local {'local1' (type System.Int32)}
+		0x1804DFDAB: [!] Calls static managed method System.Single UnityEngine.Time::get_time() and stores the result in {'time' (type System.Single)}
+
+		0x1804DFDB0: [!] Reads field _lightSource from {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} and stores in a new local {'_lightSource' (type UnityEngine.Light)}
+
+		0x1804DFDB4: [!] Sets the field _startTime (Type System.Single) on local {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} to the value stored in {'time' (type System.Single)}
+		0x1804DFDB9: [!] Sets the field _isLightAnimationStarted (Type System.Boolean) on local {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} to the value stored in True
+		0x1804DFDBD: [!] Compares {'_lightSource' (type UnityEngine.Light)} and 0
+		0x1804DFDC0: Jumps to 0x1804DFDD1 (which throws a NRE) if _lightSource equals 0. Implicitly present in managed code, so ignored here.
+		0x1804DFDC5: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1804DFDCC: [!] Calls managed method System.Void UnityEngine.Behaviour::set_enabled(System.Boolean) on instance {'_lightSource' (type UnityEngine.Light)} with arguments [True]
+
+		0x1804DFDCC: [!] Returns from the function
+
+		0x1804DFDD1: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Assets.Scripts.Utils.ManualLightBehavior
+	System.Void Play()
+		ulong local1 = 0
+
+		System.Single time = UnityEngine.Time.time
+		UnityEngine.Light _lightSource = this._lightSource
+		this._startTime = time
+		this._isLightAnimationStarted = True
+
+		_lightSource.enabled = True
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: call System.Single UnityEngine.Time::get_time()
+	IL_0007: stloc.1
+	IL_0008: ldarg.0
+	IL_0009: ldfld UnityEngine.Light Assets.Scripts.Utils.ManualLightBehavior::_lightSource
+	IL_000e: stloc.2
+	IL_000f: ldarg.0
+	IL_0010: ldloc.1
+	IL_0011: stfld System.Single Assets.Scripts.Utils.ManualLightBehavior::_startTime
+	IL_0016: ldarg.0
+	IL_0017: ldc.i4.1
+	IL_0018: stfld System.Boolean Assets.Scripts.Utils.ManualLightBehavior::_isLightAnimationStarted
+	IL_001d: ldloc.2
+	IL_001e: ldc.i4.1
+	IL_001f: call System.Void UnityEngine.Behaviour::set_enabled(System.Boolean)
+	IL_0024: ret
+	IL_0025: newobj System.Void System.NullReferenceException::.ctor()
+	IL_002a: throw
+	
+
+Method: System.Void Assets.Scripts.Utils.ManualLightBehavior::Start():	Method Body (x86 ASM):
+		0x1804DFDE0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804DFDE2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804DFDE6 cmp byte ptr [18183E74Ah],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872586 | None ||| N/A | 0
+		0x1804DFDED mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFDF0 jne short 00000001804DFE04h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFDF2 mov ecx,[1814C1690h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464214672 | None ||| N/A | N/A
+		0x1804DFDF8 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFDFD mov byte ptr [18183E74Ah],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872586 | None ||| N/A | 1
+		0x1804DFE04 mov rdx,[1818692B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468047544 | None ||| N/A | N/A
+		0x1804DFE0B mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE0E call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFE13 mov [rbx+30h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 48 | None ||| N/A | N/A
+		0x1804DFE17 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804DFE1B pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE1C ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE1D int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Assets.Scripts.Utils.ManualLightBehavior::Start():
+		End of function at 0x1804DFE1E
+		Absolute End is at 0x1804DFE1E
+		Identified Jump Destination addresses:
+
+		0x1804DFDE0: Saves the content of rbx to the stack
+		0x1804DFDE6: Compares {Unknown Global at 0x18183E74A, first ten bytes are [1 0 216 60 103 1 48 170 1 0], or as chars " Ø<g0ª "} and 0
+		0x1804DFDED: Copies {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} from rcx into rbx
+		0x1804DFDF0: Jumps to 0x1804DFE04 if {Unknown Global at 0x18183E74A, first ten bytes are [1 0 216 60 103 1 48 170 1 0], or as chars " Ø<g0ª "} != 0
+
+		0x1804DFDF2: Reads {Unknown Global at 0x1814C1690, first ten bytes are [4 70 0 0 4 102 0 0 4 6], or as chars "F  f  "} into register rcx as a constant constant3
+		0x1804DFDF8: Attempts to load the il2cpp metadata for this method (method id 17924) and init it cpp-side.
+
+		0x1804DFE04: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<UnityEngine.Light>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1804DFE0B: Copies {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} from rbx into rcx
+		0x1804DFE0E: [!] Calls managed method T UnityEngine.Component::GetComponent<UnityEngine.Light>() on instance {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} and stores the result in {'component' (type UnityEngine.Light)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1804DFE13: [!] Sets the field _lightSource (Type UnityEngine.Light) on local {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} to the value stored in {'component' (type UnityEngine.Light)}
+		0x1804DFE1C: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Assets.Scripts.Utils.ManualLightBehavior
+	System.Void Start()
+
+		UnityEngine.Light component = base.GetComponent<UnityEngine.Light>()
+		this._lightSource = component
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call T UnityEngine.Component::GetComponent<UnityEngine.Light>()
+	IL_0006: stloc.0
+	IL_0007: ldarg.0
+	IL_0008: ldloc.0
+	IL_0009: stfld UnityEngine.Light Assets.Scripts.Utils.ManualLightBehavior::_lightSource
+	IL_000e: ret
+	
+
+Method: System.Void Assets.Scripts.Utils.ManualLightBehavior::Update():	Method Body (x86 ASM):
+		0x1804DFE20 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE22 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804DFE26 cmp byte ptr [rcx+28h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 40 | None ||| N/A | 0
+		0x1804DFE2A mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE2D je short 00000001804DFE7Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFE2F xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE31 call 0000000180CDFD10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFE36 subss xmm0,dword ptr [rbx+2Ch]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 44 | None ||| N/A | N/A
+		0x1804DFE3B movss xmm1,dword ptr [rbx+20h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1804DFE40 comiss xmm0,xmm1		; DEBUG: {Register}/XMM0 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE43 jbe short 00000001804DFE49h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFE45 mov byte ptr [rbx+28h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 40 | None ||| N/A | 0
+		0x1804DFE49 mov rcx,[rbx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1804DFE4D test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE50 je short 00000001804DFE85h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFE52 divss xmm0,xmm1		; DEBUG: {Register}/XMM0 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE56 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE59 movaps xmm1,xmm0		; DEBUG: {Register}/XMM1 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE5C call 0000000180B1FA90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFE61 mov rcx,[rbx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x1804DFE65 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE68 je short 00000001804DFE85h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFE6A divss xmm0,dword ptr [rbx+24h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 36 | None ||| N/A | N/A
+		0x1804DFE6F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE72 movaps xmm1,xmm0		; DEBUG: {Register}/XMM1 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE75 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804DFE79 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE7A jmp near ptr 0000000180B33DC0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFE7F add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804DFE83 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE84 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE85 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1804DFE87 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804DFE8C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Assets.Scripts.Utils.ManualLightBehavior::Update():
+		End of function at 0x1804DFE8D
+		Absolute End is at 0x1804DFE8D
+		Identified Jump Destination addresses:
+
+		0x1804DFE20: Saves the content of rbx to the stack
+		0x1804DFE26: [!] Compares {field _isLightAnimationStarted, read from local {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)}} and False
+		0x1804DFE2A: Copies {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} from rcx into rbx
+		0x1804DFE2D: Jumps to 0x1804DFE7F (which is an if statement's body) if this._isLightAnimationStarted equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1804DFE2F: Clears register rcx, yielding zero-local {'local1' (type System.Int32)}
+		0x1804DFE31: [!] Calls static managed method System.Single UnityEngine.Time::get_time() and stores the result in {'time' (type System.Single)}
+
+		0x1804DFE3B: [!] Reads field GraphScaleX from {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} and stores in a new local {'graphScaleX' (type System.Single)}
+
+		0x1804DFE40: [!] Compares {'time' (type System.Single)} and {'graphScaleX' (type System.Single)}
+		0x1804DFE43: Jumps to 0x1804DFE49 (which is an if statement's body) if {'time' (type System.Single)} is less than or equal to {'graphScaleX' (type System.Single)} ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1804DFE45: [!] Sets the field _isLightAnimationStarted (Type System.Boolean) on local {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} to the value stored in False
+		0x1804DFE49: [!] Reads field LightCurve from {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} and stores in a new local {'lightCurve' (type UnityEngine.AnimationCurve)}
+
+		0x1804DFE4D: [!] Compares {'lightCurve' (type UnityEngine.AnimationCurve)} and 0
+		0x1804DFE50: Jumps to 0x1804DFE85 (which throws a NRE) if lightCurve equals 0. Implicitly present in managed code, so ignored here.
+		0x1804DFE59: Copies {'time' (type System.Single)} from xmm0 into xmm1
+		0x1804DFE5C: [!] Calls managed method System.Single UnityEngine.AnimationCurve::Evaluate(System.Single) on instance {'lightCurve' (type UnityEngine.AnimationCurve)} with arguments [{'graphScaleX' (type System.Single)}] and stores the result in {'single' (type System.Single)}
+
+		0x1804DFE61: [!] Reads field _lightSource from {'this' (function parameter, type Assets.Scripts.Utils.ManualLightBehavior)} and stores in a new local {'_lightSource' (type UnityEngine.Light)}
+
+		0x1804DFE65: [!] Compares {'_lightSource' (type UnityEngine.Light)} and 0
+		0x1804DFE68: Jumps to 0x1804DFE85 (which throws a NRE) if _lightSource equals 0. Implicitly present in managed code, so ignored here.
+		0x1804DFE72: Copies {'single' (type System.Single)} from xmm0 into xmm1
+		0x1804DFE7A: [!] Calls managed method System.Void UnityEngine.Light::set_intensity(System.Single) on instance {'_lightSource' (type UnityEngine.Light)} with arguments [{'graphScaleX' (type System.Single)}]
+
+		0x1804DFE7A: [!] Returns from the function
+
+		0x1804DFE84: [!] Returns from the function
+
+		0x1804DFE87: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Assets.Scripts.Utils.ManualLightBehavior
+	System.Void Update()
+
+		if (this._isLightAnimationStarted != False)
+		    ulong local1 = 0
+
+		    System.Single time = UnityEngine.Time.time
+		    System.Single graphScaleX = this.GraphScaleX
+
+		    if (time > graphScaleX)
+		        this._isLightAnimationStarted = False
+		    endif
+            
+		    UnityEngine.AnimationCurve lightCurve = this.LightCurve
+		    graphScaleX = time
+
+		    System.Single single = lightCurve.Evaluate(graphScaleX) //(Single time)
+		    UnityEngine.Light _lightSource = this._lightSource
+		    graphScaleX = single
+
+		    _lightSource.intensity = graphScaleX
+		    return
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Boolean Assets.Scripts.Utils.ManualLightBehavior::_isLightAnimationStarted
+	IL_0006: ldc.i4.0
+	IL_0007: beq.s IL_0049
+	IL_0009: ldc.i4.0
+	IL_000a: stloc.0
+	IL_000b: call System.Single UnityEngine.Time::get_time()
+	IL_0010: stloc.1
+	IL_0011: ldarg.0
+	IL_0012: ldfld System.Single Assets.Scripts.Utils.ManualLightBehavior::GraphScaleX
+	IL_0017: stloc.2
+	IL_0018: ldloc.1
+	IL_0019: ldloc.2
+	IL_001a: ble.s IL_0023
+	IL_001c: ldarg.0
+	IL_001d: ldc.i4.0
+	IL_001e: stfld System.Boolean Assets.Scripts.Utils.ManualLightBehavior::_isLightAnimationStarted
+	IL_0023: ldarg.0
+	IL_0024: ldfld UnityEngine.AnimationCurve Assets.Scripts.Utils.ManualLightBehavior::LightCurve
+	IL_0029: stloc.3
+	IL_002a: ldloc.1
+	IL_002b: stloc.2
+	IL_002c: ldloc.3
+	IL_002d: ldloc.2
+	IL_002e: call System.Single UnityEngine.AnimationCurve::Evaluate(System.Single)
+	IL_0033: stloc.s V_4
+	IL_0035: ldarg.0
+	IL_0036: ldfld UnityEngine.Light Assets.Scripts.Utils.ManualLightBehavior::_lightSource
+	IL_003b: stloc.s V_5
+	IL_003d: ldloc.s V_4
+	IL_003f: stloc.2
+	IL_0040: ldloc.s V_5
+	IL_0042: ldloc.2
+	IL_0043: call System.Void UnityEngine.Light::set_intensity(System.Single)
+	IL_0048: ret
+	IL_0049: ret
+	IL_004a: newobj System.Void System.NullReferenceException::.ctor()
+	IL_004f: throw
+	
+

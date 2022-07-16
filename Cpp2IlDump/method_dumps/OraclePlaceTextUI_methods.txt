@@ -1,0 +1,84 @@
+Type: OraclePlaceTextUI
+
+Method: System.Void OraclePlaceTextUI::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void OraclePlaceTextUI::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type OraclePlaceTextUI)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: OraclePlaceTextUI
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void OraclePlaceTextUI::Disp(System.String):	Method Body (x86 ASM):
+		0x1805EEDA0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1805EEDA4 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x1805EEDA8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1805EEDAB je short 00000001805EEDB9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EEDAD xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805EEDB0 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1805EEDB4 jmp near ptr 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EEDB9 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805EEDBE int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void OraclePlaceTextUI::Disp(System.String):
+		End of function at 0x1805EEDBF
+		Absolute End is at 0x1805EEDBF
+		Identified Jump Destination addresses:
+
+		0x1805EEDA4: [!] Reads field m_placeText from {'this' (function parameter, type OraclePlaceTextUI)} and stores in a new local {'m_placeText' (type UILabel)}
+
+		0x1805EEDA8: [!] Compares {'m_placeText' (type UILabel)} and 0
+		0x1805EEDAB: Jumps to 0x1805EEDB9 (which throws a NRE) if m_placeText equals 0. Implicitly present in managed code, so ignored here.
+		0x1805EEDB4: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'m_placeText' (type UILabel)} with arguments [{'text' (function parameter, type System.String)}]
+
+		0x1805EEDB4: [!] Returns from the function
+
+		0x1805EEDB9: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: OraclePlaceTextUI
+	System.Void Disp(System.String text)
+		UILabel m_placeText = this.m_placeText
+
+		m_placeText.text = text
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UILabel OraclePlaceTextUI::m_placeText
+	IL_0006: ldarg.1
+	IL_0007: call System.Void UILabel::set_text(System.String)
+	IL_000c: ret
+	IL_000d: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0012: throw
+	
+

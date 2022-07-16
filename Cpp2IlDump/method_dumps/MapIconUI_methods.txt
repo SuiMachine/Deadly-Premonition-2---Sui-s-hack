@@ -1,0 +1,362 @@
+Type: MapIconUI
+
+Method: System.Void MapIconUI::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MapIconUI::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type MapIconUI)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MapIconUI
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void MapIconUI::DispPlate():	Method Body (x86 ASM):
+		0x18044EDD0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18044EDD4 mov rcx,[rcx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 48 | None ||| N/A | N/A
+		0x18044EDD8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18044EDDB je short 000000018044EDF2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EDDD mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x18044EDE0 mov rdx,[rax+180h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 384 | None ||| N/A | N/A
+		0x18044EDE7 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18044EDEB jmp qword ptr [rax+178h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 376 | None ||| N/A | N/A
+		0x18044EDF2 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EDF7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MapIconUI::DispPlate():
+		End of function at 0x18044EDF8
+		Absolute End is at 0x18044EDF8
+		Identified Jump Destination addresses:
+
+		0x18044EDD4: [!] Reads field m_plate from {'this' (function parameter, type MapIconUI)} and stores in a new local {'m_plate' (type UIMapNamePlate)}
+
+		0x18044EDD8: [!] Compares {'m_plate' (type UIMapNamePlate)} and 0
+		0x18044EDDB: Jumps to 0x18044EDF2 (which throws a NRE) if m_plate equals 0. Implicitly present in managed code, so ignored here.
+		0x18044EDDD: Loads the class pointer from m_plate into a constant constant2 in register rax
+		0x18044EDE0: Loads the pointer to the implementation of virtual function System.Void UIMapNamePlate::Disp() specific to UIMapNamePlate from the class pointer in rax, slot 5 (from memory offset 384) and stores in constant constant3
+		0x18044EDEB: [!] Calls managed method System.Void System.ComponentModel.IContainer::Remove(System.ComponentModel.IComponent) on instance {'m_plate' (type UIMapNamePlate)} ;  - Parameter mismatch, but there is only one method here for which the instance matches.
+
+		0x18044EDEB: [!] Returns from the function
+
+		0x18044EDF2: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MapIconUI
+	System.Void DispPlate()
+		UIMapNamePlate m_plate = this.m_plate
+
+		m_plate.Remove()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x18044EDEB) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (1)) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void MapIconUI::UnDispPlate():	Method Body (x86 ASM):
+		0x18044EF50 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18044EF54 mov rcx,[rcx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 48 | None ||| N/A | N/A
+		0x18044EF58 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18044EF5B je short 000000018044EF72h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EF5D mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x18044EF60 mov rdx,[rax+190h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 400 | None ||| N/A | N/A
+		0x18044EF67 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18044EF6B jmp qword ptr [rax+188h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 392 | None ||| N/A | N/A
+		0x18044EF72 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EF77 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MapIconUI::UnDispPlate():
+		End of function at 0x18044EF78
+		Absolute End is at 0x18044EF78
+		Identified Jump Destination addresses:
+
+		0x18044EF54: [!] Reads field m_plate from {'this' (function parameter, type MapIconUI)} and stores in a new local {'m_plate' (type UIMapNamePlate)}
+
+		0x18044EF58: [!] Compares {'m_plate' (type UIMapNamePlate)} and 0
+		0x18044EF5B: Jumps to 0x18044EF72 (which throws a NRE) if m_plate equals 0. Implicitly present in managed code, so ignored here.
+		0x18044EF5D: Loads the class pointer from m_plate into a constant constant2 in register rax
+		0x18044EF60: Loads the pointer to the implementation of virtual function System.Void UIMapNamePlate::UnDisp() specific to UIMapNamePlate from the class pointer in rax, slot 6 (from memory offset 400) and stores in constant constant3
+		0x18044EF6B: [!] Calls managed method System.Void System.ComponentModel.IContainer::Remove(System.ComponentModel.IComponent) on instance {'m_plate' (type UIMapNamePlate)} ;  - Parameter mismatch, but there is only one method here for which the instance matches.
+
+		0x18044EF6B: [!] Returns from the function
+
+		0x18044EF72: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MapIconUI
+	System.Void UnDispPlate()
+		UIMapNamePlate m_plate = this.m_plate
+
+		m_plate.Remove()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x18044EF6B) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (1)) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void MapIconUI::Init(System.String,System.String,System.String):	Method Body (x86 ASM):
+		0x18044EE00 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18044EE05 mov [rsp+10h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 16 | None ||| N/A | N/A
+		0x18044EE0A mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x18044EE0F push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18044EE10 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18044EE14 cmp byte ptr [18183E370h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467871600 | None ||| N/A | 0
+		0x18044EE1B mov rsi,r9		; DEBUG: {Register}/RSI {Register}/R9 ||| None | 0 | None ||| N/A | N/A
+		0x18044EE1E mov rbp,r8		; DEBUG: {Register}/RBP {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x18044EE21 mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18044EE24 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18044EE27 jne short 000000018044EE3Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EE29 mov ecx,[1814C1730h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464214832 | None ||| N/A | N/A
+		0x18044EE2F call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EE34 mov byte ptr [18183E370h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467871600 | None ||| N/A | 1
+		0x18044EE3B mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18044EE3F test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18044EE42 je near ptr 000000018044EF27h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EE48 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18044EE4B mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18044EE4E call 00000001806D0150h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EE53 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18044EE57 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18044EE5A je near ptr 000000018044EF27h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EE60 mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x18044EE63 mov rdx,[rax+340h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 832 | None ||| N/A | N/A
+		0x18044EE6A call qword ptr [rax+338h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 824 | None ||| N/A | N/A
+		0x18044EE70 mov rax,[rbx+28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x18044EE74 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18044EE77 je near ptr 000000018044EF27h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EE7D cmp dword ptr [rax+18h],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 24 | None ||| N/A | 1
+		0x18044EE81 jbe near ptr 000000018044EF2Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EE87 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18044EE8E mov rdi,[rax+28h]		; DEBUG: {Register}/RDI {Memory}/None ||| RAX | 40 | None ||| N/A | N/A
+		0x18044EE92 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18044EE99 je short 000000018044EEA9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EE9B cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18044EEA2 jne short 000000018044EEA9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EEA4 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EEA9 mov rdx,[181870940h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468077888 | None ||| N/A | N/A
+		0x18044EEB0 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18044EEB3 call 000000018090D9D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EEB8 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18044EEBB test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18044EEBE je short 000000018044EF27h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EEC0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18044EEC2 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18044EEC5 call 0000000180B2EA90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EECA test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18044EECD je short 000000018044EF27h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EECF mov rdx,[rbx+18h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x18044EED3 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x18044EED6 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18044EED9 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18044EEDC call 0000000180CE1630h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EEE1 mov rdx,[18186ED48h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468070728 | None ||| N/A | N/A
+		0x18044EEE8 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18044EEEB call 000000018090CFC0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EEF0 mov [rbx+30h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 48 | None ||| N/A | N/A
+		0x18044EEF4 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18044EEF7 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18044EEFA je short 000000018044EF27h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EEFC mov rax,[rax]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x18044EEFF mov r8,rsi		; DEBUG: {Register}/R8 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18044EF02 mov rdx,rbp		; DEBUG: {Register}/RDX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x18044EF05 mov r9,[rax+170h]		; DEBUG: {Register}/R9 {Memory}/None ||| RAX | 368 | None ||| N/A | N/A
+		0x18044EF0C mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18044EF11 mov rbp,[rsp+38h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x18044EF16 mov rsi,[rsp+40h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x18044EF1B add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18044EF1F pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18044EF20 jmp qword ptr [rax+168h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 360 | None ||| N/A | N/A
+		0x18044EF27 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18044EF29 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044EF2E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MapIconUI::Init(System.String,System.String,System.String):
+		End of function at 0x18044EF2F
+		Absolute End is at 0x18044EF2F
+		Identified Jump Destination addresses:
+
+		0x18044EE0F: Saves the content of rdi to the stack
+		0x18044EE14: Compares {Unknown Global at 0x18183E370, first ten bytes are [46 134 1 0 192 60 103 1 48 134], or as chars ". À<g0"} and 0
+		0x18044EE1B: Copies {'detail' (function parameter, type System.String)} from r9 into rsi
+		0x18044EE1E: Copies {'name' (function parameter, type System.String)} from r8 into rbp
+		0x18044EE21: Copies {'icon' (function parameter, type System.String)} from rdx into rdi
+		0x18044EE24: Copies {'this' (function parameter, type MapIconUI)} from rcx into rbx
+		0x18044EE27: Jumps to 0x18044EE3B if {Unknown Global at 0x18183E370, first ten bytes are [46 134 1 0 192 60 103 1 48 134], or as chars ". À<g0"} != 0
+
+		0x18044EE29: Reads {Unknown Global at 0x1814C1730, first ten bytes are [14 70 0 0 14 6 0 0 14 38], or as chars "F    &"} into register rcx as a constant constant3
+		0x18044EE2F: Attempts to load the il2cpp metadata for this method (method id 17934) and init it cpp-side.
+
+		0x18044EE3B: [!] Reads field m_iconSprite from {'this' (function parameter, type MapIconUI)} and stores in a new local {'m_iconSprite' (type UISprite)}
+
+		0x18044EE3F: [!] Compares {'m_iconSprite' (type UISprite)} and 0
+		0x18044EE42: Jumps to 0x18044EF27 (which throws a NRE) if m_iconSprite equals 0. Implicitly present in managed code, so ignored here.
+		0x18044EE4B: Copies {'icon' (function parameter, type System.String)} from rdi into rdx
+		0x18044EE4E: [!] Calls managed method System.Void UISprite::set_spriteName(System.String) on instance {'m_iconSprite' (type UISprite)} with arguments [{'icon' (function parameter, type System.String)}]
+
+		0x18044EE53: [!] Reads field m_iconSprite from {'this' (function parameter, type MapIconUI)} and stores in a new local {'m_iconSprite2' (type UISprite)}
+
+		0x18044EE57: [!] Compares {'m_iconSprite2' (type UISprite)} and 0
+		0x18044EE5A: Jumps to 0x18044EF27 (which throws a NRE) if m_iconSprite2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18044EE60: Loads the class pointer from m_iconSprite2 into a constant constant6 in register rax
+		0x18044EE63: Loads the pointer to the implementation of virtual function System.Void UISprite::MakePixelPerfect() specific to UISprite from the class pointer in rax, slot 33 (from memory offset 832) and stores in constant constant7
+		0x18044EE6A: [!] Calls managed method System.Void UISprite::MakePixelPerfect() on instance {'m_iconSprite2' (type UISprite)}
+
+		0x18044EE70: [!] Reads field m_platePrefab from {'this' (function parameter, type MapIconUI)} and stores in a new local {'m_platePrefab' (type UnityEngine.GameObject[])}
+
+		0x18044EE74: [!] Compares {'m_platePrefab' (type UnityEngine.GameObject[])} and 0
+		0x18044EE77: Jumps to 0x18044EF27 (which throws a NRE) if m_platePrefab equals 0. Implicitly present in managed code, so ignored here.
+		0x18044EE7D: [!] Compares {Property System.Int32 System.Array::Length() on {'m_platePrefab' (type UnityEngine.GameObject[])}} and 1
+		0x18044EE81: Jumps to 0x18044EF2F (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'m_platePrefab' (type UnityEngine.GameObject[])}} is less than or equal to 1. Implicitly present in managed code, so ignored here.
+		0x18044EE87: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18044EE8E: [!] Reads a value from the array {'m_platePrefab' (type UnityEngine.GameObject[])} at index 1, into a new local {'local8' (type UnityEngine.GameObject)}
+
+		0x18044EE92: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18044EE99: Jumps to 0x18044EEA9 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18044EE9B: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18044EEA2: Jumps to 0x18044EEA9 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18044EEA4: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18044EEA9: Loads the global generic method reference for method T UnityEngine.Object::Instantiate<UnityEngine.GameObject>(T) on type UnityEngine.Object and stores the result in constant {'Instantiate' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18044EEB0: Copies {'local8' (type UnityEngine.GameObject)} from rdi into rcx
+		0x18044EEB3: [!] Calls static managed method T UnityEngine.Object::Instantiate<UnityEngine.GameObject>(T) with arguments [{'local8' (type UnityEngine.GameObject)}] and stores the result in {'gameObject' (type UnityEngine.GameObject)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18044EEB8: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rdi
+		0x18044EEBB: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x18044EEBE: Jumps to 0x18044EF27 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x18044EEC2: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x18044EEC5: [!] Calls managed method UnityEngine.Transform UnityEngine.GameObject::get_transform() on instance {'gameObject' (type UnityEngine.GameObject)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x18044EECA: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x18044EECD: Jumps to 0x18044EF27 (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x18044EECF: [!] Reads field m_plateRoot from {'this' (function parameter, type MapIconUI)} and stores in a new local {'m_plateRoot' (type UnityEngine.Transform)}
+
+		0x18044EED6: Clears register r8, yielding zero-local {'local14' (type System.Int32)}
+		0x18044EED9: Copies {'transform' (type UnityEngine.Transform)} from rax into rcx
+		0x18044EEDC: [!] Calls managed method System.Void UnityEngine.Transform::SetParent(UnityEngine.Transform,System.Boolean) on instance {'transform' (type UnityEngine.Transform)} with arguments [{'m_plateRoot' (type UnityEngine.Transform)}, {'local14' (type System.Int32)}]
+
+		0x18044EEE1: Loads the global generic method reference for method T UnityEngine.GameObject::GetComponent<UIMapNamePlate>() on type UnityEngine.GameObject and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18044EEE8: Copies {'gameObject' (type UnityEngine.GameObject)} from rdi into rcx
+		0x18044EEEB: [!] Calls managed method T UnityEngine.GameObject::GetComponent<UIMapNamePlate>() on instance {'gameObject' (type UnityEngine.GameObject)} and stores the result in {'component' (type UIMapNamePlate)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18044EEF0: [!] Sets the field m_plate (Type UIMapNamePlate) on local {'this' (function parameter, type MapIconUI)} to the value stored in {'component' (type UIMapNamePlate)}
+		0x18044EEF4: Copies {'component' (type UIMapNamePlate)} from rax into rcx
+		0x18044EEF7: [!] Compares {'component' (type UIMapNamePlate)} and 0
+		0x18044EEFA: Jumps to 0x18044EF27 (which throws a NRE) if component equals 0. Implicitly present in managed code, so ignored here.
+		0x18044EEFC: Loads the class pointer from component into a constant constant20 in register rax
+		0x18044EEFF: Copies {'detail' (function parameter, type System.String)} from rsi into r8
+		0x18044EF02: Copies {'name' (function parameter, type System.String)} from rbp into rdx
+		0x18044EF05: Loads the pointer to the implementation of virtual function System.Void UIMapNamePlate::Init(System.String,System.String) specific to UIMapNamePlate from the class pointer in rax, slot 4 (from memory offset 368) and stores in constant constant21
+		0x18044EF0C: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant22
+		0x18044EF11: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbp as new constant constant23
+		0x18044EF16: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rsi as new constant constant24
+		0x18044EF20: [!] Calls managed method System.Void System.ComponentModel.IContainer::Remove(System.ComponentModel.IComponent) on instance {'component' (type UIMapNamePlate)} with arguments [{'name' (function parameter, type System.String)}]
+
+		0x18044EF20: [!] Returns from the function
+
+		0x18044EF29: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MapIconUI
+	System.Void Init(System.String icon, System.String name, System.String detail)
+		UISprite m_iconSprite = this.m_iconSprite
+
+		m_iconSprite.spriteName = icon
+		UISprite m_iconSprite2 = this.m_iconSprite
+
+		m_iconSprite2.MakePixelPerfect()
+		UnityEngine.GameObject[] m_platePrefab = this.m_platePrefab
+		UnityEngine.GameObject local8 = m_platePrefab[1]
+
+		UnityEngine.GameObject gameObject = UnityEngine.Object.Instantiate<UnityEngine.GameObject>(local8) //(T original)
+
+		UnityEngine.Transform transform = gameObject.transform
+		UnityEngine.Transform m_plateRoot = this.m_plateRoot
+		ulong local14 = 0
+
+		transform.SetParent(m_plateRoot, local14) //(Transform parent, Boolean worldPositionStays)
+
+		UIMapNamePlate component = gameObject.GetComponent<UIMapNamePlate>()
+		this.m_plate = component
+
+		component.Remove(name) //(IComponent component)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UISprite MapIconUI::m_iconSprite
+	IL_0006: ldarg.1
+	IL_0007: call System.Void UISprite::set_spriteName(System.String)
+	IL_000c: ldarg.0
+	IL_000d: ldfld UISprite MapIconUI::m_iconSprite
+	IL_0012: callvirt System.Void UISprite::MakePixelPerfect()
+	IL_0017: ldarg.0
+	IL_0018: ldfld UnityEngine.GameObject[] MapIconUI::m_platePrefab
+	IL_001d: ldc.i4.1
+	IL_001e: ldelem.any UnityEngine.GameObject
+	IL_0023: call T UnityEngine.Object::Instantiate<UnityEngine.GameObject>(T)
+	IL_0028: stloc.0
+	IL_0029: ldloc.0
+	IL_002a: call UnityEngine.Transform UnityEngine.GameObject::get_transform()
+	IL_002f: stloc.1
+	IL_0030: ldarg.0
+	IL_0031: ldfld UnityEngine.Transform MapIconUI::m_plateRoot
+	IL_0036: stloc.2
+	IL_0037: ldc.i4.0
+	IL_0038: stloc.3
+	IL_0039: ldloc.1
+	IL_003a: ldloc.2
+	IL_003b: ldloc.3
+	IL_003c: call System.Void UnityEngine.Transform::SetParent(UnityEngine.Transform,System.Boolean)
+	IL_0041: ldloc.0
+	IL_0042: call T UnityEngine.GameObject::GetComponent<UIMapNamePlate>()
+	IL_0047: stloc.s V_4
+	IL_0049: ldarg.0
+	IL_004a: ldloc.s V_4
+	IL_004c: stfld UIMapNamePlate MapIconUI::m_plate
+	IL_0051: ldloc.s V_4
+	IL_0053: ldarg.2
+	IL_0054: call System.Void System.ComponentModel.IContainer::Remove(System.ComponentModel.IComponent)
+	IL_0059: ret
+	IL_005a: newobj System.Void System.NullReferenceException::.ctor()
+	IL_005f: throw
+	
+

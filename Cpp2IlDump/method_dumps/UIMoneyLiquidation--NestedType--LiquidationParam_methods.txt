@@ -1,0 +1,75 @@
+Type: LiquidationParam
+
+Method: System.Void UIMoneyLiquidation/LiquidationParam::.ctor(System.Int32,System.Int32,System.Int32):	Method Body (x86 ASM):
+		0x1806040D0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1806040D5 mov [rsp+10h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 16 | None ||| N/A | N/A
+		0x1806040DA mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x1806040DF push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806040E0 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806040E4 mov ebx,edx		; DEBUG: {Register}/EBX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806040E6 mov ebp,r9d		; DEBUG: {Register}/EBP {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1806040E9 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806040EB mov esi,r8d		; DEBUG: {Register}/ESI {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806040EE mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806040F1 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806040F6 mov [rdi+10h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RDI | 16 | None ||| N/A | N/A
+		0x1806040F9 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806040FE mov [rdi+14h],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RDI | 20 | None ||| N/A | N/A
+		0x180604101 mov rsi,[rsp+40h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x180604106 mov [rdi+18h],ebp		; DEBUG: {Memory}/None {Register}/EBP ||| RDI | 24 | None ||| N/A | N/A
+		0x180604109 mov rbp,[rsp+38h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x18060410E add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180604112 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180604113 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180604114 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIMoneyLiquidation/LiquidationParam::.ctor(System.Int32,System.Int32,System.Int32):
+		End of function at 0x180604115
+		Absolute End is at 0x180604115
+		Identified Jump Destination addresses:
+
+		0x1806040DF: Saves the content of rdi to the stack
+		0x1806040E4: Copies {'id' (function parameter, type System.Int32)} from rdx into rbx
+		0x1806040E6: Copies {'fluctuateNum' (function parameter, type System.Int32)} from r9 into rbp
+		0x1806040EB: Copies {'priority' (function parameter, type System.Int32)} from r8 into rsi
+		0x1806040EE: Copies {'this' (function parameter, type UIMoneyLiquidation/LiquidationParam)} from rcx into rdi
+		0x1806040F1: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type UIMoneyLiquidation/LiquidationParam)} ;  - Leftover parameters detected, but first few match.
+
+		0x1806040F6: [!] Sets the field m_id (Type System.Int32) on local {'this' (function parameter, type UIMoneyLiquidation/LiquidationParam)} to the value stored in {'id' (function parameter, type System.Int32)}
+		0x1806040F9: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant1
+		0x1806040FE: [!] Sets the field m_priority (Type System.Int32) on local {'this' (function parameter, type UIMoneyLiquidation/LiquidationParam)} to the value stored in {'priority' (function parameter, type System.Int32)}
+		0x180604101: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rsi as new constant constant2
+		0x180604106: [!] Sets the field m_fluctuateNum (Type System.Int32) on local {'this' (function parameter, type UIMoneyLiquidation/LiquidationParam)} to the value stored in {'fluctuateNum' (function parameter, type System.Int32)}
+		0x180604109: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbp as new constant constant3
+		0x180604113: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIMoneyLiquidation/LiquidationParam
+	System.Void .ctor(System.Int32 id, System.Int32 priority, System.Int32 fluctuateNum)
+
+		base..ctor()
+		this.m_id = id
+		this.m_priority = priority
+		this.m_fluctuateNum = fluctuateNum
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ldarg.0
+	IL_0007: ldarg.1
+	IL_0008: stfld System.Int32 UIMoneyLiquidation/LiquidationParam::m_id
+	IL_000d: ldarg.0
+	IL_000e: ldarg.2
+	IL_000f: stfld System.Int32 UIMoneyLiquidation/LiquidationParam::m_priority
+	IL_0014: ldarg.0
+	IL_0015: ldarg.3
+	IL_0016: stfld System.Int32 UIMoneyLiquidation/LiquidationParam::m_fluctuateNum
+	IL_001b: ret
+	
+

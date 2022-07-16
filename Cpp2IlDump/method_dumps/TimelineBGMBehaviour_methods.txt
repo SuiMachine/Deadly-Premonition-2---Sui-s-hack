@@ -1,0 +1,40 @@
+Type: TimelineBGMBehaviour
+
+Method: System.Void TimelineBGMBehaviour::.ctor():	Method Body (x86 ASM):
+		0x1802B94C0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B94C2 mov dword ptr [rcx+18h],3F000000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 24 | None ||| N/A | 1056964608
+		0x1802B94C9 jmp near ptr 00000001802068B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B94CE int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void TimelineBGMBehaviour::.ctor():
+		End of function at 0x1802B94CF
+		Absolute End is at 0x1802B94CF
+		Identified Jump Destination addresses:
+
+		0x1802B94C2: [!] Sets the field fadeTime (Type System.Single) on local {'this' (function parameter, type TimelineBGMBehaviour)} to the value stored in 0,5
+		0x1802B94C9: [!] Calls managed method System.Void UnityEngine.Playables.PlayableBehaviour::.ctor() on instance {'this' (function parameter, type TimelineBGMBehaviour)}
+
+		0x1802B94C9: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: TimelineBGMBehaviour
+	System.Void .ctor()
+		this.fadeTime = 0,5
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.r4 0,5
+	IL_0006: stfld System.Single TimelineBGMBehaviour::fadeTime
+	IL_000b: ldarg.0
+	IL_000c: call System.Void UnityEngine.Playables.PlayableBehaviour::.ctor()
+	IL_0011: ret
+	
+

@@ -1,0 +1,54 @@
+Type: ScreenEffectFadeBehaviour
+
+Method: System.Void CustomTrack.Screen.ScreenEffectFadeBehaviour::.ctor():	Method Body (x86 ASM):
+		0x1804A5B00 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804A5B02 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1804A5B06 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804A5B09 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804A5B0B lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1804A5B10 call 0000000180B289B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804A5B15 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804A5B17 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1804A5B1A movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1804A5B1D movups [rbx+10h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 16 | None ||| N/A | N/A
+		0x1804A5B21 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1804A5B25 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804A5B26 jmp near ptr 00000001802068B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804A5B2B int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void CustomTrack.Screen.ScreenEffectFadeBehaviour::.ctor():
+		End of function at 0x1804A5B2C
+		Absolute End is at 0x1804A5B2C
+		Identified Jump Destination addresses:
+
+		0x1804A5B00: Saves the content of rbx to the stack
+		0x1804A5B06: Copies {'this' (function parameter, type CustomTrack.Screen.ScreenEffectFadeBehaviour)} from rcx into rbx
+		0x1804A5B0B: Loads a pointer to stack offset 0x20 into register rcx as new constant constant1
+		0x1804A5B10: [!] Calls static managed method UnityEngine.Color UnityEngine.Color::get_black() and stores the result in {'black' (type UnityEngine.Color)}
+
+		0x1804A5B17: Copies {'this' (function parameter, type CustomTrack.Screen.ScreenEffectFadeBehaviour)} from rbx into rcx
+		0x1804A5B1A: Loads the class pointer from black into a constant constant2 in register xmm0
+		0x1804A5B1D: [!] Sets the field color (Type UnityEngine.Color) on local {'this' (function parameter, type CustomTrack.Screen.ScreenEffectFadeBehaviour)} to the value stored in {'constant2' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}
+		0x1804A5B26: [!] Calls managed method System.Void UnityEngine.Playables.PlayableBehaviour::.ctor() on instance {'this' (function parameter, type CustomTrack.Screen.ScreenEffectFadeBehaviour)}
+
+		0x1804A5B26: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: CustomTrack.Screen.ScreenEffectFadeBehaviour
+	System.Void .ctor()
+
+		UnityEngine.Color black = UnityEngine.Color.black
+		this.color = constant2
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.RegToFieldAction at (0x1804A5B1D) is corrupt (ConstantDefinition: Don't know how to get IL to load a Cpp2IL.Core.Analysis.Il2CppClassIdentifier) and cannot be created as IL. Aborting here.
+
+

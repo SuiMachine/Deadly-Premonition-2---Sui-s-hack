@@ -1,0 +1,213 @@
+Type: <ChangeState>c__AnonStorey1
+
+Method: System.Void JournalQuestTree/<ChangeState>c__AnonStorey1::.ctor():	Method Body (x86 ASM):
+		0x1802068B0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802068B2 jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802068B7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void JournalQuestTree/<ChangeState>c__AnonStorey1::.ctor():
+		End of function at 0x1802068B8
+		Absolute End is at 0x1802068B8
+		Identified Jump Destination addresses:
+
+		0x1802068B2: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type JournalQuestTree/<ChangeState>c__AnonStorey1)}
+
+		0x1802068B2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: JournalQuestTree/<ChangeState>c__AnonStorey1
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean JournalQuestTree/<ChangeState>c__AnonStorey1::<>m__0(JournalQuest):	Method Body (x86 ASM):
+		0x1805B7BB0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1805B7BB4 test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1805B7BB7 je short 00000001805B7BD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805B7BB9 mov rdx,[rdx+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 32 | None ||| N/A | N/A
+		0x1805B7BBD test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1805B7BC0 je short 00000001805B7BD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805B7BC2 mov eax,[rcx+10h]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x1805B7BC5 cmp [rdx+20h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDX | 32 | None ||| N/A | N/A
+		0x1805B7BC8 sete al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805B7BCB add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1805B7BCF ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805B7BD0 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1805B7BD2 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805B7BD7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean JournalQuestTree/<ChangeState>c__AnonStorey1::<>m__0(JournalQuest):
+		End of function at 0x1805B7BD8
+		Absolute End is at 0x1805B7BD8
+		Identified Jump Destination addresses:
+
+		0x1805B7BB4: [!] Compares {'x' (function parameter, type JournalQuest)} and 0
+		0x1805B7BB7: Jumps to 0x1805B7BD0 (which throws a NRE) if x equals 0. Implicitly present in managed code, so ignored here.
+		0x1805B7BB9: [!] Reads field m_questData from {'x' (function parameter, type JournalQuest)} and stores in a new local {'m_questData' (type JournalQuestData)}
+
+		0x1805B7BBD: [!] Compares {'m_questData' (type JournalQuestData)} and 0
+		0x1805B7BC0: Jumps to 0x1805B7BD0 (which throws a NRE) if m_questData equals 0. Implicitly present in managed code, so ignored here.
+		0x1805B7BC2: [!] Reads field journalId from {'this' (function parameter, type JournalQuestTree/<ChangeState>c__AnonStorey1)} and stores in a new local {'journalId' (type System.Int32)}
+
+		0x1805B7BC5: [!] Compares {field m_journalId, read from local {'m_questData' (type JournalQuestData)}} and {'journalId' (type System.Int32)}
+		0x1805B7BC8: [!] Sets the boolean {'local4' (type System.Boolean)} in rax to true if m_questData.m_journalId is equal to journalId, otherwise false.
+		0x1805B7BCF: [!] Returns {'local4' (type System.Boolean)} from the function
+
+		0x1805B7BD2: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: JournalQuestTree/<ChangeState>c__AnonStorey1
+	System.Boolean <>m__0(JournalQuest x)
+		JournalQuestData m_questData = x.m_questData
+		System.Int32 journalId = this.journalId
+		System.Boolean local4 = m_questData.m_journalId == journalId
+		return local4
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.1
+	IL_0001: ldfld JournalQuestData JournalQuest::m_questData
+	IL_0006: stloc.0
+	IL_0007: ldarg.0
+	IL_0008: ldfld System.Int32 JournalQuestTree/<ChangeState>c__AnonStorey1::journalId
+	IL_000d: stloc.1
+	IL_000e: ldloc.0
+	IL_000f: ldfld System.Int32 JournalQuestData::m_journalId
+	IL_0014: ldloc.1
+	IL_0015: ceq
+	IL_0017: ret
+	IL_0018: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001d: throw
+	
+
+Method: System.Boolean JournalQuestTree/<ChangeState>c__AnonStorey1::<>m__1(JournalQuest):	Method Body (x86 ASM):
+		0x1805B7BE0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1805B7BE5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805B7BE6 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1805B7BEA cmp byte ptr [18183ECA0h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873952 | None ||| N/A | 0
+		0x1805B7BF1 mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1805B7BF4 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1805B7BF7 jne short 00000001805B7C0Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805B7BF9 mov ecx,[1814CB40Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464254988 | None ||| N/A | N/A
+		0x1805B7BFF call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805B7C04 mov byte ptr [18183ECA0h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873952 | None ||| N/A | 1
+		0x1805B7C0B test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805B7C0E je short 00000001805B7C44h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805B7C10 mov rax,[rbx+20h]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1805B7C14 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805B7C17 je short 00000001805B7C44h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805B7C19 mov rcx,[rdi+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x1805B7C1D mov ebx,[rax+20h]		; DEBUG: {Register}/EBX {Memory}/None ||| RAX | 32 | None ||| N/A | N/A
+		0x1805B7C20 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1805B7C23 je short 00000001805B7C44h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805B7C25 mov r8,[181877380h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468105088 | None ||| N/A | N/A
+		0x1805B7C2C mov edx,[rdi+20h]		; DEBUG: {Register}/EDX {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x1805B7C2F call 00000001810C2920h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805B7C34 cmp ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1805B7C36 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1805B7C3B sete al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805B7C3E add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1805B7C42 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805B7C43 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805B7C44 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1805B7C46 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805B7C4B int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean JournalQuestTree/<ChangeState>c__AnonStorey1::<>m__1(JournalQuest):
+		End of function at 0x1805B7C4C
+		Absolute End is at 0x1805B7C4C
+		Identified Jump Destination addresses:
+
+		0x1805B7BE5: Saves the content of rdi to the stack
+		0x1805B7BEA: Compares {Unknown Global at 0x18183ECA0, first ten bytes are [228 214 1 0 4 61 103 1 240 214], or as chars "äÖ =gðÖ"} and 0
+		0x1805B7BF1: Copies {'x' (function parameter, type JournalQuest)} from rdx into rbx
+		0x1805B7BF4: Copies {'this' (function parameter, type JournalQuestTree/<ChangeState>c__AnonStorey1)} from rcx into rdi
+		0x1805B7BF7: Jumps to 0x1805B7C0B if {Unknown Global at 0x18183ECA0, first ten bytes are [228 214 1 0 4 61 103 1 240 214], or as chars "äÖ =gðÖ"} != 0
+
+		0x1805B7BF9: Loads string "âo" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1805B7BFF: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1805B7C0B: [!] Compares {'x' (function parameter, type JournalQuest)} and 0
+		0x1805B7C0E: Jumps to 0x1805B7C44 (which throws a NRE) if x equals 0. Implicitly present in managed code, so ignored here.
+		0x1805B7C10: [!] Reads field m_questData from {'x' (function parameter, type JournalQuest)} and stores in a new local {'m_questData' (type JournalQuestData)}
+
+		0x1805B7C14: [!] Compares {'m_questData' (type JournalQuestData)} and 0
+		0x1805B7C17: Jumps to 0x1805B7C44 (which throws a NRE) if m_questData equals 0. Implicitly present in managed code, so ignored here.
+		0x1805B7C19: [!] Reads field targetId from {'this' (function parameter, type JournalQuestTree/<ChangeState>c__AnonStorey1)} and stores in a new local {'targetId' (type System.Collections.Generic.List`1<System.Int32>)}
+
+		0x1805B7C1D: [!] Reads field m_journalId from {'m_questData' (type JournalQuestData)} and stores in a new local {'m_journalId' (type System.Int32)}
+
+		0x1805B7C20: [!] Compares {'targetId' (type System.Collections.Generic.List`1<System.Int32>)} and 0
+		0x1805B7C23: Jumps to 0x1805B7C44 (which throws a NRE) if targetId equals 0. Implicitly present in managed code, so ignored here.
+		0x1805B7C25: Loads the global generic method reference for method T System.Collections.Generic.List`1::get_Item(System.Int32) on type System.Collections.Generic.List`1<System.Int32> and stores the result in constant {'get_Item' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x1805B7C2C: [!] Reads field cnt from {'this' (function parameter, type JournalQuestTree/<ChangeState>c__AnonStorey1)} and stores in a new local {'int32' (type System.Int32)}
+
+		0x1805B7C2F: [!] Calls managed method T System.Collections.Generic.List`1::get_Item(System.Int32) on instance {'targetId' (type System.Collections.Generic.List`1<System.Int32>)} with arguments [{'int32' (type System.Int32)}] and stores the result in {'item' (type System.Int32)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1805B7C34: [!] Compares {'m_journalId' (type System.Int32)} and {'item' (type System.Int32)}
+		0x1805B7C36: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant8
+		0x1805B7C3B: [!] Sets the boolean {'local7' (type System.Boolean)} in rax to true if m_journalId is equal to item, otherwise false.
+		0x1805B7C43: [!] Returns {'local7' (type System.Boolean)} from the function
+
+		0x1805B7C46: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: JournalQuestTree/<ChangeState>c__AnonStorey1
+	System.Boolean <>m__1(JournalQuest x)
+		JournalQuestData m_questData = x.m_questData
+		System.Collections.Generic.List`1<System.Int32> targetId = this.targetId
+		System.Int32 m_journalId = m_questData.m_journalId
+		System.Int32 int32 = this.cnt
+
+		System.Int32 item = targetId.Item
+		System.Boolean local7 = m_journalId == item
+		return local7
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.1
+	IL_0001: ldfld JournalQuestData JournalQuest::m_questData
+	IL_0006: stloc.0
+	IL_0007: ldarg.0
+	IL_0008: ldfld System.Collections.Generic.List`1<System.Int32> JournalQuestTree/<ChangeState>c__AnonStorey1::targetId
+	IL_000d: stloc.1
+	IL_000e: ldloc.0
+	IL_000f: ldfld System.Int32 JournalQuestData::m_journalId
+	IL_0014: stloc.2
+	IL_0015: ldarg.0
+	IL_0016: ldfld System.Int32 JournalQuestTree/<ChangeState>c__AnonStorey1::cnt
+	IL_001b: stloc.3
+	IL_001c: ldloc.1
+	IL_001d: ldloc.3
+	IL_001e: call T System.Collections.Generic.List`1::get_Item(System.Int32)
+	IL_0023: stloc.s V_4
+	IL_0025: ldloc.2
+	IL_0026: ldloc.s V_4
+	IL_0028: ceq
+	IL_002a: ret
+	IL_002b: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0030: throw
+	
+

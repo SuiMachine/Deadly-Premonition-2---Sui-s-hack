@@ -1,0 +1,40 @@
+Type: CleaningInfo
+
+Method: System.Void CleaningInfo::.ctor():	Method Body (x86 ASM):
+		0x18057A820 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18057A822 mov dword ptr [rcx+14h],47A8C000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 20 | None ||| N/A | 1202241536
+		0x18057A829 jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18057A82E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void CleaningInfo::.ctor():
+		End of function at 0x18057A82F
+		Absolute End is at 0x18057A82F
+		Identified Jump Destination addresses:
+
+		0x18057A822: [!] Sets the field m_remainingSecond (Type System.Single) on local {'this' (function parameter, type CleaningInfo)} to the value stored in 86400
+		0x18057A829: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type CleaningInfo)}
+
+		0x18057A829: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: CleaningInfo
+	System.Void .ctor()
+		this.m_remainingSecond = 86400
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.r4 86400
+	IL_0006: stfld System.Single CleaningInfo::m_remainingSecond
+	IL_000b: ldarg.0
+	IL_000c: call System.Void System.Object::.ctor()
+	IL_0011: ret
+	
+

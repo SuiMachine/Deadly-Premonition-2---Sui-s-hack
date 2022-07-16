@@ -1,0 +1,425 @@
+Type: ME_EffectSettingColor
+
+Method: System.Void ME_EffectSettingColor::.ctor():	Method Body (x86 ASM):
+		0x180390520 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180390522 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x180390526 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180390529 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18039052B lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x180390530 call 0000000180B28B80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390535 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180390537 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18039053A movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x18039053D movups [rbx+18h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 24 | None ||| N/A | N/A
+		0x180390541 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x180390545 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180390546 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039054B int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ME_EffectSettingColor::.ctor():
+		End of function at 0x18039054C
+		Absolute End is at 0x18039054C
+		Identified Jump Destination addresses:
+
+		0x180390520: Saves the content of rbx to the stack
+		0x180390526: Copies {'this' (function parameter, type ME_EffectSettingColor)} from rcx into rbx
+		0x18039052B: Loads a pointer to stack offset 0x20 into register rcx as new constant constant1
+		0x180390530: [!] Calls static managed method UnityEngine.Color UnityEngine.Color::get_red() and stores the result in {'red' (type UnityEngine.Color)}
+
+		0x180390537: Copies {'this' (function parameter, type ME_EffectSettingColor)} from rbx into rcx
+		0x18039053A: Loads the class pointer from red into a constant constant2 in register xmm0
+		0x18039053D: [!] Sets the field Color (Type UnityEngine.Color) on local {'this' (function parameter, type ME_EffectSettingColor)} to the value stored in {'constant2' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}
+		0x180390546: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type ME_EffectSettingColor)}
+
+		0x180390546: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ME_EffectSettingColor
+	System.Void .ctor()
+
+		UnityEngine.Color red = UnityEngine.Color.red
+		this.Color = constant2
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.RegToFieldAction at (0x18039053D) is corrupt (ConstantDefinition: Don't know how to get IL to load a Cpp2IL.Core.Analysis.Il2CppClassIdentifier) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void ME_EffectSettingColor::OnEnable():	Method Body (x86 ASM):
+		0x1806B1340 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806B1342 sub rsp,50h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 80
+		0x1806B1346 movups xmm0,[rcx+18h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x1806B134A mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806B134D lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806B1352 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806B1355 movaps [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1806B135A movups xmm0,[rcx+28h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RCX | 40 | None ||| N/A | N/A
+		0x1806B135E lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806B1363 movaps [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1806B1368 call 0000000180B28DD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B136D test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806B136F je near ptr 00000001806B13F7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B1375 cmp byte ptr [18183F3C4h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875780 | None ||| N/A | 0
+		0x1806B137C movaps [rsp+40h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 64 | None ||| N/A | N/A
+		0x1806B1381 jne short 00000001806B1395h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B1383 mov ecx,[1814C1178h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464213368 | None ||| N/A | N/A
+		0x1806B1389 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B138E mov byte ptr [18183F3C4h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875780 | None ||| N/A | 1
+		0x1806B1395 mov rcx,[18185D778h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6467999608 | None ||| N/A | N/A
+		0x1806B139C movups xmm6,[rbx+18h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1806B13A0 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806B13A7 je short 00000001806B13B7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B13A9 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806B13B0 jne short 00000001806B13B7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B13B2 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B13B7 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806B13BA movdqa [rsp+30h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 48 | None ||| N/A | N/A
+		0x1806B13C0 lea rdx,[rsp+30h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806B13C5 lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806B13CA call 00000001806B06F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B13CF xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806B13D1 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806B13D4 movups xmm6,[rax]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1806B13D7 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B13DC xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806B13DF movaps xmm1,xmm6		; DEBUG: {Register}/XMM1 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806B13E2 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806B13E5 call 00000001806AF840h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B13EA movups xmm0,[rbx+18h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1806B13EE movaps xmm6,[rsp+40h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1806B13F3 movups [rbx+28h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 40 | None ||| N/A | N/A
+		0x1806B13F7 add rsp,50h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 80
+		0x1806B13FB pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806B13FC ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806B13FD int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ME_EffectSettingColor::OnEnable():
+		End of function at 0x1806B13FE
+		Absolute End is at 0x1806B13FE
+		Identified Jump Destination addresses:
+
+		0x1806B1340: Saves the content of rbx to the stack
+		0x1806B1346: [!] Reads field Color from {'this' (function parameter, type ME_EffectSettingColor)} and stores in a new local {'color' (type UnityEngine.Color)}
+
+		0x1806B134A: Copies {'this' (function parameter, type ME_EffectSettingColor)} from rcx into rbx
+		0x1806B134D: Loads a pointer to stack offset 0x20 into register rdx as new constant constant1
+		0x1806B1355: Moves color (type UnityEngine.Color) from register xmm0 to the stack at offset 32 (0x20)
+		0x1806B135A: [!] Reads field previousColor from {'this' (function parameter, type ME_EffectSettingColor)} and stores in a new local {'previousColor' (type UnityEngine.Color)}
+
+		0x1806B135E: Loads a pointer to stack offset 0x30 into register rcx as new constant constant2
+		0x1806B1363: Moves previousColor (type UnityEngine.Color) from register xmm0 to the stack at offset 48 (0x30)
+		0x1806B1368: [!] Calls static managed method System.Boolean UnityEngine.Color::op_Inequality(UnityEngine.Color,UnityEngine.Color) with arguments [{'previousColor' (type UnityEngine.Color)}, {'color' (type UnityEngine.Color)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1806B136D: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1806B136F: Jumps to 0x1806B13F7 (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806B1375: Compares {Unknown Global at 0x18183F3C4, first ten bytes are [224 60 103 1 192 18 2 0 27 19], or as chars "à<gÀ "} and 0
+		0x1806B1381: Jumps to 0x1806B1395 if {Unknown Global at 0x18183F3C4, first ten bytes are [224 60 103 1 192 18 2 0 27 19], or as chars "à<gÀ "} != 0
+
+		0x1806B1383: Reads {Unknown Global at 0x1814C1178, first ten bytes are [178 69 0 0 179 37 0 0 179 101], or as chars "²E  ³%  ³e"} into register rcx as a constant constant6
+		0x1806B1389: Attempts to load the il2cpp metadata for this method (method id 17842) and init it cpp-side.
+
+		0x1806B1395: Loads the type definition for managed type ME_ColorHelper as a constant "ME_ColorHelper" in rcx
+		0x1806B139C: [!] Reads field Color from {'this' (function parameter, type ME_EffectSettingColor)} and stores in a new local {'color2' (type UnityEngine.Color)}
+
+		0x1806B13A0: Compares "{il2cpp field on {'ME_ColorHelper' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806B13A7: Jumps to 0x1806B13B7 if "{il2cpp field on {'ME_ColorHelper' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806B13A9: Compares "{il2cpp field on {'ME_ColorHelper' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806B13B0: Jumps to 0x1806B13B7 if "{il2cpp field on {'ME_ColorHelper' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806B13B2: Calls the il2cpp cctor for the type ME_ColorHelper
+		0x1806B13BA: Moves color2 (type UnityEngine.Color) from register xmm6 to the stack at offset 48 (0x30)
+		0x1806B13C0: Loads a pointer to stack offset 0x30 into register rdx as new constant constant12
+		0x1806B13C5: Loads a pointer to stack offset 0x20 into register rcx as new constant constant13
+		0x1806B13CA: [!] Calls static managed method ME_ColorHelper/HSBColor ME_ColorHelper::ColorToHSV(UnityEngine.Color) with arguments [{'color' (type UnityEngine.Color)}] and stores the result in {'hSBColor' (type ME_ColorHelper/HSBColor)}
+
+		0x1806B13D1: Copies {'this' (function parameter, type ME_EffectSettingColor)} from rbx into rcx
+		0x1806B13D4: Loads the class pointer from hSBColor into a constant constant14 in register xmm6
+		0x1806B13D7: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type ME_EffectSettingColor)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1806B13DF: Copies {'constant14' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} from xmm6 into xmm1
+		0x1806B13E2: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1806B13E5: [!] Calls static managed method System.Void ME_ColorHelper::ChangeObjectColorByHUE(UnityEngine.GameObject,System.Single) ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806B13EA: [!] Reads field Color from {'this' (function parameter, type ME_EffectSettingColor)} and stores in a new local {'color3' (type UnityEngine.Color)}
+
+		0x1806B13EE: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register xmm6 as new constant constant15
+		0x1806B13F3: [!] Sets the field previousColor (Type UnityEngine.Color) on local {'this' (function parameter, type ME_EffectSettingColor)} to the value stored in {'color3' (type UnityEngine.Color)}
+		0x1806B13FC: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ME_EffectSettingColor
+	System.Void OnEnable()
+		UnityEngine.Color color = this.Color
+		UnityEngine.Color previousColor = this.previousColor
+
+		System.Boolean boolean = UnityEngine.Color.op_Inequality(previousColor, color) //(Color lhs, Color rhs)
+
+		if (boolean != False)
+		    UnityEngine.Color color2 = this.Color
+
+		    ME_ColorHelper/HSBColor hSBColor = ME_ColorHelper.ColorToHSV(color) //(Color color)
+
+		    UnityEngine.GameObject gameObject = base.gameObject
+
+		    ME_ColorHelper.ChangeObjectColorByHUE()
+		    UnityEngine.Color color3 = this.Color
+		    this.previousColor = color3
+		endif
+        
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1806B13E5) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (2)) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void ME_EffectSettingColor::Update():	Method Body (x86 ASM):
+		0x1806B1340 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806B1342 sub rsp,50h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 80
+		0x1806B1346 movups xmm0,[rcx+18h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x1806B134A mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806B134D lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806B1352 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806B1355 movaps [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1806B135A movups xmm0,[rcx+28h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RCX | 40 | None ||| N/A | N/A
+		0x1806B135E lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806B1363 movaps [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1806B1368 call 0000000180B28DD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B136D test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1806B136F je near ptr 00000001806B13F7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B1375 cmp byte ptr [18183F3C4h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875780 | None ||| N/A | 0
+		0x1806B137C movaps [rsp+40h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 64 | None ||| N/A | N/A
+		0x1806B1381 jne short 00000001806B1395h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B1383 mov ecx,[1814C1178h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464213368 | None ||| N/A | N/A
+		0x1806B1389 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B138E mov byte ptr [18183F3C4h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875780 | None ||| N/A | 1
+		0x1806B1395 mov rcx,[18185D778h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6467999608 | None ||| N/A | N/A
+		0x1806B139C movups xmm6,[rbx+18h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1806B13A0 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806B13A7 je short 00000001806B13B7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B13A9 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806B13B0 jne short 00000001806B13B7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B13B2 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B13B7 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806B13BA movdqa [rsp+30h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 48 | None ||| N/A | N/A
+		0x1806B13C0 lea rdx,[rsp+30h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806B13C5 lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806B13CA call 00000001806B06F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B13CF xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806B13D1 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806B13D4 movups xmm6,[rax]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1806B13D7 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B13DC xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806B13DF movaps xmm1,xmm6		; DEBUG: {Register}/XMM1 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806B13E2 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806B13E5 call 00000001806AF840h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B13EA movups xmm0,[rbx+18h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1806B13EE movaps xmm6,[rsp+40h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1806B13F3 movups [rbx+28h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 40 | None ||| N/A | N/A
+		0x1806B13F7 add rsp,50h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 80
+		0x1806B13FB pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806B13FC ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806B13FD int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ME_EffectSettingColor::Update():
+		End of function at 0x1806B13FE
+		Absolute End is at 0x1806B13FE
+		Identified Jump Destination addresses:
+
+		0x1806B1340: Saves the content of rbx to the stack
+		0x1806B1346: [!] Reads field Color from {'this' (function parameter, type ME_EffectSettingColor)} and stores in a new local {'color' (type UnityEngine.Color)}
+
+		0x1806B134A: Copies {'this' (function parameter, type ME_EffectSettingColor)} from rcx into rbx
+		0x1806B134D: Loads a pointer to stack offset 0x20 into register rdx as new constant constant1
+		0x1806B1355: Moves color (type UnityEngine.Color) from register xmm0 to the stack at offset 32 (0x20)
+		0x1806B135A: [!] Reads field previousColor from {'this' (function parameter, type ME_EffectSettingColor)} and stores in a new local {'previousColor' (type UnityEngine.Color)}
+
+		0x1806B135E: Loads a pointer to stack offset 0x30 into register rcx as new constant constant2
+		0x1806B1363: Moves previousColor (type UnityEngine.Color) from register xmm0 to the stack at offset 48 (0x30)
+		0x1806B1368: [!] Calls static managed method System.Boolean UnityEngine.Color::op_Inequality(UnityEngine.Color,UnityEngine.Color) with arguments [{'previousColor' (type UnityEngine.Color)}, {'color' (type UnityEngine.Color)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1806B136D: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1806B136F: Jumps to 0x1806B13F7 (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806B1375: Compares {Unknown Global at 0x18183F3C4, first ten bytes are [224 60 103 1 192 18 2 0 27 19], or as chars "à<gÀ "} and 0
+		0x1806B1381: Jumps to 0x1806B1395 if {Unknown Global at 0x18183F3C4, first ten bytes are [224 60 103 1 192 18 2 0 27 19], or as chars "à<gÀ "} != 0
+
+		0x1806B1383: Reads {Unknown Global at 0x1814C1178, first ten bytes are [178 69 0 0 179 37 0 0 179 101], or as chars "²E  ³%  ³e"} into register rcx as a constant constant6
+		0x1806B1389: Attempts to load the il2cpp metadata for this method (method id 17842) and init it cpp-side.
+
+		0x1806B1395: Loads the type definition for managed type ME_ColorHelper as a constant "ME_ColorHelper" in rcx
+		0x1806B139C: [!] Reads field Color from {'this' (function parameter, type ME_EffectSettingColor)} and stores in a new local {'color2' (type UnityEngine.Color)}
+
+		0x1806B13A0: Compares "{il2cpp field on {'ME_ColorHelper' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806B13A7: Jumps to 0x1806B13B7 if "{il2cpp field on {'ME_ColorHelper' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806B13A9: Compares "{il2cpp field on {'ME_ColorHelper' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806B13B0: Jumps to 0x1806B13B7 if "{il2cpp field on {'ME_ColorHelper' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806B13B2: Calls the il2cpp cctor for the type ME_ColorHelper
+		0x1806B13BA: Moves color2 (type UnityEngine.Color) from register xmm6 to the stack at offset 48 (0x30)
+		0x1806B13C0: Loads a pointer to stack offset 0x30 into register rdx as new constant constant12
+		0x1806B13C5: Loads a pointer to stack offset 0x20 into register rcx as new constant constant13
+		0x1806B13CA: [!] Calls static managed method ME_ColorHelper/HSBColor ME_ColorHelper::ColorToHSV(UnityEngine.Color) with arguments [{'color' (type UnityEngine.Color)}] and stores the result in {'hSBColor' (type ME_ColorHelper/HSBColor)}
+
+		0x1806B13D1: Copies {'this' (function parameter, type ME_EffectSettingColor)} from rbx into rcx
+		0x1806B13D4: Loads the class pointer from hSBColor into a constant constant14 in register xmm6
+		0x1806B13D7: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type ME_EffectSettingColor)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1806B13DF: Copies {'constant14' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} from xmm6 into xmm1
+		0x1806B13E2: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1806B13E5: [!] Calls static managed method System.Void ME_ColorHelper::ChangeObjectColorByHUE(UnityEngine.GameObject,System.Single) ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806B13EA: [!] Reads field Color from {'this' (function parameter, type ME_EffectSettingColor)} and stores in a new local {'color3' (type UnityEngine.Color)}
+
+		0x1806B13EE: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register xmm6 as new constant constant15
+		0x1806B13F3: [!] Sets the field previousColor (Type UnityEngine.Color) on local {'this' (function parameter, type ME_EffectSettingColor)} to the value stored in {'color3' (type UnityEngine.Color)}
+		0x1806B13FC: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ME_EffectSettingColor
+	System.Void Update()
+		UnityEngine.Color color = this.Color
+		UnityEngine.Color previousColor = this.previousColor
+
+		System.Boolean boolean = UnityEngine.Color.op_Inequality(previousColor, color) //(Color lhs, Color rhs)
+
+		if (boolean != False)
+		    UnityEngine.Color color2 = this.Color
+
+		    ME_ColorHelper/HSBColor hSBColor = ME_ColorHelper.ColorToHSV(color) //(Color color)
+
+		    UnityEngine.GameObject gameObject = base.gameObject
+
+		    ME_ColorHelper.ChangeObjectColorByHUE()
+		    UnityEngine.Color color3 = this.Color
+		    this.previousColor = color3
+		endif
+        
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1806B13E5) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (2)) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void ME_EffectSettingColor::UpdateColor():	Method Body (x86 ASM):
+		0x1806B1400 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806B1402 sub rsp,50h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 80
+		0x1806B1406 cmp byte ptr [18183F3C4h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875780 | None ||| N/A | 0
+		0x1806B140D mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806B1410 movaps [rsp+40h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 64 | None ||| N/A | N/A
+		0x1806B1415 jne short 00000001806B1429h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B1417 mov ecx,[1814C1178h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464213368 | None ||| N/A | N/A
+		0x1806B141D call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B1422 mov byte ptr [18183F3C4h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467875780 | None ||| N/A | 1
+		0x1806B1429 mov rcx,[18185D778h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6467999608 | None ||| N/A | N/A
+		0x1806B1430 movups xmm6,[rbx+18h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1806B1434 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1806B143B je short 00000001806B144Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B143D cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1806B1444 jne short 00000001806B144Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B1446 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B144B xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806B144E movdqa [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x1806B1454 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806B1459 lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806B145E call 00000001806B06F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B1463 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806B1465 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806B1468 movups xmm6,[rax]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1806B146B call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B1470 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806B1473 movaps xmm1,xmm6		; DEBUG: {Register}/XMM1 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1806B1476 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806B1479 call 00000001806AF840h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806B147E movups xmm0,[rbx+18h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1806B1482 movaps xmm6,[rsp+40h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1806B1487 movups [rbx+28h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 40 | None ||| N/A | N/A
+		0x1806B148B add rsp,50h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 80
+		0x1806B148F pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806B1490 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806B1491 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ME_EffectSettingColor::UpdateColor():
+		End of function at 0x1806B1492
+		Absolute End is at 0x1806B1492
+		Identified Jump Destination addresses:
+
+		0x1806B1400: Saves the content of rbx to the stack
+		0x1806B1406: Compares {Unknown Global at 0x18183F3C4, first ten bytes are [224 60 103 1 192 18 2 0 27 19], or as chars "à<gÀ "} and 0
+		0x1806B140D: Copies {'this' (function parameter, type ME_EffectSettingColor)} from rcx into rbx
+		0x1806B1415: Jumps to 0x1806B1429 if {Unknown Global at 0x18183F3C4, first ten bytes are [224 60 103 1 192 18 2 0 27 19], or as chars "à<gÀ "} != 0
+
+		0x1806B1417: Reads {Unknown Global at 0x1814C1178, first ten bytes are [178 69 0 0 179 37 0 0 179 101], or as chars "²E  ³%  ³e"} into register rcx as a constant constant3
+		0x1806B141D: Attempts to load the il2cpp metadata for this method (method id 17842) and init it cpp-side.
+
+		0x1806B1429: Loads the type definition for managed type ME_ColorHelper as a constant "ME_ColorHelper" in rcx
+		0x1806B1430: [!] Reads field Color from {'this' (function parameter, type ME_EffectSettingColor)} and stores in a new local {'color' (type UnityEngine.Color)}
+
+		0x1806B1434: Compares "{il2cpp field on {'ME_ColorHelper' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1806B143B: Jumps to 0x1806B144B if "{il2cpp field on {'ME_ColorHelper' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1806B143D: Compares "{il2cpp field on {'ME_ColorHelper' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1806B1444: Jumps to 0x1806B144B if "{il2cpp field on {'ME_ColorHelper' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1806B1446: Calls the il2cpp cctor for the type ME_ColorHelper
+		0x1806B144E: Moves color (type UnityEngine.Color) from register xmm6 to the stack at offset 32 (0x20)
+		0x1806B1454: Loads a pointer to stack offset 0x20 into register rdx as new constant constant9
+		0x1806B1459: Loads a pointer to stack offset 0x30 into register rcx as new constant constant10
+		0x1806B145E: [!] Calls static managed method ME_ColorHelper/HSBColor ME_ColorHelper::ColorToHSV(UnityEngine.Color) and stores the result in {'hSBColor' (type ME_ColorHelper/HSBColor)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806B1465: Copies {'this' (function parameter, type ME_EffectSettingColor)} from rbx into rcx
+		0x1806B1468: Loads the class pointer from hSBColor into a constant constant11 in register xmm6
+		0x1806B146B: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type ME_EffectSettingColor)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1806B1473: Copies {'constant11' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} from xmm6 into xmm1
+		0x1806B1476: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1806B1479: [!] Calls static managed method System.Void ME_ColorHelper::ChangeObjectColorByHUE(UnityEngine.GameObject,System.Single) ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806B147E: [!] Reads field Color from {'this' (function parameter, type ME_EffectSettingColor)} and stores in a new local {'color2' (type UnityEngine.Color)}
+
+		0x1806B1482: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register xmm6 as new constant constant12
+		0x1806B1487: [!] Sets the field previousColor (Type UnityEngine.Color) on local {'this' (function parameter, type ME_EffectSettingColor)} to the value stored in {'color2' (type UnityEngine.Color)}
+		0x1806B1490: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ME_EffectSettingColor
+	System.Void UpdateColor()
+		UnityEngine.Color color = this.Color
+
+		ME_ColorHelper/HSBColor hSBColor = ME_ColorHelper.ColorToHSV()
+
+		UnityEngine.GameObject gameObject = base.gameObject
+
+		ME_ColorHelper.ChangeObjectColorByHUE()
+		UnityEngine.Color color2 = this.Color
+		this.previousColor = color2
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1806B145E) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (1)) and cannot be created as IL. Aborting here.
+
+

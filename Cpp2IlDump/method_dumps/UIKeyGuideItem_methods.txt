@@ -1,0 +1,312 @@
+Type: UIKeyGuideItem
+
+Method: System.Void UIKeyGuideItem::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIKeyGuideItem::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type UIKeyGuideItem)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIKeyGuideItem
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void UIKeyGuideItem::SetInfo(System.String):	Method Body (x86 ASM):
+		0x1802A8750 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1802A8754 mov rcx,[rcx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x1802A8758 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A875B je short 00000001802A8769h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A875D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A8760 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1802A8764 jmp near ptr 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8769 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A876E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIKeyGuideItem::SetInfo(System.String):
+		End of function at 0x1802A876F
+		Absolute End is at 0x1802A876F
+		Identified Jump Destination addresses:
+
+		0x1802A8754: [!] Reads field m_descText from {'this' (function parameter, type UIKeyGuideItem)} and stores in a new local {'m_descText' (type UILabel)}
+
+		0x1802A8758: [!] Compares {'m_descText' (type UILabel)} and 0
+		0x1802A875B: Jumps to 0x1802A8769 (which throws a NRE) if m_descText equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8764: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'m_descText' (type UILabel)} with arguments [{'desc' (function parameter, type System.String)}]
+
+		0x1802A8764: [!] Returns from the function
+
+		0x1802A8769: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIKeyGuideItem
+	System.Void SetInfo(System.String desc)
+		UILabel m_descText = this.m_descText
+
+		m_descText.text = desc
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UILabel UIKeyGuideItem::m_descText
+	IL_0006: ldarg.1
+	IL_0007: call System.Void UILabel::set_text(System.String)
+	IL_000c: ret
+	IL_000d: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0012: throw
+	
+
+Method: System.Void UIKeyGuideItem::Disp():	Method Body (x86 ASM):
+		0x1803464E0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1803464E4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803464E6 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803464EB test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803464EE je short 0000000180346501h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803464F0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803464F3 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1803464F5 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1803464F8 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1803464FC jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180346501 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180346503 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180346508 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIKeyGuideItem::Disp():
+		End of function at 0x180346509
+		Absolute End is at 0x180346509
+		Identified Jump Destination addresses:
+
+		0x1803464E6: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type UIKeyGuideItem)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1803464EB: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1803464EE: Jumps to 0x180346501 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1803464F3: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1803464F5: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1803464FC: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [True]
+
+		0x1803464FC: [!] Returns from the function
+
+		0x180346503: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIKeyGuideItem
+	System.Void Disp()
+
+		UnityEngine.GameObject gameObject = base.gameObject
+
+		gameObject.SetActive(True) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0006: ldc.i4.1
+	IL_0007: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_000c: ret
+	IL_000d: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0012: throw
+	
+
+Method: System.Void UIKeyGuideItem::UnDisp():	Method Body (x86 ASM):
+		0x180257A10 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180257A14 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180257A16 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180257A1B test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180257A1E je short 0000000180257A31h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180257A20 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180257A23 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180257A25 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180257A28 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180257A2C jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180257A31 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180257A33 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180257A38 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIKeyGuideItem::UnDisp():
+		End of function at 0x180257A39
+		Absolute End is at 0x180257A39
+		Identified Jump Destination addresses:
+
+		0x180257A16: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type UIKeyGuideItem)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x180257A1B: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x180257A1E: Jumps to 0x180257A31 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x180257A23: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x180257A25: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x180257A2C: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [{'local4' (type System.Int32)}]
+
+		0x180257A2C: [!] Returns from the function
+
+		0x180257A33: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIKeyGuideItem
+	System.Void UnDisp()
+
+		UnityEngine.GameObject gameObject = base.gameObject
+		ulong local4 = 0
+
+		gameObject.SetActive(local4) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0010: ret
+	IL_0011: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0016: throw
+	
+
+Method: System.Void UIKeyGuideItem::SetActiveChildren(System.Boolean):	Method Body (x86 ASM):
+		0x180605900 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180605905 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180605906 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18060590A mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18060590D movzx ebx,dl		; DEBUG: {Register}/EBX {Register}/DL ||| None | 0 | None ||| N/A | N/A
+		0x180605910 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x180605914 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180605917 je short 0000000180605960h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180605919 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18060591B call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180605920 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180605923 je short 0000000180605960h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180605925 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180605928 movzx edx,bl		; DEBUG: {Register}/EDX {Register}/BL ||| None | 0 | None ||| N/A | N/A
+		0x18060592B mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18060592E call 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180605933 mov rcx,[rdi+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x180605937 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18060593A je short 0000000180605960h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18060593C xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18060593E call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180605943 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180605946 je short 0000000180605960h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180605948 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18060594B movzx edx,bl		; DEBUG: {Register}/EDX {Register}/BL ||| None | 0 | None ||| N/A | N/A
+		0x18060594E mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180605951 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x180605956 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18060595A pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18060595B jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180605960 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180605962 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180605967 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIKeyGuideItem::SetActiveChildren(System.Boolean):
+		End of function at 0x180605968
+		Absolute End is at 0x180605968
+		Identified Jump Destination addresses:
+
+		0x180605905: Saves the content of rdi to the stack
+		0x18060590A: Copies {'this' (function parameter, type UIKeyGuideItem)} from rcx into rdi
+		0x18060590D: Copies {'isActive' (function parameter, type System.Boolean)} from rdx into rbx
+		0x180605910: [!] Reads field m_buttonIcon from {'this' (function parameter, type UIKeyGuideItem)} and stores in a new local {'m_buttonIcon' (type UISprite)}
+
+		0x180605914: [!] Compares {'m_buttonIcon' (type UISprite)} and 0
+		0x180605917: Jumps to 0x180605960 (which throws a NRE) if m_buttonIcon equals 0. Implicitly present in managed code, so ignored here.
+		0x18060591B: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'m_buttonIcon' (type UISprite)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x180605920: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x180605923: Jumps to 0x180605960 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x180605928: Copies {'isActive' (function parameter, type System.Boolean)} from rbx into rdx
+		0x18060592B: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x18060592E: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [{'isActive' (function parameter, type System.Boolean)}]
+
+		0x180605933: [!] Reads field m_descText from {'this' (function parameter, type UIKeyGuideItem)} and stores in a new local {'m_descText' (type UILabel)}
+
+		0x180605937: [!] Compares {'m_descText' (type UILabel)} and 0
+		0x18060593A: Jumps to 0x180605960 (which throws a NRE) if m_descText equals 0. Implicitly present in managed code, so ignored here.
+		0x18060593E: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'m_descText' (type UILabel)} and stores the result in {'gameObject2' (type UnityEngine.GameObject)}
+
+		0x180605943: [!] Compares {'gameObject2' (type UnityEngine.GameObject)} and 0
+		0x180605946: Jumps to 0x180605960 (which throws a NRE) if gameObject2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18060594B: Copies {'isActive' (function parameter, type System.Boolean)} from rbx into rdx
+		0x18060594E: Copies {'gameObject2' (type UnityEngine.GameObject)} from rax into rcx
+		0x180605951: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant5
+		0x18060595B: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject2' (type UnityEngine.GameObject)} with arguments [{'isActive' (function parameter, type System.Boolean)}]
+
+		0x18060595B: [!] Returns from the function
+
+		0x180605962: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIKeyGuideItem
+	System.Void SetActiveChildren(System.Boolean isActive)
+		UISprite m_buttonIcon = this.m_buttonIcon
+
+		UnityEngine.GameObject gameObject = m_buttonIcon.gameObject
+
+		gameObject.SetActive(isActive) //(Boolean value)
+		UILabel m_descText = this.m_descText
+
+		UnityEngine.GameObject gameObject2 = m_descText.gameObject
+
+		gameObject2.SetActive(isActive) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UISprite UIKeyGuideItem::m_buttonIcon
+	IL_0006: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_000b: ldarg.1
+	IL_000c: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0011: ldarg.0
+	IL_0012: ldfld UILabel UIKeyGuideItem::m_descText
+	IL_0017: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_001c: ldarg.1
+	IL_001d: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0022: ret
+	IL_0023: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0028: throw
+	
+
