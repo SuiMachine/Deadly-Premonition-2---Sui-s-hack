@@ -733,8 +733,6 @@ namespace SuisHack
 			{
 				GUILayout.BeginVertical(GUI.skin.box, null);
 				Settings.Entry_Quality_EdgeDetection.Value = GUILayout.Toggle(Settings.Entry_Quality_EdgeDetection.Value, "Edge detection post process filter", null);
-				GUILayout.Label("Depth sensitivity: " + Hacks.PostProcessLayerHook.EdgeDetectionDepthSensitivity, null);
-				GUILayout.Label("Edge mode: " + Hacks.PostProcessLayerHook.EdgeDetectionMode, null);
 
 				GUILayout.EndVertical();
 			}

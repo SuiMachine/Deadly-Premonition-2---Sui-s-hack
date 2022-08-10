@@ -1,5 +1,7 @@
 ﻿using Steamworks;
 using System.Collections.Generic;
+using UnityEngine;
+using static PadInput;
 
 namespace SuisHack.KeyboardSupport
 {
@@ -88,6 +90,35 @@ namespace SuisHack.KeyboardSupport
 		public static void InitializeKeyboardAndMouse()
 		{
 			var harmonyInstance = SuisHackMain.harmonyInst;
+			var originalInitMethod = typeof(SteamInput).GetMethod(nameof(SteamInput.Init), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+			var targetInitMethod = typeof(SteamInputHook).GetMethod(nameof(InitDetour), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+			if (originalInitMethod == null)
+			{
+				SuisHackMain.loggerInst.Error("Original Init was null");
+				return;
+			}
+
+			if (targetInitMethod == null)
+			{
+				SuisHackMain.loggerInst.Error("Target Init was null");
+				return;
+			}
+
+			var originalPadInputUpdate = typeof(PadInput).GetMethod(nameof(PadInput.Update), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+			var targetPadInputUpdate = typeof(SteamInputHook).GetMethod(nameof(PadInputUpdateDetour), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+			if (originalPadInputUpdate == null)
+			{
+				SuisHackMain.loggerInst.Error("Original pad input update was null");
+				return;
+			}
+
+			if (targetPadInputUpdate == null)
+			{
+				SuisHackMain.loggerInst.Error("Target pad input update was null");
+				return;
+			}
+
+
 			var originalGetAnalogActionMethod = typeof(SteamInput).GetMethod(nameof(SteamInput.GetAnalogActionData), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
 			var targetGetAnalogActionMethod = typeof(SteamInputHook).GetMethod(nameof(GetAnalogActionDataPrefix), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
 			if (originalGetAnalogActionMethod == null)
@@ -147,11 +178,41 @@ namespace SuisHack.KeyboardSupport
 				return;
 			}
 
+			harmonyInstance.Patch(originalInitMethod, prefix: new HarmonyLib.HarmonyMethod(targetInitMethod));
+			harmonyInstance.Patch(originalPadInputUpdate, prefix: new HarmonyLib.HarmonyMethod(targetPadInputUpdate));
 			harmonyInstance.Patch(originalGetAnalogActionMethod, prefix: new HarmonyLib.HarmonyMethod(targetGetAnalogActionMethod));
 			harmonyInstance.Patch(originalGetDigitalActionMethod, prefix: new HarmonyLib.HarmonyMethod(targetGetDigitalActionMethod));
 			harmonyInstance.Patch(originalGetAnalogActionHandle, prefix: new HarmonyLib.HarmonyMethod(targetGetAnalogActionHandle));
 			harmonyInstance.Patch(originalGetDigitalActionHandle, prefix: new HarmonyLib.HarmonyMethod(targetGetDigitalActionHandle));
 			SuisHackMain.loggerInst.Msg("Patched Steam Input to redirect to keyboard mouse manager");
+		}
+
+		public static bool InitDetour(ref bool __result)
+		{
+			__result = true;
+			return false;
+		}
+
+		public static bool PadInputUpdateDetour(PadInput __instance)
+		{
+			__instance.m_isConnect = true;
+			__instance.m_preKeyFlag = __instance.m_curKeyFlag;
+
+			if (SettingsGUI.Display)
+			{
+				__instance.m_curKeyFlag = (EPadKeyFlag)0;
+				return false;
+			}
+
+			if (Input.GetKeyDown(KeyCode.F6))
+				__instance.m_curKeyFlag = EPadKeyFlag.eKEY_DOWN;
+			
+/*			for (int i=0; i<(int)SteamInputDigital.R_Stick_Button + 1; i++)
+			{
+
+			}*/
+
+			return false;
 		}
 
 		public static bool GetDigitalActionHandle(ref InputDigitalActionHandle_t __result, string pszActionName)
