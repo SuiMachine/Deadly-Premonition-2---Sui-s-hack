@@ -1,10 +1,6 @@
 ﻿using MelonLoader;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml.Serialization;
 using UnityEngine;
-using static MelonLoader.MelonLogger;
 
 namespace SuisHack.Components
 {
@@ -13,10 +9,6 @@ namespace SuisHack.Components
 	{
 		const string OpenWorldPrefix = "OpenWorld_";
 		const string Terrain = "Terrain_Mesh";
-
-		static HashSet<string> yeets = new HashSet<string>();
-
-
 		public GlobalGeometryChecker(IntPtr ptr) : base(ptr) { }
 		private object CheckerCoroutine;
 
@@ -61,69 +53,17 @@ namespace SuisHack.Components
 
 						if (obj.name.Contains(Terrain))
 						{
-							if (yeets.Contains(obj.name))
-							{
-								yield return null;
-								continue;
-							}
-
+							yield return null;
 							var components = obj.GetComponentsInChildren<FloorTypeObj>();
-							yeets.Add(obj.name);
 							yield return null;
 
 							for (int j = 0; j < components.Length; j++)
 							{
 								var component = components[j];
-								if (component != null)
+								if (component.GetComponent<TerrainCorrectionData>() == null)
 								{
-									SuisHackMain.loggerInst.Msg($"Wrote down {component.name}");
-									Directory.CreateDirectory("Squares");
-
-									var path = Path.Combine("Squares", component.name + ".xml");
-									if (File.Exists(path))
-										continue;
-
-									var mf = component.GetComponent<MeshFilter>();
-									if (mf == null)
-									{
-										SuisHackMain.loggerInst.Msg($"Mesh Filter was null in {component.name}");
-										continue;
-									}
-
-									if (mf.sharedMesh == null)
-									{
-										SuisHackMain.loggerInst.Msg($"Mesh was null in {component.name}");
-										continue;
-									}
-
-									var verts = mf.sharedMesh.vertices;
-									var triangles = mf.sharedMesh.triangles;
-									var uvs = mf.sharedMesh.uv;
-
-									var store = new Store();
-									store.verts = new Vector3[verts.Length];
-									for (int l = 0; l < verts.Length; l++)
-									{
-										store.verts[l] = verts[l];
-									}
-
-									store.triangles = new int[triangles.Length];
-									for (int l = 0; l < triangles.Length; l++)
-									{
-										store.triangles[l] = triangles[l];
-									}
-
-									store.uvs = new Vector2[uvs.Length];
-									for (int l = 0; l < uvs.Length; l++)
-									{
-										store.uvs[l] = uvs[l];
-									}
-
-
-									var fileWritter = new StreamWriter(path);
-									XmlSerializer serializer = new XmlSerializer(typeof(Store));
-									serializer.Serialize(fileWritter, store);
-									fileWritter.Close();
+									yield return null;
+									component.gameObject.AddComponent<TerrainCorrectionData>();
 								}
 								yield return null;
 							}
@@ -144,13 +84,5 @@ namespace SuisHack.Components
 				CheckerCoroutine = null;
 			}
 		}
-	}
-
-	[Serializable]
-	public struct Store
-	{
-		public Vector3[] verts;
-		public int[] triangles;
-		public Vector2[] uvs;
 	}
 }
