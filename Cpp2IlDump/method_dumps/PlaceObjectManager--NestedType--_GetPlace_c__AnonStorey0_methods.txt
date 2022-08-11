@@ -1,0 +1,88 @@
+Type: <GetPlace>c__AnonStorey0
+
+Method: System.Void PlaceObjectManager/<GetPlace>c__AnonStorey0::.ctor():	Method Body (x86 ASM):
+		0x1802068B0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802068B2 jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802068B7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PlaceObjectManager/<GetPlace>c__AnonStorey0::.ctor():
+		End of function at 0x1802068B8
+		Absolute End is at 0x1802068B8
+		Identified Jump Destination addresses:
+
+		0x1802068B2: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type PlaceObjectManager/<GetPlace>c__AnonStorey0)}
+
+		0x1802068B2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PlaceObjectManager/<GetPlace>c__AnonStorey0
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean PlaceObjectManager/<GetPlace>c__AnonStorey0::<>m__0(PlaceObject):	Method Body (x86 ASM):
+		0x18040B530 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18040B534 test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18040B537 je short 000000018040B547h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18040B539 mov eax,[rcx+10h]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x18040B53C cmp [rdx+18h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDX | 24 | None ||| N/A | N/A
+		0x18040B53F sete al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18040B542 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18040B546 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18040B547 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18040B549 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18040B54E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean PlaceObjectManager/<GetPlace>c__AnonStorey0::<>m__0(PlaceObject):
+		End of function at 0x18040B54F
+		Absolute End is at 0x18040B54F
+		Identified Jump Destination addresses:
+
+		0x18040B534: [!] Compares {'i' (function parameter, type PlaceObject)} and 0
+		0x18040B537: Jumps to 0x18040B547 (which throws a NRE) if i equals 0. Implicitly present in managed code, so ignored here.
+		0x18040B539: [!] Reads field placeID from {'this' (function parameter, type PlaceObjectManager/<GetPlace>c__AnonStorey0)} and stores in a new local {'placeID' (type System.Int32)}
+
+		0x18040B53C: [!] Compares {field m_placeID, read from local {'i' (function parameter, type PlaceObject)}} and {'placeID' (type System.Int32)}
+		0x18040B53F: [!] Sets the boolean {'local3' (type System.Boolean)} in rax to true if i.m_placeID is equal to placeID, otherwise false.
+		0x18040B546: [!] Returns {'local3' (type System.Boolean)} from the function
+
+		0x18040B549: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PlaceObjectManager/<GetPlace>c__AnonStorey0
+	System.Boolean <>m__0(PlaceObject i)
+		System.Int32 placeID = this.placeID
+		System.Boolean local3 = i.m_placeID == placeID
+		return local3
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Int32 PlaceObjectManager/<GetPlace>c__AnonStorey0::placeID
+	IL_0006: stloc.0
+	IL_0007: ldarg.1
+	IL_0008: ldfld System.Int32 PlaceObject::m_placeID
+	IL_000d: ldloc.0
+	IL_000e: ceq
+	IL_0010: ret
+	IL_0011: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0016: throw
+	
+

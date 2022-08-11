@@ -1,0 +1,547 @@
+Type: MenuWindowScrollRoot
+
+Method: System.Void MenuWindowScrollRoot::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MenuWindowScrollRoot::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type MenuWindowScrollRoot)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuWindowScrollRoot
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void MenuWindowScrollRoot::Init(MenuWindowParam,System.Int32):	Method Body (x86 ASM):
+		0x180632FE0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180632FE4 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x180632FE8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180632FEB je short 0000000180632FF9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180632FED xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x180632FF0 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180632FF4 jmp near ptr 0000000180464BD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180632FF9 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180632FFE int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MenuWindowScrollRoot::Init(MenuWindowParam,System.Int32):
+		End of function at 0x180632FFF
+		Absolute End is at 0x180632FFF
+		Identified Jump Destination addresses:
+
+		0x180632FE4: [!] Reads field m_itemRoot from {'this' (function parameter, type MenuWindowScrollRoot)} and stores in a new local {'m_itemRoot' (type MenuWindowItemRoot)}
+
+		0x180632FE8: [!] Compares {'m_itemRoot' (type MenuWindowItemRoot)} and 0
+		0x180632FEB: Jumps to 0x180632FF9 (which throws a NRE) if m_itemRoot equals 0. Implicitly present in managed code, so ignored here.
+		0x180632FF4: [!] Calls managed method System.Void MenuWindowItemRoot::Init(MenuWindowParam,System.Int32) on instance {'m_itemRoot' (type MenuWindowItemRoot)} with arguments [{'item' (function parameter, type MenuWindowParam)}, {'index' (function parameter, type System.Int32)}]
+
+		0x180632FF4: [!] Returns from the function
+
+		0x180632FF9: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuWindowScrollRoot
+	System.Void Init(MenuWindowParam item, System.Int32 index)
+		MenuWindowItemRoot m_itemRoot = this.m_itemRoot
+
+		m_itemRoot.Init(item, index) //(MenuWindowParam item, Int32 index)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld MenuWindowItemRoot MenuWindowScrollRoot::m_itemRoot
+	IL_0006: ldarg.1
+	IL_0007: ldarg.2
+	IL_0008: call System.Void MenuWindowItemRoot::Init(MenuWindowParam,System.Int32)
+	IL_000d: ret
+	IL_000e: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0013: throw
+	
+
+Method: System.Void MenuWindowScrollRoot::SetHoveredObject():	Method Body (x86 ASM):
+		0x180633000 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180633004 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x180633008 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18063300B je short 0000000180633018h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18063300D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18063300F add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180633013 jmp near ptr 0000000180464D10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633018 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18063301D int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MenuWindowScrollRoot::SetHoveredObject():
+		End of function at 0x18063301E
+		Absolute End is at 0x18063301E
+		Identified Jump Destination addresses:
+
+		0x180633004: [!] Reads field m_itemRoot from {'this' (function parameter, type MenuWindowScrollRoot)} and stores in a new local {'m_itemRoot' (type MenuWindowItemRoot)}
+
+		0x180633008: [!] Compares {'m_itemRoot' (type MenuWindowItemRoot)} and 0
+		0x18063300B: Jumps to 0x180633018 (which throws a NRE) if m_itemRoot equals 0. Implicitly present in managed code, so ignored here.
+		0x180633013: [!] Calls managed method System.Void MenuWindowItemRoot::SetHoveredObject() on instance {'m_itemRoot' (type MenuWindowItemRoot)}
+
+		0x180633013: [!] Returns from the function
+
+		0x180633018: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuWindowScrollRoot
+	System.Void SetHoveredObject()
+		MenuWindowItemRoot m_itemRoot = this.m_itemRoot
+
+		m_itemRoot.SetHoveredObject()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld MenuWindowItemRoot MenuWindowScrollRoot::m_itemRoot
+	IL_0006: call System.Void MenuWindowItemRoot::SetHoveredObject()
+	IL_000b: ret
+	IL_000c: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0011: throw
+	
+
+Method: System.Void MenuWindowScrollRoot::ActiveYVernColor():	Method Body (x86 ASM):
+		0x180632FB0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180632FB4 mov rcx,[rcx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x180632FB8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180632FBB je short 0000000180632FCBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180632FBD xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180632FC0 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x180632FC2 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180632FC6 jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180632FCB call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180632FD0 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MenuWindowScrollRoot::ActiveYVernColor():
+		End of function at 0x180632FD1
+		Absolute End is at 0x180632FD1
+		Identified Jump Destination addresses:
+
+		0x180632FB4: [!] Reads field m_yvernColorObj from {'this' (function parameter, type MenuWindowScrollRoot)} and stores in a new local {'m_yvernColorObj' (type UnityEngine.GameObject)}
+
+		0x180632FB8: [!] Compares {'m_yvernColorObj' (type UnityEngine.GameObject)} and 0
+		0x180632FBB: Jumps to 0x180632FCB (which throws a NRE) if m_yvernColorObj equals 0. Implicitly present in managed code, so ignored here.
+		0x180632FC0: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x180632FC6: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'m_yvernColorObj' (type UnityEngine.GameObject)} with arguments [True]
+
+		0x180632FC6: [!] Returns from the function
+
+		0x180632FCB: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuWindowScrollRoot
+	System.Void ActiveYVernColor()
+		UnityEngine.GameObject m_yvernColorObj = this.m_yvernColorObj
+
+		m_yvernColorObj.SetActive(True) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UnityEngine.GameObject MenuWindowScrollRoot::m_yvernColorObj
+	IL_0006: ldc.i4.1
+	IL_0007: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_000c: ret
+	IL_000d: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0012: throw
+	
+
+Method: System.Void MenuWindowScrollRoot::SetActivePouchSet(System.Boolean):	Method Body (x86 ASM):
+		0x1804640A0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1804640A4 mov rcx,[rcx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 40 | None ||| N/A | N/A
+		0x1804640A8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804640AB je short 00000001804640B9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804640AD xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804640B0 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1804640B4 jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804640B9 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804640BE int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MenuWindowScrollRoot::SetActivePouchSet(System.Boolean):
+		End of function at 0x1804640BF
+		Absolute End is at 0x1804640BF
+		Identified Jump Destination addresses:
+
+		0x1804640A4: [!] Reads field m_pouchSetObj from {'this' (function parameter, type MenuWindowScrollRoot)} and stores in a new local {'m_pouchSetObj' (type UnityEngine.GameObject)}
+
+		0x1804640A8: [!] Compares {'m_pouchSetObj' (type UnityEngine.GameObject)} and 0
+		0x1804640AB: Jumps to 0x1804640B9 (which throws a NRE) if m_pouchSetObj equals 0. Implicitly present in managed code, so ignored here.
+		0x1804640B4: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'m_pouchSetObj' (type UnityEngine.GameObject)} with arguments [{'isActive' (function parameter, type System.Boolean)}]
+
+		0x1804640B4: [!] Returns from the function
+
+		0x1804640B9: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuWindowScrollRoot
+	System.Void SetActivePouchSet(System.Boolean isActive)
+		UnityEngine.GameObject m_pouchSetObj = this.m_pouchSetObj
+
+		m_pouchSetObj.SetActive(isActive) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UnityEngine.GameObject MenuWindowScrollRoot::m_pouchSetObj
+	IL_0006: ldarg.1
+	IL_0007: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_000c: ret
+	IL_000d: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0012: throw
+	
+
+Method: System.Void MenuWindowScrollRoot::UpdatePouchSet():	Method Body (x86 ASM):
+		0x180633020 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x180633025 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180633026 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18063302A cmp byte ptr [18183F022h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467874850 | None ||| N/A | 0
+		0x180633031 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180633034 jne short 0000000180633048h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633036 mov ecx,[1814C3600h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464222720 | None ||| N/A | N/A
+		0x18063303C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633041 mov byte ptr [18183F022h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467874850 | None ||| N/A | 1
+		0x180633048 mov rcx,[181899D08h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468246792 | None ||| N/A | N/A
+		0x18063304F test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180633056 je short 0000000180633066h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633058 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18063305F jne short 0000000180633066h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633061 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633066 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180633068 mov [rsp+40h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 64 | None ||| N/A | N/A
+		0x18063306D call 0000000180400410h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633072 mov rcx,[181899D08h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468246792 | None ||| N/A | N/A
+		0x180633079 mov ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18063307B mov rdx,[rcx+0B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RCX | 184 | None ||| N/A | N/A
+		0x180633082 mov rcx,[rdx+90h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDX | 144 | None ||| N/A | N/A
+		0x180633089 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18063308C je near ptr 00000001806331FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633092 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180633094 call 000000018039B410h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633099 sub ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18063309B lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1806330A0 mov [rsp+50h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 80 | None ||| N/A | N/A
+		0x1806330A4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806330A6 mov rbx,[rdi+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 56 | None ||| N/A | N/A
+		0x1806330AA call 0000000180E86110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806330AF test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806330B2 je near ptr 00000001806331FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806330B8 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806330BB mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806330BE mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806330C1 call 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806330C6 mov rbx,[rdi+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x1806330CA xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806330CC call 0000000180400410h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806330D1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806330D3 mov [rsp+58h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 88 | None ||| N/A | N/A
+		0x1806330D7 lea rcx,[rsp+58h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 88 | None ||| N/A | N/A
+		0x1806330DC call 0000000180E86110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806330E1 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806330E4 je near ptr 00000001806331FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806330EA xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806330ED mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806330F0 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806330F3 call 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806330F8 mov ebx,[rsp+50h]		; DEBUG: {Register}/EBX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1806330FC xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806330FE call 0000000180400410h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633103 xor esi,esi		; DEBUG: {Register}/ESI {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x180633105 cmp ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x180633107 setge sil		; DEBUG: {Register}/SIL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18063310B mov rbx,[rdi+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 56 | None ||| N/A | N/A
+		0x18063310F xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180633111 call 000000018057C5C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633116 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180633119 je near ptr 00000001806331FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18063311F mov r9,[1818733B0h]		; DEBUG: {Register}/R9 {Memory}/None ||| RIP | 6468088752 | None ||| N/A | N/A
+		0x180633126 lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18063312B mov r8d,esi		; DEBUG: {Register}/R8D {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x18063312E mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180633131 call 000000018090A560h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633136 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180633139 je near ptr 00000001806331FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18063313F movups xmm0,[rsp+20h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x180633144 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180633147 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18063314C mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18063314F movdqa [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x180633155 call 0000000181198A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18063315A mov rbx,[rdi+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18063315E xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180633160 call 000000018057C5C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633165 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180633168 je near ptr 00000001806331FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18063316E mov r9,[1818733B0h]		; DEBUG: {Register}/R9 {Memory}/None ||| RIP | 6468088752 | None ||| N/A | N/A
+		0x180633175 lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18063317A mov r8d,esi		; DEBUG: {Register}/R8D {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x18063317D mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180633180 call 000000018090A560h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633185 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180633188 je short 00000001806331FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18063318A movups xmm0,[rsp+20h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18063318F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180633192 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x180633197 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18063319A movdqa [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1806331A0 call 0000000181198A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806331A5 mov rbx,[rdi+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 64 | None ||| N/A | N/A
+		0x1806331A9 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806331AB call 000000018057C5C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806331B0 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806331B3 je short 00000001806331FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806331B5 mov r9,[1818733B0h]		; DEBUG: {Register}/R9 {Memory}/None ||| RIP | 6468088752 | None ||| N/A | N/A
+		0x1806331BC lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806331C1 mov r8d,esi		; DEBUG: {Register}/R8D {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x1806331C4 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806331C7 call 000000018090A560h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806331CC test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806331CF je short 00000001806331FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806331D1 movups xmm0,[rsp+20h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806331D6 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806331D9 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1806331DE mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806331E1 movdqa [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1806331E7 call 0000000181198A80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806331EC mov rsi,[rsp+40h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1806331F1 mov rbx,[rsp+48h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x1806331F6 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1806331FA pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806331FB ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806331FC xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806331FE call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180633203 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MenuWindowScrollRoot::UpdatePouchSet():
+		End of function at 0x180633204
+		Absolute End is at 0x180633204
+		Identified Jump Destination addresses:
+
+		0x180633025: Saves the content of rdi to the stack
+		0x18063302A: Compares {Unknown Global at 0x18183F022, first ten bytes are [1 0 240 246 1 0 60 61 103 1], or as chars " ðö <=g"} and 0
+		0x180633031: Copies {'this' (function parameter, type MenuWindowScrollRoot)} from rcx into rdi
+		0x180633034: Jumps to 0x180633048 if {Unknown Global at 0x18183F022, first ten bytes are [1 0 240 246 1 0 60 61 103 1], or as chars " ðö <=g"} != 0
+
+		0x180633036: Loads string "þG" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18063303C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x180633048: Loads the type definition for managed type PlayerInfo as a constant "PlayerInfo" in rcx
+		0x18063304F: Compares "{il2cpp field on {'PlayerInfo' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180633056: Jumps to 0x180633066 if "{il2cpp field on {'PlayerInfo' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180633058: Compares "{il2cpp field on {'PlayerInfo' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18063305F: Jumps to 0x180633066 if "{il2cpp field on {'PlayerInfo' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180633061: Calls the il2cpp cctor for the type PlayerInfo
+		0x180633066: Clears register rcx, yielding zero-local {'local1' (type System.Int32)}
+		0x18063306D: [!] Calls static managed method System.Int32 PlayerInfo::GetItemPouchMaxNum() and stores the result in {'itemPouchMaxNum' (type System.Int32)}
+
+		0x180633072: Loads the type definition for managed type PlayerInfo as a constant "PlayerInfo" in rcx
+		0x180633079: Copies {'itemPouchMaxNum' (type System.Int32)} from rax into rbx
+		0x18063307B: Loads the pointer to the static fields for PlayerInfo and stores it in constant10 in register rdx
+		0x180633082: [!] Reads the static field ItemPouchInfo PlayerInfo::m_itemPouchInfo into new local m_itemPouchInfo
+		0x180633089: [!] Compares {'m_itemPouchInfo' (type ItemPouchInfo)} and 0
+		0x18063308C: Jumps to 0x1806331FC (which throws a NRE) if m_itemPouchInfo equals 0. Implicitly present in managed code, so ignored here.
+		0x180633094: [!] Calls managed method System.Int32 ItemPouchInfo::GetEmptyNum() on instance {'m_itemPouchInfo' (type ItemPouchInfo)} and stores the result in {'emptyNum' (type System.Int32)}
+
+		0x180633099: [!] Subtracts {'emptyNum' (type System.Int32)} from {'itemPouchMaxNum' (type System.Int32)} and stores the result in {'itemPouchMaxNum' (type System.Int32)}
+		0x18063309B: Loads a pointer to stack offset 0x50 into register rcx as new constant constant12
+		0x1806330A0: Moves itemPouchMaxNum (type System.Int32) from register rbx to the stack at offset 80 (0x50)
+		0x1806330A6: [!] Reads field m_pouchCurrentNum from {'this' (function parameter, type MenuWindowScrollRoot)} and stores in a new local {'m_pouchCurrentNum' (type UILabel)}
+
+		0x1806330AF: [!] Compares {'m_pouchCurrentNum' (type UILabel)} and 0
+		0x1806330B2: Jumps to 0x1806331FC (which throws a NRE) if m_pouchCurrentNum equals 0. Implicitly present in managed code, so ignored here.
+		0x1806330BB: Copies {'emptyNum' (type System.Int32)} from rax into rdx
+		0x1806330BE: Copies {'m_pouchCurrentNum' (type UILabel)} from rbx into rcx
+		0x1806330C1: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'m_pouchCurrentNum' (type UILabel)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806330C6: [!] Reads field m_pouchMaxNum from {'this' (function parameter, type MenuWindowScrollRoot)} and stores in a new local {'m_pouchMaxNum' (type UILabel)}
+
+		0x1806330CA: Clears register rcx, yielding zero-local {'local10' (type System.Int32)}
+		0x1806330CC: [!] Calls static managed method System.Int32 PlayerInfo::GetItemPouchMaxNum() and stores the result in {'itemPouchMaxNum2' (type System.Int32)}
+
+		0x1806330D3: Moves itemPouchMaxNum2 (type System.Int32) from register rax to the stack at offset 88 (0x58)
+		0x1806330D7: Loads a pointer to stack offset 0x58 into register rcx as new constant constant14
+		0x1806330E1: [!] Compares {'m_pouchMaxNum' (type UILabel)} and 0
+		0x1806330E4: Jumps to 0x1806331FC (which throws a NRE) if m_pouchMaxNum equals 0. Implicitly present in managed code, so ignored here.
+		0x1806330ED: Copies {'itemPouchMaxNum2' (type System.Int32)} from rax into rdx
+		0x1806330F0: Copies {'m_pouchMaxNum' (type UILabel)} from rbx into rcx
+		0x1806330F3: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'m_pouchMaxNum' (type UILabel)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806330F8: Reads local {'itemPouchMaxNum' (type System.Int32)} from stack offset 80 (0x50) into register rbx
+		0x1806330FC: Clears register rcx, yielding zero-local {'local14' (type System.Int32)}
+		0x1806330FE: [!] Calls static managed method System.Int32 PlayerInfo::GetItemPouchMaxNum() and stores the result in {'itemPouchMaxNum3' (type System.Int32)}
+
+		0x180633105: [!] Compares {'itemPouchMaxNum' (type System.Int32)} and {'itemPouchMaxNum3' (type System.Int32)}
+		0x180633107: [!] Sets the boolean {'local17' (type System.Boolean)} in rsi to true if itemPouchMaxNum is less than or equal itemPouchMaxNum3, otherwise false.
+		0x18063310B: [!] Reads field m_pouchCurrentNum from {'this' (function parameter, type MenuWindowScrollRoot)} and stores in a new local {'m_pouchCurrentNum2' (type UILabel)}
+
+		0x18063310F: Clears register rcx, yielding zero-local {'local19' (type System.Int32)}
+		0x180633111: [!] Calls static managed method ColorManager ColorManager::get_Instance() and stores the result in {'instance' (type ColorManager)}
+
+		0x180633116: [!] Compares {'instance' (type ColorManager)} and 0
+		0x180633119: Jumps to 0x1806331FC (which throws a NRE) if instance equals 0. Implicitly present in managed code, so ignored here.
+		0x18063311F: Loads the global generic method reference for method UnityEngine.Color ColorManager::GetColor<EOtherColor>(T) on type ColorManager and stores the result in constant {'GetColor' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r9
+		0x180633126: Loads a pointer to stack offset 0x20 into register rcx as new constant constant18
+		0x18063312B: Copies {'local17' (type System.Boolean)} from rsi into r8
+		0x18063312E: Copies {'instance' (type ColorManager)} from rax into rdx
+		0x180633131: [!] Calls managed method UnityEngine.Color ColorManager::GetColor<EOtherColor>(T) on instance  and stores the result in {'color' (type UnityEngine.Color)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation. - parameters do not match, but concrete method was resolved from a constant in a register.
+
+		0x180633136: [!] Compares {'m_pouchCurrentNum2' (type UILabel)} and 0
+		0x180633139: Jumps to 0x1806331FC (which throws a NRE) if m_pouchCurrentNum2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18063313F: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm0 as new constant constant20
+		0x180633147: Loads a pointer to stack offset 0x20 into register rdx as new constant constant21
+		0x18063314C: Copies {'m_pouchCurrentNum2' (type UILabel)} from rbx into rcx
+		0x18063314F: Moves constant20 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register xmm0 to the stack at offset 32 (0x20) as a new local local23
+		0x180633155: [!] Calls managed method System.Void UIWidget::set_color(UnityEngine.Color) on instance {'m_pouchCurrentNum2' (type UILabel)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x18063315A: [!] Reads field m_pouchMaxNum from {'this' (function parameter, type MenuWindowScrollRoot)} and stores in a new local {'m_pouchMaxNum2' (type UILabel)}
+
+		0x18063315E: Clears register rcx, yielding zero-local {'local25' (type System.Int32)}
+		0x180633160: [!] Calls static managed method ColorManager ColorManager::get_Instance() and stores the result in {'instance2' (type ColorManager)}
+
+		0x180633165: [!] Compares {'instance2' (type ColorManager)} and 0
+		0x180633168: Jumps to 0x1806331FC (which throws a NRE) if instance2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18063316E: Loads the global generic method reference for method UnityEngine.Color ColorManager::GetColor<EOtherColor>(T) on type ColorManager and stores the result in constant {'GetColor' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r9
+		0x180633175: Loads a pointer to stack offset 0x20 into register rcx as new constant constant24
+		0x18063317A: Copies {'local17' (type System.Boolean)} from rsi into r8
+		0x18063317D: Copies {'instance2' (type ColorManager)} from rax into rdx
+		0x180633180: [!] Calls managed method UnityEngine.Color ColorManager::GetColor<EOtherColor>(T) on instance  and stores the result in {'color2' (type UnityEngine.Color)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation. - parameters do not match, but concrete method was resolved from a constant in a register.
+
+		0x180633185: [!] Compares {'m_pouchMaxNum2' (type UILabel)} and 0
+		0x180633188: Jumps to 0x1806331FC (which throws a NRE) if m_pouchMaxNum2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18063318A: Reads local {'local23' (type )} from stack offset 32 (0x20) into register xmm0
+		0x180633192: Loads a pointer to stack offset 0x20 into register rdx as new constant constant26
+		0x180633197: Copies {'m_pouchMaxNum2' (type UILabel)} from rbx into rcx
+		0x18063319A: Moves local23 (type ) from register xmm0 to the stack at offset 32 (0x20)
+		0x1806331A0: [!] Calls managed method System.Void UIWidget::set_color(UnityEngine.Color) on instance {'m_pouchMaxNum2' (type UILabel)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806331A5: [!] Reads field m_pouchSlash from {'this' (function parameter, type MenuWindowScrollRoot)} and stores in a new local {'m_pouchSlash' (type UILabel)}
+
+		0x1806331A9: Clears register rcx, yielding zero-local {'local30' (type System.Int32)}
+		0x1806331AB: [!] Calls static managed method ColorManager ColorManager::get_Instance() and stores the result in {'instance3' (type ColorManager)}
+
+		0x1806331B0: [!] Compares {'instance3' (type ColorManager)} and 0
+		0x1806331B3: Jumps to 0x1806331FC (which throws a NRE) if instance3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1806331B5: Loads the global generic method reference for method UnityEngine.Color ColorManager::GetColor<EOtherColor>(T) on type ColorManager and stores the result in constant {'GetColor' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r9
+		0x1806331BC: Loads a pointer to stack offset 0x20 into register rcx as new constant constant29
+		0x1806331C1: Copies {'local17' (type System.Boolean)} from rsi into r8
+		0x1806331C4: Copies {'instance3' (type ColorManager)} from rax into rdx
+		0x1806331C7: [!] Calls managed method UnityEngine.Color ColorManager::GetColor<EOtherColor>(T) on instance  and stores the result in {'color3' (type UnityEngine.Color)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation. - parameters do not match, but concrete method was resolved from a constant in a register.
+
+		0x1806331CC: [!] Compares {'m_pouchSlash' (type UILabel)} and 0
+		0x1806331CF: Jumps to 0x1806331FC (which throws a NRE) if m_pouchSlash equals 0. Implicitly present in managed code, so ignored here.
+		0x1806331D1: Reads local {'local23' (type )} from stack offset 32 (0x20) into register xmm0
+		0x1806331D9: Loads a pointer to stack offset 0x20 into register rdx as new constant constant31
+		0x1806331DE: Copies {'m_pouchSlash' (type UILabel)} from rbx into rcx
+		0x1806331E1: Moves local23 (type ) from register xmm0 to the stack at offset 32 (0x20)
+		0x1806331E7: [!] Calls managed method System.Void UIWidget::set_color(UnityEngine.Color) on instance {'m_pouchSlash' (type UILabel)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1806331EC: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rsi as new constant constant32
+		0x1806331F1: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rbx as new constant constant33
+		0x1806331FB: [!] Returns from the function
+
+		0x1806331FE: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuWindowScrollRoot
+	System.Void UpdatePouchSet()
+		ulong local1 = 0
+
+		System.Int32 itemPouchMaxNum = PlayerInfo.GetItemPouchMaxNum()
+		ItemPouchInfo m_itemPouchInfo = PlayerInfo.m_itemPouchInfo
+
+		System.Int32 emptyNum = m_itemPouchInfo.GetEmptyNum()
+		itemPouchMaxNum -= emptyNum
+		UILabel m_pouchCurrentNum = this.m_pouchCurrentNum
+
+		m_pouchCurrentNum.set_text()
+		UILabel m_pouchMaxNum = this.m_pouchMaxNum
+		ulong local10 = 0
+
+		System.Int32 itemPouchMaxNum2 = PlayerInfo.GetItemPouchMaxNum()
+
+		m_pouchMaxNum.set_text()
+		ulong local14 = 0
+
+		System.Int32 itemPouchMaxNum3 = PlayerInfo.GetItemPouchMaxNum()
+		System.Boolean local17 = itemPouchMaxNum <= itemPouchMaxNum3
+		UILabel m_pouchCurrentNum2 = this.m_pouchCurrentNum
+		ulong local19 = 0
+
+		ColorManager instance = ColorManager.Instance
+
+		UnityEngine.Color color = .GetColor<EOtherColor>()
+
+		m_pouchCurrentNum2.set_color()
+		UILabel m_pouchMaxNum2 = this.m_pouchMaxNum
+		ulong local25 = 0
+
+		ColorManager instance2 = ColorManager.Instance
+
+		UnityEngine.Color color2 = .GetColor<EOtherColor>()
+
+		m_pouchMaxNum2.set_color()
+		UILabel m_pouchSlash = this.m_pouchSlash
+		ulong local30 = 0
+
+		ColorManager instance3 = ColorManager.Instance
+
+		UnityEngine.Color color3 = .GetColor<EOtherColor>()
+
+		m_pouchSlash.set_color()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1806330C1) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (1)) and cannot be created as IL. Aborting here.
+
+

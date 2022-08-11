@@ -1,0 +1,897 @@
+Type: ScriptCommandThunderActive
+
+Method: System.Void ScriptCommandThunderActive::.ctor():	Method Body (x86 ASM):
+		0x18025F090 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18025F092 jmp near ptr 0000000180203000h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18025F097 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ScriptCommandThunderActive::.ctor():
+		End of function at 0x18025F098
+		Absolute End is at 0x18025F098
+		Identified Jump Destination addresses:
+
+		0x18025F092: [!] Calls managed method System.Void UnityEngine.EventSystems.UIBehaviour::.ctor() on instance {'this' (function parameter, type ScriptCommandThunderActive)}
+
+		0x18025F092: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ScriptCommandThunderActive
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.EventSystems.UIBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean ScriptCommandThunderActive::ExecCommand():	Method Body (x86 ASM):
+		0x180564ED0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180564ED2 sub rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x180564ED6 movaps [rsp+30h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 48 | None ||| N/A | N/A
+		0x180564EDB mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180564EDE movss xmm6,dword ptr [rcx+1Ch]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RCX | 28 | None ||| N/A | N/A
+		0x180564EE3 movaps [rsp+20h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 32 | None ||| N/A | N/A
+		0x180564EE8 xorps xmm7,xmm7		; DEBUG: {Register}/XMM7 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x180564EEB comiss xmm6,xmm7		; DEBUG: {Register}/XMM6 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x180564EEE jb short 0000000180564F00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180564EF0 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180564EF2 call 0000000180CDF9F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180564EF7 subss xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x180564EFB movss dword ptr [rbx+1Ch],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBX | 28 | None ||| N/A | N/A
+		0x180564F00 comiss xmm7,xmm6		; DEBUG: {Register}/XMM7 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x180564F03 movaps xmm6,[rsp+30h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x180564F08 movaps xmm7,[rsp+20h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x180564F0D setb al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180564F10 add rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x180564F14 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180564F15 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180564F16 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean ScriptCommandThunderActive::ExecCommand():
+		End of function at 0x180564F17
+		Absolute End is at 0x180564F17
+		Identified Jump Destination addresses:
+
+		0x180564ED0: Saves the content of rbx to the stack
+		0x180564EDB: Copies {'this' (function parameter, type ScriptCommandThunderActive)} from rcx into rbx
+		0x180564EDE: [!] Reads field m_waitTime from {'this' (function parameter, type ScriptCommandThunderActive)} and stores in a new local {'m_waitTime' (type System.Single)}
+
+		0x180564EE8: Clears register xmm7, yielding zero-local {'local2' (type System.Int32)}
+		0x180564EEB: [!] Compares {'m_waitTime' (type System.Single)} and {'local2' (type System.Int32)}
+		0x180564EF0: Clears register rcx, yielding zero-local {'local3' (type System.Int32)}
+		0x180564EF2: [!] Calls static managed method System.Single UnityEngine.Time::get_deltaTime() and stores the result in {'deltaTime' (type System.Single)}
+
+		0x180564EFB: [!] Sets the field m_waitTime (Type System.Single) on local {'this' (function parameter, type ScriptCommandThunderActive)} to the value stored in {'m_waitTime' (type System.Single)}
+		0x180564F00: [!] Compares {'local2' (type System.Int32)} and {'m_waitTime' (type System.Single)}
+		0x180564F03: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register xmm6 as new constant constant1
+		0x180564F08: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm7 as new constant constant2
+		0x180564F15: [!] Returns  from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ScriptCommandThunderActive
+	System.Boolean ExecCommand()
+		System.Single m_waitTime = this.m_waitTime
+		ulong local2 = 0
+		ulong local3 = 0
+
+		System.Single deltaTime = UnityEngine.Time.deltaTime
+		this.m_waitTime = m_waitTime
+		return 
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x180564F15) is corrupt (Return value is missing) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void ScriptCommandThunderActive::Init(System.String[],ScriptDemoSceneManager):	Method Body (x86 ASM):
+		0x180565D70 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x180565D75 mov [rsp+18h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 24 | None ||| N/A | N/A
+		0x180565D7A push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180565D7B sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180565D7F cmp byte ptr [18183EB24h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873572 | None ||| N/A | 0
+		0x180565D86 mov rbx,r8		; DEBUG: {Register}/RBX {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x180565D89 mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x180565D8C mov rbp,rcx		; DEBUG: {Register}/RBP {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180565D8F jne short 0000000180565DA3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565D91 mov ecx,[1814B9EB0h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464183984 | None ||| N/A | N/A
+		0x180565D97 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565D9C mov byte ptr [18183EB24h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873572 | None ||| N/A | 1
+		0x180565DA3 mov [rsp+30h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 48 | None ||| N/A | N/A
+		0x180565DA8 mov [rbp+20h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RBP | 32 | None ||| N/A | N/A
+		0x180565DAC test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180565DAF je near ptr 000000018056612Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565DB5 cmp dword ptr [rdi+18h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RDI | 24 | None ||| N/A | 0
+		0x180565DB9 jbe near ptr 0000000180566132h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565DBF mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x180565DC6 mov rbx,[rdi+20h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x180565DCA test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180565DD1 je short 0000000180565DE1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565DD3 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180565DDA jne short 0000000180565DE1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565DDC call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565DE1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180565DE3 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180565DE6 call 0000000180D512F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565DEB test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180565DED jne near ptr 00000001805660FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565DF3 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x180565DFA test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180565E01 je short 0000000180565E11h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E03 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180565E0A jne short 0000000180565E11h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E0C call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E11 mov rcx,[181870490h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468076688 | None ||| N/A | N/A
+		0x180565E18 call 000000018090D630h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E1D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180565E1F mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180565E22 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180565E25 call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E2A test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180565E2C je near ptr 0000000180565F1Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E32 cmp dword ptr [rdi+18h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RDI | 24 | None ||| N/A | 0
+		0x180565E36 jbe near ptr 0000000180566145h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E3C mov rsi,[rdi+20h]		; DEBUG: {Register}/RSI {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x180565E40 test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180565E43 je near ptr 0000000180565EEEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E49 mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x180565E50 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180565E57 je short 0000000180565E67h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E59 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180565E60 jne short 0000000180565E67h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E62 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E67 mov rdx,[181889B40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468180800 | None ||| N/A | N/A
+		0x180565E6E xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180565E71 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180565E74 call 0000000180D56230h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E79 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180565E7B je short 0000000180565E98h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E7D test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180565E80 je near ptr 000000018056612Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E86 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180565E89 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x180565E8B mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180565E8E call 00000001804B5520h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E93 jmp near ptr 0000000180565F1Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565E98 mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x180565E9F test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180565EA6 je short 0000000180565EB6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565EA8 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180565EAF jne short 0000000180565EB6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565EB1 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565EB6 mov rdx,[181889B68h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468180840 | None ||| N/A | N/A
+		0x180565EBD xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180565EC0 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180565EC3 call 0000000180D56230h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565EC8 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180565ECA je short 0000000180565EEEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565ECC test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180565ECF je near ptr 000000018056612Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565ED5 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180565ED8 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180565EDA mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180565EDD call 00000001804B5520h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565EE2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180565EE4 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180565EE7 call 00000001804B4BB0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565EEC jmp short 0000000180565F1Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565EEE mov rcx,[18188D688h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468195976 | None ||| N/A | N/A
+		0x180565EF5 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180565EFC je short 0000000180565F0Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565EFE cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180565F05 jne short 0000000180565F0Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565F07 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565F0C mov rcx,[181888D00h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468177152 | None ||| N/A | N/A
+		0x180565F13 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180565F15 call 0000000180B2C440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565F1A mov dword ptr [rbp+1Ch],0		; DEBUG: {Memory}/None {Immediate32}/None ||| RBP | 28 | None ||| N/A | 0
+		0x180565F21 mov edx,6		; DEBUG: {Register}/EDX {Immediate32}/None ||| None | 0 | None ||| N/A | 6
+		0x180565F26 mov rcx,[181884ED8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468161240 | None ||| N/A | N/A
+		0x180565F2D call 0000000180141320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565F32 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180565F35 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180565F38 je near ptr 000000018056612Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565F3E mov rax,[181888D10h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468177168 | None ||| N/A | N/A
+		0x180565F45 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180565F48 je short 0000000180565F69h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565F4A mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x180565F4D mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180565F50 mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x180565F54 call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565F59 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180565F5C je near ptr 0000000180566158h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565F62 mov rax,[181888D10h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468177168 | None ||| N/A | N/A
+		0x180565F69 cmp dword ptr [rbx+18h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 0
+		0x180565F6D jbe near ptr 000000018056616Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565F73 mov [rbx+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 32 | None ||| N/A | N/A
+		0x180565F77 cmp dword ptr [rdi+18h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RDI | 24 | None ||| N/A | 0
+		0x180565F7B jbe near ptr 000000018056617Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565F81 mov rsi,[rdi+20h]		; DEBUG: {Register}/RSI {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x180565F85 test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180565F88 je short 0000000180565FA2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565F8A mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x180565F8D mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180565F90 mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x180565F94 call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565F99 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180565F9C je near ptr 0000000180566191h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565FA2 cmp dword ptr [rbx+18h],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 1
+		0x180565FA6 jbe near ptr 00000001805661A4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565FAC mov [rbx+28h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RBX | 40 | None ||| N/A | N/A
+		0x180565FB0 mov rax,[18185AF30h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6467989296 | None ||| N/A | N/A
+		0x180565FB7 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180565FBA je short 0000000180565FDBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565FBC mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x180565FBF mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180565FC2 mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x180565FC6 call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565FCB test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180565FCE je near ptr 00000001805661B7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565FD4 mov rax,[18185AF30h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6467989296 | None ||| N/A | N/A
+		0x180565FDB cmp dword ptr [rbx+18h],2		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 2
+		0x180565FDF jbe near ptr 00000001805661CAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565FE5 mov [rbx+30h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 48 | None ||| N/A | N/A
+		0x180565FE9 cmp dword ptr [rdi+18h],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RDI | 24 | None ||| N/A | 1
+		0x180565FED jbe near ptr 00000001805661DDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565FF3 mov rsi,[rdi+28h]		; DEBUG: {Register}/RSI {Memory}/None ||| RDI | 40 | None ||| N/A | N/A
+		0x180565FF7 test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180565FFA je short 0000000180566014h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180565FFC mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x180565FFF mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180566002 mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x180566006 call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18056600B test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18056600E je near ptr 00000001805661F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566014 cmp dword ptr [rbx+18h],3		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 3
+		0x180566018 jbe near ptr 0000000180566203h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18056601E mov [rbx+38h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RBX | 56 | None ||| N/A | N/A
+		0x180566022 mov rax,[18185AF30h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6467989296 | None ||| N/A | N/A
+		0x180566029 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18056602C je short 000000018056604Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18056602E mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x180566031 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180566034 mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x180566038 call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18056603D test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180566040 je near ptr 0000000180566216h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566046 mov rax,[18185AF30h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6467989296 | None ||| N/A | N/A
+		0x18056604D cmp dword ptr [rbx+18h],4		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 4
+		0x180566051 jbe near ptr 0000000180566229h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566057 mov [rbx+40h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 64 | None ||| N/A | N/A
+		0x18056605B cmp dword ptr [rdi+18h],2		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RDI | 24 | None ||| N/A | 2
+		0x18056605F jbe near ptr 000000018056623Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566065 mov rdi,[rdi+30h]		; DEBUG: {Register}/RDI {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x180566069 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18056606C je short 0000000180566086h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18056606E mov rdx,[rbx]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x180566071 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180566074 mov rdx,[rdx+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDX | 64 | None ||| N/A | N/A
+		0x180566078 call 000000018013AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18056607D test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180566080 je near ptr 000000018056624Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566086 cmp dword ptr [rbx+18h],5		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 5
+		0x18056608A jbe near ptr 0000000180566262h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566090 mov [rbx+48h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 72 | None ||| N/A | N/A
+		0x180566094 mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x18056609B test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1805660A2 je short 00000001805660B2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805660A4 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1805660AB jne short 00000001805660B2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805660AD call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805660B2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805660B4 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805660B7 call 0000000180D4CCE0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805660BC mov rcx,[18188D688h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468195976 | None ||| N/A | N/A
+		0x1805660C3 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805660C6 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1805660CD je short 00000001805660DDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805660CF cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1805660D6 jne short 00000001805660DDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805660D8 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805660DD xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805660DF mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805660E2 call 0000000180B2C5F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805660E7 mov rsi,[rsp+30h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1805660EC mov rbx,[rsp+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x1805660F1 mov rbp,[rsp+40h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1805660F6 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1805660FA pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805660FB ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805660FC mov rcx,[18188D688h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468195976 | None ||| N/A | N/A
+		0x180566103 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18056610A je short 000000018056611Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18056610C cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180566113 jne short 000000018056611Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566115 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18056611A mov rcx,[181888D00h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468177152 | None ||| N/A | N/A
+		0x180566121 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180566123 call 0000000180B2C440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566128 jmp short 00000001805660E7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18056612A xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18056612C call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566131 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180566158 call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18056615D mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180566160 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180566163 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180566165 call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18056616A int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180566191 call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566196 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180566199 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18056619C xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18056619E call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805661A3 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805661B7 call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805661BC mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805661BF xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805661C2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805661C4 call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805661C9 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805661F0 call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805661F5 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805661F8 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805661FB xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805661FD call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566202 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180566216 call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18056621B mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18056621E xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180566221 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180566223 call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566228 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18056624F call 00000001800580A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566254 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180566257 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18056625A xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18056625C call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566261 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ScriptCommandThunderActive::Init(System.String[],ScriptDemoSceneManager):
+		End of function at 0x180566262
+		Absolute End is at 0x180566262
+		Identified Jump Destination addresses:
+			0x180565F1A
+		0x180565D7A: Saves the content of rdi to the stack
+		0x180565D7F: Compares {Unknown Global at 0x18183EB24, first ten bytes are [192 60 103 1 144 203 1 0 204 203], or as chars "À<gË ÌË"} and 0
+		0x180565D86: Copies {'manager' (function parameter, type ScriptDemoSceneManager)} from r8 into rbx
+		0x180565D89: Copies {'arg' (function parameter, type System.String[])} from rdx into rdi
+		0x180565D8C: Copies {'this' (function parameter, type ScriptCommandThunderActive)} from rcx into rbp
+		0x180565D8F: Jumps to 0x180565DA3 if {Unknown Global at 0x18183EB24, first ten bytes are [192 60 103 1 144 203 1 0 204 203], or as chars "À<gË ÌË"} != 0
+
+		0x180565D91: Reads {Unknown Global at 0x1814B9EB0, first ten bytes are [185 95 0 0 185 63 0 0 185 127], or as chars "¹_  ¹?  ¹"} into register rcx as a constant constant3
+		0x180565D97: Attempts to load the il2cpp metadata for this method (method id 24505) and init it cpp-side.
+
+		0x180565DA8: [!] Sets the field m_manager (Type ScriptDemoSceneManager) on local {'this' (function parameter, type ScriptCommandThunderActive)} to the value stored in {'manager' (function parameter, type ScriptDemoSceneManager)}
+		0x180565DAC: [!] Compares {'arg' (function parameter, type System.String[])} and 0
+		0x180565DAF: Jumps to 0x18056612A (which throws a NRE) if arg equals 0. Implicitly present in managed code, so ignored here.
+		0x180565DB5: [!] Compares {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} and 0
+		0x180565DB9: Jumps to 0x180566132 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} is less than or equal to 0. Implicitly present in managed code, so ignored here.
+		0x180565DBF: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x180565DC6: [!] Reads a value from the array {'arg' (function parameter, type System.String[])} at index 0, into a new local {'local3' (type System.String)}
+
+		0x180565DCA: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180565DD1: Jumps to 0x180565DE1 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180565DD3: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180565DDA: Jumps to 0x180565DE1 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180565DDC: Calls the il2cpp cctor for the type System.String
+		0x180565DE3: Copies {'local3' (type System.String)} from rbx into rcx
+		0x180565DE6: [!] Calls static managed method System.Boolean System.String::IsNullOrEmpty(System.String) with arguments [{'local3' (type System.String)}] and stores the result in {'isNullOrEmpty' (type System.Boolean)}
+
+		0x180565DEB: [!] Compares {'isNullOrEmpty' (type System.Boolean)} and False
+		0x180565DED: Jumps to 0x1805660FC (which is an if statement's body) if {'isNullOrEmpty' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180565DF3: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x180565DFA: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180565E01: Jumps to 0x180565E11 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180565E03: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180565E0A: Jumps to 0x180565E11 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180565E0C: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x180565E11: Loads the global generic method reference for method T UnityEngine.Object::FindObjectOfType<InterrogationSceneSetup>() on type UnityEngine.Object and stores the result in constant {'FindObjectOfType' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rcx
+		0x180565E18: [!] Calls static managed method T UnityEngine.Object::FindObjectOfType<InterrogationSceneSetup>() and stores the result in {'interrogationSceneSetup' (type InterrogationSceneSetup)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x180565E1F: Copies {'interrogationSceneSetup' (type InterrogationSceneSetup)} from rax into rcx
+		0x180565E22: Copies {'interrogationSceneSetup' (type InterrogationSceneSetup)} from rax into rbx
+		0x180565E25: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'interrogationSceneSetup' (type InterrogationSceneSetup)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x180565E2A: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x180565E2C: Jumps to 0x180565F1A (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180565E32: [!] Compares {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} and 0
+		0x180565E36: Jumps to 0x180566145 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} is less than or equal to 0. Implicitly present in managed code, so ignored here.
+		0x180565E3C: [!] Reads a value from the array {'arg' (function parameter, type System.String[])} at index 0, into a new local {'local9' (type System.String)}
+
+		0x180565E40: [!] Compares {'local9' (type System.String)} and 0
+		0x180565E43: Jumps to 0x180565EEE if local9 equals 0 ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x180565E49: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x180565E50: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180565E57: Jumps to 0x180565E67 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180565E59: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180565E60: Jumps to 0x180565E67 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180565E62: Calls the il2cpp cctor for the type System.String
+		0x180565E67: Loads the string literal "有効" as a constant "constant26" in rdx
+		0x180565E71: Copies {'local9' (type System.String)} from rsi into rcx
+		0x180565E74: [!] Calls static managed method System.Boolean System.String::op_Equality(System.String,System.String) with arguments [{'local9' (type System.String)}, "有効"] and stores the result in {'boolean2' (type System.Boolean)}
+
+		0x180565E79: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x180565E7B: Jumps to 0x180565E98 if boolean2 equals False ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x180565E7D: [!] Compares {'interrogationSceneSetup' (type InterrogationSceneSetup)} and 0
+		0x180565E80: Jumps to 0x18056612A (which throws a NRE) if interrogationSceneSetup equals 0. Implicitly present in managed code, so ignored here.
+		0x180565E89: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x180565E8B: Copies {'interrogationSceneSetup' (type InterrogationSceneSetup)} from rbx into rcx
+		0x180565E8E: [!] Calls managed method System.Void InterrogationSceneSetup::SetActiveThunderLot(System.Boolean) on instance {'interrogationSceneSetup' (type InterrogationSceneSetup)} with arguments [True]
+
+		0x180565E93: Jumps to 0x180565F1A (which is an function-local jump destination)
+
+		0x180565E98: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x180565E9F: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180565EA6: Jumps to 0x180565EB6 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180565EA8: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180565EAF: Jumps to 0x180565EB6 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180565EB1: Calls the il2cpp cctor for the type System.String
+		0x180565EB6: Loads the string literal "無効" as a constant "constant35" in rdx
+		0x180565EC0: Copies {'local9' (type System.String)} from rsi into rcx
+		0x180565EC3: [!] Calls static managed method System.Boolean System.String::op_Equality(System.String,System.String) with arguments [{'local9' (type System.String)}, "無効"] and stores the result in {'boolean3' (type System.Boolean)}
+
+		0x180565EC8: [!] Compares {'boolean3' (type System.Boolean)} and False
+		0x180565ECA: Jumps to 0x180565EEE if boolean3 equals False ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x180565ECC: [!] Compares {'interrogationSceneSetup' (type InterrogationSceneSetup)} and 0
+		0x180565ECF: Jumps to 0x18056612A (which throws a NRE) if interrogationSceneSetup equals 0. Implicitly present in managed code, so ignored here.
+		0x180565ED8: Clears register rdx, yielding zero-local {'local16' (type System.Int32)}
+		0x180565EDA: Copies {'interrogationSceneSetup' (type InterrogationSceneSetup)} from rbx into rcx
+		0x180565EDD: [!] Calls managed method System.Void InterrogationSceneSetup::SetActiveThunderLot(System.Boolean) on instance {'interrogationSceneSetup' (type InterrogationSceneSetup)} with arguments [{'local16' (type System.Int32)}]
+
+		0x180565EE4: Copies {'interrogationSceneSetup' (type InterrogationSceneSetup)} from rbx into rcx
+		0x180565EE7: [!] Calls managed method System.Void InterrogationSceneSetup::ForceStopCloudyThunder() on instance {'interrogationSceneSetup' (type InterrogationSceneSetup)}
+
+		0x180565EEC: Jumps to 0x180565F1A (which is an function-local jump destination)
+
+		0x180565EEE: Loads the type definition for managed type UnityEngine.Debug as a constant "Debug" in rcx
+		0x180565EF5: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180565EFC: Jumps to 0x180565F0C if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180565EFE: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180565F05: Jumps to 0x180565F0C if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180565F07: Calls the il2cpp cctor for the type UnityEngine.Debug
+		0x180565F0C: Loads the string literal "指定がおかしい" as a constant "constant43" in rcx
+		0x180565F15: [!] Calls static managed method System.Void UnityEngine.Debug::LogWarning(System.Object) with arguments ["指定がおかしい"]
+
+
+		End Of If-Else Block (at 0x180565F1A) where the else started at 0x180565EEE
+		0x180565F21: [!] Writes the constant 0x6 into operand 6 (type UInt64) in register rdx
+		0x180565F26: Loads the type definition for managed type System.String[] as a constant "String[]" in rcx
+		0x180565F2D: [!] Allocates an array of type System.String[] of size 6 and stores the result as local19 in register rax
+
+		0x180565F32: Copies {'local19' (type System.String[])} from rax into rbx
+		0x180565F35: [!] Compares {'local19' (type System.String[])} and 0
+		0x180565F38: Jumps to 0x18056612A (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x180565F3E: Loads the string literal "Init : " as a constant "constant47" in rax
+		0x180565F45: [!] Compares "Init : " and 0
+		0x180565F48: Jumps to 0x180565F69 if "Init : " equals 0 ;  - This is probably a goto, jumping to 0x180565F69 which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x180565F4A: Loads the class pointer from local19 into a constant constant49 in register rdx
+		0x180565F4D: Copies "Init : " from rax into rcx
+		0x180565F50: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x180565F59: [!] Compares "Init : " and 0
+		0x180565F5C: Jumps to 0x180566158 if "Init : " equals 0 ;  - This is probably a goto, jumping to 0x180566158 which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x180565F62: Loads the string literal "Init : " as a constant "constant51" in rax
+		0x180565F69: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.String[])}} and 0
+		0x180565F6D: Jumps to 0x18056616B (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.String[])}} is less than or equal to 0. Implicitly present in managed code, so ignored here.
+		0x180565F73: Sets the value at offset 0 in array local19 to "Init : "
+		0x180565F77: [!] Compares {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} and 0
+		0x180565F7B: Jumps to 0x18056617E (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} is less than or equal to 0. Implicitly present in managed code, so ignored here.
+		0x180565F81: [!] Reads a value from the array {'arg' (function parameter, type System.String[])} at index 0, into a new local {'local20' (type System.String)}
+
+		0x180565F85: [!] Compares {'local20' (type System.String)} and 0
+		0x180565F88: Jumps to 0x180565FA2 if local20 equals 0 ;  - This is probably a goto, jumping to 0x180565FA2 which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x180565F8A: Loads the class pointer from local19 into a constant constant55 in register rdx
+		0x180565F8D: Copies {'local20' (type System.String)} from rsi into rcx
+		0x180565F90: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x180565F99: [!] Compares "Init : " and 0
+		0x180565F9C: Jumps to 0x180566191 if "Init : " equals 0 ;  - This is probably a goto, jumping to 0x180566191 which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x180565FA2: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.String[])}} and 1
+		0x180565FA6: Jumps to 0x1805661A4 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.String[])}} is less than or equal to 1. Implicitly present in managed code, so ignored here.
+		0x180565FAC: Sets the value at offset 1 in array local19 to {'local20' (type System.String)}
+		0x180565FB0: Loads the string literal " : " as a constant "constant58" in rax
+		0x180565FB7: [!] Compares " : " and 0
+		0x180565FBA: Jumps to 0x180565FDB if " : " equals 0 ;  - This is probably a goto, jumping to 0x180565FDB which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x180565FBC: Loads the class pointer from local19 into a constant constant60 in register rdx
+		0x180565FBF: Copies " : " from rax into rcx
+		0x180565FC2: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x180565FCB: [!] Compares " : " and 0
+		0x180565FCE: Jumps to 0x1805661B7 if " : " equals 0 ;  - This is probably a goto, jumping to 0x1805661B7 which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x180565FD4: Loads the string literal " : " as a constant "constant62" in rax
+		0x180565FDB: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.String[])}} and 2
+		0x180565FDF: Jumps to 0x1805661CA (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.String[])}} is less than or equal to 2. Implicitly present in managed code, so ignored here.
+		0x180565FE5: Sets the value at offset 2 in array local19 to " : "
+		0x180565FE9: [!] Compares {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} and 1
+		0x180565FED: Jumps to 0x1805661DD (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} is less than or equal to 1. Implicitly present in managed code, so ignored here.
+		0x180565FF3: [!] Reads a value from the array {'arg' (function parameter, type System.String[])} at index 1, into a new local {'local21' (type System.String)}
+
+		0x180565FF7: [!] Compares {'local21' (type System.String)} and 0
+		0x180565FFA: Jumps to 0x180566014 if local21 equals 0 ;  - This is probably a goto, jumping to 0x180566014 which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x180565FFC: Loads the class pointer from local19 into a constant constant66 in register rdx
+		0x180565FFF: Copies {'local21' (type System.String)} from rsi into rcx
+		0x180566002: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x18056600B: [!] Compares " : " and 0
+		0x18056600E: Jumps to 0x1805661F0 if " : " equals 0 ;  - This is probably a goto, jumping to 0x1805661F0 which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x180566014: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.String[])}} and 3
+		0x180566018: Jumps to 0x180566203 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.String[])}} is less than or equal to 3. Implicitly present in managed code, so ignored here.
+		0x18056601E: Sets the value at offset 3 in array local19 to {'local21' (type System.String)}
+		0x180566022: Loads the string literal " : " as a constant "constant69" in rax
+		0x180566029: [!] Compares " : " and 0
+		0x18056602C: Jumps to 0x18056604D if " : " equals 0 ;  - This is probably a goto, jumping to 0x18056604D which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x18056602E: Loads the class pointer from local19 into a constant constant71 in register rdx
+		0x180566031: Copies " : " from rax into rcx
+		0x180566034: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x18056603D: [!] Compares " : " and 0
+		0x180566040: Jumps to 0x180566216 if " : " equals 0 ;  - This is probably a goto, jumping to 0x180566216 which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x180566046: Loads the string literal " : " as a constant "constant73" in rax
+		0x18056604D: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.String[])}} and 4
+		0x180566051: Jumps to 0x180566229 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.String[])}} is less than or equal to 4. Implicitly present in managed code, so ignored here.
+		0x180566057: Sets the value at offset 4 in array local19 to " : "
+		0x18056605B: [!] Compares {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} and 2
+		0x18056605F: Jumps to 0x18056623C (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} is less than or equal to 2. Implicitly present in managed code, so ignored here.
+		0x180566065: [!] Reads a value from the array {'arg' (function parameter, type System.String[])} at index 2, into a new local {'local22' (type System.String)}
+
+		0x180566069: [!] Compares {'local22' (type System.String)} and 0
+		0x18056606C: Jumps to 0x180566086 if local22 equals 0 ;  - This is probably a goto, jumping to 0x180566086 which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x18056606E: Loads the class pointer from local19 into a constant constant77 in register rdx
+		0x180566071: Copies {'local22' (type System.String)} from rdi into rcx
+		0x180566074: Reads the element type from the class pointer Il2CppTypeDefinition[namespace='System', name='String', parentType=System.Object] and stores in register rdx
+		0x18056607D: [!] Compares " : " and 0
+		0x180566080: Jumps to 0x18056624F if " : " equals 0 ;  - This is probably a goto, jumping to 0x18056624F which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x180566086: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.String[])}} and 5
+		0x18056608A: Jumps to 0x180566262 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.String[])}} is less than or equal to 5. Implicitly present in managed code, so ignored here.
+		0x180566090: Sets the value at offset 5 in array local19 to {'local22' (type System.String)}
+		0x180566094: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x18056609B: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1805660A2: Jumps to 0x1805660B2 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1805660B2 which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x1805660A4: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1805660AB: Jumps to 0x1805660B2 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1805660B2 which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x1805660AD: Calls the il2cpp cctor for the type System.String
+		0x1805660B4: Copies {'local19' (type System.String[])} from rbx into rcx
+		0x1805660B7: [!] Calls static managed method System.String System.String::Concat(System.String[]) with arguments [{'local19' (type System.String[])}] and stores the result in {'string' (type System.String)}
+
+		0x1805660BC: Loads the type definition for managed type UnityEngine.Debug as a constant "Debug" in rcx
+		0x1805660C3: Copies {'string' (type System.String)} from rax into rbx
+		0x1805660C6: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1805660CD: Jumps to 0x1805660DD if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1805660DD which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x1805660CF: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1805660D6: Jumps to 0x1805660DD if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1805660DD which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x1805660D8: Calls the il2cpp cctor for the type UnityEngine.Debug
+		0x1805660DF: Copies {'string' (type System.String)} from rbx into rcx
+		0x1805660E2: [!] Calls static managed method System.Void UnityEngine.Debug::Log(System.Object) with arguments [{'string' (type System.String)}]
+
+
+		Potential Loop Start (0x1805660E7):
+		0x1805660E7: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rsi as new constant constant90
+		0x1805660EC: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbx as new constant constant91
+		0x1805660F1: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbp as new constant constant92
+		0x1805660FB: [!] Returns from the function
+
+		0x1805660FC: Loads the type definition for managed type UnityEngine.Debug as a constant "Debug" in rcx
+		0x180566103: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18056610A: Jumps to 0x18056611A if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18056611A which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x18056610C: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180566113: Jumps to 0x18056611A if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18056611A which is after end of current block @ 0x180565F1A (started at 0x180565EEE)
+
+		0x180566115: Calls the il2cpp cctor for the type UnityEngine.Debug
+		0x18056611A: Loads the string literal "指定がおかしい" as a constant "constant98" in rcx
+		0x180566123: [!] Calls static managed method System.Void UnityEngine.Debug::LogWarning(System.Object) with arguments ["指定がおかしい"]
+
+		0x180566128: Jumps to 0x1805660E7 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x18056612C: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+		0x18056615D: Copies {'local28' (type System.NullReferenceException)} from rax into rcx
+		0x180566196: Copies {'local28' (type System.NullReferenceException)} from rax into rcx
+		0x1805661BC: Copies {'local28' (type System.NullReferenceException)} from rax into rcx
+		0x1805661F5: Copies {'local28' (type System.NullReferenceException)} from rax into rcx
+		0x18056621B: Copies {'local28' (type System.NullReferenceException)} from rax into rcx
+		0x180566254: Copies {'local28' (type System.NullReferenceException)} from rax into rcx
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ScriptCommandThunderActive
+	System.Void Init(System.String[] arg, ScriptDemoSceneManager manager)
+		this.m_manager = manager
+		System.String local3 = arg[0]
+
+		System.Boolean isNullOrEmpty = System.String.IsNullOrEmpty(local3) //(String value)
+
+		if (isNullOrEmpty == False)
+
+		    InterrogationSceneSetup interrogationSceneSetup = UnityEngine.Object.FindObjectOfType<InterrogationSceneSetup>()
+
+		    System.Boolean boolean = UnityEngine.Object.op_Implicit(interrogationSceneSetup) //(Object exists)
+
+		    if (boolean != False)
+		        System.String local9 = arg[0]
+
+		        if (local9 != 0)
+
+		            System.Boolean boolean2 = System.String.op_Equality(local9, "有効") //(String a, String b)
+
+		            if (boolean2 != False)
+
+		                interrogationSceneSetup.SetActiveThunderLot(True) //(Boolean active)
+		            else
+
+		                System.Boolean boolean3 = System.String.op_Equality(local9, "無効") //(String a, String b)
+
+		                if (boolean3 != False)
+		                    ulong local16 = 0
+
+		                    interrogationSceneSetup.SetActiveThunderLot(local16) //(Boolean active)
+
+		                    interrogationSceneSetup.ForceStopCloudyThunder()
+		                else
+
+		                    UnityEngine.Debug.LogWarning("指定がおかしい") //(Object message)
+		                endif
+                        
+		                System.String[] local19 = new System.String[6]
+
+		                if ("Init : " == 0)
+                            goto INSN_180565F69
+                        endif
+
+		                if ("Init : " == 0)
+                            goto INSN_180566158
+                        endif
+
+		                INSN_180565F69:
+		                local19[0] = "Init : "
+		                System.String local20 = arg[0]
+
+		                if (local20 == 0)
+                            goto INSN_180565FA2
+                        endif
+
+		                if ("Init : " == 0)
+                            goto INSN_180566191
+                        endif
+
+		                INSN_180565FA2:
+		                local19[1] = local20
+
+		                if (" : " == 0)
+                            goto INSN_180565FDB
+                        endif
+
+		                if (" : " == 0)
+                            goto INSN_1805661B7
+                        endif
+
+		                INSN_180565FDB:
+		                local19[2] = " : "
+		                System.String local21 = arg[1]
+
+		                if (local21 == 0)
+                            goto INSN_180566014
+                        endif
+
+		                if (" : " == 0)
+                            goto INSN_1805661F0
+                        endif
+
+		                INSN_180566014:
+		                local19[3] = local21
+
+		                if (" : " == 0)
+                            goto INSN_18056604D
+                        endif
+
+		                if (" : " == 0)
+                            goto INSN_180566216
+                        endif
+
+		                INSN_18056604D:
+		                local19[4] = " : "
+		                System.String local22 = arg[2]
+
+		                if (local22 == 0)
+                            goto INSN_180566086
+                        endif
+
+		                if (" : " == 0)
+                            goto INSN_18056624F
+                        endif
+
+		                INSN_180566086:
+		                local19[5] = local22
+
+		                System.String string = System.String.Concat(local19) //(String[] values)
+
+		                UnityEngine.Debug.Log(string) //(Object message)
+		                return
+		            endif
+                    
+
+		            UnityEngine.Debug.LogWarning("指定がおかしい") //(Object message)
+		            throw new System.NullReferenceException()
+
+		            INSN_180566158:
+
+		            INSN_180566191:
+
+		            INSN_1805661B7:
+
+		            INSN_1805661F0:
+
+		            INSN_180566216:
+
+		            INSN_18056624F:
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.2
+	IL_0002: stfld ScriptDemoSceneManager ScriptCommandBase::m_manager
+	IL_0007: ldarg.1
+	IL_0008: ldc.i4.0
+	IL_0009: ldelem.any System.String
+	IL_000e: call System.Boolean System.String::IsNullOrEmpty(System.String)
+	IL_0013: ldc.i4.0
+	IL_0014: bne.un IL_0146
+	IL_0019: call T UnityEngine.Object::FindObjectOfType<InterrogationSceneSetup>()
+	IL_001e: stloc.0
+	IL_001f: ldloc.0
+	IL_0020: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+	IL_0025: ldc.i4.0
+	IL_0026: beq.s IL_0070
+	IL_0028: ldarg.1
+	IL_0029: ldc.i4.0
+	IL_002a: ldelem.any System.String
+	IL_002f: stloc.1
+	IL_0030: ldloc.1
+	IL_0031: ldc.i4.0
+	IL_0032: beq.s IL_0066
+	IL_0034: ldloc.1
+	IL_0035: ldstr "有効"
+	IL_003a: call System.Boolean System.String::op_Equality(System.String,System.String)
+	IL_003f: ldc.i4.0
+	IL_0040: beq.s IL_0049
+	IL_0042: ldloc.0
+	IL_0043: ldc.i4.1
+	IL_0044: call System.Void InterrogationSceneSetup::SetActiveThunderLot(System.Boolean)
+	IL_0049: ldloc.1
+	IL_004a: ldstr "無効"
+	IL_004f: call System.Boolean System.String::op_Equality(System.String,System.String)
+	IL_0054: ldc.i4.0
+	IL_0055: beq.s IL_0066
+	IL_0057: ldc.i4.0
+	IL_0058: stloc.2
+	IL_0059: ldloc.0
+	IL_005a: ldloc.2
+	IL_005b: call System.Void InterrogationSceneSetup::SetActiveThunderLot(System.Boolean)
+	IL_0060: ldloc.0
+	IL_0061: call System.Void InterrogationSceneSetup::ForceStopCloudyThunder()
+	IL_0066: ldstr "指定がおかしい"
+	IL_006b: call System.Void UnityEngine.Debug::LogWarning(System.Object)
+	IL_0070: ldc.i4.6
+	IL_0071: newarr System.String
+	IL_0076: stloc.3
+	IL_0077: ldstr "Init : "
+	IL_007c: ldc.i4.0
+	IL_007d: beq.s IL_008a
+	IL_007f: ldstr "Init : "
+	IL_0084: ldc.i4.0
+	IL_0085: beq IL_0000
+	IL_008a: ldloc.3
+	IL_008b: ldc.i4.0
+	IL_008c: ldstr "Init : "
+	IL_0091: stelem.any System.String
+	IL_0096: ldarg.1
+	IL_0097: ldc.i4.0
+	IL_0098: ldelem.any System.String
+	IL_009d: stloc.s V_4
+	IL_009f: ldloc.s V_4
+	IL_00a1: ldc.i4.0
+	IL_00a2: beq.s IL_00af
+	IL_00a4: ldstr "Init : "
+	IL_00a9: ldc.i4.0
+	IL_00aa: beq IL_0000
+	IL_00af: ldloc.3
+	IL_00b0: ldc.i4.1
+	IL_00b1: ldloc.s V_4
+	IL_00b3: stelem.any System.String
+	IL_00b8: ldstr " : "
+	IL_00bd: ldc.i4.0
+	IL_00be: beq.s IL_00cb
+	IL_00c0: ldstr " : "
+	IL_00c5: ldc.i4.0
+	IL_00c6: beq IL_0000
+	IL_00cb: ldloc.3
+	IL_00cc: ldc.i4.2
+	IL_00cd: ldstr " : "
+	IL_00d2: stelem.any System.String
+	IL_00d7: ldarg.1
+	IL_00d8: ldc.i4.1
+	IL_00d9: ldelem.any System.String
+	IL_00de: stloc.s V_5
+	IL_00e0: ldloc.s V_5
+	IL_00e2: ldc.i4.0
+	IL_00e3: beq.s IL_00f0
+	IL_00e5: ldstr " : "
+	IL_00ea: ldc.i4.0
+	IL_00eb: beq IL_0000
+	IL_00f0: ldloc.3
+	IL_00f1: ldc.i4.3
+	IL_00f2: ldloc.s V_5
+	IL_00f4: stelem.any System.String
+	IL_00f9: ldstr " : "
+	IL_00fe: ldc.i4.0
+	IL_00ff: beq.s IL_010c
+	IL_0101: ldstr " : "
+	IL_0106: ldc.i4.0
+	IL_0107: beq IL_0000
+	IL_010c: ldloc.3
+	IL_010d: ldc.i4.4
+	IL_010e: ldstr " : "
+	IL_0113: stelem.any System.String
+	IL_0118: ldarg.1
+	IL_0119: ldc.i4.2
+	IL_011a: ldelem.any System.String
+	IL_011f: stloc.s V_6
+	IL_0121: ldloc.s V_6
+	IL_0123: ldc.i4.0
+	IL_0124: beq.s IL_0131
+	IL_0126: ldstr " : "
+	IL_012b: ldc.i4.0
+	IL_012c: beq IL_0000
+	IL_0131: ldloc.3
+	IL_0132: ldc.i4.5
+	IL_0133: ldloc.s V_6
+	IL_0135: stelem.any System.String
+	IL_013a: ldloc.3
+	IL_013b: call System.String System.String::Concat(System.String[])
+	IL_0140: call System.Void UnityEngine.Debug::Log(System.Object)
+	IL_0145: ret
+	IL_0146: ldstr "指定がおかしい"
+	IL_014b: call System.Void UnityEngine.Debug::LogWarning(System.Object)
+	IL_0150: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0155: throw
+	
+

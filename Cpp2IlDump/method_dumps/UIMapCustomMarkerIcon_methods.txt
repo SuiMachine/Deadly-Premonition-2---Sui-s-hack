@@ -1,0 +1,244 @@
+Type: UIMapCustomMarkerIcon
+
+Method: System.Void UIMapCustomMarkerIcon::.ctor():	Method Body (x86 ASM):
+		0x18025F090 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18025F092 jmp near ptr 0000000180203000h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18025F097 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIMapCustomMarkerIcon::.ctor():
+		End of function at 0x18025F098
+		Absolute End is at 0x18025F098
+		Identified Jump Destination addresses:
+
+		0x18025F092: [!] Calls managed method System.Void UnityEngine.EventSystems.UIBehaviour::.ctor() on instance {'this' (function parameter, type UIMapCustomMarkerIcon)}
+
+		0x18025F092: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIMapCustomMarkerIcon
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.EventSystems.UIBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void UIMapCustomMarkerIcon::DispPlate():	Method Body (x86 ASM):
+		0x180207540 ret 0		; DEBUG: {Immediate16}/None {Register}/None ||| None | 0 | None ||| 0 | N/A
+		0x180207543 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIMapCustomMarkerIcon::DispPlate():
+		End of function at 0x180207544
+		Absolute End is at 0x180207544
+		Identified Jump Destination addresses:
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIMapCustomMarkerIcon
+	System.Void DispPlate()
+
+
+Generated IL:
+	
+
+Method: System.Void UIMapCustomMarkerIcon::UnDispPlate():	Method Body (x86 ASM):
+		0x180207540 ret 0		; DEBUG: {Immediate16}/None {Register}/None ||| None | 0 | None ||| 0 | N/A
+		0x180207543 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIMapCustomMarkerIcon::UnDispPlate():
+		End of function at 0x180207544
+		Absolute End is at 0x180207544
+		Identified Jump Destination addresses:
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIMapCustomMarkerIcon
+	System.Void UnDispPlate()
+
+
+Generated IL:
+	
+
+Method: System.Void UIMapCustomMarkerIcon::Init(System.String,System.String,System.String):	Method Body (x86 ASM):
+		0x180610090 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180610094 mov rcx,[rcx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x180610098 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18061009B je short 00000001806100A9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18061009D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806100A0 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1806100A4 jmp near ptr 00000001806D0150h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806100A9 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806100AE int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIMapCustomMarkerIcon::Init(System.String,System.String,System.String):
+		End of function at 0x1806100AF
+		Absolute End is at 0x1806100AF
+		Identified Jump Destination addresses:
+
+		0x180610094: [!] Reads field m_iconSprite from {'this' (function parameter, type UIMapCustomMarkerIcon)} and stores in a new local {'m_iconSprite' (type UISprite)}
+
+		0x180610098: [!] Compares {'m_iconSprite' (type UISprite)} and 0
+		0x18061009B: Jumps to 0x1806100A9 (which throws a NRE) if m_iconSprite equals 0. Implicitly present in managed code, so ignored here.
+		0x1806100A4: [!] Calls managed method System.Void UISprite::set_spriteName(System.String) on instance {'m_iconSprite' (type UISprite)} with arguments [{'icon' (function parameter, type System.String)}]
+
+		0x1806100A4: [!] Returns from the function
+
+		0x1806100A9: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIMapCustomMarkerIcon
+	System.Void Init(System.String icon, System.String name, System.String detail)
+		UISprite m_iconSprite = this.m_iconSprite
+
+		m_iconSprite.spriteName = icon
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UISprite MapIconUI::m_iconSprite
+	IL_0006: ldarg.1
+	IL_0007: call System.Void UISprite::set_spriteName(System.String)
+	IL_000c: ret
+	IL_000d: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0012: throw
+	
+
+Method: System.Void UIMapCustomMarkerIcon::SetAcitveMarker(System.Boolean):	Method Body (x86 ASM):
+		0x1806100B0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1806100B5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806100B6 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806100BA mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806100BD mov [rcx+38h],dl		; DEBUG: {Memory}/None {Register}/DL ||| RCX | 56 | None ||| N/A | N/A
+		0x1806100C0 mov rcx,[rcx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x1806100C4 movzx ebx,dl		; DEBUG: {Register}/EBX {Register}/DL ||| None | 0 | None ||| N/A | N/A
+		0x1806100C7 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806100CA je short 00000001806100F2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806100CC xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806100CF call 0000000180B22710h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806100D4 mov rcx,[rdi+40h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 64 | None ||| N/A | N/A
+		0x1806100D8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1806100DB je short 00000001806100F2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806100DD xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806100E0 movzx edx,bl		; DEBUG: {Register}/EDX {Register}/BL ||| None | 0 | None ||| N/A | N/A
+		0x1806100E3 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1806100E8 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806100EC pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806100ED jmp near ptr 0000000180B22710h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806100F2 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1806100F4 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806100F9 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIMapCustomMarkerIcon::SetAcitveMarker(System.Boolean):
+		End of function at 0x1806100FA
+		Absolute End is at 0x1806100FA
+		Identified Jump Destination addresses:
+
+		0x1806100B5: Saves the content of rdi to the stack
+		0x1806100BA: Copies {'this' (function parameter, type UIMapCustomMarkerIcon)} from rcx into rdi
+		0x1806100BD: [!] Sets the field m_bActive (Type System.Boolean) on local {'this' (function parameter, type UIMapCustomMarkerIcon)} to the value stored in {'active' (function parameter, type System.Boolean)}
+		0x1806100C0: [!] Reads field m_iconSprite from {'this' (function parameter, type UIMapCustomMarkerIcon)} and stores in a new local {'m_iconSprite' (type UISprite)}
+
+		0x1806100C4: Copies {'active' (function parameter, type System.Boolean)} from rdx into rbx
+		0x1806100C7: [!] Compares {'m_iconSprite' (type UISprite)} and 0
+		0x1806100CA: Jumps to 0x1806100F2 (which throws a NRE) if m_iconSprite equals 0. Implicitly present in managed code, so ignored here.
+		0x1806100CF: [!] Calls managed method System.Void UnityEngine.Behaviour::set_enabled(System.Boolean) on instance {'m_iconSprite' (type UISprite)} with arguments [{'active' (function parameter, type System.Boolean)}]
+
+		0x1806100D4: [!] Reads field m_bgSprite from {'this' (function parameter, type UIMapCustomMarkerIcon)} and stores in a new local {'m_bgSprite' (type UISprite)}
+
+		0x1806100D8: [!] Compares {'m_bgSprite' (type UISprite)} and 0
+		0x1806100DB: Jumps to 0x1806100F2 (which throws a NRE) if m_bgSprite equals 0. Implicitly present in managed code, so ignored here.
+		0x1806100E0: Copies {'active' (function parameter, type System.Boolean)} from rbx into rdx
+		0x1806100E3: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant3
+		0x1806100ED: [!] Calls managed method System.Void UnityEngine.Behaviour::set_enabled(System.Boolean) on instance {'m_bgSprite' (type UISprite)} with arguments [{'active' (function parameter, type System.Boolean)}]
+
+		0x1806100ED: [!] Returns from the function
+
+		0x1806100F4: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIMapCustomMarkerIcon
+	System.Void SetAcitveMarker(System.Boolean active)
+		this.m_bActive = active
+		UISprite m_iconSprite = this.m_iconSprite
+
+		m_iconSprite.enabled = active
+		UISprite m_bgSprite = this.m_bgSprite
+
+		m_bgSprite.enabled = active
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: stfld System.Boolean UIMapCustomMarkerIcon::m_bActive
+	IL_0007: ldarg.0
+	IL_0008: ldfld UISprite MapIconUI::m_iconSprite
+	IL_000d: ldarg.1
+	IL_000e: call System.Void UnityEngine.Behaviour::set_enabled(System.Boolean)
+	IL_0013: ldarg.0
+	IL_0014: ldfld UISprite UIMapCustomMarkerIcon::m_bgSprite
+	IL_0019: ldarg.1
+	IL_001a: call System.Void UnityEngine.Behaviour::set_enabled(System.Boolean)
+	IL_001f: ret
+	IL_0020: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0025: throw
+	
+
+Method: System.Boolean UIMapCustomMarkerIcon::IsActive():	Method Body (x86 ASM):
+		0x180297D30 movzx eax,byte ptr [rcx+38h]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 56 | None ||| N/A | N/A
+		0x180297D34 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180297D35 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean UIMapCustomMarkerIcon::IsActive():
+		End of function at 0x180297D36
+		Absolute End is at 0x180297D36
+		Identified Jump Destination addresses:
+
+		0x180297D30: [!] Reads field m_bActive from {'this' (function parameter, type UIMapCustomMarkerIcon)} and stores in a new local {'m_bActive' (type System.Boolean)}
+
+		0x180297D34: [!] Returns {'m_bActive' (type System.Boolean)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIMapCustomMarkerIcon
+	System.Boolean IsActive()
+		System.Boolean m_bActive = this.m_bActive
+		return m_bActive
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Boolean UIMapCustomMarkerIcon::m_bActive
+	IL_0006: ret
+	
+

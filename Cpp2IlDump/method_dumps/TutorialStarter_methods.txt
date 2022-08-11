@@ -1,0 +1,501 @@
+Type: TutorialStarter
+
+Method: System.Void TutorialStarter::.ctor():	Method Body (x86 ASM):
+		0x180206670 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180206672 jmp near ptr 000000018044B1D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206677 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void TutorialStarter::.ctor():
+		End of function at 0x180206678
+		Absolute End is at 0x180206678
+		Identified Jump Destination addresses:
+
+		0x180206672: [!] Calls managed method System.Void GeneralInteractionObject::.ctor() on instance {'this' (function parameter, type TutorialStarter)}
+
+		0x180206672: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: TutorialStarter
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void GeneralInteractionObject::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void TutorialStarter::Init():	Method Body (x86 ASM):
+		0x180206410 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180206412 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180206416 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180206418 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18020641B call 00000001804489B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206420 mov rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x180206424 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180206427 je short 0000000180206438h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206429 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18020642C mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x18020642E add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180206432 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180206433 jmp near ptr 000000018110B080h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206438 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020643D int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void TutorialStarter::Init():
+		End of function at 0x18020643E
+		Absolute End is at 0x18020643E
+		Identified Jump Destination addresses:
+
+		0x180206410: Saves the content of rbx to the stack
+		0x180206418: Copies {'this' (function parameter, type TutorialStarter)} from rcx into rbx
+		0x18020641B: [!] Calls managed method System.Void GeneralInteractionObject::Init() on instance {'this' (function parameter, type TutorialStarter)}
+
+		0x180206420: [!] Reads field m_collider from {'this' (function parameter, type TutorialStarter)} and stores in a new local {'m_collider' (type UnityEngine.Collider)}
+
+		0x180206424: [!] Compares {'m_collider' (type UnityEngine.Collider)} and 0
+		0x180206427: Jumps to 0x180206438 (which throws a NRE) if m_collider equals 0. Implicitly present in managed code, so ignored here.
+		0x18020642C: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x180206433: [!] Calls managed method System.Void UnityEngine.Collider::set_enabled(System.Boolean) on instance {'m_collider' (type UnityEngine.Collider)} with arguments [True]
+
+		0x180206433: [!] Returns from the function
+
+		0x180206438: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: TutorialStarter
+	System.Void Init()
+
+		base.Init()
+		UnityEngine.Collider m_collider = this.m_collider
+
+		m_collider.enabled = True
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void GeneralInteractionObject::Init()
+	IL_0006: ldarg.0
+	IL_0007: ldfld UnityEngine.Collider IntaractionObjectBase::m_collider
+	IL_000c: ldc.i4.1
+	IL_000d: call System.Void UnityEngine.Collider::set_enabled(System.Boolean)
+	IL_0012: ret
+	IL_0013: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0018: throw
+	
+
+Method: System.Void TutorialStarter::OnSearch():	Method Body (x86 ASM):
+		0x1802C8780 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1802C8785 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802C8786 sub rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1802C878A cmp byte ptr [18183D761h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868513 | None ||| N/A | 0
+		0x1802C8791 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802C8794 jne short 00000001802C87A8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8796 mov ecx,[1814CA288h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464250504 | None ||| N/A | N/A
+		0x1802C879C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C87A1 mov byte ptr [18183D761h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868513 | None ||| N/A | 1
+		0x1802C87A8 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1802C87AF mov rdi,[rbx+168h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 360 | None ||| N/A | N/A
+		0x1802C87B6 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802C87BD je short 00000001802C87CDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C87BF cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1802C87C6 jne short 00000001802C87CDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C87C8 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C87CD mov rdx,[181870940h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468077888 | None ||| N/A | N/A
+		0x1802C87D4 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1802C87D7 call 000000018090D9D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C87DC mov [rbx+170h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 368 | None ||| N/A | N/A
+		0x1802C87E3 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802C87E6 je near ptr 00000001802C88F6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C87EC xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802C87EE mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802C87F1 call 0000000180B2EA90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C87F6 mov rcx,[181899CA0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468246688 | None ||| N/A | N/A
+		0x1802C87FD mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802C8800 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802C8807 je short 00000001802C881Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8809 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1802C8810 jne short 00000001802C881Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8812 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8817 mov rcx,[181899CA0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468246688 | None ||| N/A | N/A
+		0x1802C881E mov rcx,[rcx+0B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 184 | None ||| N/A | N/A
+		0x1802C8825 mov rcx,[rcx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 48 | None ||| N/A | N/A
+		0x1802C8829 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802C882C je near ptr 00000001802C88F6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8832 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802C8834 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8839 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802C883C je near ptr 00000001802C88F6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8842 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802C8845 lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802C884A mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802C884D call 0000000180CE2290h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8852 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1802C8855 je near ptr 00000001802C88F6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C885B movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1802C885F lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1802C8864 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1802C8867 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802C886A mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1802C886D movsd qword ptr [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1802C8873 mov [rsp+28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 40 | None ||| N/A | N/A
+		0x1802C8877 call 0000000180CE2F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C887C mov rcx,[rbx+170h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 368 | None ||| N/A | N/A
+		0x1802C8883 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802C8886 je short 00000001802C88F6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8888 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802C888A call 0000000180B2EA90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C888F mov rcx,[18188D900h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196608 | None ||| N/A | N/A
+		0x1802C8896 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802C8899 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802C88A0 je short 00000001802C88B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C88A2 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1802C88A9 jne short 00000001802C88B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C88AB call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C88B0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802C88B2 lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802C88B7 call 0000000180CE7730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C88BC test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1802C88BF je short 00000001802C88F6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C88C1 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1802C88C5 lea rdx,[rsp+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1802C88CA mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1802C88CD xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802C88D0 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1802C88D3 movsd qword ptr [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1802C88D9 mov [rsp+28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 40 | None ||| N/A | N/A
+		0x1802C88DD call 0000000180CE2E50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C88E2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802C88E4 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802C88E7 mov rbx,[rsp+50h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1802C88EC add rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x1802C88F0 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802C88F1 jmp near ptr 0000000180449270h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C88F6 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802C88F8 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C88FD int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void TutorialStarter::OnSearch():
+		End of function at 0x1802C88FE
+		Absolute End is at 0x1802C88FE
+		Identified Jump Destination addresses:
+
+		0x1802C8785: Saves the content of rdi to the stack
+		0x1802C878A: Compares {Unknown Global at 0x18183D761, first ten bytes are [28 1 0 118 28 1 0 200 60 103], or as chars " v È<g"} and 0
+		0x1802C8791: Copies {'this' (function parameter, type TutorialStarter)} from rcx into rbx
+		0x1802C8794: Jumps to 0x1802C87A8 if {Unknown Global at 0x18183D761, first ten bytes are [28 1 0 118 28 1 0 200 60 103], or as chars " v È<g"} != 0
+
+		0x1802C8796: Loads string "Èn" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1802C879C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1802C87A8: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1802C87AF: [!] Reads field m_tutorialPref from {'this' (function parameter, type TutorialStarter)} and stores in a new local {'m_tutorialPref' (type UnityEngine.GameObject)}
+
+		0x1802C87B6: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802C87BD: Jumps to 0x1802C87CD if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802C87BF: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802C87C6: Jumps to 0x1802C87CD if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1802C87C8: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1802C87CD: Loads the global generic method reference for method T UnityEngine.Object::Instantiate<UnityEngine.GameObject>(T) on type UnityEngine.Object and stores the result in constant {'Instantiate' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1802C87D4: Copies {'m_tutorialPref' (type UnityEngine.GameObject)} from rdi into rcx
+		0x1802C87D7: [!] Calls static managed method T UnityEngine.Object::Instantiate<UnityEngine.GameObject>(T) with arguments [{'m_tutorialPref' (type UnityEngine.GameObject)}] and stores the result in {'gameObject' (type UnityEngine.GameObject)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1802C87DC: [!] Sets the field m_tutorialObj (Type UnityEngine.GameObject) on local {'this' (function parameter, type TutorialStarter)} to the value stored in {'gameObject' (type UnityEngine.GameObject)}
+		0x1802C87E3: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1802C87E6: Jumps to 0x1802C88F6 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1802C87EE: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1802C87F1: [!] Calls managed method UnityEngine.Transform UnityEngine.GameObject::get_transform() on instance {'gameObject' (type UnityEngine.GameObject)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x1802C87F6: Loads the type definition for managed type CharaControl as a constant "CharaControl" in rcx
+		0x1802C87FD: Copies {'transform' (type UnityEngine.Transform)} from rax into rdi
+		0x1802C8800: Compares "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802C8807: Jumps to 0x1802C881E if "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802C8809: Compares "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802C8810: Jumps to 0x1802C881E if "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1802C8812: Calls the il2cpp cctor for the type CharaControl
+		0x1802C8817: Loads the type definition for managed type CharaControl as a constant "CharaControl" in rcx
+		0x1802C881E: Loads the pointer to the static fields for CharaControl and stores it in constant17 in register rcx
+		0x1802C8825: [!] Reads the static field CharaControl CharaControl::Instance into new local instance
+		0x1802C8829: [!] Compares {'instance' (type CharaControl)} and 0
+		0x1802C882C: Jumps to 0x1802C88F6 (which throws a NRE) if instance equals 0. Implicitly present in managed code, so ignored here.
+		0x1802C8834: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'instance' (type CharaControl)} and stores the result in {'transform2' (type UnityEngine.Transform)}
+
+		0x1802C8839: [!] Compares {'transform2' (type UnityEngine.Transform)} and 0
+		0x1802C883C: Jumps to 0x1802C88F6 (which throws a NRE) if transform2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802C8845: Loads a pointer to stack offset 0x30 into register rcx as new constant constant20
+		0x1802C884A: Copies {'transform2' (type UnityEngine.Transform)} from rax into rdx
+		0x1802C884D: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::get_localPosition() on instance  and stores the result in {'localPosition' (type UnityEngine.Vector3)}
+
+		0x1802C8852: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x1802C8855: Jumps to 0x1802C88F6 (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x1802C885F: Loads a pointer to stack offset 0x20 into register rdx as new constant constant22
+		0x1802C8864: [!] Reads field z from {'localPosition' (type UnityEngine.Vector3)} and stores in a new local {'single' (type System.Single)}
+
+		0x1802C886A: Copies {'transform' (type UnityEngine.Transform)} from rdi into rcx
+		0x1802C8873: Moves single (type System.Single) from register rax to the stack at offset 40 (0x28)
+		0x1802C8877: [!] Calls managed method System.Void UnityEngine.Transform::set_localPosition(UnityEngine.Vector3) on instance {'transform' (type UnityEngine.Transform)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1802C887C: [!] Reads field m_tutorialObj from {'this' (function parameter, type TutorialStarter)} and stores in a new local {'m_tutorialObj' (type UnityEngine.GameObject)}
+
+		0x1802C8883: [!] Compares {'m_tutorialObj' (type UnityEngine.GameObject)} and 0
+		0x1802C8886: Jumps to 0x1802C88F6 (which throws a NRE) if m_tutorialObj equals 0. Implicitly present in managed code, so ignored here.
+		0x1802C888A: [!] Calls managed method UnityEngine.Transform UnityEngine.GameObject::get_transform() on instance {'m_tutorialObj' (type UnityEngine.GameObject)} and stores the result in {'transform3' (type UnityEngine.Transform)}
+
+		0x1802C888F: Loads the type definition for managed type UnityEngine.Vector3 as a constant "Vector3" in rcx
+		0x1802C8896: Copies {'transform3' (type UnityEngine.Transform)} from rax into rdi
+		0x1802C8899: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802C88A0: Jumps to 0x1802C88B0 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802C88A2: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802C88A9: Jumps to 0x1802C88B0 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1802C88AB: Calls the il2cpp cctor for the type UnityEngine.Vector3
+		0x1802C88B2: Loads a pointer to stack offset 0x30 into register rcx as new constant constant29
+		0x1802C88B7: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::get_zero() and stores the result in {'zero' (type UnityEngine.Vector3)}
+
+		0x1802C88BC: [!] Compares {'transform3' (type UnityEngine.Transform)} and 0
+		0x1802C88BF: Jumps to 0x1802C88F6 (which throws a NRE) if transform3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802C88C5: Loads a pointer to stack offset 0x20 into register rdx as new constant constant31
+		0x1802C88CA: [!] Reads field z from {'zero' (type UnityEngine.Vector3)} and stores in a new local {'single2' (type System.Single)}
+
+		0x1802C88D0: Copies {'transform3' (type UnityEngine.Transform)} from rdi into rcx
+		0x1802C88D9: Moves single2 (type System.Single) from register rax to the stack at offset 40 (0x28)
+		0x1802C88DD: [!] Calls managed method System.Void UnityEngine.Transform::set_localEulerAngles(UnityEngine.Vector3) on instance {'transform3' (type UnityEngine.Transform)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1802C88E4: Copies {'this' (function parameter, type TutorialStarter)} from rbx into rcx
+		0x1802C88E7: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register rbx as new constant constant32
+		0x1802C88F1: [!] Calls managed method System.Void GeneralInteractionObject::OnSearch() on instance {'this' (function parameter, type TutorialStarter)}
+
+		0x1802C88F1: [!] Returns from the function
+
+		0x1802C88F8: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: TutorialStarter
+	System.Void OnSearch()
+		UnityEngine.GameObject m_tutorialPref = this.m_tutorialPref
+
+		UnityEngine.GameObject gameObject = UnityEngine.Object.Instantiate<UnityEngine.GameObject>(m_tutorialPref) //(T original)
+		this.m_tutorialObj = gameObject
+
+		UnityEngine.Transform transform = gameObject.transform
+		CharaControl instance = CharaControl.Instance
+
+		UnityEngine.Transform transform2 = instance.transform
+
+		UnityEngine.Vector3 localPosition = .localPosition
+		System.Single single = localPosition.z
+
+		transform.set_localPosition()
+		UnityEngine.GameObject m_tutorialObj = this.m_tutorialObj
+
+		UnityEngine.Transform transform3 = m_tutorialObj.transform
+
+		UnityEngine.Vector3 zero = UnityEngine.Vector3.zero
+		System.Single single2 = zero.z
+
+		transform3.set_localEulerAngles()
+
+		base.OnSearch()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1802C884D) is corrupt (Method is non-static but don't have an instance) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void TutorialStarter::EndProcess():	Method Body (x86 ASM):
+		0x1802C86B0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802C86B2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802C86B6 cmp byte ptr [18183D762h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868514 | None ||| N/A | 0
+		0x1802C86BD mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802C86C0 jne short 00000001802C86D4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C86C2 mov ecx,[1814CA278h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464250488 | None ||| N/A | N/A
+		0x1802C86C8 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C86CD mov byte ptr [18183D762h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868514 | None ||| N/A | 1
+		0x1802C86D4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802C86D6 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802C86D9 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C86DE mov rcx,[18189A918h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468249880 | None ||| N/A | N/A
+		0x1802C86E5 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802C86EC je short 00000001802C86FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C86EE cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1802C86F5 jne short 00000001802C86FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C86F7 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C86FC xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802C86FE call 000000018043AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8703 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1802C870A mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802C870D test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802C8714 je short 00000001802C8724h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8716 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1802C871D jne short 00000001802C8724h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C871F call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8724 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802C8726 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802C8729 call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C872E test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1802C8730 je short 00000001802C876Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8732 mov rcx,[18189A918h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468249880 | None ||| N/A | N/A
+		0x1802C8739 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802C8740 je short 00000001802C8750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8742 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1802C8749 jne short 00000001802C8750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C874B call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8750 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802C8752 call 000000018043AB80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C8757 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802C875A je short 00000001802C8774h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C875C xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802C875F xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802C8761 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802C8764 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802C8768 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802C8769 jmp near ptr 0000000180439390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C876E add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802C8772 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802C8773 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802C8774 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802C8776 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802C877B int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void TutorialStarter::EndProcess():
+		End of function at 0x1802C877C
+		Absolute End is at 0x1802C877C
+		Identified Jump Destination addresses:
+
+		0x1802C86B0: Saves the content of rbx to the stack
+		0x1802C86B6: Compares {Unknown Global at 0x18183D762, first ten bytes are [1 0 118 28 1 0 200 60 103 1], or as chars " v È<g"} and 0
+		0x1802C86BD: Copies {'this' (function parameter, type TutorialStarter)} from rcx into rbx
+		0x1802C86C0: Jumps to 0x1802C86D4 if {Unknown Global at 0x18183D762, first ten bytes are [1 0 118 28 1 0 200 60 103 1], or as chars " v È<g"} != 0
+
+		0x1802C86C2: Loads string "Çn" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1802C86C8: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1802C86D6: Copies {'this' (function parameter, type TutorialStarter)} from rbx into rcx
+		0x1802C86D9: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type TutorialStarter)}
+
+		0x1802C86DE: Loads the type definition for managed type GameClockManager as a constant "GameClockManager" in rcx
+		0x1802C86E5: Compares "{il2cpp field on {'GameClockManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802C86EC: Jumps to 0x1802C86FC if "{il2cpp field on {'GameClockManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802C86EE: Compares "{il2cpp field on {'GameClockManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802C86F5: Jumps to 0x1802C86FC if "{il2cpp field on {'GameClockManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1802C86F7: Calls the il2cpp cctor for the type GameClockManager
+		0x1802C86FC: Clears register rcx, yielding zero-local {'local2' (type System.Int32)}
+		0x1802C86FE: [!] Calls static managed method GameClockManager GameClockManager::get_Instance() and stores the result in {'instance' (type GameClockManager)}
+
+		0x1802C8703: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1802C870A: Copies {'instance' (type GameClockManager)} from rax into rbx
+		0x1802C870D: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802C8714: Jumps to 0x1802C8724 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802C8716: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802C871D: Jumps to 0x1802C8724 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1802C871F: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1802C8726: Copies {'instance' (type GameClockManager)} from rbx into rcx
+		0x1802C8729: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'instance' (type GameClockManager)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1802C872E: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1802C8730: Jumps to 0x1802C876E (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1802C8732: Loads the type definition for managed type GameClockManager as a constant "GameClockManager" in rcx
+		0x1802C8739: Compares "{il2cpp field on {'GameClockManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802C8740: Jumps to 0x1802C8750 if "{il2cpp field on {'GameClockManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802C8742: Compares "{il2cpp field on {'GameClockManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802C8749: Jumps to 0x1802C8750 if "{il2cpp field on {'GameClockManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1802C874B: Calls the il2cpp cctor for the type GameClockManager
+		0x1802C8750: Clears register rcx, yielding zero-local {'local6' (type System.Int32)}
+		0x1802C8752: [!] Calls static managed method GameClockManager GameClockManager::get_Instance() and stores the result in {'instance2' (type GameClockManager)}
+
+		0x1802C8757: [!] Compares {'instance2' (type GameClockManager)} and 0
+		0x1802C875A: Jumps to 0x1802C8774 (which throws a NRE) if instance2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802C875F: Clears register rdx, yielding zero-local {'local9' (type System.Int32)}
+		0x1802C8761: Copies {'instance2' (type GameClockManager)} from rax into rcx
+		0x1802C8769: [!] Calls managed method System.Void GameClockManager::SetActive(System.Boolean) on instance {'instance2' (type GameClockManager)} with arguments [{'local9' (type System.Int32)}]
+
+		0x1802C8769: [!] Returns from the function
+
+		0x1802C8773: [!] Returns from the function
+
+		0x1802C8776: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: TutorialStarter
+	System.Void EndProcess()
+
+		base..ctor()
+		ulong local2 = 0
+
+		GameClockManager instance = GameClockManager.Instance
+
+		System.Boolean boolean = UnityEngine.Object.op_Implicit(instance) //(Object exists)
+
+		if (boolean != False)
+		    ulong local6 = 0
+
+		    GameClockManager instance2 = GameClockManager.Instance
+		    ulong local9 = 0
+
+		    instance2.SetActive(local9) //(Boolean active)
+		    return
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ldc.i4.0
+	IL_0007: stloc.0
+	IL_0008: call GameClockManager GameClockManager::get_Instance()
+	IL_000d: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+	IL_0012: ldc.i4.0
+	IL_0013: beq.s IL_0027
+	IL_0015: ldc.i4.0
+	IL_0016: stloc.1
+	IL_0017: call GameClockManager GameClockManager::get_Instance()
+	IL_001c: stloc.2
+	IL_001d: ldc.i4.0
+	IL_001e: stloc.3
+	IL_001f: ldloc.2
+	IL_0020: ldloc.3
+	IL_0021: call System.Void GameClockManager::SetActive(System.Boolean)
+	IL_0026: ret
+	IL_0027: ret
+	IL_0028: newobj System.Void System.NullReferenceException::.ctor()
+	IL_002d: throw
+	
+

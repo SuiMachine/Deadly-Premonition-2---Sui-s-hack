@@ -1,0 +1,1338 @@
+Type: SpringSphereCollider
+
+Method: System.Void UTJ.SpringSphereCollider::.ctor():	Method Body (x86 ASM):
+		0x180323180 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180323182 mov dword ptr [rcx+18h],3DCCCCCDh		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 24 | None ||| N/A | 1036831949
+		0x180323189 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18032318E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UTJ.SpringSphereCollider::.ctor():
+		End of function at 0x18032318F
+		Absolute End is at 0x18032318F
+		Identified Jump Destination addresses:
+
+		0x180323182: [!] Sets the field radius (Type System.Single) on local {'this' (function parameter, type UTJ.SpringSphereCollider)} to the value stored in 0,1
+		0x180323189: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type UTJ.SpringSphereCollider)}
+
+		0x180323189: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSphereCollider
+	System.Void .ctor()
+		this.radius = 0,1
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.r4 0,1
+	IL_0006: stfld System.Single UTJ.SpringSphereCollider::radius
+	IL_000b: ldarg.0
+	IL_000c: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0011: ret
+	
+
+Method: UTJ.SpringBone/CollisionStatus UTJ.SpringSphereCollider::CheckForCollisionAndReact(UnityEngine.Vector3,UnityEngine.Vector3&,System.Single,UnityEngine.Vector3&):	Method Body (x86 ASM):
+		0x1811B4200 mov rax,rsp		; DEBUG: {Register}/RAX {Register}/RSP ||| None | 0 | None ||| N/A | N/A
+		0x1811B4203 mov [rax+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B4207 mov [rax+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RAX | 16 | None ||| N/A | N/A
+		0x1811B420B mov [rax+18h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RAX | 24 | None ||| N/A | N/A
+		0x1811B420F push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B4210 lea rbp,[rax-4Fh]		; DEBUG: {Register}/RBP {Memory}/None ||| RAX | 18446744073709551537 | None ||| N/A | N/A
+		0x1811B4214 sub rsp,0C0h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 192
+		0x1811B421B movaps [rax-18h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RAX | 18446744073709551592 | None ||| N/A | N/A
+		0x1811B421F mov rsi,rdx		; DEBUG: {Register}/RSI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4222 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4224 movaps [rax-38h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RAX | 18446744073709551560 | None ||| N/A | N/A
+		0x1811B4229 movaps xmm6,xmm3		; DEBUG: {Register}/XMM6 {Register}/XMM3 ||| None | 0 | None ||| N/A | N/A
+		0x1811B422C mov rdi,r8		; DEBUG: {Register}/RDI {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x1811B422F mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4232 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4237 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B423A je near ptr 00000001811B445Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4240 mov edx,[rsi+8]		; DEBUG: {Register}/EDX {Memory}/None ||| RSI | 8 | None ||| N/A | N/A
+		0x1811B4243 lea r8,[rbp-29h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B4247 movsd xmm0,qword ptr [rsi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSI | 0 | None ||| N/A | N/A
+		0x1811B424B lea rcx,[rbp-9]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1811B424F mov [rbp-21h],edx		; DEBUG: {Memory}/None {Register}/EDX ||| RBP | 18446744073709551583 | None ||| N/A | N/A
+		0x1811B4252 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B4255 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4258 movsd qword ptr [rbp-29h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B425D call 0000000180CE07C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4262 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4264 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4267 movsd xmm8,qword ptr [rax]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B426C mov esi,[rax+8]		; DEBUG: {Register}/ESI {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B426F call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4274 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4277 je near ptr 00000001811B445Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B427D mov ecx,[rdi+8]		; DEBUG: {Register}/ECX {Memory}/None ||| RDI | 8 | None ||| N/A | N/A
+		0x1811B4280 lea r8,[rbp-29h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B4284 movsd xmm0,qword ptr [rdi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1811B4288 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B428B mov [rbp-21h],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RBP | 18446744073709551583 | None ||| N/A | N/A
+		0x1811B428E mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4291 lea rcx,[rbp-9]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1811B4295 movsd qword ptr [rbp-29h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B429A call 0000000180CE07C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B429F xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B42A1 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1811B42A4 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B42A8 movsd qword ptr [rbp-49h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551543 | None ||| N/A | N/A
+		0x1811B42AD mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B42B0 mov [rbp-41h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551551 | None ||| N/A | N/A
+		0x1811B42B3 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B42B8 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B42BB je near ptr 00000001811B445Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B42C1 movaps [rsp+0A0h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 160 | None ||| N/A | N/A
+		0x1811B42C9 lea rcx,[rbp-9]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1811B42CD xorps xmm7,xmm7		; DEBUG: {Register}/XMM7 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1811B42D0 mov qword ptr [rsp+28h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RSP | 40 | None ||| N/A | 0
+		0x1811B42D9 xorps xmm3,xmm3		; DEBUG: {Register}/XMM3 {Register}/XMM3 ||| None | 0 | None ||| N/A | N/A
+		0x1811B42DC movss dword ptr [rsp+20h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 32 | None ||| N/A | N/A
+		0x1811B42E2 movaps xmm2,xmm6		; DEBUG: {Register}/XMM2 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1811B42E5 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B42E8 call 0000000180CE0610h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B42ED xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B42EF lea rcx,[rbp-19h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x1811B42F3 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B42F7 movsd qword ptr [rbp-19h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551591 | None ||| N/A | N/A
+		0x1811B42FC mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B42FF mov [rbp-11h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551599 | None ||| N/A | N/A
+		0x1811B4302 call 0000000180CE72A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4307 xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4309 lea rcx,[rbp-39h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x1811B430D xorps xmm3,xmm3		; DEBUG: {Register}/XMM3 {Register}/XMM3 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4310 mov [rbp-39h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x1811B4314 xorps xmm2,xmm2		; DEBUG: {Register}/XMM2 {Register}/XMM2 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4317 mov [rbp-31h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551567 | None ||| N/A | N/A
+		0x1811B431A xorps xmm1,xmm1		; DEBUG: {Register}/XMM1 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1811B431D mov [rsp+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 32 | None ||| N/A | N/A
+		0x1811B4322 movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4325 call 0000000180CE6790h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B432A movss xmm2,dword ptr [rbx+18h]		; DEBUG: {Register}/XMM2 {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1811B432F lea r9,[rbp-29h]		; DEBUG: {Register}/R9 {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B4333 movsd xmm1,qword ptr [rbp-39h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x1811B4338 lea rdx,[rbp-49h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551543 | None ||| N/A | N/A
+		0x1811B433C mov eax,[rbp-31h]		; DEBUG: {Register}/EAX {Memory}/None ||| RBP | 18446744073709551567 | None ||| N/A | N/A
+		0x1811B433F lea rcx,[rbp-9]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1811B4343 mov qword ptr [rsp+28h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RSP | 40 | None ||| N/A | 0
+		0x1811B434C movss dword ptr [rsp+20h],xmm2		; DEBUG: {Memory}/None {Register}/XMM2 ||| RSP | 32 | None ||| N/A | N/A
+		0x1811B4352 movaps xmm2,xmm6		; DEBUG: {Register}/XMM2 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4355 movsd qword ptr [rbp-29h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B435A mov [rbp-21h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551583 | None ||| N/A | N/A
+		0x1811B435D movsd qword ptr [rbp-9],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1811B4363 mov [rbp-1],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RBP | 18446744073709551615 | None ||| N/A | N/A
+		0x1811B4366 call 00000001811B3E60h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B436B movaps xmm7,[rsp+0A0h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 160 | None ||| N/A | N/A
+		0x1811B4373 mov esi,eax		; DEBUG: {Register}/ESI {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4375 test eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4377 je near ptr 00000001811B443Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B437D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B437F mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4382 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4387 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B438A je near ptr 00000001811B4467h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4390 mov ecx,[rbp-41h]		; DEBUG: {Register}/ECX {Memory}/None ||| RBP | 18446744073709551551 | None ||| N/A | N/A
+		0x1811B4393 lea r8,[rbp-9]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1811B4397 movsd xmm0,qword ptr [rbp-49h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBP | 18446744073709551543 | None ||| N/A | N/A
+		0x1811B439C xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B439F mov [rbp-1],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RBP | 18446744073709551615 | None ||| N/A | N/A
+		0x1811B43A2 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B43A5 lea rcx,[rbp-29h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B43A9 movsd qword ptr [rbp-9],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1811B43AE call 0000000180CE1A00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B43B3 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B43B5 mov ecx,[rax+8]		; DEBUG: {Register}/ECX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B43B8 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B43BC movsd qword ptr [rdi],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RDI | 0 | None ||| N/A | N/A
+		0x1811B43C0 mov [rdi+8],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RDI | 8 | None ||| N/A | N/A
+		0x1811B43C3 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1811B43C6 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B43CB xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1811B43CE lea rdx,[rbp-49h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551543 | None ||| N/A | N/A
+		0x1811B43D2 lea rcx,[rbp-29h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B43D6 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B43D9 call 0000000180CE7350h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B43DE test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1811B43E1 je near ptr 00000001811B4467h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B43E7 mov ecx,[rax+8]		; DEBUG: {Register}/ECX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B43EA lea r8,[rbp-9]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1811B43EE movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B43F2 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B43F5 mov [rbp-1],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RBP | 18446744073709551615 | None ||| N/A | N/A
+		0x1811B43F8 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1811B43FB lea rcx,[rbp-29h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B43FF movsd qword ptr [rbp-9],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1811B4404 call 0000000180CE1850h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4409 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1811B440C lea rdx,[rbp+7]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 7 | None ||| N/A | N/A
+		0x1811B4410 lea rcx,[rbp-9]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x1811B4414 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B4418 movsd qword ptr [rbp+7],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 7 | None ||| N/A | N/A
+		0x1811B441D mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B4420 mov [rbp+0Fh],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 15 | None ||| N/A | N/A
+		0x1811B4423 call 0000000180CE7350h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4428 mov rcx,[rbp+77h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 119 | None ||| N/A | N/A
+		0x1811B442C movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B4430 mov edx,[rax+8]		; DEBUG: {Register}/EDX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B4433 movsd qword ptr [rcx],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RCX | 0 | None ||| N/A | N/A
+		0x1811B4437 mov [rcx+8],edx		; DEBUG: {Memory}/None {Register}/EDX ||| RCX | 8 | None ||| N/A | N/A
+		0x1811B443A lea r11,[rsp+0C0h]		; DEBUG: {Register}/R11 {Memory}/None ||| RSP | 192 | None ||| N/A | N/A
+		0x1811B4442 mov eax,esi		; DEBUG: {Register}/EAX {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x1811B4444 mov rbx,[r11+10h]		; DEBUG: {Register}/RBX {Memory}/None ||| R11 | 16 | None ||| N/A | N/A
+		0x1811B4448 mov rsi,[r11+18h]		; DEBUG: {Register}/RSI {Memory}/None ||| R11 | 24 | None ||| N/A | N/A
+		0x1811B444C mov rdi,[r11+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| R11 | 32 | None ||| N/A | N/A
+		0x1811B4450 movaps xmm6,[r11-10h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| R11 | 18446744073709551600 | None ||| N/A | N/A
+		0x1811B4455 movaps xmm8,[r11-30h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| R11 | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B445A mov rsp,r11		; DEBUG: {Register}/RSP {Register}/R11 ||| None | 0 | None ||| N/A | N/A
+		0x1811B445D pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B445E ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B445F xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4461 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4466 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method UTJ.SpringBone/CollisionStatus UTJ.SpringSphereCollider::CheckForCollisionAndReact(UnityEngine.Vector3,UnityEngine.Vector3&,System.Single,UnityEngine.Vector3&):
+		End of function at 0x1811B4467
+		Absolute End is at 0x1811B4467
+		Identified Jump Destination addresses:
+
+		0x1811B420F: Saves the content of rbp to the stack
+		0x1811B421F: Copies {'headPosition' (function parameter, type UnityEngine.Vector3)} from rdx into rsi
+		0x1811B4229: Copies {'tailRadius' (function parameter, type System.Single)} from xmm3 into xmm6
+		0x1811B422C: Copies {'tailPosition' (function parameter, type UnityEngine.Vector3&)} from r8 into rdi
+		0x1811B422F: Copies {'this' (function parameter, type UTJ.SpringSphereCollider)} from rcx into rbx
+		0x1811B4232: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type UTJ.SpringSphereCollider)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x1811B4237: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x1811B423A: Jumps to 0x1811B445F (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x1811B4255: Copies {'transform' (type UnityEngine.Transform)} from rax into rdx
+		0x1811B425D: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::InverseTransformPoint(UnityEngine.Vector3) on instance {'this' (function parameter, type UTJ.SpringSphereCollider)} and stores the result in {'vector3' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address. - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting Transform, actually UTJ.SpringSphereCollider
+
+		0x1811B4264: Copies {'this' (function parameter, type UTJ.SpringSphereCollider)} from rbx into rcx
+		0x1811B426F: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type UTJ.SpringSphereCollider)} and stores the result in {'transform2' (type UnityEngine.Transform)}
+
+		0x1811B4274: [!] Compares {'transform2' (type UnityEngine.Transform)} and 0
+		0x1811B4277: Jumps to 0x1811B445F (which throws a NRE) if transform2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1811B427D: [!] Reads field z from {'tailPosition' (function parameter, type UnityEngine.Vector3&)} and stores in a new local {'single' (type System.Single)}
+
+		0x1811B428E: Copies {'transform2' (type UnityEngine.Transform)} from rax into rdx
+		0x1811B429A: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::InverseTransformPoint(UnityEngine.Vector3) on instance {'single' (type System.Single)} and stores the result in {'vector32' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address. - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting Transform, actually System.Single
+
+		0x1811B42A1: Copies {'this' (function parameter, type UTJ.SpringSphereCollider)} from rbx into rcx
+		0x1811B42B3: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type UTJ.SpringSphereCollider)} and stores the result in {'transform3' (type UnityEngine.Transform)}
+
+		0x1811B42B8: [!] Compares {'transform3' (type UnityEngine.Transform)} and 0
+		0x1811B42BB: Jumps to 0x1811B445F (which throws a NRE) if transform3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1811B42CD: Clears register xmm7, yielding zero-local {'local19' (type System.Int32)}
+		0x1811B42D0: Moves 0 (immediate ulong value) to the stack at offset 40 as a new local local20
+		0x1811B42DC: Moves local19 (type System.Int32) from register xmm7 to the stack at offset 32 (0x20)
+		0x1811B42E2: Copies {'tailRadius' (function parameter, type System.Single)} from xmm6 into xmm2
+		0x1811B42E5: Copies {'transform3' (type UnityEngine.Transform)} from rax into rdx
+		0x1811B42E8: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::InverseTransformDirection(System.Single,System.Single,System.Single) on instance {'this' (function parameter, type UTJ.SpringSphereCollider)} and stores the result in {'vector33' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address. - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting Transform, actually UTJ.SpringSphereCollider
+
+		0x1811B4307: Clears register rax, yielding zero-local {'local25' (type System.Int32)}
+		0x1811B431D: Moves local25 (type System.Int32) from register rax to the stack at offset 32 (0x20)
+		0x1811B432A: [!] Reads field radius from {'this' (function parameter, type UTJ.SpringSphereCollider)} and stores in a new local {'radius' (type System.Single)}
+
+		0x1811B4343: Moves 0 (immediate ulong value) to the stack at offset 40 as a new local local30
+		0x1811B434C: Moves radius (type System.Single) from register xmm2 to the stack at offset 32 (0x20)
+		0x1811B4352: Copies {'tailRadius' (function parameter, type System.Single)} from xmm6 into xmm2
+		0x1811B4366: [!] Calls static managed method UTJ.SpringBone/CollisionStatus UTJ.SpringSphereCollider::CheckForCollisionAndReact(UnityEngine.Vector3,UnityEngine.Vector3&,System.Single,UnityEngine.Vector3,System.Single) and stores the result in {'collisionStatus' (type UTJ.SpringBone/CollisionStatus)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B436B: Reads unknown value in stack, offset 160 (0xA0) and stores the pointer in register xmm7 as new constant constant4
+		0x1811B4373: [!] Implicitly reads field at offset 0 (which is value__) from struct collisionStatus of type UTJ.SpringBone/CollisionStatus and stores in new local {'local32' (type System.Int32)}
+		0x1811B4375: [!] Compares {'collisionStatus' (type UTJ.SpringBone/CollisionStatus)} and 0
+		0x1811B4377: Jumps to 0x1811B443A (which is an if statement's body) if collisionStatus equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1811B437F: Copies {'this' (function parameter, type UTJ.SpringSphereCollider)} from rbx into rcx
+		0x1811B4382: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type UTJ.SpringSphereCollider)} and stores the result in {'transform4' (type UnityEngine.Transform)}
+
+		0x1811B4387: [!] Compares {'transform4' (type UnityEngine.Transform)} and 0
+		0x1811B438A: Jumps to 0x1811B4467 (which throws a NRE) if transform4 equals 0. Implicitly present in managed code, so ignored here.
+		0x1811B43A2: Copies {'transform4' (type UnityEngine.Transform)} from rax into rdx
+		0x1811B43AE: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::TransformPoint(UnityEngine.Vector3) on instance {'this' (function parameter, type UTJ.SpringSphereCollider)} and stores the result in {'vector34' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address. - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting Transform, actually UTJ.SpringSphereCollider
+
+		0x1811B43B5: [!] Reads field z from {'vector34' (type UnityEngine.Vector3)} and stores in a new local {'single2' (type System.Single)}
+
+		0x1811B43C0: [!] Sets the field z (Type System.Single) on local {'tailPosition' (function parameter, type UnityEngine.Vector3&)} to the value stored in {'single2' (type System.Single)}
+		0x1811B43C3: Copies {'this' (function parameter, type UTJ.SpringSphereCollider)} from rbx into rcx
+		0x1811B43C6: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type UTJ.SpringSphereCollider)} and stores the result in {'transform5' (type UnityEngine.Transform)}
+
+		0x1811B43D6: Copies {'transform5' (type UnityEngine.Transform)} from rax into rbx
+		0x1811B43DE: [!] Compares {'transform5' (type UnityEngine.Transform)} and 0
+		0x1811B43E1: Jumps to 0x1811B4467 (which throws a NRE) if transform5 equals 0. Implicitly present in managed code, so ignored here.
+		0x1811B43E7: [!] Reads field  from {'transform5' (type UnityEngine.Transform)} and stores in a new local 
+
+		0x1811B43F8: Copies {'transform5' (type UnityEngine.Transform)} from rbx into rdx
+		0x1811B4404: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::TransformDirection(UnityEngine.Vector3) on instance {'this' (function parameter, type UTJ.SpringSphereCollider)} and stores the result in {'vector35' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address. - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting Transform, actually UTJ.SpringSphereCollider
+
+		0x1811B441D: [!] Reads field z from {'vector35' (type UnityEngine.Vector3)} and stores in a new local {'single3' (type System.Single)}
+
+		0x1811B4430: [!] Reads field  from {'single3' (type System.Single)} and stores in a new local 
+
+		0x1811B4437: [!] Sets the field  (Type ) on local {'this' (function parameter, type UTJ.SpringSphereCollider)} to the value stored in {'transform5' (type UnityEngine.Transform)}
+		0x1811B443A: Loads a pointer to stack offset 0xC0 into register r11 as new constant constant8
+		0x1811B4442: Copies {'local32' (type System.Int32)} from rsi into rax
+		0x1811B445A: Copies {'constant8' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from r11 into rsp
+		0x1811B445E: [!] Returns {'local32' (type System.Int32)} from the function
+
+		0x1811B4461: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSphereCollider
+	UTJ.SpringBone/CollisionStatus CheckForCollisionAndReact(UnityEngine.Vector3 headPosition, UnityEngine.Vector3& tailPosition, System.Single tailRadius, UnityEngine.Vector3& hitNormal)
+
+		UnityEngine.Transform transform = base.transform
+
+		UnityEngine.Vector3 vector3 = this.InverseTransformPoint()
+
+		UnityEngine.Transform transform2 = base.transform
+		System.Single single = tailPosition.z
+
+		UnityEngine.Vector3 vector32 = single.InverseTransformPoint()
+
+		UnityEngine.Transform transform3 = base.transform
+		ulong local19 = 0
+
+		UnityEngine.Vector3 vector33 = this.InverseTransformDirection()
+		ulong local25 = 0
+		System.Single radius = this.radius
+		radius = tailRadius
+
+		UTJ.SpringBone/CollisionStatus collisionStatus = UTJ.SpringSphereCollider.CheckForCollisionAndReact()
+		System.Int32 local32 = collisionStatus.value__
+
+		if (collisionStatus != 0)
+
+		    UnityEngine.Transform transform4 = base.transform
+
+		    UnityEngine.Vector3 vector34 = this.TransformPoint()
+		    System.Single single2 = vector34.z
+		    tailPosition.z = single2
+
+		    UnityEngine.Transform transform5 = base.transform
+		      = transform5.
+
+		    UnityEngine.Vector3 vector35 = this.TransformDirection()
+		    System.Single single3 = vector35.z
+		      = single3.
+		    this. = transform5
+		endif
+        
+		return local32
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1811B425D) is corrupt (Mismatched instance parameter. Expecting an instance of UnityEngine.Transform, actually {'this' (function parameter, type UTJ.SpringSphereCollider)}) and cannot be created as IL. Aborting here.
+
+
+Method: UTJ.SpringBone/CollisionStatus UTJ.SpringSphereCollider::CheckForCollisionAndReact(UnityEngine.Vector3,UnityEngine.Vector3&,System.Single,UnityEngine.Vector3,System.Single):	Method Body (x86 ASM):
+		0x1811B3E60 mov rax,rsp		; DEBUG: {Register}/RAX {Register}/RSP ||| None | 0 | None ||| N/A | N/A
+		0x1811B3E63 mov [rax+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B3E67 mov [rax+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RAX | 16 | None ||| N/A | N/A
+		0x1811B3E6B mov [rax+18h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RAX | 24 | None ||| N/A | N/A
+		0x1811B3E6F mov [rax+20h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RAX | 32 | None ||| N/A | N/A
+		0x1811B3E73 push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B3E74 lea rbp,[rax-18h]		; DEBUG: {Register}/RBP {Memory}/None ||| RAX | 18446744073709551592 | None ||| N/A | N/A
+		0x1811B3E78 sub rsp,110h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 272
+		0x1811B3E7F cmp byte ptr [1818A2C2Ah],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283434 | None ||| N/A | 0
+		0x1811B3E86 mov rdi,r9		; DEBUG: {Register}/RDI {Register}/R9 ||| None | 0 | None ||| N/A | N/A
+		0x1811B3E89 movaps [rax-18h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RAX | 18446744073709551592 | None ||| N/A | N/A
+		0x1811B3E8D mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B3E90 movaps [rax-28h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RAX | 18446744073709551576 | None ||| N/A | N/A
+		0x1811B3E94 mov rsi,rcx		; DEBUG: {Register}/RSI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1811B3E97 movaps [rax-38h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RAX | 18446744073709551560 | None ||| N/A | N/A
+		0x1811B3E9C movaps xmm7,xmm2		; DEBUG: {Register}/XMM7 {Register}/XMM2 ||| None | 0 | None ||| N/A | N/A
+		0x1811B3E9F jne short 00000001811B3EB3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3EA1 mov ecx,[1814BF77Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464206716 | None ||| N/A | N/A
+		0x1811B3EA7 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3EAC mov byte ptr [1818A2C2Ah],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283434 | None ||| N/A | 1
+		0x1811B3EB3 mov rcx,[18188D900h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196608 | None ||| N/A | N/A
+		0x1811B3EBA movss xmm6,dword ptr [rbp+40h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBP | 64 | None ||| N/A | N/A
+		0x1811B3EBF movsd xmm8,qword ptr [rbx]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x1811B3EC4 addss xmm7,xmm6		; DEBUG: {Register}/XMM7 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1811B3EC8 mov r14d,[rbx+8]		; DEBUG: {Register}/R14D {Memory}/None ||| RBX | 8 | None ||| N/A | N/A
+		0x1811B3ECC test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1811B3ED3 je short 00000001811B3EE3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3ED5 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1811B3EDC jne short 00000001811B3EE3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3EDE call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3EE3 movsd xmm0,qword ptr [rdi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1811B3EE7 lea r8,[rsp+40h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B3EEC mov eax,[rdi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 8 | None ||| N/A | N/A
+		0x1811B3EEF lea rdx,[rsp+30h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B3EF4 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B3EF7 movsd qword ptr [rsp+40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B3EFD lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1811B3F02 mov [rsp+48h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 72 | None ||| N/A | N/A
+		0x1811B3F06 movsd qword ptr [rsp+30h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B3F0D mov [rsp+38h],r14d		; DEBUG: {Memory}/None {Register}/R14D ||| RSP | 56 | None ||| N/A | N/A
+		0x1811B3F12 call 0000000180CE7A50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3F17 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B3F19 lea rcx,[rsp+60h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 96 | None ||| N/A | N/A
+		0x1811B3F1E movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B3F22 movsd qword ptr [rsp+60h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 96 | None ||| N/A | N/A
+		0x1811B3F28 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B3F2B mov [rsp+68h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 104 | None ||| N/A | N/A
+		0x1811B3F2F call 0000000180CE6C20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3F34 movaps xmm1,xmm7		; DEBUG: {Register}/XMM1 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1811B3F37 mulss xmm1,xmm7		; DEBUG: {Register}/XMM1 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1811B3F3B comiss xmm0,xmm1		; DEBUG: {Register}/XMM0 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1811B3F3E jae near ptr 00000001811B41CCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3F44 mov rcx,[18188D900h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196608 | None ||| N/A | N/A
+		0x1811B3F4B test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1811B3F52 je short 00000001811B3F62h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3F54 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1811B3F5B jne short 00000001811B3F62h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3F5D call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3F62 movsd xmm0,qword ptr [rdi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1811B3F66 lea r8,[rsp+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B3F6B mov eax,[rdi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 8 | None ||| N/A | N/A
+		0x1811B3F6E lea rdx,[rsp+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B3F73 movsd qword ptr [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B3F79 lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1811B3F7E movsd xmm0,qword ptr [rsi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSI | 0 | None ||| N/A | N/A
+		0x1811B3F82 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B3F85 mov [rsp+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 56 | None ||| N/A | N/A
+		0x1811B3F89 mov eax,[rsi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RSI | 8 | None ||| N/A | N/A
+		0x1811B3F8C movsd qword ptr [rsp+40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B3F92 mov [rsp+48h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 72 | None ||| N/A | N/A
+		0x1811B3F96 call 0000000180CE7A50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3F9B xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B3F9D lea rcx,[rsp+70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 112 | None ||| N/A | N/A
+		0x1811B3FA2 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B3FA6 movsd qword ptr [rsp+70h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 112 | None ||| N/A | N/A
+		0x1811B3FAC mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B3FAF mov [rsp+78h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 120 | None ||| N/A | N/A
+		0x1811B3FB3 call 0000000180CE6C20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3FB8 mov rcx,[18188D900h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196608 | None ||| N/A | N/A
+		0x1811B3FBF mulss xmm6,xmm6		; DEBUG: {Register}/XMM6 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1811B3FC3 comiss xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1811B3FC6 movsd xmm6,qword ptr [rbx]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x1811B3FCA jae near ptr 00000001811B40ECh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3FD0 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1811B3FD7 mov r14d,[rbx+8]		; DEBUG: {Register}/R14D {Memory}/None ||| RBX | 8 | None ||| N/A | N/A
+		0x1811B3FDB je short 00000001811B3FEBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3FDD cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1811B3FE4 jne short 00000001811B3FEBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3FE6 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B3FEB movsd xmm0,qword ptr [rsi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSI | 0 | None ||| N/A | N/A
+		0x1811B3FEF lea r8,[rsp+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B3FF4 mov eax,[rsi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RSI | 8 | None ||| N/A | N/A
+		0x1811B3FF7 lea rdx,[rsp+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B3FFC xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B3FFF movsd qword ptr [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B4005 lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1811B400A mov [rsp+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 56 | None ||| N/A | N/A
+		0x1811B400E movsd qword ptr [rsp+40h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B4014 mov [rsp+48h],r14d		; DEBUG: {Memory}/None {Register}/R14D ||| RSP | 72 | None ||| N/A | N/A
+		0x1811B4019 call 0000000180CE7A50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B401E xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4020 lea rcx,[rbp-80h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551488 | None ||| N/A | N/A
+		0x1811B4024 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B4028 movsd qword ptr [rbp-80h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551488 | None ||| N/A | N/A
+		0x1811B402D xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4030 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B4033 mov [rbp-78h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551496 | None ||| N/A | N/A
+		0x1811B4036 xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4038 mov [rbp-50h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBP | 18446744073709551536 | None ||| N/A | N/A
+		0x1811B403C mov [rbp-48h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551544 | None ||| N/A | N/A
+		0x1811B403F movups [rbp-60h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551520 | None ||| N/A | N/A
+		0x1811B4043 call 0000000180CE72A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4048 movsd xmm1,qword ptr [rdi]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1811B404C lea r8,[rsp+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B4051 mov eax,[rdi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 8 | None ||| N/A | N/A
+		0x1811B4054 lea rcx,[rsp+40h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B4059 movsd qword ptr [rsp+30h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B405F movaps xmm3,xmm7		; DEBUG: {Register}/XMM3 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4062 movsd xmm1,qword ptr [rsi]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RSI | 0 | None ||| N/A | N/A
+		0x1811B4066 mov [rsp+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 56 | None ||| N/A | N/A
+		0x1811B406A mov eax,[rsi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RSI | 8 | None ||| N/A | N/A
+		0x1811B406D mov [rsp+48h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 72 | None ||| N/A | N/A
+		0x1811B4071 lea rax,[rbp-60h]		; DEBUG: {Register}/RAX {Memory}/None ||| RBP | 18446744073709551520 | None ||| N/A | N/A
+		0x1811B4075 movsd qword ptr [rsp+40h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B407B movaps xmm1,xmm0		; DEBUG: {Register}/XMM1 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1811B407E mov qword ptr [rsp+28h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RSP | 40 | None ||| N/A | 0
+		0x1811B4087 mov [rsp+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 32 | None ||| N/A | N/A
+		0x1811B408C call 00000001811B4470h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4091 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1811B4093 je short 00000001811B40E2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4095 movsd xmm0,qword ptr [rbx]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x1811B4099 lea r8,[rsp+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B409E mov eax,[rbx+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RBX | 8 | None ||| N/A | N/A
+		0x1811B40A1 lea rdx,[rbp-40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551552 | None ||| N/A | N/A
+		0x1811B40A5 movsd xmm1,qword ptr [rbp-50h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RBP | 18446744073709551536 | None ||| N/A | N/A
+		0x1811B40AA lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1811B40AF movsd qword ptr [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B40B5 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B40B8 movups xmm0,[rbp-60h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBP | 18446744073709551520 | None ||| N/A | N/A
+		0x1811B40BC mov [rsp+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 56 | None ||| N/A | N/A
+		0x1811B40C0 mov eax,[rbp-48h]		; DEBUG: {Register}/EAX {Memory}/None ||| RBP | 18446744073709551544 | None ||| N/A | N/A
+		0x1811B40C3 movaps [rbp-40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551552 | None ||| N/A | N/A
+		0x1811B40C7 movsd qword ptr [rbp-30h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B40CC mov [rbp-28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551576 | None ||| N/A | N/A
+		0x1811B40CF call 00000001811B4710h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B40D4 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B40D8 mov ecx,[rax+8]		; DEBUG: {Register}/ECX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B40DB movsd qword ptr [rbx],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 0 | None ||| N/A | N/A
+		0x1811B40DF mov [rbx+8],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RBX | 8 | None ||| N/A | N/A
+		0x1811B40E2 mov eax,2		; DEBUG: {Register}/EAX {Immediate32}/None ||| None | 0 | None ||| N/A | 2
+		0x1811B40E7 jmp near ptr 00000001811B41CEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B40EC test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1811B40F3 mov esi,[rbx+8]		; DEBUG: {Register}/ESI {Memory}/None ||| RBX | 8 | None ||| N/A | N/A
+		0x1811B40F6 je short 00000001811B4106h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B40F8 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1811B40FF jne short 00000001811B4106h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4101 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4106 movsd xmm0,qword ptr [rdi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1811B410A lea r8,[rsp+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B410F mov eax,[rdi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 8 | None ||| N/A | N/A
+		0x1811B4112 lea rdx,[rsp+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B4117 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B411A movsd qword ptr [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B4120 lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1811B4125 mov [rsp+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 56 | None ||| N/A | N/A
+		0x1811B4129 movsd qword ptr [rsp+40h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B412F mov [rsp+48h],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RSP | 72 | None ||| N/A | N/A
+		0x1811B4133 call 0000000180CE7A50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4138 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1811B413B lea rdx,[rbp-70h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551504 | None ||| N/A | N/A
+		0x1811B413F lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1811B4144 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B4148 movsd qword ptr [rbp-70h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551504 | None ||| N/A | N/A
+		0x1811B414D mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B4150 mov [rbp-68h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551512 | None ||| N/A | N/A
+		0x1811B4153 call 0000000180CE7350h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4158 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B415B lea rdx,[rsp+30h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B4160 movaps xmm2,xmm7		; DEBUG: {Register}/XMM2 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4163 lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1811B4168 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B416C mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B416F movsd qword ptr [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B4175 mov [rsp+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 56 | None ||| N/A | N/A
+		0x1811B4179 call 0000000180CE79F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B417E xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B4181 lea r8,[rsp+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B4186 lea rdx,[rsp+40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B418B lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1811B4190 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B4194 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B4197 movsd qword ptr [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1811B419D movsd xmm0,qword ptr [rdi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1811B41A1 mov [rsp+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 56 | None ||| N/A | N/A
+		0x1811B41A5 mov eax,[rdi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 8 | None ||| N/A | N/A
+		0x1811B41A8 movsd qword ptr [rsp+40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 64 | None ||| N/A | N/A
+		0x1811B41AE mov [rsp+48h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 72 | None ||| N/A | N/A
+		0x1811B41B2 call 0000000180CE77B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B41B7 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B41BB mov ecx,[rax+8]		; DEBUG: {Register}/ECX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B41BE mov eax,1		; DEBUG: {Register}/EAX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x1811B41C3 movsd qword ptr [rbx],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 0 | None ||| N/A | N/A
+		0x1811B41C7 mov [rbx+8],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RBX | 8 | None ||| N/A | N/A
+		0x1811B41CA jmp short 00000001811B41CEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B41CC xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B41CE lea r11,[rsp+110h]		; DEBUG: {Register}/R11 {Memory}/None ||| RSP | 272 | None ||| N/A | N/A
+		0x1811B41D6 mov rbx,[r11+10h]		; DEBUG: {Register}/RBX {Memory}/None ||| R11 | 16 | None ||| N/A | N/A
+		0x1811B41DA mov rsi,[r11+18h]		; DEBUG: {Register}/RSI {Memory}/None ||| R11 | 24 | None ||| N/A | N/A
+		0x1811B41DE mov rdi,[r11+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| R11 | 32 | None ||| N/A | N/A
+		0x1811B41E2 mov r14,[r11+28h]		; DEBUG: {Register}/R14 {Memory}/None ||| R11 | 40 | None ||| N/A | N/A
+		0x1811B41E6 movaps xmm6,[r11-10h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| R11 | 18446744073709551600 | None ||| N/A | N/A
+		0x1811B41EB movaps xmm7,[r11-20h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| R11 | 18446744073709551584 | None ||| N/A | N/A
+		0x1811B41F0 movaps xmm8,[r11-30h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| R11 | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B41F5 mov rsp,r11		; DEBUG: {Register}/RSP {Register}/R11 ||| None | 0 | None ||| N/A | N/A
+		0x1811B41F8 pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B41F9 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B41FA int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method UTJ.SpringBone/CollisionStatus UTJ.SpringSphereCollider::CheckForCollisionAndReact(UnityEngine.Vector3,UnityEngine.Vector3&,System.Single,UnityEngine.Vector3,System.Single):
+		End of function at 0x1811B41FB
+		Absolute End is at 0x1811B41FB
+		Identified Jump Destination addresses:
+			0x1811B41CE
+		0x1811B3E73: Saves the content of rbp to the stack
+		0x1811B3E7F: Compares {Unknown Global at 0x1818A2C2A, first ten bytes are [106 1 64 211 127 0 193 211 127 0], or as chars "j@Ó ÁÓ "} and 0
+		0x1811B3E86: Copies {'sphereLocalOrigin' (function parameter, type UnityEngine.Vector3)} from r9 into rdi
+		0x1811B3E8D: Copies {'localTailPosition' (function parameter, type UnityEngine.Vector3&)} from rdx into rbx
+		0x1811B3E94: Copies {'localHeadPosition' (function parameter, type UnityEngine.Vector3)} from rcx into rsi
+		0x1811B3E9C: Copies {'localTailRadius' (function parameter, type System.Single)} from xmm2 into xmm7
+		0x1811B3E9F: Jumps to 0x1811B3EB3 if {Unknown Global at 0x1818A2C2A, first ten bytes are [106 1 64 211 127 0 193 211 127 0], or as chars "j@Ó ÁÓ "} != 0
+
+		0x1811B3EA1: Loads string "8d" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1811B3EA7: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1811B3EB3: Loads the type definition for managed type UnityEngine.Vector3 as a constant "Vector3" in rcx
+		0x1811B3EC8: [!] Reads field z from {'localTailPosition' (function parameter, type UnityEngine.Vector3&)} and stores in a new local {'single' (type System.Single)}
+
+		0x1811B3ECC: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1811B3ED3: Jumps to 0x1811B3EE3 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1811B3ED5: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1811B3EDC: Jumps to 0x1811B3EE3 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1811B3EDE: Calls the il2cpp cctor for the type UnityEngine.Vector3
+		0x1811B3EE7: Loads a pointer to stack offset 0x40 into register r8 as new constant constant9
+		0x1811B3EEC: [!] Reads field z from {'sphereLocalOrigin' (function parameter, type UnityEngine.Vector3)} and stores in a new local {'single2' (type System.Single)}
+
+		0x1811B3EEF: Loads a pointer to stack offset 0x30 into register rdx as new constant constant10
+		0x1811B3EFD: Loads a pointer to stack offset 0x50 into register rcx as new constant constant11
+		0x1811B3F02: Moves single2 (type System.Single) from register rax to the stack at offset 72 (0x48)
+		0x1811B3F0D: Moves single (type System.Single) from register r14 to the stack at offset 56 (0x38)
+		0x1811B3F12: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Subtraction(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'vector3' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B3F19: Loads a pointer to stack offset 0x60 into register rcx as new constant constant12
+		0x1811B3F28: [!] Reads field z from {'vector3' (type UnityEngine.Vector3)} and stores in a new local {'single3' (type System.Single)}
+
+		0x1811B3F2B: Moves single3 (type System.Single) from register rax to the stack at offset 104 (0x68)
+		0x1811B3F2F: [!] Calls static managed method System.Single UnityEngine.Vector3::SqrMagnitude(UnityEngine.Vector3) and stores the result in {'single4' (type System.Single)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B3F34: Copies {'localTailRadius' (function parameter, type System.Single)} from xmm7 into xmm1
+		0x1811B3F3B: [!] Compares {'single4' (type System.Single)} and {'localTailRadius' (function parameter, type System.Single)}
+		0x1811B3F3E: Jumps to 0x1811B41CC if {'single4' (type System.Single)} is greater than or equal to {'localTailRadius' (function parameter, type System.Single)} ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x1811B3F44: Loads the type definition for managed type UnityEngine.Vector3 as a constant "Vector3" in rcx
+		0x1811B3F4B: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1811B3F52: Jumps to 0x1811B3F62 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1811B3F54: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1811B3F5B: Jumps to 0x1811B3F62 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1811B3F5D: Calls the il2cpp cctor for the type UnityEngine.Vector3
+		0x1811B3F66: Loads a pointer to stack offset 0x30 into register r8 as new constant constant18
+		0x1811B3F6B: [!] Reads field z from {'sphereLocalOrigin' (function parameter, type UnityEngine.Vector3)} and stores in a new local {'single5' (type System.Single)}
+
+		0x1811B3F6E: Loads a pointer to stack offset 0x40 into register rdx as new constant constant19
+		0x1811B3F79: Loads a pointer to stack offset 0x50 into register rcx as new constant constant20
+		0x1811B3F85: Moves single5 (type System.Single) from register rax to the stack at offset 56 (0x38)
+		0x1811B3F89: [!] Reads field z from {'localHeadPosition' (function parameter, type UnityEngine.Vector3)} and stores in a new local {'single6' (type System.Single)}
+
+		0x1811B3F92: Moves single6 (type System.Single) from register rax to the stack at offset 72 (0x48)
+		0x1811B3F96: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Subtraction(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'vector32' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B3F9D: Loads a pointer to stack offset 0x70 into register rcx as new constant constant21
+		0x1811B3FAC: [!] Reads field z from {'vector32' (type UnityEngine.Vector3)} and stores in a new local {'single7' (type System.Single)}
+
+		0x1811B3FAF: Moves single7 (type System.Single) from register rax to the stack at offset 120 (0x78)
+		0x1811B3FB3: [!] Calls static managed method System.Single UnityEngine.Vector3::SqrMagnitude(UnityEngine.Vector3) and stores the result in {'single8' (type System.Single)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B3FB8: Loads the type definition for managed type UnityEngine.Vector3 as a constant "Vector3" in rcx
+		0x1811B3FC3: [!] Compares  and {'single8' (type System.Single)}
+		0x1811B3FCA: Jumps to 0x1811B40EC if  is greater than or equal to {'single8' (type System.Single)} ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x1811B3FD0: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1811B3FD7: [!] Reads field z from {'localTailPosition' (function parameter, type UnityEngine.Vector3&)} and stores in a new local {'single9' (type System.Single)}
+
+		0x1811B3FDB: Jumps to 0x1811B3FEB if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1811B3FDD: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1811B3FE4: Jumps to 0x1811B3FEB if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1811B3FE6: Calls the il2cpp cctor for the type UnityEngine.Vector3
+		0x1811B3FEF: Loads a pointer to stack offset 0x30 into register r8 as new constant constant27
+		0x1811B3FF4: [!] Reads field z from {'localHeadPosition' (function parameter, type UnityEngine.Vector3)} and stores in a new local {'single10' (type System.Single)}
+
+		0x1811B3FF7: Loads a pointer to stack offset 0x40 into register rdx as new constant constant28
+		0x1811B4005: Loads a pointer to stack offset 0x50 into register rcx as new constant constant29
+		0x1811B400A: Moves single10 (type System.Single) from register rax to the stack at offset 56 (0x38)
+		0x1811B4014: Moves single9 (type System.Single) from register r14 to the stack at offset 72 (0x48)
+		0x1811B4019: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Subtraction(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'vector33' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B404C: Loads a pointer to stack offset 0x30 into register r8 as new constant constant30
+		0x1811B4051: [!] Reads field z from {'sphereLocalOrigin' (function parameter, type UnityEngine.Vector3)} and stores in a new local {'single11' (type System.Single)}
+
+		0x1811B4054: Loads a pointer to stack offset 0x40 into register rcx as new constant constant31
+		0x1811B405F: Copies {'localTailRadius' (function parameter, type System.Single)} from xmm7 into xmm3
+		0x1811B4066: Moves single11 (type System.Single) from register rax to the stack at offset 56 (0x38)
+		0x1811B406A: [!] Reads field z from {'localHeadPosition' (function parameter, type UnityEngine.Vector3)} and stores in a new local {'single12' (type System.Single)}
+
+		0x1811B406D: Moves single12 (type System.Single) from register rax to the stack at offset 72 (0x48)
+		0x1811B407B: Copies {'local24' (type System.Int32)} from xmm0 into xmm1
+		0x1811B407E: Moves 0 (immediate ulong value) to the stack at offset 40 as a new local local29
+		0x1811B4087: Moves single12 (type System.Single) from register rax to the stack at offset 32 (0x20)
+		0x1811B408C: [!] Calls static managed method System.Boolean UTJ.SpringSphereCollider::ComputeIntersection(UnityEngine.Vector3,System.Single,UnityEngine.Vector3,System.Single,UTJ.Circle3&) and stores the result in {'boolean' (type System.Boolean)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B4091: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1811B4093: Jumps to 0x1811B40E2 (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1811B4099: Loads a pointer to stack offset 0x30 into register r8 as new constant constant33
+		0x1811B409E: [!] Reads field z from {'localTailPosition' (function parameter, type UnityEngine.Vector3&)} and stores in a new local {'single13' (type System.Single)}
+
+		0x1811B40AA: Loads a pointer to stack offset 0x50 into register rcx as new constant constant34
+		0x1811B40BC: Moves single13 (type System.Single) from register rax to the stack at offset 56 (0x38)
+		0x1811B40CF: [!] Calls static managed method UnityEngine.Vector3 UTJ.SpringSphereCollider::ComputeNewTailPosition(UTJ.Circle3,UnityEngine.Vector3) and stores the result in {'vector34' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B40D8: [!] Reads field z from {'vector34' (type UnityEngine.Vector3)} and stores in a new local {'single14' (type System.Single)}
+
+		0x1811B40DF: [!] Sets the field z (Type System.Single) on local {'localTailPosition' (function parameter, type UnityEngine.Vector3&)} to the value stored in {'single14' (type System.Single)}
+		0x1811B40E2: [!] Writes the constant 0x2 into operand 2 (type UInt64) in register rax
+		0x1811B40E7: Jumps to 0x1811B41CE (which is an function-local jump destination)
+
+		0x1811B40EC: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1811B40F3: [!] Reads field z from {'localTailPosition' (function parameter, type UnityEngine.Vector3&)} and stores in a new local {'single15' (type System.Single)}
+
+		0x1811B40F6: Jumps to 0x1811B4106 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1811B40F8: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1811B40FF: Jumps to 0x1811B4106 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1811B4101: Calls the il2cpp cctor for the type UnityEngine.Vector3
+		0x1811B410A: Loads a pointer to stack offset 0x30 into register r8 as new constant constant40
+		0x1811B410F: [!] Reads field z from {'sphereLocalOrigin' (function parameter, type UnityEngine.Vector3)} and stores in a new local {'single16' (type System.Single)}
+
+		0x1811B4112: Loads a pointer to stack offset 0x40 into register rdx as new constant constant41
+		0x1811B4120: Loads a pointer to stack offset 0x50 into register rcx as new constant constant42
+		0x1811B4125: Moves single16 (type System.Single) from register rax to the stack at offset 56 (0x38)
+		0x1811B412F: Moves single15 (type System.Single) from register rsi to the stack at offset 72 (0x48)
+		0x1811B4133: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Subtraction(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'vector35' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B413F: Loads a pointer to stack offset 0x50 into register rcx as new constant constant43
+		0x1811B414D: [!] Reads field z from {'vector35' (type UnityEngine.Vector3)} and stores in a new local {'single17' (type System.Single)}
+
+		0x1811B415B: Loads a pointer to stack offset 0x30 into register rdx as new constant constant44
+		0x1811B4160: Copies {'localTailRadius' (function parameter, type System.Single)} from xmm7 into xmm2
+		0x1811B4163: Loads a pointer to stack offset 0x50 into register rcx as new constant constant45
+		0x1811B416C: [!] Reads field  from {'single17' (type System.Single)} and stores in a new local 
+
+		0x1811B4175: Moves single17 (type System.Single) from register rax to the stack at offset 56 (0x38)
+		0x1811B4179: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Multiply(UnityEngine.Vector3,System.Single) and stores the result in {'vector36' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B4181: Loads a pointer to stack offset 0x30 into register r8 as new constant constant46
+		0x1811B4186: Loads a pointer to stack offset 0x40 into register rdx as new constant constant47
+		0x1811B418B: Loads a pointer to stack offset 0x50 into register rcx as new constant constant48
+		0x1811B4194: [!] Reads field z from {'vector36' (type UnityEngine.Vector3)} and stores in a new local {'single18' (type System.Single)}
+
+		0x1811B41A1: Moves single18 (type System.Single) from register rax to the stack at offset 56 (0x38)
+		0x1811B41A5: [!] Reads field z from {'sphereLocalOrigin' (function parameter, type UnityEngine.Vector3)} and stores in a new local {'single19' (type System.Single)}
+
+		0x1811B41AE: Moves single19 (type System.Single) from register rax to the stack at offset 72 (0x48)
+		0x1811B41B2: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Addition(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'vector37' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B41BB: [!] Reads field z from {'vector37' (type UnityEngine.Vector3)} and stores in a new local {'single20' (type System.Single)}
+
+		0x1811B41BE: [!] Writes the constant 0x1 into operand 1 (type UInt64) in register rax
+		0x1811B41C7: [!] Sets the field z (Type System.Single) on local {'localTailPosition' (function parameter, type UnityEngine.Vector3&)} to the value stored in {'single20' (type System.Single)}
+		0x1811B41CA: Jumps to 0x1811B41CE (which is an function-local jump destination)
+
+		0x1811B41CC: Clears register rax, yielding zero-local {'local48' (type System.Int32)}
+
+		End Of If-Else Block (at 0x1811B41CE) where the else started at 0x1811B41CC
+		0x1811B41CE: Loads a pointer to stack offset 0x110 into register r11 as new constant constant50
+		0x1811B41F5: Copies {'constant50' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from r11 into rsp
+		0x1811B41F9: [!] Returns {'local48' (type System.Int32)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSphereCollider
+	static UTJ.SpringBone/CollisionStatus CheckForCollisionAndReact(UnityEngine.Vector3 localHeadPosition, UnityEngine.Vector3& localTailPosition, System.Single localTailRadius, UnityEngine.Vector3 sphereLocalOrigin, System.Single sphereRadius)
+		System.Single single = localTailPosition.z
+		System.Single single2 = sphereLocalOrigin.z
+
+		UnityEngine.Vector3 vector3 = UnityEngine.Vector3.op_Subtraction()
+		System.Single single3 = vector3.z
+
+		System.Single single4 = UnityEngine.Vector3.SqrMagnitude()
+
+		if (single4 < localTailRadius)
+		    System.Single single5 = sphereLocalOrigin.z
+		    System.Single single6 = localHeadPosition.z
+
+		    UnityEngine.Vector3 vector32 = UnityEngine.Vector3.op_Subtraction()
+		    System.Single single7 = vector32.z
+
+		    System.Single single8 = UnityEngine.Vector3.SqrMagnitude()
+
+		    if ( < single8)
+		        System.Single single9 = localTailPosition.z
+		        System.Single single10 = localHeadPosition.z
+
+		        UnityEngine.Vector3 vector33 = UnityEngine.Vector3.op_Subtraction()
+		        System.Single single11 = sphereLocalOrigin.z
+		        System.Single single12 = localHeadPosition.z
+
+		        System.Boolean boolean = UTJ.SpringSphereCollider.ComputeIntersection()
+
+		        if (boolean != False)
+		            System.Single single13 = localTailPosition.z
+
+		            UnityEngine.Vector3 vector34 = UTJ.SpringSphereCollider.ComputeNewTailPosition()
+		            System.Single single14 = vector34.z
+		            localTailPosition.z = single14
+		        endif
+                
+		    else
+		        System.Single single15 = localTailPosition.z
+		        System.Single single16 = sphereLocalOrigin.z
+
+		        UnityEngine.Vector3 vector35 = UnityEngine.Vector3.op_Subtraction()
+		        System.Single single17 = vector35.z
+		          = single17.
+
+		        UnityEngine.Vector3 vector36 = UnityEngine.Vector3.op_Multiply()
+		        System.Single single18 = vector36.z
+		        System.Single single19 = sphereLocalOrigin.z
+
+		        UnityEngine.Vector3 vector37 = UnityEngine.Vector3.op_Addition()
+		        System.Single single20 = vector37.z
+		        localTailPosition.z = single20
+		    else
+		        ulong local48 = 0
+		    endif
+            
+		    return local48
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1811B3F12) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (2)) and cannot be created as IL. Aborting here.
+
+
+Method: System.Boolean UTJ.SpringSphereCollider::ComputeIntersection(UnityEngine.Vector3,System.Single,UnityEngine.Vector3,System.Single,UTJ.Circle3&):	Method Body (x86 ASM):
+		0x1811B4470 mov rax,rsp		; DEBUG: {Register}/RAX {Register}/RSP ||| None | 0 | None ||| N/A | N/A
+		0x1811B4473 mov [rax+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B4477 mov [rax+10h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RAX | 16 | None ||| N/A | N/A
+		0x1811B447B push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B447C lea rbp,[rax-4Fh]		; DEBUG: {Register}/RBP {Memory}/None ||| RAX | 18446744073709551537 | None ||| N/A | N/A
+		0x1811B4480 sub rsp,0C0h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 192
+		0x1811B4487 cmp byte ptr [1818A2C2Bh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283435 | None ||| N/A | 0
+		0x1811B448E mov rbx,r8		; DEBUG: {Register}/RBX {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4491 movaps [rax-18h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RAX | 18446744073709551592 | None ||| N/A | N/A
+		0x1811B4495 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4498 movaps [rax-38h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RAX | 18446744073709551560 | None ||| N/A | N/A
+		0x1811B449D movaps xmm8,xmm1		; DEBUG: {Register}/XMM8 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1811B44A1 movaps [rax-58h],xmm10		; DEBUG: {Memory}/None {Register}/XMM10 ||| RAX | 18446744073709551528 | None ||| N/A | N/A
+		0x1811B44A6 movaps xmm10,xmm3		; DEBUG: {Register}/XMM10 {Register}/XMM3 ||| None | 0 | None ||| N/A | N/A
+		0x1811B44AA movaps [rax-68h],xmm11		; DEBUG: {Memory}/None {Register}/XMM11 ||| RAX | 18446744073709551512 | None ||| N/A | N/A
+		0x1811B44AF jne short 00000001811B44C3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B44B1 mov ecx,[1814BF78Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464206732 | None ||| N/A | N/A
+		0x1811B44B7 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B44BC mov byte ptr [1818A2C2Bh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283435 | None ||| N/A | 1
+		0x1811B44C3 mov rcx,[18188D900h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196608 | None ||| N/A | N/A
+		0x1811B44CA test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1811B44D1 je short 00000001811B44E1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B44D3 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1811B44DA jne short 00000001811B44E1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B44DC call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B44E1 movsd xmm0,qword ptr [rdi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1811B44E5 lea r8,[rbp-49h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551543 | None ||| N/A | N/A
+		0x1811B44E9 mov eax,[rdi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 8 | None ||| N/A | N/A
+		0x1811B44EC lea rdx,[rbp-39h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x1811B44F0 movsd qword ptr [rbp-49h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551543 | None ||| N/A | N/A
+		0x1811B44F5 lea rcx,[rbp-29h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B44F9 movsd xmm0,qword ptr [rbx]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x1811B44FD xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B4500 mov [rbp-41h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551551 | None ||| N/A | N/A
+		0x1811B4503 mov eax,[rbx+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RBX | 8 | None ||| N/A | N/A
+		0x1811B4506 movsd qword ptr [rbp-39h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x1811B450B mov [rbp-31h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551567 | None ||| N/A | N/A
+		0x1811B450E call 0000000180CE7A50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4513 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4515 lea rcx,[rbp-59h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551527 | None ||| N/A | N/A
+		0x1811B4519 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B451D movsd qword ptr [rbp-59h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551527 | None ||| N/A | N/A
+		0x1811B4522 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B4525 mov [rbp-51h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551535 | None ||| N/A | N/A
+		0x1811B4528 call 0000000180CE6C20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B452D mov rbx,[18188DA20h]		; DEBUG: {Register}/RBX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1811B4534 movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4537 test byte ptr [rbx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 295 | None ||| N/A | 2
+		0x1811B453E je short 00000001811B4558h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4540 cmp dword ptr [rbx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 216 | None ||| N/A | 0
+		0x1811B4547 jne short 00000001811B4558h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4549 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1811B454C call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4551 mov rbx,[18188DA20h]		; DEBUG: {Register}/RBX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1811B4558 xorps xmm1,xmm1		; DEBUG: {Register}/XMM1 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1811B455B ucomiss xmm1,xmm6		; DEBUG: {Register}/XMM1 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1811B455E ja short 00000001811B456Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4560 xorps xmm11,xmm11		; DEBUG: {Register}/XMM11 {Register}/XMM11 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4564 sqrtss xmm11,xmm6		; DEBUG: {Register}/XMM11 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4569 jmp short 00000001811B4577h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B456B movaps xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1811B456E call 00000001801D6F88h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4573 movaps xmm11,xmm0		; DEBUG: {Register}/XMM11 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4577 xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1811B457A comiss xmm0,xmm11		; DEBUG: {Register}/XMM0 {Register}/XMM11 ||| None | 0 | None ||| N/A | N/A
+		0x1811B457E jae near ptr 00000001811B46DEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4584 movaps [rsp+0A0h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 160 | None ||| N/A | N/A
+		0x1811B458C movaps [rsp+80h],xmm9		; DEBUG: {Memory}/None {Register}/XMM9 ||| RSP | 128 | None ||| N/A | N/A
+		0x1811B4595 test byte ptr [rbx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 295 | None ||| N/A | 2
+		0x1811B459C movaps xmm7,xmm6		; DEBUG: {Register}/XMM7 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1811B459F movss xmm9,dword ptr [181261CF8h]		; DEBUG: {Register}/XMM9 {Memory}/None ||| RIP | 6461725944 | None ||| N/A | N/A
+		0x1811B45A8 mulss xmm10,xmm10		; DEBUG: {Register}/XMM10 {Register}/XMM10 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45AD divss xmm9,xmm11		; DEBUG: {Register}/XMM9 {Register}/XMM11 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45B2 subss xmm7,xmm10		; DEBUG: {Register}/XMM7 {Register}/XMM10 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45B7 mulss xmm8,xmm8		; DEBUG: {Register}/XMM8 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45BC addss xmm7,xmm8		; DEBUG: {Register}/XMM7 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45C1 movaps xmm10,xmm7		; DEBUG: {Register}/XMM10 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45C5 mulss xmm7,xmm7		; DEBUG: {Register}/XMM7 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45C9 mulss xmm10,xmm9		; DEBUG: {Register}/XMM10 {Register}/XMM9 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45CE je short 00000001811B45E1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B45D0 cmp dword ptr [rbx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 216 | None ||| N/A | 0
+		0x1811B45D7 jne short 00000001811B45E1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B45D9 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1811B45DC call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B45E1 mulss xmm6,dword ptr [181261DD8h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RIP | 6461726168 | None ||| N/A | N/A
+		0x1811B45E9 xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45EC mulss xmm6,xmm8		; DEBUG: {Register}/XMM6 {Register}/XMM8 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45F1 subss xmm6,xmm7		; DEBUG: {Register}/XMM6 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45F5 ucomiss xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45F8 ja short 00000001811B4603h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B45FA xorps xmm7,xmm7		; DEBUG: {Register}/XMM7 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1811B45FD sqrtss xmm7,xmm6		; DEBUG: {Register}/XMM7 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4601 jmp short 00000001811B460Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4603 movaps xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4606 call 00000001801D6F88h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B460B movaps xmm7,xmm0		; DEBUG: {Register}/XMM7 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1811B460E mov rcx,[18188D900h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196608 | None ||| N/A | N/A
+		0x1811B4615 movsd xmm6,qword ptr [rbp-59h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBP | 18446744073709551527 | None ||| N/A | N/A
+		0x1811B461A mov ebx,[rbp-51h]		; DEBUG: {Register}/EBX {Memory}/None ||| RBP | 18446744073709551535 | None ||| N/A | N/A
+		0x1811B461D mulss xmm7,xmm9		; DEBUG: {Register}/XMM7 {Register}/XMM9 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4622 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1811B4629 movaps xmm9,[rsp+80h]		; DEBUG: {Register}/XMM9 {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x1811B4632 je short 00000001811B4642h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4634 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1811B463B jne short 00000001811B4642h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B463D call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4642 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B4645 movsd qword ptr [rbp-39h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x1811B464A movaps xmm2,xmm11		; DEBUG: {Register}/XMM2 {Register}/XMM11 ||| None | 0 | None ||| N/A | N/A
+		0x1811B464E mov [rbp-31h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RBP | 18446744073709551567 | None ||| N/A | N/A
+		0x1811B4651 lea rdx,[rbp-39h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x1811B4655 lea rcx,[rbp-29h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B4659 call 0000000180CE77F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B465E xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B4661 lea r8,[rbp-39h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x1811B4665 movaps xmm1,xmm10		; DEBUG: {Register}/XMM1 {Register}/XMM10 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4669 lea rcx,[rbp-29h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B466D movsd xmm6,qword ptr [rax]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B4671 mov ebx,[rax+8]		; DEBUG: {Register}/EBX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B4674 movsd qword ptr [rbp-39h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x1811B4679 mov [rbp-31h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RBP | 18446744073709551567 | None ||| N/A | N/A
+		0x1811B467C call 0000000180CE7A20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4681 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B4684 lea r8,[rbp-39h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x1811B4688 lea rdx,[rbp-49h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551543 | None ||| N/A | N/A
+		0x1811B468C lea rcx,[rbp-29h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x1811B4690 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B4694 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B4697 movsd qword ptr [rbp-39h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x1811B469C movsd xmm0,qword ptr [rdi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1811B46A0 mov [rbp-31h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551567 | None ||| N/A | N/A
+		0x1811B46A3 mov eax,[rdi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 8 | None ||| N/A | N/A
+		0x1811B46A6 movsd qword ptr [rbp-49h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551543 | None ||| N/A | N/A
+		0x1811B46AB mov [rbp-41h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551551 | None ||| N/A | N/A
+		0x1811B46AE call 0000000180CE77B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B46B3 mov rdx,[rbp+77h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 119 | None ||| N/A | N/A
+		0x1811B46B7 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B46BB mov ecx,[rax+8]		; DEBUG: {Register}/ECX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B46BE mov al,1		; DEBUG: {Register}/AL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1811B46C0 movss dword ptr [rdx+18h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RDX | 24 | None ||| N/A | N/A
+		0x1811B46C5 movaps xmm7,[rsp+0A0h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 160 | None ||| N/A | N/A
+		0x1811B46CD movsd qword ptr [rdx],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RDX | 0 | None ||| N/A | N/A
+		0x1811B46D1 movsd qword ptr [rdx+0Ch],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RDX | 12 | None ||| N/A | N/A
+		0x1811B46D6 mov [rdx+8],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RDX | 8 | None ||| N/A | N/A
+		0x1811B46D9 mov [rdx+14h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RDX | 20 | None ||| N/A | N/A
+		0x1811B46DC jmp short 00000001811B46E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B46DE xor al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1811B46E0 lea r11,[rsp+0C0h]		; DEBUG: {Register}/R11 {Memory}/None ||| RSP | 192 | None ||| N/A | N/A
+		0x1811B46E8 mov rbx,[r11+10h]		; DEBUG: {Register}/RBX {Memory}/None ||| R11 | 16 | None ||| N/A | N/A
+		0x1811B46EC mov rdi,[r11+18h]		; DEBUG: {Register}/RDI {Memory}/None ||| R11 | 24 | None ||| N/A | N/A
+		0x1811B46F0 movaps xmm6,[r11-10h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| R11 | 18446744073709551600 | None ||| N/A | N/A
+		0x1811B46F5 movaps xmm8,[r11-30h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| R11 | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B46FA movaps xmm10,[r11-50h]		; DEBUG: {Register}/XMM10 {Memory}/None ||| R11 | 18446744073709551536 | None ||| N/A | N/A
+		0x1811B46FF movaps xmm11,[r11-60h]		; DEBUG: {Register}/XMM11 {Memory}/None ||| R11 | 18446744073709551520 | None ||| N/A | N/A
+		0x1811B4704 mov rsp,r11		; DEBUG: {Register}/RSP {Register}/R11 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4707 pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B4708 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B4709 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.Boolean UTJ.SpringSphereCollider::ComputeIntersection(UnityEngine.Vector3,System.Single,UnityEngine.Vector3,System.Single,UTJ.Circle3&):
+		End of function at 0x1811B470A
+		Absolute End is at 0x1811B470A
+		Identified Jump Destination addresses:
+			0x1811B4577
+			0x1811B460E
+			0x1811B46E0
+		0x1811B447B: Saves the content of rbp to the stack
+		0x1811B4487: Compares {Unknown Global at 0x1818A2C2B, first ten bytes are [1 64 211 127 0 193 211 127 0 64], or as chars "@Ó ÁÓ @"} and 0
+		0x1811B448E: Copies {'originB' (function parameter, type UnityEngine.Vector3)} from r8 into rbx
+		0x1811B4495: Copies {'originA' (function parameter, type UnityEngine.Vector3)} from rcx into rdi
+		0x1811B449D: Copies {'radiusA' (function parameter, type System.Single)} from xmm1 into xmm8
+		0x1811B44A6: Copies {'radiusB' (function parameter, type System.Single)} from xmm3 into xmm10
+		0x1811B44AF: Jumps to 0x1811B44C3 if {Unknown Global at 0x1818A2C2B, first ten bytes are [1 64 211 127 0 193 211 127 0 64], or as chars "@Ó ÁÓ @"} != 0
+
+		0x1811B44B1: Loads string "9d" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1811B44B7: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1811B44C3: Loads the type definition for managed type UnityEngine.Vector3 as a constant "Vector3" in rcx
+		0x1811B44CA: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1811B44D1: Jumps to 0x1811B44E1 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1811B44D3: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1811B44DA: Jumps to 0x1811B44E1 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1811B44DC: Calls the il2cpp cctor for the type UnityEngine.Vector3
+		0x1811B450E: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Subtraction(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'vector3' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B4513: Clears register rdx, yielding zero-local {'local9' (type System.Int32)}
+		0x1811B4528: [!] Calls static managed method System.Single UnityEngine.Vector3::SqrMagnitude(UnityEngine.Vector3) and stores the result in {'single' (type System.Single)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B452D: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rbx
+		0x1811B4534: Copies {'single' (type System.Single)} from xmm0 into xmm6
+		0x1811B4537: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1811B453E: Jumps to 0x1811B4558 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1811B4540: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1811B4547: Jumps to 0x1811B4558 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1811B4549: Copies {'Mathf' (constant value of type Mono.Cecil.TypeReference)} from rbx into rcx
+		0x1811B454C: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x1811B4551: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rbx
+		0x1811B455E: Jumps to 0x1811B456B if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" is greater than 0
+
+		0x1811B4569: Jumps to 0x1811B4577 (which is an function-local jump destination)
+
+		0x1811B456B: Copies {'single' (type System.Single)} from xmm6 into xmm0
+		0x1811B4573: Copies {'single' (type System.Single)} from xmm0 into xmm11
+
+		Jump Destination (0x1811B4577):
+		0x1811B4577: Clears register xmm0, yielding zero-local {'local14' (type System.Int32)}
+		0x1811B457A: [!] Compares {'local14' (type System.Int32)} and {'single' (type System.Single)}
+		0x1811B457E: Jumps to 0x1811B46DE if {'local14' (type System.Int32)} is greater than or equal to {'single' (type System.Single)} ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x1811B4595: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1811B459C: Copies {'single' (type System.Single)} from xmm6 into xmm7
+		0x1811B459F: Reads {Unknown Global at 0x181261CF8, first ten bytes are [0 0 0 63 0 0 64 63 164 112], or as chars "   ?  @?¤p"} into register xmm9 as a constant constant17
+		0x1811B45C1: Copies {'single' (type System.Single)} from xmm7 into xmm10
+		0x1811B45CE: Jumps to 0x1811B45E1 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1811B45D0: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1811B45D7: Jumps to 0x1811B45E1 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1811B45D9: Copies {'Mathf' (constant value of type Mono.Cecil.TypeReference)} from rbx into rcx
+		0x1811B45DC: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x1811B45E1: Multiplies {'single' (type System.Single)} by the constant value at 0x181261DD8 in the binary, which is 4, and stores the result in new local {'local15' (type System.Single)} in register xmm6
+		0x1811B45F8: Jumps to 0x1811B4603 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" is greater than 0
+
+		0x1811B4601: Jumps to 0x1811B460E (which is an function-local jump destination)
+
+		0x1811B4603: Copies {'local15' (type System.Single)} from xmm6 into xmm0
+		0x1811B460B: Copies {'local15' (type System.Single)} from xmm0 into xmm7
+
+		Jump Destination (0x1811B460E):
+		0x1811B460E: Loads the type definition for managed type UnityEngine.Vector3 as a constant "Vector3" in rcx
+		0x1811B4622: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1811B4629: Reads unknown value in stack, offset 128 (0x80) and stores the pointer in register xmm9 as new constant constant23
+		0x1811B4632: Jumps to 0x1811B4642 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1811B4634: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1811B463B: Jumps to 0x1811B4642 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1811B463D: Calls the il2cpp cctor for the type UnityEngine.Vector3
+		0x1811B464A: Copies {'single' (type System.Single)} from xmm11 into xmm2
+		0x1811B4659: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Division(UnityEngine.Vector3,System.Single) and stores the result in {'vector32' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B4665: Copies {'radiusB' (function parameter, type System.Single)} from xmm10 into xmm1
+		0x1811B4671: [!] Reads field z from {'vector32' (type UnityEngine.Vector3)} and stores in a new local {'single2' (type System.Single)}
+
+		0x1811B467C: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Multiply(System.Single,UnityEngine.Vector3) with arguments [{'local15' (type System.Single)}, {'local9' (type System.Int32)}] and stores the result in {'vector33' (type UnityEngine.Vector3)}
+
+		0x1811B46AE: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Addition(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'vector34' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B46BB: [!] Reads field z from {'vector34' (type UnityEngine.Vector3)} and stores in a new local {'single3' (type System.Single)}
+
+		0x1811B46BE: [!] Writes the constant 0x1 into operand 1 (type UInt64) in register rax
+		0x1811B46C0: [!] Sets the field  (Type ) on local {'local9' (type System.Int32)} to the value stored in {'local15' (type System.Single)}
+		0x1811B46C5: Reads unknown value in stack, offset 160 (0xA0) and stores the pointer in register xmm7 as new constant constant27
+		0x1811B46D6: [!] Sets the field  (Type ) on local {'local9' (type System.Int32)} to the value stored in {'single3' (type System.Single)}
+		0x1811B46D9: [!] Sets the field  (Type ) on local {'local9' (type System.Int32)} to the value stored in {'single2' (type System.Single)}
+		0x1811B46DC: Jumps to 0x1811B46E0 (which is an function-local jump destination)
+
+		0x1811B46DE: Clears register rax, yielding zero-local {'local28' (type System.Int32)}
+
+		End Of If-Else Block (at 0x1811B46E0) where the else started at 0x1811B46DE
+		0x1811B46E0: Loads a pointer to stack offset 0xC0 into register r11 as new constant constant28
+		0x1811B4704: Copies {'constant28' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from r11 into rsp
+		0x1811B4708: [!] Returns {'local28' (type System.Int32)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSphereCollider
+	static System.Boolean ComputeIntersection(UnityEngine.Vector3 originA, System.Single radiusA, UnityEngine.Vector3 originB, System.Single radiusB, UTJ.Circle3& intersection)
+
+		UnityEngine.Vector3 vector3 = UnityEngine.Vector3.op_Subtraction()
+		ulong local9 = 0
+
+		System.Single single = UnityEngine.Vector3.SqrMagnitude()
+		ulong local14 = 0
+
+		if (local14 < single)
+		    radiusB = single
+		    System.Single local15 = single * 4
+
+		    UnityEngine.Vector3 vector32 = UnityEngine.Vector3.op_Division()
+		    System.Single single2 = vector32.z
+
+		    UnityEngine.Vector3 vector33 = UnityEngine.Vector3.op_Multiply(local15, local9) //(Single d, Vector3 a)
+
+		    UnityEngine.Vector3 vector34 = UnityEngine.Vector3.op_Addition()
+		    System.Single single3 = vector34.z
+		    local9. = local15
+		    local9. = single3
+		    local9. = single2
+		else
+		    ulong local28 = 0
+		endif
+        
+		return local28
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1811B450E) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (2)) and cannot be created as IL. Aborting here.
+
+
+Method: UnityEngine.Vector3 UTJ.SpringSphereCollider::ComputeNewTailPosition(UTJ.Circle3,UnityEngine.Vector3):	Method Body (x86 ASM):
+		0x1811B4710 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1811B4715 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x1811B471A mov [rsp+18h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 24 | None ||| N/A | N/A
+		0x1811B471F push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B4720 mov rbp,rsp		; DEBUG: {Register}/RBP {Register}/RSP ||| None | 0 | None ||| N/A | N/A
+		0x1811B4723 sub rsp,60h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 96
+		0x1811B4727 cmp byte ptr [1818A2C2Ch],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283436 | None ||| N/A | 0
+		0x1811B472E mov rsi,r8		; DEBUG: {Register}/RSI {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x1811B4731 mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4734 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4737 jne short 00000001811B474Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4739 mov ecx,[1814BF7A4h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464206756 | None ||| N/A | N/A
+		0x1811B473F call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4744 mov byte ptr [1818A2C2Ch],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283436 | None ||| N/A | 1
+		0x1811B474B mov rcx,[18188D900h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196608 | None ||| N/A | N/A
+		0x1811B4752 xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B4754 mov [rbx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 0 | None ||| N/A | N/A
+		0x1811B4757 mov [rbx+8],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBX | 8 | None ||| N/A | N/A
+		0x1811B475A test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1811B4761 je short 00000001811B4770h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4763 cmp [rcx+0D8h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RCX | 216 | None ||| N/A | N/A
+		0x1811B4769 jne short 00000001811B4770h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B476B call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4770 movsd xmm0,qword ptr [rdi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1811B4774 lea r8,[rbp-40h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551552 | None ||| N/A | N/A
+		0x1811B4778 mov eax,[rdi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 8 | None ||| N/A | N/A
+		0x1811B477B lea rdx,[rbp-30h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B477F movsd qword ptr [rbp-40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551552 | None ||| N/A | N/A
+		0x1811B4784 lea rcx,[rbp-10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551600 | None ||| N/A | N/A
+		0x1811B4788 movsd xmm0,qword ptr [rsi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSI | 0 | None ||| N/A | N/A
+		0x1811B478C xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B478F mov [rbp-38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551560 | None ||| N/A | N/A
+		0x1811B4792 mov eax,[rsi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RSI | 8 | None ||| N/A | N/A
+		0x1811B4795 movsd qword ptr [rbp-30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B479A mov [rbp-28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551576 | None ||| N/A | N/A
+		0x1811B479D call 0000000180CE7A50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B47A2 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1811B47A5 lea rdx,[rbp-30h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B47A9 lea rcx,[rbp-40h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551552 | None ||| N/A | N/A
+		0x1811B47AD movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B47B1 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B47B4 movsd qword ptr [rbp-30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B47B9 movsd xmm0,qword ptr [rdi+0Ch]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 12 | None ||| N/A | N/A
+		0x1811B47BE mov [rbp-28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551576 | None ||| N/A | N/A
+		0x1811B47C1 mov eax,[rdi+14h]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 20 | None ||| N/A | N/A
+		0x1811B47C4 movsd qword ptr [rbp-40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551552 | None ||| N/A | N/A
+		0x1811B47C9 mov [rbp-38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551560 | None ||| N/A | N/A
+		0x1811B47CC call 0000000180CE5510h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B47D1 movsd xmm1,qword ptr [rdi+0Ch]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RDI | 12 | None ||| N/A | N/A
+		0x1811B47D6 lea r8,[rbp-30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B47DA mov eax,[rdi+14h]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 20 | None ||| N/A | N/A
+		0x1811B47DD lea rcx,[rbp-10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551600 | None ||| N/A | N/A
+		0x1811B47E1 movsd qword ptr [rbp-30h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B47E6 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B47E9 movaps xmm1,xmm0		; DEBUG: {Register}/XMM1 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1811B47EC mov [rbp-28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551576 | None ||| N/A | N/A
+		0x1811B47EF call 0000000180CE7A20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B47F4 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B47F7 lea r8,[rbp-30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B47FB lea rdx,[rbp-40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551552 | None ||| N/A | N/A
+		0x1811B47FF lea rcx,[rbp-10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551600 | None ||| N/A | N/A
+		0x1811B4803 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B4807 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B480A movsd qword ptr [rbp-30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B480F movsd xmm0,qword ptr [rsi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSI | 0 | None ||| N/A | N/A
+		0x1811B4813 mov [rbp-28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551576 | None ||| N/A | N/A
+		0x1811B4816 mov eax,[rsi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RSI | 8 | None ||| N/A | N/A
+		0x1811B4819 movsd qword ptr [rbp-40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551552 | None ||| N/A | N/A
+		0x1811B481E mov [rbp-38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551560 | None ||| N/A | N/A
+		0x1811B4821 call 0000000180CE7A50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4826 movsd xmm0,qword ptr [rdi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1811B482A lea r8,[rbp-30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B482E mov ecx,[rdi+8]		; DEBUG: {Register}/ECX {Memory}/None ||| RDI | 8 | None ||| N/A | N/A
+		0x1811B4831 lea rdx,[rbp-40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551552 | None ||| N/A | N/A
+		0x1811B4835 movsd qword ptr [rbp-30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B483A xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B483D movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B4841 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B4844 mov [rbp-28h],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RBP | 18446744073709551576 | None ||| N/A | N/A
+		0x1811B4847 lea rcx,[rbp-10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551600 | None ||| N/A | N/A
+		0x1811B484B movsd qword ptr [rbp-40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551552 | None ||| N/A | N/A
+		0x1811B4850 mov [rbp-38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551560 | None ||| N/A | N/A
+		0x1811B4853 call 0000000180CE7A50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4858 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1811B485B lea rdx,[rbp-20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551584 | None ||| N/A | N/A
+		0x1811B485F lea rcx,[rbp-10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551600 | None ||| N/A | N/A
+		0x1811B4863 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B4867 movsd qword ptr [rbp-20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551584 | None ||| N/A | N/A
+		0x1811B486C mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B486F mov [rbp-18h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551592 | None ||| N/A | N/A
+		0x1811B4872 call 0000000180CE7350h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B4877 movss xmm1,dword ptr [rdi+18h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x1811B487C lea r8,[rbp-30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B4880 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B4883 lea rcx,[rbp-10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551600 | None ||| N/A | N/A
+		0x1811B4887 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B488B mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B488E movsd qword ptr [rbp-30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B4893 mov [rbp-28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551576 | None ||| N/A | N/A
+		0x1811B4896 call 0000000180CE7A20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B489B movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B489F mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B48A2 movsd qword ptr [rbp-30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B48A7 mov [rbp-28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551576 | None ||| N/A | N/A
+		0x1811B48AA movsd xmm0,qword ptr [rdi]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x1811B48AE lea r8,[rbp-30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551568 | None ||| N/A | N/A
+		0x1811B48B2 mov eax,[rdi+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 8 | None ||| N/A | N/A
+		0x1811B48B5 lea rdx,[rbp-40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551552 | None ||| N/A | N/A
+		0x1811B48B9 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1811B48BC movsd qword ptr [rbp-40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551552 | None ||| N/A | N/A
+		0x1811B48C1 lea rcx,[rbp-10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551600 | None ||| N/A | N/A
+		0x1811B48C5 mov [rbp-38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551560 | None ||| N/A | N/A
+		0x1811B48C8 call 0000000180CE77B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B48CD mov rsi,[rsp+78h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 120 | None ||| N/A | N/A
+		0x1811B48D2 mov rdi,[rsp+80h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x1811B48DA movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1811B48DE mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1811B48E1 movsd qword ptr [rbx],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 0 | None ||| N/A | N/A
+		0x1811B48E5 mov [rbx+8],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBX | 8 | None ||| N/A | N/A
+		0x1811B48E8 mov rax,rbx		; DEBUG: {Register}/RAX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1811B48EB mov rbx,[rsp+70h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 112 | None ||| N/A | N/A
+		0x1811B48F0 add rsp,60h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 96
+		0x1811B48F4 pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B48F5 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811B48F6 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method UnityEngine.Vector3 UTJ.SpringSphereCollider::ComputeNewTailPosition(UTJ.Circle3,UnityEngine.Vector3):
+		End of function at 0x1811B48F7
+		Absolute End is at 0x1811B48F7
+		Identified Jump Destination addresses:
+
+		0x1811B471F: Saves the content of rbp to the stack
+		0x1811B4727: Compares {Unknown Global at 0x1818A2C2C, first ten bytes are [64 211 127 0 193 211 127 0 64 177], or as chars "@Ó ÁÓ @±"} and 0
+		0x1811B472E: Copies {'il2cppMethodInfo' (type )} from r8 into rsi
+		0x1811B4731: Copies {'tailPosition' (function parameter, type UnityEngine.Vector3)} from rdx into rdi
+		0x1811B4734: Copies {'intersection' (function parameter, type UTJ.Circle3)} from rcx into rbx
+		0x1811B4737: Jumps to 0x1811B474B if {Unknown Global at 0x1818A2C2C, first ten bytes are [64 211 127 0 193 211 127 0 64 177], or as chars "@Ó ÁÓ @±"} != 0
+
+		0x1811B4739: Loads string ":d" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1811B473F: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1811B474B: Loads the type definition for managed type UnityEngine.Vector3 as a constant "Vector3" in rcx
+		0x1811B4752: Clears register rax, yielding zero-local {'local2' (type System.Int32)}
+		0x1811B4754: [!] Sets the field origin (Type UnityEngine.Vector3) on local {'intersection' (function parameter, type UTJ.Circle3)} to the value stored in {'local2' (type System.Int32)}
+		0x1811B4757: [!] Sets the field  (Type ) on local {'intersection' (function parameter, type UTJ.Circle3)} to the value stored in {'local2' (type System.Int32)}
+		0x1811B475A: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1811B4761: Jumps to 0x1811B4770 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1811B4763: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and {'local2' (type System.Int32)}
+		0x1811B4769: Jumps to 0x1811B4770 if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != {'local2' (type System.Int32)}
+
+		0x1811B476B: Calls the il2cpp cctor for the type UnityEngine.Vector3
+		0x1811B479D: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Subtraction(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'vector3' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B47C1: [!] Reads field  from {'tailPosition' (function parameter, type UnityEngine.Vector3)} and stores in a new local 
+
+		0x1811B47CC: [!] Calls static managed method System.Single UnityEngine.Vector3::Dot(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'single' (type System.Single)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B47DA: [!] Reads field  from {'tailPosition' (function parameter, type UnityEngine.Vector3)} and stores in a new local 
+
+		0x1811B47E9: Copies {'single' (type System.Single)} from xmm0 into xmm1
+		0x1811B47EF: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Multiply(System.Single,UnityEngine.Vector3) with arguments [{'single' (type System.Single)}, {'tailPosition' (function parameter, type UnityEngine.Vector3)}] and stores the result in {'vector32' (type UnityEngine.Vector3)}
+
+		0x1811B4821: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Subtraction(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'vector33' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B482E: [!] Reads field z from {'tailPosition' (function parameter, type UnityEngine.Vector3)} and stores in a new local {'single2' (type System.Single)}
+
+		0x1811B4853: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Subtraction(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'vector34' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B486C: [!] Reads field z from {'vector34' (type UnityEngine.Vector3)} and stores in a new local {'single3' (type System.Single)}
+
+		0x1811B4877: [!] Reads field  from {'tailPosition' (function parameter, type UnityEngine.Vector3)} and stores in a new local 
+
+		0x1811B488B: [!] Reads field  from {'single3' (type System.Single)} and stores in a new local 
+
+		0x1811B4896: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Multiply(System.Single,UnityEngine.Vector3) with arguments [{'single' (type System.Single)}, {'tailPosition' (function parameter, type UnityEngine.Vector3)}] and stores the result in {'vector35' (type UnityEngine.Vector3)}
+
+		0x1811B48C8: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::op_Addition(UnityEngine.Vector3,UnityEngine.Vector3) and stores the result in {'vector36' (type UnityEngine.Vector3)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1811B48CD: Reads unknown value in stack, offset 120 (0x78) and stores the pointer in register rsi as new constant constant8
+		0x1811B48D2: Reads unknown value in stack, offset 128 (0x80) and stores the pointer in register rdi as new constant constant9
+		0x1811B48DE: [!] Reads field z from {'vector36' (type UnityEngine.Vector3)} and stores in a new local {'single4' (type System.Single)}
+
+		0x1811B48E5: [!] Sets the field  (Type ) on local {'intersection' (function parameter, type UTJ.Circle3)} to the value stored in {'single4' (type System.Single)}
+		0x1811B48E8: Copies {'intersection' (function parameter, type UTJ.Circle3)} from rbx into rax
+		0x1811B48EB: Reads unknown value in stack, offset 112 (0x70) and stores the pointer in register rbx as new constant constant10
+		0x1811B48F5: [!] Returns {'intersection' (function parameter, type UTJ.Circle3)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSphereCollider
+	static UnityEngine.Vector3 ComputeNewTailPosition(UTJ.Circle3 intersection, UnityEngine.Vector3 tailPosition)
+		ulong local2 = 0
+		intersection.origin = local2
+		intersection. = local2
+
+		UnityEngine.Vector3 vector3 = UnityEngine.Vector3.op_Subtraction()
+		  = tailPosition.
+
+		System.Single single = UnityEngine.Vector3.Dot()
+		  = tailPosition.
+
+		UnityEngine.Vector3 vector32 = UnityEngine.Vector3.op_Multiply(single, tailPosition) //(Single d, Vector3 a)
+
+		UnityEngine.Vector3 vector33 = UnityEngine.Vector3.op_Subtraction()
+		System.Single single2 = tailPosition.z
+
+		UnityEngine.Vector3 vector34 = UnityEngine.Vector3.op_Subtraction()
+		System.Single single3 = vector34.z
+		  = tailPosition.
+		  = single3.
+
+		UnityEngine.Vector3 vector35 = UnityEngine.Vector3.op_Multiply(single, tailPosition) //(Single d, Vector3 a)
+
+		UnityEngine.Vector3 vector36 = UnityEngine.Vector3.op_Addition()
+		System.Single single4 = vector36.z
+		intersection. = single4
+		return intersection
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.RegToFieldAction at (0x1811B4757) is corrupt (Instance or field is null) and cannot be created as IL. Aborting here.
+
+

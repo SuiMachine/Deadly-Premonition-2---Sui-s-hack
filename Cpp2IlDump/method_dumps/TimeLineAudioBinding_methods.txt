@@ -1,0 +1,552 @@
+Type: TimeLineAudioBinding
+
+Method: System.Void TimeLineAudioBinding::.ctor():	Method Body (x86 ASM):
+		0x1802B8E10 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8E12 mov byte ptr [rcx+18h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 24 | None ||| N/A | 1
+		0x1802B8E16 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8E1B int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void TimeLineAudioBinding::.ctor():
+		End of function at 0x1802B8E1C
+		Absolute End is at 0x1802B8E1C
+		Identified Jump Destination addresses:
+
+		0x1802B8E12: [!] Sets the field m_startBinding (Type System.Boolean) on local {'this' (function parameter, type TimeLineAudioBinding)} to the value stored in True
+		0x1802B8E16: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type TimeLineAudioBinding)}
+
+		0x1802B8E16: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: TimeLineAudioBinding
+	System.Void .ctor()
+		this.m_startBinding = True
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.1
+	IL_0002: stfld System.Boolean TimeLineAudioBinding::m_startBinding
+	IL_0007: ldarg.0
+	IL_0008: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_000d: ret
+	
+
+Method: System.Void TimeLineAudioBinding::Start():	Method Body (x86 ASM):
+		0x1802B8E00 cmp byte ptr [rcx+18h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 24 | None ||| N/A | 0
+		0x1802B8E04 je short 00000001802B8E0Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8E06 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8E08 jmp near ptr 00000001802B8B00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8E0D ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8E0E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void TimeLineAudioBinding::Start():
+		End of function at 0x1802B8E0F
+		Absolute End is at 0x1802B8E0F
+		Identified Jump Destination addresses:
+
+		0x1802B8E00: [!] Compares {field m_startBinding, read from local {'this' (function parameter, type TimeLineAudioBinding)}} and False
+		0x1802B8E04: Jumps to 0x1802B8E0D (which is an if statement's body) if this.m_startBinding equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1802B8E08: [!] Calls managed method System.Void TimeLineAudioBinding::AudioBinding() on instance {'this' (function parameter, type TimeLineAudioBinding)}
+
+		0x1802B8E08: [!] Returns from the function
+
+		0x1802B8E0D: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: TimeLineAudioBinding
+	System.Void Start()
+
+		if (this.m_startBinding != False)
+
+		    this.AudioBinding()
+		    return
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Boolean TimeLineAudioBinding::m_startBinding
+	IL_0006: ldc.i4.0
+	IL_0007: beq.s IL_0010
+	IL_0009: ldarg.0
+	IL_000a: call System.Void TimeLineAudioBinding::AudioBinding()
+	IL_000f: ret
+	IL_0010: ret
+	
+
+Method: System.Void TimeLineAudioBinding::AudioBinding():	Method Body (x86 ASM):
+		0x1802B8B00 push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B02 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B03 push rsi		; DEBUG: {Register}/RSI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B04 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B05 push r12		; DEBUG: {Register}/R12 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B07 push r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B09 push r15		; DEBUG: {Register}/R15 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B0B sub rsp,70h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 112
+		0x1802B8B0F lea rbp,[rsp+20h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1802B8B14 mov r15,rcx		; DEBUG: {Register}/R15 {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B17 cmp byte ptr [18183D6C6h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868358 | None ||| N/A | 0
+		0x1802B8B1E jne short 00000001802B8B32h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8B20 mov ecx,[1814C79B0h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464240048 | None ||| N/A | N/A
+		0x1802B8B26 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8B2B mov byte ptr [18183D6C6h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868358 | None ||| N/A | 1
+		0x1802B8B32 xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B35 movups [rbp+10h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 16 | None ||| N/A | N/A
+		0x1802B8B39 movups [rbp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 32 | None ||| N/A | N/A
+		0x1802B8B3D xor r14d,r14d		; DEBUG: {Register}/R14D {Register}/R14D ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B40 mov eax,[rsp]		; DEBUG: {Register}/EAX {Memory}/None ||| RSP | 0 | None ||| N/A | N/A
+		0x1802B8B43 sub rsp,10h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 16
+		0x1802B8B47 lea r12,[rsp+20h]		; DEBUG: {Register}/R12 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1802B8B4C mov eax,[r12]		; DEBUG: {Register}/EAX {Memory}/None ||| R12 | 0 | None ||| N/A | N/A
+		0x1802B8B50 mov [rbp+0A8h],r12		; DEBUG: {Memory}/None {Register}/R12 ||| RBP | 168 | None ||| N/A | N/A
+		0x1802B8B57 mov dword ptr [rbp+90h],0FFFFFFFFh		; DEBUG: {Memory}/None {Immediate32}/None ||| RBP | 144 | None ||| N/A | 4294967295
+		0x1802B8B61 mov rdx,[181869410h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468047888 | None ||| N/A | N/A
+		0x1802B8B68 mov rcx,r15		; DEBUG: {Register}/RCX {Register}/R15 ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B6B call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8B70 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B73 mov [r15+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| R15 | 32 | None ||| N/A | N/A
+		0x1802B8B77 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1802B8B7E test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802B8B85 je short 00000001802B8B95h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8B87 cmp [rcx+0D8h],r14d		; DEBUG: {Memory}/None {Register}/R14D ||| RCX | 216 | None ||| N/A | N/A
+		0x1802B8B8E jne short 00000001802B8B95h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8B90 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8B95 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B98 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B9A mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8B9D call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8BA2 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1802B8BA4 jne near ptr 00000001802B8D83h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8BAA mov rcx,[r15+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| R15 | 32 | None ||| N/A | N/A
+		0x1802B8BAE test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8BB1 je near ptr 00000001802B8DE9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8BB7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8BB9 call 0000000181142080h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8BBE test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8BC1 je near ptr 00000001802B8DE9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8BC7 mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1802B8BCA mov rdx,[r8+1B0h]		; DEBUG: {Register}/RDX {Memory}/None ||| R8 | 432 | None ||| N/A | N/A
+		0x1802B8BD1 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8BD4 call qword ptr [r8+1A8h]		; DEBUG: {Memory}/None {Register}/None ||| R8 | 424 | None ||| N/A | N/A
+		0x1802B8BDB test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8BDE je near ptr 00000001802B8DE9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8BE4 mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8BE7 mov rdx,[1818963C8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468232136 | None ||| N/A | N/A
+		0x1802B8BEE xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8BF0 call 0000000180058390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8BF5 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8BF8 mov [rbp],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBP | 0 | None ||| N/A | N/A
+		0x1802B8BFC nop dword ptr [rax]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1802B8C00 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C03 je near ptr 00000001802B8DD3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8C09 mov r8,rbx		; DEBUG: {Register}/R8 {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C0C mov rdx,[181884678h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468159096 | None ||| N/A | N/A
+		0x1802B8C13 mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x1802B8C18 call 0000000180058390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8C1D test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C1F je near ptr 00000001802B8D28h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8C25 mov r10,[181896400h]		; DEBUG: {Register}/R10 {Memory}/None ||| RIP | 6468232192 | None ||| N/A | N/A
+		0x1802B8C2C mov r11,[rbx]		; DEBUG: {Register}/R11 {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x1802B8C2F movzx eax,r14w		; DEBUG: {Register}/EAX {Register}/R14W ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C33 movzx r8d,word ptr [r11+11Eh]		; DEBUG: {Register}/R8D {Memory}/None ||| R11 | 286 | None ||| N/A | N/A
+		0x1802B8C3B cmp r14w,r8w		; DEBUG: {Register}/R14W {Register}/R8W ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C3F jae short 00000001802B8C6Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8C41 mov r9,[r11+0B0h]		; DEBUG: {Register}/R9 {Memory}/None ||| R11 | 176 | None ||| N/A | N/A
+		0x1802B8C48 nop dword ptr [rax+rax]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 0 | RAX ||| N/A | N/A
+		0x1802B8C50 movzx edx,ax		; DEBUG: {Register}/EDX {Register}/AX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C53 mov ecx,edx		; DEBUG: {Register}/ECX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C55 add rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C58 cmp [r9+rcx*8],r10		; DEBUG: {Memory}/None {Register}/R10 ||| R9 | 0 | RCX ||| N/A | N/A
+		0x1802B8C5C je near ptr 00000001802B8D0Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8C62 inc ax		; DEBUG: {Register}/AX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C65 cmp ax,r8w		; DEBUG: {Register}/AX {Register}/R8W ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C69 jb short 00000001802B8C50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8C6B xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C6E mov rdx,r10		; DEBUG: {Register}/RDX {Register}/R10 ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C71 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C74 call 00000001800F5B10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8C79 mov r8,[rax+8]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1802B8C7D mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C80 lea rcx,[rbp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 48 | None ||| N/A | N/A
+		0x1802B8C84 call qword ptr [rax]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1802B8C86 movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1802B8C89 movups [rbp+10h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 16 | None ||| N/A | N/A
+		0x1802B8C8D movups xmm1,[rax+10h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RAX | 16 | None ||| N/A | N/A
+		0x1802B8C91 movups [rbp+20h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RBP | 32 | None ||| N/A | N/A
+		0x1802B8C95 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8C97 lea rcx,[rbp+10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 16 | None ||| N/A | N/A
+		0x1802B8C9B call 0000000180E880A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8CA0 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CA3 je near ptr 00000001802B8DCCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8CA9 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CAC mov rdx,[18188C430h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468191280 | None ||| N/A | N/A
+		0x1802B8CB3 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CB6 call 0000000180D4DA10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8CBB test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CBD je near ptr 00000001802B8C00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8CC3 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CC5 call 00000001802AB2F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8CCA test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CCD je near ptr 00000001802B8DC5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8CD3 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CD5 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CD8 call 000000018025EE00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8CDD mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CE0 mov rdi,[r15+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| R15 | 32 | None ||| N/A | N/A
+		0x1802B8CE4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CE6 lea rcx,[rbp+10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 16 | None ||| N/A | N/A
+		0x1802B8CEA call 0000000180EA76A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8CEF test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CF2 je near ptr 00000001802B8DBEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8CF8 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CFB mov r8,rsi		; DEBUG: {Register}/R8 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1802B8CFE mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8D01 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1802B8D04 call 0000000181141C20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8D09 jmp near ptr 00000001802B8C00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8D0E add rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8D11 mov eax,[r9+rdx*8+8]		; DEBUG: {Register}/EAX {Memory}/None ||| R9 | 8 | RDX ||| N/A | N/A
+		0x1802B8D16 shl rax,4		; DEBUG: {Register}/RAX {Immediate8}/None ||| None | 0 | None ||| N/A | 4
+		0x1802B8D1A add rax,128h		; DEBUG: {Register}/RAX {Immediate32to64}/None ||| None | 0 | None ||| N/A | 296
+		0x1802B8D20 add rax,r11		; DEBUG: {Register}/RAX {Register}/R11 ||| None | 0 | None ||| N/A | N/A
+		0x1802B8D23 jmp near ptr 00000001802B8C79h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8D28 mov edi,r14d		; DEBUG: {Register}/EDI {Register}/R14D ||| None | 0 | None ||| N/A | N/A
+		0x1802B8D2B mov [rbp+90h],r14d		; DEBUG: {Memory}/None {Register}/R14D ||| RBP | 144 | None ||| N/A | N/A
+		0x1802B8D32 mov dword ptr [r12],9Dh		; DEBUG: {Memory}/None {Immediate32}/None ||| R12 | 0 | None ||| N/A | 157
+		0x1802B8D3A jmp short 00000001802B8D59h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8D3C mov rbx,[rbp]		; DEBUG: {Register}/RBX {Memory}/None ||| RBP | 0 | None ||| N/A | N/A
+		0x1802B8D40 mov r14,[rbp+0A0h]		; DEBUG: {Register}/R14 {Memory}/None ||| RBP | 160 | None ||| N/A | N/A
+		0x1802B8D47 mov edi,[rbp+90h]		; DEBUG: {Register}/EDI {Memory}/None ||| RBP | 144 | None ||| N/A | N/A
+		0x1802B8D4D mov r12,[rbp+0A8h]		; DEBUG: {Register}/R12 {Memory}/None ||| RBP | 168 | None ||| N/A | N/A
+		0x1802B8D54 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8D57 je short 00000001802B8D6Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8D59 mov r8,rbx		; DEBUG: {Register}/R8 {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8D5C mov rdx,[1818846D0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468159184 | None ||| N/A | N/A
+		0x1802B8D63 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8D65 call 0000000180058420h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8D6A cmp edi,0FFFFFFFFh		; DEBUG: {Register}/EDI {Immediate8to32}/None ||| None | 0 | None ||| N/A | 18446744073709551615
+		0x1802B8D6D je short 00000001802B8D7Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8D6F movsxd rax,edi		; DEBUG: {Register}/RAX {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x1802B8D72 cmp dword ptr [r12+rax*4],9Dh		; DEBUG: {Memory}/None {Immediate32}/None ||| R12 | 0 | RAX ||| N/A | 157
+		0x1802B8D7A je short 00000001802B8DAFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8D7C test r14,r14		; DEBUG: {Register}/R14 {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x1802B8D7F jne short 00000001802B8DDBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8D81 jmp short 00000001802B8DAFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8D83 mov rcx,[18188D688h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468195976 | None ||| N/A | N/A
+		0x1802B8D8A test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802B8D91 je short 00000001802B8DA1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8D93 cmp [rcx+0D8h],r14d		; DEBUG: {Memory}/None {Register}/R14D ||| RCX | 216 | None ||| N/A | N/A
+		0x1802B8D9A jne short 00000001802B8DA1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8D9C call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8DA1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DA3 mov rcx,[18188C408h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468191240 | None ||| N/A | N/A
+		0x1802B8DAA call 0000000180B2C440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8DAF lea rsp,[rbp+50h]		; DEBUG: {Register}/RSP {Memory}/None ||| RBP | 80 | None ||| N/A | N/A
+		0x1802B8DB3 pop r15		; DEBUG: {Register}/R15 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DB5 pop r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DB7 pop r12		; DEBUG: {Register}/R12 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DB9 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DBA pop rsi		; DEBUG: {Register}/RSI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DBB pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DBC pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DBD ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DBE xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DC0 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8DC5 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DC7 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8DCC xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DCE call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8DD3 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DD5 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8DDA nop		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DDB xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DDE xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DE0 mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x1802B8DE3 call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B8DE8 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void TimeLineAudioBinding::AudioBinding():
+		End of function at 0x1802B8DE9
+		Absolute End is at 0x1802B8DE9
+		Identified Jump Destination addresses:
+			0x1802B8D59
+			0x1802B8DAF
+		0x1802B8B00: Saves the content of rbp to the stack
+		0x1802B8B02: Saves the content of rbx to the stack
+		0x1802B8B03: Saves the content of rsi to the stack
+		0x1802B8B04: Saves the content of rdi to the stack
+		0x1802B8B05: Saves the content of r12 to the stack
+		0x1802B8B07: Saves the content of r14 to the stack
+		0x1802B8B09: Saves the content of r15 to the stack
+		0x1802B8B0F: Loads a pointer to stack offset 0x20 into register rbp as new constant constant1
+		0x1802B8B14: Copies {'this' (function parameter, type TimeLineAudioBinding)} from rcx into r15
+		0x1802B8B17: Compares {Unknown Global at 0x18183D6C6, first ten bytes are [1 0 18 23 1 0 192 60 103 1], or as chars "  À<g"} and 0
+		0x1802B8B1E: Jumps to 0x1802B8B32 if {Unknown Global at 0x18183D6C6, first ten bytes are [1 0 18 23 1 0 192 60 103 1], or as chars "  À<g"} != 0
+
+		0x1802B8B20: Loads string ":l" into register rcx as constant {'constant4' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1802B8B26: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1802B8B3D: Clears register r14, yielding zero-local {'local2' (type System.Int32)}
+		0x1802B8B40: Reads unknown value in stack, offset 0 (0x0) and stores the pointer in register rax as new constant constant5
+		0x1802B8B47: Loads a pointer to stack offset 0x20 into register r12 as new constant constant6
+		0x1802B8B61: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<UnityEngine.Playables.PlayableDirector>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1802B8B68: Copies {'this' (function parameter, type TimeLineAudioBinding)} from r15 into rcx
+		0x1802B8B6B: [!] Calls managed method T UnityEngine.Component::GetComponent<UnityEngine.Playables.PlayableDirector>() on instance {'this' (function parameter, type TimeLineAudioBinding)} and stores the result in {'component' (type UnityEngine.Playables.PlayableDirector)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1802B8B70: Copies {'component' (type UnityEngine.Playables.PlayableDirector)} from rax into rbx
+		0x1802B8B73: [!] Sets the field m_director (Type UnityEngine.Playables.PlayableDirector) on local {'this' (function parameter, type TimeLineAudioBinding)} to the value stored in {'component' (type UnityEngine.Playables.PlayableDirector)}
+		0x1802B8B77: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1802B8B7E: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802B8B85: Jumps to 0x1802B8B95 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802B8B87: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and {'local2' (type System.Int32)}
+		0x1802B8B8E: Jumps to 0x1802B8B95 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != {'local2' (type System.Int32)}
+
+		0x1802B8B90: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1802B8B98: Clears register rdx, yielding zero-local {'local5' (type System.Int32)}
+		0x1802B8B9A: Copies {'component' (type UnityEngine.Playables.PlayableDirector)} from rbx into rcx
+		0x1802B8B9D: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'component' (type UnityEngine.Playables.PlayableDirector)}, {'local5' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1802B8BA2: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1802B8BA4: Jumps to 0x1802B8D83 if {'boolean' (type System.Boolean)} != False ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x1802B8BAA: [!] Reads field m_director from {'this' (function parameter, type TimeLineAudioBinding)} and stores in a new local {'m_director' (type UnityEngine.Playables.PlayableDirector)}
+
+		0x1802B8BAE: [!] Compares {'m_director' (type UnityEngine.Playables.PlayableDirector)} and 0
+		0x1802B8BB1: Jumps to 0x1802B8DE9 (which throws a NRE) if m_director equals 0. Implicitly present in managed code, so ignored here.
+		0x1802B8BB9: [!] Calls managed method UnityEngine.Playables.PlayableAsset UnityEngine.Playables.PlayableDirector::get_playableAsset() on instance {'m_director' (type UnityEngine.Playables.PlayableDirector)} and stores the result in {'playableAsset' (type UnityEngine.Playables.PlayableAsset)}
+
+		0x1802B8BBE: [!] Compares {'playableAsset' (type UnityEngine.Playables.PlayableAsset)} and 0
+		0x1802B8BC1: Jumps to 0x1802B8DE9 (which throws a NRE) if playableAsset equals 0. Implicitly present in managed code, so ignored here.
+		0x1802B8BC7: Loads the class pointer from playableAsset into a constant constant15 in register r8
+		0x1802B8BCA: Loads the pointer to the implementation of virtual function System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding> UnityEngine.Playables.PlayableAsset::get_outputs() specific to UnityEngine.Playables.PlayableAsset from the class pointer in r8, slot 8 (from memory offset 432) and stores in constant constant16
+		0x1802B8BD1: Copies {'playableAsset' (type UnityEngine.Playables.PlayableAsset)} from rax into rcx
+		0x1802B8BD4: [!] Calls managed method System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding> UnityEngine.Playables.PlayableAsset::get_outputs() on instance {'playableAsset' (type UnityEngine.Playables.PlayableAsset)} and stores the result in {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)}
+
+		0x1802B8BDB: [!] Compares {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)} and 0
+		0x1802B8BDE: Jumps to 0x1802B8DE9 (which throws a NRE) if outputs equals 0. Implicitly present in managed code, so ignored here.
+		0x1802B8BE4: Copies {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)} from rax into r8
+		0x1802B8BE7: Loads the type definition for managed type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding> as a constant "IEnumerable`1" in rdx
+		0x1802B8BF5: Copies {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)} from rax into rbx
+
+		Potential Loop Start (0x1802B8C00):
+		0x1802B8C00: [!] Compares {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)} and 0
+		0x1802B8C03: Jumps to 0x1802B8DD3 (which throws a NRE) if outputs equals 0. Implicitly present in managed code, so ignored here.
+		0x1802B8C09: Copies {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)} from rbx into r8
+		0x1802B8C0C: Loads the type definition for managed type System.Collections.IEnumerator as a constant "IEnumerator" in rdx
+		0x1802B8C1D: [!] Compares {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)} and 0
+		0x1802B8C1F: Jumps to 0x1802B8D28 if outputs equals 0 ;  - This is probably a goto, jumping to 0x1802B8D28 which is after end of current block @ 0x1802B8CC3 (started at 0x1802B8C00)
+
+		0x1802B8C25: Loads the type definition for managed type System.Collections.Generic.IEnumerator`1<UnityEngine.Playables.PlayableBinding> as a constant "IEnumerator`1" in r10
+		0x1802B8C2C: Loads the class pointer from outputs into a constant constant23 in register r11
+		0x1802B8C2F: Copies {'local2' (type System.Int32)} from r14 into rax
+		0x1802B8C33: [!!] Reads value at unknown offset 286 (0x11E) on a klass pointer
+		0x1802B8C3B: [!] Compares {'local2' (type System.Int32)} and {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)}
+		0x1802B8C3F: Jumps to 0x1802B8C6B (which is an if statement's body) if {'local2' (type System.Int32)} is greater than or equal to {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)} ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1802B8C41: Loads the interface offsets for the class pointer to System.Collections.Generic.IEnumerable`1, which contains 0 offsets, and stores them as a constant constant24 in reg r9
+		0x1802B8C50: Copies {'local2' (type System.Int32)} from rax into rdx
+		0x1802B8C53: Copies {'local2' (type System.Int32)} from rdx into rcx
+		0x1802B8C55: [!] Adds {'local2' (type System.Int32)} and {'local2' (type System.Int32)} and stores the result in {'local2' (type System.Int32)}
+		0x1802B8C5C: Jumps to 0x1802B8D0E if local2 equals outputs ;  - This is probably a goto, jumping to 0x1802B8D0E which is after end of current block @ 0x1802B8C6B (started at 0x1802B8C41)
+
+		0x1802B8C62: [!] Adds 1 to the value {'local2' (type System.Int32)}, stored in rax
+		0x1802B8C65: [!] Compares {'local2' (type System.Int32)} and {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)}
+		0x1802B8C6E: Copies {'IEnumerator`1' (constant value of type Mono.Cecil.TypeReference)} from r10 into rdx
+		0x1802B8C71: Copies {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)} from rbx into rcx
+
+		Potential Loop Start (0x1802B8C79):
+		0x1802B8C79: [!] Reads field  from {'local2' (type System.Int32)} and stores in a new local 
+
+		0x1802B8C7D: Copies {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)} from rbx into rdx
+		0x1802B8C86: Loads the class pointer from local2 into a constant constant25 in register xmm0
+		0x1802B8C8D: [!] Reads field  from {'local2' (type System.Int32)} and stores in a new local 
+
+		0x1802B8CA0: [!] Compares {'local2' (type System.Int32)} and 0
+		0x1802B8CA3: Jumps to 0x1802B8DCC (which throws a NRE) if local2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802B8CAC: Loads the string literal "Audio Track_VO" as a constant "constant27" in rdx
+		0x1802B8CB3: Copies {'local2' (type System.Int32)} from rax into rcx
+		0x1802B8CB6: [!] Calls managed method System.Boolean System.String::Contains(System.String) on instance {'local2' (type System.Int32)} with arguments ["Audio Track_VO"] and stores the result in {'boolean2' (type System.Boolean)} ;  - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting String, actually System.Int32
+
+		0x1802B8CBB: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x1802B8CBD: Jumps to 0x1802B8C00 (which is an if statement's body) if boolean2 equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1802B8CC3: Clears register rcx, yielding zero-local {'local17' (type System.Int32)}
+		0x1802B8CC5: [!] Calls static managed method SoundVO SoundManager::get_VO() and stores the result in {'vO' (type SoundVO)}
+
+		0x1802B8CCA: [!] Compares {'vO' (type SoundVO)} and 0
+		0x1802B8CCD: Jumps to 0x1802B8DC5 (which throws a NRE) if vO equals 0. Implicitly present in managed code, so ignored here.
+		0x1802B8CD5: Copies {'vO' (type SoundVO)} from rax into rcx
+		0x1802B8CD8: [!] Calls managed method UnityEngine.AudioSource SoundVO::GetTimelineAudioSource() on instance {'vO' (type SoundVO)} and stores the result in {'timelineAudioSource' (type UnityEngine.AudioSource)}
+
+		0x1802B8CDD: Copies {'timelineAudioSource' (type UnityEngine.AudioSource)} from rax into rsi
+		0x1802B8CE0: [!] Reads field m_director from {'this' (function parameter, type TimeLineAudioBinding)} and stores in a new local {'m_director2' (type UnityEngine.Playables.PlayableDirector)}
+
+		0x1802B8CEF: [!] Compares {'m_director2' (type UnityEngine.Playables.PlayableDirector)} and 0
+		0x1802B8CF2: Jumps to 0x1802B8DBE (which throws a NRE) if m_director2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802B8CFB: Copies {'timelineAudioSource' (type UnityEngine.AudioSource)} from rsi into r8
+		0x1802B8CFE: Copies {'timelineAudioSource' (type UnityEngine.AudioSource)} from rax into rdx
+		0x1802B8D01: Copies {'m_director2' (type UnityEngine.Playables.PlayableDirector)} from rdi into rcx
+		0x1802B8D04: [!] Calls managed method System.Void UnityEngine.Playables.PlayableDirector::SetGenericBinding(UnityEngine.Object,UnityEngine.Object) on instance {'m_director2' (type UnityEngine.Playables.PlayableDirector)} with arguments [{'timelineAudioSource' (type UnityEngine.AudioSource)}, {'timelineAudioSource' (type UnityEngine.AudioSource)}]
+
+		0x1802B8D09: Jumps to 0x1802B8C00 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x1802B8D0E: [!] Adds {'timelineAudioSource' (type UnityEngine.AudioSource)} and {'timelineAudioSource' (type UnityEngine.AudioSource)} and stores the result in {'timelineAudioSource' (type UnityEngine.AudioSource)}
+		0x1802B8D1A: Loads the pointer to the field  on {'timelineAudioSource' (type UnityEngine.AudioSource)} into register rax
+		0x1802B8D20: [!] Adds {'timelineAudioSource' (type UnityEngine.AudioSource)} and {'constant23' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} and stores the result in {'timelineAudioSource' (type UnityEngine.AudioSource)}
+		0x1802B8D23: Jumps to 0x1802B8C79 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x1802B8D28: Copies {'local2' (type System.Int32)} from r14 into rdi
+		0x1802B8D3A: Jumps to 0x1802B8D59 (which is an function-local jump destination)
+
+		0x1802B8D54: [!] Compares {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)} and 0
+		0x1802B8D57: Jumps to 0x1802B8D6A if outputs equals 0 ;  - This is probably a goto, jumping to 0x1802B8D6A which is after end of current block @ 0x1802B8C00 (started at 0x1802B8CC3)
+
+
+		Jump Destination (0x1802B8D59):
+		0x1802B8D59: Copies {'outputs' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding>)} from rbx into r8
+		0x1802B8D5C: Loads the type definition for managed type System.IDisposable as a constant "IDisposable" in rdx
+		0x1802B8D6A: [!] Compares {'local2' (type System.Int32)} and -1
+		0x1802B8D6D: Jumps to 0x1802B8D7C if local2 equals -1 ;  - This is probably a goto, jumping to 0x1802B8D7C which is after end of current block @ 0x1802B8C00 (started at 0x1802B8CC3)
+
+		0x1802B8D6F: Copies {'local2' (type System.Int32)} from rdi into rax
+		0x1802B8D72: Compares "{il2cpp field on {'constant6' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)}, offset 0x0}" and 157
+		0x1802B8D7A: Jumps to 0x1802B8DAF if "{il2cpp field on {'constant6' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)}, offset 0x0}" equals 157 ;  - This is probably a goto, jumping to 0x1802B8DAF which is after end of current block @ 0x1802B8C00 (started at 0x1802B8CC3)
+
+		0x1802B8D7C: [!] Compares {'local2' (type System.Int32)} and 0
+		0x1802B8D7F: Jumps to 0x1802B8DDB if {'local2' (type System.Int32)} != 0 ;  - This is probably a goto, jumping to 0x1802B8DDB which is after end of current block @ 0x1802B8C00 (started at 0x1802B8CC3)
+
+		0x1802B8D81: Jumps to 0x1802B8DAF (which is an function-local jump destination)
+
+		0x1802B8D83: Loads the type definition for managed type UnityEngine.Debug as a constant "Debug" in rcx
+		0x1802B8D8A: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802B8D91: Jumps to 0x1802B8DA1 if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802B8D93: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and {'local2' (type System.Int32)}
+		0x1802B8D9A: Jumps to 0x1802B8DA1 if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != {'local2' (type System.Int32)}
+
+		0x1802B8D9C: Calls the il2cpp cctor for the type UnityEngine.Debug
+		0x1802B8DA3: Loads the string literal "PlaybleDirectorがない" as a constant "constant41" in rcx
+		0x1802B8DAA: [!] Calls static managed method System.Void UnityEngine.Debug::LogWarning(System.Object) with arguments ["PlaybleDirectorがない"]
+
+
+		End Of If-Else Block (at 0x1802B8DAF) where the else started at 0x1802B8D83
+		0x1802B8DBD: [!] Returns from the function
+
+		0x1802B8DC0: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+		0x1802B8DC7: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+		0x1802B8DCE: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+		0x1802B8DD5: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+		0x1802B8DE0: Copies {'local2' (type System.Int32)} from r14 into rcx
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: TimeLineAudioBinding
+	System.Void AudioBinding()
+		ulong local2 = 0
+
+		UnityEngine.Playables.PlayableDirector component = base.GetComponent<UnityEngine.Playables.PlayableDirector>()
+		this.m_director = component
+		ulong local5 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Equality(component, local5) //(Object x, Object y)
+
+		if (boolean == False)
+		    UnityEngine.Playables.PlayableDirector m_director = this.m_director
+
+		    UnityEngine.Playables.PlayableAsset playableAsset = m_director.playableAsset
+
+		    System.Collections.Generic.IEnumerable`1<UnityEngine.Playables.PlayableBinding> outputs = playableAsset.outputs
+
+		    if (outputs == 0)
+                goto INSN_1802B8D28
+            endif
+		    //UNKNOWN CLASS OFFSET READ HERE
+
+		    if (local2 < outputs)
+		        local2 += local2
+
+		        if (local2 == outputs)
+                    goto INSN_1802B8D0E
+                endif
+		        local2 += 1
+		    endif
+            
+		      = local2.
+		      = local2.
+
+		    System.Boolean boolean2 = local2.Contains("Audio Track_VO") //(String value)
+
+		    if (boolean2 != False)
+		    endwhile
+            
+		    goto INSN_1802B8DD3
+            
+		    ulong local17 = 0
+
+		    SoundVO vO = SoundManager.VO
+
+		    UnityEngine.AudioSource timelineAudioSource = vO.GetTimelineAudioSource()
+		    UnityEngine.Playables.PlayableDirector m_director2 = this.m_director
+
+		    m_director2.SetGenericBinding(timelineAudioSource, timelineAudioSource) //(Object key, Object value)
+
+		    INSN_1802B8D0E:
+		    timelineAudioSource += timelineAudioSource
+		    timelineAudioSource += constant23
+
+		    INSN_1802B8D28:
+
+		    if (outputs == 0)
+                goto INSN_1802B8D6A
+            endif
+
+		    INSN_1802B8D6A:
+
+		    if (local2 == -1)
+                goto INSN_1802B8D7C
+            endif
+
+		    INSN_1802B8D7C:
+
+		    if (local2 != 0)
+                goto INSN_1802B8DDB
+            endif
+		else
+
+		    UnityEngine.Debug.LogWarning("PlaybleDirectorがない") //(Object message)
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+		throw new System.NullReferenceException()
+		throw new System.NullReferenceException()
+
+		INSN_1802B8DD3:
+		throw new System.NullReferenceException()
+
+		INSN_1802B8DDB:
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.UnknownClassOffsetReadAction at (0x1802B8C33) is corrupt (Unknown class offset read) and cannot be created as IL. Aborting here.
+
+

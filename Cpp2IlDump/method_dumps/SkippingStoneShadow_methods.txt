@@ -1,0 +1,303 @@
+Type: SkippingStoneShadow
+
+Method: System.Void SkippingStoneShadow::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void SkippingStoneShadow::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type SkippingStoneShadow)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkippingStoneShadow
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void SkippingStoneShadow::Awake():	Method Body (x86 ASM):
+		0x1802A8550 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8552 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802A8556 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8558 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A855B call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8560 mov [rbx+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 32 | None ||| N/A | N/A
+		0x1802A8564 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802A8568 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8569 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A856A int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void SkippingStoneShadow::Awake():
+		End of function at 0x1802A856B
+		Absolute End is at 0x1802A856B
+		Identified Jump Destination addresses:
+
+		0x1802A8550: Saves the content of rbx to the stack
+		0x1802A8558: Copies {'this' (function parameter, type SkippingStoneShadow)} from rcx into rbx
+		0x1802A855B: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type SkippingStoneShadow)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x1802A8560: [!] Sets the field m_trans (Type UnityEngine.Transform) on local {'this' (function parameter, type SkippingStoneShadow)} to the value stored in {'transform' (type UnityEngine.Transform)}
+		0x1802A8569: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkippingStoneShadow
+	System.Void Awake()
+
+		UnityEngine.Transform transform = base.transform
+		this.m_trans = transform
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call UnityEngine.Transform UnityEngine.Component::get_transform()
+	IL_0006: stloc.0
+	IL_0007: ldarg.0
+	IL_0008: ldloc.0
+	IL_0009: stfld UnityEngine.Transform SkippingStoneShadow::m_trans
+	IL_000e: ret
+	
+
+Method: System.Void SkippingStoneShadow::SetParent(UnityEngine.Transform,UnityEngine.Transform):	Method Body (x86 ASM):
+		0x18025ED20 mov [rcx+18h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RCX | 24 | None ||| N/A | N/A
+		0x18025ED24 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18025ED25 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void SkippingStoneShadow::SetParent(UnityEngine.Transform,UnityEngine.Transform):
+		End of function at 0x18025ED26
+		Absolute End is at 0x18025ED26
+		Identified Jump Destination addresses:
+
+		0x18025ED20: [!] Sets the field m_parent (Type UnityEngine.Transform) on local {'this' (function parameter, type SkippingStoneShadow)} to the value stored in {'parent' (function parameter, type UnityEngine.Transform)}
+		0x18025ED24: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkippingStoneShadow
+	System.Void SetParent(UnityEngine.Transform parent, UnityEngine.Transform baseTrans)
+		this.m_parent = parent
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: stfld UnityEngine.Transform SkippingStoneShadow::m_parent
+	IL_0007: ret
+	
+
+Method: System.Void SkippingStoneShadow::Update():	Method Body (x86 ASM):
+		0x1802A8570 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1802A8575 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8576 sub rsp,50h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 80
+		0x1802A857A cmp byte ptr [18183D652h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868242 | None ||| N/A | 0
+		0x1802A8581 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8584 jne short 00000001802A8598h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8586 mov ecx,[1814BD744h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464198468 | None ||| N/A | N/A
+		0x1802A858C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8591 mov byte ptr [18183D652h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467868242 | None ||| N/A | 1
+		0x1802A8598 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1802A859F mov rdi,[rbx+18h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1802A85A3 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802A85AA je short 00000001802A85BAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A85AC cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1802A85B3 jne short 00000001802A85BAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A85B5 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A85BA xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A85BC mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1802A85BF call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A85C4 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1802A85C6 je near ptr 00000001802A868Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A85CC xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A85CE mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802A85D1 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A85D6 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A85D9 je near ptr 00000001802A8699h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A85DF xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A85E2 lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802A85E7 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802A85EA call 0000000180CE2700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A85EF mov rdx,[rbx+18h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1802A85F3 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1802A85F7 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1802A85FA movsd qword ptr [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1802A8600 mov [rsp+28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 40 | None ||| N/A | N/A
+		0x1802A8604 test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8607 je near ptr 00000001802A8699h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A860D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A8610 lea rcx,[rsp+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802A8615 call 0000000180CE2700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A861A mov rdx,[rbx+18h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1802A861E movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1802A8622 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1802A8625 movss dword ptr [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1802A862B mov [rsp+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 56 | None ||| N/A | N/A
+		0x1802A862F movsd qword ptr [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1802A8635 test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1802A8638 je short 00000001802A8699h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A863A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A863D lea rcx,[rsp+40h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1802A8642 call 0000000180CE2700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A8647 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x1802A864B movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1802A864F mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1802A8652 movsd qword ptr [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1802A8658 mov [rsp+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 56 | None ||| N/A | N/A
+		0x1802A865C movss xmm0,dword ptr [rsp+38h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x1802A8662 movss dword ptr [rsp+28h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 40 | None ||| N/A | N/A
+		0x1802A8668 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802A866B je short 00000001802A8699h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A866D movsd xmm0,qword ptr [rsp+20h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1802A8673 lea rdx,[rsp+30h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802A8678 mov eax,[rsp+28h]		; DEBUG: {Register}/EAX {Memory}/None ||| RSP | 40 | None ||| N/A | N/A
+		0x1802A867C xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802A867F movsd qword ptr [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x1802A8685 mov [rsp+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 56 | None ||| N/A | N/A
+		0x1802A8689 call 0000000180CE3300h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A868E mov rbx,[rsp+60h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 96 | None ||| N/A | N/A
+		0x1802A8693 add rsp,50h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 80
+		0x1802A8697 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8698 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802A8699 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802A869B call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802A86A0 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void SkippingStoneShadow::Update():
+		End of function at 0x1802A86A1
+		Absolute End is at 0x1802A86A1
+		Identified Jump Destination addresses:
+
+		0x1802A8575: Saves the content of rdi to the stack
+		0x1802A857A: Compares {Unknown Global at 0x18183D652, first ten bytes are [1 0 200 60 103 1 240 19 1 0], or as chars " È<gð "} and 0
+		0x1802A8581: Copies {'this' (function parameter, type SkippingStoneShadow)} from rcx into rbx
+		0x1802A8584: Jumps to 0x1802A8598 if {Unknown Global at 0x18183D652, first ten bytes are [1 0 200 60 103 1 240 19 1 0], or as chars " È<gð "} != 0
+
+		0x1802A8586: Reads {Unknown Global at 0x1814BD744, first ten bytes are [155 98 0 0 156 130 0 0 156 98], or as chars "b    b"} into register rcx as a constant constant3
+		0x1802A858C: Attempts to load the il2cpp metadata for this method (method id 25243) and init it cpp-side.
+
+		0x1802A8598: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1802A859F: [!] Reads field m_parent from {'this' (function parameter, type SkippingStoneShadow)} and stores in a new local {'m_parent' (type UnityEngine.Transform)}
+
+		0x1802A85A3: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802A85AA: Jumps to 0x1802A85BA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802A85AC: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802A85B3: Jumps to 0x1802A85BA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1802A85B5: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1802A85BC: Copies {'m_parent' (type UnityEngine.Transform)} from rdi into rcx
+		0x1802A85BF: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'m_parent' (type UnityEngine.Transform)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1802A85C4: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1802A85C6: Jumps to 0x1802A868E (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1802A85CE: Copies {'this' (function parameter, type SkippingStoneShadow)} from rbx into rcx
+		0x1802A85D1: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'this' (function parameter, type SkippingStoneShadow)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x1802A85D6: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x1802A85D9: Jumps to 0x1802A8699 (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A85E2: Loads a pointer to stack offset 0x30 into register rcx as new constant constant11
+		0x1802A85E7: Copies {'transform' (type UnityEngine.Transform)} from rax into rdx
+		0x1802A85EA: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::get_position() on instance  and stores the result in {'position' (type UnityEngine.Vector3)}
+
+		0x1802A85EF: [!] Reads field m_parent from {'this' (function parameter, type SkippingStoneShadow)} and stores in a new local {'m_parent2' (type UnityEngine.Transform)}
+
+		0x1802A85F7: [!] Reads field z from {'position' (type UnityEngine.Vector3)} and stores in a new local {'single' (type System.Single)}
+
+		0x1802A8600: Moves single (type System.Single) from register rax to the stack at offset 40 (0x28)
+		0x1802A8604: [!] Compares {'m_parent2' (type UnityEngine.Transform)} and 0
+		0x1802A8607: Jumps to 0x1802A8699 (which throws a NRE) if m_parent2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8610: Loads a pointer to stack offset 0x30 into register rcx as new constant constant13
+		0x1802A8615: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::get_position() on instance  and stores the result in {'position2' (type UnityEngine.Vector3)}
+
+		0x1802A861A: [!] Reads field m_parent from {'this' (function parameter, type SkippingStoneShadow)} and stores in a new local {'m_parent3' (type UnityEngine.Transform)}
+
+		0x1802A8622: [!] Reads field z from {'position2' (type UnityEngine.Vector3)} and stores in a new local {'single2' (type System.Single)}
+
+		0x1802A862B: Moves single2 (type System.Single) from register rax to the stack at offset 56 (0x38)
+		0x1802A8635: [!] Compares {'m_parent3' (type UnityEngine.Transform)} and 0
+		0x1802A8638: Jumps to 0x1802A8699 (which throws a NRE) if m_parent3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A863D: Loads a pointer to stack offset 0x40 into register rcx as new constant constant15
+		0x1802A8642: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::get_position() on instance  and stores the result in {'position3' (type UnityEngine.Vector3)}
+
+		0x1802A8647: [!] Reads field m_trans from {'this' (function parameter, type SkippingStoneShadow)} and stores in a new local {'m_trans' (type UnityEngine.Transform)}
+
+		0x1802A864F: [!] Reads field z from {'position3' (type UnityEngine.Vector3)} and stores in a new local {'single3' (type System.Single)}
+
+		0x1802A8658: Moves single3 (type System.Single) from register rax to the stack at offset 56 (0x38)
+		0x1802A865C: Reads local {'single3' (type System.Single)} from stack offset 56 (0x38) into register xmm0
+		0x1802A8662: Moves single3 (type System.Single) from register xmm0 to the stack at offset 40 (0x28)
+		0x1802A8668: [!] Compares {'m_trans' (type UnityEngine.Transform)} and 0
+		0x1802A866B: Jumps to 0x1802A8699 (which throws a NRE) if m_trans equals 0. Implicitly present in managed code, so ignored here.
+		0x1802A8673: Loads a pointer to stack offset 0x30 into register rdx as new constant constant17
+		0x1802A8678: Reads local {'single3' (type System.Single)} from stack offset 40 (0x28) into register rax
+		0x1802A8685: Moves single3 (type System.Single) from register rax to the stack at offset 56 (0x38)
+		0x1802A8689: [!] Calls managed method System.Void UnityEngine.Transform::set_position(UnityEngine.Vector3) on instance {'m_trans' (type UnityEngine.Transform)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1802A868E: Reads unknown value in stack, offset 96 (0x60) and stores the pointer in register rbx as new constant constant18
+		0x1802A8698: [!] Returns from the function
+
+		0x1802A869B: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkippingStoneShadow
+	System.Void Update()
+		UnityEngine.Transform m_parent = this.m_parent
+
+		System.Boolean boolean = UnityEngine.Object.op_Implicit(m_parent) //(Object exists)
+
+		if (boolean != False)
+
+		    UnityEngine.Transform transform = base.transform
+
+		    UnityEngine.Vector3 position = .position
+		    UnityEngine.Transform m_parent2 = this.m_parent
+		    System.Single single = position.z
+
+		    UnityEngine.Vector3 position2 = .position
+		    UnityEngine.Transform m_parent3 = this.m_parent
+		    System.Single single2 = position2.z
+
+		    UnityEngine.Vector3 position3 = .position
+		    UnityEngine.Transform m_trans = this.m_trans
+		    System.Single single3 = position3.z
+
+		    m_trans.set_position()
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1802A85EA) is corrupt (Method is non-static but don't have an instance) and cannot be created as IL. Aborting here.
+
+

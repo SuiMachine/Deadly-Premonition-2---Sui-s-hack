@@ -1,0 +1,242 @@
+Type: MenuWindowUITab
+
+Method: System.Void MenuWindowUITab::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MenuWindowUITab::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type MenuWindowUITab)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuWindowUITab
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void MenuWindowUITab::Select():	Method Body (x86 ASM):
+		0x180556C10 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180556C14 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x180556C18 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180556C1B je short 0000000180556C3Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180556C1D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180556C1F call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180556C24 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180556C27 je short 0000000180556C3Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180556C29 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180556C2C mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x180556C2E mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180556C31 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180556C35 jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180556C3A xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180556C3C call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180556C41 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MenuWindowUITab::Select():
+		End of function at 0x180556C42
+		Absolute End is at 0x180556C42
+		Identified Jump Destination addresses:
+
+		0x180556C14: [!] Reads field m_onoff from {'this' (function parameter, type MenuWindowUITab)} and stores in a new local {'m_onoff' (type UISprite)}
+
+		0x180556C18: [!] Compares {'m_onoff' (type UISprite)} and 0
+		0x180556C1B: Jumps to 0x180556C3A (which throws a NRE) if m_onoff equals 0. Implicitly present in managed code, so ignored here.
+		0x180556C1F: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'m_onoff' (type UISprite)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x180556C24: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x180556C27: Jumps to 0x180556C3A (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x180556C2C: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x180556C2E: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x180556C35: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [True]
+
+		0x180556C35: [!] Returns from the function
+
+		0x180556C3C: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuWindowUITab
+	System.Void Select()
+		UISprite m_onoff = this.m_onoff
+
+		UnityEngine.GameObject gameObject = m_onoff.gameObject
+
+		gameObject.SetActive(True) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UISprite MenuWindowUITab::m_onoff
+	IL_0006: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_000b: ldc.i4.1
+	IL_000c: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0011: ret
+	IL_0012: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0017: throw
+	
+
+Method: System.Void MenuWindowUITab::UnSelect():	Method Body (x86 ASM):
+		0x180398D60 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180398D64 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x180398D68 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180398D6B je short 0000000180398D8Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180398D6D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180398D6F call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180398D74 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180398D77 je short 0000000180398D8Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180398D79 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180398D7C xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180398D7E mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180398D81 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180398D85 jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180398D8A xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180398D8C call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180398D91 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MenuWindowUITab::UnSelect():
+		End of function at 0x180398D92
+		Absolute End is at 0x180398D92
+		Identified Jump Destination addresses:
+
+		0x180398D64: [!] Reads field m_onoff from {'this' (function parameter, type MenuWindowUITab)} and stores in a new local {'m_onoff' (type UISprite)}
+
+		0x180398D68: [!] Compares {'m_onoff' (type UISprite)} and 0
+		0x180398D6B: Jumps to 0x180398D8A (which throws a NRE) if m_onoff equals 0. Implicitly present in managed code, so ignored here.
+		0x180398D6F: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'m_onoff' (type UISprite)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x180398D74: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x180398D77: Jumps to 0x180398D8A (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x180398D7C: Clears register rdx, yielding zero-local {'local5' (type System.Int32)}
+		0x180398D7E: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x180398D85: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [{'local5' (type System.Int32)}]
+
+		0x180398D85: [!] Returns from the function
+
+		0x180398D8C: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuWindowUITab
+	System.Void UnSelect()
+		UISprite m_onoff = this.m_onoff
+
+		UnityEngine.GameObject gameObject = m_onoff.gameObject
+		ulong local5 = 0
+
+		gameObject.SetActive(local5) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UISprite MenuWindowUITab::m_onoff
+	IL_0006: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_000b: stloc.0
+	IL_000c: ldc.i4.0
+	IL_000d: stloc.1
+	IL_000e: ldloc.0
+	IL_000f: ldloc.1
+	IL_0010: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0015: ret
+	IL_0016: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001b: throw
+	
+
+Method: System.Void MenuWindowUITab::Change(System.Boolean):	Method Body (x86 ASM):
+		0x1805563E0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805563E2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1805563E6 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x1805563EA movzx ebx,dl		; DEBUG: {Register}/EBX {Register}/DL ||| None | 0 | None ||| N/A | N/A
+		0x1805563ED test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1805563F0 je short 0000000180556411h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805563F2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805563F4 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805563F9 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805563FC je short 0000000180556411h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805563FE xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180556401 movzx edx,bl		; DEBUG: {Register}/EDX {Register}/BL ||| None | 0 | None ||| N/A | N/A
+		0x180556404 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180556407 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18055640B pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18055640C jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180556411 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180556413 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180556418 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MenuWindowUITab::Change(System.Boolean):
+		End of function at 0x180556419
+		Absolute End is at 0x180556419
+		Identified Jump Destination addresses:
+
+		0x1805563E0: Saves the content of rbx to the stack
+		0x1805563E6: [!] Reads field m_onoff from {'this' (function parameter, type MenuWindowUITab)} and stores in a new local {'m_onoff' (type UISprite)}
+
+		0x1805563EA: Copies {'value' (function parameter, type System.Boolean)} from rdx into rbx
+		0x1805563ED: [!] Compares {'m_onoff' (type UISprite)} and 0
+		0x1805563F0: Jumps to 0x180556411 (which throws a NRE) if m_onoff equals 0. Implicitly present in managed code, so ignored here.
+		0x1805563F4: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'m_onoff' (type UISprite)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1805563F9: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1805563FC: Jumps to 0x180556411 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x180556401: Copies {'value' (function parameter, type System.Boolean)} from rbx into rdx
+		0x180556404: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x18055640C: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [{'value' (function parameter, type System.Boolean)}]
+
+		0x18055640C: [!] Returns from the function
+
+		0x180556413: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuWindowUITab
+	System.Void Change(System.Boolean value)
+		UISprite m_onoff = this.m_onoff
+
+		UnityEngine.GameObject gameObject = m_onoff.gameObject
+
+		gameObject.SetActive(value) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UISprite MenuWindowUITab::m_onoff
+	IL_0006: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_000b: ldarg.1
+	IL_000c: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0011: ret
+	IL_0012: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0017: throw
+	
+

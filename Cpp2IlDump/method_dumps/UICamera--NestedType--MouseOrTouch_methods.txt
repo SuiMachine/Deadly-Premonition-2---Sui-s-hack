@@ -1,0 +1,301 @@
+Type: MouseOrTouch
+
+Method: System.Void UICamera/MouseOrTouch::.ctor():	Method Body (x86 ASM):
+		0x1807172A0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1807172A2 mov dword ptr [rcx+68h],1		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 104 | None ||| N/A | 1
+		0x1807172A9 mov byte ptr [rcx+6Ch],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 108 | None ||| N/A | 1
+		0x1807172AD jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807172B2 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UICamera/MouseOrTouch::.ctor():
+		End of function at 0x1807172B3
+		Absolute End is at 0x1807172B3
+		Identified Jump Destination addresses:
+
+		0x1807172A2: [!] Sets the field clickNotification (Type UICamera/ClickNotification) on local {'this' (function parameter, type UICamera/MouseOrTouch)} to the value stored in 1
+		0x1807172A9: [!] Sets the field touchBegan (Type System.Boolean) on local {'this' (function parameter, type UICamera/MouseOrTouch)} to the value stored in True
+		0x1807172AD: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type UICamera/MouseOrTouch)}
+
+		0x1807172AD: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UICamera/MouseOrTouch
+	System.Void .ctor()
+		this.clickNotification = 1
+		this.touchBegan = True
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.1
+	IL_0002: conv.i8
+	IL_0003: conv.u8
+	IL_0004: stfld UICamera/ClickNotification UICamera/MouseOrTouch::clickNotification
+	IL_0009: ldarg.0
+	IL_000a: ldc.i4.1
+	IL_000b: stfld System.Boolean UICamera/MouseOrTouch::touchBegan
+	IL_0010: ldarg.0
+	IL_0011: call System.Void System.Object::.ctor()
+	IL_0016: ret
+	
+
+Method: System.Single UICamera/MouseOrTouch::get_deltaTime():	Method Body (x86 ASM):
+		0x1807172C0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1807172C2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1807172C6 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1807172C9 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1807172CB call 000000018030C1D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807172D0 subss xmm0,dword ptr [rbx+60h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 96 | None ||| N/A | N/A
+		0x1807172D5 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1807172D9 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1807172DA ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1807172DB int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Single UICamera/MouseOrTouch::get_deltaTime():
+		End of function at 0x1807172DC
+		Absolute End is at 0x1807172DC
+		Identified Jump Destination addresses:
+
+		0x1807172C0: Saves the content of rbx to the stack
+		0x1807172C6: Copies {'this' (function parameter, type UICamera/MouseOrTouch)} from rcx into rbx
+		0x1807172C9: Clears register rcx, yielding zero-local {'local1' (type System.Int32)}
+		0x1807172CB: [!] Calls static managed method System.Single RealTime::get_time() and stores the result in {'time' (type System.Single)}
+
+		0x1807172DA: [!] Returns {'time' (type System.Single)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UICamera/MouseOrTouch
+	System.Single get_deltaTime()
+		ulong local1 = 0
+
+		System.Single time = RealTime.time
+		return time
+
+
+Generated IL:
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: call System.Single RealTime::get_time()
+	IL_0007: ret
+	
+
+Method: System.Boolean UICamera/MouseOrTouch::get_isOverUI():	Method Body (x86 ASM):
+		0x1807172E0 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x1807172E5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1807172E6 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1807172EA cmp byte ptr [18183F69Ch],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467876508 | None ||| N/A | 0
+		0x1807172F1 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1807172F4 jne short 0000000180717308h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807172F6 mov ecx,[1814C5544h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464230724 | None ||| N/A | N/A
+		0x1807172FC call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717301 mov byte ptr [18183F69Ch],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467876508 | None ||| N/A | 1
+		0x180717308 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18071730F mov rdi,[rbx+48h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 72 | None ||| N/A | N/A
+		0x180717313 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18071731A je short 000000018071732Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18071731C cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180717323 jne short 000000018071732Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717325 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18071732A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18071732D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18071732F mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180717332 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717337 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180717339 je near ptr 000000018071741Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18071733F mov rax,[18189CD58h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468259160 | None ||| N/A | N/A
+		0x180717346 mov rdi,[rbx+48h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 72 | None ||| N/A | N/A
+		0x18071734A mov [rsp+30h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 48 | None ||| N/A | N/A
+		0x18071734F test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x180717356 je short 0000000180717370h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717358 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x18071735F jne short 0000000180717370h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717361 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180717364 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717369 mov rax,[18189CD58h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468259160 | None ||| N/A | N/A
+		0x180717370 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x180717377 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x18071737E test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180717385 mov rsi,[rax+0F8h]		; DEBUG: {Register}/RSI {Memory}/None ||| RAX | 248 | None ||| N/A | N/A
+		0x18071738C je short 000000018071739Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18071738E cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180717395 jne short 000000018071739Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717397 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18071739C xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18071739F mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x1807173A2 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1807173A5 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807173AA mov rsi,[rsp+30h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1807173AF test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1807173B1 je short 000000018071741Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807173B3 mov rcx,[181899E98h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468247192 | None ||| N/A | N/A
+		0x1807173BA mov rbx,[rbx+48h]		; DEBUG: {Register}/RBX {Memory}/None ||| RBX | 72 | None ||| N/A | N/A
+		0x1807173BE test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1807173C5 je short 00000001807173D5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807173C7 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1807173CE jne short 00000001807173D5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807173D0 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807173D5 mov rdx,[181869DC8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468050376 | None ||| N/A | N/A
+		0x1807173DC mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1807173DF call 00000001807F8E60h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807173E4 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1807173EB mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1807173EE test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1807173F5 je short 0000000180717405h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807173F7 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1807173FE jne short 0000000180717405h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717400 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180717405 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180717408 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18071740A mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18071740D mov rbx,[rsp+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x180717412 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180717416 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180717417 jmp near ptr 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18071741C xor al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18071741E mov rbx,[rsp+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x180717423 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180717427 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180717428 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180717429 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean UICamera/MouseOrTouch::get_isOverUI():
+		End of function at 0x18071742A
+		Absolute End is at 0x18071742A
+		Identified Jump Destination addresses:
+
+		0x1807172E5: Saves the content of rdi to the stack
+		0x1807172EA: Compares {Unknown Global at 0x18183F69C, first ten bytes are [218 43 2 0 52 61 103 1 224 43], or as chars "Ú+ 4=gà+"} and 0
+		0x1807172F1: Copies {'this' (function parameter, type UICamera/MouseOrTouch)} from rcx into rbx
+		0x1807172F4: Jumps to 0x180717308 if {Unknown Global at 0x18183F69C, first ten bytes are [218 43 2 0 52 61 103 1 224 43], or as chars "Ú+ 4=gà+"} != 0
+
+		0x1807172F6: Loads string "òI" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1807172FC: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x180717308: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18071730F: [!] Reads field current from {'this' (function parameter, type UICamera/MouseOrTouch)} and stores in a new local {'current' (type UnityEngine.GameObject)}
+
+		0x180717313: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18071731A: Jumps to 0x18071732A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18071731C: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180717323: Jumps to 0x18071732A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180717325: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18071732D: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x18071732F: Copies {'current' (type UnityEngine.GameObject)} from rdi into rcx
+		0x180717332: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'current' (type UnityEngine.GameObject)}, {'local3' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x180717337: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x180717339: Jumps to 0x18071741C (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18071733F: Loads the type definition for managed type UICamera as a constant "UICamera" in rax
+		0x180717346: [!] Reads field current from {'this' (function parameter, type UICamera/MouseOrTouch)} and stores in a new local {'current2' (type UnityEngine.GameObject)}
+
+		0x18071734F: Compares "{il2cpp field on {'UICamera' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180717356: Jumps to 0x180717370 if "{il2cpp field on {'UICamera' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180717358: Compares "{il2cpp field on {'UICamera' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18071735F: Jumps to 0x180717370 if "{il2cpp field on {'UICamera' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180717361: Copies {'UICamera' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x180717364: Calls the il2cpp cctor for the type UICamera
+		0x180717369: Loads the type definition for managed type UICamera as a constant "UICamera" in rax
+		0x180717370: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x180717377: Loads the pointer to the static fields for UICamera and stores it in constant17 in register rax
+		0x18071737E: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180717385: [!] Reads the static field UnityEngine.GameObject UICamera::fallThrough into new local fallThrough
+		0x18071738C: Jumps to 0x18071739C if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18071738E: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180717395: Jumps to 0x18071739C if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180717397: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18071739F: Copies {'fallThrough' (type UnityEngine.GameObject)} from rsi into rdx
+		0x1807173A2: Copies {'current2' (type UnityEngine.GameObject)} from rdi into rcx
+		0x1807173A5: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'current2' (type UnityEngine.GameObject)}, {'fallThrough' (type UnityEngine.GameObject)}] and stores the result in {'boolean2' (type System.Boolean)}
+
+		0x1807173AA: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rsi as new constant constant22
+		0x1807173AF: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x1807173B1: Jumps to 0x18071741C (which is an if statement's body) if boolean2 equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1807173B3: Loads the type definition for managed type NGUITools as a constant "NGUITools" in rcx
+		0x1807173BA: [!] Reads field current from {'this' (function parameter, type UICamera/MouseOrTouch)} and stores in a new local {'current3' (type UnityEngine.GameObject)}
+
+		0x1807173BE: Compares "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1807173C5: Jumps to 0x1807173D5 if "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1807173C7: Compares "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1807173CE: Jumps to 0x1807173D5 if "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1807173D0: Calls the il2cpp cctor for the type NGUITools
+		0x1807173D5: Loads the global generic method reference for method T NGUITools::FindInParents<UIRoot>(UnityEngine.GameObject) on type NGUITools and stores the result in constant {'FindInParents' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1807173DC: Copies {'current3' (type UnityEngine.GameObject)} from rbx into rcx
+		0x1807173DF: [!] Calls static managed method T NGUITools::FindInParents<UIRoot>(UnityEngine.GameObject) with arguments [{'current3' (type UnityEngine.GameObject)}] and stores the result in {'uIRoot' (type UIRoot)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1807173E4: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1807173EB: Copies {'uIRoot' (type UIRoot)} from rax into rbx
+		0x1807173EE: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1807173F5: Jumps to 0x180717405 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1807173F7: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1807173FE: Jumps to 0x180717405 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180717400: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x180717408: Clears register rdx, yielding zero-local {'local12' (type System.Int32)}
+		0x18071740A: Copies {'uIRoot' (type UIRoot)} from rbx into rcx
+		0x18071740D: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbx as new constant constant35
+		0x180717417: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'uIRoot' (type UIRoot)}, {'local12' (type System.Int32)}] and stores the result in {'boolean3' (type System.Boolean)}
+
+		0x180717417: [!] Returns {'boolean3' (type System.Boolean)} from the function
+
+		0x18071741C: Clears register rax, yielding zero-local {'local14' (type System.Int32)}
+		0x18071741E: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbx as new constant constant36
+		0x180717428: [!] Returns {'local14' (type System.Int32)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UICamera/MouseOrTouch
+	System.Boolean get_isOverUI()
+		UnityEngine.GameObject current = this.current
+		ulong local3 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(current, local3) //(Object x, Object y)
+
+		if (boolean != False)
+		    UnityEngine.GameObject current2 = this.current
+		    UnityEngine.GameObject fallThrough = UICamera.fallThrough
+
+		    System.Boolean boolean2 = UnityEngine.Object.op_Inequality(current2, fallThrough) //(Object x, Object y)
+
+		    if (boolean2 != False)
+		        UnityEngine.GameObject current3 = this.current
+
+		        UIRoot uIRoot = NGUITools.FindInParents<UIRoot>(current3) //(GameObject )
+		        ulong local12 = 0
+
+		        System.Boolean boolean3 = UnityEngine.Object.op_Inequality(uIRoot, local12) //(Object x, Object y)
+		        return boolean3
+		    endif
+            
+		    ulong local14 = 0
+		    return local14
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x180717428) is corrupt (Return value has a type of System.Int32, expecting an object of type System.Boolean) and cannot be created as IL. Aborting here.
+
+

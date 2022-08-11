@@ -1,0 +1,852 @@
+Type: MoviePlayerPC
+
+Method: System.Void MoviePlayerPC::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MoviePlayerPC::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type MoviePlayerPC)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MoviePlayerPC
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: UnityEngine.Texture MoviePlayerPC::GetRenderTexture():	Method Body (x86 ASM):
+		0x18079C040 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18079C044 mov rcx,[rcx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x18079C048 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C04B je short 000000018079C058h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C04D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C04F add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18079C053 jmp near ptr 000000018113E230h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C058 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C05D int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method UnityEngine.Texture MoviePlayerPC::GetRenderTexture():
+		End of function at 0x18079C05E
+		Absolute End is at 0x18079C05E
+		Identified Jump Destination addresses:
+
+		0x18079C044: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C048: [!] Compares {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C04B: Jumps to 0x18079C058 (which throws a NRE) if m_videoPlayer equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C053: [!] Calls managed method UnityEngine.RenderTexture UnityEngine.Video.VideoPlayer::get_targetTexture() on instance {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)} and stores the result in {'targetTexture' (type UnityEngine.RenderTexture)}
+
+		0x18079C053: [!] Returns {'targetTexture' (type UnityEngine.RenderTexture)} from the function
+
+		0x18079C058: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MoviePlayerPC
+	UnityEngine.Texture GetRenderTexture()
+		UnityEngine.Video.VideoPlayer m_videoPlayer = this.m_videoPlayer
+
+		UnityEngine.RenderTexture targetTexture = m_videoPlayer.targetTexture
+		return targetTexture
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x18079C053) is corrupt (Return value has a type of UnityEngine.RenderTexture, expecting an object of type UnityEngine.Texture) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void MoviePlayerPC::PlayMovie(System.String):	Method Body (x86 ASM):
+		0x18079C0F0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18079C0F5 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x18079C0FA push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C0FB sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18079C0FF cmp byte ptr [18183FB11h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467877649 | None ||| N/A | 0
+		0x18079C106 mov rsi,rdx		; DEBUG: {Register}/RSI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C109 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C10C jne short 000000018079C120h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C10E mov ecx,[1814C56C0h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464231104 | None ||| N/A | N/A
+		0x18079C114 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C119 mov byte ptr [18183FB11h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467877649 | None ||| N/A | 1
+		0x18079C120 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18079C127 mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C12B test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18079C132 je short 000000018079C142h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C134 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18079C13B jne short 000000018079C142h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C13D call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C142 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C144 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18079C147 call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C14C test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18079C14E je short 000000018079C16Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C150 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C154 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C157 je near ptr 000000018079C29Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C15D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C15F call 000000018113E1D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C164 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18079C166 jne near ptr 000000018079C28Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C16C xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C16E mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18079C171 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C176 mov rcx,[181899E98h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468247192 | None ||| N/A | N/A
+		0x18079C17D mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18079C180 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18079C187 je short 000000018079C197h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C189 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18079C190 jne short 000000018079C197h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C192 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C197 mov rdx,[181869B90h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468049808 | None ||| N/A | N/A
+		0x18079C19E mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18079C1A1 call 00000001807F8560h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C1A6 mov [rbx+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C1AA mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x18079C1B1 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18079C1B8 je short 000000018079C1C8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C1BA cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18079C1C1 jne short 000000018079C1C8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C1C3 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C1C8 mov rcx,[18187DCE8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468132072 | None ||| N/A | N/A
+		0x18079C1CF xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18079C1D2 mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18079C1D5 call 0000000180D4D090h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C1DA mov rcx,[18188D688h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468195976 | None ||| N/A | N/A
+		0x18079C1E1 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18079C1E4 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18079C1EB je short 000000018079C1FBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C1ED cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18079C1F4 jne short 000000018079C1FBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C1F6 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C1FB xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C1FD mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18079C200 call 0000000180B2C5F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C205 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C207 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18079C20A call 0000000180CD3D90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C20F xor edi,edi		; DEBUG: {Register}/EDI {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x18079C211 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18079C214 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18079C217 je short 000000018079C227h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C219 mov rax,[18185E6E0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468003552 | None ||| N/A | N/A
+		0x18079C220 cmp [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x18079C223 cmove rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C227 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C22B test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C22E je short 000000018079C29Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C230 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18079C233 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C235 call 000000018113E300h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C23A mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C23E test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C241 je short 000000018079C29Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C243 mov rdx,[rbx+28h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x18079C247 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18079C24A call 000000018113E3D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C24F mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C253 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C256 je short 000000018079C29Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C258 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18079C25B lea edx,[r8+2]		; DEBUG: {Register}/EDX {Memory}/None ||| R8 | 2 | None ||| N/A | N/A
+		0x18079C25F call 000000018113E370h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C264 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C268 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C26B je short 000000018079C29Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C26D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18079C270 mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18079C273 call 000000018113E290h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C278 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C27C test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C27F je short 000000018079C29Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C281 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C283 call 000000018113E0B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C288 mov dword ptr [rbx+18h],2		; DEBUG: {Memory}/None {Immediate32}/None ||| RBX | 24 | None ||| N/A | 2
+		0x18079C28F mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18079C294 mov rsi,[rsp+38h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x18079C299 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18079C29D pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C29E ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C29F xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18079C2A1 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C2A6 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MoviePlayerPC::PlayMovie(System.String):
+		End of function at 0x18079C2A7
+		Absolute End is at 0x18079C2A7
+		Identified Jump Destination addresses:
+
+		0x18079C0FA: Saves the content of rdi to the stack
+		0x18079C0FF: Compares {Unknown Global at 0x18183FB11, first ten bytes are [84 2 0 192 60 103 1 96 84 2], or as chars "T À<g`T"} and 0
+		0x18079C106: Copies {'fileName' (function parameter, type System.String)} from rdx into rsi
+		0x18079C109: Copies {'this' (function parameter, type MoviePlayerPC)} from rcx into rbx
+		0x18079C10C: Jumps to 0x18079C120 if {Unknown Global at 0x18183FB11, first ten bytes are [84 2 0 192 60 103 1 96 84 2], or as chars "T À<g`T"} != 0
+
+		0x18079C10E: Loads string "
+J" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18079C114: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18079C120: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18079C127: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C12B: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18079C132: Jumps to 0x18079C142 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18079C134: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18079C13B: Jumps to 0x18079C142 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18079C13D: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18079C144: Copies {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)} from rdi into rcx
+		0x18079C147: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18079C14C: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18079C14E: Jumps to 0x18079C16C (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18079C150: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C154: [!] Compares {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C157: Jumps to 0x18079C29F (which throws a NRE) if m_videoPlayer2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C15F: [!] Calls managed method System.Boolean UnityEngine.Video.VideoPlayer::get_isPlaying() on instance {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)} and stores the result in {'isPlaying' (type System.Boolean)}
+
+		0x18079C164: [!] Compares {'isPlaying' (type System.Boolean)} and False
+		0x18079C166: Jumps to 0x18079C28F if {'isPlaying' (type System.Boolean)} != False ;  - This is probably a goto, jumping to 0x18079C28F which is after end of current block @ 0x18079C16C (started at 0x18079C150)
+
+		0x18079C16E: Copies {'this' (function parameter, type MoviePlayerPC)} from rbx into rcx
+		0x18079C171: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type MoviePlayerPC)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x18079C176: Loads the type definition for managed type NGUITools as a constant "NGUITools" in rcx
+		0x18079C17D: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rdi
+		0x18079C180: Compares "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18079C187: Jumps to 0x18079C197 if "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18079C197 which is after end of current block @ 0x18079C16C (started at 0x18079C150)
+
+		0x18079C189: Compares "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18079C190: Jumps to 0x18079C197 if "{il2cpp field on {'NGUITools' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18079C197 which is after end of current block @ 0x18079C16C (started at 0x18079C150)
+
+		0x18079C192: Calls the il2cpp cctor for the type NGUITools
+		0x18079C197: Loads the global generic method reference for method T NGUITools::AddMissingComponent<UnityEngine.Video.VideoPlayer>(UnityEngine.GameObject) on type NGUITools and stores the result in constant {'AddMissingComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18079C19E: Copies {'gameObject' (type UnityEngine.GameObject)} from rdi into rcx
+		0x18079C1A1: [!] Calls static managed method T NGUITools::AddMissingComponent<UnityEngine.Video.VideoPlayer>(UnityEngine.GameObject) with arguments [{'gameObject' (type UnityEngine.GameObject)}] and stores the result in {'videoPlayer' (type UnityEngine.Video.VideoPlayer)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18079C1A6: [!] Sets the field m_videoPlayer (Type UnityEngine.Video.VideoPlayer) on local {'this' (function parameter, type MoviePlayerPC)} to the value stored in {'videoPlayer' (type UnityEngine.Video.VideoPlayer)}
+		0x18079C1AA: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x18079C1B1: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18079C1B8: Jumps to 0x18079C1C8 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18079C1C8 which is after end of current block @ 0x18079C16C (started at 0x18079C150)
+
+		0x18079C1BA: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18079C1C1: Jumps to 0x18079C1C8 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18079C1C8 which is after end of current block @ 0x18079C16C (started at 0x18079C150)
+
+		0x18079C1C3: Calls the il2cpp cctor for the type System.String
+		0x18079C1C8: Loads the string literal "Movie/" as a constant "constant23" in rcx
+		0x18079C1D2: Copies {'fileName' (function parameter, type System.String)} from rsi into rdx
+		0x18079C1D5: [!] Calls static managed method System.String System.String::Concat(System.String,System.String) with arguments ["Movie/", {'fileName' (function parameter, type System.String)}] and stores the result in {'string' (type System.String)}
+
+		0x18079C1DA: Loads the type definition for managed type UnityEngine.Debug as a constant "Debug" in rcx
+		0x18079C1E1: Copies {'string' (type System.String)} from rax into rdi
+		0x18079C1E4: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18079C1EB: Jumps to 0x18079C1FB if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18079C1FB which is after end of current block @ 0x18079C16C (started at 0x18079C150)
+
+		0x18079C1ED: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18079C1F4: Jumps to 0x18079C1FB if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18079C1FB which is after end of current block @ 0x18079C16C (started at 0x18079C150)
+
+		0x18079C1F6: Calls the il2cpp cctor for the type UnityEngine.Debug
+		0x18079C1FD: Copies {'string' (type System.String)} from rdi into rcx
+		0x18079C200: [!] Calls static managed method System.Void UnityEngine.Debug::Log(System.Object) with arguments [{'string' (type System.String)}]
+
+		0x18079C207: Copies {'string' (type System.String)} from rdi into rcx
+		0x18079C20A: [!] Calls static managed method UnityEngine.Object UnityEngine.Resources::Load(System.String) with arguments [{'string' (type System.String)}] and stores the result in {'object' (type UnityEngine.Object)}
+
+		0x18079C211: Copies {'object' (type UnityEngine.Object)} from rax into rcx
+		0x18079C214: [!] Compares {'object' (type UnityEngine.Object)} and 0
+		0x18079C217: Jumps to 0x18079C227 if object equals 0 ;  - This is probably a goto, jumping to 0x18079C227 which is after end of current block @ 0x18079C16C (started at 0x18079C150)
+
+		0x18079C219: Loads the type definition for managed type UnityEngine.Video.VideoClip as a constant "VideoClip" in rax
+		0x18079C220: [!] Compares {'constant31' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} and {'VideoClip' (constant value of type Mono.Cecil.TypeReference)}
+		0x18079C223: [!] Copies {'object' (type UnityEngine.Object)} from rcx into rdi based on previous comparison
+		0x18079C227: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer3' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C22B: [!] Compares {'m_videoPlayer3' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C22E: Jumps to 0x18079C29F (which throws a NRE) if m_videoPlayer3 equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C233: Clears register rdx, yielding zero-local {'local19' (type System.Int32)}
+		0x18079C235: [!] Calls managed method System.Void UnityEngine.Video.VideoPlayer::set_playOnAwake(System.Boolean) on instance {'m_videoPlayer3' (type UnityEngine.Video.VideoPlayer)} with arguments [{'local19' (type System.Int32)}]
+
+		0x18079C23A: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer4' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C23E: [!] Compares {'m_videoPlayer4' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C241: Jumps to 0x18079C29F (which throws a NRE) if m_videoPlayer4 equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C243: [!] Reads field m_renderTexture from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_renderTexture' (type UnityEngine.RenderTexture)}
+
+		0x18079C24A: [!] Calls managed method System.Void UnityEngine.Video.VideoPlayer::set_targetTexture(UnityEngine.RenderTexture) on instance {'m_videoPlayer4' (type UnityEngine.Video.VideoPlayer)} with arguments [{'m_renderTexture' (type UnityEngine.RenderTexture)}]
+
+		0x18079C24F: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer5' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C253: [!] Compares {'m_videoPlayer5' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C256: Jumps to 0x18079C29F (which throws a NRE) if m_videoPlayer5 equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C25B: [!] Loads the constant value 2 into the register rdx as constant constant35 using an LEA instruction
+		0x18079C25F: [!] Calls managed method System.Void UnityEngine.Video.VideoPlayer::set_renderMode(UnityEngine.Video.VideoRenderMode) on instance {'m_videoPlayer5' (type UnityEngine.Video.VideoPlayer)} with arguments [2]
+
+		0x18079C264: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer6' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C268: [!] Compares {'m_videoPlayer6' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C26B: Jumps to 0x18079C29F (which throws a NRE) if m_videoPlayer6 equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C270: Copies {'object' (type UnityEngine.Object)} from rdi into rdx
+		0x18079C273: [!] Calls managed method System.Void UnityEngine.Video.VideoPlayer::set_clip(UnityEngine.Video.VideoClip) on instance {'m_videoPlayer6' (type UnityEngine.Video.VideoPlayer)} with arguments [{'object' (type UnityEngine.Object)}]
+
+		0x18079C278: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer7' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C27C: [!] Compares {'m_videoPlayer7' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C27F: Jumps to 0x18079C29F (which throws a NRE) if m_videoPlayer7 equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C283: [!] Calls managed method System.Void UnityEngine.Video.VideoPlayer::Play() on instance {'m_videoPlayer7' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C288: [!] Sets the field m_state (Type MoviePlayerBase/EState) on local {'this' (function parameter, type MoviePlayerPC)} to the value stored in 2
+		0x18079C28F: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant38
+		0x18079C294: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rsi as new constant constant39
+		0x18079C29E: [!] Returns from the function
+
+		0x18079C2A1: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MoviePlayerPC
+	System.Void PlayMovie(System.String fileName)
+		UnityEngine.Video.VideoPlayer m_videoPlayer = this.m_videoPlayer
+
+		System.Boolean boolean = UnityEngine.Object.op_Implicit(m_videoPlayer) //(Object exists)
+
+		if (boolean != False)
+		    UnityEngine.Video.VideoPlayer m_videoPlayer2 = this.m_videoPlayer
+
+		    System.Boolean isPlaying = m_videoPlayer2.isPlaying
+
+		    if (isPlaying != False)
+                goto INSN_18079C28F
+            endif
+		endif
+        
+
+		UnityEngine.GameObject gameObject = base.gameObject
+
+		UnityEngine.Video.VideoPlayer videoPlayer = NGUITools.AddMissingComponent<UnityEngine.Video.VideoPlayer>(gameObject) //(GameObject )
+		this.m_videoPlayer = videoPlayer
+
+		System.String string = System.String.Concat("Movie/", fileName) //(String str0, String str1)
+
+		UnityEngine.Debug.Log(string) //(Object message)
+
+		UnityEngine.Object object = UnityEngine.Resources.Load(string) //(String path)
+
+		if (object == 0)
+            goto INSN_18079C227
+        endif
+
+		INSN_18079C227:
+		UnityEngine.Video.VideoPlayer m_videoPlayer3 = this.m_videoPlayer
+		ulong local19 = 0
+
+		m_videoPlayer3.playOnAwake = local19
+		UnityEngine.Video.VideoPlayer m_videoPlayer4 = this.m_videoPlayer
+		UnityEngine.RenderTexture m_renderTexture = this.m_renderTexture
+
+		m_videoPlayer4.targetTexture = m_renderTexture
+		UnityEngine.Video.VideoPlayer m_videoPlayer5 = this.m_videoPlayer
+		System.Int32 2 = 2
+
+		m_videoPlayer5.renderMode = 2
+		UnityEngine.Video.VideoPlayer m_videoPlayer6 = this.m_videoPlayer
+
+		m_videoPlayer6.clip = object
+		UnityEngine.Video.VideoPlayer m_videoPlayer7 = this.m_videoPlayer
+
+		m_videoPlayer7.Play()
+		this.m_state = 2
+
+		INSN_18079C28F:
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0006: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+	IL_000b: ldc.i4.0
+	IL_000c: beq.s IL_001f
+	IL_000e: ldarg.0
+	IL_000f: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0014: call System.Boolean UnityEngine.Video.VideoPlayer::get_isPlaying()
+	IL_0019: ldc.i4.0
+	IL_001a: bne.un IL_00a6
+	IL_001f: ldarg.0
+	IL_0020: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0025: call T NGUITools::AddMissingComponent<UnityEngine.Video.VideoPlayer>(UnityEngine.GameObject)
+	IL_002a: stloc.0
+	IL_002b: ldarg.0
+	IL_002c: ldloc.0
+	IL_002d: stfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0032: ldstr "Movie/"
+	IL_0037: ldarg.1
+	IL_0038: call System.String System.String::Concat(System.String,System.String)
+	IL_003d: stloc.1
+	IL_003e: ldloc.1
+	IL_003f: call System.Void UnityEngine.Debug::Log(System.Object)
+	IL_0044: ldloc.1
+	IL_0045: call UnityEngine.Object UnityEngine.Resources::Load(System.String)
+	IL_004a: stloc.2
+	IL_004b: ldloc.2
+	IL_004c: ldc.i4.0
+	IL_004d: beq.s IL_004f
+	IL_004f: ldarg.0
+	IL_0050: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0055: stloc.3
+	IL_0056: ldc.i4.0
+	IL_0057: stloc.s V_4
+	IL_0059: ldloc.3
+	IL_005a: ldloc.s V_4
+	IL_005c: call System.Void UnityEngine.Video.VideoPlayer::set_playOnAwake(System.Boolean)
+	IL_0061: ldarg.0
+	IL_0062: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0067: stloc.s V_5
+	IL_0069: ldarg.0
+	IL_006a: ldfld UnityEngine.RenderTexture MoviePlayerPC::m_renderTexture
+	IL_006f: stloc.s V_6
+	IL_0071: ldloc.s V_5
+	IL_0073: ldloc.s V_6
+	IL_0075: call System.Void UnityEngine.Video.VideoPlayer::set_targetTexture(UnityEngine.RenderTexture)
+	IL_007a: ldarg.0
+	IL_007b: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0080: ldc.i4.2
+	IL_0081: call System.Void UnityEngine.Video.VideoPlayer::set_renderMode(UnityEngine.Video.VideoRenderMode)
+	IL_0086: ldarg.0
+	IL_0087: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_008c: ldloc.2
+	IL_008d: call System.Void UnityEngine.Video.VideoPlayer::set_clip(UnityEngine.Video.VideoClip)
+	IL_0092: ldarg.0
+	IL_0093: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0098: call System.Void UnityEngine.Video.VideoPlayer::Play()
+	IL_009d: ldarg.0
+	IL_009e: ldc.i4.2
+	IL_009f: conv.i8
+	IL_00a0: conv.u8
+	IL_00a1: stfld MoviePlayerBase/EState MoviePlayerBase::m_state
+	IL_00a6: ret
+	IL_00a7: newobj System.Void System.NullReferenceException::.ctor()
+	IL_00ac: throw
+	
+
+Method: System.Boolean MoviePlayerPC::IsPlaying():	Method Body (x86 ASM):
+		0x18079C060 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18079C065 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C066 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18079C06A cmp byte ptr [18183FB12h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467877650 | None ||| N/A | 0
+		0x18079C071 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C074 jne short 000000018079C088h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C076 mov ecx,[1814C56ACh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464231084 | None ||| N/A | N/A
+		0x18079C07C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C081 mov byte ptr [18183FB12h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467877650 | None ||| N/A | 1
+		0x18079C088 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18079C08F mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C093 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18079C09A je short 000000018079C0AAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C09C cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18079C0A3 jne short 000000018079C0AAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C0A5 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C0AA xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C0AC mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18079C0AF call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C0B4 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18079C0B6 jne short 000000018079C0C3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C0B8 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18079C0BD add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18079C0C1 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C0C2 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C0C3 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C0C7 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C0CA je short 000000018079C0DDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C0CC xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C0CE mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18079C0D3 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18079C0D7 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C0D8 jmp near ptr 000000018113E1D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C0DD call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C0E2 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean MoviePlayerPC::IsPlaying():
+		End of function at 0x18079C0E3
+		Absolute End is at 0x18079C0E3
+		Identified Jump Destination addresses:
+
+		0x18079C065: Saves the content of rdi to the stack
+		0x18079C06A: Compares {Unknown Global at 0x18183FB12, first ten bytes are [2 0 192 60 103 1 96 84 2 0], or as chars " À<g`T "} and 0
+		0x18079C071: Copies {'this' (function parameter, type MoviePlayerPC)} from rcx into rbx
+		0x18079C074: Jumps to 0x18079C088 if {Unknown Global at 0x18183FB12, first ten bytes are [2 0 192 60 103 1 96 84 2 0], or as chars " À<g`T "} != 0
+
+		0x18079C076: Loads string "	J" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18079C07C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18079C088: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18079C08F: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C093: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18079C09A: Jumps to 0x18079C0AA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18079C09C: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18079C0A3: Jumps to 0x18079C0AA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18079C0A5: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18079C0AC: Copies {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)} from rdi into rcx
+		0x18079C0AF: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18079C0B4: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18079C0B6: Jumps to 0x18079C0C3 (which is an if statement's body) if {'boolean' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18079C0B8: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant10
+		0x18079C0C2: [!] Returns {'boolean' (type System.Boolean)} from the function
+
+		0x18079C0C3: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C0C7: [!] Compares {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C0CA: Jumps to 0x18079C0DD (which throws a NRE) if m_videoPlayer2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C0CE: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant12
+		0x18079C0D8: [!] Calls managed method System.Boolean UnityEngine.Video.VideoPlayer::get_isPlaying() on instance {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)} and stores the result in {'isPlaying' (type System.Boolean)}
+
+		0x18079C0D8: [!] Returns {'isPlaying' (type System.Boolean)} from the function
+
+		0x18079C0DD: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MoviePlayerPC
+	System.Boolean IsPlaying()
+		UnityEngine.Video.VideoPlayer m_videoPlayer = this.m_videoPlayer
+
+		System.Boolean boolean = UnityEngine.Object.op_Implicit(m_videoPlayer) //(Object exists)
+
+		if (boolean == False)
+		    return boolean
+		endif
+        
+		UnityEngine.Video.VideoPlayer m_videoPlayer2 = this.m_videoPlayer
+
+		System.Boolean isPlaying = m_videoPlayer2.isPlaying
+		return isPlaying
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0006: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+	IL_000b: stloc.0
+	IL_000c: ldloc.0
+	IL_000d: ldc.i4.0
+	IL_000e: bne.un.s IL_0012
+	IL_0010: ldloc.0
+	IL_0011: ret
+	IL_0012: ldarg.0
+	IL_0013: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0018: call System.Boolean UnityEngine.Video.VideoPlayer::get_isPlaying()
+	IL_001d: ret
+	IL_001e: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0023: throw
+	
+
+Method: System.Void MoviePlayerPC::StopMovie():	Method Body (x86 ASM):
+		0x18079C300 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C302 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18079C306 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C309 mov rcx,[rcx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x18079C30D test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C310 je short 000000018079C338h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C312 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C314 call 000000018113E1D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C319 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18079C31B je short 000000018079C332h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C31D mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C321 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C324 je short 000000018079C338h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C326 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C328 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18079C32C pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C32D jmp near ptr 000000018113E110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C332 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18079C336 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C337 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C338 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18079C33A call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C33F int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MoviePlayerPC::StopMovie():
+		End of function at 0x18079C340
+		Absolute End is at 0x18079C340
+		Identified Jump Destination addresses:
+
+		0x18079C300: Saves the content of rbx to the stack
+		0x18079C306: Copies {'this' (function parameter, type MoviePlayerPC)} from rcx into rbx
+		0x18079C309: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C30D: [!] Compares {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C310: Jumps to 0x18079C338 (which throws a NRE) if m_videoPlayer equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C314: [!] Calls managed method System.Boolean UnityEngine.Video.VideoPlayer::get_isPlaying() on instance {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)} and stores the result in {'isPlaying' (type System.Boolean)}
+
+		0x18079C319: [!] Compares {'isPlaying' (type System.Boolean)} and False
+		0x18079C31B: Jumps to 0x18079C332 (which is an if statement's body) if isPlaying equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18079C31D: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C321: [!] Compares {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C324: Jumps to 0x18079C338 (which throws a NRE) if m_videoPlayer2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C32D: [!] Calls managed method System.Void UnityEngine.Video.VideoPlayer::Stop() on instance {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C32D: [!] Returns from the function
+
+		0x18079C337: [!] Returns from the function
+
+		0x18079C33A: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MoviePlayerPC
+	System.Void StopMovie()
+		UnityEngine.Video.VideoPlayer m_videoPlayer = this.m_videoPlayer
+
+		System.Boolean isPlaying = m_videoPlayer.isPlaying
+
+		if (isPlaying != False)
+		    UnityEngine.Video.VideoPlayer m_videoPlayer2 = this.m_videoPlayer
+
+		    m_videoPlayer2.Stop()
+		    return
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0006: call System.Boolean UnityEngine.Video.VideoPlayer::get_isPlaying()
+	IL_000b: ldc.i4.0
+	IL_000c: beq.s IL_001a
+	IL_000e: ldarg.0
+	IL_000f: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0014: call System.Void UnityEngine.Video.VideoPlayer::Stop()
+	IL_0019: ret
+	IL_001a: ret
+	IL_001b: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0020: throw
+	
+
+Method: System.Void MoviePlayerPC::SetTime(System.Double):	Method Body (x86 ASM):
+		0x18079C2B0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C2B2 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18079C2B6 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C2B9 movaps [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x18079C2BE mov rcx,[rcx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x18079C2C2 movaps xmm6,xmm1		; DEBUG: {Register}/XMM6 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x18079C2C5 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C2C8 je short 000000018079C2F4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C2CA xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C2CC call 000000018113E1D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C2D1 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18079C2D3 je short 000000018079C2E9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C2D5 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C2D9 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C2DC je short 000000018079C2F4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C2DE xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18079C2E1 movaps xmm1,xmm6		; DEBUG: {Register}/XMM1 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x18079C2E4 call 000000018113E440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C2E9 movaps xmm6,[rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18079C2EE add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18079C2F2 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C2F3 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C2F4 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18079C2F6 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C2FB int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MoviePlayerPC::SetTime(System.Double):
+		End of function at 0x18079C2FC
+		Absolute End is at 0x18079C2FC
+		Identified Jump Destination addresses:
+
+		0x18079C2B0: Saves the content of rbx to the stack
+		0x18079C2B6: Copies {'this' (function parameter, type MoviePlayerPC)} from rcx into rbx
+		0x18079C2BE: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C2C2: Copies {'time' (function parameter, type System.Double)} from xmm1 into xmm6
+		0x18079C2C5: [!] Compares {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C2C8: Jumps to 0x18079C2F4 (which throws a NRE) if m_videoPlayer equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C2CC: [!] Calls managed method System.Boolean UnityEngine.Video.VideoPlayer::get_isPlaying() on instance {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)} and stores the result in {'isPlaying' (type System.Boolean)}
+
+		0x18079C2D1: [!] Compares {'isPlaying' (type System.Boolean)} and False
+		0x18079C2D3: Jumps to 0x18079C2E9 (which is an if statement's body) if isPlaying equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18079C2D5: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C2D9: [!] Compares {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C2DC: Jumps to 0x18079C2F4 (which throws a NRE) if m_videoPlayer2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C2E1: Copies {'time' (function parameter, type System.Double)} from xmm6 into xmm1
+		0x18079C2E4: [!] Calls managed method System.Void UnityEngine.Video.VideoPlayer::set_time(System.Double) on instance {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)} with arguments [{'time' (function parameter, type System.Double)}]
+
+		0x18079C2E9: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm6 as new constant constant4
+		0x18079C2F3: [!] Returns from the function
+
+		0x18079C2F6: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MoviePlayerPC
+	System.Void SetTime(System.Double time)
+		UnityEngine.Video.VideoPlayer m_videoPlayer = this.m_videoPlayer
+
+		System.Boolean isPlaying = m_videoPlayer.isPlaying
+
+		if (isPlaying != False)
+		    UnityEngine.Video.VideoPlayer m_videoPlayer2 = this.m_videoPlayer
+
+		    m_videoPlayer2.time = time
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0006: call System.Boolean UnityEngine.Video.VideoPlayer::get_isPlaying()
+	IL_000b: ldc.i4.0
+	IL_000c: beq.s IL_001a
+	IL_000e: ldarg.0
+	IL_000f: ldfld UnityEngine.Video.VideoPlayer MoviePlayerPC::m_videoPlayer
+	IL_0014: ldarg.1
+	IL_0015: call System.Void UnityEngine.Video.VideoPlayer::set_time(System.Double)
+	IL_001a: ret
+	IL_001b: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0020: throw
+	
+
+Method: System.Double MoviePlayerPC::GetDuration():	Method Body (x86 ASM):
+		0x18079BFE0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079BFE2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18079BFE6 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079BFE9 mov rcx,[rcx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x18079BFED test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079BFF0 je short 000000018079C02Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079BFF2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079BFF4 call 000000018113E1D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079BFF9 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18079BFFB jne short 000000018079C006h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079BFFD xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x18079C000 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18079C004 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C005 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C006 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18079C00A test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18079C00D je short 000000018079C02Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C00F xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C011 call 000000018113E170h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C016 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18079C019 je short 000000018079C02Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C01B xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18079C01D mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18079C020 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18079C024 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18079C025 jmp near ptr 000000018113DEA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C02A xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18079C02C call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18079C031 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Double MoviePlayerPC::GetDuration():
+		End of function at 0x18079C032
+		Absolute End is at 0x18079C032
+		Identified Jump Destination addresses:
+
+		0x18079BFE0: Saves the content of rbx to the stack
+		0x18079BFE6: Copies {'this' (function parameter, type MoviePlayerPC)} from rcx into rbx
+		0x18079BFE9: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079BFED: [!] Compares {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079BFF0: Jumps to 0x18079C02A (which throws a NRE) if m_videoPlayer equals 0. Implicitly present in managed code, so ignored here.
+		0x18079BFF4: [!] Calls managed method System.Boolean UnityEngine.Video.VideoPlayer::get_isPlaying() on instance {'m_videoPlayer' (type UnityEngine.Video.VideoPlayer)} and stores the result in {'isPlaying' (type System.Boolean)}
+
+		0x18079BFF9: [!] Compares {'isPlaying' (type System.Boolean)} and False
+		0x18079BFFB: Jumps to 0x18079C006 (which is an if statement's body) if {'isPlaying' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18079BFFD: Clears register xmm0, yielding zero-local {'local4' (type System.Int32)}
+		0x18079C005: [!] Returns {'local4' (type System.Int32)} from the function
+
+		0x18079C006: [!] Reads field m_videoPlayer from {'this' (function parameter, type MoviePlayerPC)} and stores in a new local {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)}
+
+		0x18079C00A: [!] Compares {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)} and 0
+		0x18079C00D: Jumps to 0x18079C02A (which throws a NRE) if m_videoPlayer2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C011: [!] Calls managed method UnityEngine.Video.VideoClip UnityEngine.Video.VideoPlayer::get_clip() on instance {'m_videoPlayer2' (type UnityEngine.Video.VideoPlayer)} and stores the result in {'clip' (type UnityEngine.Video.VideoClip)}
+
+		0x18079C016: [!] Compares {'clip' (type UnityEngine.Video.VideoClip)} and 0
+		0x18079C019: Jumps to 0x18079C02A (which throws a NRE) if clip equals 0. Implicitly present in managed code, so ignored here.
+		0x18079C01D: Copies {'clip' (type UnityEngine.Video.VideoClip)} from rax into rcx
+		0x18079C025: [!] Calls managed method System.Double UnityEngine.Video.VideoClip::get_length() on instance {'clip' (type UnityEngine.Video.VideoClip)} and stores the result in {'length' (type System.Double)}
+
+		0x18079C025: [!] Returns {'length' (type System.Double)} from the function
+
+		0x18079C02C: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MoviePlayerPC
+	System.Double GetDuration()
+		UnityEngine.Video.VideoPlayer m_videoPlayer = this.m_videoPlayer
+
+		System.Boolean isPlaying = m_videoPlayer.isPlaying
+
+		if (isPlaying == False)
+		    ulong local4 = 0
+		    return local4
+		endif
+        
+		UnityEngine.Video.VideoPlayer m_videoPlayer2 = this.m_videoPlayer
+
+		UnityEngine.Video.VideoClip clip = m_videoPlayer2.clip
+
+		System.Double length = clip.length
+		return length
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x18079C005) is corrupt (Return value has a type of System.Int32, expecting an object of type System.Double) and cannot be created as IL. Aborting here.
+
+

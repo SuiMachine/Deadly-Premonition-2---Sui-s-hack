@@ -1,0 +1,592 @@
+Type: VisionCameraEffect
+
+Method: System.Void VisionCameraEffect::.ctor():	Method Body (x86 ASM):
+		0x181171D30 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181171D32 mov byte ptr [rcx+18h],20h		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 24 | None ||| N/A | 32
+		0x181171D36 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171D3B int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void VisionCameraEffect::.ctor():
+		End of function at 0x181171D3C
+		Absolute End is at 0x181171D3C
+		Identified Jump Destination addresses:
+
+		0x181171D32: [!] Sets the field m_stencil (Type System.Byte) on local {'this' (function parameter, type VisionCameraEffect)} to the value stored in 32
+		0x181171D36: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type VisionCameraEffect)}
+
+		0x181171D36: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: VisionCameraEffect
+	System.Void .ctor()
+		this.m_stencil = 32
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.s 32
+	IL_0003: conv.i8
+	IL_0004: conv.u8
+	IL_0005: stfld System.Byte VisionCameraEffect::m_stencil
+	IL_000a: ldarg.0
+	IL_000b: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0010: ret
+	
+
+Method: System.Void VisionCameraEffect::OnEnable():	Method Body (x86 ASM):
+		0x181171CF0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x181171CF2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x181171CF6 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181171CF8 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x181171CFB call 00000001811719D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171D00 mov rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x181171D04 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x181171D07 je short 0000000181171D1Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171D09 mov r8,[rbx+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x181171D0D xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x181171D10 lea edx,[r9+11h]		; DEBUG: {Register}/EDX {Memory}/None ||| R9 | 17 | None ||| N/A | N/A
+		0x181171D14 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x181171D18 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x181171D19 jmp near ptr 0000000180B23C30h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171D1E call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171D23 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void VisionCameraEffect::OnEnable():
+		End of function at 0x181171D24
+		Absolute End is at 0x181171D24
+		Identified Jump Destination addresses:
+
+		0x181171CF0: Saves the content of rbx to the stack
+		0x181171CF8: Copies {'this' (function parameter, type VisionCameraEffect)} from rcx into rbx
+		0x181171CFB: [!] Calls managed method System.Void VisionCameraEffect::Init() on instance {'this' (function parameter, type VisionCameraEffect)}
+
+		0x181171D00: [!] Reads field m_camera from {'this' (function parameter, type VisionCameraEffect)} and stores in a new local {'m_camera' (type UnityEngine.Camera)}
+
+		0x181171D04: [!] Compares {'m_camera' (type UnityEngine.Camera)} and 0
+		0x181171D07: Jumps to 0x181171D1E (which throws a NRE) if m_camera equals 0. Implicitly present in managed code, so ignored here.
+		0x181171D09: [!] Reads field m_buffer from {'this' (function parameter, type VisionCameraEffect)} and stores in a new local {'m_buffer' (type UnityEngine.Rendering.CommandBuffer)}
+
+		0x181171D10: [!] Loads the constant value 17 into the register rdx as constant constant2 using an LEA instruction
+		0x181171D19: [!] Calls managed method System.Void UnityEngine.Camera::AddCommandBuffer(UnityEngine.Rendering.CameraEvent,UnityEngine.Rendering.CommandBuffer) on instance {'m_camera' (type UnityEngine.Camera)} with arguments [17, {'m_buffer' (type UnityEngine.Rendering.CommandBuffer)}]
+
+		0x181171D19: [!] Returns from the function
+
+		0x181171D1E: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: VisionCameraEffect
+	System.Void OnEnable()
+
+		this.Init()
+		UnityEngine.Camera m_camera = this.m_camera
+		UnityEngine.Rendering.CommandBuffer m_buffer = this.m_buffer
+		System.Int32 17 = 17
+
+		m_camera.AddCommandBuffer(17, m_buffer) //(CameraEvent evt, CommandBuffer buffer)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void VisionCameraEffect::Init()
+	IL_0006: ldarg.0
+	IL_0007: ldfld UnityEngine.Camera VisionCameraEffect::m_camera
+	IL_000c: stloc.0
+	IL_000d: ldarg.0
+	IL_000e: ldfld UnityEngine.Rendering.CommandBuffer VisionCameraEffect::m_buffer
+	IL_0013: stloc.1
+	IL_0014: ldloc.0
+	IL_0015: ldc.i4.s 17
+	IL_0017: ldloc.1
+	IL_0018: call System.Void UnityEngine.Camera::AddCommandBuffer(UnityEngine.Rendering.CameraEvent,UnityEngine.Rendering.CommandBuffer)
+	IL_001d: ret
+	IL_001e: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0023: throw
+	
+
+Method: System.Void VisionCameraEffect::OnDisable():	Method Body (x86 ASM):
+		0x181171CC0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x181171CC4 mov rax,[rcx+28h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 40 | None ||| N/A | N/A
+		0x181171CC8 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181171CCB je short 0000000181171CE4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171CCD mov r8,[rcx+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RCX | 48 | None ||| N/A | N/A
+		0x181171CD1 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x181171CD4 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181171CD7 lea edx,[r9+11h]		; DEBUG: {Register}/EDX {Memory}/None ||| R9 | 17 | None ||| N/A | N/A
+		0x181171CDB add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x181171CDF jmp near ptr 0000000180B24AC0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171CE4 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x181171CE6 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171CEB int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void VisionCameraEffect::OnDisable():
+		End of function at 0x181171CEC
+		Absolute End is at 0x181171CEC
+		Identified Jump Destination addresses:
+
+		0x181171CC4: [!] Reads field m_camera from {'this' (function parameter, type VisionCameraEffect)} and stores in a new local {'m_camera' (type UnityEngine.Camera)}
+
+		0x181171CC8: [!] Compares {'m_camera' (type UnityEngine.Camera)} and 0
+		0x181171CCB: Jumps to 0x181171CE4 (which throws a NRE) if m_camera equals 0. Implicitly present in managed code, so ignored here.
+		0x181171CCD: [!] Reads field m_buffer from {'this' (function parameter, type VisionCameraEffect)} and stores in a new local {'m_buffer' (type UnityEngine.Rendering.CommandBuffer)}
+
+		0x181171CD4: Copies {'m_camera' (type UnityEngine.Camera)} from rax into rcx
+		0x181171CD7: [!] Loads the constant value 17 into the register rdx as constant constant2 using an LEA instruction
+		0x181171CDF: [!] Calls managed method System.Void UnityEngine.Camera::RemoveCommandBuffer(UnityEngine.Rendering.CameraEvent,UnityEngine.Rendering.CommandBuffer) on instance {'m_camera' (type UnityEngine.Camera)} with arguments [17, {'m_buffer' (type UnityEngine.Rendering.CommandBuffer)}]
+
+		0x181171CDF: [!] Returns from the function
+
+		0x181171CE6: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: VisionCameraEffect
+	System.Void OnDisable()
+		UnityEngine.Camera m_camera = this.m_camera
+		UnityEngine.Rendering.CommandBuffer m_buffer = this.m_buffer
+		System.Int32 17 = 17
+
+		m_camera.RemoveCommandBuffer(17, m_buffer) //(CameraEvent evt, CommandBuffer buffer)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UnityEngine.Camera VisionCameraEffect::m_camera
+	IL_0006: stloc.0
+	IL_0007: ldarg.0
+	IL_0008: ldfld UnityEngine.Rendering.CommandBuffer VisionCameraEffect::m_buffer
+	IL_000d: stloc.1
+	IL_000e: ldloc.0
+	IL_000f: ldc.i4.s 17
+	IL_0011: ldloc.1
+	IL_0012: call System.Void UnityEngine.Camera::RemoveCommandBuffer(UnityEngine.Rendering.CameraEvent,UnityEngine.Rendering.CommandBuffer)
+	IL_0017: ret
+	IL_0018: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001d: throw
+	
+
+Method: System.Void VisionCameraEffect::Init():	Method Body (x86 ASM):
+		0x1811719D0 mov [rsp+18h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 24 | None ||| N/A | N/A
+		0x1811719D5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1811719D6 sub rsp,0B0h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 176
+		0x1811719DD cmp byte ptr [1818A2A10h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468282896 | None ||| N/A | 0
+		0x1811719E4 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1811719E7 jne short 00000001811719FBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811719E9 mov ecx,[1814B7B88h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464174984 | None ||| N/A | N/A
+		0x1811719EF call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811719F4 mov byte ptr [1818A2A10h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468282896 | None ||| N/A | 1
+		0x1811719FB cmp dword ptr [rdi+38h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RDI | 56 | None ||| N/A | 0
+		0x1811719FF jne short 0000000181171A12h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171A01 mov rcx,[181890068h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468206696 | None ||| N/A | N/A
+		0x181171A08 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181171A0A call 0000000180CD7AD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171A0F mov [rdi+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDI | 56 | None ||| N/A | N/A
+		0x181171A12 mov rdx,[181869110h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468047120 | None ||| N/A | N/A
+		0x181171A19 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x181171A1C call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171A21 mov rbx,[rdi+20h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x181171A25 mov [rdi+28h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RDI | 40 | None ||| N/A | N/A
+		0x181171A29 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x181171A30 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x181171A37 je short 0000000181171A47h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171A39 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x181171A40 jne short 0000000181171A47h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171A42 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171A47 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x181171A4A mov [rsp+0C8h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 200 | None ||| N/A | N/A
+		0x181171A52 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181171A54 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x181171A57 call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171A5C test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x181171A5E je short 0000000181171AAAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171A60 mov rcx,[181890098h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468206744 | None ||| N/A | N/A
+		0x181171A67 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181171A69 call 0000000180CD7A10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171A6E mov rcx,[181891F08h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468214536 | None ||| N/A | N/A
+		0x181171A75 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181171A78 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171A7D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x181171A80 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x181171A83 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181171A86 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181171A89 call 0000000180B37FD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171A8E test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x181171A91 je near ptr 0000000181171CA9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171A97 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x181171A9A mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x181171A9D lea edx,[r8+34h]		; DEBUG: {Register}/EDX {Memory}/None ||| R8 | 52 | None ||| N/A | N/A
+		0x181171AA1 call 0000000180EA6880h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171AA6 mov [rdi+20h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RDI | 32 | None ||| N/A | N/A
+		0x181171AAA mov rcx,[rdi+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x181171AAE test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x181171AB1 je near ptr 0000000181171CA9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171AB7 movzx r8d,byte ptr [rdi+18h]		; DEBUG: {Register}/R8D {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x181171ABC xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x181171ABF mov rdx,[1818900C8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468206792 | None ||| N/A | N/A
+		0x181171AC6 call 0000000180B36F30h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171ACB cmp qword ptr [rdi+30h],0		; DEBUG: {Memory}/None {Immediate8to64}/None ||| RDI | 48 | None ||| N/A | 0
+		0x181171AD0 jne near ptr 0000000181171C90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171AD6 mov rcx,[181894708h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468224776 | None ||| N/A | N/A
+		0x181171ADD call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171AE2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181171AE4 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181171AE7 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181171AEA call 0000000180CD02F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171AEF test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x181171AF2 je near ptr 0000000181171CA9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171AF8 mov rdx,[1818900E0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468206816 | None ||| N/A | N/A
+		0x181171AFF xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x181171B02 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x181171B05 call 0000000180CD03B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171B0A mov edx,[rdi+38h]		; DEBUG: {Register}/EDX {Memory}/None ||| RDI | 56 | None ||| N/A | N/A
+		0x181171B0D mov r9d,0FFFFFFFFh		; DEBUG: {Register}/R9D {Immediate32}/None ||| None | 0 | None ||| N/A | 4294967295
+		0x181171B13 xor esi,esi		; DEBUG: {Register}/ESI {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x181171B15 mov [rdi+30h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RDI | 48 | None ||| N/A | N/A
+		0x181171B19 mov r8d,r9d		; DEBUG: {Register}/R8D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x181171B1C mov [rsp+28h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 40 | None ||| N/A | N/A
+		0x181171B21 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x181171B24 mov [rsp+20h],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RSP | 32 | None ||| N/A | N/A
+		0x181171B28 call 0000000180CCE190h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171B2D mov rbx,[rdi+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x181171B31 lea edx,[rsi+2]		; DEBUG: {Register}/EDX {Memory}/None ||| RSI | 2 | None ||| N/A | N/A
+		0x181171B34 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x181171B37 lea rcx,[rsp+80h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x181171B3F call 0000000180CD2230h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171B44 mov edx,[rdi+38h]		; DEBUG: {Register}/EDX {Memory}/None ||| RDI | 56 | None ||| N/A | N/A
+		0x181171B47 lea rcx,[rsp+80h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x181171B4F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x181171B52 movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x181171B55 movups [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x181171B5A movups xmm0,[rax+10h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 16 | None ||| N/A | N/A
+		0x181171B5E movups [rsp+40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 64 | None ||| N/A | N/A
+		0x181171B63 movsd xmm0,qword ptr [rax+20h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 32 | None ||| N/A | N/A
+		0x181171B68 movsd qword ptr [rsp+0C0h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 192 | None ||| N/A | N/A
+		0x181171B71 call 0000000180CD2430h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171B76 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x181171B79 je near ptr 0000000181171CA9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171B7F movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x181171B82 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x181171B85 lea r8,[rsp+50h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x181171B8A movups xmm1,[rax+10h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RAX | 16 | None ||| N/A | N/A
+		0x181171B8E lea rdx,[rsp+80h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x181171B96 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x181171B99 movaps [rsp+50h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 80 | None ||| N/A | N/A
+		0x181171B9E movsd xmm0,qword ptr [rax+20h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 32 | None ||| N/A | N/A
+		0x181171BA3 movaps [rsp+60h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 96 | None ||| N/A | N/A
+		0x181171BA8 movups xmm1,[rsp+30h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x181171BAD movsd qword ptr [rsp+70h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 112 | None ||| N/A | N/A
+		0x181171BB3 movups xmm0,[rsp+40h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x181171BB8 movaps [rsp+80h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 128 | None ||| N/A | N/A
+		0x181171BC0 movsd xmm1,qword ptr [rsp+0C0h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RSP | 192 | None ||| N/A | N/A
+		0x181171BC9 movaps [rsp+90h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 144 | None ||| N/A | N/A
+		0x181171BD1 movsd qword ptr [rsp+0A0h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 160 | None ||| N/A | N/A
+		0x181171BDA call 0000000180CCD0F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171BDF mov edx,[rdi+38h]		; DEBUG: {Register}/EDX {Memory}/None ||| RDI | 56 | None ||| N/A | N/A
+		0x181171BE2 lea rcx,[rsp+80h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x181171BEA mov rbx,[rdi+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x181171BEE xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x181171BF1 call 0000000180CD2430h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171BF6 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x181171BF9 lea edx,[rsi+2]		; DEBUG: {Register}/EDX {Memory}/None ||| RSI | 2 | None ||| N/A | N/A
+		0x181171BFC lea rcx,[rsp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x181171C01 movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x181171C04 movups [rsp+40h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 64 | None ||| N/A | N/A
+		0x181171C09 movups xmm0,[rax+10h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 16 | None ||| N/A | N/A
+		0x181171C0D movups [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x181171C12 movsd xmm0,qword ptr [rax+20h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 32 | None ||| N/A | N/A
+		0x181171C17 movsd qword ptr [rsp+0C0h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 192 | None ||| N/A | N/A
+		0x181171C20 call 0000000180CD2230h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171C25 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x181171C28 je short 0000000181171CA9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171C2A movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x181171C2D mov r9,[rdi+20h]		; DEBUG: {Register}/R9 {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x181171C31 lea r8,[rsp+80h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x181171C39 movups xmm1,[rax+10h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RAX | 16 | None ||| N/A | N/A
+		0x181171C3D lea rdx,[rsp+50h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x181171C42 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x181171C45 movaps [rsp+80h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 128 | None ||| N/A | N/A
+		0x181171C4D movsd xmm0,qword ptr [rax+20h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 32 | None ||| N/A | N/A
+		0x181171C52 movaps [rsp+90h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 144 | None ||| N/A | N/A
+		0x181171C5A movups xmm1,[rsp+40h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x181171C5F mov [rsp+20h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 32 | None ||| N/A | N/A
+		0x181171C64 movsd qword ptr [rsp+0A0h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 160 | None ||| N/A | N/A
+		0x181171C6D movups xmm0,[rsp+30h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x181171C72 movaps [rsp+50h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 80 | None ||| N/A | N/A
+		0x181171C77 movsd xmm1,qword ptr [rsp+0C0h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| RSP | 192 | None ||| N/A | N/A
+		0x181171C80 movaps [rsp+60h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 96 | None ||| N/A | N/A
+		0x181171C85 movsd qword ptr [rsp+70h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 112 | None ||| N/A | N/A
+		0x181171C8B call 0000000180CCD140h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171C90 mov rsi,[rsp+0C8h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 200 | None ||| N/A | N/A
+		0x181171C98 mov rbx,[rsp+0D0h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 208 | None ||| N/A | N/A
+		0x181171CA0 add rsp,0B0h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 176
+		0x181171CA7 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x181171CA8 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x181171CA9 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x181171CAB call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181171CB0 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void VisionCameraEffect::Init():
+		End of function at 0x181171CB1
+		Absolute End is at 0x181171CB1
+		Identified Jump Destination addresses:
+
+		0x1811719D5: Saves the content of rdi to the stack
+		0x1811719DD: Compares {Unknown Global at 0x1818A2A10, first ten bytes are [144 176 127 0 231 176 127 0 84 68], or as chars "° ç° TD"} and 0
+		0x1811719E4: Copies {'this' (function parameter, type VisionCameraEffect)} from rcx into rdi
+		0x1811719E7: Jumps to 0x1811719FB if {Unknown Global at 0x1818A2A10, first ten bytes are [144 176 127 0 231 176 127 0 84 68], or as chars "° ç° TD"} != 0
+
+		0x1811719E9: Reads {Unknown Global at 0x1814B7B88, first ten bytes are [131 125 0 0 131 61 0 0 131 93], or as chars "}  =  ]"} into register rcx as a constant constant3
+		0x1811719EF: Attempts to load the il2cpp metadata for this method (method id 32131) and init it cpp-side.
+
+		0x1811719FB: [!] Compares {field m_cachedScreenImageID, read from local {'this' (function parameter, type VisionCameraEffect)}} and 0
+		0x1811719FF: Jumps to 0x181171A12 (which is an if statement's body) if {field m_cachedScreenImageID, read from local {'this' (function parameter, type VisionCameraEffect)}} != 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x181171A01: Loads the string literal "_tempTex" as a constant "constant5" in rcx
+		0x181171A0A: [!] Calls static managed method System.Int32 UnityEngine.Shader::PropertyToID(System.String) with arguments ["_tempTex"] and stores the result in {'int32' (type System.Int32)}
+
+		0x181171A0F: [!] Sets the field m_cachedScreenImageID (Type System.Int32) on local {'this' (function parameter, type VisionCameraEffect)} to the value stored in {'int32' (type System.Int32)}
+		0x181171A12: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<UnityEngine.Camera>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x181171A19: Copies {'this' (function parameter, type VisionCameraEffect)} from rdi into rcx
+		0x181171A1C: [!] Calls managed method T UnityEngine.Component::GetComponent<UnityEngine.Camera>() on instance {'this' (function parameter, type VisionCameraEffect)} and stores the result in {'component' (type UnityEngine.Camera)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x181171A21: [!] Reads field m_material from {'this' (function parameter, type VisionCameraEffect)} and stores in a new local {'m_material' (type UnityEngine.Material)}
+
+		0x181171A25: [!] Sets the field m_camera (Type UnityEngine.Camera) on local {'this' (function parameter, type VisionCameraEffect)} to the value stored in {'component' (type UnityEngine.Camera)}
+		0x181171A29: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x181171A30: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x181171A37: Jumps to 0x181171A47 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x181171A47 which is after end of current block @ 0x181171A12 (started at 0x181171A01)
+
+		0x181171A39: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x181171A40: Jumps to 0x181171A47 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x181171A47 which is after end of current block @ 0x181171A12 (started at 0x181171A01)
+
+		0x181171A42: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x181171A52: Clears register rdx, yielding zero-local {'local6' (type System.Int32)}
+		0x181171A54: Copies {'m_material' (type UnityEngine.Material)} from rbx into rcx
+		0x181171A57: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'m_material' (type UnityEngine.Material)}, {'local6' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x181171A5C: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x181171A5E: Jumps to 0x181171AAA if boolean equals False ;  - This is probably a goto, jumping to 0x181171AAA which is after end of current block @ 0x181171A12 (started at 0x181171A01)
+
+		0x181171A60: Loads the string literal "Hidden/StencilEffect" as a constant "constant13" in rcx
+		0x181171A69: [!] Calls static managed method UnityEngine.Shader UnityEngine.Shader::Find(System.String) with arguments ["Hidden/StencilEffect"] and stores the result in {'shader' (type UnityEngine.Shader)}
+
+		0x181171A6E: Loads the type definition for managed type UnityEngine.Material as a constant "Material" in rcx
+		0x181171A75: Copies {'shader' (type UnityEngine.Shader)} from rax into rbx
+		0x181171A78: [!] Allocates an instance of type UnityEngine.Material and stores it as material in rax.
+
+		0x181171A80: Copies {'shader' (type UnityEngine.Shader)} from rbx into rdx
+		0x181171A83: Copies {'material' (type UnityEngine.Material)} from rax into rcx
+		0x181171A86: Copies {'material' (type UnityEngine.Material)} from rax into rsi
+		0x181171A89: [!] Calls managed method System.Void UnityEngine.Material::.ctor(UnityEngine.Shader) on instance {'material' (type UnityEngine.Material)} with arguments [{'shader' (type UnityEngine.Shader)}]
+
+		0x181171A8E: [!] Compares {'material' (type UnityEngine.Material)} and 0
+		0x181171A91: Jumps to 0x181171CA9 (which throws a NRE) if material equals 0. Implicitly present in managed code, so ignored here.
+		0x181171A9A: Copies {'material' (type UnityEngine.Material)} from rsi into rcx
+		0x181171A9D: [!] Loads the constant value 52 into the register rdx as constant constant16 using an LEA instruction
+		0x181171AA1: [!] Calls managed method System.Void UnityEngine.Object::set_hideFlags(UnityEngine.HideFlags) on instance {'material' (type UnityEngine.Material)} with arguments [52]
+
+		0x181171AA6: [!] Sets the field m_material (Type UnityEngine.Material) on local {'this' (function parameter, type VisionCameraEffect)} to the value stored in {'material' (type UnityEngine.Material)}
+		0x181171AAA: [!] Reads field m_material from {'this' (function parameter, type VisionCameraEffect)} and stores in a new local {'m_material2' (type UnityEngine.Material)}
+
+		0x181171AAE: [!] Compares {'m_material2' (type UnityEngine.Material)} and 0
+		0x181171AB1: Jumps to 0x181171CA9 (which throws a NRE) if m_material2 equals 0. Implicitly present in managed code, so ignored here.
+		0x181171AB7: [!] Reads field m_stencil from {'this' (function parameter, type VisionCameraEffect)} and stores in a new local {'m_stencil' (type System.Byte)}
+
+		0x181171ABF: Loads the string literal "_StencilRef" as a constant "constant18" in rdx
+		0x181171AC6: [!] Calls managed method System.Void UnityEngine.Material::SetInt(System.String,System.Int32) on instance {'m_material2' (type UnityEngine.Material)} with arguments ["_StencilRef", {'m_stencil' (type System.Byte)}]
+
+		0x181171ACB: [!] Compares {field m_buffer, read from local {'this' (function parameter, type VisionCameraEffect)}} and 0
+		0x181171AD0: Jumps to 0x181171C90 if {field m_buffer, read from local {'this' (function parameter, type VisionCameraEffect)}} != 0 ;  - This is probably a goto, jumping to 0x181171C90 which is after end of current block @ 0x181171A12 (started at 0x181171A01)
+
+		0x181171AD6: Loads the type definition for managed type UnityEngine.Rendering.CommandBuffer as a constant "CommandBuffer" in rcx
+		0x181171ADD: [!] Allocates an instance of type UnityEngine.Rendering.CommandBuffer and stores it as commandBuffer in rax.
+
+		0x181171AE4: Copies {'commandBuffer' (type UnityEngine.Rendering.CommandBuffer)} from rax into rcx
+		0x181171AE7: Copies {'commandBuffer' (type UnityEngine.Rendering.CommandBuffer)} from rax into rbx
+		0x181171AEA: [!] Calls managed method System.Void UnityEngine.Rendering.CommandBuffer::.ctor() on instance {'commandBuffer' (type UnityEngine.Rendering.CommandBuffer)}
+
+		0x181171AEF: [!] Compares {'commandBuffer' (type UnityEngine.Rendering.CommandBuffer)} and 0
+		0x181171AF2: Jumps to 0x181171CA9 (which throws a NRE) if commandBuffer equals 0. Implicitly present in managed code, so ignored here.
+		0x181171AF8: Loads the string literal "commandBuffer" as a constant "constant22" in rdx
+		0x181171B02: Copies {'commandBuffer' (type UnityEngine.Rendering.CommandBuffer)} from rbx into rcx
+		0x181171B05: [!] Calls managed method System.Void UnityEngine.Rendering.CommandBuffer::set_name(System.String) on instance {'commandBuffer' (type UnityEngine.Rendering.CommandBuffer)} with arguments ["commandBuffer"]
+
+		0x181171B0A: [!] Reads field m_cachedScreenImageID from {'this' (function parameter, type VisionCameraEffect)} and stores in a new local {'m_cachedScreenImageID' (type System.Int32)}
+
+		0x181171B0D: [!] Writes the constant 0xFFFFFFFF into operand -1 (type UInt64) in register r9
+		0x181171B13: Clears register rsi, yielding zero-local {'local20' (type System.Int32)}
+		0x181171B15: [!] Sets the field m_buffer (Type UnityEngine.Rendering.CommandBuffer) on local {'this' (function parameter, type VisionCameraEffect)} to the value stored in {'commandBuffer' (type UnityEngine.Rendering.CommandBuffer)}
+		0x181171B19: Copies -1 from r9 into r8
+		0x181171B1C: Moves local20 (type System.Int32) from register rsi to the stack at offset 40 (0x28)
+		0x181171B21: Copies {'commandBuffer' (type UnityEngine.Rendering.CommandBuffer)} from rbx into rcx
+		0x181171B24: Moves local20 (type System.Int32) from register rsi to the stack at offset 32 (0x20)
+		0x181171B28: [!] Calls managed method System.Void UnityEngine.Rendering.CommandBuffer::GetTemporaryRT(System.Int32,System.Int32,System.Int32,System.Int32) on instance {'commandBuffer' (type UnityEngine.Rendering.CommandBuffer)} with arguments [{'m_cachedScreenImageID' (type System.Int32)}, -1, -1, {'local20' (type System.Int32)}]
+
+		0x181171B2D: [!] Reads field m_buffer from {'this' (function parameter, type VisionCameraEffect)} and stores in a new local {'m_buffer' (type UnityEngine.Rendering.CommandBuffer)}
+
+		0x181171B31: [!] Loads the constant value 2 into the register rdx as constant constant24 using an LEA instruction
+		0x181171B37: Loads a pointer to stack offset 0x80 into register rcx as new constant constant25
+		0x181171B3F: [!] Calls static managed method UnityEngine.Rendering.RenderTargetIdentifier UnityEngine.Rendering.RenderTargetIdentifier::op_Implicit(UnityEngine.Rendering.BuiltinRenderTextureType) and stores the result in {'renderTargetIdentifier' (type UnityEngine.Rendering.RenderTargetIdentifier)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x181171B47: Loads a pointer to stack offset 0x80 into register rcx as new constant constant26
+		0x181171B52: Loads the class pointer from renderTargetIdentifier into a constant constant27 in register xmm0
+		0x181171B55: Moves constant27 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 48 (0x30) as a new local local26
+		0x181171B5A: [!] Reads field m_BufferPointer from {'renderTargetIdentifier' (type UnityEngine.Rendering.RenderTargetIdentifier)} and stores in a new local {'m_BufferPointer' (type System.IntPtr)}
+
+		0x181171B5E: Moves m_BufferPointer (type System.IntPtr) from register xmm0 to the stack at offset 64 (0x40)
+		0x181171B71: [!] Calls static managed method UnityEngine.Rendering.RenderTargetIdentifier UnityEngine.Rendering.RenderTargetIdentifier::op_Implicit(System.Int32) and stores the result in {'renderTargetIdentifier2' (type UnityEngine.Rendering.RenderTargetIdentifier)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x181171B76: [!] Compares {'m_buffer' (type UnityEngine.Rendering.CommandBuffer)} and 0
+		0x181171B79: Jumps to 0x181171CA9 (which throws a NRE) if m_buffer equals 0. Implicitly present in managed code, so ignored here.
+		0x181171B7F: Loads the class pointer from renderTargetIdentifier2 into a constant constant29 in register xmm0
+		0x181171B85: Loads a pointer to stack offset 0x50 into register r8 as new constant constant30
+		0x181171B8A: [!] Reads field m_BufferPointer from {'renderTargetIdentifier2' (type UnityEngine.Rendering.RenderTargetIdentifier)} and stores in a new local {'m_BufferPointer2' (type System.IntPtr)}
+
+		0x181171B8E: Loads a pointer to stack offset 0x80 into register rdx as new constant constant31
+		0x181171B96: Copies {'m_buffer' (type UnityEngine.Rendering.CommandBuffer)} from rbx into rcx
+		0x181171B99: Moves constant29 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 80 (0x50) as a new local local31
+		0x181171BA3: Moves m_BufferPointer2 (type System.IntPtr) from register xmm1 to the stack at offset 96 (0x60)
+		0x181171BA8: Reads local {'local26' (type )} from stack offset 48 (0x30) into register xmm1
+		0x181171BB3: Reads local {'m_BufferPointer' (type System.IntPtr)} from stack offset 64 (0x40) into register xmm0
+		0x181171BB8: Moves local26 (type ) from register xmm1 to the stack at offset 128 (0x80)
+		0x181171BC9: Moves m_BufferPointer (type System.IntPtr) from register xmm0 to the stack at offset 144 (0x90)
+		0x181171BDA: [!] Calls managed method System.Void UnityEngine.Rendering.CommandBuffer::Blit(UnityEngine.Rendering.RenderTargetIdentifier,UnityEngine.Rendering.RenderTargetIdentifier) on instance {'m_buffer' (type UnityEngine.Rendering.CommandBuffer)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x181171BE2: Loads a pointer to stack offset 0x80 into register rcx as new constant constant32
+		0x181171BEA: [!] Reads field m_buffer from {'this' (function parameter, type VisionCameraEffect)} and stores in a new local {'m_buffer2' (type UnityEngine.Rendering.CommandBuffer)}
+
+		0x181171BF1: [!] Calls static managed method UnityEngine.Rendering.RenderTargetIdentifier UnityEngine.Rendering.RenderTargetIdentifier::op_Implicit(System.Int32) and stores the result in {'renderTargetIdentifier3' (type UnityEngine.Rendering.RenderTargetIdentifier)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x181171BF9: [!] Loads the constant value 2 into the register rdx as constant constant33 using an LEA instruction
+		0x181171BFC: Loads a pointer to stack offset 0x50 into register rcx as new constant constant34
+		0x181171C01: Loads the class pointer from renderTargetIdentifier3 into a constant constant35 in register xmm0
+		0x181171C04: Moves constant35 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 64 (0x40) as a new local local37
+		0x181171C09: [!] Reads field m_BufferPointer from {'renderTargetIdentifier3' (type UnityEngine.Rendering.RenderTargetIdentifier)} and stores in a new local {'m_BufferPointer3' (type System.IntPtr)}
+
+		0x181171C0D: Moves m_BufferPointer3 (type System.IntPtr) from register xmm0 to the stack at offset 48 (0x30)
+		0x181171C20: [!] Calls static managed method UnityEngine.Rendering.RenderTargetIdentifier UnityEngine.Rendering.RenderTargetIdentifier::op_Implicit(UnityEngine.Rendering.BuiltinRenderTextureType) and stores the result in {'renderTargetIdentifier4' (type UnityEngine.Rendering.RenderTargetIdentifier)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x181171C25: [!] Compares {'m_buffer2' (type UnityEngine.Rendering.CommandBuffer)} and 0
+		0x181171C28: Jumps to 0x181171CA9 (which throws a NRE) if m_buffer2 equals 0. Implicitly present in managed code, so ignored here.
+		0x181171C2A: Loads the class pointer from renderTargetIdentifier4 into a constant constant37 in register xmm0
+		0x181171C31: Loads a pointer to stack offset 0x80 into register r8 as new constant constant38
+		0x181171C39: [!] Reads field m_BufferPointer from {'renderTargetIdentifier4' (type UnityEngine.Rendering.RenderTargetIdentifier)} and stores in a new local {'m_BufferPointer4' (type System.IntPtr)}
+
+		0x181171C3D: Loads a pointer to stack offset 0x50 into register rdx as new constant constant39
+		0x181171C42: Copies {'m_buffer2' (type UnityEngine.Rendering.CommandBuffer)} from rbx into rcx
+		0x181171C45: Moves constant37 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 128 (0x80) as a new local local42
+		0x181171C52: Moves m_BufferPointer4 (type System.IntPtr) from register xmm1 to the stack at offset 144 (0x90)
+		0x181171C5A: Reads local {'local37' (type )} from stack offset 64 (0x40) into register xmm1
+		0x181171C5F: Moves local20 (type System.Int32) from register rsi to the stack at offset 32 (0x20)
+		0x181171C6D: Reads local {'m_BufferPointer3' (type System.IntPtr)} from stack offset 48 (0x30) into register xmm0
+		0x181171C72: Moves local37 (type ) from register xmm1 to the stack at offset 80 (0x50)
+		0x181171C80: Moves m_BufferPointer3 (type System.IntPtr) from register xmm0 to the stack at offset 96 (0x60)
+		0x181171C8B: [!] Calls managed method System.Void UnityEngine.Rendering.CommandBuffer::Blit(UnityEngine.Rendering.RenderTargetIdentifier,UnityEngine.Rendering.RenderTargetIdentifier,UnityEngine.Material) on instance {'m_buffer2' (type UnityEngine.Rendering.CommandBuffer)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x181171C90: Reads unknown value in stack, offset 200 (0xC8) and stores the pointer in register rsi as new constant constant40
+		0x181171C98: Reads unknown value in stack, offset 208 (0xD0) and stores the pointer in register rbx as new constant constant41
+		0x181171CA8: [!] Returns from the function
+
+		0x181171CAB: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: VisionCameraEffect
+	System.Void Init()
+
+		if (this.m_cachedScreenImageID == 0)
+
+		    System.Int32 int32 = UnityEngine.Shader.PropertyToID("_tempTex") //(String name)
+		    this.m_cachedScreenImageID = int32
+		endif
+        
+
+		UnityEngine.Camera component = base.GetComponent<UnityEngine.Camera>()
+		UnityEngine.Material m_material = this.m_material
+		this.m_camera = component
+		ulong local6 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Equality(m_material, local6) //(Object x, Object y)
+
+		if (boolean == False)
+            goto INSN_181171AAA
+        endif
+
+		UnityEngine.Shader shader = UnityEngine.Shader.Find("Hidden/StencilEffect") //(String name)
+		UnityEngine.Material material = new UnityEngine.Material()
+
+		material..ctor(shader) //(Shader shader)
+		System.Int32 52 = 52
+
+		material.hideFlags = 52
+		this.m_material = material
+
+		INSN_181171AAA:
+		UnityEngine.Material m_material2 = this.m_material
+		System.Byte m_stencil = this.m_stencil
+
+		m_material2.SetInt("_StencilRef", m_stencil) //(String name, Int32 value)
+
+		if (this.m_buffer != 0)
+            goto INSN_181171C90
+        endif
+		UnityEngine.Rendering.CommandBuffer commandBuffer = new UnityEngine.Rendering.CommandBuffer()
+
+		commandBuffer..ctor()
+
+		commandBuffer.name = "commandBuffer"
+		System.Int32 m_cachedScreenImageID = this.m_cachedScreenImageID
+		ulong local20 = 0
+		this.m_buffer = commandBuffer
+
+		commandBuffer.GetTemporaryRT(m_cachedScreenImageID, -1, -1, local20) //(Int32 nameID, Int32 width, Int32 height, Int32 depthBuffer)
+		UnityEngine.Rendering.CommandBuffer m_buffer = this.m_buffer
+		System.Int32 2 = 2
+
+		UnityEngine.Rendering.RenderTargetIdentifier renderTargetIdentifier = UnityEngine.Rendering.RenderTargetIdentifier.op_Implicit()
+		System.IntPtr m_BufferPointer = renderTargetIdentifier.m_BufferPointer
+
+		UnityEngine.Rendering.RenderTargetIdentifier renderTargetIdentifier2 = UnityEngine.Rendering.RenderTargetIdentifier.op_Implicit()
+		System.IntPtr m_BufferPointer2 = renderTargetIdentifier2.m_BufferPointer
+
+		m_buffer.Blit()
+		UnityEngine.Rendering.CommandBuffer m_buffer2 = this.m_buffer
+
+		UnityEngine.Rendering.RenderTargetIdentifier renderTargetIdentifier3 = UnityEngine.Rendering.RenderTargetIdentifier.op_Implicit()
+		System.Int32 2 = 2
+		System.IntPtr m_BufferPointer3 = renderTargetIdentifier3.m_BufferPointer
+
+		UnityEngine.Rendering.RenderTargetIdentifier renderTargetIdentifier4 = UnityEngine.Rendering.RenderTargetIdentifier.op_Implicit()
+		System.IntPtr m_BufferPointer4 = renderTargetIdentifier4.m_BufferPointer
+
+		m_buffer2.Blit()
+
+		INSN_181171C90:
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x181171B3F) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (1)) and cannot be created as IL. Aborting here.
+
+

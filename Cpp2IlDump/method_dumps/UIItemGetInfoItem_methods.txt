@@ -1,0 +1,375 @@
+Type: UIItemGetInfoItem
+
+Method: System.Void UIItemGetInfoItem::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIItemGetInfoItem::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type UIItemGetInfoItem)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIItemGetInfoItem
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void UIItemGetInfoItem::Init(UIItemGetInfo):	Method Body (x86 ASM):
+		0x1804291B0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1804291B4 mov [rcx+40h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RCX | 64 | None ||| N/A | N/A
+		0x1804291B8 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804291BA call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804291BF test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804291C2 je short 00000001804291D5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804291C4 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804291C7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804291C9 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804291CC add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1804291D0 jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804291D5 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1804291D7 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804291DC int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIItemGetInfoItem::Init(UIItemGetInfo):
+		End of function at 0x1804291DD
+		Absolute End is at 0x1804291DD
+		Identified Jump Destination addresses:
+
+		0x1804291B4: [!] Sets the field m_getInfo (Type UIItemGetInfo) on local {'this' (function parameter, type UIItemGetInfoItem)} to the value stored in {'getInfo' (function parameter, type UIItemGetInfo)}
+		0x1804291BA: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type UIItemGetInfoItem)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1804291BF: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1804291C2: Jumps to 0x1804291D5 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1804291C7: Clears register rdx, yielding zero-local {'local5' (type System.Int32)}
+		0x1804291C9: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1804291D0: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [{'local5' (type System.Int32)}]
+
+		0x1804291D0: [!] Returns from the function
+
+		0x1804291D7: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIItemGetInfoItem
+	System.Void Init(UIItemGetInfo getInfo)
+		this.m_getInfo = getInfo
+
+		UnityEngine.GameObject gameObject = base.gameObject
+		ulong local5 = 0
+
+		gameObject.SetActive(local5) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: stfld UIItemGetInfo UIItemGetInfoItem::m_getInfo
+	IL_0007: ldarg.0
+	IL_0008: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_000d: stloc.0
+	IL_000e: ldc.i4.0
+	IL_000f: stloc.1
+	IL_0010: ldloc.0
+	IL_0011: ldloc.1
+	IL_0012: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0017: ret
+	IL_0018: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001d: throw
+	
+
+Method: System.Void UIItemGetInfoItem::Disp(ItemDataParam/ItemParam,System.Int32,System.Boolean):	Method Body (x86 ASM):
+		0x1804290B0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1804290B5 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x1804290BA mov [rsp+18h],r8d		; DEBUG: {Memory}/None {Register}/R8D ||| RSP | 24 | None ||| N/A | N/A
+		0x1804290BF push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804290C0 sub rsp,60h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 96
+		0x1804290C4 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804290C7 movzx esi,r9b		; DEBUG: {Register}/ESI {Register}/R9L ||| None | 0 | None ||| N/A | N/A
+		0x1804290CB mov rcx,[rcx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x1804290CF mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1804290D2 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804290D5 je near ptr 000000018042919Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804290DB mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x1804290DE mov rdx,[rax+180h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 384 | None ||| N/A | N/A
+		0x1804290E5 call qword ptr [rax+178h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 376 | None ||| N/A | N/A
+		0x1804290EB test sil,sil		; DEBUG: {Register}/SIL {Register}/SIL ||| None | 0 | None ||| N/A | N/A
+		0x1804290EE je short 000000018042913Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804290F0 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1804290F2 call 00000001802AB2A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804290F7 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804290FA je near ptr 000000018042919Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180429100 movss xmm0,dword ptr [181261D04h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RIP | 6461725956 | None ||| N/A | N/A
+		0x180429108 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18042910A mov [rsp+50h],rcx		; DEBUG: {Memory}/None {Register}/RCX ||| RSP | 80 | None ||| N/A | N/A
+		0x18042910F xorps xmm3,xmm3		; DEBUG: {Register}/XMM3 {Register}/XMM3 ||| None | 0 | None ||| N/A | N/A
+		0x180429112 mov [rsp+48h],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RSP | 72 | None ||| N/A | N/A
+		0x180429116 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180429119 mov [rsp+40h],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RSP | 64 | None ||| N/A | N/A
+		0x18042911D mov edx,87h		; DEBUG: {Register}/EDX {Immediate32}/None ||| None | 0 | None ||| N/A | 135
+		0x180429122 movss dword ptr [rsp+38h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 56 | None ||| N/A | N/A
+		0x180429128 mov [rsp+30h],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RSP | 48 | None ||| N/A | N/A
+		0x18042912C mov [rsp+28h],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RSP | 40 | None ||| N/A | N/A
+		0x180429130 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180429133 movss dword ptr [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x180429139 call 00000001802AD5F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18042913E mov rsi,[rbx+28h]		; DEBUG: {Register}/RSI {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x180429142 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180429145 je short 000000018042919Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180429147 mov rcx,[rdi+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x18042914B xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18042914D call 00000001802D1460h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180429152 test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180429155 je short 000000018042919Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180429157 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18042915A mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18042915D mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180429160 call 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180429165 mov rdi,[rbx+30h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x180429169 lea rcx,[rsp+80h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x180429171 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180429173 call 0000000180E86110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180429178 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18042917B je short 000000018042919Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18042917D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180429180 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180429183 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180429186 call 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18042918B mov rsi,[rsp+78h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 120 | None ||| N/A | N/A
+		0x180429190 mov byte ptr [rbx+38h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 56 | None ||| N/A | 1
+		0x180429194 mov rbx,[rsp+70h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 112 | None ||| N/A | N/A
+		0x180429199 add rsp,60h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 96
+		0x18042919D pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18042919E ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18042919F xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1804291A1 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804291A6 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIItemGetInfoItem::Disp(ItemDataParam/ItemParam,System.Int32,System.Boolean):
+		End of function at 0x1804291A7
+		Absolute End is at 0x1804291A7
+		Identified Jump Destination addresses:
+
+		0x1804290BA: Moves num (type System.Int32) from register r8 to the stack at offset 24 (0x18)
+		0x1804290BF: Saves the content of rdi to the stack
+		0x1804290C4: Copies {'this' (function parameter, type UIItemGetInfoItem)} from rcx into rbx
+		0x1804290C7: Copies {'playSE' (function parameter, type System.Boolean)} from r9 into rsi
+		0x1804290CB: [!] Reads field m_animationController from {'this' (function parameter, type UIItemGetInfoItem)} and stores in a new local {'m_animationController' (type AnimationController)}
+
+		0x1804290CF: Copies {'param' (function parameter, type ItemDataParam/ItemParam)} from rdx into rdi
+		0x1804290D2: [!] Compares {'m_animationController' (type AnimationController)} and 0
+		0x1804290D5: Jumps to 0x18042919F (which throws a NRE) if m_animationController equals 0. Implicitly present in managed code, so ignored here.
+		0x1804290DB: Loads the class pointer from m_animationController into a constant constant2 in register rax
+		0x1804290DE: Loads the pointer to the implementation of virtual function System.Void AnimationController::PlayInAnimation() specific to AnimationController from the class pointer in rax, slot 5 (from memory offset 384) and stores in constant constant3
+		0x1804290E5: [!] Calls managed method System.Void AnimationController::PlayInAnimation() on instance {'m_animationController' (type AnimationController)}
+
+		0x1804290EB: [!] Compares {'playSE' (function parameter, type System.Boolean)} and False
+		0x1804290EE: Jumps to 0x18042913E (which is an if statement's body) if playSE equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1804290F0: Clears register rcx, yielding zero-local {'local5' (type System.Int32)}
+		0x1804290F2: [!] Calls static managed method SoundSe SoundManager::get_SE() and stores the result in {'sE' (type SoundSe)}
+
+		0x1804290F7: [!] Compares {'sE' (type SoundSe)} and 0
+		0x1804290FA: Jumps to 0x18042919F (which throws a NRE) if sE equals 0. Implicitly present in managed code, so ignored here.
+		0x180429100: Reads {Unknown Global at 0x181261D04, first ten bytes are [0 0 128 63 154 153 153 63 0 0], or as chars "  ??  "} into register xmm0 as a constant constant6
+		0x180429108: Clears register rcx, yielding zero-local {'local7' (type System.Int32)}
+		0x18042910A: Moves local7 (type System.Int32) from register rcx to the stack at offset 80 (0x50)
+		0x180429112: Moves local7 (type System.Int32) from register rcx to the stack at offset 72 (0x48)
+		0x180429119: Moves local7 (type System.Int32) from register rcx to the stack at offset 64 (0x40)
+		0x18042911D: [!] Writes the constant 0x87 into operand 135 (type UInt64) in register rdx
+		0x180429122: Moves constant6 (type Cpp2IL.Core.Analysis.ResultModels.UnknownGlobalAddr) from register xmm0 to the stack at offset 56 (0x38) as a new local local10
+		0x180429128: Moves local7 (type System.Int32) from register rcx to the stack at offset 48 (0x30)
+		0x18042912C: Moves local7 (type System.Int32) from register rcx to the stack at offset 40 (0x28)
+		0x180429130: Copies {'sE' (type SoundSe)} from rax into rcx
+		0x180429133: Moves constant6 (type Cpp2IL.Core.Analysis.ResultModels.UnknownGlobalAddr) from register xmm0 to the stack at offset 32 (0x20) as a new local local11
+		0x180429139: [!] Calls managed method UnityEngine.GameObject SoundSe::PlaySE(ESEKind,System.Boolean,System.Single,System.Single,SoundSe/EMixerType,SoundSeObject/ESeType,System.Single,SoundSe/ESameKindCheck,SoundSeObject/ESeGroup) on instance {'sE' (type SoundSe)} and stores the result in {'gameObject' (type UnityEngine.GameObject)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x18042913E: [!] Reads field m_itemNameLabel from {'this' (function parameter, type UIItemGetInfoItem)} and stores in a new local {'m_itemNameLabel' (type UILabel)}
+
+		0x180429142: [!] Compares {'param' (function parameter, type ItemDataParam/ItemParam)} and 0
+		0x180429145: Jumps to 0x18042919F (which throws a NRE) if param equals 0. Implicitly present in managed code, so ignored here.
+		0x180429147: [!] Reads field nameDisplayId from {'param' (function parameter, type ItemDataParam/ItemParam)} and stores in a new local {'nameDisplayId' (type System.String)}
+
+		0x18042914D: [!] Calls static managed method System.String DisplayManager::GetMessage(System.String) with arguments [{'nameDisplayId' (type System.String)}] and stores the result in {'message' (type System.String)}
+
+		0x180429152: [!] Compares {'m_itemNameLabel' (type UILabel)} and 0
+		0x180429155: Jumps to 0x18042919F (which throws a NRE) if m_itemNameLabel equals 0. Implicitly present in managed code, so ignored here.
+		0x18042915A: Copies {'message' (type System.String)} from rax into rdx
+		0x18042915D: Copies {'m_itemNameLabel' (type UILabel)} from rsi into rcx
+		0x180429160: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'m_itemNameLabel' (type UILabel)} with arguments [{'message' (type System.String)}]
+
+		0x180429165: [!] Reads field m_itemNumLabel from {'this' (function parameter, type UIItemGetInfoItem)} and stores in a new local {'m_itemNumLabel' (type UILabel)}
+
+		0x180429169: Loads a pointer to stack offset 0x80 into register rcx as new constant constant10
+		0x180429178: [!] Compares {'m_itemNumLabel' (type UILabel)} and 0
+		0x18042917B: Jumps to 0x18042919F (which throws a NRE) if m_itemNumLabel equals 0. Implicitly present in managed code, so ignored here.
+		0x180429180: Copies {'message' (type System.String)} from rax into rdx
+		0x180429183: Copies {'m_itemNumLabel' (type UILabel)} from rdi into rcx
+		0x180429186: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'m_itemNumLabel' (type UILabel)} with arguments [{'message' (type System.String)}]
+
+		0x18042918B: Reads unknown value in stack, offset 120 (0x78) and stores the pointer in register rsi as new constant constant12
+		0x180429190: [!] Sets the field m_bDisp (Type System.Boolean) on local {'this' (function parameter, type UIItemGetInfoItem)} to the value stored in True
+		0x180429194: Reads unknown value in stack, offset 112 (0x70) and stores the pointer in register rbx as new constant constant13
+		0x18042919E: [!] Returns from the function
+
+		0x1804291A1: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIItemGetInfoItem
+	System.Void Disp(ItemDataParam/ItemParam param, System.Int32 num, System.Boolean playSE)
+		AnimationController m_animationController = this.m_animationController
+
+		m_animationController.PlayInAnimation()
+
+		if (playSE != False)
+		    ulong local5 = 0
+
+		    SoundSe sE = SoundManager.SE
+		    ulong local7 = 0
+
+		    UnityEngine.GameObject gameObject = sE.PlaySE()
+		endif
+        
+		UILabel m_itemNameLabel = this.m_itemNameLabel
+		System.String nameDisplayId = param.nameDisplayId
+
+		System.String message = DisplayManager.GetMessage(nameDisplayId) //(String enumStr)
+
+		m_itemNameLabel.text = message
+		UILabel m_itemNumLabel = this.m_itemNumLabel
+
+		m_itemNumLabel.text = message
+		this.m_bDisp = True
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x180429139) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (9)) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void UIItemGetInfoItem::OnAnimationEnd():	Method Body (x86 ASM):
+		0x1804291E0 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1804291E4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804291E6 mov byte ptr [rcx+38h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 56 | None ||| N/A | 0
+		0x1804291EA call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804291EF test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804291F2 je short 0000000180429205h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804291F4 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804291F7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804291F9 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804291FC add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180429200 jmp near ptr 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180429205 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180429207 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18042920C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UIItemGetInfoItem::OnAnimationEnd():
+		End of function at 0x18042920D
+		Absolute End is at 0x18042920D
+		Identified Jump Destination addresses:
+
+		0x1804291E6: [!] Sets the field m_bDisp (Type System.Boolean) on local {'this' (function parameter, type UIItemGetInfoItem)} to the value stored in False
+		0x1804291EA: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type UIItemGetInfoItem)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1804291EF: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1804291F2: Jumps to 0x180429205 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1804291F7: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x1804291F9: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x180429200: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [{'local4' (type System.Int32)}]
+
+		0x180429200: [!] Returns from the function
+
+		0x180429207: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIItemGetInfoItem
+	System.Void OnAnimationEnd()
+		this.m_bDisp = False
+
+		UnityEngine.GameObject gameObject = base.gameObject
+		ulong local4 = 0
+
+		gameObject.SetActive(local4) //(Boolean value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.0
+	IL_0002: stfld System.Boolean UIItemGetInfoItem::m_bDisp
+	IL_0007: ldarg.0
+	IL_0008: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_000d: stloc.0
+	IL_000e: ldc.i4.0
+	IL_000f: stloc.1
+	IL_0010: ldloc.0
+	IL_0011: ldloc.1
+	IL_0012: call System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+	IL_0017: ret
+	IL_0018: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001d: throw
+	
+
+Method: System.Boolean UIItemGetInfoItem::IsDisp():	Method Body (x86 ASM):
+		0x180297D30 movzx eax,byte ptr [rcx+38h]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 56 | None ||| N/A | N/A
+		0x180297D34 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180297D35 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean UIItemGetInfoItem::IsDisp():
+		End of function at 0x180297D36
+		Absolute End is at 0x180297D36
+		Identified Jump Destination addresses:
+
+		0x180297D30: [!] Reads field m_bDisp from {'this' (function parameter, type UIItemGetInfoItem)} and stores in a new local {'m_bDisp' (type System.Boolean)}
+
+		0x180297D34: [!] Returns {'m_bDisp' (type System.Boolean)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UIItemGetInfoItem
+	System.Boolean IsDisp()
+		System.Boolean m_bDisp = this.m_bDisp
+		return m_bDisp
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Boolean UIItemGetInfoItem::m_bDisp
+	IL_0006: ret
+	
+

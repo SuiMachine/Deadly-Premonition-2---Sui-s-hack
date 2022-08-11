@@ -1,0 +1,337 @@
+Type: <GetEnumerator>c__Iterator0
+
+Method: System.Void BetterList`1/<GetEnumerator>c__Iterator0::.ctor():	Method Body (x86 ASM):
+		0x1808CDE20 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1808CDE24 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1808CDE27 je short 00000001808CDE34h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808CDE29 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1808CDE2B add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x1808CDE2F jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808CDE34 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808CDE39 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void BetterList`1/<GetEnumerator>c__Iterator0::.ctor():
+		End of function at 0x1808CDE3A
+		Absolute End is at 0x1808CDE3A
+		Identified Jump Destination addresses:
+
+		0x1808CDE24: [!] Compares {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} and 0
+		0x1808CDE27: Jumps to 0x1808CDE34 (which throws a NRE) if this equals 0. Implicitly present in managed code, so ignored here.
+		0x1808CDE2F: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)}
+
+		0x1808CDE2F: [!] Returns from the function
+
+		0x1808CDE34: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: BetterList`1/<GetEnumerator>c__Iterator0
+	System.Void .ctor()
+
+		base..ctor()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ret
+	IL_0007: newobj System.Void System.NullReferenceException::.ctor()
+	IL_000c: throw
+	
+
+Method: System.Boolean BetterList`1/<GetEnumerator>c__Iterator0::MoveNext():	Method Body (x86 ASM):
+		0x180B1D340 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180B1D344 mov eax,[rcx+2Ch]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 44 | None ||| N/A | N/A
+		0x180B1D347 mov rdx,rcx		; DEBUG: {Register}/RDX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180B1D34A mov dword ptr [rcx+2Ch],0FFFFFFFFh		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 44 | None ||| N/A | 4294967295
+		0x180B1D351 test eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x180B1D353 je short 0000000180B1D36Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D355 cmp eax,1		; DEBUG: {Register}/EAX {Immediate8to32}/None ||| None | 0 | None ||| N/A | 1
+		0x180B1D358 jne short 0000000180B1D3B4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D35A inc dword ptr [rcx+10h]		; DEBUG: {Memory}/None {Register}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x180B1D35D mov ecx,[rcx+10h]		; DEBUG: {Register}/ECX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x180B1D360 mov rax,[rdx+18h]		; DEBUG: {Register}/RAX {Memory}/None ||| RDX | 24 | None ||| N/A | N/A
+		0x180B1D364 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180B1D367 je short 0000000180B1D3BBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D369 jmp short 0000000180B1D380h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D36B mov rax,[rcx+18h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x180B1D36F test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180B1D372 je short 0000000180B1D3BBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D374 cmp qword ptr [rax+10h],0		; DEBUG: {Memory}/None {Immediate8to64}/None ||| RAX | 16 | None ||| N/A | 0
+		0x180B1D379 je short 0000000180B1D3B4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D37B xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180B1D37D mov [rdx+10h],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RDX | 16 | None ||| N/A | N/A
+		0x180B1D380 cmp ecx,[rax+18h]		; DEBUG: {Register}/ECX {Memory}/None ||| RAX | 24 | None ||| N/A | N/A
+		0x180B1D383 jge short 0000000180B1D3B4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D385 mov r8,[rax+10h]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 16 | None ||| N/A | N/A
+		0x180B1D389 test r8,r8		; DEBUG: {Register}/R8 {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x180B1D38C je short 0000000180B1D3BBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D38E cmp ecx,[r8+18h]		; DEBUG: {Register}/ECX {Memory}/None ||| R8 | 24 | None ||| N/A | N/A
+		0x180B1D392 jae short 0000000180B1D3C3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D394 cmp byte ptr [rdx+28h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RDX | 40 | None ||| N/A | 0
+		0x180B1D398 movsxd rax,ecx		; DEBUG: {Register}/RAX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180B1D39B mov rcx,[r8+rax*8+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| R8 | 32 | RAX ||| N/A | N/A
+		0x180B1D3A0 mov [rdx+20h],rcx		; DEBUG: {Memory}/None {Register}/RCX ||| RDX | 32 | None ||| N/A | N/A
+		0x180B1D3A4 jne short 0000000180B1D3ADh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D3A6 mov dword ptr [rdx+2Ch],1		; DEBUG: {Memory}/None {Immediate32}/None ||| RDX | 44 | None ||| N/A | 1
+		0x180B1D3AD mov al,1		; DEBUG: {Register}/AL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x180B1D3AF add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180B1D3B3 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180B1D3B4 xor al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180B1D3B6 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180B1D3BA ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180B1D3BB xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180B1D3BD call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D3C2 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean BetterList`1/<GetEnumerator>c__Iterator0::MoveNext():
+		End of function at 0x180B1D3C3
+		Absolute End is at 0x180B1D3C3
+		Identified Jump Destination addresses:
+			0x180B1D380
+		0x180B1D344: [!] Reads field  from {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} and stores in a new local 
+
+		0x180B1D347: Copies {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} from rcx into rdx
+		0x180B1D34A: [!] Sets the field  (Type ) on local {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} to the value stored in 4294967295
+		0x180B1D351: [!] Compares  and 0
+		0x180B1D353: Jumps to 0x180B1D36B if  equals 0 ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x180B1D355: [!] Compares  and 1
+		0x180B1D358: Jumps to 0x180B1D3B4 (which is an if statement's body) if  != 1 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180B1D360: [!] Reads field  from {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} and stores in a new local 
+
+		0x180B1D364: [!] Compares  and 0
+		0x180B1D367: Jumps to 0x180B1D3BB (which throws a NRE) if  equals 0. Implicitly present in managed code, so ignored here.
+		0x180B1D369: Jumps to 0x180B1D380 (which is an function-local jump destination)
+
+		0x180B1D36B: [!] Reads field  from {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} and stores in a new local 
+
+		0x180B1D36F: [!] Compares  and 0
+		0x180B1D372: Jumps to 0x180B1D3BB (which throws a NRE) if  equals 0. Implicitly present in managed code, so ignored here.
+		0x180B1D374: [!] Compares  and 0
+		0x180B1D379: Jumps to 0x180B1D3B4 if  equals 0 ;  - This is probably a goto, jumping to 0x180B1D3B4 which is after end of current block @ 0x180B1D380 (started at 0x180B1D36B)
+
+		0x180B1D37B: Clears register rcx, yielding zero-local {'local2' (type System.Int32)}
+		0x180B1D37D: [!] Sets the field <i>__1 (Type System.Int32) on local {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} to the value stored in {'local2' (type System.Int32)}
+
+		End Of If-Else Block (at 0x180B1D380) where the else started at 0x180B1D36B
+		0x180B1D380: [!] Compares {'local2' (type System.Int32)} against itself
+		0x180B1D383: Jumps to 0x180B1D3B4 if {'local2' (type System.Int32)} is greater than or equal to  ;  - This is probably a goto, jumping to 0x180B1D3B4 which is after end of current block @ 0x180B1D380 (started at 0x180B1D36B)
+
+		0x180B1D389: [!] Compares  and 0
+		0x180B1D38C: Jumps to 0x180B1D3BB (which throws a NRE) if  equals 0. Implicitly present in managed code, so ignored here.
+		0x180B1D38E: [!] Compares {'local2' (type System.Int32)} against itself
+		0x180B1D392: Jumps to 0x180B1D3C3 (which throws a NRE) if {'local2' (type System.Int32)} is greater than or equal to . Implicitly present in managed code, so ignored here.
+		0x180B1D394: [!] Compares  and 0
+		0x180B1D398: Copies {'local2' (type System.Int32)} from rcx into rax
+		0x180B1D3A0: [!] Sets the field  (Type ) on local {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} to the value stored in {'local2' (type System.Int32)}
+		0x180B1D3A4: Jumps to 0x180B1D3AD if  != 0 ;  - This is probably a goto, jumping to 0x180B1D3AD which is after end of current block @ 0x180B1D380 (started at 0x180B1D36B)
+
+		0x180B1D3A6: [!] Sets the field  (Type ) on local {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} to the value stored in 1
+		0x180B1D3AD: [!] Writes the constant 0x1 into operand True (type UInt64) in register rax
+		0x180B1D3B3: [!] Returns True from the function
+
+		0x180B1D3B4: Clears register rax, yielding zero-local {'local3' (type System.Int32)}
+		0x180B1D3BA: [!] Returns {'local3' (type System.Int32)} from the function
+
+		0x180B1D3BD: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: BetterList`1/<GetEnumerator>c__Iterator0
+	System.Boolean MoveNext()
+		  = this.
+		this. = 4294967295
+
+		if ( != 0)
+
+		    if ( == 1)
+		          = this.
+		    else
+		          = this.
+
+		        if ( == 0)
+                    goto INSN_180B1D3B4
+                endif
+		        ulong local2 = 0
+		        this.<i>__1 = local2
+		    endif
+            
+
+		    if (local2 >= )
+                goto INSN_180B1D3B4
+            endif
+		    this. = local2
+
+		    if ( != 0)
+                goto INSN_180B1D3AD
+            endif
+		    this. = 1
+
+		    INSN_180B1D3AD:
+		    return True
+		endif
+        
+		ulong local3 = 0
+		return local3
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.FieldToLocalAction at (0x180B1D344) is corrupt (No further info) and cannot be created as IL. Aborting here.
+
+
+Method: T BetterList`1/<GetEnumerator>c__Iterator0::System.Collections.Generic.IEnumerator<T>.get_Current():	Method Body (x86 ASM):
+		0x180211F20 mov rax,[rcx+20h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x180211F24 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180211F25 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method T BetterList`1/<GetEnumerator>c__Iterator0::System.Collections.Generic.IEnumerator<T>.get_Current():
+		End of function at 0x180211F26
+		Absolute End is at 0x180211F26
+		Identified Jump Destination addresses:
+
+		0x180211F20: [!] Reads field  from {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} and stores in a new local 
+
+		0x180211F24: [!] Returns  from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: BetterList`1/<GetEnumerator>c__Iterator0
+	T System.Collections.Generic.IEnumerator<T>.get_Current()
+		  = this.
+		return 
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.FieldToLocalAction at (0x180211F20) is corrupt (No further info) and cannot be created as IL. Aborting here.
+
+
+Method: System.Object BetterList`1/<GetEnumerator>c__Iterator0::System.Collections.IEnumerator.get_Current():	Method Body (x86 ASM):
+		0x180211F20 mov rax,[rcx+20h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x180211F24 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180211F25 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Object BetterList`1/<GetEnumerator>c__Iterator0::System.Collections.IEnumerator.get_Current():
+		End of function at 0x180211F26
+		Absolute End is at 0x180211F26
+		Identified Jump Destination addresses:
+
+		0x180211F20: [!] Reads field  from {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} and stores in a new local 
+
+		0x180211F24: [!] Returns  from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: BetterList`1/<GetEnumerator>c__Iterator0
+	System.Object System.Collections.IEnumerator.get_Current()
+		  = this.
+		return 
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.FieldToLocalAction at (0x180211F20) is corrupt (No further info) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void BetterList`1/<GetEnumerator>c__Iterator0::Dispose():	Method Body (x86 ASM):
+		0x180211B60 mov byte ptr [rcx+28h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 40 | None ||| N/A | 1
+		0x180211B64 mov dword ptr [rcx+2Ch],0FFFFFFFFh		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 44 | None ||| N/A | 4294967295
+		0x180211B6B ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180211B6C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void BetterList`1/<GetEnumerator>c__Iterator0::Dispose():
+		End of function at 0x180211B6D
+		Absolute End is at 0x180211B6D
+		Identified Jump Destination addresses:
+
+		0x180211B60: [!] Sets the field  (Type ) on local {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} to the value stored in 1
+		0x180211B64: [!] Sets the field  (Type ) on local {'this' (function parameter, type BetterList`1/<GetEnumerator>c__Iterator0)} to the value stored in 4294967295
+		0x180211B6B: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: BetterList`1/<GetEnumerator>c__Iterator0
+	System.Void Dispose()
+		this. = 1
+		this. = 4294967295
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ImmediateToFieldAction at (0x180211B60) is corrupt (Instance or field is null) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void BetterList`1/<GetEnumerator>c__Iterator0::Reset():	Method Body (x86 ASM):
+		0x180B1D570 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180B1D572 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180B1D576 cmp byte ptr [1818434B5h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467892405 | None ||| N/A | 0
+		0x180B1D57D jne short 0000000180B1D591h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D57F mov ecx,[18151431Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464553756 | None ||| N/A | N/A
+		0x180B1D585 call 00000001800580B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D58A mov byte ptr [1818434B5h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467892405 | None ||| N/A | 1
+		0x180B1D591 mov rcx,[181884650h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468159056 | None ||| N/A | N/A
+		0x180B1D598 call 00000001800580C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D59D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180B1D59F mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180B1D5A2 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180B1D5A5 call 0000000180E8F4A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D5AA mov r8,[181860278h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468010616 | None ||| N/A | N/A
+		0x180B1D5B1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180B1D5B3 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180B1D5B6 call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180B1D5BB int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void BetterList`1/<GetEnumerator>c__Iterator0::Reset():
+		End of function at 0x180B1D5BC
+		Absolute End is at 0x180B1D5BC
+		Identified Jump Destination addresses:
+
+		0x180B1D570: Saves the content of rbx to the stack
+		0x180B1D576: Compares {Unknown Global at 0x1818434B5, first ten bytes are [72 4 0 135 72 4 0 52 61 103], or as chars "H H 4=g"} and 0
+		0x180B1D57D: Jumps to 0x180B1D591 if {Unknown Global at 0x1818434B5, first ten bytes are [72 4 0 135 72 4 0 52 61 103], or as chars "H H 4=g"} != 0
+
+		0x180B1D57F: Reads {Unknown Global at 0x18151431C, first ten bytes are [27 113 0 0 27 81 0 0 27 49], or as chars "q  Q  1"} into register rcx as a constant constant3
+		0x180B1D591: Loads the type definition for managed type System.NotSupportedException as a constant "NotSupportedException" in rcx
+		0x180B1D598: [!] Allocates an instance of type System.NotSupportedException and stores it as notSupportedException in rax.
+
+		0x180B1D59F: Copies {'notSupportedException' (type System.NotSupportedException)} from rax into rcx
+		0x180B1D5A2: Copies {'notSupportedException' (type System.NotSupportedException)} from rax into rbx
+		0x180B1D5A5: [!] Calls managed method System.Void System.NotSupportedException::.ctor() on instance {'notSupportedException' (type System.NotSupportedException)}
+
+		0x180B1D5AA: Loads the global generic method reference for method System.Void BetterList`1/<GetEnumerator>c__Iterator0::Reset() on type BetterList`1/<GetEnumerator>c__Iterator0<System.Object> and stores the result in constant {'Reset' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x180B1D5B3: Copies {'notSupportedException' (type System.NotSupportedException)} from rbx into rcx
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: BetterList`1/<GetEnumerator>c__Iterator0
+	System.Void Reset()
+		System.NotSupportedException notSupportedException = new System.NotSupportedException()
+
+		notSupportedException..ctor()
+
+
+Generated IL:
+	IL_0000: newobj System.Void System.NotSupportedException::.ctor()
+	IL_0005: stloc.0
+	
+

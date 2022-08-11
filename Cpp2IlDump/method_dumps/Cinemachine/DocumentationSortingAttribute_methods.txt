@@ -1,0 +1,191 @@
+Type: DocumentationSortingAttribute
+
+Method: System.Void Cinemachine.DocumentationSortingAttribute::.ctor(System.Single,Cinemachine.DocumentationSortingAttribute/Level):	Method Body (x86 ASM):
+		0x1808BE130 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1808BE135 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808BE136 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1808BE13A movaps [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x1808BE13F xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1808BE141 movaps xmm6,xmm1		; DEBUG: {Register}/XMM6 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x1808BE144 mov edi,r8d		; DEBUG: {Register}/EDI {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1808BE147 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1808BE14A call 00000001802068B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1808BE14F movss dword ptr [rbx+10h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBX | 16 | None ||| N/A | N/A
+		0x1808BE154 movaps xmm6,[rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1808BE159 mov [rbx+14h],edi		; DEBUG: {Memory}/None {Register}/EDI ||| RBX | 20 | None ||| N/A | N/A
+		0x1808BE15C mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1808BE161 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1808BE165 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808BE166 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808BE167 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Cinemachine.DocumentationSortingAttribute::.ctor(System.Single,Cinemachine.DocumentationSortingAttribute/Level):
+		End of function at 0x1808BE168
+		Absolute End is at 0x1808BE168
+		Identified Jump Destination addresses:
+
+		0x1808BE135: Saves the content of rdi to the stack
+		0x1808BE141: Copies {'sortOrder' (function parameter, type System.Single)} from xmm1 into xmm6
+		0x1808BE144: [!] Implicitly reads field at offset 0 (which is value__) from struct category of type Cinemachine.DocumentationSortingAttribute/Level and stores in new local {'local4' (type System.Int32)}
+		0x1808BE147: Copies {'this' (function parameter, type Cinemachine.DocumentationSortingAttribute)} from rcx into rbx
+		0x1808BE14A: [!] Calls managed method System.Void System.Attribute::.ctor() on instance {'this' (function parameter, type Cinemachine.DocumentationSortingAttribute)} ;  - Leftover parameters detected, but first few match.
+
+		0x1808BE14F: [!] Sets the field <SortOrder>k__BackingField (Type System.Single) on local {'this' (function parameter, type Cinemachine.DocumentationSortingAttribute)} to the value stored in {'sortOrder' (function parameter, type System.Single)}
+		0x1808BE154: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm6 as new constant constant1
+		0x1808BE159: [!] Sets the field <Category>k__BackingField (Type Cinemachine.DocumentationSortingAttribute/Level) on local {'this' (function parameter, type Cinemachine.DocumentationSortingAttribute)} to the value stored in {'local4' (type System.Int32)}
+		0x1808BE15C: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant2
+		0x1808BE166: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.DocumentationSortingAttribute
+	System.Void .ctor(System.Single sortOrder, Cinemachine.DocumentationSortingAttribute/Level category)
+		System.Int32 local4 = category.value__
+
+		base..ctor()
+		this.<SortOrder>k__BackingField = sortOrder
+		this.<Category>k__BackingField = local4
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.2
+	IL_0001: stloc.0
+	IL_0002: ldarg.0
+	IL_0003: call System.Void System.Attribute::.ctor()
+	IL_0008: ldarg.0
+	IL_0009: ldarg.1
+	IL_000a: stfld System.Single Cinemachine.DocumentationSortingAttribute::<SortOrder>k__BackingField
+	IL_000f: ldarg.0
+	IL_0010: ldloc.0
+	IL_0011: stfld Cinemachine.DocumentationSortingAttribute/Level Cinemachine.DocumentationSortingAttribute::<Category>k__BackingField
+	IL_0016: ret
+	
+
+Method: System.Single Cinemachine.DocumentationSortingAttribute::get_SortOrder():	Method Body (x86 ASM):
+		0x1806F1F20 movss xmm0,dword ptr [rcx+10h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x1806F1F25 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806F1F26 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Single Cinemachine.DocumentationSortingAttribute::get_SortOrder():
+		End of function at 0x1806F1F27
+		Absolute End is at 0x1806F1F27
+		Identified Jump Destination addresses:
+
+		0x1806F1F20: [!] Reads field <SortOrder>k__BackingField from {'this' (function parameter, type Cinemachine.DocumentationSortingAttribute)} and stores in a new local {'SortOrder' (type System.Single)}
+
+		0x1806F1F25: [!] Returns {'SortOrder' (type System.Single)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.DocumentationSortingAttribute
+	System.Single get_SortOrder()
+		System.Single SortOrder = this.<SortOrder>k__BackingField
+		return SortOrder
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Single Cinemachine.DocumentationSortingAttribute::<SortOrder>k__BackingField
+	IL_0006: ret
+	
+
+Method: System.Void Cinemachine.DocumentationSortingAttribute::set_SortOrder(System.Single):	Method Body (x86 ASM):
+		0x1808BE170 movss dword ptr [rcx+10h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RCX | 16 | None ||| N/A | N/A
+		0x1808BE175 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1808BE176 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Cinemachine.DocumentationSortingAttribute::set_SortOrder(System.Single):
+		End of function at 0x1808BE177
+		Absolute End is at 0x1808BE177
+		Identified Jump Destination addresses:
+
+		0x1808BE170: [!] Sets the field <SortOrder>k__BackingField (Type System.Single) on local {'this' (function parameter, type Cinemachine.DocumentationSortingAttribute)} to the value stored in {'value' (function parameter, type System.Single)}
+		0x1808BE175: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.DocumentationSortingAttribute
+	System.Void set_SortOrder(System.Single value)
+		this.<SortOrder>k__BackingField = value
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: stfld System.Single Cinemachine.DocumentationSortingAttribute::<SortOrder>k__BackingField
+	IL_0007: ret
+	
+
+Method: Cinemachine.DocumentationSortingAttribute/Level Cinemachine.DocumentationSortingAttribute::get_Category():	Method Body (x86 ASM):
+		0x1804C6320 mov eax,[rcx+14h]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 20 | None ||| N/A | N/A
+		0x1804C6323 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804C6324 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method Cinemachine.DocumentationSortingAttribute/Level Cinemachine.DocumentationSortingAttribute::get_Category():
+		End of function at 0x1804C6325
+		Absolute End is at 0x1804C6325
+		Identified Jump Destination addresses:
+
+		0x1804C6320: [!] Reads field <Category>k__BackingField from {'this' (function parameter, type Cinemachine.DocumentationSortingAttribute)} and stores in a new local {'Category' (type Cinemachine.DocumentationSortingAttribute/Level)}
+
+		0x1804C6323: [!] Returns {'Category' (type Cinemachine.DocumentationSortingAttribute/Level)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.DocumentationSortingAttribute
+	Cinemachine.DocumentationSortingAttribute/Level get_Category()
+		Cinemachine.DocumentationSortingAttribute/Level Category = this.<Category>k__BackingField
+		return Category
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld Cinemachine.DocumentationSortingAttribute/Level Cinemachine.DocumentationSortingAttribute::<Category>k__BackingField
+	IL_0006: ret
+	
+
+Method: System.Void Cinemachine.DocumentationSortingAttribute::set_Category(Cinemachine.DocumentationSortingAttribute/Level):	Method Body (x86 ASM):
+		0x1804C6420 mov [rcx+14h],edx		; DEBUG: {Memory}/None {Register}/EDX ||| RCX | 20 | None ||| N/A | N/A
+		0x1804C6423 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804C6424 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Cinemachine.DocumentationSortingAttribute::set_Category(Cinemachine.DocumentationSortingAttribute/Level):
+		End of function at 0x1804C6425
+		Absolute End is at 0x1804C6425
+		Identified Jump Destination addresses:
+
+		0x1804C6420: [!] Sets the field <Category>k__BackingField (Type Cinemachine.DocumentationSortingAttribute/Level) on local {'this' (function parameter, type Cinemachine.DocumentationSortingAttribute)} to the value stored in {'value' (function parameter, type Cinemachine.DocumentationSortingAttribute/Level)}
+		0x1804C6423: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.DocumentationSortingAttribute
+	System.Void set_Category(Cinemachine.DocumentationSortingAttribute/Level value)
+		this.<Category>k__BackingField = value
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: stfld Cinemachine.DocumentationSortingAttribute/Level Cinemachine.DocumentationSortingAttribute::<Category>k__BackingField
+	IL_0007: ret
+	
+

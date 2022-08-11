@@ -1,0 +1,64 @@
+Type: Blendable
+
+Method: System.Void RogoDigital.Lipsync.Blendable::.ctor(System.Int32,System.Single):	Method Body (x86 ASM):
+		0x1802EDFB0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1802EDFB5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802EDFB6 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1802EDFBA mov ebx,edx		; DEBUG: {Register}/EBX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802EDFBC movaps [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x1802EDFC1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802EDFC3 movaps xmm6,xmm2		; DEBUG: {Register}/XMM6 {Register}/XMM2 ||| None | 0 | None ||| N/A | N/A
+		0x1802EDFC6 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802EDFC9 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802EDFCE movss dword ptr [rdi+14h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RDI | 20 | None ||| N/A | N/A
+		0x1802EDFD3 movaps xmm6,[rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1802EDFD8 mov [rdi+10h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RDI | 16 | None ||| N/A | N/A
+		0x1802EDFDB mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1802EDFE0 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1802EDFE4 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802EDFE5 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802EDFE6 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void RogoDigital.Lipsync.Blendable::.ctor(System.Int32,System.Single):
+		End of function at 0x1802EDFE7
+		Absolute End is at 0x1802EDFE7
+		Identified Jump Destination addresses:
+
+		0x1802EDFB5: Saves the content of rdi to the stack
+		0x1802EDFBA: Copies {'number' (function parameter, type System.Int32)} from rdx into rbx
+		0x1802EDFC3: Copies {'currentWeight' (function parameter, type System.Single)} from xmm2 into xmm6
+		0x1802EDFC6: Copies {'this' (function parameter, type RogoDigital.Lipsync.Blendable)} from rcx into rdi
+		0x1802EDFC9: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type RogoDigital.Lipsync.Blendable)} ;  - Leftover parameters detected, but first few match.
+
+		0x1802EDFCE: [!] Sets the field currentWeight (Type System.Single) on local {'this' (function parameter, type RogoDigital.Lipsync.Blendable)} to the value stored in {'currentWeight' (function parameter, type System.Single)}
+		0x1802EDFD3: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm6 as new constant constant1
+		0x1802EDFD8: [!] Sets the field number (Type System.Int32) on local {'this' (function parameter, type RogoDigital.Lipsync.Blendable)} to the value stored in {'number' (function parameter, type System.Int32)}
+		0x1802EDFDB: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant2
+		0x1802EDFE5: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: RogoDigital.Lipsync.Blendable
+	System.Void .ctor(System.Int32 number, System.Single currentWeight)
+
+		base..ctor()
+		this.currentWeight = currentWeight
+		this.number = number
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ldarg.0
+	IL_0007: ldarg.2
+	IL_0008: stfld System.Single RogoDigital.Lipsync.Blendable::currentWeight
+	IL_000d: ldarg.0
+	IL_000e: ldarg.1
+	IL_000f: stfld System.Int32 RogoDigital.Lipsync.Blendable::number
+	IL_0014: ret
+	
+

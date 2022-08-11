@@ -1,0 +1,260 @@
+Type: ScriptCommandWait
+
+Method: System.Void ScriptCommandWait::.ctor():	Method Body (x86 ASM):
+		0x18025F090 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18025F092 jmp near ptr 0000000180203000h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18025F097 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ScriptCommandWait::.ctor():
+		End of function at 0x18025F098
+		Absolute End is at 0x18025F098
+		Identified Jump Destination addresses:
+
+		0x18025F092: [!] Calls managed method System.Void UnityEngine.EventSystems.UIBehaviour::.ctor() on instance {'this' (function parameter, type ScriptCommandWait)}
+
+		0x18025F092: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ScriptCommandWait
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.EventSystems.UIBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean ScriptCommandWait::ExecCommand():	Method Body (x86 ASM):
+		0x180566E00 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180566E02 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x180566E06 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180566E09 movaps [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x180566E0E movss xmm6,dword ptr [rcx+1Ch]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RCX | 28 | None ||| N/A | N/A
+		0x180566E13 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180566E15 call 0000000180CDF9F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566E1A subss xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x180566E1E xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x180566E21 comiss xmm0,xmm6		; DEBUG: {Register}/XMM0 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x180566E24 movss dword ptr [rbx+1Ch],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBX | 28 | None ||| N/A | N/A
+		0x180566E29 movaps xmm6,[rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x180566E2E setb al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180566E31 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x180566E35 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180566E36 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180566E37 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean ScriptCommandWait::ExecCommand():
+		End of function at 0x180566E38
+		Absolute End is at 0x180566E38
+		Identified Jump Destination addresses:
+
+		0x180566E00: Saves the content of rbx to the stack
+		0x180566E06: Copies {'this' (function parameter, type ScriptCommandWait)} from rcx into rbx
+		0x180566E0E: [!] Reads field m_waitTime from {'this' (function parameter, type ScriptCommandWait)} and stores in a new local {'m_waitTime' (type System.Single)}
+
+		0x180566E13: Clears register rcx, yielding zero-local {'local2' (type System.Int32)}
+		0x180566E15: [!] Calls static managed method System.Single UnityEngine.Time::get_deltaTime() and stores the result in {'deltaTime' (type System.Single)}
+
+		0x180566E1E: Clears register xmm0, yielding zero-local {'local4' (type System.Int32)}
+		0x180566E21: [!] Compares {'local4' (type System.Int32)} and {'m_waitTime' (type System.Single)}
+		0x180566E24: [!] Sets the field m_waitTime (Type System.Single) on local {'this' (function parameter, type ScriptCommandWait)} to the value stored in {'m_waitTime' (type System.Single)}
+		0x180566E29: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm6 as new constant constant1
+		0x180566E36: [!] Returns  from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ScriptCommandWait
+	System.Boolean ExecCommand()
+		System.Single m_waitTime = this.m_waitTime
+		ulong local2 = 0
+
+		System.Single deltaTime = UnityEngine.Time.deltaTime
+		ulong local4 = 0
+		this.m_waitTime = m_waitTime
+		return 
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x180566E36) is corrupt (Return value is missing) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void ScriptCommandWait::Init(System.String[],ScriptDemoSceneManager):	Method Body (x86 ASM):
+		0x180566E40 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x180566E45 mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x180566E4A push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180566E4B sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x180566E4F cmp byte ptr [18183EB29h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873577 | None ||| N/A | 0
+		0x180566E56 mov rsi,r8		; DEBUG: {Register}/RSI {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x180566E59 mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x180566E5C mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180566E5F jne short 0000000180566E73h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566E61 mov ecx,[1814B9EF4h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464184052 | None ||| N/A | N/A
+		0x180566E67 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566E6C mov byte ptr [18183EB29h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873577 | None ||| N/A | 1
+		0x180566E73 mov [rdi+20h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RDI | 32 | None ||| N/A | N/A
+		0x180566E77 mov dword ptr [rsp+40h],0		; DEBUG: {Memory}/None {Immediate32}/None ||| RSP | 64 | None ||| N/A | 0
+		0x180566E7F test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180566E82 je near ptr 0000000180566F37h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566E88 cmp dword ptr [rbx+18h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 0
+		0x180566E8C jbe near ptr 0000000180566F3Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566E92 mov rdx,[rbx+20h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x180566E96 lea r8,[rsp+40h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x180566E9B xor esi,esi		; DEBUG: {Register}/ESI {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x180566E9D xorps xmm3,xmm3		; DEBUG: {Register}/XMM3 {Register}/XMM3 ||| None | 0 | None ||| N/A | N/A
+		0x180566EA0 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180566EA3 mov [rsp+20h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 32 | None ||| N/A | N/A
+		0x180566EA8 call 00000001805BFBF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566EAD test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180566EAF jne short 0000000180566EB6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566EB1 mov [rdi+1Ch],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RDI | 28 | None ||| N/A | N/A
+		0x180566EB4 jmp short 0000000180566EC1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566EB6 movss xmm0,dword ptr [rsp+40h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x180566EBC movss dword ptr [rdi+1Ch],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RDI | 28 | None ||| N/A | N/A
+		0x180566EC1 cmp [rbx+18h],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RBX | 24 | None ||| N/A | N/A
+		0x180566EC4 jbe near ptr 0000000180566F52h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566ECA mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x180566ED1 mov rbx,[rbx+20h]		; DEBUG: {Register}/RBX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x180566ED5 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180566EDC je short 0000000180566EEBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566EDE cmp [rcx+0D8h],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RCX | 216 | None ||| N/A | N/A
+		0x180566EE4 jne short 0000000180566EEBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566EE6 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566EEB mov rcx,[181888D10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468177168 | None ||| N/A | N/A
+		0x180566EF2 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180566EF5 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180566EF8 call 0000000180D4D090h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566EFD mov rcx,[18188D688h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468195976 | None ||| N/A | N/A
+		0x180566F04 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180566F07 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180566F0E je short 0000000180566F1Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566F10 cmp [rcx+0D8h],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RCX | 216 | None ||| N/A | N/A
+		0x180566F16 jne short 0000000180566F1Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566F18 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566F1D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180566F1F mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180566F22 call 0000000180B2C5F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566F27 mov rbx,[rsp+48h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x180566F2C mov rsi,[rsp+50h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x180566F31 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x180566F35 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180566F36 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180566F37 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180566F39 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180566F3E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ScriptCommandWait::Init(System.String[],ScriptDemoSceneManager):
+		End of function at 0x180566F3F
+		Absolute End is at 0x180566F3F
+		Identified Jump Destination addresses:
+			0x180566EC1
+		0x180566E4A: Saves the content of rdi to the stack
+		0x180566E4F: Compares {Unknown Global at 0x18183EB29, first ten bytes are [203 1 0 204 203 1 0 232 60 103], or as chars "Ë ÌË è<g"} and 0
+		0x180566E56: Copies {'manager' (function parameter, type ScriptDemoSceneManager)} from r8 into rsi
+		0x180566E59: Copies {'arg' (function parameter, type System.String[])} from rdx into rbx
+		0x180566E5C: Copies {'this' (function parameter, type ScriptCommandWait)} from rcx into rdi
+		0x180566E5F: Jumps to 0x180566E73 if {Unknown Global at 0x18183EB29, first ten bytes are [203 1 0 204 203 1 0 232 60 103], or as chars "Ë ÌË è<g"} != 0
+
+		0x180566E61: Reads {Unknown Global at 0x1814B9EF4, first ten bytes are [189 95 0 0 189 31 0 0 189 63], or as chars "½_  ½  ½?"} into register rcx as a constant constant3
+		0x180566E67: Attempts to load the il2cpp metadata for this method (method id 24509) and init it cpp-side.
+
+		0x180566E73: [!] Sets the field m_manager (Type ScriptDemoSceneManager) on local {'this' (function parameter, type ScriptCommandWait)} to the value stored in {'manager' (function parameter, type ScriptDemoSceneManager)}
+		0x180566E77: Moves 0 (immediate ulong value) to the stack at offset 64 as a new local local3
+		0x180566E7F: [!] Compares {'arg' (function parameter, type System.String[])} and 0
+		0x180566E82: Jumps to 0x180566F37 (which throws a NRE) if arg equals 0. Implicitly present in managed code, so ignored here.
+		0x180566E88: [!] Compares {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} and 0
+		0x180566E8C: Jumps to 0x180566F3F (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} is less than or equal to 0. Implicitly present in managed code, so ignored here.
+		0x180566E92: [!] Reads a value from the array {'arg' (function parameter, type System.String[])} at index 0, into a new local {'local4' (type System.String)}
+
+		0x180566E96: Loads a pointer to stack offset 0x40 into register r8 as new constant constant6
+		0x180566E9B: Clears register rsi, yielding zero-local {'local5' (type System.Int32)}
+		0x180566EA0: Copies {'this' (function parameter, type ScriptCommandWait)} from rdi into rcx
+		0x180566EA3: Moves local5 (type System.Int32) from register rsi to the stack at offset 32 (0x20)
+		0x180566EA8: [!] Calls managed method System.Boolean ScriptCommandBase::TryParseFloat(System.String,System.Single&,System.Single) on instance {'this' (function parameter, type ScriptCommandWait)} and stores the result in {'boolean' (type System.Boolean)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x180566EAD: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x180566EAF: Jumps to 0x180566EB6 if {'boolean' (type System.Boolean)} != False ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x180566EB1: [!] Sets the field m_waitTime (Type System.Single) on local {'this' (function parameter, type ScriptCommandWait)} to the value stored in {'local5' (type System.Int32)}
+		0x180566EB4: Jumps to 0x180566EC1 (which is an function-local jump destination)
+
+		0x180566EB6: Reads local {'local3' (type System.UInt64)} from stack offset 64 (0x40) into register xmm0
+		0x180566EBC: [!] Sets the field m_waitTime (Type System.Single) on local {'this' (function parameter, type ScriptCommandWait)} to the value stored in {'local3' (type System.UInt64)}
+
+		End Of If-Else Block (at 0x180566EC1) where the else started at 0x180566EB6
+		0x180566EC1: [!] Compares {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} and {'local5' (type System.Int32)}
+		0x180566EC4: Jumps to 0x180566F52 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'arg' (function parameter, type System.String[])}} is less than or equal to {'local5' (type System.Int32)}. Implicitly present in managed code, so ignored here.
+		0x180566ECA: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x180566ED1: [!] Reads a value from the array {'arg' (function parameter, type System.String[])} at index 0, into a new local {'local8' (type System.String)}
+
+		0x180566ED5: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180566EDC: Jumps to 0x180566EEB if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x180566EEB which is after end of current block @ 0x180566EC1 (started at 0x180566EB6)
+
+		0x180566EDE: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and {'local5' (type System.Int32)}
+		0x180566EE4: Jumps to 0x180566EEB if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != {'local5' (type System.Int32)} ;  - This is probably a goto, jumping to 0x180566EEB which is after end of current block @ 0x180566EC1 (started at 0x180566EB6)
+
+		0x180566EE6: Calls the il2cpp cctor for the type System.String
+		0x180566EEB: Loads the string literal "Init : " as a constant "constant12" in rcx
+		0x180566EF5: Copies {'local8' (type System.String)} from rbx into rdx
+		0x180566EF8: [!] Calls static managed method System.String System.String::Concat(System.String,System.String) with arguments ["Init : ", {'local8' (type System.String)}] and stores the result in {'string' (type System.String)}
+
+		0x180566EFD: Loads the type definition for managed type UnityEngine.Debug as a constant "Debug" in rcx
+		0x180566F04: Copies {'string' (type System.String)} from rax into rbx
+		0x180566F07: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180566F0E: Jumps to 0x180566F1D if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x180566F1D which is after end of current block @ 0x180566EC1 (started at 0x180566EB6)
+
+		0x180566F10: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and {'local5' (type System.Int32)}
+		0x180566F16: Jumps to 0x180566F1D if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != {'local5' (type System.Int32)} ;  - This is probably a goto, jumping to 0x180566F1D which is after end of current block @ 0x180566EC1 (started at 0x180566EB6)
+
+		0x180566F18: Calls the il2cpp cctor for the type UnityEngine.Debug
+		0x180566F1F: Copies {'string' (type System.String)} from rbx into rcx
+		0x180566F22: [!] Calls static managed method System.Void UnityEngine.Debug::Log(System.Object) with arguments [{'string' (type System.String)}]
+
+		0x180566F27: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rbx as new constant constant17
+		0x180566F2C: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register rsi as new constant constant18
+		0x180566F36: [!] Returns from the function
+
+		0x180566F39: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ScriptCommandWait
+	System.Void Init(System.String[] arg, ScriptDemoSceneManager manager)
+		this.m_manager = manager
+		System.String local4 = arg[0]
+		ulong local5 = 0
+
+		System.Boolean boolean = base.TryParseFloat()
+
+		if (boolean == False)
+		    this.m_waitTime = local5
+		else
+		    this.m_waitTime = local3
+		endif
+        
+		System.String local8 = arg[0]
+
+		System.String string = System.String.Concat("Init : ", local8) //(String str0, String str1)
+
+		UnityEngine.Debug.Log(string) //(Object message)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x180566EA8) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (3)) and cannot be created as IL. Aborting here.
+
+

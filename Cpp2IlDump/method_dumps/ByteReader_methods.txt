@@ -1,0 +1,1874 @@
+Type: ByteReader
+
+Method: System.Void ByteReader::.ctor(System.Byte[]):	Method Body (x86 ASM):
+		0x180315530 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180315535 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180315536 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18031553A mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18031553D mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180315540 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180315542 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180315547 mov [rbx+10h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 16 | None ||| N/A | N/A
+		0x18031554B mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x180315550 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180315554 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180315555 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180315556 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ByteReader::.ctor(System.Byte[]):
+		End of function at 0x180315557
+		Absolute End is at 0x180315557
+		Identified Jump Destination addresses:
+
+		0x180315535: Saves the content of rdi to the stack
+		0x18031553A: Copies {'bytes' (function parameter, type System.Byte[])} from rdx into rdi
+		0x18031553D: Copies {'this' (function parameter, type ByteReader)} from rcx into rbx
+		0x180315542: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type ByteReader)} ;  - Leftover parameters detected, but first few match.
+
+		0x180315547: [!] Sets the field mBuffer (Type System.Byte[]) on local {'this' (function parameter, type ByteReader)} to the value stored in {'bytes' (function parameter, type System.Byte[])}
+		0x18031554B: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant1
+		0x180315555: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ByteReader
+	System.Void .ctor(System.Byte[] bytes)
+
+		base..ctor()
+		this.mBuffer = bytes
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ldarg.0
+	IL_0007: ldarg.1
+	IL_0008: stfld System.Byte[] ByteReader::mBuffer
+	IL_000d: ret
+	
+
+Method: System.Void ByteReader::.ctor(UnityEngine.TextAsset):	Method Body (x86 ASM):
+		0x180547A20 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180547A25 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547A26 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180547A2A mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x180547A2D mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180547A30 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180547A32 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547A37 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180547A3A je short 0000000180547A55h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547A3C xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180547A3E mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180547A41 call 0000000180CDC540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547A46 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x180547A4B mov [rdi+10h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RDI | 16 | None ||| N/A | N/A
+		0x180547A4F add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180547A53 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547A54 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547A55 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180547A57 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547A5C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void ByteReader::.ctor(UnityEngine.TextAsset):
+		End of function at 0x180547A5D
+		Absolute End is at 0x180547A5D
+		Identified Jump Destination addresses:
+
+		0x180547A25: Saves the content of rdi to the stack
+		0x180547A2A: Copies {'asset' (function parameter, type UnityEngine.TextAsset)} from rdx into rbx
+		0x180547A2D: Copies {'this' (function parameter, type ByteReader)} from rcx into rdi
+		0x180547A32: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type ByteReader)} ;  - Leftover parameters detected, but first few match.
+
+		0x180547A37: [!] Compares {'asset' (function parameter, type UnityEngine.TextAsset)} and 0
+		0x180547A3A: Jumps to 0x180547A55 (which throws a NRE) if asset equals 0. Implicitly present in managed code, so ignored here.
+		0x180547A3E: Copies {'asset' (function parameter, type UnityEngine.TextAsset)} from rbx into rcx
+		0x180547A41: [!] Calls managed method System.Byte[] UnityEngine.TextAsset::get_bytes() on instance {'asset' (function parameter, type UnityEngine.TextAsset)} and stores the result in {'bytes' (type System.Byte[])}
+
+		0x180547A46: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant2
+		0x180547A4B: [!] Sets the field mBuffer (Type System.Byte[]) on local {'this' (function parameter, type ByteReader)} to the value stored in {'bytes' (type System.Byte[])}
+		0x180547A54: [!] Returns from the function
+
+		0x180547A57: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ByteReader
+	System.Void .ctor(UnityEngine.TextAsset asset)
+
+		base..ctor()
+
+		System.Byte[] bytes = asset.bytes
+		this.mBuffer = bytes
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ldarg.1
+	IL_0007: call System.Byte[] UnityEngine.TextAsset::get_bytes()
+	IL_000c: stloc.0
+	IL_000d: ldarg.0
+	IL_000e: ldloc.0
+	IL_000f: stfld System.Byte[] ByteReader::mBuffer
+	IL_0014: ret
+	IL_0015: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001a: throw
+	
+
+Method: ByteReader ByteReader::Open(System.String):	Method Body (x86 ASM):
+		0x1805470B0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805470B2 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1805470B6 cmp byte ptr [18183EAEDh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873517 | None ||| N/A | 0
+		0x1805470BD mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1805470C0 jne short 00000001805470D4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805470C2 mov ecx,[181515D64h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464560484 | None ||| N/A | N/A
+		0x1805470C8 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805470CD mov byte ptr [18183EAEDh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873517 | None ||| N/A | 1
+		0x1805470D4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805470D6 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805470D9 call 0000000180E13910h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805470DE mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805470E1 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805470E4 jne short 00000001805470ECh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805470E6 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1805470EA pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805470EB ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805470EC mov rax,[rax]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1805470EF xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805470F1 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805470F4 mov [rsp+40h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 64 | None ||| N/A | N/A
+		0x1805470F9 mov r9,[rax+250h]		; DEBUG: {Register}/R9 {Memory}/None ||| RAX | 592 | None ||| N/A | N/A
+		0x180547100 lea r8d,[rdx+2]		; DEBUG: {Register}/R8D {Memory}/None ||| RDX | 2 | None ||| N/A | N/A
+		0x180547104 call qword ptr [rax+248h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 584 | None ||| N/A | N/A
+		0x18054710A mov rax,[rbx]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x18054710D mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180547110 mov rdx,[rax+1C0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 448 | None ||| N/A | N/A
+		0x180547117 call qword ptr [rax+1B8h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 440 | None ||| N/A | N/A
+		0x18054711D mov rcx,[1818841B0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157872 | None ||| N/A | N/A
+		0x180547124 mov edx,eax		; DEBUG: {Register}/EDX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x180547126 call 0000000180141320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054712B mov r10,[rbx]		; DEBUG: {Register}/R10 {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x18054712E xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180547131 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180547133 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180547136 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547139 mov r9,[r10+250h]		; DEBUG: {Register}/R9 {Memory}/None ||| R10 | 592 | None ||| N/A | N/A
+		0x180547140 call qword ptr [r10+248h]		; DEBUG: {Memory}/None {Register}/None ||| R10 | 584 | None ||| N/A | N/A
+		0x180547147 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18054714A je short 00000001805471ADh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054714C mov r10,[rbx]		; DEBUG: {Register}/R10 {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x18054714F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180547152 mov r9d,[rdi+18h]		; DEBUG: {Register}/R9D {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x180547156 mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180547159 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18054715C mov rax,[r10+230h]		; DEBUG: {Register}/RAX {Memory}/None ||| R10 | 560 | None ||| N/A | N/A
+		0x180547163 mov [rsp+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 32 | None ||| N/A | N/A
+		0x180547168 call qword ptr [r10+228h]		; DEBUG: {Memory}/None {Register}/None ||| R10 | 552 | None ||| N/A | N/A
+		0x18054716F mov rax,[rbx]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x180547172 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180547175 mov rdx,[rax+1F0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 496 | None ||| N/A | N/A
+		0x18054717C call qword ptr [rax+1E8h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 488 | None ||| N/A | N/A
+		0x180547182 mov rcx,[18189B7B0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x180547189 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054718E xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180547190 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547193 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547196 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054719B mov [rbx+10h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 16 | None ||| N/A | N/A
+		0x18054719F mov rax,rbx		; DEBUG: {Register}/RAX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805471A2 mov rdi,[rsp+40h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1805471A7 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1805471AB pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805471AC ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805471AD xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1805471AF call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805471B4 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method ByteReader ByteReader::Open(System.String):
+		End of function at 0x1805471B5
+		Absolute End is at 0x1805471B5
+		Identified Jump Destination addresses:
+
+		0x1805470B0: Saves the content of rbx to the stack
+		0x1805470B6: Compares {Unknown Global at 0x18183EAED, first ten bytes are [201 1 0 3 202 1 0 28 61 103], or as chars "É Ê =g"} and 0
+		0x1805470BD: Copies {'path' (function parameter, type System.String)} from rcx into rbx
+		0x1805470C0: Jumps to 0x1805470D4 if {Unknown Global at 0x18183EAED, first ten bytes are [201 1 0 3 202 1 0 28 61 103], or as chars "É Ê =g"} != 0
+
+		0x1805470C2: Loads string "¿" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1805470C8: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1805470D6: Copies {'path' (function parameter, type System.String)} from rbx into rcx
+		0x1805470D9: [!] Calls static managed method System.IO.FileStream System.IO.File::OpenRead(System.String) with arguments [{'path' (function parameter, type System.String)}] and stores the result in {'fileStream' (type System.IO.FileStream)}
+
+		0x1805470DE: Copies {'fileStream' (type System.IO.FileStream)} from rax into rbx
+		0x1805470E1: [!] Compares {'fileStream' (type System.IO.FileStream)} and 0
+		0x1805470E4: Jumps to 0x1805470EC (which throws a NRE) if {'fileStream' (type System.IO.FileStream)} != 0. Implicitly present in managed code, so ignored here. ;  - Skipping if statement, is array type check
+		0x1805470EB: [!] Returns {'fileStream' (type System.IO.FileStream)} from the function
+
+		0x1805470EC: Loads the class pointer from fileStream into a constant constant5 in register rax
+		0x1805470EF: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x1805470F1: Copies {'fileStream' (type System.IO.FileStream)} from rbx into rcx
+		0x1805470F9: Loads the pointer to the implementation of virtual function System.Int64 System.IO.FileStream::Seek(System.Int64,System.IO.SeekOrigin) specific to System.IO.FileStream from the class pointer in rax, slot 18 (from memory offset 592) and stores in constant constant6
+		0x180547100: [!] Loads the constant value 2 into the register r8 as constant constant7 using an LEA instruction
+		0x180547104: [!] Calls managed method System.Int64 System.IO.FileStream::Seek(System.Int64,System.IO.SeekOrigin) on instance {'fileStream' (type System.IO.FileStream)} with arguments [{'local3' (type System.Int32)}, 2] and stores the result in {'int64' (type System.Int64)}
+
+		0x18054710A: Loads the class pointer from fileStream into a constant constant8 in register rax
+		0x18054710D: Copies {'fileStream' (type System.IO.FileStream)} from rbx into rcx
+		0x180547110: Loads the pointer to the implementation of virtual function System.Int64 System.IO.FileStream::get_Position() specific to System.IO.FileStream from the class pointer in rax, slot 9 (from memory offset 448) and stores in constant constant9
+		0x180547117: [!] Calls managed method System.Int64 System.IO.FileStream::get_Position() on instance {'fileStream' (type System.IO.FileStream)} and stores the result in {'position' (type System.Int64)}
+
+		0x18054711D: Loads the type definition for managed type System.Byte[] as a constant "Byte[]" in rcx
+		0x180547124: Copies {'position' (type System.Int64)} from rax into rdx
+		0x180547126: [!] Allocates an array of type System.Byte[] of size position and stores the result as local6 in register rax
+
+		0x18054712B: Loads the class pointer from fileStream into a constant constant11 in register r10
+		0x18054712E: Clears register r8, yielding zero-local {'local7' (type System.Int32)}
+		0x180547131: Clears register rdx, yielding zero-local {'local8' (type System.Int32)}
+		0x180547133: Copies {'fileStream' (type System.IO.FileStream)} from rbx into rcx
+		0x180547136: Copies {'local6' (type System.Byte[])} from rax into rdi
+		0x180547139: Loads the pointer to the implementation of virtual function System.Int64 System.IO.FileStream::Seek(System.Int64,System.IO.SeekOrigin) specific to System.IO.FileStream from the class pointer in r10, slot 18 (from memory offset 592) and stores in constant constant12
+		0x180547140: [!] Calls managed method System.Int64 System.IO.FileStream::Seek(System.Int64,System.IO.SeekOrigin) on instance {'fileStream' (type System.IO.FileStream)} with arguments [{'local8' (type System.Int32)}, {'local7' (type System.Int32)}] and stores the result in {'int642' (type System.Int64)}
+
+		0x180547147: [!] Compares {'local6' (type System.Byte[])} and 0
+		0x18054714A: Jumps to 0x1805471AD (which throws a NRE) if local6 equals 0. Implicitly present in managed code, so ignored here.
+		0x18054714C: Loads the class pointer from fileStream into a constant constant14 in register r10
+		0x18054714F: Clears register r8, yielding zero-local {'local10' (type System.Int32)}
+		0x180547152: Reads the length of the array "{'local6' (type System.Byte[])}" and stores it in new local {'length' (type System.Int32)} in register r9
+		0x180547156: Copies {'local6' (type System.Byte[])} from rdi into rdx
+		0x180547159: Copies {'fileStream' (type System.IO.FileStream)} from rbx into rcx
+		0x18054715C: Loads the pointer to the implementation of virtual function System.Int32 System.IO.FileStream::Read(System.Byte[],System.Int32,System.Int32) specific to System.IO.FileStream from the class pointer in r10, slot 16 (from memory offset 560) and stores in constant constant15
+		0x180547163: Moves System.IO.FileStream.Read (type Mono.Cecil.MethodDefinition) from register rax to the stack at offset 32 (0x20) as a new local local12
+		0x180547168: [!] Calls managed method System.Int32 System.IO.FileStream::Read(System.Byte[],System.Int32,System.Int32) on instance {'fileStream' (type System.IO.FileStream)} with arguments [{'local6' (type System.Byte[])}, {'local10' (type System.Int32)}, {'length' (type System.Int32)}] and stores the result in {'int32' (type System.Int32)}
+
+		0x18054716F: Loads the class pointer from fileStream into a constant constant16 in register rax
+		0x180547172: Copies {'fileStream' (type System.IO.FileStream)} from rbx into rcx
+		0x180547175: Loads the pointer to the implementation of virtual function System.Void System.IO.Stream::Close() specific to System.IO.FileStream from the class pointer in rax, slot 12 (from memory offset 496) and stores in constant constant17
+		0x18054717C: [!] Calls managed method System.Void System.IO.Stream::Close() on instance {'fileStream' (type System.IO.FileStream)}
+
+		0x180547182: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rcx
+		0x180547189: [!] Allocates an instance of type ByteReader and stores it as byteReader in rax.
+
+		0x18054718E: Clears register rdx, yielding zero-local {'local15' (type System.Int32)}
+		0x180547190: Copies {'byteReader' (type ByteReader)} from rax into rcx
+		0x180547193: Copies {'byteReader' (type ByteReader)} from rax into rbx
+		0x180547196: [!] Calls managed method System.Void System.Object::FieldGetter(System.String,System.String,System.Object&) on instance {'byteReader' (type ByteReader)} with arguments [{'local15' (type System.Int32)}, {'local10' (type System.Int32)}, {'length' (type System.Int32)}]
+
+		0x18054719B: [!] Sets the field mBuffer (Type System.Byte[]) on local {'byteReader' (type ByteReader)} to the value stored in {'local6' (type System.Byte[])}
+		0x18054719F: Copies {'byteReader' (type ByteReader)} from rbx into rax
+		0x1805471A2: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rdi as new constant constant19
+		0x1805471AC: [!] Returns {'byteReader' (type ByteReader)} from the function
+
+		0x1805471AF: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ByteReader
+	static ByteReader Open(System.String path)
+
+		System.IO.FileStream fileStream = System.IO.File.OpenRead(path) //(String path)
+		return fileStream
+		ulong local3 = 0
+		System.Int32 2 = 2
+
+		System.Int64 int64 = fileStream.Seek(local3, 2) //(Int64 offset, SeekOrigin origin)
+
+		System.Int64 position = fileStream.Position
+		System.Byte[] local6 = new System.Byte[position]
+		ulong local7 = 0
+		ulong local8 = 0
+
+		System.Int64 int642 = fileStream.Seek(local8, local7) //(Int64 offset, SeekOrigin origin)
+		ulong local10 = 0
+		System.Int32 length = local6.Length
+
+		System.Int32 int32 = fileStream.Read(local6, local10, length) //(Byte[] array, Int32 offset, Int32 count)
+
+		fileStream.Close()
+		ByteReader byteReader = new ByteReader()
+		ulong local15 = 0
+
+		byteReader.FieldGetter(local15, local10, length) //(String typeName, String fieldName, Object& val)
+		byteReader.mBuffer = local6
+		return byteReader
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x1805470EB) is corrupt (Return value has a type of System.IO.FileStream, expecting an object of type ByteReader) and cannot be created as IL. Aborting here.
+
+
+Method: System.Boolean ByteReader::get_canRead():	Method Body (x86 ASM):
+		0x180547A60 mov rax,[rcx+10h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x180547A64 mov rdx,rcx		; DEBUG: {Register}/RDX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180547A67 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547A6A jne short 0000000180547A72h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547A6C xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180547A6E movzx eax,cl		; DEBUG: {Register}/EAX {Register}/CL ||| None | 0 | None ||| N/A | N/A
+		0x180547A71 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547A72 mov eax,[rax+18h]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 24 | None ||| N/A | N/A
+		0x180547A75 cmp [rdx+18h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDX | 24 | None ||| N/A | N/A
+		0x180547A78 setl al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547A7B ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547A7C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean ByteReader::get_canRead():
+		End of function at 0x180547A7D
+		Absolute End is at 0x180547A7D
+		Identified Jump Destination addresses:
+
+		0x180547A60: [!] Reads field mBuffer from {'this' (function parameter, type ByteReader)} and stores in a new local {'mBuffer' (type System.Byte[])}
+
+		0x180547A64: Copies {'this' (function parameter, type ByteReader)} from rcx into rdx
+		0x180547A67: [!] Compares {'mBuffer' (type System.Byte[])} and 0
+		0x180547A6A: Jumps to 0x180547A72 (which is an if statement's body) if {'mBuffer' (type System.Byte[])} != 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180547A6C: Clears register rcx, yielding zero-local {'local2' (type System.Int32)}
+		0x180547A6E: Copies {'local2' (type System.Int32)} from rcx into rax
+		0x180547A71: [!] Returns {'local2' (type System.Int32)} from the function
+
+		0x180547A72: Reads the length of the array "{'mBuffer' (type System.Byte[])}" and stores it in new local {'length' (type System.Int32)} in register rax
+		0x180547A75: [!] Compares {field mOffset, read from local {'this' (function parameter, type ByteReader)}} and {'length' (type System.Int32)}
+		0x180547A78: [!] Sets the boolean {'local4' (type System.Boolean)} in rax to true if this.mOffset is less than length, otherwise false.
+		0x180547A7B: [!] Returns {'local4' (type System.Boolean)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ByteReader
+	System.Boolean get_canRead()
+		System.Byte[] mBuffer = this.mBuffer
+
+		if (mBuffer == 0)
+		    ulong local2 = 0
+		    return local2
+		endif
+        
+		System.Int32 length = mBuffer.Length
+		System.Boolean local4 = this.mOffset < length
+		return local4
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x180547A71) is corrupt (Return value has a type of System.Int32, expecting an object of type System.Boolean) and cannot be created as IL. Aborting here.
+
+
+Method: System.String ByteReader::ReadLine(System.Byte[],System.Int32,System.Int32):	Method Body (x86 ASM):
+		0x1805477F0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1805477F5 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x1805477FA push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805477FB sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1805477FF cmp byte ptr [18183EAEEh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873518 | None ||| N/A | 0
+		0x180547806 mov ebx,r8d		; DEBUG: {Register}/EBX {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180547809 mov edi,edx		; DEBUG: {Register}/EDI {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18054780B mov rsi,rcx		; DEBUG: {Register}/RSI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18054780E jne short 0000000180547822h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547810 mov ecx,[181515D88h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464560520 | None ||| N/A | N/A
+		0x180547816 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054781B mov byte ptr [18183EAEEh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873518 | None ||| N/A | 1
+		0x180547822 mov rcx,[1818847A0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468159392 | None ||| N/A | N/A
+		0x180547829 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180547830 je short 0000000180547840h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547832 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180547839 jne short 0000000180547840h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054783B call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547840 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180547842 call 0000000180F0AFC0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547847 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18054784A je short 000000018054787Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054784C mov r10,[rax]		; DEBUG: {Register}/R10 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x18054784F mov r9d,ebx		; DEBUG: {Register}/R9D {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x180547852 mov r8d,edi		; DEBUG: {Register}/R8D {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x180547855 mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180547858 mov rcx,[r10+280h]		; DEBUG: {Register}/RCX {Memory}/None ||| R10 | 640 | None ||| N/A | N/A
+		0x18054785F mov [rsp+20h],rcx		; DEBUG: {Memory}/None {Register}/RCX ||| RSP | 32 | None ||| N/A | N/A
+		0x180547864 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547867 call qword ptr [r10+278h]		; DEBUG: {Memory}/None {Register}/None ||| R10 | 632 | None ||| N/A | N/A
+		0x18054786E mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x180547873 mov rsi,[rsp+48h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x180547878 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18054787C pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18054787D ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18054787E xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180547880 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547885 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.String ByteReader::ReadLine(System.Byte[],System.Int32,System.Int32):
+		End of function at 0x180547886
+		Absolute End is at 0x180547886
+		Identified Jump Destination addresses:
+
+		0x1805477FA: Saves the content of rdi to the stack
+		0x1805477FF: Compares {Unknown Global at 0x18183EAEE, first ten bytes are [1 0 3 202 1 0 28 61 103 1], or as chars " Ê =g"} and 0
+		0x180547806: Copies {'count' (function parameter, type System.Int32)} from r8 into rbx
+		0x180547809: Copies {'start' (function parameter, type System.Int32)} from rdx into rdi
+		0x18054780B: Copies {'buffer' (function parameter, type System.Byte[])} from rcx into rsi
+		0x18054780E: Jumps to 0x180547822 if {Unknown Global at 0x18183EAEE, first ten bytes are [1 0 3 202 1 0 28 61 103 1], or as chars " Ê =g"} != 0
+
+		0x180547810: Loads string "Â" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x180547816: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x180547822: Loads the type definition for managed type System.Text.Encoding as a constant "Encoding" in rcx
+		0x180547829: Compares "{il2cpp field on {'Encoding' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180547830: Jumps to 0x180547840 if "{il2cpp field on {'Encoding' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180547832: Compares "{il2cpp field on {'Encoding' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180547839: Jumps to 0x180547840 if "{il2cpp field on {'Encoding' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18054783B: Calls the il2cpp cctor for the type System.Text.Encoding
+		0x180547840: Clears register rcx, yielding zero-local {'local3' (type System.Int32)}
+		0x180547842: [!] Calls static managed method System.Text.Encoding System.Text.Encoding::get_UTF8() and stores the result in {'uTF8' (type System.Text.Encoding)}
+
+		0x180547847: [!] Compares {'uTF8' (type System.Text.Encoding)} and 0
+		0x18054784A: Jumps to 0x18054787E (which throws a NRE) if uTF8 equals 0. Implicitly present in managed code, so ignored here.
+		0x18054784C: Loads the class pointer from uTF8 into a constant constant10 in register r10
+		0x18054784F: Copies {'count' (function parameter, type System.Int32)} from rbx into r9
+		0x180547852: Copies {'start' (function parameter, type System.Int32)} from rdi into r8
+		0x180547855: Copies {'buffer' (function parameter, type System.Byte[])} from rsi into rdx
+		0x180547858: Loads the pointer to the implementation of virtual function System.String System.Text.Encoding::GetString(System.Byte[],System.Int32,System.Int32) specific to System.Text.Encoding from the class pointer in r10, slot 21 (from memory offset 640) and stores in constant constant11
+		0x18054785F: Moves System.Text.Encoding.GetString (type Mono.Cecil.MethodDefinition) from register rcx to the stack at offset 32 (0x20) as a new local local5
+		0x180547864: Copies {'uTF8' (type System.Text.Encoding)} from rax into rcx
+		0x180547867: [!] Calls managed method System.String System.Text.Encoding::GetString(System.Byte[],System.Int32,System.Int32) on instance {'uTF8' (type System.Text.Encoding)} with arguments [{'buffer' (function parameter, type System.Byte[])}, {'count' (function parameter, type System.Int32)}, {'count' (function parameter, type System.Int32)}] and stores the result in {'string' (type System.String)}
+
+		0x18054786E: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant12
+		0x180547873: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rsi as new constant constant13
+		0x18054787D: [!] Returns {'string' (type System.String)} from the function
+
+		0x180547880: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ByteReader
+	static System.String ReadLine(System.Byte[] buffer, System.Int32 start, System.Int32 count)
+		ulong local3 = 0
+
+		System.Text.Encoding uTF8 = System.Text.Encoding.UTF8
+		count = start
+
+		System.String string = uTF8.GetString(buffer, count, count) //(Byte[] bytes, Int32 index, Int32 count)
+		return string
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.RegToRegMoveAction at (0x180547852) is corrupt (Local being overwritten, {'count' (function parameter, type System.Int32)} has been stripped or is a parameter) and cannot be created as IL. Aborting here.
+
+
+Method: System.String ByteReader::ReadLine():	Method Body (x86 ASM):
+		0x180547890 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180547893 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x180547895 jmp near ptr 00000001805478A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054789A int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.String ByteReader::ReadLine():
+		End of function at 0x18054789B
+		Absolute End is at 0x18054789B
+		Identified Jump Destination addresses:
+
+		0x180547893: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x180547895: [!] Calls managed method System.String ByteReader::ReadLine(System.Boolean) on instance {'this' (function parameter, type ByteReader)} with arguments [True] and stores the result in {'string' (type System.String)}
+
+		0x180547895: [!] Returns {'string' (type System.String)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ByteReader
+	System.String ReadLine()
+
+		System.String string = this.ReadLine(True) //(Boolean skipEmptyLines)
+		return string
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.1
+	IL_0002: call System.String ByteReader::ReadLine(System.Boolean)
+	IL_0007: ret
+	
+
+Method: System.String ByteReader::ReadLine(System.Boolean):	Method Body (x86 ASM):
+		0x1805478A0 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x1805478A5 mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x1805478AA push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805478AB sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1805478AF cmp byte ptr [18183EAEFh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873519 | None ||| N/A | 0
+		0x1805478B6 movzx esi,dl		; DEBUG: {Register}/ESI {Register}/DL ||| None | 0 | None ||| N/A | N/A
+		0x1805478B9 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1805478BC jne short 00000001805478D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805478BE mov ecx,[181515D98h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464560536 | None ||| N/A | N/A
+		0x1805478C4 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805478C9 mov byte ptr [18183EAEFh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873519 | None ||| N/A | 1
+		0x1805478D0 mov rbx,[rdi+10h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 16 | None ||| N/A | N/A
+		0x1805478D4 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1805478D7 je near ptr 0000000180547992h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805478DD mov edx,[rbx+18h]		; DEBUG: {Register}/EDX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1805478E0 test sil,sil		; DEBUG: {Register}/SIL {Register}/SIL ||| None | 0 | None ||| N/A | N/A
+		0x1805478E3 je short 000000018054790Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805478E5 mov ecx,[rdi+18h]		; DEBUG: {Register}/ECX {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x1805478E8 cmp ecx,edx		; DEBUG: {Register}/ECX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805478EA jge short 000000018054790Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805478EC nop dword ptr [rax]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1805478F0 cmp ecx,[rbx+18h]		; DEBUG: {Register}/ECX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x1805478F3 jae near ptr 000000018054799Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805478F9 movsxd rax,ecx		; DEBUG: {Register}/RAX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1805478FC cmp byte ptr [rax+rbx+20h],20h		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 32 | RBX ||| N/A | 32
+		0x180547901 jae short 000000018054790Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547903 inc ecx		; DEBUG: {Register}/ECX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547905 mov [rdi+18h],ecx		; DEBUG: {Memory}/None {Register}/ECX ||| RDI | 24 | None ||| N/A | N/A
+		0x180547908 cmp ecx,edx		; DEBUG: {Register}/ECX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18054790A jl short 00000001805478F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054790C mov [rsp+30h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 48 | None ||| N/A | N/A
+		0x180547911 mov ebp,[rdi+18h]		; DEBUG: {Register}/EBP {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x180547914 mov ecx,ebp		; DEBUG: {Register}/ECX {Register}/EBP ||| None | 0 | None ||| N/A | N/A
+		0x180547916 cmp ebp,edx		; DEBUG: {Register}/EBP {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180547918 jl short 0000000180547934h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054791A mov [rdi+18h],edx		; DEBUG: {Memory}/None {Register}/EDX ||| RDI | 24 | None ||| N/A | N/A
+		0x18054791D xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18054791F mov rbp,[rsp+30h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x180547924 mov rbx,[rsp+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x180547929 mov rsi,[rsp+40h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x18054792E add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180547932 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547933 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547934 mov eax,ecx		; DEBUG: {Register}/EAX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180547936 lea esi,[rcx+1]		; DEBUG: {Register}/ESI {Memory}/None ||| RCX | 1 | None ||| N/A | N/A
+		0x180547939 cmp ecx,edx		; DEBUG: {Register}/ECX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18054793B jge short 0000000180547959h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054793D movsxd r8,ecx		; DEBUG: {Register}/R8 {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180547940 mov ecx,esi		; DEBUG: {Register}/ECX {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x180547942 cmp eax,[rbx+18h]		; DEBUG: {Register}/EAX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x180547945 jae short 00000001805479ADh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547947 movzx r8d,byte ptr [r8+rbx+20h]		; DEBUG: {Register}/R8D {Memory}/None ||| R8 | 32 | RBX ||| N/A | N/A
+		0x18054794D cmp r8b,0Ah		; DEBUG: {Register}/R8L {Immediate8}/None ||| None | 0 | None ||| N/A | 10
+		0x180547951 je short 0000000180547959h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547953 cmp r8b,0Dh		; DEBUG: {Register}/R8L {Immediate8}/None ||| None | 0 | None ||| N/A | 13
+		0x180547957 jne short 0000000180547934h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547959 mov rcx,[18189B7B0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x180547960 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180547967 je short 0000000180547977h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547969 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180547970 jne short 0000000180547977h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547972 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547977 mov r8d,esi		; DEBUG: {Register}/R8D {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x18054797A xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x18054797D sub r8d,ebp		; DEBUG: {Register}/R8D {Register}/EBP ||| None | 0 | None ||| N/A | N/A
+		0x180547980 mov edx,ebp		; DEBUG: {Register}/EDX {Register}/EBP ||| None | 0 | None ||| N/A | N/A
+		0x180547982 dec r8d		; DEBUG: {Register}/R8D {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547985 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180547988 call 00000001805477F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054798D mov [rdi+18h],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RDI | 24 | None ||| N/A | N/A
+		0x180547990 jmp short 000000018054791Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547992 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180547994 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547999 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.String ByteReader::ReadLine(System.Boolean):
+		End of function at 0x18054799A
+		Absolute End is at 0x18054799A
+		Identified Jump Destination addresses:
+
+		0x1805478AA: Saves the content of rdi to the stack
+		0x1805478AF: Compares {Unknown Global at 0x18183EAEF, first ten bytes are [0 3 202 1 0 28 61 103 1 16], or as chars " Ê =g"} and 0
+		0x1805478B6: Copies {'skipEmptyLines' (function parameter, type System.Boolean)} from rdx into rsi
+		0x1805478B9: Copies {'this' (function parameter, type ByteReader)} from rcx into rdi
+		0x1805478BC: Jumps to 0x1805478D0 if {Unknown Global at 0x18183EAEF, first ten bytes are [0 3 202 1 0 28 61 103 1 16], or as chars " Ê =g"} != 0
+
+		0x1805478BE: Loads string "Ã" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1805478C4: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1805478D0: [!] Reads field mBuffer from {'this' (function parameter, type ByteReader)} and stores in a new local {'mBuffer' (type System.Byte[])}
+
+		0x1805478D4: [!] Compares {'mBuffer' (type System.Byte[])} and 0
+		0x1805478D7: Jumps to 0x180547992 (which throws a NRE) if mBuffer equals 0. Implicitly present in managed code, so ignored here.
+		0x1805478DD: Reads the length of the array "{'mBuffer' (type System.Byte[])}" and stores it in new local {'length' (type System.Int32)} in register rdx
+		0x1805478E0: [!] Compares {'skipEmptyLines' (function parameter, type System.Boolean)} and False
+		0x1805478E3: Jumps to 0x18054790C (which is an if statement's body) if skipEmptyLines equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1805478E5: [!] Reads field mOffset from {'this' (function parameter, type ByteReader)} and stores in a new local {'mOffset' (type System.Int32)}
+
+		0x1805478E8: [!] Compares {'mOffset' (type System.Int32)} and {'length' (type System.Int32)}
+		0x1805478EA: Jumps to 0x18054790C (which is an if statement's body) if {'mOffset' (type System.Int32)} is greater than or equal to {'length' (type System.Int32)} ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1805478F0: [!] Compares {'mOffset' (type System.Int32)} and {Property System.Int32 System.Array::Length() on {'mBuffer' (type System.Byte[])}}
+		0x1805478F3: Jumps to 0x18054799A (which throws a NRE) if {'mOffset' (type System.Int32)} is greater than or equal to {Property System.Int32 System.Array::Length() on {'mBuffer' (type System.Byte[])}}. Implicitly present in managed code, so ignored here.
+		0x1805478F9: Copies {'mOffset' (type System.Int32)} from rcx into rax
+		0x1805478FC: [!] Compares  and 32
+		0x180547901: Jumps to 0x18054790C (which is an if statement's body) if  is greater than or equal to 32 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180547903: [!] Adds 1 to the value {'mOffset' (type System.Int32)}, stored in rcx
+		0x180547905: [!] Sets the field mOffset (Type System.Int32) on local {'this' (function parameter, type ByteReader)} to the value stored in {'mOffset' (type System.Int32)}
+		0x180547908: [!] Compares {'mOffset' (type System.Int32)} and {'length' (type System.Int32)}
+		0x180547911: [!] Reads field mOffset from {'this' (function parameter, type ByteReader)} and stores in a new local {'mOffset2' (type System.Int32)}
+
+		0x180547914: Copies {'mOffset2' (type System.Int32)} from rbp into rcx
+		0x180547916: [!] Compares {'mOffset2' (type System.Int32)} and {'length' (type System.Int32)}
+		0x18054791A: [!] Sets the field mOffset (Type System.Int32) on local {'this' (function parameter, type ByteReader)} to the value stored in {'length' (type System.Int32)}
+		0x18054791D: Clears register rax, yielding zero-local {'local6' (type System.Int32)}
+
+		Potential Loop Start (0x18054791F):
+		0x18054791F: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbp as new constant constant7
+		0x180547924: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbx as new constant constant8
+		0x180547929: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rsi as new constant constant9
+		0x180547933: [!] Returns {'local6' (type System.Int32)} from the function
+
+		0x180547934: Copies {'mOffset' (type System.Int32)} from rcx into rax
+		0x180547936: Adds 1 to mOffset and stores the result in local7
+		0x180547939: [!] Compares {'mOffset' (type System.Int32)} and {'length' (type System.Int32)}
+		0x18054793B: Jumps to 0x180547959 if {'mOffset' (type System.Int32)} is greater than or equal to {'length' (type System.Int32)} ;  - This is probably a goto, jumping to 0x180547959 which is after end of current block @ 0x18054790C (started at 0x180547903)
+
+		0x18054793D: Copies {'mOffset' (type System.Int32)} from rcx into r8
+		0x180547940: Copies {'local7' (type System.Int32)} from rsi into rcx
+		0x180547942: Compares {'mOffset' (type System.Int32)} and "{il2cpp field on {'constant8' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)}, offset 0x18}"
+		0x180547945: Jumps to 0x1805479AD (which throws a NRE) if {'mOffset' (type System.Int32)} is greater than or equal to "{il2cpp field on {'constant8' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)}, offset 0x18}". Implicitly present in managed code, so ignored here.
+		0x18054794D: [!] Compares {'mOffset' (type System.Int32)} and 10
+		0x180547951: Jumps to 0x180547959 if mOffset equals 10 ;  - This is probably a goto, jumping to 0x180547959 which is after end of current block @ 0x18054790C (started at 0x180547903)
+
+		0x180547953: [!] Compares {'mOffset' (type System.Int32)} and 13
+		0x180547957: Jumps to 0x180547934 if {'mOffset' (type System.Int32)} != 13 ;  - This is probably a goto, jumping to 0x180547934 which is after end of current block @ 0x18054790C (started at 0x180547903)
+
+		0x180547959: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rcx
+		0x180547960: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180547967: Jumps to 0x180547977 if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x180547977 which is after end of current block @ 0x18054790C (started at 0x180547903)
+
+		0x180547969: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180547970: Jumps to 0x180547977 if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x180547977 which is after end of current block @ 0x18054790C (started at 0x180547903)
+
+		0x180547972: Calls the il2cpp cctor for the type ByteReader
+		0x180547977: Copies {'local7' (type System.Int32)} from rsi into r8
+		0x18054797D: [!] Subtracts {'constant7' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from {'mOffset' (type System.Int32)} and stores the result in {'mOffset' (type System.Int32)}
+		0x180547980: Copies {'constant7' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from rbp into rdx
+		0x180547985: Copies {'constant8' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from rbx into rcx
+		0x180547988: [!] Calls static managed method System.String ByteReader::ReadLine(System.Byte[],System.Int32,System.Int32) and stores the result in {'string' (type System.String)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x18054798D: [!] Sets the field mOffset (Type System.Int32) on local {'this' (function parameter, type ByteReader)} to the value stored in {'local7' (type System.Int32)}
+		0x180547990: Jumps to 0x18054791F - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x180547994: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ByteReader
+	System.String ReadLine(System.Boolean skipEmptyLines)
+		System.Byte[] mBuffer = this.mBuffer
+		System.Int32 length = mBuffer.Length
+
+		if (skipEmptyLines != False)
+		    System.Int32 mOffset = this.mOffset
+
+		    if (mOffset < length)
+
+		        if ( < 32)
+		            mOffset += 1
+		            this.mOffset = mOffset
+		        endwhile
+                
+		        goto INSN_18054799A
+                
+		        System.Int32 mOffset2 = this.mOffset
+		        mOffset = mOffset2
+		        this.mOffset = length
+		        ulong local6 = 0
+		        return local6
+		        System.Int32 local7 = mOffset + 1
+
+		        if (mOffset >= length)
+                    goto INSN_180547959
+                endif
+		        mOffset = local7
+
+		        if (mOffset == 10)
+                    goto INSN_180547959
+                endif
+
+		        if (mOffset != 13)
+                    goto INSN_180547934
+                endif
+
+		        INSN_180547959:
+		        mOffset = local7
+		        mOffset -= constant7
+
+		        System.String string = ByteReader.ReadLine()
+		        this.mOffset = local7
+		        throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.JumpIfGreaterThanOrEqualToAction at (0x180547901) is corrupt (One of the arguments is null) and cannot be created as IL. Aborting here.
+
+
+Method: System.Collections.Generic.Dictionary`2<System.String,System.String> ByteReader::ReadDictionary():	Method Body (x86 ASM):
+		0x180547630 push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547632 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547633 push r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547635 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x180547639 cmp byte ptr [18183EAF0h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873520 | None ||| N/A | 0
+		0x180547640 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180547643 jne short 0000000180547657h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547645 mov ecx,[181515D7Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464560508 | None ||| N/A | N/A
+		0x18054764B call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547650 mov byte ptr [18183EAF0h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873520 | None ||| N/A | 1
+		0x180547657 mov rcx,[18188F6B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468204216 | None ||| N/A | N/A
+		0x18054765E mov [rsp+50h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 80 | None ||| N/A | N/A
+		0x180547663 mov [rsp+58h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 88 | None ||| N/A | N/A
+		0x180547668 mov [rsp+60h],r15		; DEBUG: {Memory}/None {Register}/R15 ||| RSP | 96 | None ||| N/A | N/A
+		0x18054766D call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547672 mov rdx,[181884188h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468157832 | None ||| N/A | N/A
+		0x180547679 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18054767C mov rbp,rax		; DEBUG: {Register}/RBP {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18054767F call 0000000180B733F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547684 mov rcx,[181884128h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157736 | None ||| N/A | N/A
+		0x18054768B mov edx,1		; DEBUG: {Register}/EDX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x180547690 call 0000000180141320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547695 mov r14,rax		; DEBUG: {Register}/R14 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547698 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18054769B je near ptr 00000001805477B9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805476A1 cmp dword ptr [rax+18h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 24 | None ||| N/A | 0
+		0x1805476A5 jbe near ptr 00000001805477C1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805476AB mov eax,3Dh		; DEBUG: {Register}/EAX {Immediate32}/None ||| None | 0 | None ||| N/A | 61
+		0x1805476B0 xor r15d,r15d		; DEBUG: {Register}/R15D {Register}/R15D ||| None | 0 | None ||| N/A | N/A
+		0x1805476B3 mov [r14+20h],ax		; DEBUG: {Memory}/None {Register}/AX ||| R14 | 32 | None ||| N/A | N/A
+		0x1805476B8 nop dword ptr [rax+rax]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 0 | RAX ||| N/A | N/A
+		0x1805476C0 mov rax,[rdi+10h]		; DEBUG: {Register}/RAX {Memory}/None ||| RDI | 16 | None ||| N/A | N/A
+		0x1805476C4 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805476C7 je near ptr 000000018054779Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805476CD mov eax,[rax+18h]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 24 | None ||| N/A | N/A
+		0x1805476D0 cmp [rdi+18h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDI | 24 | None ||| N/A | N/A
+		0x1805476D3 jge near ptr 000000018054779Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805476D9 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805476DC mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1805476DE mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1805476E1 call 00000001805478A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805476E6 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805476E9 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805476EC je near ptr 000000018054779Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805476F2 mov rdx,[1818944E0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468224224 | None ||| N/A | N/A
+		0x1805476F9 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1805476FC mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805476FF call 0000000180D53D90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547704 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180547706 jne short 00000001805476C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547708 mov r9d,1		; DEBUG: {Register}/R9D {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x18054770E mov [rsp+20h],r15		; DEBUG: {Memory}/None {Register}/R15 ||| RSP | 32 | None ||| N/A | N/A
+		0x180547713 mov rdx,r14		; DEBUG: {Register}/RDX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x180547716 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180547719 lea r8d,[r9+1]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 1 | None ||| N/A | N/A
+		0x18054771D call 0000000180D53BF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547722 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547725 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547728 je near ptr 00000001805477B9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054772E cmp dword ptr [rax+18h],2		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 24 | None ||| N/A | 2
+		0x180547732 jne short 00000001805476C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547734 mov rcx,[rax+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 32 | None ||| N/A | N/A
+		0x180547738 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18054773B je short 00000001805477B9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054773D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18054773F call 0000000180D55B50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547744 cmp dword ptr [rbx+18h],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 1
+		0x180547748 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18054774B jbe near ptr 00000001805477D4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547751 mov rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x180547755 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180547758 je short 00000001805477B9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054775A xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18054775C call 0000000180D55B50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547761 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547764 je short 00000001805477B9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547766 mov r8,[181895B38h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468229944 | None ||| N/A | N/A
+		0x18054776D xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x180547770 mov rdx,[181893D00h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468222208 | None ||| N/A | N/A
+		0x180547777 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18054777A call 0000000180D53370h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054777F test rbp,rbp		; DEBUG: {Register}/RBP {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x180547782 je short 00000001805477B9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547784 mov r9,[181884200h]		; DEBUG: {Register}/R9 {Memory}/None ||| RIP | 6468157952 | None ||| N/A | N/A
+		0x18054778B mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18054778E mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x180547791 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x180547794 call 0000000180FFFAE0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547799 jmp near ptr 00000001805476C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054779E mov r15,[rsp+60h]		; DEBUG: {Register}/R15 {Memory}/None ||| RSP | 96 | None ||| N/A | N/A
+		0x1805477A3 mov rax,rbp		; DEBUG: {Register}/RAX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x1805477A6 mov rsi,[rsp+58h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 88 | None ||| N/A | N/A
+		0x1805477AB mov rbx,[rsp+50h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1805477B0 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1805477B4 pop r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805477B6 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805477B7 pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805477B8 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805477B9 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1805477BB call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805477C0 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Collections.Generic.Dictionary`2<System.String,System.String> ByteReader::ReadDictionary():
+		End of function at 0x1805477C1
+		Absolute End is at 0x1805477C1
+		Identified Jump Destination addresses:
+
+		0x180547630: Saves the content of rbp to the stack
+		0x180547632: Saves the content of rdi to the stack
+		0x180547633: Saves the content of r14 to the stack
+		0x180547639: Compares {Unknown Global at 0x18183EAF0, first ten bytes are [3 202 1 0 28 61 103 1 16 202], or as chars "Ê =gÊ"} and 0
+		0x180547640: Copies {'this' (function parameter, type ByteReader)} from rcx into rdi
+		0x180547643: Jumps to 0x180547657 if {Unknown Global at 0x18183EAF0, first ten bytes are [3 202 1 0 28 61 103 1 16 202], or as chars "Ê =gÊ"} != 0
+
+		0x180547645: Loads string "Á" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18054764B: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x180547657: Loads the type definition for managed type System.Collections.Generic.Dictionary`2<System.String,System.String> as a constant "Dictionary`2" in rcx
+		0x18054766D: [!] Allocates an instance of type System.Collections.Generic.Dictionary`2<System.String,System.String> and stores it as dictionary in rax.
+
+		0x180547672: Loads the global generic method reference for method System.Void System.Collections.Generic.Dictionary`2::.ctor() on type System.Collections.Generic.Dictionary`2<System.String,System.String> and stores the result in constant {'.ctor' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x180547679: Copies {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.String>)} from rax into rcx
+		0x18054767C: Copies {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.String>)} from rax into rbp
+		0x18054767F: [!] Calls managed method System.Void System.Collections.Generic.Dictionary`2::.ctor() on instance {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.String>)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x180547684: Loads the type definition for managed type System.Char[] as a constant "Char[]" in rcx
+		0x18054768B: [!] Writes the constant 0x1 into operand 1 (type UInt64) in register rdx
+		0x180547690: [!] Allocates an array of type System.Char[] of size 1 and stores the result as local2 in register rax
+
+		0x180547695: Copies {'local2' (type System.Char[])} from rax into r14
+		0x180547698: [!] Compares {'local2' (type System.Char[])} and 0
+		0x18054769B: Jumps to 0x1805477B9 (which throws a NRE) if local2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1805476A1: [!] Compares {Property System.Int32 System.Array::Length() on {'local2' (type System.Char[])}} and 0
+		0x1805476A5: Jumps to 0x1805477C1 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local2' (type System.Char[])}} is less than or equal to 0. Implicitly present in managed code, so ignored here.
+		0x1805476AB: [!] Writes the constant 0x3D into operand 61 (type UInt64) in register rax
+		0x1805476B0: Clears register r15, yielding zero-local {'local3' (type System.Int32)}
+		0x1805476B3: Sets the value at offset 0 in array local2 to 61
+
+		Potential Loop Start (0x1805476C0):
+		0x1805476C0: [!] Reads field mBuffer from {'this' (function parameter, type ByteReader)} and stores in a new local {'mBuffer' (type System.Byte[])}
+
+		0x1805476C4: [!] Compares {'mBuffer' (type System.Byte[])} and 0
+		0x1805476C7: Jumps to 0x18054779E (which is an if statement's body) if mBuffer equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1805476CD: Reads the length of the array "{'mBuffer' (type System.Byte[])}" and stores it in new local {'length' (type System.Int32)} in register rax
+		0x1805476D0: [!] Compares {field mOffset, read from local {'this' (function parameter, type ByteReader)}} and {'length' (type System.Int32)}
+		0x1805476D3: Jumps to 0x18054779E (which is an if statement's body) if {field mOffset, read from local {'this' (function parameter, type ByteReader)}} is greater than or equal to {'length' (type System.Int32)} ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1805476DC: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1805476DE: Copies {'this' (function parameter, type ByteReader)} from rdi into rcx
+		0x1805476E1: [!] Calls managed method System.String ByteReader::ReadLine(System.Boolean) on instance {'this' (function parameter, type ByteReader)} with arguments [True] and stores the result in {'string' (type System.String)}
+
+		0x1805476E6: Copies {'string' (type System.String)} from rax into rbx
+		0x1805476E9: [!] Compares {'string' (type System.String)} and 0
+		0x1805476EC: Jumps to 0x18054779E (which is an if statement's body) if string equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1805476F2: Loads the string literal "//" as a constant "constant14" in rdx
+		0x1805476F9: Clears register r8, yielding zero-local {'local8' (type System.Int32)}
+		0x1805476FC: Copies {'string' (type System.String)} from rax into rcx
+		0x1805476FF: [!] Calls managed method System.Boolean System.String::StartsWith(System.String) on instance {'string' (type System.String)} with arguments ["//"] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x180547704: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x180547706: Jumps to 0x1805476C0 (which is an if statement's body) if {'boolean' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180547708: [!] Writes the constant 0x1 into operand 1 (type UInt64) in register r9
+		0x18054770E: Moves local3 (type System.Int32) from register r15 to the stack at offset 32 (0x20)
+		0x180547713: Copies {'local2' (type System.Char[])} from r14 into rdx
+		0x180547716: Copies {'string' (type System.String)} from rbx into rcx
+		0x18054771D: [!] Calls managed method System.String[] System.String::Split(System.Char[],System.Int32,System.StringSplitOptions) on instance {'string' (type System.String)} with arguments [{'local2' (type System.Char[])}, {'local8' (type System.Int32)}, 1] and stores the result in {'stringArray' (type System.String[])}
+
+		0x180547722: Copies {'stringArray' (type System.String[])} from rax into rbx
+		0x180547725: [!] Compares {'stringArray' (type System.String[])} and 0
+		0x180547728: Jumps to 0x1805477B9 (which throws a NRE) if stringArray equals 0. Implicitly present in managed code, so ignored here.
+		0x18054772E: [!] Compares {Property System.Int32 System.Array::Length() on {'stringArray' (type System.String[])}} and 2
+		0x180547732: Jumps to 0x1805476C0 (which is an if statement's body) if {Property System.Int32 System.Array::Length() on {'stringArray' (type System.String[])}} != 2 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180547734: [!] Reads a value from the array {'stringArray' (type System.String[])} at index 0, into a new local {'local11' (type System.String)}
+
+		0x180547738: [!] Compares {'local11' (type System.String)} and 0
+		0x18054773B: Jumps to 0x1805477B9 (which throws a NRE) if local11 equals 0. Implicitly present in managed code, so ignored here.
+		0x18054773F: [!] Calls managed method System.String System.String::Trim() on instance {'local11' (type System.String)} and stores the result in {'string2' (type System.String)}
+
+		0x180547744: [!] Compares {Property System.Int32 System.Array::Length() on {'stringArray' (type System.String[])}} and 1
+		0x180547748: Copies {'string2' (type System.String)} from rax into rsi
+		0x18054774B: Jumps to 0x1805477D4 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'stringArray' (type System.String[])}} is less than or equal to 1. Implicitly present in managed code, so ignored here.
+		0x180547751: [!] Reads a value from the array {'stringArray' (type System.String[])} at index 1, into a new local {'local14' (type System.String)}
+
+		0x180547755: [!] Compares {'local14' (type System.String)} and 0
+		0x180547758: Jumps to 0x1805477B9 (which throws a NRE) if local14 equals 0. Implicitly present in managed code, so ignored here.
+		0x18054775C: [!] Calls managed method System.String System.String::Trim() on instance {'local14' (type System.String)} and stores the result in {'string3' (type System.String)}
+
+		0x180547761: [!] Compares {'string3' (type System.String)} and 0
+		0x180547764: Jumps to 0x1805477B9 (which throws a NRE) if string3 equals 0. Implicitly present in managed code, so ignored here.
+		0x180547766: Loads the string literal "
+" as a constant "constant23" in r8
+		0x180547770: Loads the string literal "\n" as a constant "constant24" in rdx
+		0x180547777: Copies {'string3' (type System.String)} from rax into rcx
+		0x18054777A: [!] Calls managed method System.String System.String::Replace(System.String,System.String) on instance {'string3' (type System.String)} with arguments ["\n", "
+"] and stores the result in {'string4' (type System.String)}
+
+		0x18054777F: [!] Compares {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.String>)} and 0
+		0x180547782: Jumps to 0x1805477B9 (which throws a NRE) if dictionary equals 0. Implicitly present in managed code, so ignored here.
+		0x180547784: Loads the global generic method reference for method System.Void System.Collections.Generic.Dictionary`2::set_Item(TKey,TValue) on type System.Collections.Generic.Dictionary`2<System.String,System.String> and stores the result in constant {'set_Item' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r9
+		0x18054778B: Copies {'string4' (type System.String)} from rax into r8
+		0x18054778E: Copies {'string2' (type System.String)} from rsi into rdx
+		0x180547791: Copies {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.String>)} from rbp into rcx
+		0x180547794: [!] Calls managed method System.Void System.Collections.Generic.Dictionary`2::set_Item(TKey,TValue) on instance {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.String>)} with arguments [{'string2' (type System.String)}, {'string4' (type System.String)}] ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x180547799: Jumps to 0x1805476C0 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x18054779E: Reads unknown value in stack, offset 96 (0x60) and stores the pointer in register r15 as new constant constant27
+		0x1805477A3: Copies {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.String>)} from rbp into rax
+		0x1805477A6: Reads unknown value in stack, offset 88 (0x58) and stores the pointer in register rsi as new constant constant28
+		0x1805477AB: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register rbx as new constant constant29
+		0x1805477B8: [!] Returns {'dictionary' (type System.Collections.Generic.Dictionary`2<System.String,System.String>)} from the function
+
+		0x1805477BB: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ByteReader
+	System.Collections.Generic.Dictionary`2<System.String,System.String> ReadDictionary()
+		System.Collections.Generic.Dictionary`2<System.String,System.String> dictionary = new System.Collections.Generic.Dictionary`2<System.String,System.String>()
+
+		dictionary..ctor()
+		System.Char[] local2 = new System.Char[1]
+		ulong local3 = 0
+		local2[0] = 61
+		System.Byte[] mBuffer = this.mBuffer
+
+		if (mBuffer != 0)
+		    System.Int32 length = mBuffer.Length
+
+		    if (this.mOffset < length)
+
+		        System.String string = this.ReadLine(True) //(Boolean skipEmptyLines)
+
+		        if (string != 0)
+		            ulong local8 = 0
+
+		            System.Boolean boolean = string.StartsWith("//") //(String value)
+
+		            if (boolean == False)
+
+		                System.String[] stringArray = string.Split(local2, local8, 1) //(Char[] separator, Int32 count, StringSplitOptions options)
+
+		                if (stringArray.Length == 2)
+		                    System.String local11 = stringArray[0]
+
+		                    System.String string2 = local11.Trim()
+		                    System.String local14 = stringArray[1]
+
+		                    System.String string3 = local14.Trim()
+
+		                    System.String string4 = string3.Replace("\n", "
+                            ") //(String oldValue, String newValue)
+
+		                    dictionary.set_Item(string2, string4) //(TKey key, TValue value)
+		                endif
+                        
+		                return dictionary
+		                throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: newobj System.Void System.Collections.Generic.Dictionary`2::.ctor()
+	IL_0005: stloc.0
+	IL_0006: ldc.i4.1
+	IL_0007: newarr System.Char
+	IL_000c: stloc.1
+	IL_000d: ldc.i4.0
+	IL_000e: stloc.2
+	IL_000f: ldloc.1
+	IL_0010: ldc.i4.0
+	IL_0011: ldc.i4.s 61
+	IL_0013: conv.u4
+	IL_0014: stelem.any System.Char
+	IL_0019: ldarg.0
+	IL_001a: ldfld System.Byte[] ByteReader::mBuffer
+	IL_001f: stloc.3
+	IL_0020: ldloc.3
+	IL_0021: ldc.i4.0
+	IL_0022: beq IL_00a8
+	IL_0027: ldloc.3
+	IL_0028: call System.Int32 System.Array::get_Length()
+	IL_002d: stloc.s V_4
+	IL_002f: ldarg.0
+	IL_0030: ldfld System.Int32 ByteReader::mOffset
+	IL_0035: ldloc.s V_4
+	IL_0037: bge.s IL_00a8
+	IL_0039: ldarg.0
+	IL_003a: ldc.i4.1
+	IL_003b: call System.String ByteReader::ReadLine(System.Boolean)
+	IL_0040: stloc.s V_5
+	IL_0042: ldloc.s V_5
+	IL_0044: ldc.i4.0
+	IL_0045: beq.s IL_00a8
+	IL_0047: ldc.i4.0
+	IL_0048: stloc.s V_6
+	IL_004a: ldloc.s V_5
+	IL_004c: ldstr "//"
+	IL_0051: call System.Boolean System.String::StartsWith(System.String)
+	IL_0056: ldc.i4.0
+	IL_0057: bne.un.s IL_0000
+	IL_0059: ldloc.s V_5
+	IL_005b: ldloc.1
+	IL_005c: ldloc.s V_6
+	IL_005e: ldc.i4.1
+	IL_005f: conv.u4
+	IL_0060: call System.String[] System.String::Split(System.Char[],System.Int32,System.StringSplitOptions)
+	IL_0065: stloc.s V_7
+	IL_0067: ldloc.s V_7
+	IL_0069: call System.Int32 System.Array::get_Length()
+	IL_006e: ldc.i4.2
+	IL_006f: bne.un.s IL_0067
+	IL_0071: ldloc.s V_7
+	IL_0073: ldc.i4.0
+	IL_0074: ldelem.any System.String
+	IL_0079: call System.String System.String::Trim()
+	IL_007e: stloc.s V_8
+	IL_0080: ldloc.s V_7
+	IL_0082: ldc.i4.1
+	IL_0083: ldelem.any System.String
+	IL_0088: call System.String System.String::Trim()
+	IL_008d: ldstr "\n"
+	IL_0092: ldstr "
+"
+	IL_0097: call System.String System.String::Replace(System.String,System.String)
+	IL_009c: stloc.s V_9
+	IL_009e: ldloc.0
+	IL_009f: ldloc.s V_8
+	IL_00a1: ldloc.s V_9
+	IL_00a3: call System.Void System.Collections.Generic.Dictionary`2::set_Item(TKey,TValue)
+	IL_00a8: ldloc.0
+	IL_00a9: ret
+	IL_00aa: newobj System.Void System.NullReferenceException::.ctor()
+	IL_00af: throw
+	
+
+Method: BetterList`1<System.String> ByteReader::ReadCSV():	Method Body (x86 ASM):
+		0x1805471C0 push r13		; DEBUG: {Register}/R13 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805471C2 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1805471C6 cmp byte ptr [18183EAF1h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873521 | None ||| N/A | 0
+		0x1805471CD mov r13,rcx		; DEBUG: {Register}/R13 {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1805471D0 jne short 00000001805471E4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805471D2 mov ecx,[181515D6Ch]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464560492 | None ||| N/A | N/A
+		0x1805471D8 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805471DD mov byte ptr [18183EAF1h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873521 | None ||| N/A | 1
+		0x1805471E4 mov rax,[18189B7B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x1805471EB test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1805471F2 je short 000000018054720Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805471F4 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1805471FB jne short 000000018054720Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805471FD mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547200 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547205 mov rax,[18189B7B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x18054720C mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x180547213 mov [rsp+40h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 64 | None ||| N/A | N/A
+		0x180547218 mov [rsp+48h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 72 | None ||| N/A | N/A
+		0x18054721D mov [rsp+50h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 80 | None ||| N/A | N/A
+		0x180547222 mov rcx,[rax]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x180547225 mov [rsp+58h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 88 | None ||| N/A | N/A
+		0x18054722A mov [rsp+28h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 40 | None ||| N/A | N/A
+		0x18054722F mov [rsp+20h],r15		; DEBUG: {Memory}/None {Register}/R15 ||| RSP | 32 | None ||| N/A | N/A
+		0x180547234 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180547237 je near ptr 0000000180547626h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054723D mov rdx,[1818604B0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468011184 | None ||| N/A | N/A
+		0x180547244 call 0000000180206C30h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547249 mov rax,[181883F70h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x180547250 test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x180547257 je short 0000000180547271h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547259 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x180547260 jne short 0000000180547271h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547262 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547265 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054726A mov rax,[181883F70h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x180547271 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x180547278 xor bpl,bpl		; DEBUG: {Register}/BPL {Register}/BPL ||| None | 0 | None ||| N/A | N/A
+		0x18054727B xor esi,esi		; DEBUG: {Register}/ESI {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x18054727D mov r14,[rax]		; DEBUG: {Register}/R14 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x180547280 mov rax,[r13+10h]		; DEBUG: {Register}/RAX {Memory}/None ||| R13 | 16 | None ||| N/A | N/A
+		0x180547284 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547287 je near ptr 0000000180547622h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054728D mov eax,[rax+18h]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 24 | None ||| N/A | N/A
+		0x180547290 cmp [r13+18h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| R13 | 24 | None ||| N/A | N/A
+		0x180547294 jge near ptr 0000000180547622h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054729A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18054729D mov rcx,r13		; DEBUG: {Register}/RCX {Register}/R13 ||| None | 0 | None ||| N/A | N/A
+		0x1805472A0 test bpl,bpl		; DEBUG: {Register}/BPL {Register}/BPL ||| None | 0 | None ||| N/A | N/A
+		0x1805472A3 jne short 00000001805472D2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805472A5 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1805472A7 call 00000001805478A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805472AC test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805472AF je near ptr 0000000180547622h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805472B5 mov r8,[181895B38h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468229944 | None ||| N/A | N/A
+		0x1805472BC xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1805472BF mov rdx,[181893D00h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468222208 | None ||| N/A | N/A
+		0x1805472C6 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805472C9 call 0000000180D53370h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805472CE xor esi,esi		; DEBUG: {Register}/ESI {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x1805472D0 jmp short 0000000180547331h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805472D2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805472D4 call 00000001805478A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805472D9 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805472DC je near ptr 0000000180547622h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805472E2 mov r8,[181895B38h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468229944 | None ||| N/A | N/A
+		0x1805472E9 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1805472EC mov rdx,[181893D00h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468222208 | None ||| N/A | N/A
+		0x1805472F3 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805472F6 call 0000000180D53370h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805472FB mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x180547302 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547305 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18054730C je short 000000018054731Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054730E cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180547315 jne short 000000018054731Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547317 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054731C mov rdx,[181895B38h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468229944 | None ||| N/A | N/A
+		0x180547323 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x180547326 mov r8,rbx		; DEBUG: {Register}/R8 {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180547329 mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x18054732C call 0000000180D4D6E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547331 mov r14,rax		; DEBUG: {Register}/R14 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547334 mov ebx,esi		; DEBUG: {Register}/EBX {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x180547336 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547339 je near ptr 0000000180547626h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054733F xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180547341 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547344 call 00000001804C6330h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547349 mov r15d,eax		; DEBUG: {Register}/R15D {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18054734C cmp esi,eax		; DEBUG: {Register}/ESI {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18054734E jge near ptr 00000001805474C8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547354 nop dword ptr [rax]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x180547358 nop dword ptr [rax+rax]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 0 | RAX ||| N/A | N/A
+		0x180547360 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180547363 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x180547365 mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x180547368 call 0000000180D55D10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054736D cmp ax,2Ch		; DEBUG: {Register}/AX {Immediate8to16}/None ||| None | 0 | None ||| N/A | 44
+		0x180547371 je near ptr 0000000180547455h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547377 cmp ax,22h		; DEBUG: {Register}/AX {Immediate8to16}/None ||| None | 0 | None ||| N/A | 34
+		0x18054737B jne near ptr 00000001805474BDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547381 lea edi,[rbx+1]		; DEBUG: {Register}/EDI {Memory}/None ||| RBX | 1 | None ||| N/A | N/A
+		0x180547384 test bpl,bpl		; DEBUG: {Register}/BPL {Register}/BPL ||| None | 0 | None ||| N/A | N/A
+		0x180547387 jne short 0000000180547393h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547389 mov esi,edi		; DEBUG: {Register}/ESI {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x18054738B mov bpl,1		; DEBUG: {Register}/BPL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x18054738E jmp near ptr 00000001805474BDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547393 cmp edi,r15d		; DEBUG: {Register}/EDI {Register}/R15D ||| None | 0 | None ||| N/A | N/A
+		0x180547396 jge near ptr 0000000180547573h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054739C xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18054739F mov edx,edi		; DEBUG: {Register}/EDX {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x1805473A1 mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x1805473A4 call 0000000180D55D10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805473A9 cmp ax,22h		; DEBUG: {Register}/AX {Immediate8to16}/None ||| None | 0 | None ||| N/A | 34
+		0x1805473AD jne short 00000001805473B6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805473AF mov ebx,edi		; DEBUG: {Register}/EBX {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x1805473B1 jmp near ptr 00000001805474BDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805473B6 mov rax,[18189B7B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x1805473BD test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1805473C4 je short 00000001805473DEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805473C6 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1805473CD jne short 00000001805473DEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805473CF mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805473D2 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805473D7 mov rax,[18189B7B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x1805473DE mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1805473E5 mov r8d,ebx		; DEBUG: {Register}/R8D {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1805473E8 sub r8d,esi		; DEBUG: {Register}/R8D {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x1805473EB xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1805473EE mov edx,esi		; DEBUG: {Register}/EDX {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x1805473F0 mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x1805473F3 mov rbp,[rax]		; DEBUG: {Register}/RBP {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1805473F6 call 0000000180D54280h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805473FB test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805473FE je near ptr 0000000180547626h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547404 mov r8,[18187A680h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468118144 | None ||| N/A | N/A
+		0x18054740B xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x18054740E mov rdx,[1818676E8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468040424 | None ||| N/A | N/A
+		0x180547415 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547418 call 0000000180D53370h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054741D test rbp,rbp		; DEBUG: {Register}/RBP {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x180547420 je near ptr 0000000180547626h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547426 mov r8,[181860498h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468011160 | None ||| N/A | N/A
+		0x18054742D mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547430 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x180547433 call 0000000180B0AF40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547438 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18054743B mov edx,edi		; DEBUG: {Register}/EDX {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x18054743D mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x180547440 xor bpl,bpl		; DEBUG: {Register}/BPL {Register}/BPL ||| None | 0 | None ||| N/A | N/A
+		0x180547443 call 0000000180D55D10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547448 cmp ax,2Ch		; DEBUG: {Register}/AX {Immediate8to16}/None ||| None | 0 | None ||| N/A | 44
+		0x18054744C jne short 00000001805474BDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054744E mov ebx,edi		; DEBUG: {Register}/EBX {Register}/EDI ||| None | 0 | None ||| N/A | N/A
+		0x180547450 lea esi,[rdi+1]		; DEBUG: {Register}/ESI {Memory}/None ||| RDI | 1 | None ||| N/A | N/A
+		0x180547453 jmp short 00000001805474BDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547455 test bpl,bpl		; DEBUG: {Register}/BPL {Register}/BPL ||| None | 0 | None ||| N/A | N/A
+		0x180547458 jne short 00000001805474BDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054745A mov rax,[18189B7B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x180547461 test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x180547468 je short 0000000180547482h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054746A cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x180547471 jne short 0000000180547482h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547473 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547476 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054747B mov rax,[18189B7B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x180547482 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x180547489 mov r8d,ebx		; DEBUG: {Register}/R8D {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x18054748C sub r8d,esi		; DEBUG: {Register}/R8D {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x18054748F xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x180547492 mov edx,esi		; DEBUG: {Register}/EDX {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x180547494 mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x180547497 mov rdi,[rax]		; DEBUG: {Register}/RDI {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x18054749A call 0000000180D54280h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054749F test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1805474A2 je near ptr 0000000180547626h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805474A8 mov r8,[181860498h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468011160 | None ||| N/A | N/A
+		0x1805474AF mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805474B2 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1805474B5 call 0000000180B0AF40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805474BA lea esi,[rbx+1]		; DEBUG: {Register}/ESI {Memory}/None ||| RBX | 1 | None ||| N/A | N/A
+		0x1805474BD inc ebx		; DEBUG: {Register}/EBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805474BF cmp ebx,r15d		; DEBUG: {Register}/EBX {Register}/R15D ||| None | 0 | None ||| N/A | N/A
+		0x1805474C2 jl near ptr 0000000180547360h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805474C8 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1805474CA mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x1805474CD call 00000001804C6330h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805474D2 cmp esi,eax		; DEBUG: {Register}/ESI {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1805474D4 jge short 0000000180547548h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805474D6 test bpl,bpl		; DEBUG: {Register}/BPL {Register}/BPL ||| None | 0 | None ||| N/A | N/A
+		0x1805474D9 jne near ptr 0000000180547280h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805474DF mov rax,[18189B7B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x1805474E6 test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1805474ED je short 0000000180547507h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805474EF cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1805474F6 jne short 0000000180547507h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805474F8 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805474FB call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547500 mov rax,[18189B7B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x180547507 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x18054750E xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180547510 mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x180547513 mov rbx,[rax]		; DEBUG: {Register}/RBX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x180547516 call 00000001804C6330h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054751B sub eax,esi		; DEBUG: {Register}/EAX {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x18054751D xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x180547520 mov r8d,eax		; DEBUG: {Register}/R8D {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x180547523 mov edx,esi		; DEBUG: {Register}/EDX {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x180547525 mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x180547528 call 0000000180D54280h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054752D test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180547530 je near ptr 0000000180547626h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547536 mov r8,[181860498h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468011160 | None ||| N/A | N/A
+		0x18054753D mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180547540 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180547543 call 0000000180B0AF40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547548 mov rax,[18189B7B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x18054754F test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x180547556 je near ptr 00000001805475F3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054755C cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x180547563 jne near ptr 00000001805475F3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547569 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18054756C call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547571 jmp short 00000001805475ECh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547573 mov rax,[18189B7B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x18054757A test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x180547581 je short 000000018054759Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547583 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x18054758A jne short 000000018054759Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054758C mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18054758F call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547594 mov rax,[18189B7B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x18054759B mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1805475A2 sub ebx,esi		; DEBUG: {Register}/EBX {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x1805475A4 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1805475A7 mov r8d,ebx		; DEBUG: {Register}/R8D {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x1805475AA mov edx,esi		; DEBUG: {Register}/EDX {Register}/ESI ||| None | 0 | None ||| N/A | N/A
+		0x1805475AC mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x1805475AF mov rdi,[rax]		; DEBUG: {Register}/RDI {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1805475B2 call 0000000180D54280h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805475B7 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805475BA je short 0000000180547626h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805475BC mov r8,[18187A680h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468118144 | None ||| N/A | N/A
+		0x1805475C3 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1805475C6 mov rdx,[1818676E8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468040424 | None ||| N/A | N/A
+		0x1805475CD mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805475D0 call 0000000180D53370h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805475D5 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1805475D8 je short 0000000180547626h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805475DA mov r8,[181860498h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468011160 | None ||| N/A | N/A
+		0x1805475E1 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805475E4 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1805475E7 call 0000000180B0AF40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805475EC mov rax,[18189B7B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x1805475F3 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1805475FA mov rax,[rax]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1805475FD mov r15,[rsp+20h]		; DEBUG: {Register}/R15 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x180547602 mov r14,[rsp+28h]		; DEBUG: {Register}/R14 {Memory}/None ||| RSP | 40 | None ||| N/A | N/A
+		0x180547607 mov rdi,[rsp+58h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 88 | None ||| N/A | N/A
+		0x18054760C mov rsi,[rsp+50h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x180547611 mov rbp,[rsp+48h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x180547616 mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x18054761B add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18054761F pop r13		; DEBUG: {Register}/R13 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547621 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547622 xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x180547624 jmp short 00000001805475FDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180547626 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180547628 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18054762D int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method BetterList`1<System.String> ByteReader::ReadCSV():
+		End of function at 0x18054762E
+		Absolute End is at 0x18054762E
+		Identified Jump Destination addresses:
+			0x180547331
+			0x1805474BD
+			0x1805475EC
+		0x1805471C0: Saves the content of r13 to the stack
+		0x1805471C6: Compares {Unknown Global at 0x18183EAF1, first ten bytes are [202 1 0 28 61 103 1 16 202 1], or as chars "Ê =gÊ"} and 0
+		0x1805471CD: Copies {'this' (function parameter, type ByteReader)} from rcx into r13
+		0x1805471D0: Jumps to 0x1805471E4 if {Unknown Global at 0x18183EAF1, first ten bytes are [202 1 0 28 61 103 1 16 202 1], or as chars "Ê =gÊ"} != 0
+
+		0x1805471D2: Loads string "À" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1805471D8: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1805471E4: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rax
+		0x1805471EB: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1805471F2: Jumps to 0x18054720C if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1805471F4: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1805471FB: Jumps to 0x18054720C if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1805471FD: Copies {'ByteReader' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x180547200: Calls the il2cpp cctor for the type ByteReader
+		0x180547205: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rax
+		0x18054720C: Loads the pointer to the static fields for ByteReader and stores it in constant10 in register rax
+		0x180547222: [!] Reads the static field BetterList`1<System.String> ByteReader::mTemp into new local mTemp
+		0x180547234: [!] Compares {'mTemp' (type BetterList`1<System.String>)} and 0
+		0x180547237: Jumps to 0x180547626 (which throws a NRE) if mTemp equals 0. Implicitly present in managed code, so ignored here.
+		0x18054723D: Loads the global generic method reference for method System.Void BetterList`1::Clear() on type BetterList`1<System.String> and stores the result in constant {'Clear' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x180547244: [!] Calls managed method System.Void BetterList`1::Clear() on instance {'mTemp' (type BetterList`1<System.String>)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x180547249: Loads the type definition for managed type System.String as a constant "String" in rax
+		0x180547250: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180547257: Jumps to 0x180547271 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180547259: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180547260: Jumps to 0x180547271 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180547262: Copies {'String' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x180547265: Calls the il2cpp cctor for the type System.String
+		0x18054726A: Loads the type definition for managed type System.String as a constant "String" in rax
+		0x180547271: Loads the pointer to the static fields for System.String and stores it in constant19 in register rax
+		0x180547278: Clears register rbp, yielding zero-local {'local2' (type System.Int32)}
+		0x18054727B: Clears register rsi, yielding zero-local {'local3' (type System.Int32)}
+		0x18054727D: [!] Reads the static field System.String System.String::Empty into new local empty
+		0x180547280: [!] Reads field mBuffer from {'this' (function parameter, type ByteReader)} and stores in a new local {'mBuffer' (type System.Byte[])}
+
+		0x180547284: [!] Compares {'mBuffer' (type System.Byte[])} and 0
+		0x180547287: Jumps to 0x180547622 (which is an if statement's body) if mBuffer equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18054728D: Reads the length of the array "{'mBuffer' (type System.Byte[])}" and stores it in new local {'length' (type System.Int32)} in register rax
+		0x180547290: [!] Compares {field mOffset, read from local {'this' (function parameter, type ByteReader)}} and {'length' (type System.Int32)}
+		0x180547294: Jumps to 0x180547622 (which is an if statement's body) if {field mOffset, read from local {'this' (function parameter, type ByteReader)}} is greater than or equal to {'length' (type System.Int32)} ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18054729D: Copies {'this' (function parameter, type ByteReader)} from r13 into rcx
+		0x1805472A0: [!] Compares {'local2' (type System.Int32)} and 0
+		0x1805472A3: Jumps to 0x1805472D2 if {'local2' (type System.Int32)} != 0 ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x1805472A5: [!] Writes the constant 0x1 into operand {'local8' (type System.UInt64)} (type UInt64) in register rdx
+		0x1805472A7: [!] Calls managed method System.String ByteReader::ReadLine(System.Boolean) on instance {'this' (function parameter, type ByteReader)} with arguments [{'local8' (type System.UInt64)}] and stores the result in {'string' (type System.String)}
+
+		0x1805472AC: [!] Compares {'string' (type System.String)} and 0
+		0x1805472AF: Jumps to 0x180547622 if string equals 0 ;  - This is probably a goto, jumping to 0x180547622 which is after end of current block @ 0x1805472D2 (started at 0x1805472A5)
+
+		0x1805472B5: Loads the string literal "
+" as a constant "constant23" in r8
+		0x1805472BF: Loads the string literal "\n" as a constant "constant24" in rdx
+		0x1805472C6: Copies {'string' (type System.String)} from rax into rcx
+		0x1805472C9: [!] Calls managed method System.String System.String::Replace(System.String,System.String) on instance {'string' (type System.String)} with arguments ["\n", "
+"] and stores the result in {'string2' (type System.String)}
+
+		0x1805472D0: Jumps to 0x180547331 (which is an function-local jump destination)
+
+		0x1805472D2: Clears register rdx, yielding zero-local {'local13' (type System.Int32)}
+		0x1805472D4: [!] Calls managed method System.String ByteReader::ReadLine(System.Boolean) on instance {'this' (function parameter, type ByteReader)} with arguments [{'local13' (type System.Int32)}] and stores the result in {'string3' (type System.String)}
+
+		0x1805472D9: [!] Compares {'string3' (type System.String)} and 0
+		0x1805472DC: Jumps to 0x180547622 if string3 equals 0 ;  - This is probably a goto, jumping to 0x180547622 which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x1805472E2: Loads the string literal "
+" as a constant "constant26" in r8
+		0x1805472EC: Loads the string literal "\n" as a constant "constant27" in rdx
+		0x1805472F3: Copies {'string3' (type System.String)} from rax into rcx
+		0x1805472F6: [!] Calls managed method System.String System.String::Replace(System.String,System.String) on instance {'string3' (type System.String)} with arguments ["\n", "
+"] and stores the result in {'string4' (type System.String)}
+
+		0x1805472FB: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x180547302: Copies {'string4' (type System.String)} from rax into rbx
+		0x180547305: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18054730C: Jumps to 0x18054731C if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18054730E: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180547315: Jumps to 0x18054731C if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180547317: Calls the il2cpp cctor for the type System.String
+		0x18054731C: Loads the string literal "
+" as a constant "constant33" in rdx
+		0x180547326: Copies {'string4' (type System.String)} from rbx into r8
+		0x180547329: Copies {'empty' (type System.String)} from r14 into rcx
+		0x18054732C: [!] Calls static managed method System.String System.String::Concat(System.String,System.String,System.String) with arguments [{'empty' (type System.String)}, "
+", {'string4' (type System.String)}] and stores the result in {'string5' (type System.String)}
+
+
+		End Of If-Else Block (at 0x180547331) where the else started at 0x1805472D2
+		0x180547331: Copies {'string5' (type System.String)} from rax into r14
+		0x180547334: Copies {'local3' (type System.Int32)} from rsi into rbx
+		0x180547336: [!] Compares {'string5' (type System.String)} and 0
+		0x180547339: Jumps to 0x180547626 (which throws a NRE) if string5 equals 0. Implicitly present in managed code, so ignored here.
+		0x180547341: Copies {'string5' (type System.String)} from rax into rcx
+		0x180547344: [!] Calls managed method System.Int32 System.String::get_Length() on instance {'string5' (type System.String)} and stores the result in {'length2' (type System.Int32)}
+
+		0x180547349: Copies {'length2' (type System.Int32)} from rax into r15
+		0x18054734C: [!] Compares {'local3' (type System.Int32)} and {'length2' (type System.Int32)}
+		0x18054734E: Jumps to 0x1805474C8 if {'local3' (type System.Int32)} is greater than or equal to {'length2' (type System.Int32)} ;  - This is probably a goto, jumping to 0x1805474C8 which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x180547363: Copies {'local3' (type System.Int32)} from rbx into rdx
+		0x180547365: Copies {'string5' (type System.String)} from r14 into rcx
+		0x180547368: [!] Calls managed method System.Char System.String::get_Chars(System.Int32) on instance {'string5' (type System.String)} with arguments [{'local3' (type System.Int32)}] and stores the result in {'chars' (type System.Char)}
+
+		0x18054736D: [!] Compares {'chars' (type System.Char)} and {'constant35' (constant value of type System.Char)}
+		0x180547371: Jumps to 0x180547455 if chars equals constant35 ;  - This is probably a goto, jumping to 0x180547455 which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x180547377: [!] Compares {'chars' (type System.Char)} and {'constant36' (constant value of type System.Char)}
+		0x18054737B: Jumps to 0x1805474BD if {'chars' (type System.Char)} != {'constant36' (constant value of type System.Char)} ;  - This is probably a goto, jumping to 0x1805474BD which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x180547381: [!] Loads the constant value 1 into the register rdi as constant constant37 using an LEA instruction
+		0x180547384: [!] Compares {'local2' (type System.Int32)} and 0
+		0x180547387: Jumps to 0x180547393 if {'local2' (type System.Int32)} != 0 ;  - This is probably a goto, jumping to 0x180547393 which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x180547389: Copies 1 from rdi into rsi
+		0x18054738E: Jumps to 0x1805474BD (which is an function-local jump destination)
+
+		0x180547393: [!] Compares 1 and {'length2' (type System.Int32)}
+		0x180547396: Jumps to 0x180547573 if 1 is greater than or equal to {'length2' (type System.Int32)} ;  - This is probably a goto, jumping to 0x180547573 which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x18054739F: Copies 1 from rdi into rdx
+		0x1805473A1: Copies {'string5' (type System.String)} from r14 into rcx
+		0x1805473A4: [!] Calls managed method System.Char System.String::get_Chars(System.Int32) on instance {'string5' (type System.String)} with arguments [1] and stores the result in {'chars2' (type System.Char)}
+
+		0x1805473A9: [!] Compares {'chars2' (type System.Char)} and {'constant39' (constant value of type System.Char)}
+		0x1805473AD: Jumps to 0x1805473B6 if {'chars2' (type System.Char)} != {'constant39' (constant value of type System.Char)} ;  - This is probably a goto, jumping to 0x1805473B6 which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x1805473AF: Copies 1 from rdi into rbx
+		0x1805473B1: Jumps to 0x1805474BD (which is an function-local jump destination)
+
+		0x1805473B6: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rax
+		0x1805473BD: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1805473C4: Jumps to 0x1805473DE if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1805473DE which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x1805473C6: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1805473CD: Jumps to 0x1805473DE if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1805473DE which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x1805473CF: Copies {'ByteReader' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1805473D2: Calls the il2cpp cctor for the type ByteReader
+		0x1805473D7: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rax
+		0x1805473DE: Loads the pointer to the static fields for ByteReader and stores it in constant46 in register rax
+		0x1805473E5: Copies 1 from rbx into r8
+		0x1805473E8: [!] Subtracts 1 from  and stores the result in 
+		0x1805473EE: Copies 1 from rsi into rdx
+		0x1805473F0: Copies {'string5' (type System.String)} from r14 into rcx
+		0x1805473F3: [!] Reads the static field BetterList`1<System.String> ByteReader::mTemp into new local mTemp2
+		0x1805473F6: [!] Calls managed method System.String System.String::Substring(System.Int32,System.Int32) on instance {'string5' (type System.String)} with arguments [1, 1] and stores the result in {'string6' (type System.String)}
+
+		0x1805473FB: [!] Compares {'string6' (type System.String)} and 0
+		0x1805473FE: Jumps to 0x180547626 (which throws a NRE) if string6 equals 0. Implicitly present in managed code, so ignored here.
+		0x180547404: Loads the string literal """ as a constant "constant48" in r8
+		0x18054740E: Loads the string literal """" as a constant "constant49" in rdx
+		0x180547415: Copies {'string6' (type System.String)} from rax into rcx
+		0x180547418: [!] Calls managed method System.String System.String::Replace(System.String,System.String) on instance {'string6' (type System.String)} with arguments ["""", """] and stores the result in {'string7' (type System.String)}
+
+		0x18054741D: [!] Compares {'mTemp2' (type BetterList`1<System.String>)} and 0
+		0x180547420: Jumps to 0x180547626 (which throws a NRE) if mTemp2 equals 0. Implicitly present in managed code, so ignored here.
+		0x180547426: Loads the global generic method reference for method System.Void BetterList`1::Add(T) on type BetterList`1<System.String> and stores the result in constant {'Add' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x18054742D: Copies {'string7' (type System.String)} from rax into rdx
+		0x180547430: Copies {'mTemp2' (type BetterList`1<System.String>)} from rbp into rcx
+		0x180547433: [!] Calls managed method System.Void BetterList`1::Add(T) on instance {'mTemp2' (type BetterList`1<System.String>)} with arguments [{'string7' (type System.String)}] ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18054743B: Copies 1 from rdi into rdx
+		0x18054743D: Copies {'string5' (type System.String)} from r14 into rcx
+		0x180547440: Clears register rbp, yielding zero-local {'local32' (type System.Int32)}
+		0x180547443: [!] Calls managed method System.Char System.String::get_Chars(System.Int32) on instance {'string5' (type System.String)} with arguments [1] and stores the result in {'chars3' (type System.Char)}
+
+		0x180547448: [!] Compares {'chars3' (type System.Char)} and {'constant52' (constant value of type System.Char)}
+		0x18054744C: Jumps to 0x1805474BD if {'chars3' (type System.Char)} != {'constant52' (constant value of type System.Char)} ;  - This is probably a goto, jumping to 0x1805474BD which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x18054744E: Copies 1 from rdi into rbx
+		0x180547453: Jumps to 0x1805474BD (which is an function-local jump destination)
+
+		0x180547455: [!] Compares {'local32' (type System.Int32)} and 0
+		0x180547458: Jumps to 0x1805474BD if {'local32' (type System.Int32)} != 0 ;  - This is probably a goto, jumping to 0x1805474BD which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x18054745A: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rax
+		0x180547461: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180547468: Jumps to 0x180547482 if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x180547482 which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x18054746A: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180547471: Jumps to 0x180547482 if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x180547482 which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x180547473: Copies {'ByteReader' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x180547476: Calls the il2cpp cctor for the type ByteReader
+		0x18054747B: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rax
+		0x180547482: Loads the pointer to the static fields for ByteReader and stores it in constant60 in register rax
+		0x180547489: Copies 1 from rbx into r8
+		0x18054748C: [!] Subtracts 1 from  and stores the result in 
+		0x180547492: Copies 1 from rsi into rdx
+		0x180547494: Copies {'string5' (type System.String)} from r14 into rcx
+		0x180547497: [!] Reads the static field BetterList`1<System.String> ByteReader::mTemp into new local mTemp3
+		0x18054749A: [!] Calls managed method System.String System.String::Substring(System.Int32,System.Int32) on instance {'string5' (type System.String)} with arguments [1, 1] and stores the result in {'string8' (type System.String)}
+
+		0x18054749F: [!] Compares {'mTemp3' (type BetterList`1<System.String>)} and 0
+		0x1805474A2: Jumps to 0x180547626 (which throws a NRE) if mTemp3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1805474A8: Loads the global generic method reference for method System.Void BetterList`1::Add(T) on type BetterList`1<System.String> and stores the result in constant {'Add' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x1805474AF: Copies {'string8' (type System.String)} from rax into rdx
+		0x1805474B2: Copies {'mTemp3' (type BetterList`1<System.String>)} from rdi into rcx
+		0x1805474B5: [!] Calls managed method System.Void BetterList`1::Add(T) on instance {'mTemp3' (type BetterList`1<System.String>)} with arguments [{'string8' (type System.String)}] ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+
+		Jump Destination (0x1805474BD):
+		0x1805474BD: [!] Adds 1 to the value , stored in rbx
+		0x1805474BF: [!] Compares 1 and {'length2' (type System.Int32)}
+		0x1805474CA: Copies {'string5' (type System.String)} from r14 into rcx
+		0x1805474CD: [!] Calls managed method System.Int32 System.String::get_Length() on instance {'string5' (type System.String)} and stores the result in {'length3' (type System.Int32)}
+
+		0x1805474D2: [!] Compares 1 and {'length3' (type System.Int32)}
+		0x1805474D4: Jumps to 0x180547548 if 1 is greater than or equal to {'length3' (type System.Int32)} ;  - This is probably a goto, jumping to 0x180547548 which is after end of current block @ 0x180547331 (started at 0x1805472D2)
+
+		0x1805474D6: [!] Compares {'local32' (type System.Int32)} and 0
+		0x1805474D9: Jumps to 0x180547280 (which is an if statement's body) if {'local32' (type System.Int32)} != 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1805474DF: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rax
+		0x1805474E6: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1805474ED: Jumps to 0x180547507 if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x180547507 which is after end of current block @ 0x180547280 (started at 0x1805474DF)
+
+		0x1805474EF: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1805474F6: Jumps to 0x180547507 if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x180547507 which is after end of current block @ 0x180547280 (started at 0x1805474DF)
+
+		0x1805474F8: Copies {'ByteReader' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1805474FB: Calls the il2cpp cctor for the type ByteReader
+		0x180547500: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rax
+		0x180547507: Loads the pointer to the static fields for ByteReader and stores it in constant70 in register rax
+		0x180547510: Copies {'string5' (type System.String)} from r14 into rcx
+		0x180547513: [!] Reads the static field BetterList`1<System.String> ByteReader::mTemp into new local mTemp4
+		0x180547516: [!] Calls managed method System.Int32 System.String::get_Length() on instance {'string5' (type System.String)} and stores the result in {'length4' (type System.Int32)}
+
+		0x18054751B: [!] Subtracts 1 from {'length4' (type System.Int32)} and stores the result in {'length4' (type System.Int32)}
+		0x180547520: Copies {'length4' (type System.Int32)} from rax into r8
+		0x180547523: Copies 1 from rsi into rdx
+		0x180547525: Copies {'string5' (type System.String)} from r14 into rcx
+		0x180547528: [!] Calls managed method System.String System.String::Substring(System.Int32,System.Int32) on instance {'string5' (type System.String)} with arguments [1, {'length4' (type System.Int32)}] and stores the result in {'string9' (type System.String)}
+
+		0x18054752D: [!] Compares {'mTemp4' (type BetterList`1<System.String>)} and 0
+		0x180547530: Jumps to 0x180547626 (which throws a NRE) if mTemp4 equals 0. Implicitly present in managed code, so ignored here.
+		0x180547536: Loads the global generic method reference for method System.Void BetterList`1::Add(T) on type BetterList`1<System.String> and stores the result in constant {'Add' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x18054753D: Copies {'string9' (type System.String)} from rax into rdx
+		0x180547540: Copies {'mTemp4' (type BetterList`1<System.String>)} from rbx into rcx
+		0x180547543: [!] Calls managed method System.Void BetterList`1::Add(T) on instance {'mTemp4' (type BetterList`1<System.String>)} with arguments [{'string9' (type System.String)}] ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x180547548: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rax
+		0x18054754F: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180547556: Jumps to 0x1805475F3 if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1805475F3 which is after end of current block @ 0x180547280 (started at 0x1805474DF)
+
+		0x18054755C: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180547563: Jumps to 0x1805475F3 if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1805475F3 which is after end of current block @ 0x180547280 (started at 0x1805474DF)
+
+		0x180547569: Copies {'ByteReader' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x18054756C: Calls the il2cpp cctor for the type ByteReader
+		0x180547571: Jumps to 0x1805475EC (which is an function-local jump destination)
+
+		0x180547573: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rax
+		0x18054757A: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180547581: Jumps to 0x18054759B if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18054759B which is after end of current block @ 0x180547280 (started at 0x1805474DF)
+
+		0x180547583: Compares "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18054758A: Jumps to 0x18054759B if "{il2cpp field on {'ByteReader' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18054759B which is after end of current block @ 0x180547280 (started at 0x1805474DF)
+
+		0x18054758C: Copies {'ByteReader' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x18054758F: Calls the il2cpp cctor for the type ByteReader
+		0x180547594: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rax
+		0x18054759B: Loads the pointer to the static fields for ByteReader and stores it in constant84 in register rax
+		0x1805475A2: [!] Subtracts 1 from {'mTemp4' (type BetterList`1<System.String>)} and stores the result in {'mTemp4' (type BetterList`1<System.String>)}
+		0x1805475A7: Copies {'mTemp4' (type BetterList`1<System.String>)} from rbx into r8
+		0x1805475AA: Copies 1 from rsi into rdx
+		0x1805475AC: Copies {'string5' (type System.String)} from r14 into rcx
+		0x1805475AF: [!] Reads the static field BetterList`1<System.String> ByteReader::mTemp into new local mTemp5
+		0x1805475B2: [!] Calls managed method System.String System.String::Substring(System.Int32,System.Int32) on instance {'string5' (type System.String)} and stores the result in {'string10' (type System.String)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1805475B7: [!] Compares {'string10' (type System.String)} and 0
+		0x1805475BA: Jumps to 0x180547626 (which throws a NRE) if string10 equals 0. Implicitly present in managed code, so ignored here.
+		0x1805475BC: Loads the string literal """ as a constant "constant86" in r8
+		0x1805475C6: Loads the string literal """" as a constant "constant87" in rdx
+		0x1805475CD: Copies {'string10' (type System.String)} from rax into rcx
+		0x1805475D0: [!] Calls managed method System.String System.String::Replace(System.String,System.String) on instance {'string10' (type System.String)} with arguments ["""", """] and stores the result in {'string11' (type System.String)}
+
+		0x1805475D5: [!] Compares {'mTemp5' (type BetterList`1<System.String>)} and 0
+		0x1805475D8: Jumps to 0x180547626 (which throws a NRE) if mTemp5 equals 0. Implicitly present in managed code, so ignored here.
+		0x1805475DA: Loads the global generic method reference for method System.Void BetterList`1::Add(T) on type BetterList`1<System.String> and stores the result in constant {'Add' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x1805475E1: Copies {'string11' (type System.String)} from rax into rdx
+		0x1805475E4: Copies {'mTemp5' (type BetterList`1<System.String>)} from rdi into rcx
+		0x1805475E7: [!] Calls managed method System.Void BetterList`1::Add(T) on instance {'mTemp5' (type BetterList`1<System.String>)} with arguments [{'string11' (type System.String)}] ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+
+		Jump Destination (0x1805475EC):
+		0x1805475EC: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rax
+		0x1805475F3: Loads the pointer to the static fields for ByteReader and stores it in constant91 in register rax
+		0x1805475FA: [!] Reads the static field BetterList`1<System.String> ByteReader::mTemp into new local mTemp6
+
+		Potential Loop Start (0x1805475FD):
+		0x1805475FD: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register r15 as new constant constant92
+		0x180547602: Reads unknown value in stack, offset 40 (0x28) and stores the pointer in register r14 as new constant constant93
+		0x180547607: Reads unknown value in stack, offset 88 (0x58) and stores the pointer in register rdi as new constant constant94
+		0x18054760C: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register rsi as new constant constant95
+		0x180547611: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rbp as new constant constant96
+		0x180547616: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant97
+		0x180547621: [!] Returns {'mTemp6' (type BetterList`1<System.String>)} from the function
+
+		0x180547624: Jumps to 0x1805475FD - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x180547628: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ByteReader
+	BetterList`1<System.String> ReadCSV()
+		BetterList`1<System.String> mTemp = ByteReader.mTemp
+
+		mTemp.Clear()
+		ulong local2 = 0
+		ulong local3 = 0
+		System.String empty = System.String.Empty
+		System.Byte[] mBuffer = this.mBuffer
+
+		if (mBuffer != 0)
+		    System.Int32 length = mBuffer.Length
+
+		    if (this.mOffset < length)
+
+		        if (local2 == 0)
+		            System.Int64 local8 = 1
+
+		            System.String string = this.ReadLine(local8) //(Boolean skipEmptyLines)
+
+		            if (string == 0)
+                        goto INSN_180547622
+                    endif
+
+		            System.String string2 = string.Replace("\n", "
+                    ") //(String oldValue, String newValue)
+		        else
+		            ulong local13 = 0
+
+		            System.String string3 = this.ReadLine(local13) //(Boolean skipEmptyLines)
+
+		            if (string3 == 0)
+                        goto INSN_180547622
+                    endif
+
+		            System.String string4 = string3.Replace("\n", "
+                    ") //(String oldValue, String newValue)
+
+		            System.String string5 = System.String.Concat(empty, "
+                    ", string4) //(String str0, String str1, String str2)
+		        endif
+                
+
+		        System.Int32 length2 = string5.Length
+
+		        if (local3 >= length2)
+                    goto INSN_1805474C8
+                endif
+
+		        System.Char chars = string5.Chars
+
+		        if (chars == constant35)
+                    goto INSN_180547455
+                endif
+
+		        if (chars != constant36)
+                    goto INSN_1805474BD
+                endif
+		        System.Int32 1 = 1
+
+		        if (local2 != 0)
+                    goto INSN_180547393
+                endif
+
+		        INSN_180547393:
+
+		        if (1 >= length2)
+                    goto INSN_180547573
+                endif
+
+		        System.Char chars2 = string5.Chars
+
+		        if (chars2 != constant39)
+                    goto INSN_1805473B6
+                endif
+
+		        INSN_1805473B6:
+		         -= 1
+		        BetterList`1<System.String> mTemp2 = ByteReader.mTemp
+
+		        System.String string6 = string5.Substring(1, 1) //(Int32 startIndex, Int32 length)
+
+		        System.String string7 = string6.Replace("""", """) //(String oldValue, String newValue)
+
+		        mTemp2.Add(string7) //(T item)
+		        ulong local32 = 0
+
+		        System.Char chars3 = string5.Chars
+
+		        if (chars3 != constant52)
+                    goto INSN_1805474BD
+                endif
+
+		        INSN_180547455:
+
+		        if (local32 != 0)
+                    goto INSN_1805474BD
+                endif
+		         -= 1
+		        BetterList`1<System.String> mTemp3 = ByteReader.mTemp
+
+		        System.String string8 = string5.Substring(1, 1) //(Int32 startIndex, Int32 length)
+
+		        mTemp3.Add(string8) //(T item)
+
+		        INSN_1805474BD:
+		         += 1
+
+		        INSN_1805474C8:
+
+		        System.Int32 length3 = string5.Length
+
+		        if (1 >= length3)
+                    goto INSN_180547548
+                endif
+
+		        if (local32 == 0)
+		            BetterList`1<System.String> mTemp4 = ByteReader.mTemp
+
+		            System.Int32 length4 = string5.Length
+		            length4 -= 1
+
+		            System.String string9 = string5.Substring(1, length4) //(Int32 startIndex, Int32 length)
+
+		            mTemp4.Add(string9) //(T item)
+
+		            INSN_180547548:
+
+		            INSN_180547573:
+		            mTemp4 -= 1
+		            BetterList`1<System.String> mTemp5 = ByteReader.mTemp
+
+		            System.String string10 = string5.Substring()
+
+		            System.String string11 = string10.Replace("""", """) //(String oldValue, String newValue)
+
+		            mTemp5.Add(string11) //(T item)
+		            BetterList`1<System.String> mTemp6 = ByteReader.mTemp
+		            return mTemp6
+		        endif
+                
+		        throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.JumpIfZeroOrNullAction at (0x180547371) is corrupt (ConstantDefinition: Don't know how to get IL to load a System.Char) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void ByteReader::.cctor():	Method Body (x86 ASM):
+		0x1805479C0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1805479C2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1805479C6 cmp byte ptr [18183EAF2h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873522 | None ||| N/A | 0
+		0x1805479CD jne short 00000001805479E1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805479CF mov ecx,[181515DB0h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464560560 | None ||| N/A | N/A
+		0x1805479D5 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805479DA mov byte ptr [18183EAF2h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467873522 | None ||| N/A | 1
+		0x1805479E1 mov rcx,[18189B7C8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468253640 | None ||| N/A | N/A
+		0x1805479E8 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805479ED mov rdx,[181860478h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468011128 | None ||| N/A | N/A
+		0x1805479F4 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805479F7 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1805479FA call 00000001808CDE20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1805479FF mov rcx,[18189B7B0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468253616 | None ||| N/A | N/A
+		0x180547A06 mov rdx,[rcx+0B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RCX | 184 | None ||| N/A | N/A
+		0x180547A0D mov [rdx],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RDX | 0 | None ||| N/A | N/A
+		0x180547A10 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180547A14 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547A15 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180547A16 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.Void ByteReader::.cctor():
+		End of function at 0x180547A17
+		Absolute End is at 0x180547A17
+		Identified Jump Destination addresses:
+
+		0x1805479C0: Saves the content of rbx to the stack
+		0x1805479C6: Compares {Unknown Global at 0x18183EAF2, first ten bytes are [1 0 28 61 103 1 16 202 1 0], or as chars " =gÊ "} and 0
+		0x1805479CD: Jumps to 0x1805479E1 if {Unknown Global at 0x18183EAF2, first ten bytes are [1 0 28 61 103 1 16 202 1 0], or as chars " =gÊ "} != 0
+
+		0x1805479CF: Loads string "Ä" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1805479D5: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1805479E1: Loads the type definition for managed type BetterList`1<System.String> as a constant "BetterList`1" in rcx
+		0x1805479E8: [!] Allocates an instance of type BetterList`1<System.String> and stores it as betterList in rax.
+
+		0x1805479ED: Loads the global generic method reference for method System.Void BetterList`1::.ctor() on type BetterList`1<System.String> and stores the result in constant {'.ctor' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x1805479F4: Copies {'betterList' (type BetterList`1<System.String>)} from rax into rcx
+		0x1805479F7: Copies {'betterList' (type BetterList`1<System.String>)} from rax into rbx
+		0x1805479FA: [!] Calls managed method System.Void BetterList`1::.ctor() on instance {'betterList' (type BetterList`1<System.String>)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x1805479FF: Loads the type definition for managed type ByteReader as a constant "ByteReader" in rcx
+		0x180547A06: Loads the pointer to the static fields for ByteReader and stores it in constant7 in register rdx
+		0x180547A0D: [!] Sets static field ByteReader.mTemp to {'betterList' (type BetterList`1<System.String>)}
+		0x180547A15: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: ByteReader
+	static System.Void .cctor()
+		BetterList`1<System.String> betterList = new BetterList`1<System.String>()
+
+		betterList..ctor()
+		ByteReader.mTemp = betterList
+		return
+
+
+Generated IL:
+	IL_0000: newobj System.Void BetterList`1::.ctor()
+	IL_0005: stsfld BetterList`1<System.String> ByteReader::mTemp
+	IL_000a: ret
+	
+

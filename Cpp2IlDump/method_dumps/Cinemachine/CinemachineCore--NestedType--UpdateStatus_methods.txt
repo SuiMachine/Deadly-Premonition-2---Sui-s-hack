@@ -1,0 +1,83 @@
+Type: UpdateStatus
+
+Method: System.Void Cinemachine.CinemachineCore/UpdateStatus::.ctor(System.Int32):	Method Body (x86 ASM):
+		0x180092FE0 add rcx,10h		; DEBUG: {Register}/RCX {Immediate8to64}/None ||| None | 0 | None ||| N/A | 16
+		0x180092FE4 jmp near ptr 00000001808BFF20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180092FE9 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Cinemachine.CinemachineCore/UpdateStatus::.ctor(System.Int32):
+		End of function at 0x180092FEA
+		Absolute End is at 0x180092FEA
+		Identified Jump Destination addresses:
+
+		0x180092FE0: Loads the pointer to the field numWindowFixedUpdateMoves on {'this' (function parameter, type Cinemachine.CinemachineCore/UpdateStatus)} into register rcx
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachineCore/UpdateStatus
+	System.Void .ctor(System.Int32 currentFrame)
+
+
+Generated IL:
+	
+
+Method: Cinemachine.CinemachineCore/UpdateFilter Cinemachine.CinemachineCore/UpdateStatus::ChoosePreferredUpdate(System.Int32,UnityEngine.Matrix4x4,Cinemachine.CinemachineCore/UpdateFilter):	Method Body (x86 ASM):
+		0x180092F90 sub rsp,78h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 120
+		0x180092F94 movups xmm0,[r8]		; DEBUG: {Register}/XMM0 {Memory}/None ||| R8 | 0 | None ||| N/A | N/A
+		0x180092F98 mov rax,[rsp+0A0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 160 | None ||| N/A | N/A
+		0x180092FA0 add rcx,10h		; DEBUG: {Register}/RCX {Immediate8to64}/None ||| None | 0 | None ||| N/A | 16
+		0x180092FA4 movups xmm1,[r8+10h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| R8 | 16 | None ||| N/A | N/A
+		0x180092FA9 mov [rsp+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 32 | None ||| N/A | N/A
+		0x180092FAE movaps [rsp+30h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 48 | None ||| N/A | N/A
+		0x180092FB3 movups xmm0,[r8+20h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| R8 | 32 | None ||| N/A | N/A
+		0x180092FB8 movaps [rsp+40h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 64 | None ||| N/A | N/A
+		0x180092FBD movups xmm1,[r8+30h]		; DEBUG: {Register}/XMM1 {Memory}/None ||| R8 | 48 | None ||| N/A | N/A
+		0x180092FC2 lea r8,[rsp+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x180092FC7 movaps [rsp+50h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 80 | None ||| N/A | N/A
+		0x180092FCC movaps [rsp+60h],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RSP | 96 | None ||| N/A | N/A
+		0x180092FD1 call 00000001808BFD80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180092FD6 add rsp,78h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 120
+		0x180092FDA ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180092FDB int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method Cinemachine.CinemachineCore/UpdateFilter Cinemachine.CinemachineCore/UpdateStatus::ChoosePreferredUpdate(System.Int32,UnityEngine.Matrix4x4,Cinemachine.CinemachineCore/UpdateFilter):
+		End of function at 0x180092FDC
+		Absolute End is at 0x180092FDC
+		Identified Jump Destination addresses:
+
+		0x180092F94: Loads the class pointer from pos into a constant constant1 in register xmm0
+		0x180092F98: Reads unknown value in stack, offset 160 (0xA0) and stores the pointer in register rax as new constant constant2
+		0x180092FA0: Loads the pointer to the field numWindowFixedUpdateMoves on {'this' (function parameter, type Cinemachine.CinemachineCore/UpdateStatus)} into register rcx
+		0x180092FA4: [!] Reads field m01 from {'pos' (function parameter, type UnityEngine.Matrix4x4)} and stores in a new local {'single' (type System.Single)}
+
+		0x180092FA9: Moves constant2 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rax to the stack at offset 32 (0x20) as a new local local5
+		0x180092FAE: Moves constant1 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 48 (0x30) as a new local local6
+		0x180092FB3: [!] Reads field m02 from {'pos' (function parameter, type UnityEngine.Matrix4x4)} and stores in a new local {'single2' (type System.Single)}
+
+		0x180092FB8: Moves single (type System.Single) from register xmm1 to the stack at offset 64 (0x40)
+		0x180092FBD: [!] Reads field m03 from {'pos' (function parameter, type UnityEngine.Matrix4x4)} and stores in a new local {'single3' (type System.Single)}
+
+		0x180092FC2: Loads a pointer to stack offset 0x30 into register r8 as new constant constant4
+		0x180092FC7: Moves single2 (type System.Single) from register xmm0 to the stack at offset 80 (0x50)
+		0x180092FCC: Moves single3 (type System.Single) from register xmm1 to the stack at offset 96 (0x60)
+		0x180092FDA: [!] Returns {'constant2' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachineCore/UpdateStatus
+	Cinemachine.CinemachineCore/UpdateFilter ChoosePreferredUpdate(System.Int32 currentFrame, UnityEngine.Matrix4x4 pos, Cinemachine.CinemachineCore/UpdateFilter updateFilter)
+		System.Single single = pos.m01
+		System.Single single2 = pos.m02
+		System.Single single3 = pos.m03
+		return constant2
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x180092FDA) is corrupt (ConstantDefinition: Don't know how to get IL to load a Cpp2IL.Core.Analysis.ResultModels.StackPointer) and cannot be created as IL. Aborting here.
+
+

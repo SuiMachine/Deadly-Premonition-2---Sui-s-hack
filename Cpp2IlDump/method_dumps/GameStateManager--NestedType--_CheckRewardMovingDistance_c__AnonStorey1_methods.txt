@@ -1,0 +1,97 @@
+Type: <CheckRewardMovingDistance>c__AnonStorey1
+
+Method: System.Void GameStateManager/<CheckRewardMovingDistance>c__AnonStorey1::.ctor():	Method Body (x86 ASM):
+		0x1802068B0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802068B2 jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802068B7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void GameStateManager/<CheckRewardMovingDistance>c__AnonStorey1::.ctor():
+		End of function at 0x1802068B8
+		Absolute End is at 0x1802068B8
+		Identified Jump Destination addresses:
+
+		0x1802068B2: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type GameStateManager/<CheckRewardMovingDistance>c__AnonStorey1)}
+
+		0x1802068B2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: GameStateManager/<CheckRewardMovingDistance>c__AnonStorey1
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean GameStateManager/<CheckRewardMovingDistance>c__AnonStorey1::<>m__0(MoneyLiquidationInfo):	Method Body (x86 ASM):
+		0x18044BC00 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18044BC04 test rdx,rdx		; DEBUG: {Register}/RDX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18044BC07 je short 000000018044BC20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044BC09 mov rax,[rcx+10h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x18044BC0D test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18044BC10 je short 000000018044BC20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044BC12 mov eax,[rax+10h]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 16 | None ||| N/A | N/A
+		0x18044BC15 cmp [rdx+10h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDX | 16 | None ||| N/A | N/A
+		0x18044BC18 sete al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18044BC1B add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18044BC1F ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18044BC20 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18044BC22 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044BC27 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean GameStateManager/<CheckRewardMovingDistance>c__AnonStorey1::<>m__0(MoneyLiquidationInfo):
+		End of function at 0x18044BC28
+		Absolute End is at 0x18044BC28
+		Identified Jump Destination addresses:
+
+		0x18044BC04: [!] Compares {'i' (function parameter, type MoneyLiquidationInfo)} and 0
+		0x18044BC07: Jumps to 0x18044BC20 (which throws a NRE) if i equals 0. Implicitly present in managed code, so ignored here.
+		0x18044BC09: [!] Reads field rewardInfo from {'this' (function parameter, type GameStateManager/<CheckRewardMovingDistance>c__AnonStorey1)} and stores in a new local {'rewardInfo' (type MovingDistRewardInfo)}
+
+		0x18044BC0D: [!] Compares {'rewardInfo' (type MovingDistRewardInfo)} and 0
+		0x18044BC10: Jumps to 0x18044BC20 (which throws a NRE) if rewardInfo equals 0. Implicitly present in managed code, so ignored here.
+		0x18044BC12: [!] Reads field m_reward from {'rewardInfo' (type MovingDistRewardInfo)} and stores in a new local {'m_reward' (type ESpecialReward)}
+
+		0x18044BC15: [!] Compares {field m_id, read from local {'i' (function parameter, type MoneyLiquidationInfo)}} and {'m_reward' (type ESpecialReward)}
+		0x18044BC18: [!] Sets the boolean {'local4' (type System.Boolean)} in rax to true if i.m_id is equal to m_reward, otherwise false.
+		0x18044BC1F: [!] Returns {'local4' (type System.Boolean)} from the function
+
+		0x18044BC22: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: GameStateManager/<CheckRewardMovingDistance>c__AnonStorey1
+	System.Boolean <>m__0(MoneyLiquidationInfo i)
+		MovingDistRewardInfo rewardInfo = this.rewardInfo
+		ESpecialReward m_reward = rewardInfo.m_reward
+		System.Boolean local4 = i.m_id == m_reward
+		return local4
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld MovingDistRewardInfo GameStateManager/<CheckRewardMovingDistance>c__AnonStorey1::rewardInfo
+	IL_0006: ldfld ESpecialReward MovingDistRewardInfo::m_reward
+	IL_000b: stloc.0
+	IL_000c: ldarg.1
+	IL_000d: ldfld System.Int32 MoneyLiquidationInfo::m_id
+	IL_0012: ldloc.0
+	IL_0013: ceq
+	IL_0015: ret
+	IL_0016: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001b: throw
+	
+

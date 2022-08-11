@@ -1,0 +1,90 @@
+Type: CameraPreRender
+
+Method: System.Void CameraPreRender::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void CameraPreRender::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type CameraPreRender)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: CameraPreRender
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void CameraPreRender::OnPreRender():	Method Body (x86 ASM):
+		0x18022C500 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x18022C504 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18022C507 je short 000000018022C510h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18022C509 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18022C50B jmp near ptr 00000001802ED1F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18022C510 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18022C511 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void CameraPreRender::OnPreRender():
+		End of function at 0x18022C512
+		Absolute End is at 0x18022C512
+		Identified Jump Destination addresses:
+
+		0x18022C500: [!] Reads field m_action from {'this' (function parameter, type CameraPreRender)} and stores in a new local {'m_action' (type System.Action)}
+
+		0x18022C504: [!] Compares {'m_action' (type System.Action)} and 0
+		0x18022C507: Jumps to 0x18022C510 (which is an if statement's body) if m_action equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18022C50B: [!] Calls managed method System.Void System.Action::Invoke() on instance {'m_action' (type System.Action)}
+
+		0x18022C50B: [!] Returns from the function
+
+		0x18022C510: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: CameraPreRender
+	System.Void OnPreRender()
+		System.Action m_action = this.m_action
+
+		if (m_action != 0)
+
+		    m_action.Invoke()
+		    return
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Action CameraPreRender::m_action
+	IL_0006: stloc.0
+	IL_0007: ldloc.0
+	IL_0008: ldc.i4.0
+	IL_0009: beq.s IL_0012
+	IL_000b: ldloc.0
+	IL_000c: call System.Void System.Action::Invoke()
+	IL_0011: ret
+	IL_0012: ret
+	
+

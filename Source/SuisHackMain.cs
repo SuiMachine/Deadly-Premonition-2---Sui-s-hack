@@ -79,14 +79,14 @@ namespace SuisHack
 					GameStateMachine.Gameplay = true;
 					if (Settings.Entry_Other_GeometryImprovements.Value >= ExposedSettings.GeometryImprovements.Enabled)
 					{
-						if (GameObject.FindObjectOfType<Components.WireRenderCorrectionChecker>() == null)
+						if (GameObject.FindObjectOfType<Components.GlobalGeometryChecker>() == null)
 						{
 							var scene = SceneManager.GetSceneByName(OPENWORLDSCENENAME);
 							var oldActiveScene = SceneManager.GetActiveScene();
 							SceneManager.SetActiveScene(scene);
 							var newGameObject = new GameObject("WireRendererCorrection");
 							SceneManager.SetActiveScene(oldActiveScene);
-							newGameObject.AddComponent<Components.WireRenderCorrectionChecker>();
+							newGameObject.AddComponent<Components.GlobalGeometryChecker>();
 						}
 					}
 				}

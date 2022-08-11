@@ -1,0 +1,104 @@
+Type: SkateGameCountUI
+
+Method: System.Void SkateGameCountUI::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void SkateGameCountUI::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type SkateGameCountUI)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkateGameCountUI
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void SkateGameCountUI::Init(System.Int32):	Method Body (x86 ASM):
+		0x180264D10 mov [rsp+10h],edx		; DEBUG: {Memory}/None {Register}/EDX ||| RSP | 16 | None ||| N/A | N/A
+		0x180264D14 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180264D15 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180264D19 mov rbx,[rcx+18h]		; DEBUG: {Register}/RBX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x180264D1D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180264D1F lea rcx,[rsp+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x180264D24 call 0000000180E86110h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180264D29 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180264D2C je short 0000000180264D42h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180264D2E xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180264D31 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180264D34 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180264D37 call 000000018060D730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180264D3C add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180264D40 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180264D41 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180264D42 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180264D44 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180264D49 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void SkateGameCountUI::Init(System.Int32):
+		End of function at 0x180264D4A
+		Absolute End is at 0x180264D4A
+		Identified Jump Destination addresses:
+
+		0x180264D10: Moves num (type System.Int32) from register rdx to the stack at offset 16 (0x10)
+		0x180264D14: Saves the content of rbx to the stack
+		0x180264D19: [!] Reads field m_number from {'this' (function parameter, type SkateGameCountUI)} and stores in a new local {'m_number' (type UILabel)}
+
+		0x180264D1D: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x180264D1F: Loads a pointer to stack offset 0x38 into register rcx as new constant constant1
+		0x180264D29: [!] Compares {'m_number' (type UILabel)} and 0
+		0x180264D2C: Jumps to 0x180264D42 (which throws a NRE) if m_number equals 0. Implicitly present in managed code, so ignored here.
+		0x180264D34: Copies {'m_number' (type UILabel)} from rbx into rcx
+		0x180264D37: [!] Calls managed method System.Void UILabel::set_text(System.String) on instance {'m_number' (type UILabel)} with arguments [{'local3' (type System.Int32)}]
+
+		0x180264D41: [!] Returns from the function
+
+		0x180264D44: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: SkateGameCountUI
+	System.Void Init(System.Int32 num)
+		UILabel m_number = this.m_number
+		ulong local3 = 0
+
+		m_number.text = local3
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UILabel SkateGameCountUI::m_number
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: call System.Void UILabel::set_text(System.String)
+	IL_0010: ret
+	IL_0011: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0016: throw
+	
+

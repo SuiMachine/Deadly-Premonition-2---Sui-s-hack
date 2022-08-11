@@ -1,0 +1,78 @@
+Type: <DestroyPivotObjects>c__AnonStorey1
+
+Method: System.Void UTJ.SpringBoneSetup/<DestroyPivotObjects>c__AnonStorey1::.ctor():	Method Body (x86 ASM):
+		0x1802068B0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802068B2 jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802068B7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UTJ.SpringBoneSetup/<DestroyPivotObjects>c__AnonStorey1::.ctor():
+		End of function at 0x1802068B8
+		Absolute End is at 0x1802068B8
+		Identified Jump Destination addresses:
+
+		0x1802068B2: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type UTJ.SpringBoneSetup/<DestroyPivotObjects>c__AnonStorey1)}
+
+		0x1802068B2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringBoneSetup/<DestroyPivotObjects>c__AnonStorey1
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean UTJ.SpringBoneSetup/<DestroyPivotObjects>c__AnonStorey1::<>m__0(UnityEngine.Transform):	Method Body (x86 ASM):
+		0x1811B66D0 mov rax,rdx		; DEBUG: {Register}/RAX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x1811B66D3 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1811B66D6 mov rdx,[rcx+10h]		; DEBUG: {Register}/RDX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x1811B66DA mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1811B66DD jmp near ptr 00000001811A8410h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1811B66E2 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean UTJ.SpringBoneSetup/<DestroyPivotObjects>c__AnonStorey1::<>m__0(UnityEngine.Transform):
+		End of function at 0x1811B66E3
+		Absolute End is at 0x1811B66E3
+		Identified Jump Destination addresses:
+
+		0x1811B66D0: Copies {'pivot' (function parameter, type UnityEngine.Transform)} from rdx into rax
+		0x1811B66D6: [!] Reads field skinBones from {'this' (function parameter, type UTJ.SpringBoneSetup/<DestroyPivotObjects>c__AnonStorey1)} and stores in a new local {'skinBones' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Transform>)}
+
+		0x1811B66DA: Copies {'pivot' (function parameter, type UnityEngine.Transform)} from rax into rcx
+		0x1811B66DD: [!] Calls static managed method System.Boolean UTJ.SpringBoneSetup::IsPivotProbablySafeToDestroy(UnityEngine.Transform,System.Collections.Generic.IEnumerable`1<UnityEngine.Transform>) with arguments [{'pivot' (function parameter, type UnityEngine.Transform)}, {'skinBones' (type System.Collections.Generic.IEnumerable`1<UnityEngine.Transform>)}] and stores the result in {'isPivotProbablySafeToDestroy' (type System.Boolean)}
+
+		0x1811B66DD: [!] Returns {'isPivotProbablySafeToDestroy' (type System.Boolean)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringBoneSetup/<DestroyPivotObjects>c__AnonStorey1
+	System.Boolean <>m__0(UnityEngine.Transform pivot)
+		System.Collections.Generic.IEnumerable`1<UnityEngine.Transform> skinBones = this.skinBones
+
+		System.Boolean isPivotProbablySafeToDestroy = UTJ.SpringBoneSetup.IsPivotProbablySafeToDestroy(pivot, skinBones) //(Transform pivot, IEnumerable`1 skinBones)
+		return isPivotProbablySafeToDestroy
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Collections.Generic.IEnumerable`1<UnityEngine.Transform> UTJ.SpringBoneSetup/<DestroyPivotObjects>c__AnonStorey1::skinBones
+	IL_0006: stloc.0
+	IL_0007: ldarg.1
+	IL_0008: ldloc.0
+	IL_0009: call System.Boolean UTJ.SpringBoneSetup::IsPivotProbablySafeToDestroy(UnityEngine.Transform,System.Collections.Generic.IEnumerable`1)
+	IL_000e: ret
+	
+

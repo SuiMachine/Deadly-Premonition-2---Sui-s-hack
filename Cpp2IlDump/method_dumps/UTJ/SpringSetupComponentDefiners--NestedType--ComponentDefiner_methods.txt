@@ -1,0 +1,1179 @@
+Type: ComponentDefiner
+
+Method: System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::.ctor(System.Type):	Method Body (x86 ASM):
+		0x180315530 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180315535 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180315536 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18031553A mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18031553D mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180315540 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180315542 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180315547 mov [rbx+10h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 16 | None ||| N/A | N/A
+		0x18031554B mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x180315550 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180315554 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180315555 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180315556 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::.ctor(System.Type):
+		End of function at 0x180315557
+		Absolute End is at 0x180315557
+		Identified Jump Destination addresses:
+
+		0x180315535: Saves the content of rdi to the stack
+		0x18031553A: Copies {'newType' (function parameter, type System.Type)} from rdx into rdi
+		0x18031553D: Copies {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} from rcx into rbx
+		0x180315542: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} ;  - Leftover parameters detected, but first few match.
+
+		0x180315547: [!] Sets the field componentType (Type System.Type) on local {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} to the value stored in {'newType' (function parameter, type System.Type)}
+		0x18031554B: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant1
+		0x180315555: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSetupComponentDefiners/ComponentDefiner
+	System.Void .ctor(System.Type newType)
+
+		base..ctor()
+		this.componentType = newType
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ldarg.0
+	IL_0007: ldarg.1
+	IL_0008: stfld System.Type UTJ.SpringSetupComponentDefiners/ComponentDefiner::componentType
+	IL_000d: ret
+	
+
+Method: System.Boolean UTJ.SpringSetupComponentDefiners/ComponentDefiner::TryToAppendDefinition(System.Text.StringBuilder,UnityEngine.GameObject):	Method Body (x86 ASM):
+		0x18119CC80 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x18119CC85 mov [rsp+18h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 24 | None ||| N/A | N/A
+		0x18119CC8A push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CC8B sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18119CC8F cmp byte ptr [1818A2C24h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283428 | None ||| N/A | 0
+		0x18119CC96 mov rbx,r8		; DEBUG: {Register}/RBX {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x18119CC99 mov rbp,rdx		; DEBUG: {Register}/RBP {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18119CC9C mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18119CC9F jne short 000000018119CCB3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CCA1 mov ecx,[1814B5CFCh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464167164 | None ||| N/A | N/A
+		0x18119CCA7 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CCAC mov byte ptr [1818A2C24h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283428 | None ||| N/A | 1
+		0x18119CCB3 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CCB6 je near ptr 000000018119CD7Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CCBC mov rdx,[rdi+10h]		; DEBUG: {Register}/RDX {Memory}/None ||| RDI | 16 | None ||| N/A | N/A
+		0x18119CCC0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18119CCC3 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CCC6 mov [rsp+30h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 48 | None ||| N/A | N/A
+		0x18119CCCB call 0000000180B2E160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CCD0 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18119CCD7 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CCDA test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18119CCE1 je short 000000018119CCF1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CCE3 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18119CCEA jne short 000000018119CCF1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CCEC call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CCF1 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18119CCF4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18119CCF6 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18119CCF9 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CCFE movzx ebx,al		; DEBUG: {Register}/EBX {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18119CD01 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18119CD03 je short 000000018119CD65h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CD05 cmp byte ptr [1818A2C25h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283429 | None ||| N/A | 0
+		0x18119CD0C jne short 000000018119CD20h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CD0E mov ecx,[1814B5CACh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464167084 | None ||| N/A | N/A
+		0x18119CD14 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CD19 mov byte ptr [1818A2C25h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283429 | None ||| N/A | 1
+		0x18119CD20 mov r8,[rdi]		; DEBUG: {Register}/R8 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x18119CD23 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18119CD26 mov rdx,[r8+170h]		; DEBUG: {Register}/RDX {Memory}/None ||| R8 | 368 | None ||| N/A | N/A
+		0x18119CD2D call qword ptr [r8+168h]		; DEBUG: {Memory}/None {Register}/None ||| R8 | 360 | None ||| N/A | N/A
+		0x18119CD34 mov r9,[181863D78h]		; DEBUG: {Register}/R9 {Memory}/None ||| RIP | 6468025720 | None ||| N/A | N/A
+		0x18119CD3B mov r8d,2Ch		; DEBUG: {Register}/R8D {Immediate32}/None ||| None | 0 | None ||| N/A | 44
+		0x18119CD41 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CD44 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x18119CD47 call 00000001807E93F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CD4C mov rax,[rdi]		; DEBUG: {Register}/RAX {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x18119CD4F mov r8,rsi		; DEBUG: {Register}/R8 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18119CD52 mov rdx,rbp		; DEBUG: {Register}/RDX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x18119CD55 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18119CD58 mov r9,[rax+180h]		; DEBUG: {Register}/R9 {Memory}/None ||| RAX | 384 | None ||| N/A | N/A
+		0x18119CD5F call qword ptr [rax+178h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 376 | None ||| N/A | N/A
+		0x18119CD65 mov rsi,[rsp+30h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18119CD6A movzx eax,bl		; DEBUG: {Register}/EAX {Register}/BL ||| None | 0 | None ||| N/A | N/A
+		0x18119CD6D mov rbx,[rsp+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x18119CD72 mov rbp,[rsp+40h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x18119CD77 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18119CD7B pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CD7C ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CD7D xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18119CD7F call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CD84 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean UTJ.SpringSetupComponentDefiners/ComponentDefiner::TryToAppendDefinition(System.Text.StringBuilder,UnityEngine.GameObject):
+		End of function at 0x18119CD85
+		Absolute End is at 0x18119CD85
+		Identified Jump Destination addresses:
+
+		0x18119CC8A: Saves the content of rdi to the stack
+		0x18119CC8F: Compares {Unknown Global at 0x1818A2C24, first ten bytes are [58 211 127 0 104 177 106 1 64 211], or as chars ":Ó h±j@Ó"} and 0
+		0x18119CC96: Copies {'rootObject' (function parameter, type UnityEngine.GameObject)} from r8 into rbx
+		0x18119CC99: Copies {'builder' (function parameter, type System.Text.StringBuilder)} from rdx into rbp
+		0x18119CC9C: Copies {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} from rcx into rdi
+		0x18119CC9F: Jumps to 0x18119CCB3 if {Unknown Global at 0x1818A2C24, first ten bytes are [58 211 127 0 104 177 106 1 64 211], or as chars ":Ó h±j@Ó"} != 0
+
+		0x18119CCA1: Reads {Unknown Global at 0x1814B5CFC, first ten bytes are [149 27 0 0 150 59 0 0 150 91], or as chars "  ;  ["} into register rcx as a constant constant3
+		0x18119CCA7: Attempts to load the il2cpp metadata for this method (method id 7061) and init it cpp-side.
+
+		0x18119CCB3: [!] Compares {'rootObject' (function parameter, type UnityEngine.GameObject)} and 0
+		0x18119CCB6: Jumps to 0x18119CD7D (which throws a NRE) if rootObject equals 0. Implicitly present in managed code, so ignored here.
+		0x18119CCBC: [!] Reads field componentType from {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} and stores in a new local {'componentType' (type System.Type)}
+
+		0x18119CCC3: Copies {'rootObject' (function parameter, type UnityEngine.GameObject)} from rbx into rcx
+		0x18119CCCB: [!] Calls managed method UnityEngine.Component UnityEngine.GameObject::GetComponent(System.Type) on instance {'rootObject' (function parameter, type UnityEngine.GameObject)} with arguments [{'componentType' (type System.Type)}] and stores the result in {'component' (type UnityEngine.Component)}
+
+		0x18119CCD0: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18119CCD7: Copies {'component' (type UnityEngine.Component)} from rax into rsi
+		0x18119CCDA: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18119CCE1: Jumps to 0x18119CCF1 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18119CCE3: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18119CCEA: Jumps to 0x18119CCF1 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18119CCEC: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18119CCF4: Clears register rdx, yielding zero-local {'local7' (type System.Int32)}
+		0x18119CCF6: Copies {'component' (type UnityEngine.Component)} from rsi into rcx
+		0x18119CCF9: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'component' (type UnityEngine.Component)}, {'local7' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18119CCFE: Copies {'boolean' (type System.Boolean)} from rax into rbx
+		0x18119CD01: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18119CD03: Jumps to 0x18119CD65 (which throws a NRE) if boolean equals False. Implicitly present in managed code, so ignored here. ;  - Skipping if statement, is array type check
+		0x18119CD05: Compares {Unknown Global at 0x1818A2C25, first ten bytes are [211 127 0 104 177 106 1 64 211 127], or as chars "Ó h±j@Ó"} and 0
+		0x18119CD0C: Jumps to 0x18119CD20 if {Unknown Global at 0x1818A2C25, first ten bytes are [211 127 0 104 177 106 1 64 211 127], or as chars "Ó h±j@Ó"} != 0
+
+		0x18119CD0E: Reads {Unknown Global at 0x1814B5CAC, first ten bytes are [144 27 0 0 145 27 0 0 145 91], or as chars "    ["} into register rcx as a constant constant13
+		0x18119CD14: Attempts to load the il2cpp metadata for this method (method id 7056) and init it cpp-side.
+
+		0x18119CD20: Loads the class pointer from this into a constant constant14 in register r8
+		0x18119CD23: Copies {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} from rdi into rcx
+		0x18119CD26: Loads the pointer to the implementation of virtual function System.String UTJ.SpringSetupComponentDefiners/ComponentDefiner::GetTypeToken() specific to UTJ.SpringSetupComponentDefiners/ComponentDefiner from the class pointer in r8, slot 4 (from memory offset 368) and stores in constant constant15
+		0x18119CD2D: [!] Calls managed method System.String UTJ.SpringSetupComponentDefiners/ComponentDefiner::GetTypeToken() on instance {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} and stores the result in {'typeToken' (type System.String)}
+
+		0x18119CD34: Loads the global generic method reference for method System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendRecordItem<System.String>(System.Text.StringBuilder,T,System.Char) on type UTJ.SpringSetupComponentDefiners/ComponentDefiner and stores the result in constant {'AppendRecordItem' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r9
+		0x18119CD3B: [!] Writes the constant 0x2C into operand {'44' (constant value of type System.Char)} (type UInt64) in register r8
+		0x18119CD41: Copies {'typeToken' (type System.String)} from rax into rdx
+		0x18119CD44: Copies {'builder' (function parameter, type System.Text.StringBuilder)} from rbp into rcx
+		0x18119CD47: [!] Calls static managed method System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendRecordItem<System.String>(System.Text.StringBuilder,T,System.Char) with arguments [{'builder' (function parameter, type System.Text.StringBuilder)}, {'typeToken' (type System.String)}, {'44' (constant value of type System.Char)}] ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18119CD4C: Loads the class pointer from this into a constant constant18 in register rax
+		0x18119CD4F: Copies {'component' (type UnityEngine.Component)} from rsi into r8
+		0x18119CD52: Copies {'builder' (function parameter, type System.Text.StringBuilder)} from rbp into rdx
+		0x18119CD55: Copies {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} from rdi into rcx
+		0x18119CD58: Loads the pointer to the implementation of virtual function System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendProperties(System.Text.StringBuilder,UnityEngine.Component) specific to UTJ.SpringSetupComponentDefiners/ComponentDefiner from the class pointer in rax, slot 5 (from memory offset 384) and stores in constant constant19
+		0x18119CD5F: [!] Calls managed method System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendProperties(System.Text.StringBuilder,UnityEngine.Component) on instance {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} with arguments [{'builder' (function parameter, type System.Text.StringBuilder)}, {'component' (type UnityEngine.Component)}]
+
+		0x18119CD65: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rsi as new constant constant20
+		0x18119CD6A: Copies {'boolean' (type System.Boolean)} from rbx into rax
+		0x18119CD6D: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbx as new constant constant21
+		0x18119CD72: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbp as new constant constant22
+		0x18119CD7C: [!] Returns {'boolean' (type System.Boolean)} from the function
+
+		0x18119CD7F: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSetupComponentDefiners/ComponentDefiner
+	System.Boolean TryToAppendDefinition(System.Text.StringBuilder builder, UnityEngine.GameObject rootObject)
+		System.Type componentType = this.componentType
+
+		UnityEngine.Component component = rootObject.GetComponent(componentType) //(Type type)
+		ulong local7 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(component, local7) //(Object x, Object y)
+
+		System.String typeToken = this.GetTypeToken()
+
+		UTJ.SpringSetupComponentDefiners/ComponentDefiner.AppendRecordItem<System.String>(builder, typeToken, {'44' (constant value of type System.Char)}) //(StringBuilder builder, T item, Char separator)
+
+		this.AppendProperties(builder, component) //(StringBuilder builder, Component component)
+		return boolean
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x18119CD47) is corrupt (ConstantDefinition: Don't know how to get IL to load a System.Char) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendDefinition(System.Text.StringBuilder,UnityEngine.Component):	Method Body (x86 ASM):
+		0x18119C780 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18119C785 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x18119C78A push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119C78B sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18119C78F cmp byte ptr [1818A2C25h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283429 | None ||| N/A | 0
+		0x18119C796 mov rsi,r8		; DEBUG: {Register}/RSI {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x18119C799 mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18119C79C mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18119C79F jne short 000000018119C7B3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C7A1 mov ecx,[1814B5CACh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464167084 | None ||| N/A | N/A
+		0x18119C7A7 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C7AC mov byte ptr [1818A2C25h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283429 | None ||| N/A | 1
+		0x18119C7B3 mov rax,[rbx]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x18119C7B6 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119C7B9 mov rdx,[rax+170h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 368 | None ||| N/A | N/A
+		0x18119C7C0 call qword ptr [rax+168h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 360 | None ||| N/A | N/A
+		0x18119C7C6 mov r9,[181863D78h]		; DEBUG: {Register}/R9 {Memory}/None ||| RIP | 6468025720 | None ||| N/A | N/A
+		0x18119C7CD mov r8d,2Ch		; DEBUG: {Register}/R8D {Immediate32}/None ||| None | 0 | None ||| N/A | 44
+		0x18119C7D3 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119C7D6 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18119C7D9 call 00000001807E93F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C7DE mov rax,[rbx]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x18119C7E1 mov r8,rsi		; DEBUG: {Register}/R8 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18119C7E4 mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18119C7E7 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119C7EA mov r9,[rax+180h]		; DEBUG: {Register}/R9 {Memory}/None ||| RAX | 384 | None ||| N/A | N/A
+		0x18119C7F1 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18119C7F6 mov rsi,[rsp+38h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x18119C7FB add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18119C7FF pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119C800 jmp qword ptr [rax+178h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 376 | None ||| N/A | N/A
+		0x18119C807 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendDefinition(System.Text.StringBuilder,UnityEngine.Component):
+		End of function at 0x18119C808
+		Absolute End is at 0x18119C808
+		Identified Jump Destination addresses:
+
+		0x18119C78A: Saves the content of rdi to the stack
+		0x18119C78F: Compares {Unknown Global at 0x1818A2C25, first ten bytes are [211 127 0 104 177 106 1 64 211 127], or as chars "Ó h±j@Ó"} and 0
+		0x18119C796: Copies {'component' (function parameter, type UnityEngine.Component)} from r8 into rsi
+		0x18119C799: Copies {'builder' (function parameter, type System.Text.StringBuilder)} from rdx into rdi
+		0x18119C79C: Copies {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} from rcx into rbx
+		0x18119C79F: Jumps to 0x18119C7B3 if {Unknown Global at 0x1818A2C25, first ten bytes are [211 127 0 104 177 106 1 64 211 127], or as chars "Ó h±j@Ó"} != 0
+
+		0x18119C7A1: Reads {Unknown Global at 0x1814B5CAC, first ten bytes are [144 27 0 0 145 27 0 0 145 91], or as chars "    ["} into register rcx as a constant constant3
+		0x18119C7A7: Attempts to load the il2cpp metadata for this method (method id 7056) and init it cpp-side.
+
+		0x18119C7B3: Loads the class pointer from this into a constant constant4 in register rax
+		0x18119C7B6: Copies {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} from rbx into rcx
+		0x18119C7B9: Loads the pointer to the implementation of virtual function System.String UTJ.SpringSetupComponentDefiners/ComponentDefiner::GetTypeToken() specific to UTJ.SpringSetupComponentDefiners/ComponentDefiner from the class pointer in rax, slot 4 (from memory offset 368) and stores in constant constant5
+		0x18119C7C0: [!] Calls managed method System.String UTJ.SpringSetupComponentDefiners/ComponentDefiner::GetTypeToken() on instance {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} and stores the result in {'typeToken' (type System.String)}
+
+		0x18119C7C6: Loads the global generic method reference for method System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendRecordItem<System.String>(System.Text.StringBuilder,T,System.Char) on type UTJ.SpringSetupComponentDefiners/ComponentDefiner and stores the result in constant {'AppendRecordItem' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r9
+		0x18119C7CD: [!] Writes the constant 0x2C into operand {'44' (constant value of type System.Char)} (type UInt64) in register r8
+		0x18119C7D3: Copies {'typeToken' (type System.String)} from rax into rdx
+		0x18119C7D6: Copies {'builder' (function parameter, type System.Text.StringBuilder)} from rdi into rcx
+		0x18119C7D9: [!] Calls static managed method System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendRecordItem<System.String>(System.Text.StringBuilder,T,System.Char) with arguments [{'builder' (function parameter, type System.Text.StringBuilder)}, {'typeToken' (type System.String)}, {'44' (constant value of type System.Char)}] ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18119C7DE: Loads the class pointer from this into a constant constant8 in register rax
+		0x18119C7E1: Copies {'component' (function parameter, type UnityEngine.Component)} from rsi into r8
+		0x18119C7E4: Copies {'builder' (function parameter, type System.Text.StringBuilder)} from rdi into rdx
+		0x18119C7E7: Copies {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} from rbx into rcx
+		0x18119C7EA: Loads the pointer to the implementation of virtual function System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendProperties(System.Text.StringBuilder,UnityEngine.Component) specific to UTJ.SpringSetupComponentDefiners/ComponentDefiner from the class pointer in rax, slot 5 (from memory offset 384) and stores in constant constant9
+		0x18119C7F1: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant10
+		0x18119C7F6: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rsi as new constant constant11
+		0x18119C800: [!] Calls managed method  on instance {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} ;  - Failed to resolve any matching method (there are 950 at this address)
+
+		0x18119C800: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSetupComponentDefiners/ComponentDefiner
+	System.Void AppendDefinition(System.Text.StringBuilder builder, UnityEngine.Component component)
+
+		System.String typeToken = this.GetTypeToken()
+
+		UTJ.SpringSetupComponentDefiners/ComponentDefiner.AppendRecordItem<System.String>(builder, typeToken, {'44' (constant value of type System.Char)}) //(StringBuilder builder, T item, Char separator)
+
+		[instruction error - managed method being called is null]
+		return
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x18119C7D9) is corrupt (ConstantDefinition: Don't know how to get IL to load a System.Char) and cannot be created as IL. Aborting here.
+
+
+Method: UnityEngine.Component UTJ.SpringSetupComponentDefiners/ComponentDefiner::BuildFromDefinition(UnityEngine.GameObject,System.Collections.Generic.Queue`1<System.String>):	Method Body (x86 ASM):
+		0x18119C8D0 mov [rsp+8],rcx		; DEBUG: {Memory}/None {Register}/RCX ||| RSP | 8 | None ||| N/A | N/A
+		0x18119C8D5 push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119C8D6 push rsi		; DEBUG: {Register}/RSI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119C8D7 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119C8D8 push r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119C8DA push r15		; DEBUG: {Register}/R15 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119C8DC sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18119C8E0 lea rbp,[rsp+20h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x18119C8E5 mov [rbp+48h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RBP | 72 | None ||| N/A | N/A
+		0x18119C8E9 mov rbx,r8		; DEBUG: {Register}/RBX {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x18119C8EC mov rsi,rdx		; DEBUG: {Register}/RSI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18119C8EF mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18119C8F2 cmp byte ptr [1818A2C26h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283430 | None ||| N/A | 0
+		0x18119C8F9 jne short 000000018119C90Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C8FB mov ecx,[1814B5CC0h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464167104 | None ||| N/A | N/A
+		0x18119C901 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C906 mov byte ptr [1818A2C26h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283430 | None ||| N/A | 1
+		0x18119C90D mov eax,[rsp]		; DEBUG: {Register}/EAX {Memory}/None ||| RSP | 0 | None ||| N/A | N/A
+		0x18119C910 sub rsp,10h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 16
+		0x18119C914 mov eax,[rsp]		; DEBUG: {Register}/EAX {Memory}/None ||| RSP | 0 | None ||| N/A | N/A
+		0x18119C917 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119C91A je near ptr 000000018119CA54h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C920 mov rdx,[181878E08h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468111880 | None ||| N/A | N/A
+		0x18119C927 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119C92A call 000000018105F930h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C92F mov r14,rax		; DEBUG: {Register}/R14 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119C932 mov r8,[rdi]		; DEBUG: {Register}/R8 {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x18119C935 mov rdx,[r8+170h]		; DEBUG: {Register}/RDX {Memory}/None ||| R8 | 368 | None ||| N/A | N/A
+		0x18119C93C mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18119C93F call qword ptr [r8+168h]		; DEBUG: {Memory}/None {Register}/None ||| R8 | 360 | None ||| N/A | N/A
+		0x18119C946 mov r15,rax		; DEBUG: {Register}/R15 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119C949 mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x18119C950 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18119C957 je short 000000018119C967h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C959 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18119C960 jne short 000000018119C967h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C962 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C967 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18119C96A mov rdx,r15		; DEBUG: {Register}/RDX {Register}/R15 ||| None | 0 | None ||| N/A | N/A
+		0x18119C96D mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x18119C970 call 0000000180D56370h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C975 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18119C977 jne near ptr 000000018119CA42h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C97D mov rdx,[181878DF0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468111856 | None ||| N/A | N/A
+		0x18119C984 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119C987 call 000000018105F380h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C98C nop		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119C98D mov rax,[rdi]		; DEBUG: {Register}/RAX {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x18119C990 mov r9,[rax+190h]		; DEBUG: {Register}/R9 {Memory}/None ||| RAX | 400 | None ||| N/A | N/A
+		0x18119C997 mov r8,rbx		; DEBUG: {Register}/R8 {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119C99A mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18119C99D mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18119C9A0 call qword ptr [rax+188h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 392 | None ||| N/A | N/A
+		0x18119C9A6 nop		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119C9A7 jmp near ptr 000000018119CA42h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C9AC mov rcx,[rbp+40h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 64 | None ||| N/A | N/A
+		0x18119C9B0 mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x18119C9B3 mov rdx,[rax+170h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 368 | None ||| N/A | N/A
+		0x18119C9BA call qword ptr [rax+168h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 360 | None ||| N/A | N/A
+		0x18119C9C0 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119C9C3 mov rcx,[rbp+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 80 | None ||| N/A | N/A
+		0x18119C9C7 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18119C9CA je near ptr 000000018119CA54h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C9D0 mov r8,[rcx]		; DEBUG: {Register}/R8 {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x18119C9D3 mov rdx,[r8+160h]		; DEBUG: {Register}/RDX {Memory}/None ||| R8 | 352 | None ||| N/A | N/A
+		0x18119C9DA call qword ptr [r8+158h]		; DEBUG: {Memory}/None {Register}/None ||| R8 | 344 | None ||| N/A | N/A
+		0x18119C9E1 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119C9E4 mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x18119C9EB test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18119C9F2 je short 000000018119CA02h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C9F4 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18119C9FB jne short 000000018119CA02h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C9FD call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CA02 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x18119CA05 mov r8,rbx		; DEBUG: {Register}/R8 {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CA08 mov rdx,[18188FBD8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468205528 | None ||| N/A | N/A
+		0x18119CA0F mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18119CA12 call 0000000180D4D6E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CA17 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CA1A mov rcx,[18188D688h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468195976 | None ||| N/A | N/A
+		0x18119CA21 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18119CA28 je short 000000018119CA38h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CA2A cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18119CA31 jne short 000000018119CA38h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CA33 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CA38 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18119CA3A mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CA3D call 0000000180B2BE30h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CA42 xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CA44 mov rbx,[rbp+48h]		; DEBUG: {Register}/RBX {Memory}/None ||| RBP | 72 | None ||| N/A | N/A
+		0x18119CA48 lea rsp,[rbp+10h]		; DEBUG: {Register}/RSP {Memory}/None ||| RBP | 16 | None ||| N/A | N/A
+		0x18119CA4C pop r15		; DEBUG: {Register}/R15 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CA4E pop r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CA50 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CA51 pop rsi		; DEBUG: {Register}/RSI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CA52 pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CA53 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CA54 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18119CA56 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CA5B int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method UnityEngine.Component UTJ.SpringSetupComponentDefiners/ComponentDefiner::BuildFromDefinition(UnityEngine.GameObject,System.Collections.Generic.Queue`1<System.String>):
+		End of function at 0x18119CA5C
+		Absolute End is at 0x18119CA5C
+		Identified Jump Destination addresses:
+			0x18119CA42
+		0x18119C8D0: Moves this (type UTJ.SpringSetupComponentDefiners/ComponentDefiner) from register rcx to the stack at offset 8 (0x8)
+		0x18119C8D5: Saves the content of rbp to the stack
+		0x18119C8D6: Saves the content of rsi to the stack
+		0x18119C8D7: Saves the content of rdi to the stack
+		0x18119C8D8: Saves the content of r14 to the stack
+		0x18119C8DA: Saves the content of r15 to the stack
+		0x18119C8E0: Loads a pointer to stack offset 0x20 into register rbp as new constant constant1
+		0x18119C8E9: Copies {'definitionItems' (function parameter, type System.Collections.Generic.Queue`1<System.String>)} from r8 into rbx
+		0x18119C8EC: Copies {'owner' (function parameter, type UnityEngine.GameObject)} from rdx into rsi
+		0x18119C8EF: Copies {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} from rcx into rdi
+		0x18119C8F2: Compares {Unknown Global at 0x1818A2C26, first ten bytes are [127 0 104 177 106 1 64 211 127 0], or as chars " h±j@Ó "} and 0
+		0x18119C8F9: Jumps to 0x18119C90D if {Unknown Global at 0x1818A2C26, first ten bytes are [127 0 104 177 106 1 64 211 127 0], or as chars " h±j@Ó "} != 0
+
+		0x18119C8FB: Reads {Unknown Global at 0x1814B5CC0, first ten bytes are [146 27 0 0 146 123 0 0 146 59], or as chars "  {  ;"} into register rcx as a constant constant4
+		0x18119C901: Attempts to load the il2cpp metadata for this method (method id 7058) and init it cpp-side.
+
+		0x18119C90D: Reads unknown value in stack, offset 0 (0x0) and stores the pointer in register rax as new constant constant5
+		0x18119C914: Reads unknown value in stack, offset 0 (0x0) and stores the pointer in register rax as new constant constant6
+		0x18119C917: [!] Compares {'definitionItems' (function parameter, type System.Collections.Generic.Queue`1<System.String>)} and 0
+		0x18119C91A: Jumps to 0x18119CA54 (which throws a NRE) if definitionItems equals 0. Implicitly present in managed code, so ignored here.
+		0x18119C920: Loads the global generic method reference for method T System.Collections.Generic.Queue`1::Peek() on type System.Collections.Generic.Queue`1<System.String> and stores the result in constant {'Peek' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18119C927: Copies {'definitionItems' (function parameter, type System.Collections.Generic.Queue`1<System.String>)} from rbx into rcx
+		0x18119C92A: [!] Calls managed method T System.Collections.Generic.Queue`1::Peek() on instance {'definitionItems' (function parameter, type System.Collections.Generic.Queue`1<System.String>)} and stores the result in {'string' (type System.String)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18119C92F: Copies {'string' (type System.String)} from rax into r14
+		0x18119C932: Loads the class pointer from this into a constant constant9 in register r8
+		0x18119C935: Loads the pointer to the implementation of virtual function System.String UTJ.SpringSetupComponentDefiners/ComponentDefiner::GetTypeToken() specific to UTJ.SpringSetupComponentDefiners/ComponentDefiner from the class pointer in r8, slot 4 (from memory offset 368) and stores in constant constant10
+		0x18119C93C: Copies {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} from rdi into rcx
+		0x18119C93F: [!] Calls managed method System.String UTJ.SpringSetupComponentDefiners/ComponentDefiner::GetTypeToken() on instance {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} and stores the result in {'typeToken' (type System.String)}
+
+		0x18119C946: Copies {'typeToken' (type System.String)} from rax into r15
+		0x18119C949: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x18119C950: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18119C957: Jumps to 0x18119C967 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18119C959: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18119C960: Jumps to 0x18119C967 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18119C962: Calls the il2cpp cctor for the type System.String
+		0x18119C96A: Copies {'typeToken' (type System.String)} from r15 into rdx
+		0x18119C96D: Copies {'string' (type System.String)} from r14 into rcx
+		0x18119C970: [!] Calls static managed method System.Boolean System.String::op_Inequality(System.String,System.String) with arguments [{'string' (type System.String)}, {'typeToken' (type System.String)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18119C975: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18119C977: Jumps to 0x18119CA42 (which throws a NRE) if {'boolean' (type System.Boolean)} != False. Implicitly present in managed code, so ignored here. ;  - Skipping if statement, is array type check
+		0x18119C97D: Loads the global generic method reference for method T System.Collections.Generic.Queue`1::Dequeue() on type System.Collections.Generic.Queue`1<System.String> and stores the result in constant {'Dequeue' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18119C984: Copies {'definitionItems' (function parameter, type System.Collections.Generic.Queue`1<System.String>)} from rbx into rcx
+		0x18119C987: [!] Calls managed method T System.Collections.Generic.Queue`1::Dequeue() on instance {'definitionItems' (function parameter, type System.Collections.Generic.Queue`1<System.String>)} and stores the result in {'string2' (type System.String)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18119C98D: Loads the class pointer from this into a constant constant18 in register rax
+		0x18119C990: Loads the pointer to the implementation of virtual function UnityEngine.Component UTJ.SpringSetupComponentDefiners/ComponentDefiner::InternalBuildFromDefinition(UnityEngine.GameObject,System.Collections.Generic.Queue`1<System.String>) specific to UTJ.SpringSetupComponentDefiners/ComponentDefiner from the class pointer in rax, slot 6 (from memory offset 400) and stores in constant constant19
+		0x18119C997: Copies {'definitionItems' (function parameter, type System.Collections.Generic.Queue`1<System.String>)} from rbx into r8
+		0x18119C99A: Copies {'owner' (function parameter, type UnityEngine.GameObject)} from rsi into rdx
+		0x18119C99D: Copies {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} from rdi into rcx
+		0x18119C9A0: [!] Calls managed method UnityEngine.Component UTJ.SpringSetupComponentDefiners/ComponentDefiner::InternalBuildFromDefinition(UnityEngine.GameObject,System.Collections.Generic.Queue`1<System.String>) on instance {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} with arguments [{'owner' (function parameter, type UnityEngine.GameObject)}, {'definitionItems' (function parameter, type System.Collections.Generic.Queue`1<System.String>)}] and stores the result in {'component' (type UnityEngine.Component)}
+
+		0x18119C9A7: Jumps to 0x18119CA42 (which is an function-local jump destination)
+
+		0x18119C9B0: Loads the class pointer from this into a constant constant20 in register rax
+		0x18119C9B3: Loads the pointer to the implementation of virtual function System.String UTJ.SpringSetupComponentDefiners/ComponentDefiner::GetTypeToken() specific to UTJ.SpringSetupComponentDefiners/ComponentDefiner from the class pointer in rax, slot 4 (from memory offset 368) and stores in constant constant21
+		0x18119C9BA: [!] Calls managed method System.String UTJ.SpringSetupComponentDefiners/ComponentDefiner::GetTypeToken() on instance {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} and stores the result in {'typeToken2' (type System.String)}
+
+		0x18119C9C0: Copies {'typeToken2' (type System.String)} from rax into rdi
+		0x18119C9C7: [!] Compares {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} and 0
+		0x18119C9CA: Jumps to 0x18119CA54 (which throws a NRE) if this equals 0. Implicitly present in managed code, so ignored here.
+		0x18119C9D0: Loads the class pointer from this into a constant constant23 in register r8
+		0x18119C9D3: Loads the pointer to the implementation of virtual function System.String System.Object::ToString() specific to UTJ.SpringSetupComponentDefiners/ComponentDefiner from the class pointer in r8, slot 3 (from memory offset 352) and stores in constant constant24
+		0x18119C9DA: [!] Calls managed method System.String System.Object::ToString() on instance {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} and stores the result in {'string3' (type System.String)}
+
+		0x18119C9E1: Copies {'string3' (type System.String)} from rax into rbx
+		0x18119C9E4: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x18119C9EB: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18119C9F2: Jumps to 0x18119CA02 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18119C9F4: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18119C9FB: Jumps to 0x18119CA02 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18119C9FD: Calls the il2cpp cctor for the type System.String
+		0x18119CA05: Copies {'string3' (type System.String)} from rbx into r8
+		0x18119CA08: Loads the string literal " 読み込みエラー
+
+" as a constant "constant30" in rdx
+		0x18119CA0F: Copies {'typeToken2' (type System.String)} from rdi into rcx
+		0x18119CA12: [!] Calls static managed method System.String System.String::Concat(System.String,System.String,System.String) with arguments [{'typeToken2' (type System.String)}, " 読み込みエラー
+
+", {'string3' (type System.String)}] and stores the result in {'string4' (type System.String)}
+
+		0x18119CA17: Copies {'string4' (type System.String)} from rax into rbx
+		0x18119CA1A: Loads the type definition for managed type UnityEngine.Debug as a constant "Debug" in rcx
+		0x18119CA21: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18119CA28: Jumps to 0x18119CA38 if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18119CA2A: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18119CA31: Jumps to 0x18119CA38 if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18119CA33: Calls the il2cpp cctor for the type UnityEngine.Debug
+		0x18119CA3A: Copies {'string4' (type System.String)} from rbx into rcx
+		0x18119CA3D: [!] Calls static managed method System.Void UnityEngine.Debug::LogError(System.Object) with arguments [{'string4' (type System.String)}]
+
+
+		Jump Destination (0x18119CA42):
+		0x18119CA42: Clears register rax, yielding zero-local {'local14' (type System.Int32)}
+		0x18119CA53: [!] Returns {'local14' (type System.Int32)} from the function
+
+		0x18119CA56: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSetupComponentDefiners/ComponentDefiner
+	UnityEngine.Component BuildFromDefinition(UnityEngine.GameObject owner, System.Collections.Generic.Queue`1<System.String> definitionItems)
+
+		System.String string = definitionItems.Peek()
+
+		System.String typeToken = this.GetTypeToken()
+
+		System.Boolean boolean = System.String.op_Inequality(string, typeToken) //(String a, String b)
+
+		System.String string2 = definitionItems.Dequeue()
+
+		UnityEngine.Component component = this.InternalBuildFromDefinition(owner, definitionItems) //(GameObject owner, Queue`1 definitionItems)
+
+		System.String typeToken2 = this.GetTypeToken()
+
+		System.String string3 = this.ToString()
+
+		System.String string4 = System.String.Concat(typeToken2, " 読み込みエラー
+        
+        ", string3) //(String str0, String str1, String str2)
+
+		UnityEngine.Debug.LogError(string4) //(Object message)
+		ulong local14 = 0
+		return local14
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x18119CA53) is corrupt (Return value has a type of System.Int32, expecting an object of type UnityEngine.Component) and cannot be created as IL. Aborting here.
+
+
+Method: System.String UTJ.SpringSetupComponentDefiners/ComponentDefiner::GetTypeToken():	Method Body (x86 ASM):
+		0x180AEF030 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180AEF034 mov rcx,[rcx+10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x180AEF038 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180AEF03B je short 0000000180AEF052h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180AEF03D mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x180AEF040 mov rdx,[rax+160h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 352 | None ||| N/A | N/A
+		0x180AEF047 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x180AEF04B jmp qword ptr [rax+158h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 344 | None ||| N/A | N/A
+		0x180AEF052 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180AEF057 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.String UTJ.SpringSetupComponentDefiners/ComponentDefiner::GetTypeToken():
+		End of function at 0x180AEF058
+		Absolute End is at 0x180AEF058
+		Identified Jump Destination addresses:
+
+		0x180AEF034: [!] Reads field componentType from {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} and stores in a new local {'componentType' (type System.Type)}
+
+		0x180AEF038: [!] Compares {'componentType' (type System.Type)} and 0
+		0x180AEF03B: Jumps to 0x180AEF052 (which throws a NRE) if componentType equals 0. Implicitly present in managed code, so ignored here.
+		0x180AEF03D: Loads the class pointer from componentType into a constant constant2 in register rax
+		0x180AEF040: Loads the pointer to the implementation of virtual function System.String System.Type::ToString() specific to System.Type from the class pointer in rax, slot 3 (from memory offset 352) and stores in constant constant3
+		0x180AEF04B: [!] Calls managed method System.Reflection.Assembly System.Type::get_Assembly() on instance {'componentType' (type System.Type)} and stores the result in {'assembly' (type System.Reflection.Assembly)}
+
+		0x180AEF04B: [!] Returns {'assembly' (type System.Reflection.Assembly)} from the function
+
+		0x180AEF052: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSetupComponentDefiners/ComponentDefiner
+	System.String GetTypeToken()
+		System.Type componentType = this.componentType
+
+		System.Reflection.Assembly assembly = componentType.Assembly
+		return assembly
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x180AEF04B) is corrupt (Return value has a type of System.Reflection.Assembly, expecting an object of type System.String) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendProperties(System.Text.StringBuilder,UnityEngine.Component):	Method Body (x86 ASM):
+		0x18119C810 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18119C815 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119C816 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18119C81A cmp byte ptr [1818A2C27h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283431 | None ||| N/A | 0
+		0x18119C821 mov rdi,r8		; DEBUG: {Register}/RDI {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x18119C824 mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18119C827 jne short 000000018119C83Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C829 mov ecx,[1814B5CB0h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464167088 | None ||| N/A | N/A
+		0x18119C82F call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C834 mov byte ptr [1818A2C27h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283431 | None ||| N/A | 1
+		0x18119C83B xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18119C83E xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18119C840 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18119C843 call 00000001811B7130h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C848 mov rdx,[181870E68h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468079208 | None ||| N/A | N/A
+		0x18119C84F mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119C852 call 000000018090C310h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C857 mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x18119C85E mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119C861 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18119C868 je short 000000018119C878h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C86A cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18119C871 jne short 000000018119C878h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C873 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C878 mov rcx,[18187A858h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468118616 | None ||| N/A | N/A
+		0x18119C87F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18119C882 mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18119C885 call 0000000180D515F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C88A test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119C88D je short 000000018119C8B9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C88F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18119C892 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119C895 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119C898 call 0000000180F0F0E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C89D mov rdx,[18187A858h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468118616 | None ||| N/A | N/A
+		0x18119C8A4 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18119C8A7 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119C8AA mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18119C8AF add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18119C8B3 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119C8B4 jmp near ptr 0000000180F0F0E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C8B9 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18119C8BB call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119C8C0 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendProperties(System.Text.StringBuilder,UnityEngine.Component):
+		End of function at 0x18119C8C1
+		Absolute End is at 0x18119C8C1
+		Identified Jump Destination addresses:
+
+		0x18119C815: Saves the content of rdi to the stack
+		0x18119C81A: Compares {Unknown Global at 0x1818A2C27, first ten bytes are [0 104 177 106 1 64 211 127 0 193], or as chars " h±j@Ó Á"} and 0
+		0x18119C821: Copies {'component' (function parameter, type UnityEngine.Component)} from r8 into rdi
+		0x18119C824: Copies {'builder' (function parameter, type System.Text.StringBuilder)} from rdx into rbx
+		0x18119C827: Jumps to 0x18119C83B if {Unknown Global at 0x1818A2C27, first ten bytes are [0 104 177 106 1 64 211 127 0 193], or as chars " h±j@Ó Á"} != 0
+
+		0x18119C829: Reads {Unknown Global at 0x1814B5CB0, first ten bytes are [145 27 0 0 145 91 0 0 145 59], or as chars "  [  ;"} into register rcx as a constant constant3
+		0x18119C82F: Attempts to load the il2cpp metadata for this method (method id 7057) and init it cpp-side.
+
+		0x18119C83E: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x18119C840: Copies {'component' (function parameter, type UnityEngine.Component)} from rdi into rcx
+		0x18119C843: [!] Calls static managed method System.Collections.Generic.IEnumerable`1<System.String> UTJ.UnityComponentStringListBuilder::BuildBuilderStringList(System.Object,System.Collections.Generic.IEnumerable`1<UTJ.TypedStringToValueMap>) with arguments [{'component' (function parameter, type UnityEngine.Component)}, {'local4' (type System.Int32)}] and stores the result in {'iEnumerable' (type System.Collections.Generic.IEnumerable`1<System.String>)}
+
+		0x18119C848: Loads the global generic method reference for method TSource[] System.Linq.Enumerable::ToArray<System.String>(System.Collections.Generic.IEnumerable`1<TSource>) on type System.Linq.Enumerable and stores the result in constant {'ToArray' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18119C84F: Copies {'iEnumerable' (type System.Collections.Generic.IEnumerable`1<System.String>)} from rax into rcx
+		0x18119C852: [!] Calls static managed method TSource[] System.Linq.Enumerable::ToArray<System.String>(System.Collections.Generic.IEnumerable`1<TSource>) with arguments [{'iEnumerable' (type System.Collections.Generic.IEnumerable`1<System.String>)}] and stores the result in {'stringArray' (type System.String[])} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18119C857: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x18119C85E: Copies {'stringArray' (type System.String[])} from rax into rdi
+		0x18119C861: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18119C868: Jumps to 0x18119C878 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18119C86A: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18119C871: Jumps to 0x18119C878 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18119C873: Calls the il2cpp cctor for the type System.String
+		0x18119C878: Loads the string literal "," as a constant "constant10" in rcx
+		0x18119C882: Copies {'stringArray' (type System.String[])} from rdi into rdx
+		0x18119C885: [!] Calls static managed method System.String System.String::Join(System.String,System.String[]) with arguments [",", {'stringArray' (type System.String[])}] and stores the result in {'string' (type System.String)}
+
+		0x18119C88A: [!] Compares {'builder' (function parameter, type System.Text.StringBuilder)} and 0
+		0x18119C88D: Jumps to 0x18119C8B9 (which throws a NRE) if builder equals 0. Implicitly present in managed code, so ignored here.
+		0x18119C892: Copies {'string' (type System.String)} from rax into rdx
+		0x18119C895: Copies {'builder' (function parameter, type System.Text.StringBuilder)} from rbx into rcx
+		0x18119C898: [!] Calls managed method System.Text.StringBuilder System.Text.StringBuilder::Append(System.String) on instance {'builder' (function parameter, type System.Text.StringBuilder)} with arguments [{'string' (type System.String)}] and stores the result in {'stringBuilder' (type System.Text.StringBuilder)}
+
+		0x18119C89D: Loads the string literal "," as a constant "constant12" in rdx
+		0x18119C8A7: Copies {'builder' (function parameter, type System.Text.StringBuilder)} from rbx into rcx
+		0x18119C8AA: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant13
+		0x18119C8B4: [!] Calls managed method System.Text.StringBuilder System.Text.StringBuilder::Append(System.String) on instance {'builder' (function parameter, type System.Text.StringBuilder)} with arguments [","] and stores the result in {'stringBuilder2' (type System.Text.StringBuilder)}
+
+		0x18119C8B4: [!] Returns from the function
+
+		0x18119C8BB: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSetupComponentDefiners/ComponentDefiner
+	System.Void AppendProperties(System.Text.StringBuilder builder, UnityEngine.Component component)
+		ulong local4 = 0
+
+		System.Collections.Generic.IEnumerable`1<System.String> iEnumerable = UTJ.UnityComponentStringListBuilder.BuildBuilderStringList(component, local4) //(Object sourceObject, IEnumerable`1 valueMaps)
+
+		System.String[] stringArray = System.Linq.Enumerable.ToArray<System.String>(iEnumerable) //(IEnumerable`1 source)
+
+		System.String string = System.String.Join(",", stringArray) //(String separator, String[] value)
+
+		System.Text.StringBuilder stringBuilder = builder.Append(string) //(String value)
+
+		System.Text.StringBuilder stringBuilder2 = builder.Append(",") //(String value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: ldarg.2
+	IL_0003: ldloc.0
+	IL_0004: call System.Collections.Generic.IEnumerable`1 UTJ.UnityComponentStringListBuilder::BuildBuilderStringList(System.Object,System.Collections.Generic.IEnumerable`1)
+	IL_0009: call TSource[] System.Linq.Enumerable::ToArray<System.String>(System.Collections.Generic.IEnumerable`1)
+	IL_000e: stloc.1
+	IL_000f: ldstr ","
+	IL_0014: ldloc.1
+	IL_0015: call System.String System.String::Join(System.String,System.String[])
+	IL_001a: stloc.2
+	IL_001b: ldarg.1
+	IL_001c: ldloc.2
+	IL_001d: call System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)
+	IL_0022: stloc.3
+	IL_0023: ldarg.1
+	IL_0024: ldstr ","
+	IL_0029: call System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)
+	IL_002e: stloc.s V_4
+	IL_0030: ret
+	IL_0031: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0036: throw
+	
+
+Method: System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendRecordItem(System.Text.StringBuilder,T,System.Char):	Method Body (x86 ASM):
+		0x1807E93F0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1807E93F5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1807E93F6 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1807E93FA movzx edi,r8w		; DEBUG: {Register}/EDI {Register}/R8W ||| None | 0 | None ||| N/A | N/A
+		0x1807E93FE mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1807E9401 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1807E9404 je short 00000001807E9426h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807E9406 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1807E9409 call 0000000180F0F070h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807E940E xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1807E9411 movzx edx,di		; DEBUG: {Register}/EDX {Register}/DI ||| None | 0 | None ||| N/A | N/A
+		0x1807E9414 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1807E9417 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1807E941C add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1807E9420 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1807E9421 jmp near ptr 0000000180F0EFF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807E9426 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1807E942B int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.Void UTJ.SpringSetupComponentDefiners/ComponentDefiner::AppendRecordItem(System.Text.StringBuilder,T,System.Char):
+		End of function at 0x1807E942C
+		Absolute End is at 0x1807E942C
+		Identified Jump Destination addresses:
+
+		0x1807E93F5: Saves the content of rdi to the stack
+		0x1807E93FA: Copies {'separator' (function parameter, type System.Char)} from r8 into rdi
+		0x1807E93FE: Copies {'builder' (function parameter, type System.Text.StringBuilder)} from rcx into rbx
+		0x1807E9401: [!] Compares {'builder' (function parameter, type System.Text.StringBuilder)} and 0
+		0x1807E9404: Jumps to 0x1807E9426 (which throws a NRE) if builder equals 0. Implicitly present in managed code, so ignored here.
+		0x1807E9409: [!] Calls managed method System.Text.StringBuilder System.Text.StringBuilder::Append(System.Object) on instance {'builder' (function parameter, type System.Text.StringBuilder)} and stores the result in {'stringBuilder' (type System.Text.StringBuilder)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1807E9411: Copies {'separator' (function parameter, type System.Char)} from rdi into rdx
+		0x1807E9414: Copies {'builder' (function parameter, type System.Text.StringBuilder)} from rbx into rcx
+		0x1807E9417: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant2
+		0x1807E9421: [!] Calls managed method System.Text.StringBuilder System.Text.StringBuilder::Append(System.Char) on instance {'builder' (function parameter, type System.Text.StringBuilder)} with arguments [{'separator' (function parameter, type System.Char)}] and stores the result in {'stringBuilder2' (type System.Text.StringBuilder)}
+
+		0x1807E9421: [!] Returns from the function
+
+		0x1807E9426: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSetupComponentDefiners/ComponentDefiner
+	static System.Void AppendRecordItem(System.Text.StringBuilder builder, T item, System.Char separator)
+
+		System.Text.StringBuilder stringBuilder = builder.Append()
+
+		System.Text.StringBuilder stringBuilder2 = builder.Append(separator) //(Char value)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1807E9409) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (1)) and cannot be created as IL. Aborting here.
+
+
+Method: System.String UTJ.SpringSetupComponentDefiners/ComponentDefiner::GetComponentName(UnityEngine.Component):	Method Body (x86 ASM):
+		0x18119CA60 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CA62 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18119CA66 cmp byte ptr [1818A2C28h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283432 | None ||| N/A | 0
+		0x18119CA6D mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18119CA70 jne short 000000018119CA84h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CA72 mov ecx,[1814B5CDCh]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464167132 | None ||| N/A | N/A
+		0x18119CA78 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CA7D mov byte ptr [1818A2C28h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283432 | None ||| N/A | 1
+		0x18119CA84 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18119CA8B test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18119CA92 je short 000000018119CAA2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CA94 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18119CA9B jne short 000000018119CAA2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CA9D call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CAA2 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18119CAA5 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18119CAA7 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CAAA call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CAAF test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18119CAB1 jne short 000000018119CAEBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CAB3 mov rax,[181883F70h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x18119CABA test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x18119CAC1 je short 000000018119CADBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CAC3 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x18119CACA jne short 000000018119CADBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CACC mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CACF call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CAD4 mov rax,[181883F70h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x18119CADB mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x18119CAE2 mov rax,[rax]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x18119CAE5 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18119CAE9 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CAEA ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CAEB test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CAEE je short 000000018119CB00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CAF0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18119CAF2 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CAF5 call 0000000180EA64C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CAFA add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18119CAFE pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CAFF ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CB00 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB02 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CB07 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method System.String UTJ.SpringSetupComponentDefiners/ComponentDefiner::GetComponentName(UnityEngine.Component):
+		End of function at 0x18119CB08
+		Absolute End is at 0x18119CB08
+		Identified Jump Destination addresses:
+
+		0x18119CA60: Saves the content of rbx to the stack
+		0x18119CA66: Compares {Unknown Global at 0x1818A2C28, first ten bytes are [104 177 106 1 64 211 127 0 193 211], or as chars "h±j@Ó ÁÓ"} and 0
+		0x18119CA6D: Copies {'component' (function parameter, type UnityEngine.Component)} from rcx into rbx
+		0x18119CA70: Jumps to 0x18119CA84 if {Unknown Global at 0x1818A2C28, first ten bytes are [104 177 106 1 64 211 127 0 193 211], or as chars "h±j@Ó ÁÓ"} != 0
+
+		0x18119CA72: Reads {Unknown Global at 0x1814B5CDC, first ten bytes are [147 27 0 0 148 59 0 0 148 123], or as chars "  ;  {"} into register rcx as a constant constant3
+		0x18119CA78: Attempts to load the il2cpp metadata for this method (method id 7059) and init it cpp-side.
+
+		0x18119CA84: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18119CA8B: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18119CA92: Jumps to 0x18119CAA2 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18119CA94: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18119CA9B: Jumps to 0x18119CAA2 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18119CA9D: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18119CAA5: Clears register rdx, yielding zero-local {'local2' (type System.Int32)}
+		0x18119CAA7: Copies {'component' (function parameter, type UnityEngine.Component)} from rbx into rcx
+		0x18119CAAA: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'component' (function parameter, type UnityEngine.Component)}, {'local2' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18119CAAF: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18119CAB1: Jumps to 0x18119CAEB (which is an if statement's body) if {'boolean' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18119CAB3: Loads the type definition for managed type System.String as a constant "String" in rax
+		0x18119CABA: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18119CAC1: Jumps to 0x18119CADB if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18119CAC3: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18119CACA: Jumps to 0x18119CADB if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18119CACC: Copies {'String' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x18119CACF: Calls the il2cpp cctor for the type System.String
+		0x18119CAD4: Loads the type definition for managed type System.String as a constant "String" in rax
+		0x18119CADB: Loads the pointer to the static fields for System.String and stores it in constant16 in register rax
+		0x18119CAE2: [!] Reads the static field System.String System.String::Empty into new local empty
+		0x18119CAEA: [!] Returns {'empty' (type System.String)} from the function
+
+		0x18119CAEB: [!] Compares {'component' (function parameter, type UnityEngine.Component)} and 0
+		0x18119CAEE: Jumps to 0x18119CB00 (which throws a NRE) if component equals 0. Implicitly present in managed code, so ignored here.
+		0x18119CAF2: Copies {'component' (function parameter, type UnityEngine.Component)} from rbx into rcx
+		0x18119CAF5: [!] Calls managed method System.String UnityEngine.Object::get_name() on instance {'component' (function parameter, type UnityEngine.Component)} and stores the result in {'name' (type System.String)}
+
+		0x18119CAFF: [!] Returns {'name' (type System.String)} from the function
+
+		0x18119CB02: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSetupComponentDefiners/ComponentDefiner
+	static System.String GetComponentName(UnityEngine.Component component)
+		ulong local2 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(component, local2) //(Object x, Object y)
+
+		if (boolean == False)
+		    System.String empty = System.String.Empty
+		    return empty
+		endif
+        
+
+		System.String name = component.name
+		return name
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: ldarg.0
+	IL_0003: ldloc.0
+	IL_0004: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_0009: ldc.i4.0
+	IL_000a: bne.un.s IL_0012
+	IL_000c: ldsfld System.String System.String::Empty
+	IL_0011: ret
+	IL_0012: ldarg.0
+	IL_0013: call System.String UnityEngine.Object::get_name()
+	IL_0018: ret
+	IL_0019: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001e: throw
+	
+
+Method: UnityEngine.Component UTJ.SpringSetupComponentDefiners/ComponentDefiner::InternalBuildFromDefinition(UnityEngine.GameObject,System.Collections.Generic.Queue`1<System.String>):	Method Body (x86 ASM):
+		0x18119CB10 mov [rsp+18h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 24 | None ||| N/A | N/A
+		0x18119CB15 mov [rsp+20h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 32 | None ||| N/A | N/A
+		0x18119CB1A push r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CB1C sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18119CB20 cmp byte ptr [1818A2C29h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283433 | None ||| N/A | 0
+		0x18119CB27 mov r14,r8		; DEBUG: {Register}/R14 {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x18119CB2A mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB2D mov rsi,rcx		; DEBUG: {Register}/RSI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB30 jne short 000000018119CB44h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CB32 mov ecx,[1814B5CE8h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464167144 | None ||| N/A | N/A
+		0x18119CB38 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CB3D mov byte ptr [1818A2C29h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468283433 | None ||| N/A | 1
+		0x18119CB44 mov [rsp+40h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 64 | None ||| N/A | N/A
+		0x18119CB49 mov [rsp+48h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 72 | None ||| N/A | N/A
+		0x18119CB4E test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB51 je near ptr 000000018119CC57h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CB57 mov rdx,[rsi+10h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSI | 16 | None ||| N/A | N/A
+		0x18119CB5B xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18119CB5E mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB61 call 0000000180B2E350h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CB66 mov rdx,[rsi+10h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSI | 16 | None ||| N/A | N/A
+		0x18119CB6A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18119CB6D mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB70 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB73 call 0000000180B2DCD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CB78 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB7A mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB7D mov rbp,rax		; DEBUG: {Register}/RBP {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB80 call 0000000180B2EA90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CB85 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB88 je near ptr 000000018119CC57h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CB8E xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB90 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB93 call 0000000180CE0430h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CB98 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CB9B je near ptr 000000018119CC57h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CBA1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18119CBA3 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CBA6 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CBAB xor ebx,ebx		; DEBUG: {Register}/EBX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CBAD xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x18119CBB0 mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CBB3 mov [rsp+20h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 32 | None ||| N/A | N/A
+		0x18119CBB8 mov rdx,rbp		; DEBUG: {Register}/RDX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x18119CBBB mov rcx,r14		; DEBUG: {Register}/RCX {Register}/R14 ||| None | 0 | None ||| N/A | N/A
+		0x18119CBBE call 000000018119E380h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CBC3 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18119CBC5 jne short 000000018119CC0Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CBC7 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18119CBCE test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18119CBD5 je short 000000018119CBE4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CBD7 cmp [rcx+0D8h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RCX | 216 | None ||| N/A | N/A
+		0x18119CBDD jne short 000000018119CBE4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CBDF call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CBE4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18119CBE6 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x18119CBE9 call 0000000180EA4EE0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CBEE mov rbp,rbx		; DEBUG: {Register}/RBP {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CBF1 mov rdi,[rsp+48h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x18119CBF6 mov rax,rbp		; DEBUG: {Register}/RAX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x18119CBF9 mov rbp,[rsp+40h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x18119CBFE mov rbx,[rsp+50h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x18119CC03 mov rsi,[rsp+58h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 88 | None ||| N/A | N/A
+		0x18119CC08 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18119CC0C pop r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CC0E ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CC0F mov ecx,ebx		; DEBUG: {Register}/ECX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CC11 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18119CC14 je short 000000018119CC57h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CC16 mov eax,[rdi+18h]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x18119CC19 cmp ecx,eax		; DEBUG: {Register}/ECX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CC1B jge short 000000018119CBF1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CC1D cmp ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18119CC1F jae short 000000018119CC5Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CC21 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18119CC28 movsxd rax,ebx		; DEBUG: {Register}/RAX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CC2B test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18119CC32 mov rsi,[rdi+rax*8+20h]		; DEBUG: {Register}/RSI {Memory}/None ||| RDI | 32 | RAX ||| N/A | N/A
+		0x18119CC37 je short 000000018119CC47h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CC39 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18119CC40 jne short 000000018119CC47h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CC42 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CC47 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18119CC49 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18119CC4C call 0000000180EA4EE0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CC51 inc ebx		; DEBUG: {Register}/EBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18119CC53 mov ecx,ebx		; DEBUG: {Register}/ECX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x18119CC55 jmp short 000000018119CC16h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CC57 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18119CC59 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18119CC5E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method UnityEngine.Component UTJ.SpringSetupComponentDefiners/ComponentDefiner::InternalBuildFromDefinition(UnityEngine.GameObject,System.Collections.Generic.Queue`1<System.String>):
+		End of function at 0x18119CC5F
+		Absolute End is at 0x18119CC5F
+		Identified Jump Destination addresses:
+
+		0x18119CB1A: Saves the content of r14 to the stack
+		0x18119CB20: Compares {Unknown Global at 0x1818A2C29, first ten bytes are [177 106 1 64 211 127 0 193 211 127], or as chars "±j@Ó ÁÓ"} and 0
+		0x18119CB27: Copies {'definitionItems' (function parameter, type System.Collections.Generic.Queue`1<System.String>)} from r8 into r14
+		0x18119CB2A: Copies {'owner' (function parameter, type UnityEngine.GameObject)} from rdx into rbx
+		0x18119CB2D: Copies {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} from rcx into rsi
+		0x18119CB30: Jumps to 0x18119CB44 if {Unknown Global at 0x1818A2C29, first ten bytes are [177 106 1 64 211 127 0 193 211 127], or as chars "±j@Ó ÁÓ"} != 0
+
+		0x18119CB32: Reads {Unknown Global at 0x1814B5CE8, first ten bytes are [148 27 0 0 148 91 0 0 149 91], or as chars "  [  ["} into register rcx as a constant constant3
+		0x18119CB38: Attempts to load the il2cpp metadata for this method (method id 7060) and init it cpp-side.
+
+		0x18119CB4E: [!] Compares {'owner' (function parameter, type UnityEngine.GameObject)} and 0
+		0x18119CB51: Jumps to 0x18119CC57 (which throws a NRE) if owner equals 0. Implicitly present in managed code, so ignored here.
+		0x18119CB57: [!] Reads field componentType from {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} and stores in a new local {'componentType' (type System.Type)}
+
+		0x18119CB5E: Copies {'owner' (function parameter, type UnityEngine.GameObject)} from rbx into rcx
+		0x18119CB61: [!] Calls managed method UnityEngine.Component[] UnityEngine.GameObject::GetComponents(System.Type) on instance {'owner' (function parameter, type UnityEngine.GameObject)} with arguments [{'componentType' (type System.Type)}] and stores the result in {'components' (type UnityEngine.Component[])}
+
+		0x18119CB66: [!] Reads field componentType from {'this' (function parameter, type UTJ.SpringSetupComponentDefiners/ComponentDefiner)} and stores in a new local {'componentType2' (type System.Type)}
+
+		0x18119CB6D: Copies {'owner' (function parameter, type UnityEngine.GameObject)} from rbx into rcx
+		0x18119CB70: Copies {'components' (type UnityEngine.Component[])} from rax into rdi
+		0x18119CB73: [!] Calls managed method UnityEngine.Component UnityEngine.GameObject::Internal_AddComponentWithType(System.Type) on instance {'owner' (function parameter, type UnityEngine.GameObject)} with arguments [{'componentType2' (type System.Type)}] and stores the result in {'component' (type UnityEngine.Component)}
+
+		0x18119CB7A: Copies {'owner' (function parameter, type UnityEngine.GameObject)} from rbx into rcx
+		0x18119CB7D: Copies {'component' (type UnityEngine.Component)} from rax into rbp
+		0x18119CB80: [!] Calls managed method UnityEngine.Transform UnityEngine.GameObject::get_transform() on instance {'owner' (function parameter, type UnityEngine.GameObject)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x18119CB85: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x18119CB88: Jumps to 0x18119CC57 (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x18119CB90: Copies {'transform' (type UnityEngine.Transform)} from rax into rcx
+		0x18119CB93: [!] Calls managed method UnityEngine.Transform UnityEngine.Transform::get_root() on instance {'transform' (type UnityEngine.Transform)} and stores the result in {'root' (type UnityEngine.Transform)}
+
+		0x18119CB98: [!] Compares {'root' (type UnityEngine.Transform)} and 0
+		0x18119CB9B: Jumps to 0x18119CC57 (which throws a NRE) if root equals 0. Implicitly present in managed code, so ignored here.
+		0x18119CBA3: Copies {'root' (type UnityEngine.Transform)} from rax into rcx
+		0x18119CBA6: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'root' (type UnityEngine.Transform)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x18119CBAB: Clears register rbx, yielding zero-local {'local15' (type System.Int32)}
+		0x18119CBAD: Clears register r9, yielding zero-local {'local16' (type System.Int32)}
+		0x18119CBB0: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into r8
+		0x18119CBB3: Moves local15 (type System.Int32) from register rbx to the stack at offset 32 (0x20)
+		0x18119CBB8: Copies {'component' (type UnityEngine.Component)} from rbp into rdx
+		0x18119CBBB: Copies {'definitionItems' (function parameter, type System.Collections.Generic.Queue`1<System.String>)} from r14 into rcx
+		0x18119CBBE: [!] Calls static managed method System.Boolean UTJ.StringQueueExtensions.ObjectBuilder::DequeueComponent(System.Collections.Generic.Queue`1<System.String>,UnityEngine.Component,UnityEngine.GameObject,System.Collections.Generic.IEnumerable`1<UTJ.TypedStringToValueMap>) with arguments [{'definitionItems' (function parameter, type System.Collections.Generic.Queue`1<System.String>)}, {'component' (type UnityEngine.Component)}, {'gameObject' (type UnityEngine.GameObject)}, {'local16' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18119CBC3: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18119CBC5: Jumps to 0x18119CC0F (which is an if statement's body) if {'boolean' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18119CBC7: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18119CBCE: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18119CBD5: Jumps to 0x18119CBE4 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18119CBD7: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and {'local15' (type System.Int32)}
+		0x18119CBDD: Jumps to 0x18119CBE4 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != {'local15' (type System.Int32)}
+
+		0x18119CBDF: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18119CBE6: Copies {'component' (type UnityEngine.Component)} from rbp into rcx
+		0x18119CBE9: [!] Calls static managed method System.Void UnityEngine.Object::DestroyImmediate(UnityEngine.Object) with arguments [{'component' (type UnityEngine.Component)}]
+
+		0x18119CBEE: Copies {'local15' (type System.Int32)} from rbx into rbp
+		0x18119CBF1: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rdi as new constant constant12
+		0x18119CBF6: Copies {'local15' (type System.Int32)} from rbp into rax
+		0x18119CBF9: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbp as new constant constant13
+		0x18119CBFE: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register rbx as new constant constant14
+		0x18119CC03: Reads unknown value in stack, offset 88 (0x58) and stores the pointer in register rsi as new constant constant15
+		0x18119CC0E: [!] Returns {'local15' (type System.Int32)} from the function
+
+		0x18119CC0F: Copies {'local15' (type System.Int32)} from rbx into rcx
+		0x18119CC11: [!] Compares {'components' (type UnityEngine.Component[])} and 0
+		0x18119CC14: Jumps to 0x18119CC57 (which throws a NRE) if components equals 0. Implicitly present in managed code, so ignored here.
+
+		Potential Loop Start (0x18119CC16):
+		0x18119CC16: Reads the length of the array "{'components' (type UnityEngine.Component[])}" and stores it in new local {'length' (type System.Int32)} in register rax
+		0x18119CC19: [!] Compares {'local15' (type System.Int32)} and {'length' (type System.Int32)}
+		0x18119CC1B: Jumps to 0x18119CBF1 (which is an if statement's body) if {'local15' (type System.Int32)} is greater than or equal to {'length' (type System.Int32)} ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18119CC1D: [!] Compares {'local15' (type System.Int32)} and {'length' (type System.Int32)}
+		0x18119CC1F: Jumps to 0x18119CC5F (which throws a NRE) if {'local15' (type System.Int32)} is greater than or equal to {'length' (type System.Int32)}. Implicitly present in managed code, so ignored here.
+		0x18119CC21: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18119CC28: Copies {'local15' (type System.Int32)} from rbx into rax
+		0x18119CC2B: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18119CC32: Copies the element in the array {'components' (type UnityEngine.Component[])} at the index specified by {'local15' (type System.Int32)} into new local {'component2' (type UnityEngine.Component)}
+		0x18119CC37: Jumps to 0x18119CC47 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18119CC47 which is after end of current block @ 0x18119CBF1 (started at 0x18119CC1D)
+
+		0x18119CC39: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18119CC40: Jumps to 0x18119CC47 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18119CC47 which is after end of current block @ 0x18119CBF1 (started at 0x18119CC1D)
+
+		0x18119CC42: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18119CC49: Copies {'component2' (type UnityEngine.Component)} from rsi into rcx
+		0x18119CC4C: [!] Calls static managed method System.Void UnityEngine.Object::DestroyImmediate(UnityEngine.Object) with arguments [{'component2' (type UnityEngine.Component)}]
+
+		0x18119CC51: [!] Adds 1 to the value {'local15' (type System.Int32)}, stored in rbx
+		0x18119CC53: Copies {'local15' (type System.Int32)} from rbx into rcx
+		0x18119CC55: Jumps to 0x18119CC16 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x18119CC59: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UTJ.SpringSetupComponentDefiners/ComponentDefiner
+	UnityEngine.Component InternalBuildFromDefinition(UnityEngine.GameObject owner, System.Collections.Generic.Queue`1<System.String> definitionItems)
+		System.Type componentType = this.componentType
+
+		UnityEngine.Component[] components = owner.GetComponents(componentType) //(Type type)
+		System.Type componentType2 = this.componentType
+
+		UnityEngine.Component component = owner.Internal_AddComponentWithType(componentType2) //(Type componentType)
+
+		UnityEngine.Transform transform = owner.transform
+
+		UnityEngine.Transform root = transform.root
+
+		UnityEngine.GameObject gameObject = root.gameObject
+		ulong local15 = 0
+		ulong local16 = 0
+
+		System.Boolean boolean = UTJ.StringQueueExtensions.ObjectBuilder.DequeueComponent(definitionItems, component, gameObject, local16) //(Queue`1 queue, Component component, GameObject rootObject, IEnumerable`1 valueMaps)
+
+		if (boolean == False)
+
+		    UnityEngine.Object.DestroyImmediate(component) //(Object obj)
+		    return local15
+		endif
+        
+		System.Int32 length = components.Length
+
+		if (local15 < length)
+		    UnityEngine.Component component2 = components[local15]
+
+		    UnityEngine.Object.DestroyImmediate(component2) //(Object obj)
+		    local15 += 1
+		    throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x18119CC0E) is corrupt (Return value has a type of System.Int32, expecting an object of type UnityEngine.Component) and cannot be created as IL. Aborting here.
+
+

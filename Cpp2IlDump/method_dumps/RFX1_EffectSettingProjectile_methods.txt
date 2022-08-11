@@ -1,0 +1,583 @@
+Type: RFX1_EffectSettingProjectile
+
+Method: System.Void RFX1_EffectSettingProjectile::.ctor():	Method Body (x86 ASM):
+		0x180390790 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180390792 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180390796 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180390798 mov dword ptr [rcx+18h],41F00000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 24 | None ||| N/A | 1106247680
+		0x18039079F mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803907A2 mov dword ptr [rcx+1Ch],3F800000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 28 | None ||| N/A | 1065353216
+		0x1803907A9 lea ecx,[rdx-1]		; DEBUG: {Register}/ECX {Memory}/None ||| RDX | 18446744073709551615 | None ||| N/A | N/A
+		0x1803907AC call 0000000180B33770h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803907B1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803907B3 mov [rbx+20h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBX | 32 | None ||| N/A | N/A
+		0x1803907B6 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803907B9 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1803907BD pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803907BE jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803907C3 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void RFX1_EffectSettingProjectile::.ctor():
+		End of function at 0x1803907C4
+		Absolute End is at 0x1803907C4
+		Identified Jump Destination addresses:
+
+		0x180390790: Saves the content of rbx to the stack
+		0x180390798: [!] Sets the field FlyDistanceForProjectiles (Type System.Single) on local {'this' (function parameter, type RFX1_EffectSettingProjectile)} to the value stored in 30
+		0x18039079F: Copies {'this' (function parameter, type RFX1_EffectSettingProjectile)} from rcx into rbx
+		0x1803907A2: [!] Sets the field SpeedMultiplier (Type System.Single) on local {'this' (function parameter, type RFX1_EffectSettingProjectile)} to the value stored in 1
+		0x1803907A9: [!] Loads the constant value 4294967295 into the register rcx as constant constant1 using an LEA instruction
+		0x1803907AC: [!] Calls static managed method UnityEngine.LayerMask UnityEngine.LayerMask::op_Implicit(System.Int32) with arguments [-1] and stores the result in {'layerMask' (type UnityEngine.LayerMask)}
+
+		0x1803907B3: [!] Sets the field CollidesWith (Type UnityEngine.LayerMask) on local {'this' (function parameter, type RFX1_EffectSettingProjectile)} to the value stored in {'layerMask' (type UnityEngine.LayerMask)}
+		0x1803907B6: Copies {'this' (function parameter, type RFX1_EffectSettingProjectile)} from rbx into rcx
+		0x1803907BE: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type RFX1_EffectSettingProjectile)}
+
+		0x1803907BE: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: RFX1_EffectSettingProjectile
+	System.Void .ctor()
+		this.FlyDistanceForProjectiles = 30
+		this.SpeedMultiplier = 1
+		System.Int32 -1 = 4294967295
+
+		UnityEngine.LayerMask layerMask = UnityEngine.LayerMask.op_Implicit(-1) //(Int32 intVal)
+		this.CollidesWith = layerMask
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.r4 30
+	IL_0006: stfld System.Single RFX1_EffectSettingProjectile::FlyDistanceForProjectiles
+	IL_000b: ldarg.0
+	IL_000c: ldc.r4 1
+	IL_0011: stfld System.Single RFX1_EffectSettingProjectile::SpeedMultiplier
+	IL_0016: ldc.i4.m1
+	IL_0017: call UnityEngine.LayerMask UnityEngine.LayerMask::op_Implicit(System.Int32)
+	IL_001c: stloc.0
+	IL_001d: ldarg.0
+	IL_001e: ldloc.0
+	IL_001f: stfld UnityEngine.LayerMask RFX1_EffectSettingProjectile::CollidesWith
+	IL_0024: ldarg.0
+	IL_0025: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_002a: ret
+	
+
+Method: System.Void RFX1_EffectSettingProjectile::Awake():	Method Body (x86 ASM):
+		0x180390550 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180390555 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180390556 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18039055A cmp byte ptr [18183DD29h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869993 | None ||| N/A | 0
+		0x180390561 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180390564 jne short 0000000180390578h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390566 mov ecx,[181519724h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464575268 | None ||| N/A | N/A
+		0x18039056C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390571 mov byte ptr [18183DD29h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869993 | None ||| N/A | 1
+		0x180390578 mov eax,[rdi+1Ch]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 28 | None ||| N/A | N/A
+		0x18039057B mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x18039057D mov [rdi+28h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDI | 40 | None ||| N/A | N/A
+		0x180390580 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180390583 mov r8,[181869A30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468049456 | None ||| N/A | N/A
+		0x18039058A call 000000018090ABF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039058F mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x180390596 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180390599 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803905A0 je short 00000001803905B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803905A2 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803905A9 jne short 00000001803905B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803905AB call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803905B0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1803905B3 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803905B5 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803905B8 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803905BD test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1803905BF je short 00000001803905CCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803905C1 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1803905C4 je short 00000001803905D7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803905C6 mov eax,[rbx+1Ch]		; DEBUG: {Register}/EAX {Memory}/None ||| RBX | 28 | None ||| N/A | N/A
+		0x1803905C9 mov [rdi+24h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDI | 36 | None ||| N/A | N/A
+		0x1803905CC mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1803905D1 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1803905D5 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803905D6 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803905D7 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1803905D9 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803905DE int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void RFX1_EffectSettingProjectile::Awake():
+		End of function at 0x1803905DF
+		Absolute End is at 0x1803905DF
+		Identified Jump Destination addresses:
+
+		0x180390555: Saves the content of rdi to the stack
+		0x18039055A: Compares {Unknown Global at 0x18183DD29, first ten bytes are [78 1 0 208 60 103 1 192 78 1], or as chars "N Ð<gÀN"} and 0
+		0x180390561: Copies {'this' (function parameter, type RFX1_EffectSettingProjectile)} from rcx into rdi
+		0x180390564: Jumps to 0x180390578 if {Unknown Global at 0x18183DD29, first ten bytes are [78 1 0 208 60 103 1 192 78 1], or as chars "N Ð<gÀN"} != 0
+
+		0x180390566: Loads string "\V" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18039056C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x180390578: [!] Reads field SpeedMultiplier from {'this' (function parameter, type RFX1_EffectSettingProjectile)} and stores in a new local {'speedMultiplier' (type System.Single)}
+
+		0x18039057B: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x18039057D: [!] Sets the field oldSpeedMultiplier (Type System.Single) on local {'this' (function parameter, type RFX1_EffectSettingProjectile)} to the value stored in {'speedMultiplier' (type System.Single)}
+		0x180390580: Copies {'this' (function parameter, type RFX1_EffectSettingProjectile)} from rdi into rcx
+		0x180390583: Loads the global generic method reference for method T UnityEngine.Component::GetComponentInChildren<RFX1_TransformMotion>(System.Boolean) on type UnityEngine.Component and stores the result in constant {'GetComponentInChildren' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x18039058A: [!] Calls managed method T UnityEngine.Component::GetComponentInChildren<RFX1_TransformMotion>(System.Boolean) on instance {'this' (function parameter, type RFX1_EffectSettingProjectile)} with arguments [True] and stores the result in {'componentInChildren' (type RFX1_TransformMotion)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18039058F: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x180390596: Copies {'componentInChildren' (type RFX1_TransformMotion)} from rax into rbx
+		0x180390599: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803905A0: Jumps to 0x1803905B0 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803905A2: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803905A9: Jumps to 0x1803905B0 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803905AB: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1803905B3: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x1803905B5: Copies {'componentInChildren' (type RFX1_TransformMotion)} from rbx into rcx
+		0x1803905B8: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'componentInChildren' (type RFX1_TransformMotion)}, {'local4' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1803905BD: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1803905BF: Jumps to 0x1803905CC (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1803905C1: [!] Compares {'componentInChildren' (type RFX1_TransformMotion)} and 0
+		0x1803905C4: Jumps to 0x1803905D7 (which throws a NRE) if componentInChildren equals 0. Implicitly present in managed code, so ignored here.
+		0x1803905C6: [!] Reads field Speed from {'componentInChildren' (type RFX1_TransformMotion)} and stores in a new local {'speed' (type System.Single)}
+
+		0x1803905C9: [!] Sets the field startSpeed (Type System.Single) on local {'this' (function parameter, type RFX1_EffectSettingProjectile)} to the value stored in {'speed' (type System.Single)}
+		0x1803905CC: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant13
+		0x1803905D6: [!] Returns from the function
+
+		0x1803905D9: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: RFX1_EffectSettingProjectile
+	System.Void Awake()
+		System.Single speedMultiplier = this.SpeedMultiplier
+		this.oldSpeedMultiplier = speedMultiplier
+
+		RFX1_TransformMotion componentInChildren = base.GetComponentInChildren<RFX1_TransformMotion>(True) //(Boolean includeInactive)
+		ulong local4 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(componentInChildren, local4) //(Object x, Object y)
+
+		if (boolean != False)
+		    System.Single speed = componentInChildren.Speed
+		    this.startSpeed = speed
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Single RFX1_EffectSettingProjectile::SpeedMultiplier
+	IL_0006: stloc.0
+	IL_0007: ldarg.0
+	IL_0008: ldloc.0
+	IL_0009: stfld System.Single RFX1_EffectSettingProjectile::oldSpeedMultiplier
+	IL_000e: ldarg.0
+	IL_000f: ldc.i4.1
+	IL_0010: call T UnityEngine.Component::GetComponentInChildren<RFX1_TransformMotion>(System.Boolean)
+	IL_0015: stloc.1
+	IL_0016: ldc.i4.0
+	IL_0017: stloc.2
+	IL_0018: ldloc.1
+	IL_0019: ldloc.2
+	IL_001a: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_001f: ldc.i4.0
+	IL_0020: beq.s IL_0030
+	IL_0022: ldloc.1
+	IL_0023: ldfld System.Single RFX1_TransformMotion::Speed
+	IL_0028: stloc.3
+	IL_0029: ldarg.0
+	IL_002a: ldloc.3
+	IL_002b: stfld System.Single RFX1_EffectSettingProjectile::startSpeed
+	IL_0030: ret
+	IL_0031: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0036: throw
+	
+
+Method: System.Void RFX1_EffectSettingProjectile::OnEnable():	Method Body (x86 ASM):
+		0x1803905E0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x1803905E5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803905E6 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1803905EA cmp byte ptr [18183DD2Ah],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869994 | None ||| N/A | 0
+		0x1803905F1 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803905F4 jne short 0000000180390608h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803905F6 mov ecx,[181519734h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464575284 | None ||| N/A | N/A
+		0x1803905FC call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390601 mov byte ptr [18183DD2Ah],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869994 | None ||| N/A | 1
+		0x180390608 mov r8,[181869A30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468049456 | None ||| N/A | N/A
+		0x18039060F mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x180390611 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180390614 call 000000018090ABF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390619 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x180390620 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180390623 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18039062A je short 000000018039063Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039062C cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180390633 jne short 000000018039063Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390635 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039063A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18039063D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18039063F mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180390642 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390647 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180390649 je short 000000018039066Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039064B test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18039064E je short 0000000180390676h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390650 mov eax,[rdi+18h]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x180390653 mov [rbx+18h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBX | 24 | None ||| N/A | N/A
+		0x180390656 mov eax,[rdi+20h]		; DEBUG: {Register}/EAX {Memory}/None ||| RDI | 32 | None ||| N/A | N/A
+		0x180390659 mov [rbx+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBX | 56 | None ||| N/A | N/A
+		0x18039065C movss xmm0,dword ptr [rdi+24h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 36 | None ||| N/A | N/A
+		0x180390661 mulss xmm0,dword ptr [rdi+1Ch]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RDI | 28 | None ||| N/A | N/A
+		0x180390666 movss dword ptr [rbx+1Ch],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBX | 28 | None ||| N/A | N/A
+		0x18039066B mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x180390670 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180390674 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180390675 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180390676 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180390678 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039067D int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void RFX1_EffectSettingProjectile::OnEnable():
+		End of function at 0x18039067E
+		Absolute End is at 0x18039067E
+		Identified Jump Destination addresses:
+
+		0x1803905E5: Saves the content of rdi to the stack
+		0x1803905EA: Compares {Unknown Global at 0x18183DD2A, first ten bytes are [1 0 208 60 103 1 192 78 1 0], or as chars " Ð<gÀN "} and 0
+		0x1803905F1: Copies {'this' (function parameter, type RFX1_EffectSettingProjectile)} from rcx into rdi
+		0x1803905F4: Jumps to 0x180390608 if {Unknown Global at 0x18183DD2A, first ten bytes are [1 0 208 60 103 1 192 78 1 0], or as chars " Ð<gÀN "} != 0
+
+		0x1803905F6: Loads string "]V" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1803905FC: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x180390608: Loads the global generic method reference for method T UnityEngine.Component::GetComponentInChildren<RFX1_TransformMotion>(System.Boolean) on type UnityEngine.Component and stores the result in constant {'GetComponentInChildren' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x18039060F: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x180390611: Copies {'this' (function parameter, type RFX1_EffectSettingProjectile)} from rdi into rcx
+		0x180390614: [!] Calls managed method T UnityEngine.Component::GetComponentInChildren<RFX1_TransformMotion>(System.Boolean) on instance {'this' (function parameter, type RFX1_EffectSettingProjectile)} with arguments [True] and stores the result in {'componentInChildren' (type RFX1_TransformMotion)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x180390619: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x180390620: Copies {'componentInChildren' (type RFX1_TransformMotion)} from rax into rbx
+		0x180390623: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18039062A: Jumps to 0x18039063A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18039062C: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180390633: Jumps to 0x18039063A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180390635: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18039063D: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x18039063F: Copies {'componentInChildren' (type RFX1_TransformMotion)} from rbx into rcx
+		0x180390642: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'componentInChildren' (type RFX1_TransformMotion)}, {'local3' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x180390647: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x180390649: Jumps to 0x18039066B (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18039064B: [!] Compares {'componentInChildren' (type RFX1_TransformMotion)} and 0
+		0x18039064E: Jumps to 0x180390676 (which throws a NRE) if componentInChildren equals 0. Implicitly present in managed code, so ignored here.
+		0x180390650: [!] Reads field FlyDistanceForProjectiles from {'this' (function parameter, type RFX1_EffectSettingProjectile)} and stores in a new local {'flyDistanceForProjectiles' (type System.Single)}
+
+		0x180390653: [!] Sets the field Distance (Type System.Single) on local {'componentInChildren' (type RFX1_TransformMotion)} to the value stored in {'flyDistanceForProjectiles' (type System.Single)}
+		0x180390656: [!] Reads field CollidesWith from {'this' (function parameter, type RFX1_EffectSettingProjectile)} and stores in a new local {'collidesWith' (type UnityEngine.LayerMask)}
+
+		0x180390659: [!] Sets the field CollidesWith (Type UnityEngine.LayerMask) on local {'componentInChildren' (type RFX1_TransformMotion)} to the value stored in {'collidesWith' (type UnityEngine.LayerMask)}
+		0x18039065C: [!] Reads field startSpeed from {'this' (function parameter, type RFX1_EffectSettingProjectile)} and stores in a new local {'startSpeed' (type System.Single)}
+
+		0x180390661: Multiplies {'startSpeed' (type System.Single)} by the field SpeedMultiplier from {'this' (function parameter, type RFX1_EffectSettingProjectile)}, and stores the result in new local {'local8' (type System.Single)} in register xmm0
+		0x180390666: [!] Sets the field Speed (Type System.Single) on local {'componentInChildren' (type RFX1_TransformMotion)} to the value stored in {'local8' (type System.Single)}
+		0x18039066B: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant13
+		0x180390675: [!] Returns from the function
+
+		0x180390678: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: RFX1_EffectSettingProjectile
+	System.Void OnEnable()
+
+		RFX1_TransformMotion componentInChildren = base.GetComponentInChildren<RFX1_TransformMotion>(True) //(Boolean includeInactive)
+		ulong local3 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(componentInChildren, local3) //(Object x, Object y)
+
+		if (boolean != False)
+		    System.Single flyDistanceForProjectiles = this.FlyDistanceForProjectiles
+		    componentInChildren.Distance = flyDistanceForProjectiles
+		    UnityEngine.LayerMask collidesWith = this.CollidesWith
+		    componentInChildren.CollidesWith = collidesWith
+		    System.Single startSpeed = this.startSpeed
+		    System.Single local8 = startSpeed * this.SpeedMultiplier
+		    componentInChildren.Speed = local8
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.1
+	IL_0002: call T UnityEngine.Component::GetComponentInChildren<RFX1_TransformMotion>(System.Boolean)
+	IL_0007: stloc.0
+	IL_0008: ldc.i4.0
+	IL_0009: stloc.1
+	IL_000a: ldloc.0
+	IL_000b: ldloc.1
+	IL_000c: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_0011: ldc.i4.0
+	IL_0012: beq.s IL_0046
+	IL_0014: ldarg.0
+	IL_0015: ldfld System.Single RFX1_EffectSettingProjectile::FlyDistanceForProjectiles
+	IL_001a: stloc.2
+	IL_001b: ldloc.0
+	IL_001c: ldloc.2
+	IL_001d: stfld System.Single RFX1_TransformMotion::Distance
+	IL_0022: ldarg.0
+	IL_0023: ldfld UnityEngine.LayerMask RFX1_EffectSettingProjectile::CollidesWith
+	IL_0028: stloc.3
+	IL_0029: ldloc.0
+	IL_002a: ldloc.3
+	IL_002b: stfld UnityEngine.LayerMask RFX1_TransformMotion::CollidesWith
+	IL_0030: ldarg.0
+	IL_0031: ldfld System.Single RFX1_EffectSettingProjectile::startSpeed
+	IL_0036: ldfld System.Single RFX1_EffectSettingProjectile::SpeedMultiplier
+	IL_003b: mul
+	IL_003c: stloc.s V_4
+	IL_003e: ldloc.0
+	IL_003f: ldloc.s V_4
+	IL_0041: stfld System.Single RFX1_TransformMotion::Speed
+	IL_0046: ret
+	IL_0047: newobj System.Void System.NullReferenceException::.ctor()
+	IL_004c: throw
+	
+
+Method: System.Void RFX1_EffectSettingProjectile::Update():	Method Body (x86 ASM):
+		0x180390680 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180390682 sub rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x180390686 cmp byte ptr [18183DD2Bh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869995 | None ||| N/A | 0
+		0x18039068D mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180390690 movaps [rsp+30h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 48 | None ||| N/A | N/A
+		0x180390695 movaps [rsp+20h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 32 | None ||| N/A | N/A
+		0x18039069A jne short 00000001803906AEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039069C mov ecx,[181519750h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464575312 | None ||| N/A | N/A
+		0x1803906A2 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803906A7 mov byte ptr [18183DD2Bh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869995 | None ||| N/A | 1
+		0x1803906AE mov rcx,[18188DA20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196896 | None ||| N/A | N/A
+		0x1803906B5 movss xmm6,dword ptr [rbx+28h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x1803906BA movss xmm7,dword ptr [rbx+1Ch]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RBX | 28 | None ||| N/A | N/A
+		0x1803906BF test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1803906C6 je short 00000001803906D6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803906C8 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1803906CF jne short 00000001803906D6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803906D1 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803906D6 subss xmm6,xmm7		; DEBUG: {Register}/XMM6 {Register}/XMM7 ||| None | 0 | None ||| N/A | N/A
+		0x1803906DA movaps xmm7,[rsp+20h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1803906DF andps xmm6,[181261F50h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RIP | 6461726544 | None ||| N/A | N/A
+		0x1803906E6 comiss xmm6,dword ptr [181261D40h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RIP | 6461726016 | None ||| N/A | N/A
+		0x1803906ED movaps xmm6,[rsp+30h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1803906F2 jbe near ptr 0000000180390780h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803906F8 cmp byte ptr [18183DD2Ah],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869994 | None ||| N/A | 0
+		0x1803906FF mov [rsp+50h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 80 | None ||| N/A | N/A
+		0x180390704 jne short 0000000180390718h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390706 mov ecx,[181519734h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464575284 | None ||| N/A | N/A
+		0x18039070C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390711 mov byte ptr [18183DD2Ah],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467869994 | None ||| N/A | 1
+		0x180390718 mov r8,[181869A30h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468049456 | None ||| N/A | N/A
+		0x18039071F mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x180390721 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180390724 call 000000018090ABF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390729 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x180390730 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180390733 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18039073A je short 000000018039074Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039073C cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180390743 jne short 000000018039074Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390745 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039074A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18039074D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18039074F mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x180390752 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390757 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180390759 je short 000000018039077Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039075B test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18039075E je short 0000000180390786h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180390760 mov eax,[rbx+18h]		; DEBUG: {Register}/EAX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x180390763 mov [rdi+18h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDI | 24 | None ||| N/A | N/A
+		0x180390766 mov eax,[rbx+20h]		; DEBUG: {Register}/EAX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x180390769 mov [rdi+38h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDI | 56 | None ||| N/A | N/A
+		0x18039076C movss xmm0,dword ptr [rbx+24h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 36 | None ||| N/A | N/A
+		0x180390771 mulss xmm0,dword ptr [rbx+1Ch]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBX | 28 | None ||| N/A | N/A
+		0x180390776 movss dword ptr [rdi+1Ch],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RDI | 28 | None ||| N/A | N/A
+		0x18039077B mov rdi,[rsp+50h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x180390780 add rsp,40h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 64
+		0x180390784 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180390785 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180390786 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x180390788 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18039078D int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void RFX1_EffectSettingProjectile::Update():
+		End of function at 0x18039078E
+		Absolute End is at 0x18039078E
+		Identified Jump Destination addresses:
+
+		0x180390680: Saves the content of rbx to the stack
+		0x180390686: Compares {Unknown Global at 0x18183DD2B, first ten bytes are [0 208 60 103 1 192 78 1 0 38], or as chars " Ð<gÀN &"} and 0
+		0x18039068D: Copies {'this' (function parameter, type RFX1_EffectSettingProjectile)} from rcx into rbx
+		0x18039069A: Jumps to 0x1803906AE if {Unknown Global at 0x18183DD2B, first ten bytes are [0 208 60 103 1 192 78 1 0 38], or as chars " Ð<gÀN &"} != 0
+
+		0x18039069C: Loads string "^V" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1803906A2: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1803906AE: Loads the type definition for managed type UnityEngine.Mathf as a constant "Mathf" in rcx
+		0x1803906B5: [!] Reads field oldSpeedMultiplier from {'this' (function parameter, type RFX1_EffectSettingProjectile)} and stores in a new local {'oldSpeedMultiplier' (type System.Single)}
+
+		0x1803906BF: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1803906C6: Jumps to 0x1803906D6 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1803906C8: Compares "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1803906CF: Jumps to 0x1803906D6 if "{il2cpp field on {'Mathf' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1803906D1: Calls the il2cpp cctor for the type UnityEngine.Mathf
+		0x1803906DA: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm7 as new constant constant9
+		0x1803906E6: [!] Compares {'oldSpeedMultiplier' (type System.Single)} and 0.0010000000474974513
+		0x1803906ED: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register xmm6 as new constant constant11
+		0x1803906F2: Jumps to 0x180390780 (which is an if statement's body) if {'oldSpeedMultiplier' (type System.Single)} is less than or equal to 0.0010000000474974513 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1803906F8: Compares {Unknown Global at 0x18183DD2A, first ten bytes are [1 0 208 60 103 1 192 78 1 0], or as chars " Ð<gÀN "} and 0
+		0x180390704: Jumps to 0x180390718 if {Unknown Global at 0x18183DD2A, first ten bytes are [1 0 208 60 103 1 192 78 1 0], or as chars " Ð<gÀN "} != 0
+
+		0x180390706: Loads string "]V" into register rcx as constant {'constant14' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18039070C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x180390718: Loads the global generic method reference for method T UnityEngine.Component::GetComponentInChildren<RFX1_TransformMotion>(System.Boolean) on type UnityEngine.Component and stores the result in constant {'GetComponentInChildren' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in r8
+		0x18039071F: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x180390721: Copies {'this' (function parameter, type RFX1_EffectSettingProjectile)} from rbx into rcx
+		0x180390724: [!] Calls managed method T UnityEngine.Component::GetComponentInChildren<RFX1_TransformMotion>(System.Boolean) on instance {'this' (function parameter, type RFX1_EffectSettingProjectile)} with arguments [True] and stores the result in {'componentInChildren' (type RFX1_TransformMotion)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x180390729: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x180390730: Copies {'componentInChildren' (type RFX1_TransformMotion)} from rax into rdi
+		0x180390733: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18039073A: Jumps to 0x18039074A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18039073C: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180390743: Jumps to 0x18039074A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x180390745: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18039074D: Clears register rdx, yielding zero-local {'local5' (type System.Int32)}
+		0x18039074F: Copies {'componentInChildren' (type RFX1_TransformMotion)} from rdi into rcx
+		0x180390752: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'componentInChildren' (type RFX1_TransformMotion)}, {'local5' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x180390757: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x180390759: Jumps to 0x18039077B (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18039075B: [!] Compares {'componentInChildren' (type RFX1_TransformMotion)} and 0
+		0x18039075E: Jumps to 0x180390786 (which throws a NRE) if componentInChildren equals 0. Implicitly present in managed code, so ignored here.
+		0x180390760: [!] Reads field FlyDistanceForProjectiles from {'this' (function parameter, type RFX1_EffectSettingProjectile)} and stores in a new local {'flyDistanceForProjectiles' (type System.Single)}
+
+		0x180390763: [!] Sets the field Distance (Type System.Single) on local {'componentInChildren' (type RFX1_TransformMotion)} to the value stored in {'flyDistanceForProjectiles' (type System.Single)}
+		0x180390766: [!] Reads field CollidesWith from {'this' (function parameter, type RFX1_EffectSettingProjectile)} and stores in a new local {'collidesWith' (type UnityEngine.LayerMask)}
+
+		0x180390769: [!] Sets the field CollidesWith (Type UnityEngine.LayerMask) on local {'componentInChildren' (type RFX1_TransformMotion)} to the value stored in {'collidesWith' (type UnityEngine.LayerMask)}
+		0x18039076C: [!] Reads field startSpeed from {'this' (function parameter, type RFX1_EffectSettingProjectile)} and stores in a new local {'startSpeed' (type System.Single)}
+
+		0x180390771: Multiplies {'startSpeed' (type System.Single)} by the field SpeedMultiplier from {'this' (function parameter, type RFX1_EffectSettingProjectile)}, and stores the result in new local {'local10' (type System.Single)} in register xmm0
+		0x180390776: [!] Sets the field Speed (Type System.Single) on local {'componentInChildren' (type RFX1_TransformMotion)} to the value stored in {'local10' (type System.Single)}
+		0x18039077B: Reads unknown value in stack, offset 80 (0x50) and stores the pointer in register rdi as new constant constant24
+		0x180390785: [!] Returns from the function
+
+		0x180390788: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: RFX1_EffectSettingProjectile
+	System.Void Update()
+		System.Single oldSpeedMultiplier = this.oldSpeedMultiplier
+
+		if (oldSpeedMultiplier > 0.0010000000474974513)
+
+		    RFX1_TransformMotion componentInChildren = base.GetComponentInChildren<RFX1_TransformMotion>(True) //(Boolean includeInactive)
+		    ulong local5 = 0
+
+		    System.Boolean boolean = UnityEngine.Object.op_Inequality(componentInChildren, local5) //(Object x, Object y)
+
+		    if (boolean != False)
+		        System.Single flyDistanceForProjectiles = this.FlyDistanceForProjectiles
+		        componentInChildren.Distance = flyDistanceForProjectiles
+		        UnityEngine.LayerMask collidesWith = this.CollidesWith
+		        componentInChildren.CollidesWith = collidesWith
+		        System.Single startSpeed = this.startSpeed
+		        System.Single local10 = startSpeed * this.SpeedMultiplier
+		        componentInChildren.Speed = local10
+		    endif
+            
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Single RFX1_EffectSettingProjectile::oldSpeedMultiplier
+	IL_0006: ldc.r4 0,001
+	IL_000b: ble.s IL_0053
+	IL_000d: ldarg.0
+	IL_000e: ldc.i4.1
+	IL_000f: call T UnityEngine.Component::GetComponentInChildren<RFX1_TransformMotion>(System.Boolean)
+	IL_0014: stloc.0
+	IL_0015: ldc.i4.0
+	IL_0016: stloc.1
+	IL_0017: ldloc.0
+	IL_0018: ldloc.1
+	IL_0019: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_001e: ldc.i4.0
+	IL_001f: beq.s IL_0053
+	IL_0021: ldarg.0
+	IL_0022: ldfld System.Single RFX1_EffectSettingProjectile::FlyDistanceForProjectiles
+	IL_0027: stloc.2
+	IL_0028: ldloc.0
+	IL_0029: ldloc.2
+	IL_002a: stfld System.Single RFX1_TransformMotion::Distance
+	IL_002f: ldarg.0
+	IL_0030: ldfld UnityEngine.LayerMask RFX1_EffectSettingProjectile::CollidesWith
+	IL_0035: stloc.3
+	IL_0036: ldloc.0
+	IL_0037: ldloc.3
+	IL_0038: stfld UnityEngine.LayerMask RFX1_TransformMotion::CollidesWith
+	IL_003d: ldarg.0
+	IL_003e: ldfld System.Single RFX1_EffectSettingProjectile::startSpeed
+	IL_0043: ldfld System.Single RFX1_EffectSettingProjectile::SpeedMultiplier
+	IL_0048: mul
+	IL_0049: stloc.s V_4
+	IL_004b: ldloc.0
+	IL_004c: ldloc.s V_4
+	IL_004e: stfld System.Single RFX1_TransformMotion::Speed
+	IL_0053: ret
+	IL_0054: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0059: throw
+	
+

@@ -1,0 +1,155 @@
+Type: OverrideStackFrame
+
+Method: System.Void Cinemachine.CinemachineBrain/OverrideStackFrame::.ctor():	Method Body (x86 ASM):
+		0x1802068B0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802068B2 jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802068B7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Cinemachine.CinemachineBrain/OverrideStackFrame::.ctor():
+		End of function at 0x1802068B8
+		Absolute End is at 0x1802068B8
+		Identified Jump Destination addresses:
+
+		0x1802068B2: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type Cinemachine.CinemachineBrain/OverrideStackFrame)}
+
+		0x1802068B2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachineBrain/OverrideStackFrame
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean Cinemachine.CinemachineBrain/OverrideStackFrame::get_Active():	Method Body (x86 ASM):
+		0x1803EB290 cmp qword ptr [rcx+18h],0		; DEBUG: {Memory}/None {Immediate8to64}/None ||| RCX | 24 | None ||| N/A | 0
+		0x1803EB295 setne al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803EB298 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803EB299 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean Cinemachine.CinemachineBrain/OverrideStackFrame::get_Active():
+		End of function at 0x1803EB29A
+		Absolute End is at 0x1803EB29A
+		Identified Jump Destination addresses:
+
+		0x1803EB290: [!] Compares {field camera, read from local {'this' (function parameter, type Cinemachine.CinemachineBrain/OverrideStackFrame)}} and 0
+		0x1803EB295: [!] Sets the boolean {'local1' (type System.Boolean)} in rax to true if this.camera isn't equal to 0, otherwise false.
+		0x1803EB298: [!] Returns {'local1' (type System.Boolean)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachineBrain/OverrideStackFrame
+	System.Boolean get_Active()
+		System.Boolean local1 = this.camera != 0
+		return local1
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld Cinemachine.ICinemachineCamera Cinemachine.CinemachineBrain/OverrideStackFrame::camera
+	IL_0006: ldc.i4.0
+	IL_0007: conv.i8
+	IL_0008: conv.u8
+	IL_0009: ceq
+	IL_000b: ldc.i4.0
+	IL_000c: ceq
+	IL_000e: ret
+	
+
+Method: System.Boolean Cinemachine.CinemachineBrain/OverrideStackFrame::get_Expired():	Method Body (x86 ASM):
+		0x1803EB2A0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2A2 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1803EB2A6 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2A9 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2AB call 0000000180B20910h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803EB2B0 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2B2 je short 00000001803EB2BCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803EB2B4 xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2B6 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1803EB2BA pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2BB ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2BC xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2BE movaps [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x1803EB2C3 call 0000000180CDFBD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803EB2C8 movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2CB xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2CD subss xmm6,dword ptr [rbx+2Ch]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RBX | 44 | None ||| N/A | N/A
+		0x1803EB2D2 call 0000000180CDFB30h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803EB2D7 comiss xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2DA movaps xmm6,[rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1803EB2DF seta al		; DEBUG: {Register}/AL {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2E2 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1803EB2E6 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2E7 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1803EB2E8 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean Cinemachine.CinemachineBrain/OverrideStackFrame::get_Expired():
+		End of function at 0x1803EB2E9
+		Absolute End is at 0x1803EB2E9
+		Identified Jump Destination addresses:
+
+		0x1803EB2A0: Saves the content of rbx to the stack
+		0x1803EB2A6: Copies {'this' (function parameter, type Cinemachine.CinemachineBrain/OverrideStackFrame)} from rcx into rbx
+		0x1803EB2A9: Clears register rcx, yielding zero-local {'local1' (type System.Int32)}
+		0x1803EB2AB: [!] Calls static managed method System.Boolean UnityEngine.Application::get_isPlaying() and stores the result in {'isPlaying' (type System.Boolean)}
+
+		0x1803EB2B0: [!] Compares {'isPlaying' (type System.Boolean)} and False
+		0x1803EB2B2: Jumps to 0x1803EB2BC (which is an if statement's body) if isPlaying equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1803EB2B4: Clears register rax, yielding zero-local {'local3' (type System.Int32)}
+		0x1803EB2BB: [!] Returns {'local3' (type System.Int32)} from the function
+
+		0x1803EB2BC: Clears register rcx, yielding zero-local {'local4' (type System.Int32)}
+		0x1803EB2C3: [!] Calls static managed method System.Single UnityEngine.Time::get_realtimeSinceStartup() and stores the result in {'realtimeSinceStartup' (type System.Single)}
+
+		0x1803EB2C8: Copies {'realtimeSinceStartup' (type System.Single)} from xmm0 into xmm6
+		0x1803EB2CB: Clears register rcx, yielding zero-local {'local6' (type System.Int32)}
+		0x1803EB2D2: [!] Calls static managed method System.Single UnityEngine.Time::get_maximumDeltaTime() and stores the result in {'maximumDeltaTime' (type System.Single)}
+
+		0x1803EB2D7: [!] Compares {'realtimeSinceStartup' (type System.Single)} and {'maximumDeltaTime' (type System.Single)}
+		0x1803EB2DA: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm6 as new constant constant2
+		0x1803EB2E7: [!] Returns {'isPlaying' (type System.Boolean)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Cinemachine.CinemachineBrain/OverrideStackFrame
+	System.Boolean get_Expired()
+		ulong local1 = 0
+
+		System.Boolean isPlaying = UnityEngine.Application.isPlaying
+
+		if (isPlaying != False)
+		    ulong local3 = 0
+		    return local3
+		endif
+        
+		ulong local4 = 0
+
+		System.Single realtimeSinceStartup = UnityEngine.Time.realtimeSinceStartup
+		ulong local6 = 0
+
+		System.Single maximumDeltaTime = UnityEngine.Time.maximumDeltaTime
+		return isPlaying
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x1803EB2BB) is corrupt (Return value has a type of System.Int32, expecting an object of type System.Boolean) and cannot be created as IL. Aborting here.
+
+

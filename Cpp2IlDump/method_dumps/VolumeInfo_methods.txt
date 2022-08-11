@@ -1,0 +1,54 @@
+Type: VolumeInfo
+
+Method: System.Void VolumeInfo::.ctor():	Method Body (x86 ASM):
+		0x181173460 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x181173462 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x181173466 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181173468 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18117346B call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181173470 mov dword ptr [rbx+10h],3F800000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RBX | 16 | None ||| N/A | 1065353216
+		0x181173477 mov byte ptr [rbx+14h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 20 | None ||| N/A | 0
+		0x18117347B add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18117347F pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x181173480 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x181173481 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void VolumeInfo::.ctor():
+		End of function at 0x181173482
+		Absolute End is at 0x181173482
+		Identified Jump Destination addresses:
+
+		0x181173460: Saves the content of rbx to the stack
+		0x181173468: Copies {'this' (function parameter, type VolumeInfo)} from rcx into rbx
+		0x18117346B: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type VolumeInfo)}
+
+		0x181173470: [!] Sets the field value (Type System.Single) on local {'this' (function parameter, type VolumeInfo)} to the value stored in 1
+		0x181173477: [!] Sets the field mute (Type System.Boolean) on local {'this' (function parameter, type VolumeInfo)} to the value stored in False
+		0x181173480: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: VolumeInfo
+	System.Void .ctor()
+
+		base..ctor()
+		this.value = 1
+		this.mute = False
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ldarg.0
+	IL_0007: ldc.r4 1
+	IL_000c: stfld System.Single VolumeInfo::value
+	IL_0011: ldarg.0
+	IL_0012: ldc.i4.0
+	IL_0013: stfld System.Boolean VolumeInfo::mute
+	IL_0018: ret
+	
+

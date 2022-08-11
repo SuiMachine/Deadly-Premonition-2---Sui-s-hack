@@ -1,0 +1,42 @@
+Type: EmmaSkateBoardData
+
+Method: System.Void EmmaSkateBoardData::.ctor():	Method Body (x86 ASM):
+		0x180205880 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180205882 mov dword ptr [rcx+20h],8EEh		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 32 | None ||| N/A | 2286
+		0x180205889 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020588E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EmmaSkateBoardData::.ctor():
+		End of function at 0x18020588F
+		Absolute End is at 0x18020588F
+		Identified Jump Destination addresses:
+
+		0x180205882: [!] Sets the field m_endFlag (Type EFlag) on local {'this' (function parameter, type EmmaSkateBoardData)} to the value stored in 2286
+		0x180205889: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type EmmaSkateBoardData)}
+
+		0x180205889: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EmmaSkateBoardData
+	System.Void .ctor()
+		this.m_endFlag = 2286
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4 2286
+	IL_0006: conv.i8
+	IL_0007: conv.u8
+	IL_0008: stfld EFlag EmmaSkateBoardData::m_endFlag
+	IL_000d: ldarg.0
+	IL_000e: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0013: ret
+	
+

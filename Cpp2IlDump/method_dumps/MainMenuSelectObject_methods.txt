@@ -1,0 +1,227 @@
+Type: MainMenuSelectObject
+
+Method: System.Void MainMenuSelectObject::.ctor():	Method Body (x86 ASM):
+		0x18044DC40 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18044DC42 mov dword ptr [rcx+2Ch],4		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 44 | None ||| N/A | 4
+		0x18044DC49 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DC4E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MainMenuSelectObject::.ctor():
+		End of function at 0x18044DC4F
+		Absolute End is at 0x18044DC4F
+		Identified Jump Destination addresses:
+
+		0x18044DC42: [!] Sets the field m_namePos (Type UIMenuObjSelectSimpleInfoBase/ENamePosition) on local {'this' (function parameter, type MainMenuSelectObject)} to the value stored in 4
+		0x18044DC49: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type MainMenuSelectObject)}
+
+		0x18044DC49: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MainMenuSelectObject
+	System.Void .ctor()
+		this.m_namePos = 4
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.4
+	IL_0002: conv.i8
+	IL_0003: conv.u8
+	IL_0004: stfld UIMenuObjSelectSimpleInfoBase/ENamePosition MenuObjSelectObjectBase::m_namePos
+	IL_0009: ldarg.0
+	IL_000a: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_000f: ret
+	
+
+Method: System.Void MainMenuSelectObject::OpenMenu():	Method Body (x86 ASM):
+		0x18044DB20 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18044DB24 mov rcx,[rcx+48h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 72 | None ||| N/A | N/A
+		0x18044DB28 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18044DB2B je short 000000018044DB42h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DB2D mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x18044DB30 mov rdx,[rax+170h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 368 | None ||| N/A | N/A
+		0x18044DB37 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x18044DB3B jmp qword ptr [rax+168h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 360 | None ||| N/A | N/A
+		0x18044DB42 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DB47 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MainMenuSelectObject::OpenMenu():
+		End of function at 0x18044DB48
+		Absolute End is at 0x18044DB48
+		Identified Jump Destination addresses:
+
+		0x18044DB24: [!] Reads field m_menuContentMgr from {'this' (function parameter, type MainMenuSelectObject)} and stores in a new local {'m_menuContentMgr' (type MenuContentBase)}
+
+		0x18044DB28: [!] Compares {'m_menuContentMgr' (type MenuContentBase)} and 0
+		0x18044DB2B: Jumps to 0x18044DB42 (which throws a NRE) if m_menuContentMgr equals 0. Implicitly present in managed code, so ignored here.
+		0x18044DB2D: Loads the class pointer from m_menuContentMgr into a constant constant2 in register rax
+		0x18044DB30: Loads the pointer to the implementation of virtual function System.Void MenuContentBase::OpenMenu() specific to MenuContentBase from the class pointer in rax, slot 4 (from memory offset 368) and stores in constant constant3
+		0x18044DB3B: [!] Calls managed method System.Void System.ComponentModel.IContainer::Remove(System.ComponentModel.IComponent) on instance {'m_menuContentMgr' (type MenuContentBase)} ;  - Parameter mismatch, but there is only one method here for which the instance matches.
+
+		0x18044DB3B: [!] Returns from the function
+
+		0x18044DB42: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MainMenuSelectObject
+	System.Void OpenMenu()
+		MenuContentBase m_menuContentMgr = this.m_menuContentMgr
+
+		m_menuContentMgr.Remove()
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x18044DB3B) is corrupt (Couldn't get arguments, or actual count (-1) is not equal to expected count (1)) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void MainMenuSelectObject::OpenShortCutMap():	Method Body (x86 ASM):
+		0x18044DB50 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18044DB52 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18044DB56 cmp byte ptr [18183E364h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467871588 | None ||| N/A | 0
+		0x18044DB5D mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18044DB60 jne short 000000018044DB74h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DB62 mov ecx,[1814C15E8h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464214504 | None ||| N/A | N/A
+		0x18044DB68 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DB6D mov byte ptr [18183E364h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467871588 | None ||| N/A | 1
+		0x18044DB74 mov rbx,[rbx+48h]		; DEBUG: {Register}/RBX {Memory}/None ||| RBX | 72 | None ||| N/A | N/A
+		0x18044DB78 mov [rsp+30h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 48 | None ||| N/A | N/A
+		0x18044DB7D mov [rsp+38h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 56 | None ||| N/A | N/A
+		0x18044DB82 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18044DB85 je near ptr 000000018044DC32h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DB8B mov rdx,[18185D8C0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6467999936 | None ||| N/A | N/A
+		0x18044DB92 mov rax,[rbx]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x18044DB95 movzx ecx,byte ptr [rdx+120h]		; DEBUG: {Register}/ECX {Memory}/None ||| RDX | 288 | None ||| N/A | N/A
+		0x18044DB9C cmp [rax+120h],cl		; DEBUG: {Memory}/None {Register}/CL ||| RAX | 288 | None ||| N/A | N/A
+		0x18044DBA2 jb near ptr 000000018044DC32h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DBA8 mov rax,[rax+0C8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 200 | None ||| N/A | N/A
+		0x18044DBAF cmp [rax+rcx*8-8],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RAX | 18446744073709551608 | RCX ||| N/A | N/A
+		0x18044DBB4 jne short 000000018044DC32h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DBB6 mov rax,[rbx]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 0 | None ||| N/A | N/A
+		0x18044DBB9 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18044DBBC mov rdx,[rax+170h]		; DEBUG: {Register}/RDX {Memory}/None ||| RAX | 368 | None ||| N/A | N/A
+		0x18044DBC3 call qword ptr [rax+168h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 360 | None ||| N/A | N/A
+		0x18044DBC9 cmp byte ptr [18183E378h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467871608 | None ||| N/A | 0
+		0x18044DBD0 jne short 000000018044DBE4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DBD2 mov ecx,[1814C17D0h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464214992 | None ||| N/A | N/A
+		0x18044DBD8 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DBDD mov byte ptr [18183E378h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467871608 | None ||| N/A | 1
+		0x18044DBE4 mov rax,[rbx+48h]		; DEBUG: {Register}/RAX {Memory}/None ||| RBX | 72 | None ||| N/A | N/A
+		0x18044DBE8 mov byte ptr [rbx+50h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 80 | None ||| N/A | 1
+		0x18044DBEC test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18044DBEF je short 000000018044DC32h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DBF1 mov rcx,[181899F98h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468247448 | None ||| N/A | N/A
+		0x18044DBF8 mov rdi,[rax+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RAX | 32 | None ||| N/A | N/A
+		0x18044DBFC call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DC01 mov r8,[181866D78h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468038008 | None ||| N/A | N/A
+		0x18044DC08 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x18044DC0B mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18044DC0E mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18044DC11 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18044DC14 call 00000001802ED440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DC19 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18044DC1C je short 000000018044DC32h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DC1E mov [rdi+38h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RDI | 56 | None ||| N/A | N/A
+		0x18044DC22 mov rdi,[rsp+38h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x18044DC27 mov rsi,[rsp+30h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18044DC2C add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18044DC30 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18044DC31 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18044DC32 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18044DC34 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DC39 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MainMenuSelectObject::OpenShortCutMap():
+		End of function at 0x18044DC3A
+		Absolute End is at 0x18044DC3A
+		Identified Jump Destination addresses:
+
+		0x18044DB50: Saves the content of rbx to the stack
+		0x18044DB56: Compares {Unknown Global at 0x18183E364, first ten bytes are [221 133 1 0 184 62 103 1 224 133], or as chars "Ý ¸>gà"} and 0
+		0x18044DB5D: Copies {'this' (function parameter, type MainMenuSelectObject)} from rcx into rbx
+		0x18044DB60: Jumps to 0x18044DB74 if {Unknown Global at 0x18183E364, first ten bytes are [221 133 1 0 184 62 103 1 224 133], or as chars "Ý ¸>gà"} != 0
+
+		0x18044DB62: Loads string "ùE" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18044DB68: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18044DB74: [!] Reads field m_menuContentMgr from {'this' (function parameter, type MainMenuSelectObject)} and stores in a new local {'m_menuContentMgr' (type MenuContentBase)}
+
+		0x18044DB82: [!] Compares {'m_menuContentMgr' (type MenuContentBase)} and 0
+		0x18044DB85: Jumps to 0x18044DC32 (which throws a NRE) if m_menuContentMgr equals 0. Implicitly present in managed code, so ignored here.
+		0x18044DB8B: Loads the type definition for managed type MapMenuManager as a constant "MapMenuManager" in rdx
+		0x18044DB92: Loads the class pointer from m_menuContentMgr into a constant constant6 in register rax
+		0x18044DB9C: Compares "{il2cpp field on {'constant6' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}, offset 0x120}" and {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18044DBA8: [!!] Reads value at unknown offset 200 (0xC8) on a klass pointer
+		0x18044DBAF: Compares "{il2cpp field on {'constant6' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}, offset 0xFFFFFFFFFFFFFFF8}" and {'MapMenuManager' (constant value of type Mono.Cecil.TypeReference)}
+		0x18044DBB4: Jumps to 0x18044DC32 (which throws a NRE) if "{il2cpp field on {'constant6' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)}, offset 0xFFFFFFFFFFFFFFF8}" != {'MapMenuManager' (constant value of type Mono.Cecil.TypeReference)}. Implicitly present in managed code, so ignored here.
+		0x18044DBB6: Loads the class pointer from m_menuContentMgr into a constant constant9 in register rax
+		0x18044DBB9: Copies {'m_menuContentMgr' (type MenuContentBase)} from rbx into rcx
+		0x18044DBBC: Loads the pointer to the implementation of virtual function System.Void MenuContentBase::OpenMenu() specific to MenuContentBase from the class pointer in rax, slot 4 (from memory offset 368) and stores in constant constant10
+		0x18044DBC3: [!] Calls managed method System.Void MenuContentBase::OpenMenu() on instance {'m_menuContentMgr' (type MenuContentBase)}
+
+		0x18044DBC9: Compares {Unknown Global at 0x18183E378, first ten bytes are [48 134 1 0 140 134 1 0 224 60], or as chars "0  à<"} and 0
+		0x18044DBD0: Jumps to 0x18044DBE4 if {Unknown Global at 0x18183E378, first ten bytes are [48 134 1 0 140 134 1 0 224 60], or as chars "0  à<"} != 0
+
+		0x18044DBD2: Reads {Unknown Global at 0x1814C17D0, first ten bytes are [24 70 0 0 24 38 0 0 24 102], or as chars "F  &  f"} into register rcx as a constant constant13
+		0x18044DBD8: Attempts to load the il2cpp metadata for this method (method id 17944) and init it cpp-side.
+
+		0x18044DBE4: [!] Reads field  from {'m_menuContentMgr' (type MenuContentBase)} and stores in a new local 
+
+		0x18044DBE8: [!] Sets the field  (Type ) on local {'m_menuContentMgr' (type MenuContentBase)} to the value stored in 1
+		0x18044DBEC: [!] Compares {'constant9' (constant value of type Cpp2IL.Core.Analysis.Il2CppClassIdentifier)} and 0
+		0x18044DBEF: Jumps to 0x18044DC32 (which throws a NRE) if constant9 equals 0. Implicitly present in managed code, so ignored here.
+		0x18044DBF1: Loads the type definition for managed type System.Action as a constant "Action" in rcx
+		0x18044DBF8: [!!] Reads value at unknown offset 32 (0x20) on a klass pointer
+		0x18044DBFC: [!] Allocates an instance of type System.Action and stores it as action in rax.
+
+		0x18044DC01: Loads the method definition for managed method System.Void MapMenuManager::OnShortCutClose() as a constant "OnShortCutClose"
+		0x18044DC0B: Copies {'m_menuContentMgr' (type MenuContentBase)} from rbx into rdx
+		0x18044DC0E: Copies {'action' (type System.Action)} from rax into rcx
+		0x18044DC11: Copies {'action' (type System.Action)} from rax into rsi
+		0x18044DC14: [!] Calls managed method System.Void System.Action::.ctor(System.Object,System.IntPtr) on instance {'action' (type System.Action)} with arguments [{'m_menuContentMgr' (type MenuContentBase)}, {'OnShortCutClose' (constant value of type Mono.Cecil.MethodReference)}]
+
+		0x18044DC19: [!] Compares  and 0
+		0x18044DC1C: Jumps to 0x18044DC32 (which throws a NRE) if  equals 0. Implicitly present in managed code, so ignored here.
+		0x18044DC22: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rdi as new constant constant18
+		0x18044DC27: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rsi as new constant constant19
+		0x18044DC31: [!] Returns from the function
+
+		0x18044DC34: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MainMenuSelectObject
+	System.Void OpenShortCutMap()
+		MenuContentBase m_menuContentMgr = this.m_menuContentMgr
+		//UNKNOWN CLASS OFFSET READ HERE
+
+		m_menuContentMgr.OpenMenu()
+		  = m_menuContentMgr.
+		m_menuContentMgr. = 1
+		//UNKNOWN CLASS OFFSET READ HERE
+		System.Action action = new System.Action()
+
+		action..ctor(m_menuContentMgr, {'OnShortCutClose' (constant value of type Mono.Cecil.MethodReference)}) //(Object object, IntPtr method)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.UnknownClassOffsetReadAction at (0x18044DBA8) is corrupt (Unknown class offset read) and cannot be created as IL. Aborting here.
+
+

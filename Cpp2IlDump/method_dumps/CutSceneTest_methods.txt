@@ -1,0 +1,548 @@
+Type: CutSceneTest
+
+Method: System.Void CutSceneTest::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void CutSceneTest::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type CutSceneTest)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: CutSceneTest
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void CutSceneTest::Awake():	Method Body (x86 ASM):
+		0x181149F30 sub rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x181149F34 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x181149F36 call 0000000180B263F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149F3B xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181149F3D mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181149F40 add rsp,28h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 40
+		0x181149F44 jmp near ptr 00000001804383D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149F49 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void CutSceneTest::Awake():
+		End of function at 0x181149F4A
+		Absolute End is at 0x181149F4A
+		Identified Jump Destination addresses:
+
+		0x181149F34: Clears register rcx, yielding zero-local {'local1' (type System.Int32)}
+		0x181149F36: [!] Calls static managed method UnityEngine.Camera UnityEngine.Camera::get_main() and stores the result in {'main' (type UnityEngine.Camera)}
+
+		0x181149F3D: Copies {'main' (type UnityEngine.Camera)} from rax into rcx
+		0x181149F44: [!] Calls static managed method System.Void GameCameraManager::set_FieldMainCamera(UnityEngine.Camera) with arguments [{'main' (type UnityEngine.Camera)}]
+
+		0x181149F44: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: CutSceneTest
+	System.Void Awake()
+		ulong local1 = 0
+
+		UnityEngine.Camera main = UnityEngine.Camera.main
+
+		GameCameraManager.FieldMainCamera = main
+		return
+
+
+Generated IL:
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: call UnityEngine.Camera UnityEngine.Camera::get_main()
+	IL_0007: call System.Void GameCameraManager::set_FieldMainCamera(UnityEngine.Camera)
+	IL_000c: ret
+	
+
+Method: System.Void CutSceneTest::Update():	Method Body (x86 ASM):
+		0x18114A060 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x18114A065 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18114A066 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18114A06A cmp byte ptr [1818A28D6h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468282582 | None ||| N/A | 0
+		0x18114A071 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18114A074 jne short 000000018114A088h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A076 mov ecx,[1814B8F58h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464180056 | None ||| N/A | N/A
+		0x18114A07C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A081 mov byte ptr [1818A28D6h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468282582 | None ||| N/A | 1
+		0x18114A088 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18114A08F mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18114A093 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18114A09A je short 000000018114A0AAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A09C cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18114A0A3 jne short 000000018114A0AAh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A0A5 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A0AA xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18114A0AD xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18114A0AF mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18114A0B2 call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A0B7 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18114A0B9 je near ptr 000000018114A18Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A0BF mov rcx,[181899F10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468247312 | None ||| N/A | N/A
+		0x18114A0C6 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18114A0CD je short 000000018114A0DDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A0CF cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18114A0D6 jne short 000000018114A0DDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A0D8 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A0DD xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18114A0E0 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18114A0E2 lea edx,[r8+1]		; DEBUG: {Register}/EDX {Memory}/None ||| R8 | 1 | None ||| N/A | N/A
+		0x18114A0E6 call 00000001803F1D10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A0EB test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18114A0ED je near ptr 000000018114A18Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A0F3 mov rcx,[181891300h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468211456 | None ||| N/A | N/A
+		0x18114A0FA mov [rsp+30h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 48 | None ||| N/A | N/A
+		0x18114A0FF call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A104 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18114A106 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18114A109 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18114A10C call 0000000180B2E760h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A111 mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x18114A118 mov rsi,[rbx+18h]		; DEBUG: {Register}/RSI {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x18114A11C test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18114A123 je short 000000018114A133h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A125 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18114A12C jne short 000000018114A133h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A12E call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A133 mov rcx,[18186AE68h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468054632 | None ||| N/A | N/A
+		0x18114A13A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18114A13D mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18114A140 call 0000000180D4D090h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A145 mov rsi,[rsp+30h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18114A14A test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18114A14D je short 000000018114A195h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A14F xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18114A152 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18114A155 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18114A158 call 0000000180EA68E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A15D mov rdx,[18186A218h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468051480 | None ||| N/A | N/A
+		0x18114A164 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18114A167 call 000000018090CD10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A16C mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18114A16F test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18114A172 je short 000000018114A195h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A174 mov rdx,[rbx+18h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x18114A178 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x18114A17B mov r8b,1		; DEBUG: {Register}/R8L {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x18114A17E mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18114A181 call 0000000181146500h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A186 mov [rbx+20h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 32 | None ||| N/A | N/A
+		0x18114A18A mov rbx,[rsp+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x18114A18F add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18114A193 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18114A194 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18114A195 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18114A197 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A19C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void CutSceneTest::Update():
+		End of function at 0x18114A19D
+		Absolute End is at 0x18114A19D
+		Identified Jump Destination addresses:
+
+		0x18114A065: Saves the content of rdi to the stack
+		0x18114A06A: Compares {Unknown Global at 0x1818A28D6, first ten bytes are [106 1 94 160 127 0 203 160 127 0], or as chars "j^  Ë  "} and 0
+		0x18114A071: Copies {'this' (function parameter, type CutSceneTest)} from rcx into rbx
+		0x18114A074: Jumps to 0x18114A088 if {Unknown Global at 0x1818A28D6, first ten bytes are [106 1 94 160 127 0 203 160 127 0], or as chars "j^  Ë  "} != 0
+
+		0x18114A076: Loads string "Ã" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18114A07C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18114A088: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18114A08F: [!] Reads field m_cutScenePlayer from {'this' (function parameter, type CutSceneTest)} and stores in a new local {'m_cutScenePlayer' (type CutScenePlayer)}
+
+		0x18114A093: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18114A09A: Jumps to 0x18114A0AA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18114A09C: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18114A0A3: Jumps to 0x18114A0AA if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18114A0A5: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18114A0AD: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x18114A0AF: Copies {'m_cutScenePlayer' (type CutScenePlayer)} from rdi into rcx
+		0x18114A0B2: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'m_cutScenePlayer' (type CutScenePlayer)}, {'local3' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18114A0B7: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18114A0B9: Jumps to 0x18114A18A (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18114A0BF: Loads the type definition for managed type PadManager as a constant "PadManager" in rcx
+		0x18114A0C6: Compares "{il2cpp field on {'PadManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18114A0CD: Jumps to 0x18114A0DD if "{il2cpp field on {'PadManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18114A0CF: Compares "{il2cpp field on {'PadManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18114A0D6: Jumps to 0x18114A0DD if "{il2cpp field on {'PadManager' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18114A0D8: Calls the il2cpp cctor for the type PadManager
+		0x18114A0E0: Clears register rcx, yielding zero-local {'local6' (type System.Int32)}
+		0x18114A0E2: [!] Loads the constant value 1 into the register rdx as constant constant15 using an LEA instruction
+		0x18114A0E6: [!] Calls static managed method System.Boolean PadManager::GetKeyDown(System.Int32,PadDefine/EPadKeycode) with arguments [{'local6' (type System.Int32)}, 1] and stores the result in {'keyDown' (type System.Boolean)}
+
+		0x18114A0EB: [!] Compares {'keyDown' (type System.Boolean)} and False
+		0x18114A0ED: Jumps to 0x18114A18A (which is an if statement's body) if keyDown equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18114A0F3: Loads the type definition for managed type UnityEngine.GameObject as a constant "GameObject" in rcx
+		0x18114A0FF: [!] Allocates an instance of type UnityEngine.GameObject and stores it as gameObject in rax.
+
+		0x18114A106: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x18114A109: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rdi
+		0x18114A10C: [!] Calls managed method System.Void UnityEngine.GameObject::.ctor() on instance {'gameObject' (type UnityEngine.GameObject)}
+
+		0x18114A111: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x18114A118: [!] Reads field m_cutSceneName from {'this' (function parameter, type CutSceneTest)} and stores in a new local {'m_cutSceneName' (type System.String)}
+
+		0x18114A11C: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18114A123: Jumps to 0x18114A133 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18114A125: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18114A12C: Jumps to 0x18114A133 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18114A12E: Calls the il2cpp cctor for the type System.String
+		0x18114A133: Loads the string literal "CutScenePlayer : " as a constant "constant23" in rcx
+		0x18114A13D: Copies {'m_cutSceneName' (type System.String)} from rsi into rdx
+		0x18114A140: [!] Calls static managed method System.String System.String::Concat(System.String,System.String) with arguments ["CutScenePlayer : ", {'m_cutSceneName' (type System.String)}] and stores the result in {'string' (type System.String)}
+
+		0x18114A145: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rsi as new constant constant24
+		0x18114A14A: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x18114A14D: Jumps to 0x18114A195 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x18114A152: Copies {'string' (type System.String)} from rax into rdx
+		0x18114A155: Copies {'gameObject' (type UnityEngine.GameObject)} from rdi into rcx
+		0x18114A158: [!] Calls managed method System.Void UnityEngine.Object::set_name(System.String) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [{'string' (type System.String)}]
+
+		0x18114A15D: Loads the global generic method reference for method T UnityEngine.GameObject::AddComponent<CutScenePlayer>() on type UnityEngine.GameObject and stores the result in constant {'AddComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18114A164: Copies {'gameObject' (type UnityEngine.GameObject)} from rdi into rcx
+		0x18114A167: [!] Calls managed method T UnityEngine.GameObject::AddComponent<CutScenePlayer>() on instance {'gameObject' (type UnityEngine.GameObject)} and stores the result in {'cutScenePlayer' (type CutScenePlayer)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18114A16C: Copies {'cutScenePlayer' (type CutScenePlayer)} from rax into rdi
+		0x18114A16F: [!] Compares {'cutScenePlayer' (type CutScenePlayer)} and 0
+		0x18114A172: Jumps to 0x18114A195 (which throws a NRE) if cutScenePlayer equals 0. Implicitly present in managed code, so ignored here.
+		0x18114A174: [!] Reads field m_cutSceneName from {'this' (function parameter, type CutSceneTest)} and stores in a new local {'m_cutSceneName2' (type System.String)}
+
+		0x18114A17B: [!] Writes the constant 0x1 into operand True (type UInt64) in register r8
+		0x18114A17E: Copies {'cutScenePlayer' (type CutScenePlayer)} from rax into rcx
+		0x18114A181: [!] Calls managed method System.Void CutScenePlayer::PlayCutScene(System.String,System.Boolean) on instance {'cutScenePlayer' (type CutScenePlayer)} with arguments [{'m_cutSceneName2' (type System.String)}, True]
+
+		0x18114A186: [!] Sets the field m_cutScenePlayer (Type CutScenePlayer) on local {'this' (function parameter, type CutSceneTest)} to the value stored in {'cutScenePlayer' (type CutScenePlayer)}
+		0x18114A18A: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbx as new constant constant29
+		0x18114A194: [!] Returns from the function
+
+		0x18114A197: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: CutSceneTest
+	System.Void Update()
+		CutScenePlayer m_cutScenePlayer = this.m_cutScenePlayer
+		ulong local3 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Equality(m_cutScenePlayer, local3) //(Object x, Object y)
+
+		if (boolean != False)
+		    ulong local6 = 0
+		    System.Int32 1 = 1
+
+		    System.Boolean keyDown = PadManager.GetKeyDown(local6, 1) //(Int32 padNum, EPadKeycode key)
+
+		    if (keyDown != False)
+		        UnityEngine.GameObject gameObject = new UnityEngine.GameObject()
+
+		        gameObject..ctor()
+		        System.String m_cutSceneName = this.m_cutSceneName
+
+		        System.String string = System.String.Concat("CutScenePlayer : ", m_cutSceneName) //(String str0, String str1)
+
+		        gameObject.name = string
+
+		        CutScenePlayer cutScenePlayer = gameObject.AddComponent<CutScenePlayer>()
+		        System.String m_cutSceneName2 = this.m_cutSceneName
+
+		        cutScenePlayer.PlayCutScene(m_cutSceneName2, True) //(String cutSceneName, Boolean UnDispHud)
+		        this.m_cutScenePlayer = cutScenePlayer
+		    endif
+            
+		    return
+		    throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld CutScenePlayer CutSceneTest::m_cutScenePlayer
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+	IL_0010: ldc.i4.0
+	IL_0011: beq.s IL_0061
+	IL_0013: ldc.i4.0
+	IL_0014: ldc.i4.1
+	IL_0015: call System.Boolean PadManager::GetKeyDown(System.Int32,PadDefine/EPadKeycode)
+	IL_001a: ldc.i4.0
+	IL_001b: beq.s IL_0061
+	IL_001d: newobj System.Void UnityEngine.GameObject::.ctor()
+	IL_0022: stloc.2
+	IL_0023: ldarg.0
+	IL_0024: ldfld System.String CutSceneTest::m_cutSceneName
+	IL_0029: stloc.3
+	IL_002a: ldstr "CutScenePlayer : "
+	IL_002f: ldloc.3
+	IL_0030: call System.String System.String::Concat(System.String,System.String)
+	IL_0035: stloc.s V_4
+	IL_0037: ldloc.2
+	IL_0038: ldloc.s V_4
+	IL_003a: call System.Void UnityEngine.Object::set_name(System.String)
+	IL_003f: ldloc.2
+	IL_0040: call T UnityEngine.GameObject::AddComponent<CutScenePlayer>()
+	IL_0045: stloc.s V_5
+	IL_0047: ldarg.0
+	IL_0048: ldfld System.String CutSceneTest::m_cutSceneName
+	IL_004d: stloc.s V_6
+	IL_004f: ldloc.s V_5
+	IL_0051: ldloc.s V_6
+	IL_0053: ldc.i4.1
+	IL_0054: call System.Void CutScenePlayer::PlayCutScene(System.String,System.Boolean)
+	IL_0059: ldarg.0
+	IL_005a: ldloc.s V_5
+	IL_005c: stfld CutScenePlayer CutSceneTest::m_cutScenePlayer
+	IL_0061: ret
+	IL_0062: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0067: throw
+	
+
+Method: System.Void CutSceneTest::EndCutscene():	Method Body (x86 ASM):
+		0x181149F50 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x181149F52 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x181149F56 cmp byte ptr [1818A28D7h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468282583 | None ||| N/A | 0
+		0x181149F5D mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x181149F60 jne short 0000000181149F74h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149F62 mov ecx,[1814B8F44h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464180036 | None ||| N/A | N/A
+		0x181149F68 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149F6D mov byte ptr [1818A28D7h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6468282583 | None ||| N/A | 1
+		0x181149F74 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x181149F78 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x181149F7D test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x181149F80 je near ptr 000000018114A04Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149F86 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181149F88 call 0000000181148960h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149F8D mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x181149F94 mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x181149F98 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x181149F9F je short 0000000181149FAFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149FA1 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x181149FA8 jne short 0000000181149FAFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149FAA call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149FAF xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181149FB1 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x181149FB4 call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149FB9 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x181149FBB je short 000000018114A03Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149FBD mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x181149FC1 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x181149FC4 je near ptr 000000018114A04Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149FCA xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181149FCC call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149FD1 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x181149FD8 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x181149FDB test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x181149FE2 je short 0000000181149FF2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149FE4 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x181149FEB jne short 0000000181149FF2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149FED call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149FF2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x181149FF4 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x181149FF7 call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x181149FFC test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x181149FFE je short 000000018114A03Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A000 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18114A004 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18114A007 je short 000000018114A04Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A009 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18114A00B call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A010 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18114A017 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18114A01A test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18114A021 je short 000000018114A031h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A023 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18114A02A jne short 000000018114A031h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A02C call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A031 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18114A033 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18114A036 call 0000000180EA50E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A03B mov rdi,[rsp+30h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18114A040 mov qword ptr [rbx+20h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RBX | 32 | None ||| N/A | 0
+		0x18114A048 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18114A04C pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18114A04D ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18114A04E xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18114A050 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18114A055 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void CutSceneTest::EndCutscene():
+		End of function at 0x18114A056
+		Absolute End is at 0x18114A056
+		Identified Jump Destination addresses:
+
+		0x181149F50: Saves the content of rbx to the stack
+		0x181149F56: Compares {Unknown Global at 0x1818A28D7, first ten bytes are [1 94 160 127 0 203 160 127 0 228], or as chars "^  Ë  ä"} and 0
+		0x181149F5D: Copies {'this' (function parameter, type CutSceneTest)} from rcx into rbx
+		0x181149F60: Jumps to 0x181149F74 if {Unknown Global at 0x1818A28D7, first ten bytes are [1 94 160 127 0 203 160 127 0 228], or as chars "^  Ë  ä"} != 0
+
+		0x181149F62: Loads string "Â" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x181149F68: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x181149F74: [!] Reads field m_cutScenePlayer from {'this' (function parameter, type CutSceneTest)} and stores in a new local {'m_cutScenePlayer' (type CutScenePlayer)}
+
+		0x181149F7D: [!] Compares {'m_cutScenePlayer' (type CutScenePlayer)} and 0
+		0x181149F80: Jumps to 0x18114A04E (which throws a NRE) if m_cutScenePlayer equals 0. Implicitly present in managed code, so ignored here.
+		0x181149F88: [!] Calls managed method System.Void CutScenePlayer::ReleaseCutScene() on instance {'m_cutScenePlayer' (type CutScenePlayer)}
+
+		0x181149F8D: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x181149F94: [!] Reads field m_cutScenePlayer from {'this' (function parameter, type CutSceneTest)} and stores in a new local {'m_cutScenePlayer2' (type CutScenePlayer)}
+
+		0x181149F98: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x181149F9F: Jumps to 0x181149FAF if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x181149FA1: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x181149FA8: Jumps to 0x181149FAF if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x181149FAA: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x181149FB1: Copies {'m_cutScenePlayer2' (type CutScenePlayer)} from rdi into rcx
+		0x181149FB4: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'m_cutScenePlayer2' (type CutScenePlayer)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x181149FB9: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x181149FBB: Jumps to 0x18114A03B (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x181149FBD: [!] Reads field m_cutScenePlayer from {'this' (function parameter, type CutSceneTest)} and stores in a new local {'m_cutScenePlayer3' (type CutScenePlayer)}
+
+		0x181149FC1: [!] Compares {'m_cutScenePlayer3' (type CutScenePlayer)} and 0
+		0x181149FC4: Jumps to 0x18114A04E (which throws a NRE) if m_cutScenePlayer3 equals 0. Implicitly present in managed code, so ignored here.
+		0x181149FCC: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'m_cutScenePlayer3' (type CutScenePlayer)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x181149FD1: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x181149FD8: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rdi
+		0x181149FDB: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x181149FE2: Jumps to 0x181149FF2 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x181149FE4: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x181149FEB: Jumps to 0x181149FF2 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x181149FED: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x181149FF4: Copies {'gameObject' (type UnityEngine.GameObject)} from rdi into rcx
+		0x181149FF7: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'gameObject' (type UnityEngine.GameObject)}] and stores the result in {'boolean2' (type System.Boolean)}
+
+		0x181149FFC: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x181149FFE: Jumps to 0x18114A03B (which is an if statement's body) if boolean2 equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18114A000: [!] Reads field m_cutScenePlayer from {'this' (function parameter, type CutSceneTest)} and stores in a new local {'m_cutScenePlayer4' (type CutScenePlayer)}
+
+		0x18114A004: [!] Compares {'m_cutScenePlayer4' (type CutScenePlayer)} and 0
+		0x18114A007: Jumps to 0x18114A04E (which throws a NRE) if m_cutScenePlayer4 equals 0. Implicitly present in managed code, so ignored here.
+		0x18114A00B: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'m_cutScenePlayer4' (type CutScenePlayer)} and stores the result in {'gameObject2' (type UnityEngine.GameObject)}
+
+		0x18114A010: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18114A017: Copies {'gameObject2' (type UnityEngine.GameObject)} from rax into rdi
+		0x18114A01A: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18114A021: Jumps to 0x18114A031 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18114A023: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18114A02A: Jumps to 0x18114A031 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18114A02C: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18114A033: Copies {'gameObject2' (type UnityEngine.GameObject)} from rdi into rcx
+		0x18114A036: [!] Calls static managed method System.Void UnityEngine.Object::Destroy(UnityEngine.Object) with arguments [{'gameObject2' (type UnityEngine.GameObject)}]
+
+		0x18114A03B: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rdi as new constant constant24
+		0x18114A040: [!] Sets the field m_cutScenePlayer (Type CutScenePlayer) on local {'this' (function parameter, type CutSceneTest)} to the value stored in 0
+		0x18114A04D: [!] Returns from the function
+
+		0x18114A050: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: CutSceneTest
+	System.Void EndCutscene()
+		CutScenePlayer m_cutScenePlayer = this.m_cutScenePlayer
+
+		m_cutScenePlayer.ReleaseCutScene()
+		CutScenePlayer m_cutScenePlayer2 = this.m_cutScenePlayer
+
+		System.Boolean boolean = UnityEngine.Object.op_Implicit(m_cutScenePlayer2) //(Object exists)
+
+		if (boolean != False)
+		    CutScenePlayer m_cutScenePlayer3 = this.m_cutScenePlayer
+
+		    UnityEngine.GameObject gameObject = m_cutScenePlayer3.gameObject
+
+		    System.Boolean boolean2 = UnityEngine.Object.op_Implicit(gameObject) //(Object exists)
+
+		    if (boolean2 != False)
+		        CutScenePlayer m_cutScenePlayer4 = this.m_cutScenePlayer
+
+		        UnityEngine.GameObject gameObject2 = m_cutScenePlayer4.gameObject
+
+		        UnityEngine.Object.Destroy(gameObject2) //(Object obj)
+		    endif
+            
+		    this.m_cutScenePlayer = 0
+		    return
+		    throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld CutScenePlayer CutSceneTest::m_cutScenePlayer
+	IL_0006: call System.Void CutScenePlayer::ReleaseCutScene()
+	IL_000b: ldarg.0
+	IL_000c: ldfld CutScenePlayer CutSceneTest::m_cutScenePlayer
+	IL_0011: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+	IL_0016: ldc.i4.0
+	IL_0017: beq.s IL_003c
+	IL_0019: ldarg.0
+	IL_001a: ldfld CutScenePlayer CutSceneTest::m_cutScenePlayer
+	IL_001f: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0024: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+	IL_0029: ldc.i4.0
+	IL_002a: beq.s IL_003c
+	IL_002c: ldarg.0
+	IL_002d: ldfld CutScenePlayer CutSceneTest::m_cutScenePlayer
+	IL_0032: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0037: call System.Void UnityEngine.Object::Destroy(UnityEngine.Object)
+	IL_003c: ldarg.0
+	IL_003d: ldc.i4.0
+	IL_003e: conv.i8
+	IL_003f: conv.u8
+	IL_0040: stfld CutScenePlayer CutSceneTest::m_cutScenePlayer
+	IL_0045: ret
+	IL_0046: newobj System.Void System.NullReferenceException::.ctor()
+	IL_004b: throw
+	
+

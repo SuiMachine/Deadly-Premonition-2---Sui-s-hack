@@ -1,0 +1,184 @@
+Type: MenuObjSelectObjectBase
+
+Method: System.Void MenuObjSelectObjectBase::.ctor():	Method Body (x86 ASM):
+		0x18044DC40 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18044DC42 mov dword ptr [rcx+2Ch],4		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 44 | None ||| N/A | 4
+		0x18044DC49 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18044DC4E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void MenuObjSelectObjectBase::.ctor():
+		End of function at 0x18044DC4F
+		Absolute End is at 0x18044DC4F
+		Identified Jump Destination addresses:
+
+		0x18044DC42: [!] Sets the field m_namePos (Type UIMenuObjSelectSimpleInfoBase/ENamePosition) on local {'this' (function parameter, type MenuObjSelectObjectBase)} to the value stored in 4
+		0x18044DC49: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type MenuObjSelectObjectBase)}
+
+		0x18044DC49: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuObjSelectObjectBase
+	System.Void .ctor()
+		this.m_namePos = 4
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.4
+	IL_0002: conv.i8
+	IL_0003: conv.u8
+	IL_0004: stfld UIMenuObjSelectSimpleInfoBase/ENamePosition MenuObjSelectObjectBase::m_namePos
+	IL_0009: ldarg.0
+	IL_000a: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_000f: ret
+	
+
+Method: System.String MenuObjSelectObjectBase::GetDispName():	Method Body (x86 ASM):
+		0x18045B770 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18045B772 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18045B776 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18045B779 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x18045B77D test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18045B780 je short 000000018045B79Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18045B782 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18045B784 call 0000000180D55B50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18045B789 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18045B78B mov [rbx+18h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 24 | None ||| N/A | N/A
+		0x18045B78F mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18045B792 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18045B796 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18045B797 jmp near ptr 00000001802D1460h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18045B79C call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18045B7A1 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.String MenuObjSelectObjectBase::GetDispName():
+		End of function at 0x18045B7A2
+		Absolute End is at 0x18045B7A2
+		Identified Jump Destination addresses:
+
+		0x18045B770: Saves the content of rbx to the stack
+		0x18045B776: Copies {'this' (function parameter, type MenuObjSelectObjectBase)} from rcx into rbx
+		0x18045B779: [!] Reads field m_nameDisplayId from {'this' (function parameter, type MenuObjSelectObjectBase)} and stores in a new local {'m_nameDisplayId' (type System.String)}
+
+		0x18045B77D: [!] Compares {'m_nameDisplayId' (type System.String)} and 0
+		0x18045B780: Jumps to 0x18045B79C (which throws a NRE) if m_nameDisplayId equals 0. Implicitly present in managed code, so ignored here.
+		0x18045B784: [!] Calls managed method System.String System.String::Trim() on instance {'m_nameDisplayId' (type System.String)} and stores the result in {'string' (type System.String)}
+
+		0x18045B78B: [!] Sets the field m_nameDisplayId (Type System.String) on local {'this' (function parameter, type MenuObjSelectObjectBase)} to the value stored in {'string' (type System.String)}
+		0x18045B78F: Copies {'string' (type System.String)} from rax into rcx
+		0x18045B797: [!] Calls static managed method System.String DisplayManager::GetMessage(System.String) with arguments [{'string' (type System.String)}] and stores the result in {'message' (type System.String)}
+
+		0x18045B797: [!] Returns {'message' (type System.String)} from the function
+
+		0x18045B79C: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuObjSelectObjectBase
+	System.String GetDispName()
+		System.String m_nameDisplayId = this.m_nameDisplayId
+
+		System.String string = m_nameDisplayId.Trim()
+		this.m_nameDisplayId = string
+
+		System.String message = DisplayManager.GetMessage(string) //(String enumStr)
+		return message
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.String MenuObjSelectObjectBase::m_nameDisplayId
+	IL_0006: call System.String System.String::Trim()
+	IL_000b: stloc.0
+	IL_000c: ldarg.0
+	IL_000d: ldloc.0
+	IL_000e: stfld System.String MenuObjSelectObjectBase::m_nameDisplayId
+	IL_0013: ldloc.0
+	IL_0014: call System.String DisplayManager::GetMessage(System.String)
+	IL_0019: ret
+	IL_001a: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001f: throw
+	
+
+Method: System.String MenuObjSelectObjectBase::GetDispDesc():	Method Body (x86 ASM):
+		0x18045B730 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18045B732 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18045B736 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18045B739 mov rcx,[rcx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x18045B73D test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18045B740 je short 000000018045B75Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18045B742 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18045B744 call 0000000180D55B50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18045B749 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18045B74B mov [rbx+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 32 | None ||| N/A | N/A
+		0x18045B74F mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18045B752 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18045B756 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18045B757 jmp near ptr 00000001802D1460h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18045B75C call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18045B761 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.String MenuObjSelectObjectBase::GetDispDesc():
+		End of function at 0x18045B762
+		Absolute End is at 0x18045B762
+		Identified Jump Destination addresses:
+
+		0x18045B730: Saves the content of rbx to the stack
+		0x18045B736: Copies {'this' (function parameter, type MenuObjSelectObjectBase)} from rcx into rbx
+		0x18045B739: [!] Reads field m_descDisplayId from {'this' (function parameter, type MenuObjSelectObjectBase)} and stores in a new local {'m_descDisplayId' (type System.String)}
+
+		0x18045B73D: [!] Compares {'m_descDisplayId' (type System.String)} and 0
+		0x18045B740: Jumps to 0x18045B75C (which throws a NRE) if m_descDisplayId equals 0. Implicitly present in managed code, so ignored here.
+		0x18045B744: [!] Calls managed method System.String System.String::Trim() on instance {'m_descDisplayId' (type System.String)} and stores the result in {'string' (type System.String)}
+
+		0x18045B74B: [!] Sets the field m_descDisplayId (Type System.String) on local {'this' (function parameter, type MenuObjSelectObjectBase)} to the value stored in {'string' (type System.String)}
+		0x18045B74F: Copies {'string' (type System.String)} from rax into rcx
+		0x18045B757: [!] Calls static managed method System.String DisplayManager::GetMessage(System.String) with arguments [{'string' (type System.String)}] and stores the result in {'message' (type System.String)}
+
+		0x18045B757: [!] Returns {'message' (type System.String)} from the function
+
+		0x18045B75C: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: MenuObjSelectObjectBase
+	System.String GetDispDesc()
+		System.String m_descDisplayId = this.m_descDisplayId
+
+		System.String string = m_descDisplayId.Trim()
+		this.m_descDisplayId = string
+
+		System.String message = DisplayManager.GetMessage(string) //(String enumStr)
+		return message
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.String MenuObjSelectObjectBase::m_descDisplayId
+	IL_0006: call System.String System.String::Trim()
+	IL_000b: stloc.0
+	IL_000c: ldarg.0
+	IL_000d: ldloc.0
+	IL_000e: stfld System.String MenuObjSelectObjectBase::m_descDisplayId
+	IL_0013: ldloc.0
+	IL_0014: call System.String DisplayManager::GetMessage(System.String)
+	IL_0019: ret
+	IL_001a: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001f: throw
+	
+

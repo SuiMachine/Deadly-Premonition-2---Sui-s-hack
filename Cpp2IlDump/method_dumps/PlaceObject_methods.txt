@@ -1,0 +1,41 @@
+Type: PlaceObject
+
+Method: System.Void PlaceObject::.ctor():	Method Body (x86 ASM):
+		0x1803FB3A0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1803FB3A2 mov dword ptr [rcx+18h],0FFFFFFFFh		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 24 | None ||| N/A | 4294967295
+		0x1803FB3A9 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1803FB3AE int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PlaceObject::.ctor():
+		End of function at 0x1803FB3AF
+		Absolute End is at 0x1803FB3AF
+		Identified Jump Destination addresses:
+
+		0x1803FB3A2: [!] Sets the field m_placeID (Type System.Int32) on local {'this' (function parameter, type PlaceObject)} to the value stored in 4294967295
+		0x1803FB3A9: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type PlaceObject)}
+
+		0x1803FB3A9: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PlaceObject
+	System.Void .ctor()
+		this.m_placeID = 4294967295
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i8 4294967295
+	IL_000a: conv.u8
+	IL_000b: stfld System.Int32 PlaceObject::m_placeID
+	IL_0010: ldarg.0
+	IL_0011: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0016: ret
+	
+

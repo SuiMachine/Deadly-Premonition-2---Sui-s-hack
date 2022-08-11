@@ -1,0 +1,715 @@
+Type: PropertyBinding
+
+Method: System.Void PropertyBinding::.ctor():	Method Body (x86 ASM):
+		0x18038B590 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B592 mov dword ptr [rcx+2Ch],1		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 44 | None ||| N/A | 1
+		0x18038B599 mov byte ptr [rcx+30h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 48 | None ||| N/A | 1
+		0x18038B59D jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B5A2 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PropertyBinding::.ctor():
+		End of function at 0x18038B5A3
+		Absolute End is at 0x18038B5A3
+		Identified Jump Destination addresses:
+
+		0x18038B592: [!] Sets the field update (Type PropertyBinding/UpdateCondition) on local {'this' (function parameter, type PropertyBinding)} to the value stored in 1
+		0x18038B599: [!] Sets the field editMode (Type System.Boolean) on local {'this' (function parameter, type PropertyBinding)} to the value stored in True
+		0x18038B59D: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type PropertyBinding)}
+
+		0x18038B59D: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PropertyBinding
+	System.Void .ctor()
+		this.update = 1
+		this.editMode = True
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.1
+	IL_0002: conv.i8
+	IL_0003: conv.u8
+	IL_0004: stfld PropertyBinding/UpdateCondition PropertyBinding::update
+	IL_0009: ldarg.0
+	IL_000a: ldc.i4.1
+	IL_000b: stfld System.Boolean PropertyBinding::editMode
+	IL_0010: ldarg.0
+	IL_0011: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0016: ret
+	
+
+Method: System.Void PropertyBinding::Start():	Method Body (x86 ASM):
+		0x18038B3A0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B3A2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18038B3A6 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B3A8 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18038B3AB call 000000018038B3D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B3B0 cmp dword ptr [rbx+2Ch],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 44 | None ||| N/A | 0
+		0x18038B3B4 jne short 000000018038B3C8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B3B6 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18038B3B9 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B3BB mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18038B3BE add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18038B3C2 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B3C3 jmp near ptr 0000000180B22710h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B3C8 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18038B3CC pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B3CD ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B3CE int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PropertyBinding::Start():
+		End of function at 0x18038B3CF
+		Absolute End is at 0x18038B3CF
+		Identified Jump Destination addresses:
+
+		0x18038B3A0: Saves the content of rbx to the stack
+		0x18038B3A8: Copies {'this' (function parameter, type PropertyBinding)} from rcx into rbx
+		0x18038B3AB: [!] Calls managed method System.Void PropertyBinding::UpdateTarget() on instance {'this' (function parameter, type PropertyBinding)}
+
+		0x18038B3B0: [!] Compares {field update, read from local {'this' (function parameter, type PropertyBinding)}} and 0
+		0x18038B3B4: Jumps to 0x18038B3C8 (which is an if statement's body) if {field update, read from local {'this' (function parameter, type PropertyBinding)}} != 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18038B3B9: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x18038B3BB: Copies {'this' (function parameter, type PropertyBinding)} from rbx into rcx
+		0x18038B3C3: [!] Calls managed method System.Void UnityEngine.Behaviour::set_enabled(System.Boolean) on instance {'this' (function parameter, type PropertyBinding)} with arguments [{'local3' (type System.Int32)}]
+
+		0x18038B3C3: [!] Returns from the function
+
+		0x18038B3CD: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PropertyBinding
+	System.Void Start()
+
+		this.UpdateTarget()
+
+		if (this.update == 0)
+		    ulong local3 = 0
+
+		    base.enabled = local3
+		    return
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void PropertyBinding::UpdateTarget()
+	IL_0006: ldarg.0
+	IL_0007: ldfld PropertyBinding/UpdateCondition PropertyBinding::update
+	IL_000c: ldc.i4.0
+	IL_000d: bne.un.s IL_0019
+	IL_000f: ldc.i4.0
+	IL_0010: stloc.0
+	IL_0011: ldarg.0
+	IL_0012: ldloc.0
+	IL_0013: call System.Void UnityEngine.Behaviour::set_enabled(System.Boolean)
+	IL_0018: ret
+	IL_0019: ret
+	
+
+Method: System.Void PropertyBinding::Update():	Method Body (x86 ASM):
+		0x18038B580 cmp dword ptr [rcx+2Ch],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 44 | None ||| N/A | 1
+		0x18038B584 jne short 000000018038B58Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B586 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B588 jmp near ptr 000000018038B3D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B58D ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B58E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PropertyBinding::Update():
+		End of function at 0x18038B58F
+		Absolute End is at 0x18038B58F
+		Identified Jump Destination addresses:
+
+		0x18038B580: [!] Compares {field update, read from local {'this' (function parameter, type PropertyBinding)}} and 1
+		0x18038B584: Jumps to 0x18038B58D (which is an if statement's body) if {field update, read from local {'this' (function parameter, type PropertyBinding)}} != 1 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18038B588: [!] Calls managed method System.Void PropertyBinding::UpdateTarget() on instance {'this' (function parameter, type PropertyBinding)}
+
+		0x18038B588: [!] Returns from the function
+
+		0x18038B58D: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PropertyBinding
+	System.Void Update()
+
+		if (this.update == 1)
+
+		    this.UpdateTarget()
+		    return
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld PropertyBinding/UpdateCondition PropertyBinding::update
+	IL_0006: ldc.i4.1
+	IL_0007: bne.un.s IL_0010
+	IL_0009: ldarg.0
+	IL_000a: call System.Void PropertyBinding::UpdateTarget()
+	IL_000f: ret
+	IL_0010: ret
+	
+
+Method: System.Void PropertyBinding::LateUpdate():	Method Body (x86 ASM):
+		0x18038B360 cmp dword ptr [rcx+2Ch],2		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 44 | None ||| N/A | 2
+		0x18038B364 jne short 000000018038B36Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B366 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B368 jmp near ptr 000000018038B3D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B36D ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B36E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PropertyBinding::LateUpdate():
+		End of function at 0x18038B36F
+		Absolute End is at 0x18038B36F
+		Identified Jump Destination addresses:
+
+		0x18038B360: [!] Compares {field update, read from local {'this' (function parameter, type PropertyBinding)}} and 2
+		0x18038B364: Jumps to 0x18038B36D (which is an if statement's body) if {field update, read from local {'this' (function parameter, type PropertyBinding)}} != 2 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18038B368: [!] Calls managed method System.Void PropertyBinding::UpdateTarget() on instance {'this' (function parameter, type PropertyBinding)}
+
+		0x18038B368: [!] Returns from the function
+
+		0x18038B36D: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PropertyBinding
+	System.Void LateUpdate()
+
+		if (this.update == 2)
+
+		    this.UpdateTarget()
+		    return
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld PropertyBinding/UpdateCondition PropertyBinding::update
+	IL_0006: ldc.i4.2
+	IL_0007: bne.un.s IL_0010
+	IL_0009: ldarg.0
+	IL_000a: call System.Void PropertyBinding::UpdateTarget()
+	IL_000f: ret
+	IL_0010: ret
+	
+
+Method: System.Void PropertyBinding::FixedUpdate():	Method Body (x86 ASM):
+		0x18038B350 cmp dword ptr [rcx+2Ch],3		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 44 | None ||| N/A | 3
+		0x18038B354 jne short 000000018038B35Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B356 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B358 jmp near ptr 000000018038B3D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B35D ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B35E int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PropertyBinding::FixedUpdate():
+		End of function at 0x18038B35F
+		Absolute End is at 0x18038B35F
+		Identified Jump Destination addresses:
+
+		0x18038B350: [!] Compares {field update, read from local {'this' (function parameter, type PropertyBinding)}} and 3
+		0x18038B354: Jumps to 0x18038B35D (which is an if statement's body) if {field update, read from local {'this' (function parameter, type PropertyBinding)}} != 3 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18038B358: [!] Calls managed method System.Void PropertyBinding::UpdateTarget() on instance {'this' (function parameter, type PropertyBinding)}
+
+		0x18038B358: [!] Returns from the function
+
+		0x18038B35D: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PropertyBinding
+	System.Void FixedUpdate()
+
+		if (this.update == 3)
+
+		    this.UpdateTarget()
+		    return
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld PropertyBinding/UpdateCondition PropertyBinding::update
+	IL_0006: ldc.i4.3
+	IL_0007: bne.un.s IL_0010
+	IL_0009: ldarg.0
+	IL_000a: call System.Void PropertyBinding::UpdateTarget()
+	IL_000f: ret
+	IL_0010: ret
+	
+
+Method: System.Void PropertyBinding::OnValidate():	Method Body (x86 ASM):
+		0x18038B370 mov rax,[rcx+18h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x18038B374 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B376 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18038B379 je short 000000018038B383h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B37B mov [rax+20h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RAX | 32 | None ||| N/A | N/A
+		0x18038B37F mov [rax+28h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RAX | 40 | None ||| N/A | N/A
+		0x18038B383 mov rax,[rcx+20h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x18038B387 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18038B38A je short 000000018038B394h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B38C mov [rax+20h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RAX | 32 | None ||| N/A | N/A
+		0x18038B390 mov [rax+28h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RAX | 40 | None ||| N/A | N/A
+		0x18038B394 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B395 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PropertyBinding::OnValidate():
+		End of function at 0x18038B396
+		Absolute End is at 0x18038B396
+		Identified Jump Destination addresses:
+
+		0x18038B370: [!] Reads field source from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'source' (type PropertyReference)}
+
+		0x18038B374: Clears register rdx, yielding zero-local {'local2' (type System.Int32)}
+		0x18038B376: [!] Compares {'source' (type PropertyReference)} and 0
+		0x18038B379: Jumps to 0x18038B383 (which is an if statement's body) if source equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18038B37B: [!] Sets the field mField (Type System.Reflection.FieldInfo) on local {'source' (type PropertyReference)} to the value stored in {'local2' (type System.Int32)}
+		0x18038B37F: [!] Sets the field mProperty (Type System.Reflection.PropertyInfo) on local {'source' (type PropertyReference)} to the value stored in {'local2' (type System.Int32)}
+		0x18038B383: [!] Reads field target from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'target' (type PropertyReference)}
+
+		0x18038B387: [!] Compares {'target' (type PropertyReference)} and 0
+		0x18038B38A: Jumps to 0x18038B394 if target equals 0 ;  - This is probably a goto, jumping to 0x18038B394 which is after end of current block @ 0x18038B383 (started at 0x18038B37B)
+
+		0x18038B38C: [!] Sets the field mField (Type System.Reflection.FieldInfo) on local {'target' (type PropertyReference)} to the value stored in {'local2' (type System.Int32)}
+		0x18038B390: [!] Sets the field mProperty (Type System.Reflection.PropertyInfo) on local {'target' (type PropertyReference)} to the value stored in {'local2' (type System.Int32)}
+		0x18038B394: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PropertyBinding
+	System.Void OnValidate()
+		PropertyReference source = this.source
+		ulong local2 = 0
+
+		if (source != 0)
+		    source.mField = local2
+		    source.mProperty = local2
+		endif
+        
+		PropertyReference target = this.target
+
+		if (target == 0)
+            goto INSN_18038B394
+        endif
+		target.mField = local2
+		target.mProperty = local2
+
+		INSN_18038B394:
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld PropertyReference PropertyBinding::source
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldc.i4.0
+	IL_000b: beq.s IL_001b
+	IL_000d: ldloc.0
+	IL_000e: ldloc.1
+	IL_000f: stfld System.Reflection.FieldInfo PropertyReference::mField
+	IL_0014: ldloc.0
+	IL_0015: ldloc.1
+	IL_0016: stfld System.Reflection.PropertyInfo PropertyReference::mProperty
+	IL_001b: ldarg.0
+	IL_001c: ldfld PropertyReference PropertyBinding::target
+	IL_0021: stloc.2
+	IL_0022: ldloc.2
+	IL_0023: ldc.i4.0
+	IL_0024: beq.s IL_0034
+	IL_0026: ldloc.2
+	IL_0027: ldloc.1
+	IL_0028: stfld System.Reflection.FieldInfo PropertyReference::mField
+	IL_002d: ldloc.2
+	IL_002e: ldloc.1
+	IL_002f: stfld System.Reflection.PropertyInfo PropertyReference::mProperty
+	IL_0034: ret
+	
+
+Method: System.Void PropertyBinding::UpdateTarget():	Method Body (x86 ASM):
+		0x18038B3D0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B3D2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18038B3D6 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18038B3D9 mov rcx,[rcx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RCX | 24 | None ||| N/A | N/A
+		0x18038B3DD test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18038B3E0 je near ptr 000000018038B4FDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B3E6 cmp qword ptr [rbx+20h],0		; DEBUG: {Memory}/None {Immediate8to64}/None ||| RBX | 32 | None ||| N/A | 0
+		0x18038B3EB je near ptr 000000018038B4FDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B3F1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B3F3 call 000000018038CC80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B3F8 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18038B3FA je near ptr 000000018038B4FDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B400 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18038B404 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x18038B409 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18038B40C je near ptr 000000018038B56Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B412 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B414 call 000000018038CC80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B419 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18038B41B je near ptr 000000018038B4F8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B421 mov eax,[rbx+28h]		; DEBUG: {Register}/EAX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x18038B424 mov rdi,[rbx+18h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x18038B428 test eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18038B42A je near ptr 000000018038B53Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B430 cmp eax,1		; DEBUG: {Register}/EAX {Immediate8to32}/None ||| None | 0 | None ||| N/A | 1
+		0x18038B433 je near ptr 000000018038B50Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B439 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18038B43C je near ptr 000000018038B56Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B442 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B444 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18038B447 call 000000018038C1B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B44C mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18038B450 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18038B453 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18038B456 je near ptr 000000018038B56Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B45C xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B45E call 000000018038C1B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B463 cmp rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18038B466 jne near ptr 000000018038B4F8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B46C mov rcx,[rbx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x18038B470 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18038B473 je near ptr 000000018038B56Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B479 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B47B call 000000018038C270h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B480 mov rcx,[rbx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x18038B484 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18038B487 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18038B48A je short 000000018038B503h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B48C mov r9,[rcx]		; DEBUG: {Register}/R9 {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x18038B48F mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18038B492 mov r8,[r9+130h]		; DEBUG: {Register}/R8 {Memory}/None ||| R9 | 304 | None ||| N/A | N/A
+		0x18038B499 call qword ptr [r9+128h]		; DEBUG: {Memory}/None {Register}/None ||| R9 | 296 | None ||| N/A | N/A
+		0x18038B4A0 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18038B4A2 je short 000000018038B503h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B4A4 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18038B4A8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18038B4AB je near ptr 000000018038B56Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B4B1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B4B3 call 000000018038C270h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B4B8 mov rcx,[rbx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x18038B4BC mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18038B4BF test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18038B4C2 je near ptr 000000018038B56Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B4C8 mov r9,[rcx]		; DEBUG: {Register}/R9 {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x18038B4CB mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18038B4CE mov r8,[r9+130h]		; DEBUG: {Register}/R8 {Memory}/None ||| R9 | 304 | None ||| N/A | N/A
+		0x18038B4D5 call qword ptr [r9+128h]		; DEBUG: {Memory}/None {Register}/None ||| R9 | 296 | None ||| N/A | N/A
+		0x18038B4DC test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18038B4DE jne short 000000018038B4F8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B4E0 mov rcx,[rbx+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x18038B4E4 mov [rbx+38h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 56 | None ||| N/A | N/A
+		0x18038B4E8 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18038B4EB je short 000000018038B56Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B4ED mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18038B4F0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18038B4F3 call 000000018038C320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B4F8 mov rdi,[rsp+30h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18038B4FD add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18038B501 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B502 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B503 mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18038B507 mov [rbx+38h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 56 | None ||| N/A | N/A
+		0x18038B50B jmp short 000000018038B4E8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B50D mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18038B511 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18038B514 je short 000000018038B56Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B516 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B518 call 000000018038C270h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B51D test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18038B520 je short 000000018038B56Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B522 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18038B525 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18038B528 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18038B52B mov rdi,[rsp+30h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18038B530 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18038B534 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B535 jmp near ptr 000000018038C320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B53A mov rbx,[rbx+20h]		; DEBUG: {Register}/RBX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18038B53E test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18038B541 je short 000000018038B56Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B543 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18038B545 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18038B548 call 000000018038C270h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B54D test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18038B550 je short 000000018038B56Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B552 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18038B555 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18038B558 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18038B55B mov rdi,[rsp+30h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18038B560 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18038B564 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18038B565 jmp near ptr 000000018038C320h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B56A xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18038B56C call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18038B571 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void PropertyBinding::UpdateTarget():
+		End of function at 0x18038B572
+		Absolute End is at 0x18038B572
+		Identified Jump Destination addresses:
+
+		0x18038B3D0: Saves the content of rbx to the stack
+		0x18038B3D6: Copies {'this' (function parameter, type PropertyBinding)} from rcx into rbx
+		0x18038B3D9: [!] Reads field source from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'source' (type PropertyReference)}
+
+		0x18038B3DD: [!] Compares {'source' (type PropertyReference)} and 0
+		0x18038B3E0: Jumps to 0x18038B4FD (which is an if statement's body) if source equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18038B3E6: [!] Compares {field target, read from local {'this' (function parameter, type PropertyBinding)}} and 0
+		0x18038B3EB: Jumps to 0x18038B4FD (which is an if statement's body) if this.target equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18038B3F3: [!] Calls managed method System.Boolean PropertyReference::get_isValid() on instance {'source' (type PropertyReference)} and stores the result in {'isValid' (type System.Boolean)}
+
+		0x18038B3F8: [!] Compares {'isValid' (type System.Boolean)} and False
+		0x18038B3FA: Jumps to 0x18038B4FD (which is an if statement's body) if isValid equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18038B400: [!] Reads field target from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'target' (type PropertyReference)}
+
+		0x18038B409: [!] Compares {'target' (type PropertyReference)} and 0
+		0x18038B40C: Jumps to 0x18038B56A (which throws a NRE) if target equals 0. Implicitly present in managed code, so ignored here.
+		0x18038B414: [!] Calls managed method System.Boolean PropertyReference::get_isValid() on instance {'target' (type PropertyReference)} and stores the result in {'isValid2' (type System.Boolean)}
+
+		0x18038B419: [!] Compares {'isValid2' (type System.Boolean)} and False
+		0x18038B41B: Jumps to 0x18038B4F8 (which is an if statement's body) if isValid2 equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18038B421: [!] Reads field direction from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'direction' (type PropertyBinding/Direction)}
+
+		0x18038B424: [!] Reads field source from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'source2' (type PropertyReference)}
+
+		0x18038B428: [!] Compares {'direction' (type PropertyBinding/Direction)} and 0
+		0x18038B42A: Jumps to 0x18038B53A if direction equals 0 ;  - This is probably a goto, jumping to 0x18038B53A which is after end of current block @ 0x18038B4F8 (started at 0x18038B421)
+
+		0x18038B430: [!] Compares {'direction' (type PropertyBinding/Direction)} and 1
+		0x18038B433: Jumps to 0x18038B50D if direction equals 1 ;  - This is probably a goto, jumping to 0x18038B50D which is after end of current block @ 0x18038B4F8 (started at 0x18038B421)
+
+		0x18038B439: [!] Compares {'source2' (type PropertyReference)} and 0
+		0x18038B43C: Jumps to 0x18038B56A (which throws a NRE) if source2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18038B444: Copies {'source2' (type PropertyReference)} from rdi into rcx
+		0x18038B447: [!] Calls managed method System.Type PropertyReference::GetPropertyType() on instance {'source2' (type PropertyReference)} and stores the result in {'propertyType' (type System.Type)}
+
+		0x18038B44C: [!] Reads field target from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'target2' (type PropertyReference)}
+
+		0x18038B450: Copies {'propertyType' (type System.Type)} from rax into rdi
+		0x18038B453: [!] Compares {'target2' (type PropertyReference)} and 0
+		0x18038B456: Jumps to 0x18038B56A (which throws a NRE) if target2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18038B45E: [!] Calls managed method System.Type PropertyReference::GetPropertyType() on instance {'target2' (type PropertyReference)} and stores the result in {'propertyType2' (type System.Type)}
+
+		0x18038B463: [!] Compares {'propertyType' (type System.Type)} and {'propertyType2' (type System.Type)}
+		0x18038B466: Jumps to 0x18038B4F8 (which is an if statement's body) if {'propertyType' (type System.Type)} != {'propertyType2' (type System.Type)} ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18038B46C: [!] Reads field source from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'source3' (type PropertyReference)}
+
+		0x18038B470: [!] Compares {'source3' (type PropertyReference)} and 0
+		0x18038B473: Jumps to 0x18038B56A (which throws a NRE) if source3 equals 0. Implicitly present in managed code, so ignored here.
+		0x18038B47B: [!] Calls managed method System.Object PropertyReference::Get() on instance {'source3' (type PropertyReference)} and stores the result in {'object' (type System.Object)}
+
+		0x18038B480: [!] Reads field mLastValue from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'mLastValue' (type System.Object)}
+
+		0x18038B484: Copies {'object' (type System.Object)} from rax into rdi
+		0x18038B487: [!] Compares {'mLastValue' (type System.Object)} and 0
+		0x18038B48A: Jumps to 0x18038B503 if mLastValue equals 0 ;  - This is probably a goto, jumping to 0x18038B503 which is after end of current block @ 0x18038B4F8 (started at 0x18038B46C)
+
+		0x18038B48C: Loads the class pointer from mLastValue into a constant constant12 in register r9
+		0x18038B48F: Copies {'object' (type System.Object)} from rax into rdx
+		0x18038B492: Loads the pointer to the implementation of virtual function  specific to System.Object from the class pointer in r9, slot -1 (from memory offset 304) and stores in constant 
+		0x18038B4A0: [!] Compares {'object' (type System.Object)} and 0
+		0x18038B4A2: Jumps to 0x18038B503 if object equals 0 ;  - This is probably a goto, jumping to 0x18038B503 which is after end of current block @ 0x18038B4F8 (started at 0x18038B46C)
+
+		0x18038B4A4: [!] Reads field target from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'target3' (type PropertyReference)}
+
+		0x18038B4A8: [!] Compares {'target3' (type PropertyReference)} and 0
+		0x18038B4AB: Jumps to 0x18038B56A (which throws a NRE) if target3 equals 0. Implicitly present in managed code, so ignored here.
+		0x18038B4B3: [!] Calls managed method System.Object PropertyReference::Get() on instance {'target3' (type PropertyReference)} and stores the result in {'object2' (type System.Object)}
+
+		0x18038B4B8: [!] Reads field mLastValue from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'mLastValue2' (type System.Object)}
+
+		0x18038B4BC: Copies {'object2' (type System.Object)} from rax into rdi
+		0x18038B4BF: [!] Compares {'mLastValue2' (type System.Object)} and 0
+		0x18038B4C2: Jumps to 0x18038B56A (which throws a NRE) if mLastValue2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18038B4C8: Loads the class pointer from mLastValue2 into a constant constant16 in register r9
+		0x18038B4CB: Copies {'object2' (type System.Object)} from rax into rdx
+		0x18038B4CE: Loads the pointer to the implementation of virtual function  specific to System.Object from the class pointer in r9, slot -1 (from memory offset 304) and stores in constant 
+		0x18038B4DC: [!] Compares {'object2' (type System.Object)} and 0
+		0x18038B4DE: Jumps to 0x18038B4F8 (which is an if statement's body) if {'object2' (type System.Object)} != 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18038B4E0: [!] Reads field source from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'source4' (type PropertyReference)}
+
+		0x18038B4E4: [!] Sets the field mLastValue (Type System.Object) on local {'this' (function parameter, type PropertyBinding)} to the value stored in {'object2' (type System.Object)}
+
+		Potential Loop Start (0x18038B4E8):
+		0x18038B4E8: [!] Compares {'source4' (type PropertyReference)} and 0
+		0x18038B4EB: Jumps to 0x18038B56A (which throws a NRE) if source4 equals 0. Implicitly present in managed code, so ignored here.
+		0x18038B4ED: Copies {'object2' (type System.Object)} from rdi into rdx
+		0x18038B4F3: [!] Calls managed method System.Boolean PropertyReference::Set(System.Object) on instance {'source4' (type PropertyReference)} with arguments [{'object2' (type System.Object)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18038B4F8: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rdi as new constant constant19
+		0x18038B502: [!] Returns from the function
+
+		0x18038B507: [!] Sets the field mLastValue (Type System.Object) on local {'this' (function parameter, type PropertyBinding)} to the value stored in 
+		0x18038B50B: Jumps to 0x18038B4E8 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x18038B50D: [!] Reads field target from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'target4' (type PropertyReference)}
+
+		0x18038B511: [!] Compares {'target4' (type PropertyReference)} and 0
+		0x18038B514: Jumps to 0x18038B56A (which throws a NRE) if target4 equals 0. Implicitly present in managed code, so ignored here.
+		0x18038B518: [!] Calls managed method System.Object PropertyReference::Get() on instance {'target4' (type PropertyReference)} and stores the result in {'object3' (type System.Object)}
+
+		0x18038B51D: [!] Compares  and 0
+		0x18038B520: Jumps to 0x18038B56A (which throws a NRE) if  equals 0. Implicitly present in managed code, so ignored here.
+		0x18038B522: Copies {'object3' (type System.Object)} from rax into rdx
+		0x18038B52B: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rdi as new constant constant22
+		0x18038B535: [!] Calls managed method System.Boolean PropertyReference::Set(System.Object) on instance {'target4' (type PropertyReference)} with arguments [{'object3' (type System.Object)}] and stores the result in {'boolean2' (type System.Boolean)}
+
+		0x18038B535: [!] Returns from the function
+
+		0x18038B53A: [!] Reads field target from {'this' (function parameter, type PropertyBinding)} and stores in a new local {'target5' (type PropertyReference)}
+
+		0x18038B53E: [!] Compares {'constant22' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} and 0
+		0x18038B541: Jumps to 0x18038B56A (which throws a NRE) if constant22 equals 0. Implicitly present in managed code, so ignored here.
+		0x18038B545: Copies {'constant22' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from rdi into rcx
+		0x18038B548: [!] Calls managed method System.Object PropertyReference::Get() on instance  and stores the result in {'object4' (type System.Object)}
+
+		0x18038B54D: [!] Compares {'target5' (type PropertyReference)} and 0
+		0x18038B550: Jumps to 0x18038B56A (which throws a NRE) if target5 equals 0. Implicitly present in managed code, so ignored here.
+		0x18038B552: Copies {'object4' (type System.Object)} from rax into rdx
+		0x18038B555: Copies {'target5' (type PropertyReference)} from rbx into rcx
+		0x18038B55B: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rdi as new constant constant25
+		0x18038B565: [!] Calls managed method System.Boolean PropertyReference::Set(System.Object) on instance {'target5' (type PropertyReference)} with arguments [{'object4' (type System.Object)}] and stores the result in {'boolean3' (type System.Boolean)}
+
+		0x18038B565: [!] Returns from the function
+
+		0x18038B56C: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: PropertyBinding
+	System.Void UpdateTarget()
+		PropertyReference source = this.source
+
+		if (source != 0)
+
+		    if (this.target != 0)
+
+		        System.Boolean isValid = source.isValid
+
+		        if (isValid != False)
+		            PropertyReference target = this.target
+
+		            System.Boolean isValid2 = target.isValid
+
+		            if (isValid2 != False)
+		                PropertyBinding/Direction direction = this.direction
+		                PropertyReference source2 = this.source
+
+		                if (direction == 0)
+                            goto INSN_18038B53A
+                        endif
+
+		                if (direction == 1)
+                            goto INSN_18038B50D
+                        endif
+
+		                System.Type propertyType = source2.GetPropertyType()
+		                PropertyReference target2 = this.target
+
+		                System.Type propertyType2 = target2.GetPropertyType()
+
+		                if (propertyType == propertyType2)
+		                    PropertyReference source3 = this.source
+
+		                    System.Object object = source3.Get()
+		                    System.Object mLastValue = this.mLastValue
+
+		                    if (mLastValue == 0)
+                                goto INSN_18038B503
+                            endif
+
+		                    if (object == 0)
+                                goto INSN_18038B503
+                            endif
+		                    PropertyReference target3 = this.target
+
+		                    System.Object object2 = target3.Get()
+		                    System.Object mLastValue2 = this.mLastValue
+
+		                    if (object2 == 0)
+		                        PropertyReference source4 = this.source
+		                        this.mLastValue = object2
+
+		                        System.Boolean boolean = source4.Set(object2) //(Object value)
+		                    endif
+                            
+		                endif
+                        
+		                return
+
+		                INSN_18038B503:
+		                this.mLastValue = 
+		            endwhile
+                    
+		            goto INSN_18038B56A
+                    
+		            PropertyReference target4 = this.target
+
+		            System.Object object3 = target4.Get()
+
+		            System.Boolean boolean2 = target4.Set(object3) //(Object value)
+		            return
+
+		            INSN_18038B53A:
+		            PropertyReference target5 = this.target
+
+		            System.Object object4 = .Get()
+
+		            System.Boolean boolean3 = target5.Set(object4) //(Object value)
+		            return
+
+		            INSN_18038B56A:
+		            throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.RegToFieldAction at (0x18038B507) is corrupt (Value read is null) and cannot be created as IL. Aborting here.
+
+

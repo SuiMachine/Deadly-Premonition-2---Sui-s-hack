@@ -1,0 +1,253 @@
+Type: <ExecFadeIn>c__Iterator4
+
+Method: System.Void InterrogationMain/<ExecFadeIn>c__Iterator4::.ctor():	Method Body (x86 ASM):
+		0x1802068B0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802068B2 jmp near ptr 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802068B7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void InterrogationMain/<ExecFadeIn>c__Iterator4::.ctor():
+		End of function at 0x1802068B8
+		Absolute End is at 0x1802068B8
+		Identified Jump Destination addresses:
+
+		0x1802068B2: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type InterrogationMain/<ExecFadeIn>c__Iterator4)}
+
+		0x1802068B2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: InterrogationMain/<ExecFadeIn>c__Iterator4
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Boolean InterrogationMain/<ExecFadeIn>c__Iterator4::MoveNext():	Method Body (x86 ASM):
+		0x1802B0420 mov eax,[rcx+1Ch]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 28 | None ||| N/A | N/A
+		0x1802B0423 mov dword ptr [rcx+1Ch],0FFFFFFFFh		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 28 | None ||| N/A | 4294967295
+		0x1802B042A test eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x1802B042C je short 00000001802B0431h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802B042E xor al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1802B0430 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B0431 mov eax,[rcx+1Ch]		; DEBUG: {Register}/EAX {Memory}/None ||| RCX | 28 | None ||| N/A | N/A
+		0x1802B0434 mov edx,1		; DEBUG: {Register}/EDX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x1802B0439 cmp byte ptr [rcx+18h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 24 | None ||| N/A | 0
+		0x1802B043D mov qword ptr [rcx+10h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RCX | 16 | None ||| N/A | 0
+		0x1802B0445 cmove eax,edx		; DEBUG: {Register}/EAX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802B0448 mov [rcx+1Ch],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RCX | 28 | None ||| N/A | N/A
+		0x1802B044B movzx eax,dl		; DEBUG: {Register}/EAX {Register}/DL ||| None | 0 | None ||| N/A | N/A
+		0x1802B044E ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B044F int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Boolean InterrogationMain/<ExecFadeIn>c__Iterator4::MoveNext():
+		End of function at 0x1802B0450
+		Absolute End is at 0x1802B0450
+		Identified Jump Destination addresses:
+
+		0x1802B0420: [!] Reads field $PC from {'this' (function parameter, type InterrogationMain/<ExecFadeIn>c__Iterator4)} and stores in a new local {'int32' (type System.Int32)}
+
+		0x1802B0423: [!] Sets the field $PC (Type System.Int32) on local {'this' (function parameter, type InterrogationMain/<ExecFadeIn>c__Iterator4)} to the value stored in 4294967295
+		0x1802B042A: [!] Compares {'int32' (type System.Int32)} and 0
+		0x1802B042C: Jumps to 0x1802B0431 (which is an if statement's body) if int32 equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1802B042E: Clears register rax, yielding zero-local {'local2' (type System.Int32)}
+		0x1802B0430: [!] Returns {'local2' (type System.Int32)} from the function
+
+		0x1802B0434: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1802B0439: [!] Compares {field $disposing, read from local {'this' (function parameter, type InterrogationMain/<ExecFadeIn>c__Iterator4)}} and False
+		0x1802B043D: [!] Sets the field $current (Type System.Object) on local {'this' (function parameter, type InterrogationMain/<ExecFadeIn>c__Iterator4)} to the value stored in 0
+		0x1802B0445: [!] Copies True from rdx into rax based on previous comparison
+		0x1802B0448: [!] Sets the field $PC (Type System.Int32) on local {'this' (function parameter, type InterrogationMain/<ExecFadeIn>c__Iterator4)} to the value stored in True
+		0x1802B044B: Copies True from rdx into rax
+		0x1802B044E: [!] Returns True from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: InterrogationMain/<ExecFadeIn>c__Iterator4
+	System.Boolean MoveNext()
+		System.Int32 int32 = this.$PC
+		this.$PC = 4294967295
+
+		if (int32 != 0)
+		    ulong local2 = 0
+		    return local2
+		endif
+        
+		this.$current = 0
+		this.$PC = True
+		return True
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x1802B0430) is corrupt (Return value has a type of System.Int32, expecting an object of type System.Boolean) and cannot be created as IL. Aborting here.
+
+
+Method: System.Object InterrogationMain/<ExecFadeIn>c__Iterator4::System.Collections.Generic.IEnumerator<object>.get_Current():	Method Body (x86 ASM):
+		0x18029AA00 mov rax,[rcx+10h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x18029AA04 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18029AA05 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Object InterrogationMain/<ExecFadeIn>c__Iterator4::System.Collections.Generic.IEnumerator<object>.get_Current():
+		End of function at 0x18029AA06
+		Absolute End is at 0x18029AA06
+		Identified Jump Destination addresses:
+
+		0x18029AA00: [!] Reads field $current from {'this' (function parameter, type InterrogationMain/<ExecFadeIn>c__Iterator4)} and stores in a new local {'$current' (type System.Object)}
+
+		0x18029AA04: [!] Returns {'$current' (type System.Object)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: InterrogationMain/<ExecFadeIn>c__Iterator4
+	System.Object System.Collections.Generic.IEnumerator<object>.get_Current()
+		System.Object $current = this.$current
+		return $current
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Object InterrogationMain/<ExecFadeIn>c__Iterator4::$current
+	IL_0006: ret
+	
+
+Method: System.Object InterrogationMain/<ExecFadeIn>c__Iterator4::System.Collections.IEnumerator.get_Current():	Method Body (x86 ASM):
+		0x18029AA00 mov rax,[rcx+10h]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 16 | None ||| N/A | N/A
+		0x18029AA04 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18029AA05 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Object InterrogationMain/<ExecFadeIn>c__Iterator4::System.Collections.IEnumerator.get_Current():
+		End of function at 0x18029AA06
+		Absolute End is at 0x18029AA06
+		Identified Jump Destination addresses:
+
+		0x18029AA00: [!] Reads field $current from {'this' (function parameter, type InterrogationMain/<ExecFadeIn>c__Iterator4)} and stores in a new local {'$current' (type System.Object)}
+
+		0x18029AA04: [!] Returns {'$current' (type System.Object)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: InterrogationMain/<ExecFadeIn>c__Iterator4
+	System.Object System.Collections.IEnumerator.get_Current()
+		System.Object $current = this.$current
+		return $current
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Object InterrogationMain/<ExecFadeIn>c__Iterator4::$current
+	IL_0006: ret
+	
+
+Method: System.Void InterrogationMain/<ExecFadeIn>c__Iterator4::Dispose():	Method Body (x86 ASM):
+		0x1802B0410 mov byte ptr [rcx+18h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 24 | None ||| N/A | 1
+		0x1802B0414 mov dword ptr [rcx+1Ch],0FFFFFFFFh		; DEBUG: {Memory}/None {Immediate32}/None ||| RCX | 28 | None ||| N/A | 4294967295
+		0x1802B041B ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802B041C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void InterrogationMain/<ExecFadeIn>c__Iterator4::Dispose():
+		End of function at 0x1802B041D
+		Absolute End is at 0x1802B041D
+		Identified Jump Destination addresses:
+
+		0x1802B0410: [!] Sets the field $disposing (Type System.Boolean) on local {'this' (function parameter, type InterrogationMain/<ExecFadeIn>c__Iterator4)} to the value stored in True
+		0x1802B0414: [!] Sets the field $PC (Type System.Int32) on local {'this' (function parameter, type InterrogationMain/<ExecFadeIn>c__Iterator4)} to the value stored in 4294967295
+		0x1802B041B: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: InterrogationMain/<ExecFadeIn>c__Iterator4
+	System.Void Dispose()
+		this.$disposing = True
+		this.$PC = 4294967295
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldc.i4.1
+	IL_0002: stfld System.Boolean InterrogationMain/<ExecFadeIn>c__Iterator4::$disposing
+	IL_0007: ldarg.0
+	IL_0008: ldc.i8 4294967295
+	IL_0011: conv.u8
+	IL_0012: stfld System.Int32 InterrogationMain/<ExecFadeIn>c__Iterator4::$PC
+	IL_0017: ret
+	
+
+Method: System.Void InterrogationMain/<ExecFadeIn>c__Iterator4::Reset():	Method Body (x86 ASM):
+		0x1804BDBB0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804BDBB2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804BDBB6 cmp byte ptr [18183E6CAh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872458 | None ||| N/A | 0
+		0x1804BDBBD jne short 00000001804BDBD1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804BDBBF mov ecx,[181513B44h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464551748 | None ||| N/A | N/A
+		0x1804BDBC5 call 00000001800580B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804BDBCA mov byte ptr [18183E6CAh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872458 | None ||| N/A | 1
+		0x1804BDBD1 mov rcx,[181884650h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468159056 | None ||| N/A | N/A
+		0x1804BDBD8 call 00000001800580C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804BDBDD xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804BDBDF mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804BDBE2 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804BDBE5 call 0000000180E8F4A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804BDBEA mov r8,[181866190h]		; DEBUG: {Register}/R8 {Memory}/None ||| RIP | 6468034960 | None ||| N/A | N/A
+		0x1804BDBF1 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804BDBF3 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1804BDBF6 call 00000001800580D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804BDBFB int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void InterrogationMain/<ExecFadeIn>c__Iterator4::Reset():
+		End of function at 0x1804BDBFC
+		Absolute End is at 0x1804BDBFC
+		Identified Jump Destination addresses:
+
+		0x1804BDBB0: Saves the content of rbx to the stack
+		0x1804BDBB6: Compares {Unknown Global at 0x18183E6CA, first ten bytes are [103 1 144 165 1 0 0 166 1 0], or as chars "g¥  ¦ "} and 0
+		0x1804BDBBD: Jumps to 0x1804BDBD1 if {Unknown Global at 0x18183E6CA, first ten bytes are [103 1 144 165 1 0 0 166 1 0], or as chars "g¥  ¦ "} != 0
+
+		0x1804BDBBF: Reads {Unknown Global at 0x181513B44, first ten bytes are [156 112 0 0 156 48 0 0 157 48], or as chars "p  0  0"} into register rcx as a constant constant3
+		0x1804BDBD1: Loads the type definition for managed type System.NotSupportedException as a constant "NotSupportedException" in rcx
+		0x1804BDBD8: [!] Allocates an instance of type System.NotSupportedException and stores it as notSupportedException in rax.
+
+		0x1804BDBDF: Copies {'notSupportedException' (type System.NotSupportedException)} from rax into rcx
+		0x1804BDBE2: Copies {'notSupportedException' (type System.NotSupportedException)} from rax into rbx
+		0x1804BDBE5: [!] Calls managed method System.Void System.NotSupportedException::.ctor() on instance {'notSupportedException' (type System.NotSupportedException)}
+
+		0x1804BDBEA: Loads the method definition for managed method System.Void InterrogationMain/<ExecFadeIn>c__Iterator4::Reset() as a constant "Reset"
+		0x1804BDBF3: Copies {'notSupportedException' (type System.NotSupportedException)} from rbx into rcx
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: InterrogationMain/<ExecFadeIn>c__Iterator4
+	System.Void Reset()
+		System.NotSupportedException notSupportedException = new System.NotSupportedException()
+
+		notSupportedException..ctor()
+
+
+Generated IL:
+	IL_0000: newobj System.Void System.NotSupportedException::.ctor()
+	IL_0005: stloc.0
+	
+

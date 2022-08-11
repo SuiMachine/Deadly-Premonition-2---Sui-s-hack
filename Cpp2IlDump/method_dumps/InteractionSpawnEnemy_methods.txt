@@ -1,0 +1,433 @@
+Type: InteractionSpawnEnemy
+
+Method: System.Void InteractionSpawnEnemy::.ctor():	Method Body (x86 ASM):
+		0x180206670 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180206672 jmp near ptr 000000018044B1D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206677 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void InteractionSpawnEnemy::.ctor():
+		End of function at 0x180206678
+		Absolute End is at 0x180206678
+		Identified Jump Destination addresses:
+
+		0x180206672: [!] Calls managed method System.Void GeneralInteractionObject::.ctor() on instance {'this' (function parameter, type InteractionSpawnEnemy)}
+
+		0x180206672: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: InteractionSpawnEnemy
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void GeneralInteractionObject::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void InteractionSpawnEnemy::Init():	Method Body (x86 ASM):
+		0x1804AC880 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804AC882 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804AC886 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC888 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC88B call 00000001804489B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC890 mov rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x1804AC894 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC897 je short 00000001804AC8B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC899 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804AC89C mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1804AC89E call 000000018110B080h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC8A3 mov byte ptr [rbx+98h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 152 | None ||| N/A | 1
+		0x1804AC8AA add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1804AC8AE pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804AC8AF ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804AC8B0 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC8B5 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void InteractionSpawnEnemy::Init():
+		End of function at 0x1804AC8B6
+		Absolute End is at 0x1804AC8B6
+		Identified Jump Destination addresses:
+
+		0x1804AC880: Saves the content of rbx to the stack
+		0x1804AC888: Copies {'this' (function parameter, type InteractionSpawnEnemy)} from rcx into rbx
+		0x1804AC88B: [!] Calls managed method System.Void GeneralInteractionObject::Init() on instance {'this' (function parameter, type InteractionSpawnEnemy)}
+
+		0x1804AC890: [!] Reads field m_collider from {'this' (function parameter, type InteractionSpawnEnemy)} and stores in a new local {'m_collider' (type UnityEngine.Collider)}
+
+		0x1804AC894: [!] Compares {'m_collider' (type UnityEngine.Collider)} and 0
+		0x1804AC897: Jumps to 0x1804AC8B0 (which throws a NRE) if m_collider equals 0. Implicitly present in managed code, so ignored here.
+		0x1804AC89C: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1804AC89E: [!] Calls managed method System.Void UnityEngine.Collider::set_enabled(System.Boolean) on instance {'m_collider' (type UnityEngine.Collider)} with arguments [True]
+
+		0x1804AC8A3: [!] Sets the field m_bEnter (Type System.Boolean) on local {'this' (function parameter, type InteractionSpawnEnemy)} to the value stored in True
+		0x1804AC8AF: [!] Returns from the function
+
+		0x1804AC8B0: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: InteractionSpawnEnemy
+	System.Void Init()
+
+		base.Init()
+		UnityEngine.Collider m_collider = this.m_collider
+
+		m_collider.enabled = True
+		this.m_bEnter = True
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void GeneralInteractionObject::Init()
+	IL_0006: ldarg.0
+	IL_0007: ldfld UnityEngine.Collider IntaractionObjectBase::m_collider
+	IL_000c: ldc.i4.1
+	IL_000d: call System.Void UnityEngine.Collider::set_enabled(System.Boolean)
+	IL_0012: ldarg.0
+	IL_0013: ldc.i4.1
+	IL_0014: stfld System.Boolean GeneralInteractionObject::m_bEnter
+	IL_0019: ret
+	IL_001a: newobj System.Void System.NullReferenceException::.ctor()
+	IL_001f: throw
+	
+
+Method: System.Void InteractionSpawnEnemy::OnSearch():	Method Body (x86 ASM):
+		0x1804AC8C0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804AC8C2 sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1804AC8C6 cmp byte ptr [18183E672h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872370 | None ||| N/A | 0
+		0x1804AC8CD mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC8D0 jne short 00000001804AC8E4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC8D2 mov ecx,[18151AEB8h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464581304 | None ||| N/A | N/A
+		0x1804AC8D8 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC8DD mov byte ptr [18183E672h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872370 | None ||| N/A | 1
+		0x1804AC8E4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC8E6 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC8E9 call 0000000180B22650h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC8EE test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1804AC8F0 je near ptr 00000001804ACABDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC8F6 mov [rsp+40h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 64 | None ||| N/A | N/A
+		0x1804AC8FB mov [rsp+48h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 72 | None ||| N/A | N/A
+		0x1804AC900 mov rcx,[18188D900h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196608 | None ||| N/A | N/A
+		0x1804AC907 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1804AC90E je short 00000001804AC91Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC910 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1804AC917 jne short 00000001804AC91Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC919 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC91E xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC920 lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1804AC925 call 0000000180CE7730h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC92A movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1804AC92E mov esi,[rax+8]		; DEBUG: {Register}/ESI {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1804AC931 mov rax,[181899CA0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468246688 | None ||| N/A | N/A
+		0x1804AC938 movsd qword ptr [rsp+50h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 80 | None ||| N/A | N/A
+		0x1804AC93E test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1804AC945 je short 00000001804AC95Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC947 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1804AC94E jne short 00000001804AC95Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC950 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC953 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC958 mov rax,[181899CA0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468246688 | None ||| N/A | N/A
+		0x1804AC95F mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1804AC966 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1804AC96D test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1804AC974 mov rdi,[rax+30h]		; DEBUG: {Register}/RDI {Memory}/None ||| RAX | 48 | None ||| N/A | N/A
+		0x1804AC978 je short 00000001804AC988h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC97A cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1804AC981 jne short 00000001804AC988h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC983 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC988 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC98A mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1804AC98D call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC992 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1804AC994 je short 00000001804AC9FBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC996 mov rax,[181899CA0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468246688 | None ||| N/A | N/A
+		0x1804AC99D test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x1804AC9A4 je short 00000001804AC9BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC9A6 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x1804AC9AD jne short 00000001804AC9BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC9AF mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC9B2 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC9B7 mov rax,[181899CA0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468246688 | None ||| N/A | N/A
+		0x1804AC9BE mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x1804AC9C5 mov rcx,[rax+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 48 | None ||| N/A | N/A
+		0x1804AC9C9 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC9CC je near ptr 00000001804ACAC3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC9D2 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC9D4 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC9D9 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC9DC je near ptr 00000001804ACAC3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC9E2 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804AC9E5 lea rcx,[rsp+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1804AC9EA mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804AC9ED call 0000000180CE2700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC9F2 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x1804AC9F6 mov esi,[rax+8]		; DEBUG: {Register}/ESI {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x1804AC9F9 jmp short 00000001804ACA01h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804AC9FB movsd xmm0,qword ptr [rsp+50h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x1804ACA01 mov rcx,[rbx+168h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 360 | None ||| N/A | N/A
+		0x1804ACA08 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA0B je near ptr 00000001804ACAC3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA11 mov edx,[rbx+170h]		; DEBUG: {Register}/EDX {Memory}/None ||| RBX | 368 | None ||| N/A | N/A
+		0x1804ACA17 lea r8,[rsp+20h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1804ACA1C xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA1F movsd qword ptr [rsp+20h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 32 | None ||| N/A | N/A
+		0x1804ACA25 mov [rsp+28h],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RSP | 40 | None ||| N/A | N/A
+		0x1804ACA29 call 00000001806EE9F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA2E mov rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x1804ACA32 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA35 je near ptr 00000001804ACAC3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA3B xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA3E xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA40 call 000000018110B080h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA45 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1804ACA4C mov rdi,[rbx+178h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 376 | None ||| N/A | N/A
+		0x1804ACA53 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1804ACA5A je short 00000001804ACA6Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA5C cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1804ACA63 jne short 00000001804ACA6Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA65 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA6A xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA6C mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA6F call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA74 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA76 je short 00000001804ACAB3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA78 mov rcx,[rbx+178h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 376 | None ||| N/A | N/A
+		0x1804ACA7F test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA82 je short 00000001804ACAC3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA84 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA86 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA8B test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA8E je short 00000001804ACAC3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA90 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA93 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1804ACA95 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1804ACA98 call 0000000180B2E5A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACA9D mov rcx,[rbx+178h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 376 | None ||| N/A | N/A
+		0x1804ACAA4 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1804ACAA7 je short 00000001804ACAC3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACAA9 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1804ACAAC mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1804ACAAE call 00000001803A01D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACAB3 mov rsi,[rsp+40h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1804ACAB8 mov rdi,[rsp+48h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x1804ACABD add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1804ACAC1 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804ACAC2 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1804ACAC3 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1804ACAC5 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1804ACACA int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void InteractionSpawnEnemy::OnSearch():
+		End of function at 0x1804ACACB
+		Absolute End is at 0x1804ACACB
+		Identified Jump Destination addresses:
+			0x1804ACA01
+		0x1804AC8C0: Saves the content of rbx to the stack
+		0x1804AC8C6: Compares {Unknown Global at 0x18183E672, first ten bytes are [1 0 216 60 103 1 192 161 1 0], or as chars " Ø<gÀ¡ "} and 0
+		0x1804AC8CD: Copies {'this' (function parameter, type InteractionSpawnEnemy)} from rcx into rbx
+		0x1804AC8D0: Jumps to 0x1804AC8E4 if {Unknown Global at 0x18183E672, first ten bytes are [1 0 216 60 103 1 192 161 1 0], or as chars " Ø<gÀ¡ "} != 0
+
+		0x1804AC8D2: Loads string "Õ7" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1804AC8D8: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1804AC8E6: Copies {'this' (function parameter, type InteractionSpawnEnemy)} from rbx into rcx
+		0x1804AC8E9: [!] Calls managed method System.Boolean UnityEngine.Behaviour::get_enabled() on instance {'this' (function parameter, type InteractionSpawnEnemy)} and stores the result in {'enabled' (type System.Boolean)}
+
+		0x1804AC8EE: [!] Compares {'enabled' (type System.Boolean)} and False
+		0x1804AC8F0: Jumps to 0x1804ACABD (which is an if statement's body) if enabled equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1804AC900: Loads the type definition for managed type UnityEngine.Vector3 as a constant "Vector3" in rcx
+		0x1804AC907: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1804AC90E: Jumps to 0x1804AC91E if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1804AC910: Compares "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1804AC917: Jumps to 0x1804AC91E if "{il2cpp field on {'Vector3' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1804AC919: Calls the il2cpp cctor for the type UnityEngine.Vector3
+		0x1804AC920: Loads a pointer to stack offset 0x20 into register rcx as new constant constant10
+		0x1804AC925: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Vector3::get_zero() and stores the result in {'zero' (type UnityEngine.Vector3)}
+
+		0x1804AC92E: [!] Reads field z from {'zero' (type UnityEngine.Vector3)} and stores in a new local {'single' (type System.Single)}
+
+		0x1804AC931: Loads the type definition for managed type CharaControl as a constant "CharaControl" in rax
+		0x1804AC93E: Compares "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1804AC945: Jumps to 0x1804AC95F if "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1804AC947: Compares "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1804AC94E: Jumps to 0x1804AC95F if "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1804AC950: Copies {'CharaControl' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1804AC953: Calls the il2cpp cctor for the type CharaControl
+		0x1804AC958: Loads the type definition for managed type CharaControl as a constant "CharaControl" in rax
+		0x1804AC95F: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1804AC966: Loads the pointer to the static fields for CharaControl and stores it in constant18 in register rax
+		0x1804AC96D: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1804AC974: [!] Reads the static field CharaControl CharaControl::Instance into new local instance
+		0x1804AC978: Jumps to 0x1804AC988 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1804AC97A: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1804AC981: Jumps to 0x1804AC988 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1804AC983: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1804AC98A: Copies {'instance' (type CharaControl)} from rdi into rcx
+		0x1804AC98D: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'instance' (type CharaControl)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1804AC992: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1804AC994: Jumps to 0x1804AC9FB if boolean equals False ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x1804AC996: Loads the type definition for managed type CharaControl as a constant "CharaControl" in rax
+		0x1804AC99D: Compares "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1804AC9A4: Jumps to 0x1804AC9BE if "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1804AC9A6: Compares "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1804AC9AD: Jumps to 0x1804AC9BE if "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1804AC9AF: Copies {'CharaControl' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x1804AC9B2: Calls the il2cpp cctor for the type CharaControl
+		0x1804AC9B7: Loads the type definition for managed type CharaControl as a constant "CharaControl" in rax
+		0x1804AC9BE: Loads the pointer to the static fields for CharaControl and stores it in constant30 in register rax
+		0x1804AC9C5: [!] Reads the static field CharaControl CharaControl::Instance into new local instance2
+		0x1804AC9C9: [!] Compares {'instance2' (type CharaControl)} and 0
+		0x1804AC9CC: Jumps to 0x1804ACAC3 (which throws a NRE) if instance2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1804AC9D4: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'instance2' (type CharaControl)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x1804AC9D9: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x1804AC9DC: Jumps to 0x1804ACAC3 (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x1804AC9E5: Loads a pointer to stack offset 0x20 into register rcx as new constant constant33
+		0x1804AC9EA: Copies {'transform' (type UnityEngine.Transform)} from rax into rdx
+		0x1804AC9ED: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::get_position() on instance  and stores the result in {'position' (type UnityEngine.Vector3)}
+
+		0x1804AC9F9: Jumps to 0x1804ACA01 (which is an function-local jump destination)
+
+
+		End Of If-Else Block (at 0x1804ACA01) where the else started at 0x1804AC9FB
+		0x1804ACA01: [!] Reads field m_enemyManager from {'this' (function parameter, type InteractionSpawnEnemy)} and stores in a new local {'m_enemyManager' (type EnemyManager)}
+
+		0x1804ACA08: [!] Compares {'m_enemyManager' (type EnemyManager)} and 0
+		0x1804ACA0B: Jumps to 0x1804ACAC3 (which throws a NRE) if m_enemyManager equals 0. Implicitly present in managed code, so ignored here.
+		0x1804ACA17: Loads a pointer to stack offset 0x20 into register r8 as new constant constant35
+		0x1804ACA25: Moves single (type System.Single) from register rsi to the stack at offset 40 (0x28)
+		0x1804ACA29: [!] Calls managed method System.Void EnemyManager::SpawnEnemyGroupByID(System.Int32,UnityEngine.Vector3) on instance {'m_enemyManager' (type EnemyManager)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x1804ACA2E: [!] Reads field m_collider from {'this' (function parameter, type InteractionSpawnEnemy)} and stores in a new local {'m_collider' (type UnityEngine.Collider)}
+
+		0x1804ACA32: [!] Compares {'m_collider' (type UnityEngine.Collider)} and 0
+		0x1804ACA35: Jumps to 0x1804ACAC3 (which throws a NRE) if m_collider equals 0. Implicitly present in managed code, so ignored here.
+		0x1804ACA3E: Clears register rdx, yielding zero-local {'local20' (type System.Int32)}
+		0x1804ACA40: [!] Calls managed method System.Void UnityEngine.Collider::set_enabled(System.Boolean) on instance {'m_collider' (type UnityEngine.Collider)} with arguments [{'local20' (type System.Int32)}]
+
+		0x1804ACA45: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1804ACA4C: [!] Reads field m_ivyModel from {'this' (function parameter, type InteractionSpawnEnemy)} and stores in a new local {'m_ivyModel' (type IvyWallModel)}
+
+		0x1804ACA53: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1804ACA5A: Jumps to 0x1804ACA6A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x1804ACA6A which is after end of current block @ 0x1804ACA01 (started at 0x1804AC9FB)
+
+		0x1804ACA5C: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1804ACA63: Jumps to 0x1804ACA6A if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x1804ACA6A which is after end of current block @ 0x1804ACA01 (started at 0x1804AC9FB)
+
+		0x1804ACA65: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1804ACA6C: Copies {'m_ivyModel' (type IvyWallModel)} from rdi into rcx
+		0x1804ACA6F: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'m_ivyModel' (type IvyWallModel)}] and stores the result in {'boolean2' (type System.Boolean)}
+
+		0x1804ACA74: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x1804ACA76: Jumps to 0x1804ACAB3 if boolean2 equals False ;  - This is probably a goto, jumping to 0x1804ACAB3 which is after end of current block @ 0x1804ACA01 (started at 0x1804AC9FB)
+
+		0x1804ACA78: [!] Reads field m_ivyModel from {'this' (function parameter, type InteractionSpawnEnemy)} and stores in a new local {'m_ivyModel2' (type IvyWallModel)}
+
+		0x1804ACA7F: [!] Compares {'m_ivyModel2' (type IvyWallModel)} and 0
+		0x1804ACA82: Jumps to 0x1804ACAC3 (which throws a NRE) if m_ivyModel2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1804ACA86: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'m_ivyModel2' (type IvyWallModel)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1804ACA8B: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x1804ACA8E: Jumps to 0x1804ACAC3 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1804ACA93: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1804ACA95: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x1804ACA98: [!] Calls managed method System.Void UnityEngine.GameObject::SetActive(System.Boolean) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [True]
+
+		0x1804ACA9D: [!] Reads field m_ivyModel from {'this' (function parameter, type InteractionSpawnEnemy)} and stores in a new local {'m_ivyModel3' (type IvyWallModel)}
+
+		0x1804ACAA4: [!] Compares {'m_ivyModel3' (type IvyWallModel)} and 0
+		0x1804ACAA7: Jumps to 0x1804ACAC3 (which throws a NRE) if m_ivyModel3 equals 0. Implicitly present in managed code, so ignored here.
+		0x1804ACAAC: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1804ACAAE: [!] Calls managed method System.Void IvyWallModel::SetActiveWall(System.Boolean) on instance {'m_ivyModel3' (type IvyWallModel)} with arguments [True]
+
+		0x1804ACAB3: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rsi as new constant constant48
+		0x1804ACAB8: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rdi as new constant constant49
+		0x1804ACAC2: [!] Returns from the function
+
+		0x1804ACAC5: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: InteractionSpawnEnemy
+	System.Void OnSearch()
+
+		System.Boolean enabled = base.enabled
+
+		if (enabled != False)
+
+		    UnityEngine.Vector3 zero = UnityEngine.Vector3.zero
+		    System.Single single = zero.z
+		    CharaControl instance = CharaControl.Instance
+
+		    System.Boolean boolean = UnityEngine.Object.op_Implicit(instance) //(Object exists)
+
+		    if (boolean != False)
+		        CharaControl instance2 = CharaControl.Instance
+
+		        UnityEngine.Transform transform = instance2.transform
+
+		        UnityEngine.Vector3 position = .position
+		    else
+		    endif
+            
+		    EnemyManager m_enemyManager = this.m_enemyManager
+
+		    m_enemyManager.SpawnEnemyGroupByID()
+		    UnityEngine.Collider m_collider = this.m_collider
+		    ulong local20 = 0
+
+		    m_collider.enabled = local20
+		    IvyWallModel m_ivyModel = this.m_ivyModel
+
+		    System.Boolean boolean2 = UnityEngine.Object.op_Implicit(m_ivyModel) //(Object exists)
+
+		    if (boolean2 == False)
+                goto INSN_1804ACAB3
+            endif
+		    IvyWallModel m_ivyModel2 = this.m_ivyModel
+
+		    UnityEngine.GameObject gameObject = m_ivyModel2.gameObject
+
+		    gameObject.SetActive(True) //(Boolean value)
+		    IvyWallModel m_ivyModel3 = this.m_ivyModel
+
+		    m_ivyModel3.SetActiveWall(True) //(Boolean active)
+
+		    INSN_1804ACAB3:
+		endif
+        
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x1804AC9ED) is corrupt (Method is non-static but don't have an instance) and cannot be created as IL. Aborting here.
+
+

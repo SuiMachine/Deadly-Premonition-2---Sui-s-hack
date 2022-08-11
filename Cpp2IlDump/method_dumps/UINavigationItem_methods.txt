@@ -1,0 +1,250 @@
+Type: UINavigationItem
+
+Method: System.Void UINavigationItem::.ctor():	Method Body (x86 ASM):
+		0x180203000 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180203002 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180203007 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UINavigationItem::.ctor():
+		End of function at 0x180203008
+		Absolute End is at 0x180203008
+		Identified Jump Destination addresses:
+
+		0x180203002: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type UINavigationItem)}
+
+		0x180203002: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UINavigationItem
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void UINavigationItem::OnSelected():	Method Body (x86 ASM):
+		0x1806192B0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806192B2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806192B6 mov rbx,[rcx+20h]		; DEBUG: {Register}/RBX {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x1806192BA test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806192BD je short 00000001806192D9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806192BF xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806192C1 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806192C6 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806192C9 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806192CC mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806192CF add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806192D3 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806192D4 jmp near ptr 0000000180604570h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806192D9 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806192DD pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806192DE ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806192DF int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UINavigationItem::OnSelected():
+		End of function at 0x1806192E0
+		Absolute End is at 0x1806192E0
+		Identified Jump Destination addresses:
+
+		0x1806192B0: Saves the content of rbx to the stack
+		0x1806192B6: [!] Reads field m_selectedCallback from {'this' (function parameter, type UINavigationItem)} and stores in a new local {'m_selectedCallback' (type UINavigationItem/OnCallback)}
+
+		0x1806192BA: [!] Compares {'m_selectedCallback' (type UINavigationItem/OnCallback)} and 0
+		0x1806192BD: Jumps to 0x1806192D9 (which is an if statement's body) if m_selectedCallback equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806192C1: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type UINavigationItem)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1806192C9: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rdx
+		0x1806192CC: Copies {'m_selectedCallback' (type UINavigationItem/OnCallback)} from rbx into rcx
+		0x1806192D4: [!] Calls managed method System.Void UINavigationItem/OnCallback::Invoke(UnityEngine.GameObject) on instance {'m_selectedCallback' (type UINavigationItem/OnCallback)} with arguments [{'gameObject' (type UnityEngine.GameObject)}]
+
+		0x1806192D4: [!] Returns from the function
+
+		0x1806192DE: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UINavigationItem
+	System.Void OnSelected()
+		UINavigationItem/OnCallback m_selectedCallback = this.m_selectedCallback
+
+		if (m_selectedCallback != 0)
+
+		    UnityEngine.GameObject gameObject = base.gameObject
+
+		    m_selectedCallback.Invoke(gameObject) //(GameObject obj)
+		    return
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UINavigationItem/OnCallback UINavigationItem::m_selectedCallback
+	IL_0006: stloc.0
+	IL_0007: ldloc.0
+	IL_0008: ldc.i4.0
+	IL_0009: beq.s IL_001a
+	IL_000b: ldarg.0
+	IL_000c: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0011: stloc.1
+	IL_0012: ldloc.0
+	IL_0013: ldloc.1
+	IL_0014: call System.Void UINavigationItem/OnCallback::Invoke(UnityEngine.GameObject)
+	IL_0019: ret
+	IL_001a: ret
+	
+
+Method: System.Void UINavigationItem::OnUnSelected():	Method Body (x86 ASM):
+		0x1806192E0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1806192E2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1806192E6 mov rbx,[rcx+28h]		; DEBUG: {Register}/RBX {Memory}/None ||| RCX | 40 | None ||| N/A | N/A
+		0x1806192EA test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806192ED je short 0000000180619309h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806192EF xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1806192F1 call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1806192F6 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1806192F9 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1806192FC mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1806192FF add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180619303 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180619304 jmp near ptr 0000000180604570h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180619309 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18061930D pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18061930E ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18061930F int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UINavigationItem::OnUnSelected():
+		End of function at 0x180619310
+		Absolute End is at 0x180619310
+		Identified Jump Destination addresses:
+
+		0x1806192E0: Saves the content of rbx to the stack
+		0x1806192E6: [!] Reads field m_unSelectedCallback from {'this' (function parameter, type UINavigationItem)} and stores in a new local {'m_unSelectedCallback' (type UINavigationItem/OnCallback)}
+
+		0x1806192EA: [!] Compares {'m_unSelectedCallback' (type UINavigationItem/OnCallback)} and 0
+		0x1806192ED: Jumps to 0x180619309 (which is an if statement's body) if m_unSelectedCallback equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1806192F1: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type UINavigationItem)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x1806192F9: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rdx
+		0x1806192FC: Copies {'m_unSelectedCallback' (type UINavigationItem/OnCallback)} from rbx into rcx
+		0x180619304: [!] Calls managed method System.Void UINavigationItem/OnCallback::Invoke(UnityEngine.GameObject) on instance {'m_unSelectedCallback' (type UINavigationItem/OnCallback)} with arguments [{'gameObject' (type UnityEngine.GameObject)}]
+
+		0x180619304: [!] Returns from the function
+
+		0x18061930E: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UINavigationItem
+	System.Void OnUnSelected()
+		UINavigationItem/OnCallback m_unSelectedCallback = this.m_unSelectedCallback
+
+		if (m_unSelectedCallback != 0)
+
+		    UnityEngine.GameObject gameObject = base.gameObject
+
+		    m_unSelectedCallback.Invoke(gameObject) //(GameObject obj)
+		    return
+		endif
+        
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld UINavigationItem/OnCallback UINavigationItem::m_unSelectedCallback
+	IL_0006: stloc.0
+	IL_0007: ldloc.0
+	IL_0008: ldc.i4.0
+	IL_0009: beq.s IL_001a
+	IL_000b: ldarg.0
+	IL_000c: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0011: stloc.1
+	IL_0012: ldloc.0
+	IL_0013: ldloc.1
+	IL_0014: call System.Void UINavigationItem/OnCallback::Invoke(UnityEngine.GameObject)
+	IL_0019: ret
+	IL_001a: ret
+	
+
+Method: System.Void UINavigationItem::SetSelectCallBack(UINavigationItem/OnCallback):	Method Body (x86 ASM):
+		0x1802580E0 mov [rcx+20h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RCX | 32 | None ||| N/A | N/A
+		0x1802580E4 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802580E5 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UINavigationItem::SetSelectCallBack(UINavigationItem/OnCallback):
+		End of function at 0x1802580E6
+		Absolute End is at 0x1802580E6
+		Identified Jump Destination addresses:
+
+		0x1802580E0: [!] Sets the field m_selectedCallback (Type UINavigationItem/OnCallback) on local {'this' (function parameter, type UINavigationItem)} to the value stored in {'callback' (function parameter, type UINavigationItem/OnCallback)}
+		0x1802580E4: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UINavigationItem
+	System.Void SetSelectCallBack(UINavigationItem/OnCallback callback)
+		this.m_selectedCallback = callback
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: stfld UINavigationItem/OnCallback UINavigationItem::m_selectedCallback
+	IL_0007: ret
+	
+
+Method: System.Void UINavigationItem::SetUnSelectCallBack(UINavigationItem/OnCallback):	Method Body (x86 ASM):
+		0x18020A3A0 mov [rcx+28h],rdx		; DEBUG: {Memory}/None {Register}/RDX ||| RCX | 40 | None ||| N/A | N/A
+		0x18020A3A4 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18020A3A5 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void UINavigationItem::SetUnSelectCallBack(UINavigationItem/OnCallback):
+		End of function at 0x18020A3A6
+		Absolute End is at 0x18020A3A6
+		Identified Jump Destination addresses:
+
+		0x18020A3A0: [!] Sets the field m_unSelectedCallback (Type UINavigationItem/OnCallback) on local {'this' (function parameter, type UINavigationItem)} to the value stored in {'callback' (function parameter, type UINavigationItem/OnCallback)}
+		0x18020A3A4: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: UINavigationItem
+	System.Void SetUnSelectCallBack(UINavigationItem/OnCallback callback)
+		this.m_unSelectedCallback = callback
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldarg.1
+	IL_0002: stfld UINavigationItem/OnCallback UINavigationItem::m_unSelectedCallback
+	IL_0007: ret
+	
+

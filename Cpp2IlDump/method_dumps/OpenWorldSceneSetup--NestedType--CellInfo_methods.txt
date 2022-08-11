@@ -1,0 +1,64 @@
+Type: CellInfo
+
+Method: System.Void OpenWorldSceneSetup/CellInfo::.ctor(System.Int32,System.Int32):	Method Body (x86 ASM):
+		0x180275120 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180275125 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x18027512A push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18027512B sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18027512F mov ebx,edx		; DEBUG: {Register}/EBX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180275131 mov esi,r8d		; DEBUG: {Register}/ESI {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180275134 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180275136 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180275139 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18027513E mov [rdi+10h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RDI | 16 | None ||| N/A | N/A
+		0x180275141 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x180275146 mov [rdi+14h],esi		; DEBUG: {Memory}/None {Register}/ESI ||| RDI | 20 | None ||| N/A | N/A
+		0x180275149 mov rsi,[rsp+38h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x18027514E add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180275152 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180275153 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180275154 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void OpenWorldSceneSetup/CellInfo::.ctor(System.Int32,System.Int32):
+		End of function at 0x180275155
+		Absolute End is at 0x180275155
+		Identified Jump Destination addresses:
+
+		0x18027512A: Saves the content of rdi to the stack
+		0x18027512F: Copies {'x' (function parameter, type System.Int32)} from rdx into rbx
+		0x180275131: Copies {'z' (function parameter, type System.Int32)} from r8 into rsi
+		0x180275136: Copies {'this' (function parameter, type OpenWorldSceneSetup/CellInfo)} from rcx into rdi
+		0x180275139: [!] Calls managed method System.Void System.Object::.ctor() on instance {'this' (function parameter, type OpenWorldSceneSetup/CellInfo)} ;  - Leftover parameters detected, but first few match.
+
+		0x18027513E: [!] Sets the field cellX (Type System.Int32) on local {'this' (function parameter, type OpenWorldSceneSetup/CellInfo)} to the value stored in {'x' (function parameter, type System.Int32)}
+		0x180275141: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant1
+		0x180275146: [!] Sets the field cellZ (Type System.Int32) on local {'this' (function parameter, type OpenWorldSceneSetup/CellInfo)} to the value stored in {'z' (function parameter, type System.Int32)}
+		0x180275149: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rsi as new constant constant2
+		0x180275153: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: OpenWorldSceneSetup/CellInfo
+	System.Void .ctor(System.Int32 x, System.Int32 z)
+
+		base..ctor()
+		this.cellX = x
+		this.cellZ = z
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void System.Object::.ctor()
+	IL_0006: ldarg.0
+	IL_0007: ldarg.1
+	IL_0008: stfld System.Int32 OpenWorldSceneSetup/CellInfo::cellX
+	IL_000d: ldarg.0
+	IL_000e: ldarg.2
+	IL_000f: stfld System.Int32 OpenWorldSceneSetup/CellInfo::cellZ
+	IL_0014: ret
+	
+

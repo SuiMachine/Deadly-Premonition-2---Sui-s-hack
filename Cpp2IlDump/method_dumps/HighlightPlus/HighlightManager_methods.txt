@@ -1,0 +1,1481 @@
+Type: HighlightManager
+
+Method: System.Void HighlightPlus.HighlightManager::.ctor():	Method Body (x86 ASM):
+		0x18050D340 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050D342 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18050D346 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D348 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18050D34B lea ecx,[rdx-1]		; DEBUG: {Register}/ECX {Memory}/None ||| RDX | 18446744073709551615 | None ||| N/A | N/A
+		0x18050D34E call 0000000180B33770h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D353 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D355 mov [rbx+18h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBX | 24 | None ||| N/A | N/A
+		0x18050D358 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050D35B add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18050D35F pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050D360 jmp near ptr 0000000180CE1E90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D365 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void HighlightPlus.HighlightManager::.ctor():
+		End of function at 0x18050D366
+		Absolute End is at 0x18050D366
+		Identified Jump Destination addresses:
+
+		0x18050D340: Saves the content of rbx to the stack
+		0x18050D348: Copies {'this' (function parameter, type HighlightPlus.HighlightManager)} from rcx into rbx
+		0x18050D34B: [!] Loads the constant value 4294967295 into the register rcx as constant constant1 using an LEA instruction
+		0x18050D34E: [!] Calls static managed method UnityEngine.LayerMask UnityEngine.LayerMask::op_Implicit(System.Int32) with arguments [-1] and stores the result in {'layerMask' (type UnityEngine.LayerMask)}
+
+		0x18050D355: [!] Sets the field layerMask (Type UnityEngine.LayerMask) on local {'this' (function parameter, type HighlightPlus.HighlightManager)} to the value stored in {'layerMask' (type UnityEngine.LayerMask)}
+		0x18050D358: Copies {'this' (function parameter, type HighlightPlus.HighlightManager)} from rbx into rcx
+		0x18050D360: [!] Calls managed method System.Void UnityEngine.MonoBehaviour::.ctor() on instance {'this' (function parameter, type HighlightPlus.HighlightManager)}
+
+		0x18050D360: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: HighlightPlus.HighlightManager
+	System.Void .ctor()
+		System.Int32 -1 = 4294967295
+
+		UnityEngine.LayerMask layerMask = UnityEngine.LayerMask.op_Implicit(-1) //(Int32 intVal)
+		this.layerMask = layerMask
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldc.i4.m1
+	IL_0001: call UnityEngine.LayerMask UnityEngine.LayerMask::op_Implicit(System.Int32)
+	IL_0006: stloc.0
+	IL_0007: ldarg.0
+	IL_0008: ldloc.0
+	IL_0009: stfld UnityEngine.LayerMask HighlightPlus.HighlightManager::layerMask
+	IL_000e: ldarg.0
+	IL_000f: call System.Void UnityEngine.MonoBehaviour::.ctor()
+	IL_0014: ret
+	
+
+Method: System.Void HighlightPlus.HighlightManager::OnEnable():	Method Body (x86 ASM):
+		0x18050CCB0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x18050CCB5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050CCB6 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18050CCBA cmp byte ptr [18183E8C4h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872964 | None ||| N/A | 0
+		0x18050CCC1 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18050CCC4 jne short 000000018050CCD8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CCC6 mov ecx,[1815163E4h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464562148 | None ||| N/A | N/A
+		0x18050CCCC call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CCD1 mov byte ptr [18183E8C4h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872964 | None ||| N/A | 1
+		0x18050CCD8 mov rdi,[rbx+30h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x18050CCDC xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18050CCDE mov [rbx+40h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 64 | None ||| N/A | N/A
+		0x18050CCE2 mov [rbx+38h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 56 | None ||| N/A | N/A
+		0x18050CCE6 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050CCED test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050CCF4 je short 000000018050CD03h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CCF6 cmp [rcx+0D8h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RCX | 216 | None ||| N/A | N/A
+		0x18050CCFC jne short 000000018050CD03h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CCFE call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD03 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050CD06 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CD08 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18050CD0B call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD10 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050CD12 je short 000000018050CD7Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD14 mov rdx,[1818685C8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468044232 | None ||| N/A | N/A
+		0x18050CD1B mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050CD1E call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD23 mov [rbx+30h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 48 | None ||| N/A | N/A
+		0x18050CD27 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050CD2A mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050CD31 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050CD38 je short 000000018050CD48h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD3A cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050CD41 jne short 000000018050CD48h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD43 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD48 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050CD4B xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CD4D mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18050CD50 call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD55 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050CD57 je short 000000018050CD7Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD59 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CD5B mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050CD5E call 0000000180B29690h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD63 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050CD66 je near ptr 000000018050CE38h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD6C mov rdx,[18186A340h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468051776 | None ||| N/A | N/A
+		0x18050CD73 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050CD76 call 000000018090CD10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD7B mov [rbx+30h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 48 | None ||| N/A | N/A
+		0x18050CD7F mov rdx,[181869110h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468047120 | None ||| N/A | N/A
+		0x18050CD86 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050CD89 call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CD8E mov [rbx+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 32 | None ||| N/A | N/A
+		0x18050CD92 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050CD95 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050CD9C test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050CDA3 je short 000000018050CDB3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CDA5 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050CDAC jne short 000000018050CDB3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CDAE call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CDB3 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050CDB6 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CDB8 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18050CDBB call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CDC0 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050CDC2 je short 000000018050CE2Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CDC4 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18050CDC6 call 000000018050CC00h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CDCB mov [rbx+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 32 | None ||| N/A | N/A
+		0x18050CDCF mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050CDD2 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050CDD9 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050CDE0 je short 000000018050CDF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CDE2 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050CDE9 jne short 000000018050CDF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CDEB call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CDF0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050CDF3 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CDF5 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18050CDF8 call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CDFD test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050CDFF je short 000000018050CE2Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CE01 mov rcx,[18188D688h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468195976 | None ||| N/A | N/A
+		0x18050CE08 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050CE0F je short 000000018050CE1Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CE11 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050CE18 jne short 000000018050CE1Fh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CE1A call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CE1F mov rcx,[1818792D0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468113104 | None ||| N/A | N/A
+		0x18050CE26 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CE28 call 0000000180B2BE30h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CE2D mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18050CE32 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18050CE36 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050CE37 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050CE38 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18050CE3A call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CE3F int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void HighlightPlus.HighlightManager::OnEnable():
+		End of function at 0x18050CE40
+		Absolute End is at 0x18050CE40
+		Identified Jump Destination addresses:
+
+		0x18050CCB5: Saves the content of rdi to the stack
+		0x18050CCBA: Compares {Unknown Global at 0x18183E8C4, first ten bytes are [176 182 1 0 6 183 1 0 192 60], or as chars "°¶ · À<"} and 0
+		0x18050CCC1: Copies {'this' (function parameter, type HighlightPlus.HighlightManager)} from rcx into rbx
+		0x18050CCC4: Jumps to 0x18050CCD8 if {Unknown Global at 0x18183E8C4, first ten bytes are [176 182 1 0 6 183 1 0 192 60], or as chars "°¶ · À<"} != 0
+
+		0x18050CCC6: Loads string "'3" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18050CCCC: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18050CCD8: [!] Reads field baseEffect from {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores in a new local {'baseEffect' (type HighlightPlus.HighlightEffect)}
+
+		0x18050CCDC: Clears register rax, yielding zero-local {'local2' (type System.Int32)}
+		0x18050CCDE: [!] Sets the field currentObject (Type UnityEngine.Transform) on local {'this' (function parameter, type HighlightPlus.HighlightManager)} to the value stored in {'local2' (type System.Int32)}
+		0x18050CCE2: [!] Sets the field currentEffect (Type HighlightPlus.HighlightEffect) on local {'this' (function parameter, type HighlightPlus.HighlightManager)} to the value stored in {'local2' (type System.Int32)}
+		0x18050CCE6: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050CCED: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050CCF4: Jumps to 0x18050CD03 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18050CCF6: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and {'local2' (type System.Int32)}
+		0x18050CCFC: Jumps to 0x18050CD03 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != {'local2' (type System.Int32)}
+
+		0x18050CCFE: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050CD06: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x18050CD08: Copies {'baseEffect' (type HighlightPlus.HighlightEffect)} from rdi into rcx
+		0x18050CD0B: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'baseEffect' (type HighlightPlus.HighlightEffect)}, {'local4' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18050CD10: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18050CD12: Jumps to 0x18050CD7F (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18050CD14: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<HighlightPlus.HighlightEffect>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18050CD1B: Copies {'this' (function parameter, type HighlightPlus.HighlightManager)} from rbx into rcx
+		0x18050CD1E: [!] Calls managed method T UnityEngine.Component::GetComponent<HighlightPlus.HighlightEffect>() on instance {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores the result in {'component' (type HighlightPlus.HighlightEffect)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18050CD23: [!] Sets the field baseEffect (Type HighlightPlus.HighlightEffect) on local {'this' (function parameter, type HighlightPlus.HighlightManager)} to the value stored in {'component' (type HighlightPlus.HighlightEffect)}
+		0x18050CD27: Copies {'component' (type HighlightPlus.HighlightEffect)} from rax into rdi
+		0x18050CD2A: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050CD31: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050CD38: Jumps to 0x18050CD48 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18050CD3A: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050CD41: Jumps to 0x18050CD48 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18050CD43: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050CD4B: Clears register rdx, yielding zero-local {'local8' (type System.Int32)}
+		0x18050CD4D: Copies {'component' (type HighlightPlus.HighlightEffect)} from rdi into rcx
+		0x18050CD50: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'component' (type HighlightPlus.HighlightEffect)}, {'local8' (type System.Int32)}] and stores the result in {'boolean2' (type System.Boolean)}
+
+		0x18050CD55: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x18050CD57: Jumps to 0x18050CD7F (which is an if statement's body) if boolean2 equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18050CD5B: Copies {'this' (function parameter, type HighlightPlus.HighlightManager)} from rbx into rcx
+		0x18050CD5E: [!] Calls managed method UnityEngine.GameObject UnityEngine.Component::get_gameObject() on instance {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores the result in {'gameObject' (type UnityEngine.GameObject)}
+
+		0x18050CD63: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x18050CD66: Jumps to 0x18050CE38 (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x18050CD6C: Loads the global generic method reference for method T UnityEngine.GameObject::AddComponent<HighlightPlus.HighlightEffect>() on type UnityEngine.GameObject and stores the result in constant {'AddComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18050CD73: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x18050CD76: [!] Calls managed method T UnityEngine.GameObject::AddComponent<HighlightPlus.HighlightEffect>() on instance {'gameObject' (type UnityEngine.GameObject)} and stores the result in {'highlightEffect' (type HighlightPlus.HighlightEffect)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18050CD7B: [!] Sets the field baseEffect (Type HighlightPlus.HighlightEffect) on local {'this' (function parameter, type HighlightPlus.HighlightManager)} to the value stored in {'highlightEffect' (type HighlightPlus.HighlightEffect)}
+		0x18050CD7F: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<UnityEngine.Camera>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18050CD86: Copies {'this' (function parameter, type HighlightPlus.HighlightManager)} from rbx into rcx
+		0x18050CD89: [!] Calls managed method T UnityEngine.Component::GetComponent<UnityEngine.Camera>() on instance {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores the result in {'component2' (type UnityEngine.Camera)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18050CD8E: [!] Sets the field raycastCamera (Type UnityEngine.Camera) on local {'this' (function parameter, type HighlightPlus.HighlightManager)} to the value stored in {'component2' (type UnityEngine.Camera)}
+		0x18050CD92: Copies {'component2' (type UnityEngine.Camera)} from rax into rdi
+		0x18050CD95: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050CD9C: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050CDA3: Jumps to 0x18050CDB3 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18050CDB3 which is after end of current block @ 0x18050CD7F (started at 0x18050CD59)
+
+		0x18050CDA5: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050CDAC: Jumps to 0x18050CDB3 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18050CDB3 which is after end of current block @ 0x18050CD7F (started at 0x18050CD59)
+
+		0x18050CDAE: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050CDB6: Clears register rdx, yielding zero-local {'local15' (type System.Int32)}
+		0x18050CDB8: Copies {'component2' (type UnityEngine.Camera)} from rdi into rcx
+		0x18050CDBB: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'component2' (type UnityEngine.Camera)}, {'local15' (type System.Int32)}] and stores the result in {'boolean3' (type System.Boolean)}
+
+		0x18050CDC0: [!] Compares {'boolean3' (type System.Boolean)} and False
+		0x18050CDC2: Jumps to 0x18050CE2D if boolean3 equals False ;  - This is probably a goto, jumping to 0x18050CE2D which is after end of current block @ 0x18050CD7F (started at 0x18050CD59)
+
+		0x18050CDC4: Clears register rcx, yielding zero-local {'local17' (type System.Int32)}
+		0x18050CDC6: [!] Calls static managed method UnityEngine.Camera HighlightPlus.HighlightManager::GetCamera() and stores the result in {'camera' (type UnityEngine.Camera)}
+
+		0x18050CDCB: [!] Sets the field raycastCamera (Type UnityEngine.Camera) on local {'this' (function parameter, type HighlightPlus.HighlightManager)} to the value stored in {'camera' (type UnityEngine.Camera)}
+		0x18050CDCF: Copies {'camera' (type UnityEngine.Camera)} from rax into rdi
+		0x18050CDD2: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050CDD9: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050CDE0: Jumps to 0x18050CDF0 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18050CDF0 which is after end of current block @ 0x18050CD7F (started at 0x18050CD59)
+
+		0x18050CDE2: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050CDE9: Jumps to 0x18050CDF0 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18050CDF0 which is after end of current block @ 0x18050CD7F (started at 0x18050CD59)
+
+		0x18050CDEB: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050CDF3: Clears register rdx, yielding zero-local {'local20' (type System.Int32)}
+		0x18050CDF5: Copies {'camera' (type UnityEngine.Camera)} from rdi into rcx
+		0x18050CDF8: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'camera' (type UnityEngine.Camera)}, {'local20' (type System.Int32)}] and stores the result in {'boolean4' (type System.Boolean)}
+
+		0x18050CDFD: [!] Compares {'boolean4' (type System.Boolean)} and False
+		0x18050CDFF: Jumps to 0x18050CE2D if boolean4 equals False ;  - This is probably a goto, jumping to 0x18050CE2D which is after end of current block @ 0x18050CD7F (started at 0x18050CD59)
+
+		0x18050CE01: Loads the type definition for managed type UnityEngine.Debug as a constant "Debug" in rcx
+		0x18050CE08: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050CE0F: Jumps to 0x18050CE1F if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18050CE1F which is after end of current block @ 0x18050CD7F (started at 0x18050CD59)
+
+		0x18050CE11: Compares "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050CE18: Jumps to 0x18050CE1F if "{il2cpp field on {'Debug' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18050CE1F which is after end of current block @ 0x18050CD7F (started at 0x18050CD59)
+
+		0x18050CE1A: Calls the il2cpp cctor for the type UnityEngine.Debug
+		0x18050CE1F: Loads the string literal "Highlight Manager: no camera found!" as a constant "constant36" in rcx
+		0x18050CE28: [!] Calls static managed method System.Void UnityEngine.Debug::LogError(System.Object) with arguments ["Highlight Manager: no camera found!"]
+
+		0x18050CE2D: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant37
+		0x18050CE37: [!] Returns from the function
+
+		0x18050CE3A: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: HighlightPlus.HighlightManager
+	System.Void OnEnable()
+		HighlightPlus.HighlightEffect baseEffect = this.baseEffect
+		ulong local2 = 0
+		this.currentObject = local2
+		this.currentEffect = local2
+		ulong local4 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Equality(baseEffect, local4) //(Object x, Object y)
+
+		if (boolean != False)
+
+		    HighlightPlus.HighlightEffect component = base.GetComponent<HighlightPlus.HighlightEffect>()
+		    this.baseEffect = component
+		    ulong local8 = 0
+
+		    System.Boolean boolean2 = UnityEngine.Object.op_Equality(component, local8) //(Object x, Object y)
+
+		    if (boolean2 != False)
+
+		        UnityEngine.GameObject gameObject = base.gameObject
+
+		        HighlightPlus.HighlightEffect highlightEffect = gameObject.AddComponent<HighlightPlus.HighlightEffect>()
+		        this.baseEffect = highlightEffect
+		    endif
+            
+
+		    UnityEngine.Camera component2 = base.GetComponent<UnityEngine.Camera>()
+		    this.raycastCamera = component2
+		    ulong local15 = 0
+
+		    System.Boolean boolean3 = UnityEngine.Object.op_Equality(component2, local15) //(Object x, Object y)
+
+		    if (boolean3 == False)
+                goto INSN_18050CE2D
+            endif
+		    ulong local17 = 0
+
+		    UnityEngine.Camera camera = HighlightPlus.HighlightManager.GetCamera()
+		    this.raycastCamera = camera
+		    ulong local20 = 0
+
+		    System.Boolean boolean4 = UnityEngine.Object.op_Equality(camera, local20) //(Object x, Object y)
+
+		    if (boolean4 == False)
+                goto INSN_18050CE2D
+            endif
+
+		    UnityEngine.Debug.LogError("Highlight Manager: no camera found!") //(Object message)
+
+		    INSN_18050CE2D:
+		    return
+		    throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld HighlightPlus.HighlightEffect HighlightPlus.HighlightManager::baseEffect
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldarg.0
+	IL_000a: ldloc.1
+	IL_000b: stfld UnityEngine.Transform HighlightPlus.HighlightManager::currentObject
+	IL_0010: ldarg.0
+	IL_0011: ldloc.1
+	IL_0012: stfld HighlightPlus.HighlightEffect HighlightPlus.HighlightManager::currentEffect
+	IL_0017: ldc.i4.0
+	IL_0018: stloc.2
+	IL_0019: ldloc.0
+	IL_001a: ldloc.2
+	IL_001b: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+	IL_0020: ldc.i4.0
+	IL_0021: beq.s IL_0054
+	IL_0023: ldarg.0
+	IL_0024: call T UnityEngine.Component::GetComponent<HighlightPlus.HighlightEffect>()
+	IL_0029: stloc.3
+	IL_002a: ldarg.0
+	IL_002b: ldloc.3
+	IL_002c: stfld HighlightPlus.HighlightEffect HighlightPlus.HighlightManager::baseEffect
+	IL_0031: ldc.i4.0
+	IL_0032: stloc.s V_4
+	IL_0034: ldloc.3
+	IL_0035: ldloc.s V_4
+	IL_0037: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+	IL_003c: ldc.i4.0
+	IL_003d: beq.s IL_0054
+	IL_003f: ldarg.0
+	IL_0040: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+	IL_0045: call T UnityEngine.GameObject::AddComponent<HighlightPlus.HighlightEffect>()
+	IL_004a: stloc.s V_5
+	IL_004c: ldarg.0
+	IL_004d: ldloc.s V_5
+	IL_004f: stfld HighlightPlus.HighlightEffect HighlightPlus.HighlightManager::baseEffect
+	IL_0054: ldarg.0
+	IL_0055: call T UnityEngine.Component::GetComponent<UnityEngine.Camera>()
+	IL_005a: stloc.s V_6
+	IL_005c: ldarg.0
+	IL_005d: ldloc.s V_6
+	IL_005f: stfld UnityEngine.Camera HighlightPlus.HighlightManager::raycastCamera
+	IL_0064: ldc.i4.0
+	IL_0065: stloc.s V_7
+	IL_0067: ldloc.s V_6
+	IL_0069: ldloc.s V_7
+	IL_006b: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+	IL_0070: ldc.i4.0
+	IL_0071: beq.s IL_009e
+	IL_0073: ldc.i4.0
+	IL_0074: stloc.s V_8
+	IL_0076: call UnityEngine.Camera HighlightPlus.HighlightManager::GetCamera()
+	IL_007b: stloc.s V_9
+	IL_007d: ldarg.0
+	IL_007e: ldloc.s V_9
+	IL_0080: stfld UnityEngine.Camera HighlightPlus.HighlightManager::raycastCamera
+	IL_0085: ldc.i4.0
+	IL_0086: stloc.s V_10
+	IL_0088: ldloc.s V_9
+	IL_008a: ldloc.s V_10
+	IL_008c: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+	IL_0091: ldc.i4.0
+	IL_0092: beq.s IL_009e
+	IL_0094: ldstr "Highlight Manager: no camera found!"
+	IL_0099: call System.Void UnityEngine.Debug::LogError(System.Object)
+	IL_009e: ret
+	IL_009f: newobj System.Void System.NullReferenceException::.ctor()
+	IL_00a4: throw
+	
+
+Method: System.Void HighlightPlus.HighlightManager::OnDisable():	Method Body (x86 ASM):
+		0x18050CCA0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050CCA3 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CCA5 jmp near ptr 000000018050CE40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CCAA int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void HighlightPlus.HighlightManager::OnDisable():
+		End of function at 0x18050CCAB
+		Absolute End is at 0x18050CCAB
+		Identified Jump Destination addresses:
+
+		0x18050CCA3: Clears register rdx, yielding zero-local {'local2' (type System.Int32)}
+		0x18050CCA5: [!] Calls managed method System.Void HighlightPlus.HighlightManager::SwitchesCollider(UnityEngine.Transform) on instance {'this' (function parameter, type HighlightPlus.HighlightManager)} with arguments [{'local2' (type System.Int32)}]
+
+		0x18050CCA5: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: HighlightPlus.HighlightManager
+	System.Void OnDisable()
+		ulong local2 = 0
+
+		this.SwitchesCollider(local2) //(Transform newObject)
+		return
+
+
+Generated IL:
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: ldarg.0
+	IL_0003: ldloc.0
+	IL_0004: call System.Void HighlightPlus.HighlightManager::SwitchesCollider(UnityEngine.Transform)
+	IL_0009: ret
+	
+
+Method: System.Void HighlightPlus.HighlightManager::Update():	Method Body (x86 ASM):
+		0x18050D0A0 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x18050D0A5 mov [rsp+18h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 24 | None ||| N/A | N/A
+		0x18050D0AA push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050D0AB lea rbp,[rsp-57h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 18446744073709551529 | None ||| N/A | N/A
+		0x18050D0B0 sub rsp,0F0h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 240
+		0x18050D0B7 cmp byte ptr [18183E8C5h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872965 | None ||| N/A | 0
+		0x18050D0BE mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18050D0C1 jne short 000000018050D0D5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D0C3 mov ecx,[181516400h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464562176 | None ||| N/A | N/A
+		0x18050D0C9 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D0CE mov byte ptr [18183E8C5h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872965 | None ||| N/A | 1
+		0x18050D0D5 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050D0DC xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18050D0DE mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18050D0E2 xorps xmm1,xmm1		; DEBUG: {Register}/XMM1 {Register}/XMM1 ||| None | 0 | None ||| N/A | N/A
+		0x18050D0E5 xorps xmm0,xmm0		; DEBUG: {Register}/XMM0 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x18050D0E8 mov [rbp-39h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x18050D0EC movups [rbp-49h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551543 | None ||| N/A | N/A
+		0x18050D0F0 mov [rbp+17h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBP | 23 | None ||| N/A | N/A
+		0x18050D0F4 movups [rbp-9],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x18050D0F8 mov [rbp+1Fh],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 31 | None ||| N/A | N/A
+		0x18050D0FB movups [rbp+7],xmm1		; DEBUG: {Memory}/None {Register}/XMM1 ||| RBP | 7 | None ||| N/A | N/A
+		0x18050D0FF test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050D106 je short 000000018050D115h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D108 cmp [rcx+0D8h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RCX | 216 | None ||| N/A | N/A
+		0x18050D10E jne short 000000018050D115h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D110 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D115 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050D118 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D11A mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18050D11D call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D122 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050D124 jne near ptr 000000018050D2A1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D12A movaps [rsp+0E0h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 224 | None ||| N/A | N/A
+		0x18050D132 movaps [rsp+0D0h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RSP | 208 | None ||| N/A | N/A
+		0x18050D13A movaps [rsp+0C0h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RSP | 192 | None ||| N/A | N/A
+		0x18050D143 cmp dword ptr [rbx+28h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 40 | None ||| N/A | 0
+		0x18050D147 mov rdi,[rbx+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18050D14B je near ptr 000000018050D1E5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D151 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18050D154 je near ptr 000000018050D32Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D15A xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D15C mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18050D15F call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D164 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050D167 je near ptr 000000018050D32Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D16D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050D170 lea rcx,[rbp-69h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551511 | None ||| N/A | N/A
+		0x18050D174 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050D177 call 0000000180CE2700h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D17C mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18050D180 movsd xmm6,qword ptr [rax]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x18050D184 mov edi,[rax+8]		; DEBUG: {Register}/EDI {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x18050D187 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18050D18A je near ptr 000000018050D32Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D190 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D192 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D197 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050D19A je near ptr 000000018050D32Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D1A0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050D1A3 lea rcx,[rbp-69h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551511 | None ||| N/A | N/A
+		0x18050D1A7 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050D1AA call 0000000180CE1FA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D1AF xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x18050D1B2 lea r8,[rbp-29h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x18050D1B6 lea rdx,[rbp-69h]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551511 | None ||| N/A | N/A
+		0x18050D1BA lea rcx,[rbp-49h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551543 | None ||| N/A | N/A
+		0x18050D1BE movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x18050D1C2 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x18050D1C5 movsd qword ptr [rbp-29h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x18050D1CA mov [rbp-21h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551583 | None ||| N/A | N/A
+		0x18050D1CD movsd qword ptr [rbp-69h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBP | 18446744073709551511 | None ||| N/A | N/A
+		0x18050D1D2 mov [rbp-61h],edi		; DEBUG: {Memory}/None {Register}/EDI ||| RBP | 18446744073709551519 | None ||| N/A | N/A
+		0x18050D1D5 call 0000000180EB0DD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D1DA movsd xmm0,qword ptr [rbp-39h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x18050D1DF movups xmm7,[rbp-49h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RBP | 18446744073709551543 | None ||| N/A | N/A
+		0x18050D1E3 jmp short 000000018050D22Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D1E5 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D1E7 lea rcx,[rbp-29h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x18050D1EB call 0000000180B32850h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D1F0 test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18050D1F3 je near ptr 000000018050D32Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D1F9 movsd xmm0,qword ptr [rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x18050D1FD lea r8,[rbp-69h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 18446744073709551511 | None ||| N/A | N/A
+		0x18050D201 mov eax,[rax+8]		; DEBUG: {Register}/EAX {Memory}/None ||| RAX | 8 | None ||| N/A | N/A
+		0x18050D204 lea rcx,[rbp-29h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551575 | None ||| N/A | N/A
+		0x18050D208 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x18050D20B movsd qword ptr [rbp-69h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551511 | None ||| N/A | N/A
+		0x18050D210 mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18050D213 mov [rbp-61h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBP | 18446744073709551519 | None ||| N/A | N/A
+		0x18050D216 call 0000000180B24E50h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D21B movups xmm7,[rax]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x18050D21E movups [rbp-49h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RBP | 18446744073709551543 | None ||| N/A | N/A
+		0x18050D222 movsd xmm0,qword ptr [rax+10h]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 16 | None ||| N/A | N/A
+		0x18050D227 movsd qword ptr [rbp-39h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RBP | 18446744073709551559 | None ||| N/A | N/A
+		0x18050D22C mov rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x18050D230 movaps xmm8,xmm0		; DEBUG: {Register}/XMM8 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x18050D234 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18050D237 je near ptr 000000018050D32Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D23D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D23F call 0000000180B26330h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D244 mov ecx,[rbx+18h]		; DEBUG: {Register}/ECX {Memory}/None ||| RBX | 24 | None ||| N/A | N/A
+		0x18050D247 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D249 movaps xmm6,xmm0		; DEBUG: {Register}/XMM6 {Register}/XMM0 ||| None | 0 | None ||| N/A | N/A
+		0x18050D24C call 0000000180B33770h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D251 mov r9d,eax		; DEBUG: {Register}/R9D {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x18050D254 movaps [rbp-69h],xmm7		; DEBUG: {Memory}/None {Register}/XMM7 ||| RBP | 18446744073709551511 | None ||| N/A | N/A
+		0x18050D258 movaps xmm2,xmm6		; DEBUG: {Register}/XMM2 {Register}/XMM6 ||| None | 0 | None ||| N/A | N/A
+		0x18050D25B movsd qword ptr [rbp-59h],xmm8		; DEBUG: {Memory}/None {Register}/XMM8 ||| RBP | 18446744073709551527 | None ||| N/A | N/A
+		0x18050D261 lea rdx,[rbp-9]		; DEBUG: {Register}/RDX {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x18050D265 mov qword ptr [rsp+20h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RSP | 32 | None ||| N/A | 0
+		0x18050D26E lea rcx,[rbp-69h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551511 | None ||| N/A | N/A
+		0x18050D272 call 0000000181110F30h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D277 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D279 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050D27B jne short 000000018050D2B6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D27D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050D280 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050D283 call 000000018050CE40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D288 movaps xmm7,[rsp+0D0h]		; DEBUG: {Register}/XMM7 {Memory}/None ||| RSP | 208 | None ||| N/A | N/A
+		0x18050D290 movaps xmm6,[rsp+0E0h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 224 | None ||| N/A | N/A
+		0x18050D298 movaps xmm8,[rsp+0C0h]		; DEBUG: {Register}/XMM8 {Memory}/None ||| RSP | 192 | None ||| N/A | N/A
+		0x18050D2A1 lea r11,[rsp+0F0h]		; DEBUG: {Register}/R11 {Memory}/None ||| RSP | 240 | None ||| N/A | N/A
+		0x18050D2A9 mov rbx,[r11+18h]		; DEBUG: {Register}/RBX {Memory}/None ||| R11 | 24 | None ||| N/A | N/A
+		0x18050D2AD mov rdi,[r11+20h]		; DEBUG: {Register}/RDI {Memory}/None ||| R11 | 32 | None ||| N/A | N/A
+		0x18050D2B1 mov rsp,r11		; DEBUG: {Register}/RSP {Register}/R11 ||| None | 0 | None ||| N/A | N/A
+		0x18050D2B4 pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050D2B5 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050D2B6 lea rcx,[rbp-9]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x18050D2BA mov [rsp+100h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 256 | None ||| N/A | N/A
+		0x18050D2C2 call 00000001811122D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D2C7 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050D2CE mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050D2D1 mov rsi,[rbx+40h]		; DEBUG: {Register}/RSI {Memory}/None ||| RBX | 64 | None ||| N/A | N/A
+		0x18050D2D5 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050D2DC je short 000000018050D2ECh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D2DE cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050D2E5 jne short 000000018050D2ECh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D2E7 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D2EC xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050D2EF mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18050D2F2 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18050D2F5 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D2FA mov rsi,[rsp+100h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 256 | None ||| N/A | N/A
+		0x18050D302 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050D304 je short 000000018050D288h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D306 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D308 lea rcx,[rbp-9]		; DEBUG: {Register}/RCX {Memory}/None ||| RBP | 18446744073709551607 | None ||| N/A | N/A
+		0x18050D30C call 00000001811122D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D311 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050D314 je short 000000018050D32Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D316 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D318 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050D31B call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D320 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050D323 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050D326 jmp near ptr 000000018050D280h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D32B xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18050D32D call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D332 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void HighlightPlus.HighlightManager::Update():
+		End of function at 0x18050D333
+		Absolute End is at 0x18050D333
+		Identified Jump Destination addresses:
+			0x18050D22C
+		0x18050D0AA: Saves the content of rbp to the stack
+		0x18050D0AB: Loads a pointer to stack offset 0xFFFFFFA9 into register rbp as new constant constant1
+		0x18050D0B7: Compares {Unknown Global at 0x18183E8C5, first ten bytes are [182 1 0 6 183 1 0 192 60 103], or as chars "¶ · À<g"} and 0
+		0x18050D0BE: Copies {'this' (function parameter, type HighlightPlus.HighlightManager)} from rcx into rbx
+		0x18050D0C1: Jumps to 0x18050D0D5 if {Unknown Global at 0x18183E8C5, first ten bytes are [182 1 0 6 183 1 0 192 60 103], or as chars "¶ · À<g"} != 0
+
+		0x18050D0C3: Loads string ")3" into register rcx as constant {'constant4' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18050D0C9: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18050D0D5: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050D0DC: Clears register rax, yielding zero-local {'local1' (type System.Int32)}
+		0x18050D0DE: [!] Reads field raycastCamera from {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores in a new local {'raycastCamera' (type UnityEngine.Camera)}
+
+		0x18050D0FF: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050D106: Jumps to 0x18050D115 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18050D108: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and {'local1' (type System.Int32)}
+		0x18050D10E: Jumps to 0x18050D115 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != {'local1' (type System.Int32)}
+
+		0x18050D110: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050D118: Clears register rdx, yielding zero-local {'local6' (type System.Int32)}
+		0x18050D11A: Copies {'raycastCamera' (type UnityEngine.Camera)} from rdi into rcx
+		0x18050D11D: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'raycastCamera' (type UnityEngine.Camera)}, {'local6' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18050D122: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18050D124: Jumps to 0x18050D2A1 (which is an if statement's body) if {'boolean' (type System.Boolean)} != False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18050D143: [!] Compares {field raycastSource, read from local {'this' (function parameter, type HighlightPlus.HighlightManager)}} and 0
+		0x18050D147: [!] Reads field raycastCamera from {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores in a new local {'raycastCamera2' (type UnityEngine.Camera)}
+
+		0x18050D14B: Jumps to 0x18050D1E5 if this.raycastSource equals 0 ;  - Increasing indentation - is if-else, unimportant is False
+
+		0x18050D151: [!] Compares {'raycastCamera2' (type UnityEngine.Camera)} and 0
+		0x18050D154: Jumps to 0x18050D32B (which throws a NRE) if raycastCamera2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18050D15C: Copies {'raycastCamera2' (type UnityEngine.Camera)} from rdi into rcx
+		0x18050D15F: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'raycastCamera2' (type UnityEngine.Camera)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x18050D164: [!] Compares {'transform' (type UnityEngine.Transform)} and 0
+		0x18050D167: Jumps to 0x18050D32B (which throws a NRE) if transform equals 0. Implicitly present in managed code, so ignored here.
+		0x18050D174: Copies {'transform' (type UnityEngine.Transform)} from rax into rdx
+		0x18050D177: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::get_position() on instance {'raycastCamera2' (type UnityEngine.Camera)} and stores the result in {'position' (type UnityEngine.Vector3)} ;  - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting Transform, actually UnityEngine.Camera
+
+		0x18050D17C: [!] Reads field raycastCamera from {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores in a new local {'raycastCamera3' (type UnityEngine.Camera)}
+
+		0x18050D187: [!] Compares {'raycastCamera3' (type UnityEngine.Camera)} and 0
+		0x18050D18A: Jumps to 0x18050D32B (which throws a NRE) if raycastCamera3 equals 0. Implicitly present in managed code, so ignored here.
+		0x18050D192: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'raycastCamera3' (type UnityEngine.Camera)} and stores the result in {'transform2' (type UnityEngine.Transform)}
+
+		0x18050D197: [!] Compares {'transform2' (type UnityEngine.Transform)} and 0
+		0x18050D19A: Jumps to 0x18050D32B (which throws a NRE) if transform2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18050D1A7: Copies {'transform2' (type UnityEngine.Transform)} from rax into rdx
+		0x18050D1AA: [!] Calls managed method UnityEngine.Vector3 UnityEngine.Transform::get_forward() on instance {'raycastCamera3' (type UnityEngine.Camera)} and stores the result in {'forward' (type UnityEngine.Vector3)} ;  - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting Transform, actually UnityEngine.Camera
+
+		0x18050D1E3: Jumps to 0x18050D22C (which is an function-local jump destination)
+
+		0x18050D1EB: [!] Calls static managed method UnityEngine.Vector3 UnityEngine.Input::get_mousePosition() and stores the result in {'mousePosition' (type UnityEngine.Vector3)}
+
+		0x18050D1F0: [!] Compares {'raycastCamera2' (type UnityEngine.Camera)} and 0
+		0x18050D1F3: Jumps to 0x18050D32B (which throws a NRE) if raycastCamera2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18050D210: Copies {'raycastCamera2' (type UnityEngine.Camera)} from rdi into rdx
+		0x18050D216: [!] Calls managed method UnityEngine.Ray UnityEngine.Camera::ScreenPointToRay(UnityEngine.Vector3) on instance {'raycastCamera' (type UnityEngine.Camera)} and stores the result in {'ray' (type UnityEngine.Ray)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x18050D21B: Loads the class pointer from ray into a constant constant16 in register xmm7
+
+		End Of If-Else Block (at 0x18050D22C) where the else started at 0x18050D1E5
+		0x18050D22C: [!] Reads field raycastCamera from {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores in a new local {'raycastCamera4' (type UnityEngine.Camera)}
+
+		0x18050D230: Copies {'local4' (type System.Int32)} from xmm0 into xmm8
+		0x18050D234: [!] Compares {'raycastCamera4' (type UnityEngine.Camera)} and 0
+		0x18050D237: Jumps to 0x18050D32B (which throws a NRE) if raycastCamera4 equals 0. Implicitly present in managed code, so ignored here.
+		0x18050D23F: [!] Calls managed method System.Single UnityEngine.Camera::get_farClipPlane() on instance {'raycastCamera4' (type UnityEngine.Camera)} and stores the result in {'farClipPlane' (type System.Single)}
+
+		0x18050D244: [!] Reads field layerMask from {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores in a new local {'layerMask' (type UnityEngine.LayerMask)}
+
+		0x18050D249: Copies {'farClipPlane' (type System.Single)} from xmm0 into xmm6
+		0x18050D24C: [!] Calls static managed method System.Int32 UnityEngine.LayerMask::op_Implicit(UnityEngine.LayerMask) with arguments [{'layerMask' (type UnityEngine.LayerMask)}] and stores the result in {'int32' (type System.Int32)}
+
+		0x18050D251: Copies {'int32' (type System.Int32)} from rax into r9
+		0x18050D258: Copies {'farClipPlane' (type System.Single)} from xmm6 into xmm2
+		0x18050D265: Moves 0 (immediate ulong value) to the stack at offset 32 as a new local local32
+		0x18050D272: [!] Calls static managed method System.Boolean UnityEngine.Physics::Raycast(UnityEngine.Ray,UnityEngine.RaycastHit&,System.Single,System.Int32) and stores the result in {'boolean2' (type System.Boolean)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x18050D277: Clears register rdx, yielding zero-local {'local34' (type System.Int32)}
+		0x18050D279: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x18050D27B: Jumps to 0x18050D2B6 if {'boolean2' (type System.Boolean)} != False ;  - This is probably a goto, jumping to 0x18050D2B6 which is after end of current block @ 0x18050D22C (started at 0x18050D1E5)
+
+
+		Potential Loop Start (0x18050D280):
+		0x18050D280: Copies {'this' (function parameter, type HighlightPlus.HighlightManager)} from rbx into rcx
+		0x18050D283: [!] Calls managed method System.Void HighlightPlus.HighlightManager::SwitchesCollider(UnityEngine.Transform) on instance {'this' (function parameter, type HighlightPlus.HighlightManager)} with arguments [{'local34' (type System.Int32)}]
+
+		0x18050D288: Reads unknown value in stack, offset 208 (0xD0) and stores the pointer in register xmm7 as new constant constant19
+		0x18050D290: Reads unknown value in stack, offset 224 (0xE0) and stores the pointer in register xmm6 as new constant constant20
+		0x18050D298: Reads unknown value in stack, offset 192 (0xC0) and stores the pointer in register xmm8 as new constant constant21
+		0x18050D2A1: Loads a pointer to stack offset 0xF0 into register r11 as new constant constant22
+		0x18050D2B1: Copies {'constant22' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from r11 into rsp
+		0x18050D2B5: [!] Returns from the function
+
+		0x18050D2C7: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050D2CE: Copies {'boolean' (type System.Boolean)} from rax into rdi
+		0x18050D2D5: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050D2DC: Jumps to 0x18050D2EC if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18050D2EC which is after end of current block @ 0x18050D22C (started at 0x18050D1E5)
+
+		0x18050D2DE: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050D2E5: Jumps to 0x18050D2EC if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18050D2EC which is after end of current block @ 0x18050D22C (started at 0x18050D1E5)
+
+		0x18050D2E7: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050D2EF: Copies {'local36' (type UnityEngine.Transform)} from rsi into rdx
+		0x18050D2F2: Copies {'boolean' (type System.Boolean)} from rdi into rcx
+		0x18050D2F5: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) and stores the result in {'boolean3' (type System.Boolean)} ;  - parameters do not match, but there is only one function at this address.
+
+		0x18050D2FA: Reads unknown value in stack, offset 256 (0x100) and stores the pointer in register rsi as new constant constant28
+		0x18050D302: [!] Compares {'boolean3' (type System.Boolean)} and False
+		0x18050D304: Jumps to 0x18050D288 if boolean3 equals False ;  - This is probably a goto, jumping to 0x18050D288 which is after end of current block @ 0x18050D22C (started at 0x18050D1E5)
+
+		0x18050D311: [!] Compares {'boolean3' (type System.Boolean)} and False
+		0x18050D314: Jumps to 0x18050D32B (which throws a NRE) if boolean3 equals False. Implicitly present in managed code, so ignored here.
+		0x18050D318: Copies {'boolean3' (type System.Boolean)} from rax into rcx
+		0x18050D31B: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'boolean' (type System.Boolean)} and stores the result in {'transform3' (type UnityEngine.Transform)} ;  - This is an instance method, but the type of the 'this' parameter is mismatched. Expecting Component, actually System.Boolean
+
+		0x18050D323: Copies {'transform3' (type UnityEngine.Transform)} from rax into rdx
+		0x18050D326: Jumps to 0x18050D280 - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x18050D32D: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: HighlightPlus.HighlightManager
+	System.Void Update()
+		ulong local1 = 0
+		UnityEngine.Camera raycastCamera = this.raycastCamera
+		ulong local6 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Equality(raycastCamera, local6) //(Object x, Object y)
+
+		if (boolean == False)
+		    UnityEngine.Camera raycastCamera2 = this.raycastCamera
+
+		    if (this.raycastSource != 0)
+
+		        UnityEngine.Transform transform = raycastCamera2.transform
+
+		        UnityEngine.Vector3 position = raycastCamera2.position
+		        UnityEngine.Camera raycastCamera3 = this.raycastCamera
+
+		        UnityEngine.Transform transform2 = raycastCamera3.transform
+
+		        UnityEngine.Vector3 forward = raycastCamera3.forward
+		    else
+
+		        UnityEngine.Vector3 mousePosition = UnityEngine.Input.mousePosition
+
+		        UnityEngine.Ray ray = raycastCamera.ScreenPointToRay()
+		    endif
+            
+		    UnityEngine.Camera raycastCamera4 = this.raycastCamera
+
+		    System.Single farClipPlane = raycastCamera4.farClipPlane
+		    UnityEngine.LayerMask layerMask = this.layerMask
+
+		    System.Int32 int32 = UnityEngine.LayerMask.op_Implicit(layerMask) //(LayerMask mask)
+
+		    System.Boolean boolean2 = UnityEngine.Physics.Raycast()
+		    ulong local34 = 0
+
+		    if (boolean2 != False)
+                goto INSN_18050D2B6
+            endif
+
+		    this.SwitchesCollider(local34) //(Transform newObject)
+		endif
+        
+		return
+
+		INSN_18050D2B6:
+
+		System.Boolean boolean3 = UnityEngine.Object.op_Inequality()
+
+		if (boolean3 == False)
+            goto INSN_18050D288
+        endif
+		boolean = boolean3
+
+		UnityEngine.Transform transform3 = boolean.transform
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.CallManagedFunctionAction at (0x18050D177) is corrupt (Mismatched instance parameter. Expecting an instance of UnityEngine.Transform, actually {'raycastCamera2' (type UnityEngine.Camera)}) and cannot be created as IL. Aborting here.
+
+
+Method: System.Void HighlightPlus.HighlightManager::SwitchesCollider(UnityEngine.Transform):	Method Body (x86 ASM):
+		0x18050CE40 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x18050CE45 mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x18050CE4A push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050CE4B sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18050CE4F cmp byte ptr [18183E8C6h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872966 | None ||| N/A | 0
+		0x18050CE56 mov rbx,rdx		; DEBUG: {Register}/RBX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CE59 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18050CE5C jne short 000000018050CE70h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CE5E mov ecx,[1815163F0h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464562160 | None ||| N/A | N/A
+		0x18050CE64 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CE69 mov byte ptr [18183E8C6h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872966 | None ||| N/A | 1
+		0x18050CE70 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050CE77 mov rsi,[rdi+38h]		; DEBUG: {Register}/RSI {Memory}/None ||| RDI | 56 | None ||| N/A | N/A
+		0x18050CE7B test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050CE82 je short 000000018050CE92h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CE84 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050CE8B jne short 000000018050CE92h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CE8D call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CE92 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050CE95 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CE97 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18050CE9A call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CE9F test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050CEA1 je short 000000018050CEC2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CEA3 mov rcx,[rdi+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 56 | None ||| N/A | N/A
+		0x18050CEA7 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18050CEAA je near ptr 000000018050D098h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CEB0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050CEB3 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CEB5 call 0000000180509E60h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CEBA mov qword ptr [rdi+38h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RDI | 56 | None ||| N/A | 0
+		0x18050CEC2 mov [rdi+40h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RDI | 64 | None ||| N/A | N/A
+		0x18050CEC6 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050CECD test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050CED4 je short 000000018050CEE4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CED6 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050CEDD jne short 000000018050CEE4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CEDF call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CEE4 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050CEE7 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CEE9 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050CEEC call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CEF1 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050CEF3 jne near ptr 000000018050D088h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CEF9 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050CEFC je near ptr 000000018050D098h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF02 mov rdx,[1818685D0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468044240 | None ||| N/A | N/A
+		0x18050CF09 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050CF0C call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF11 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050CF18 mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050CF1B test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050CF22 je short 000000018050CF32h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF24 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050CF2B jne short 000000018050CF32h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF2D call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF32 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050CF35 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CF37 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18050CF3A call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF3F test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050CF41 je short 000000018050CF5Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF43 test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18050CF46 je near ptr 000000018050D098h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF4C xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CF4E mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18050CF51 call 0000000180B22650h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF56 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050CF58 jne near ptr 000000018050D088h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF5E mov rdx,[1818685C8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468044232 | None ||| N/A | N/A
+		0x18050CF65 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050CF68 call 000000018090ADA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF6D mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050CF74 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050CF77 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050CF7E je short 000000018050CF8Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF80 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050CF87 jne short 000000018050CF8Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF89 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF8E xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050CF91 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CF93 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050CF96 call 0000000180EA6750h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF9B test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050CF9D jne short 000000018050CFA3h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CF9F mov rbx,[rdi+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 48 | None ||| N/A | N/A
+		0x18050CFA3 mov [rdi+38h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RDI | 56 | None ||| N/A | N/A
+		0x18050CFA7 mov rcx,[rdi+40h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 64 | None ||| N/A | N/A
+		0x18050CFAB test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18050CFAE je near ptr 000000018050D098h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CFB4 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CFB6 call 0000000180B297A0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CFBB mov rsi,rax		; DEBUG: {Register}/RSI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050CFBE test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050CFC1 je near ptr 000000018050D098h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CFC7 cmp byte ptr [18183E8B5h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872949 | None ||| N/A | 0
+		0x18050CFCE mov [rsp+30h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 48 | None ||| N/A | N/A
+		0x18050CFD3 jne short 000000018050CFE7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CFD5 mov ecx,[181516324h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464561956 | None ||| N/A | N/A
+		0x18050CFDB call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CFE0 mov byte ptr [18183E8B5h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872949 | None ||| N/A | 1
+		0x18050CFE7 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050CFEE mov rbp,[rbx+168h]		; DEBUG: {Register}/RBP {Memory}/None ||| RBX | 360 | None ||| N/A | N/A
+		0x18050CFF5 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050CFFC je short 000000018050D00Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CFFE cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050D005 jne short 000000018050D00Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D007 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D00C xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050D00F mov rdx,rbp		; DEBUG: {Register}/RDX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x18050D012 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18050D015 call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D01A mov rbp,[rsp+30h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x18050D01F test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050D021 jne short 000000018050D075h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D023 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050D02A test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050D031 je short 000000018050D041h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D033 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050D03A jne short 000000018050D041h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D03C call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D041 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050D044 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D046 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x18050D049 call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D04E test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050D050 jne short 000000018050D075h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D052 cmp [rbx+34h],al		; DEBUG: {Memory}/None {Register}/AL ||| RBX | 52 | None ||| N/A | N/A
+		0x18050D055 je short 000000018050D064h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D057 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050D05A xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D05C mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050D05F call 0000000180509E60h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D064 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050D066 mov [rbx+168h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RBX | 360 | None ||| N/A | N/A
+		0x18050D06D mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050D070 call 000000018050A160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D075 mov rcx,[rdi+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 56 | None ||| N/A | N/A
+		0x18050D079 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18050D07C je short 000000018050D098h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D07E xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050D081 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x18050D083 call 0000000180509E60h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D088 mov rbx,[rsp+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x18050D08D mov rsi,[rsp+40h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x18050D092 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18050D096 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050D097 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050D098 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18050D09A call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050D09F int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void HighlightPlus.HighlightManager::SwitchesCollider(UnityEngine.Transform):
+		End of function at 0x18050D0A0
+		Absolute End is at 0x18050D0A0
+		Identified Jump Destination addresses:
+
+		0x18050CE4A: Saves the content of rdi to the stack
+		0x18050CE4F: Compares {Unknown Global at 0x18183E8C6, first ten bytes are [1 0 6 183 1 0 192 60 103 1], or as chars " · À<g"} and 0
+		0x18050CE56: Copies {'newObject' (function parameter, type UnityEngine.Transform)} from rdx into rbx
+		0x18050CE59: Copies {'this' (function parameter, type HighlightPlus.HighlightManager)} from rcx into rdi
+		0x18050CE5C: Jumps to 0x18050CE70 if {Unknown Global at 0x18183E8C6, first ten bytes are [1 0 6 183 1 0 192 60 103 1], or as chars " · À<g"} != 0
+
+		0x18050CE5E: Loads string "(3" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18050CE64: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18050CE70: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050CE77: [!] Reads field currentEffect from {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores in a new local {'currentEffect' (type HighlightPlus.HighlightEffect)}
+
+		0x18050CE7B: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050CE82: Jumps to 0x18050CE92 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18050CE84: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050CE8B: Jumps to 0x18050CE92 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18050CE8D: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050CE95: Clears register rdx, yielding zero-local {'local4' (type System.Int32)}
+		0x18050CE97: Copies {'currentEffect' (type HighlightPlus.HighlightEffect)} from rsi into rcx
+		0x18050CE9A: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'currentEffect' (type HighlightPlus.HighlightEffect)}, {'local4' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18050CE9F: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18050CEA1: Jumps to 0x18050CEC2 (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18050CEA3: [!] Reads field currentEffect from {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores in a new local {'currentEffect2' (type HighlightPlus.HighlightEffect)}
+
+		0x18050CEA7: [!] Compares {'currentEffect2' (type HighlightPlus.HighlightEffect)} and 0
+		0x18050CEAA: Jumps to 0x18050D098 (which throws a NRE) if currentEffect2 equals 0. Implicitly present in managed code, so ignored here.
+		0x18050CEB3: Clears register rdx, yielding zero-local {'local8' (type System.Int32)}
+		0x18050CEB5: [!] Calls managed method System.Void HighlightPlus.HighlightEffect::SetHighlighted(System.Boolean) on instance {'currentEffect2' (type HighlightPlus.HighlightEffect)} with arguments [{'local8' (type System.Int32)}]
+
+		0x18050CEBA: [!] Sets the field currentEffect (Type HighlightPlus.HighlightEffect) on local {'this' (function parameter, type HighlightPlus.HighlightManager)} to the value stored in 0
+		0x18050CEC2: [!] Sets the field currentObject (Type UnityEngine.Transform) on local {'this' (function parameter, type HighlightPlus.HighlightManager)} to the value stored in {'newObject' (function parameter, type UnityEngine.Transform)}
+		0x18050CEC6: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050CECD: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050CED4: Jumps to 0x18050CEE4 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18050CEE4 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050CED6: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050CEDD: Jumps to 0x18050CEE4 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18050CEE4 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050CEDF: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050CEE7: Clears register rdx, yielding zero-local {'local10' (type System.Int32)}
+		0x18050CEE9: Copies {'newObject' (function parameter, type UnityEngine.Transform)} from rbx into rcx
+		0x18050CEEC: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'newObject' (function parameter, type UnityEngine.Transform)}, {'local10' (type System.Int32)}] and stores the result in {'boolean2' (type System.Boolean)}
+
+		0x18050CEF1: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x18050CEF3: Jumps to 0x18050D088 if {'boolean2' (type System.Boolean)} != False ;  - This is probably a goto, jumping to 0x18050D088 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050CEF9: [!] Compares {'newObject' (function parameter, type UnityEngine.Transform)} and 0
+		0x18050CEFC: Jumps to 0x18050D098 (which throws a NRE) if newObject equals 0. Implicitly present in managed code, so ignored here.
+		0x18050CF02: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<HighlightPlus.HighlightTrigger>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18050CF09: Copies {'newObject' (function parameter, type UnityEngine.Transform)} from rbx into rcx
+		0x18050CF0C: [!] Calls managed method T UnityEngine.Component::GetComponent<HighlightPlus.HighlightTrigger>() on instance {'newObject' (function parameter, type UnityEngine.Transform)} and stores the result in {'component' (type HighlightPlus.HighlightTrigger)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18050CF11: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050CF18: Copies {'component' (type HighlightPlus.HighlightTrigger)} from rax into rsi
+		0x18050CF1B: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050CF22: Jumps to 0x18050CF32 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18050CF32 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050CF24: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050CF2B: Jumps to 0x18050CF32 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18050CF32 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050CF2D: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050CF35: Clears register rdx, yielding zero-local {'local14' (type System.Int32)}
+		0x18050CF37: Copies {'component' (type HighlightPlus.HighlightTrigger)} from rsi into rcx
+		0x18050CF3A: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'component' (type HighlightPlus.HighlightTrigger)}, {'local14' (type System.Int32)}] and stores the result in {'boolean3' (type System.Boolean)}
+
+		0x18050CF3F: [!] Compares {'boolean3' (type System.Boolean)} and False
+		0x18050CF41: Jumps to 0x18050CF5E if boolean3 equals False ;  - This is probably a goto, jumping to 0x18050CF5E which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050CF43: [!] Compares {'component' (type HighlightPlus.HighlightTrigger)} and 0
+		0x18050CF46: Jumps to 0x18050D098 (which throws a NRE) if component equals 0. Implicitly present in managed code, so ignored here.
+		0x18050CF4E: Copies {'component' (type HighlightPlus.HighlightTrigger)} from rsi into rcx
+		0x18050CF51: [!] Calls managed method System.Boolean UnityEngine.Behaviour::get_enabled() on instance {'component' (type HighlightPlus.HighlightTrigger)} and stores the result in {'enabled' (type System.Boolean)}
+
+		0x18050CF56: [!] Compares {'enabled' (type System.Boolean)} and False
+		0x18050CF58: Jumps to 0x18050D088 if {'enabled' (type System.Boolean)} != False ;  - This is probably a goto, jumping to 0x18050D088 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050CF5E: Loads the global generic method reference for method T UnityEngine.Component::GetComponent<HighlightPlus.HighlightEffect>() on type UnityEngine.Component and stores the result in constant {'GetComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x18050CF65: Copies {'newObject' (function parameter, type UnityEngine.Transform)} from rbx into rcx
+		0x18050CF68: [!] Calls managed method T UnityEngine.Component::GetComponent<HighlightPlus.HighlightEffect>() on instance {'newObject' (function parameter, type UnityEngine.Transform)} and stores the result in {'component2' (type HighlightPlus.HighlightEffect)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18050CF6D: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050CF74: Copies {'component2' (type HighlightPlus.HighlightEffect)} from rax into rbx
+		0x18050CF77: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050CF7E: Jumps to 0x18050CF8E if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18050CF8E which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050CF80: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050CF87: Jumps to 0x18050CF8E if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18050CF8E which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050CF89: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050CF91: Clears register rdx, yielding zero-local {'local20' (type System.Int32)}
+		0x18050CF93: Copies {'component2' (type HighlightPlus.HighlightEffect)} from rbx into rcx
+		0x18050CF96: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object) with arguments [{'component2' (type HighlightPlus.HighlightEffect)}, {'local20' (type System.Int32)}] and stores the result in {'boolean4' (type System.Boolean)}
+
+		0x18050CF9B: [!] Compares {'boolean4' (type System.Boolean)} and False
+		0x18050CF9D: Jumps to 0x18050CFA3 if {'boolean4' (type System.Boolean)} != False ;  - This is probably a goto, jumping to 0x18050CFA3 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050CF9F: [!] Reads field baseEffect from {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores in a new local {'baseEffect' (type HighlightPlus.HighlightEffect)}
+
+		0x18050CFA3: [!] Sets the field currentEffect (Type HighlightPlus.HighlightEffect) on local {'this' (function parameter, type HighlightPlus.HighlightManager)} to the value stored in {'baseEffect' (type HighlightPlus.HighlightEffect)}
+		0x18050CFA7: [!] Reads field currentObject from {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores in a new local {'currentObject' (type UnityEngine.Transform)}
+
+		0x18050CFAB: [!] Compares {'currentObject' (type UnityEngine.Transform)} and 0
+		0x18050CFAE: Jumps to 0x18050D098 (which throws a NRE) if currentObject equals 0. Implicitly present in managed code, so ignored here.
+		0x18050CFB6: [!] Calls managed method UnityEngine.Transform UnityEngine.Component::get_transform() on instance {'currentObject' (type UnityEngine.Transform)} and stores the result in {'transform' (type UnityEngine.Transform)}
+
+		0x18050CFBB: Copies {'transform' (type UnityEngine.Transform)} from rax into rsi
+		0x18050CFBE: [!] Compares {'baseEffect' (type HighlightPlus.HighlightEffect)} and 0
+		0x18050CFC1: Jumps to 0x18050D098 (which throws a NRE) if baseEffect equals 0. Implicitly present in managed code, so ignored here.
+		0x18050CFC7: Compares {Unknown Global at 0x18183E8B5, first ten bytes are [63 103 1 48 182 1 0 162 182 1], or as chars "?g0¶ ¢¶"} and 0
+		0x18050CFD3: Jumps to 0x18050CFE7 if {Unknown Global at 0x18183E8B5, first ten bytes are [63 103 1 48 182 1 0 162 182 1], or as chars "?g0¶ ¢¶"} != 0 ;  - This is probably a goto, jumping to 0x18050CFE7 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050CFD5: Reads {Unknown Global at 0x181516324, first ten bytes are [27 51 0 0 28 115 0 0 28 51], or as chars "3  s  3"} into register rcx as a constant constant38
+		0x18050CFDB: Attempts to load the il2cpp metadata for this method (method id 13083) and init it cpp-side.
+
+		0x18050CFE7: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050CFEE: [!] Reads field target from {'baseEffect' (type HighlightPlus.HighlightEffect)} and stores in a new local {'target' (type UnityEngine.Transform)}
+
+		0x18050CFF5: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050CFFC: Jumps to 0x18050D00C if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18050D00C which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050CFFE: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050D005: Jumps to 0x18050D00C if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18050D00C which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050D007: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050D00F: Copies {'target' (type UnityEngine.Transform)} from rbp into rdx
+		0x18050D012: Copies {'transform' (type UnityEngine.Transform)} from rsi into rcx
+		0x18050D015: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'transform' (type UnityEngine.Transform)}, {'target' (type UnityEngine.Transform)}] and stores the result in {'boolean5' (type System.Boolean)}
+
+		0x18050D01A: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbp as new constant constant44
+		0x18050D01F: [!] Compares {'boolean5' (type System.Boolean)} and False
+		0x18050D021: Jumps to 0x18050D075 if {'boolean5' (type System.Boolean)} != False ;  - This is probably a goto, jumping to 0x18050D075 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050D023: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050D02A: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050D031: Jumps to 0x18050D041 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x18050D041 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050D033: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050D03A: Jumps to 0x18050D041 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x18050D041 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050D03C: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050D044: Clears register rdx, yielding zero-local {'local30' (type System.Int32)}
+		0x18050D046: Copies {'transform' (type UnityEngine.Transform)} from rsi into rcx
+		0x18050D049: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'transform' (type UnityEngine.Transform)}, {'local30' (type System.Int32)}] and stores the result in {'boolean6' (type System.Boolean)}
+
+		0x18050D04E: [!] Compares {'boolean6' (type System.Boolean)} and False
+		0x18050D050: Jumps to 0x18050D075 if {'boolean6' (type System.Boolean)} != False ;  - This is probably a goto, jumping to 0x18050D075 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050D052: [!] Compares {field _highlighted, read from local {'baseEffect' (type HighlightPlus.HighlightEffect)}} and {'boolean6' (type System.Boolean)}
+		0x18050D055: Jumps to 0x18050D064 if baseEffect._highlighted equals boolean6 ;  - This is probably a goto, jumping to 0x18050D064 which is after end of current block @ 0x18050CEC2 (started at 0x18050CEA3)
+
+		0x18050D05A: Clears register rdx, yielding zero-local {'local33' (type System.Int32)}
+		0x18050D05C: Copies {'baseEffect' (type HighlightPlus.HighlightEffect)} from rbx into rcx
+		0x18050D05F: [!] Calls managed method System.Void HighlightPlus.HighlightEffect::SetHighlighted(System.Boolean) on instance {'baseEffect' (type HighlightPlus.HighlightEffect)} with arguments [{'local33' (type System.Int32)}]
+
+		0x18050D066: [!] Sets the field target (Type UnityEngine.Transform) on local {'baseEffect' (type HighlightPlus.HighlightEffect)} to the value stored in {'transform' (type UnityEngine.Transform)}
+		0x18050D06D: Copies {'baseEffect' (type HighlightPlus.HighlightEffect)} from rbx into rcx
+		0x18050D070: [!] Calls managed method System.Void HighlightPlus.HighlightEffect::SetupMaterial() on instance {'baseEffect' (type HighlightPlus.HighlightEffect)}
+
+		0x18050D075: [!] Reads field currentEffect from {'this' (function parameter, type HighlightPlus.HighlightManager)} and stores in a new local {'currentEffect3' (type HighlightPlus.HighlightEffect)}
+
+		0x18050D079: [!] Compares {'currentEffect3' (type HighlightPlus.HighlightEffect)} and 0
+		0x18050D07C: Jumps to 0x18050D098 (which throws a NRE) if currentEffect3 equals 0. Implicitly present in managed code, so ignored here.
+		0x18050D081: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x18050D083: [!] Calls managed method System.Void HighlightPlus.HighlightEffect::SetHighlighted(System.Boolean) on instance {'currentEffect3' (type HighlightPlus.HighlightEffect)} with arguments [True]
+
+		0x18050D088: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbx as new constant constant54
+		0x18050D08D: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rsi as new constant constant55
+		0x18050D097: [!] Returns from the function
+
+		0x18050D09A: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: HighlightPlus.HighlightManager
+	System.Void SwitchesCollider(UnityEngine.Transform newObject)
+		HighlightPlus.HighlightEffect currentEffect = this.currentEffect
+		ulong local4 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Inequality(currentEffect, local4) //(Object x, Object y)
+
+		if (boolean != False)
+		    HighlightPlus.HighlightEffect currentEffect2 = this.currentEffect
+		    ulong local8 = 0
+
+		    currentEffect2.SetHighlighted(local8) //(Boolean state)
+		    this.currentEffect = 0
+		endif
+        
+		this.currentObject = newObject
+		ulong local10 = 0
+
+		System.Boolean boolean2 = UnityEngine.Object.op_Equality(newObject, local10) //(Object x, Object y)
+
+		if (boolean2 != False)
+            goto INSN_18050D088
+        endif
+
+		HighlightPlus.HighlightTrigger component = newObject.GetComponent<HighlightPlus.HighlightTrigger>()
+		ulong local14 = 0
+
+		System.Boolean boolean3 = UnityEngine.Object.op_Inequality(component, local14) //(Object x, Object y)
+
+		if (boolean3 == False)
+            goto INSN_18050CF5E
+        endif
+
+		System.Boolean enabled = component.enabled
+
+		if (enabled != False)
+            goto INSN_18050D088
+        endif
+
+		INSN_18050CF5E:
+
+		HighlightPlus.HighlightEffect component2 = newObject.GetComponent<HighlightPlus.HighlightEffect>()
+		ulong local20 = 0
+
+		System.Boolean boolean4 = UnityEngine.Object.op_Inequality(component2, local20) //(Object x, Object y)
+
+		if (boolean4 != False)
+            goto INSN_18050CFA3
+        endif
+		HighlightPlus.HighlightEffect baseEffect = this.baseEffect
+
+		INSN_18050CFA3:
+		this.currentEffect = baseEffect
+		UnityEngine.Transform currentObject = this.currentObject
+
+		UnityEngine.Transform transform = currentObject.transform
+		UnityEngine.Transform target = baseEffect.target
+
+		System.Boolean boolean5 = UnityEngine.Object.op_Equality(transform, target) //(Object x, Object y)
+
+		if (boolean5 != False)
+            goto INSN_18050D075
+        endif
+		ulong local30 = 0
+
+		System.Boolean boolean6 = UnityEngine.Object.op_Equality(transform, local30) //(Object x, Object y)
+
+		if (boolean6 != False)
+            goto INSN_18050D075
+        endif
+
+		if (baseEffect._highlighted == boolean6)
+            goto INSN_18050D064
+        endif
+		ulong local33 = 0
+
+		baseEffect.SetHighlighted(local33) //(Boolean state)
+
+		INSN_18050D064:
+		baseEffect.target = transform
+
+		baseEffect.SetupMaterial()
+
+		INSN_18050D075:
+		HighlightPlus.HighlightEffect currentEffect3 = this.currentEffect
+
+		currentEffect3.SetHighlighted(True) //(Boolean state)
+
+		INSN_18050D088:
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: ldfld HighlightPlus.HighlightEffect HighlightPlus.HighlightManager::currentEffect
+	IL_0006: stloc.0
+	IL_0007: ldc.i4.0
+	IL_0008: stloc.1
+	IL_0009: ldloc.0
+	IL_000a: ldloc.1
+	IL_000b: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_0010: ldc.i4.0
+	IL_0011: beq.s IL_002c
+	IL_0013: ldarg.0
+	IL_0014: ldfld HighlightPlus.HighlightEffect HighlightPlus.HighlightManager::currentEffect
+	IL_0019: stloc.2
+	IL_001a: ldc.i4.0
+	IL_001b: stloc.3
+	IL_001c: ldloc.2
+	IL_001d: ldloc.3
+	IL_001e: call System.Void HighlightPlus.HighlightEffect::SetHighlighted(System.Boolean)
+	IL_0023: ldarg.0
+	IL_0024: ldc.i4.0
+	IL_0025: conv.i8
+	IL_0026: conv.u8
+	IL_0027: stfld HighlightPlus.HighlightEffect HighlightPlus.HighlightManager::currentEffect
+	IL_002c: ldarg.0
+	IL_002d: ldarg.1
+	IL_002e: stfld UnityEngine.Transform HighlightPlus.HighlightManager::currentObject
+	IL_0033: ldc.i4.0
+	IL_0034: stloc.s V_4
+	IL_0036: ldarg.1
+	IL_0037: ldloc.s V_4
+	IL_0039: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+	IL_003e: ldc.i4.0
+	IL_003f: bne.un IL_00f7
+	IL_0044: ldarg.1
+	IL_0045: call T UnityEngine.Component::GetComponent<HighlightPlus.HighlightTrigger>()
+	IL_004a: stloc.s V_5
+	IL_004c: ldc.i4.0
+	IL_004d: stloc.s V_6
+	IL_004f: ldloc.s V_5
+	IL_0051: ldloc.s V_6
+	IL_0053: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_0058: ldc.i4.0
+	IL_0059: beq.s IL_0068
+	IL_005b: ldloc.s V_5
+	IL_005d: call System.Boolean UnityEngine.Behaviour::get_enabled()
+	IL_0062: ldc.i4.0
+	IL_0063: bne.un IL_00f7
+	IL_0068: ldarg.1
+	IL_0069: call T UnityEngine.Component::GetComponent<HighlightPlus.HighlightEffect>()
+	IL_006e: stloc.s V_7
+	IL_0070: ldc.i4.0
+	IL_0071: stloc.s V_8
+	IL_0073: ldloc.s V_7
+	IL_0075: ldloc.s V_8
+	IL_0077: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+	IL_007c: ldc.i4.0
+	IL_007d: bne.un.s IL_0087
+	IL_007f: ldarg.0
+	IL_0080: ldfld HighlightPlus.HighlightEffect HighlightPlus.HighlightManager::baseEffect
+	IL_0085: stloc.s V_9
+	IL_0087: ldarg.0
+	IL_0088: ldloc.s V_9
+	IL_008a: stfld HighlightPlus.HighlightEffect HighlightPlus.HighlightManager::currentEffect
+	IL_008f: ldarg.0
+	IL_0090: ldfld UnityEngine.Transform HighlightPlus.HighlightManager::currentObject
+	IL_0095: call UnityEngine.Transform UnityEngine.Component::get_transform()
+	IL_009a: stloc.s V_10
+	IL_009c: ldloc.s V_9
+	IL_009e: ldfld UnityEngine.Transform HighlightPlus.HighlightEffect::target
+	IL_00a3: stloc.s V_11
+	IL_00a5: ldloc.s V_10
+	IL_00a7: ldloc.s V_11
+	IL_00a9: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+	IL_00ae: ldc.i4.0
+	IL_00af: bne.un.s IL_00eb
+	IL_00b1: ldc.i4.0
+	IL_00b2: stloc.s V_12
+	IL_00b4: ldloc.s V_10
+	IL_00b6: ldloc.s V_12
+	IL_00b8: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+	IL_00bd: stloc.s V_13
+	IL_00bf: ldloc.s V_13
+	IL_00c1: ldc.i4.0
+	IL_00c2: bne.un.s IL_00eb
+	IL_00c4: ldloc.s V_9
+	IL_00c6: ldfld System.Boolean HighlightPlus.HighlightEffect::_highlighted
+	IL_00cb: ldloc.s V_13
+	IL_00cd: beq.s IL_00db
+	IL_00cf: ldc.i4.0
+	IL_00d0: stloc.s V_14
+	IL_00d2: ldloc.s V_9
+	IL_00d4: ldloc.s V_14
+	IL_00d6: call System.Void HighlightPlus.HighlightEffect::SetHighlighted(System.Boolean)
+	IL_00db: ldloc.s V_9
+	IL_00dd: ldloc.s V_10
+	IL_00df: stfld UnityEngine.Transform HighlightPlus.HighlightEffect::target
+	IL_00e4: ldloc.s V_9
+	IL_00e6: call System.Void HighlightPlus.HighlightEffect::SetupMaterial()
+	IL_00eb: ldarg.0
+	IL_00ec: ldfld HighlightPlus.HighlightEffect HighlightPlus.HighlightManager::currentEffect
+	IL_00f1: ldc.i4.1
+	IL_00f2: call System.Void HighlightPlus.HighlightEffect::SetHighlighted(System.Boolean)
+	IL_00f7: ret
+	IL_00f8: newobj System.Void System.NullReferenceException::.ctor()
+	IL_00fd: throw
+	
+
+Method: UnityEngine.Camera HighlightPlus.HighlightManager::GetCamera():	Method Body (x86 ASM):
+		0x18050CC00 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050CC02 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18050CC06 cmp byte ptr [18183E8C7h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872967 | None ||| N/A | 0
+		0x18050CC0D jne short 000000018050CC21h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CC0F mov ecx,[1815163D4h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464562132 | None ||| N/A | N/A
+		0x18050CC15 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CC1A mov byte ptr [18183E8C7h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467872967 | None ||| N/A | 1
+		0x18050CC21 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18050CC23 call 0000000180B263F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CC28 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050CC2F mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18050CC32 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050CC39 je short 000000018050CC49h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CC3B cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050CC42 jne short 000000018050CC49h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CC44 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CC49 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18050CC4C xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18050CC4E mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050CC51 call 0000000180EA6550h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CC56 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x18050CC58 je short 000000018050CC89h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CC5A mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18050CC61 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x18050CC68 je short 000000018050CC78h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CC6A cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18050CC71 jne short 000000018050CC78h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CC73 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CC78 mov rcx,[1818706E8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468077288 | None ||| N/A | N/A
+		0x18050CC7F add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18050CC83 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050CC84 jmp near ptr 000000018090D630h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18050CC89 mov rax,rbx		; DEBUG: {Register}/RAX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18050CC8C add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18050CC90 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050CC91 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18050CC92 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Static Method UnityEngine.Camera HighlightPlus.HighlightManager::GetCamera():
+		End of function at 0x18050CC93
+		Absolute End is at 0x18050CC93
+		Identified Jump Destination addresses:
+
+		0x18050CC00: Saves the content of rbx to the stack
+		0x18050CC06: Compares {Unknown Global at 0x18183E8C7, first ten bytes are [0 6 183 1 0 192 60 103 1 16], or as chars " · À<g"} and 0
+		0x18050CC0D: Jumps to 0x18050CC21 if {Unknown Global at 0x18183E8C7, first ten bytes are [0 6 183 1 0 192 60 103 1 16], or as chars " · À<g"} != 0
+
+		0x18050CC0F: Loads string "&3" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18050CC15: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x18050CC21: Clears register rcx, yielding zero-local {'local0' (type System.Int32)}
+		0x18050CC23: [!] Calls static managed method UnityEngine.Camera UnityEngine.Camera::get_main() and stores the result in {'main' (type UnityEngine.Camera)}
+
+		0x18050CC28: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050CC2F: Copies {'main' (type UnityEngine.Camera)} from rax into rbx
+		0x18050CC32: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050CC39: Jumps to 0x18050CC49 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18050CC3B: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050CC42: Jumps to 0x18050CC49 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18050CC44: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050CC4C: Clears register rdx, yielding zero-local {'local3' (type System.Int32)}
+		0x18050CC4E: Copies {'main' (type UnityEngine.Camera)} from rbx into rcx
+		0x18050CC51: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object) with arguments [{'main' (type UnityEngine.Camera)}, {'local3' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x18050CC56: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x18050CC58: Jumps to 0x18050CC89 (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x18050CC5A: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18050CC61: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x18050CC68: Jumps to 0x18050CC78 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x18050CC6A: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18050CC71: Jumps to 0x18050CC78 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18050CC73: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18050CC78: Loads the global generic method reference for method T UnityEngine.Object::FindObjectOfType<UnityEngine.Camera>() on type UnityEngine.Object and stores the result in constant {'FindObjectOfType' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rcx
+		0x18050CC84: [!] Calls static managed method T UnityEngine.Object::FindObjectOfType<UnityEngine.Camera>() and stores the result in {'camera' (type UnityEngine.Camera)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18050CC84: [!] Returns {'camera' (type UnityEngine.Camera)} from the function
+
+		0x18050CC89: Copies {'main' (type UnityEngine.Camera)} from rbx into rax
+		0x18050CC91: [!] Returns {'main' (type UnityEngine.Camera)} from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: HighlightPlus.HighlightManager
+	static UnityEngine.Camera GetCamera()
+		ulong local0 = 0
+
+		UnityEngine.Camera main = UnityEngine.Camera.main
+		ulong local3 = 0
+
+		System.Boolean boolean = UnityEngine.Object.op_Equality(main, local3) //(Object x, Object y)
+
+		if (boolean != False)
+
+		    UnityEngine.Camera camera = UnityEngine.Object.FindObjectOfType<UnityEngine.Camera>()
+		    return camera
+		endif
+        
+		return main
+
+
+Generated IL:
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: call UnityEngine.Camera UnityEngine.Camera::get_main()
+	IL_0007: stloc.1
+	IL_0008: ldc.i4.0
+	IL_0009: stloc.2
+	IL_000a: ldloc.1
+	IL_000b: ldloc.2
+	IL_000c: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+	IL_0011: ldc.i4.0
+	IL_0012: beq.s IL_001a
+	IL_0014: call T UnityEngine.Object::FindObjectOfType<UnityEngine.Camera>()
+	IL_0019: ret
+	IL_001a: ldloc.1
+	IL_001b: ret
+	
+

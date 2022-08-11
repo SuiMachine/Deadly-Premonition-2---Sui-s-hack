@@ -1,0 +1,834 @@
+Type: EmmaSkateBoardStarter
+
+Method: System.Void EmmaSkateBoardStarter::.ctor():	Method Body (x86 ASM):
+		0x180206670 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180206672 jmp near ptr 000000018044B1D0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206677 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EmmaSkateBoardStarter::.ctor():
+		End of function at 0x180206678
+		Absolute End is at 0x180206678
+		Identified Jump Destination addresses:
+
+		0x180206672: [!] Calls managed method System.Void GeneralInteractionObject::.ctor() on instance {'this' (function parameter, type EmmaSkateBoardStarter)}
+
+		0x180206672: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EmmaSkateBoardStarter
+	System.Void .ctor()
+
+		base..ctor()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void GeneralInteractionObject::.ctor()
+	IL_0006: ret
+	
+
+Method: System.Void EmmaSkateBoardStarter::Init():	Method Body (x86 ASM):
+		0x180206410 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180206412 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180206416 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180206418 mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18020641B call 00000001804489B0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206420 mov rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x180206424 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180206427 je short 0000000180206438h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206429 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18020642C mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x18020642E add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180206432 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180206433 jmp near ptr 000000018110B080h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206438 call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020643D int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EmmaSkateBoardStarter::Init():
+		End of function at 0x18020643E
+		Absolute End is at 0x18020643E
+		Identified Jump Destination addresses:
+
+		0x180206410: Saves the content of rbx to the stack
+		0x180206418: Copies {'this' (function parameter, type EmmaSkateBoardStarter)} from rcx into rbx
+		0x18020641B: [!] Calls managed method System.Void GeneralInteractionObject::Init() on instance {'this' (function parameter, type EmmaSkateBoardStarter)}
+
+		0x180206420: [!] Reads field m_collider from {'this' (function parameter, type EmmaSkateBoardStarter)} and stores in a new local {'m_collider' (type UnityEngine.Collider)}
+
+		0x180206424: [!] Compares {'m_collider' (type UnityEngine.Collider)} and 0
+		0x180206427: Jumps to 0x180206438 (which throws a NRE) if m_collider equals 0. Implicitly present in managed code, so ignored here.
+		0x18020642C: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x180206433: [!] Calls managed method System.Void UnityEngine.Collider::set_enabled(System.Boolean) on instance {'m_collider' (type UnityEngine.Collider)} with arguments [True]
+
+		0x180206433: [!] Returns from the function
+
+		0x180206438: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EmmaSkateBoardStarter
+	System.Void Init()
+
+		base.Init()
+		UnityEngine.Collider m_collider = this.m_collider
+
+		m_collider.enabled = True
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Void GeneralInteractionObject::Init()
+	IL_0006: ldarg.0
+	IL_0007: ldfld UnityEngine.Collider IntaractionObjectBase::m_collider
+	IL_000c: ldc.i4.1
+	IL_000d: call System.Void UnityEngine.Collider::set_enabled(System.Boolean)
+	IL_0012: ret
+	IL_0013: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0018: throw
+	
+
+Method: System.Void EmmaSkateBoardStarter::OnSearch():	Method Body (x86 ASM):
+		0x1802064D0 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802064D2 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802064D6 cmp byte ptr [18183D269h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467867241 | None ||| N/A | 0
+		0x1802064DD mov rbx,rcx		; DEBUG: {Register}/RBX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802064E0 jne short 00000001802064F4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802064E2 mov ecx,[1814C2864h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464219236 | None ||| N/A | N/A
+		0x1802064E8 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802064ED mov byte ptr [18183D269h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467867241 | None ||| N/A | 1
+		0x1802064F4 mov rax,[181899CA0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468246688 | None ||| N/A | N/A
+		0x1802064FB test byte ptr [rax+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RAX | 295 | None ||| N/A | 2
+		0x180206502 je short 000000018020651Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206504 cmp dword ptr [rax+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RAX | 216 | None ||| N/A | 0
+		0x18020650B jne short 000000018020651Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020650D mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180206510 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206515 mov rax,[181899CA0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RIP | 6468246688 | None ||| N/A | N/A
+		0x18020651C cmp byte ptr [rbx+174h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 372 | None ||| N/A | 0
+		0x180206523 mov rax,[rax+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RAX | 184 | None ||| N/A | N/A
+		0x18020652A mov rcx,[rax+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RAX | 48 | None ||| N/A | N/A
+		0x18020652E mov [rbx+70h],rcx		; DEBUG: {Memory}/None {Register}/RCX ||| RBX | 112 | None ||| N/A | N/A
+		0x180206532 je short 0000000180206543h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206534 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180206536 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180206539 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18020653D pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18020653E jmp near ptr 0000000180449270h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206543 mov rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x180206547 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x18020654C mov byte ptr [rbx+174h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 372 | None ||| N/A | 1
+		0x180206553 test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180206556 je near ptr 00000001802065FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020655C xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18020655F xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180206561 call 000000018110B080h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206566 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x18020656D mov rdi,[rbx+38h]		; DEBUG: {Register}/RDI {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x180206571 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180206578 je short 0000000180206588h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020657A cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x180206581 jne short 0000000180206588h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206583 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206588 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18020658A mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18020658D call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206592 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x180206594 je short 00000001802065A6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206596 mov rcx,[rbx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x18020659A test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x18020659D je short 00000001802065FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020659F xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802065A1 call 0000000180727020h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802065A6 cmp byte ptr [18183D26Bh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467867243 | None ||| N/A | 0
+		0x1802065AD jne short 00000001802065C1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802065AF mov ecx,[1814C2870h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464219248 | None ||| N/A | N/A
+		0x1802065B5 call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802065BA mov byte ptr [18183D26Bh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467867243 | None ||| N/A | 1
+		0x1802065C1 mov rcx,[1818A0D28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468275496 | None ||| N/A | N/A
+		0x1802065C8 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802065CD xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802065CF mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802065D2 mov rdi,rax		; DEBUG: {Register}/RDI {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802065D5 call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802065DA test rdi,rdi		; DEBUG: {Register}/RDI {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1802065DD je short 00000001802065FCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802065DF xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802065E2 mov [rdi+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RDI | 16 | None ||| N/A | N/A
+		0x1802065E6 mov rdx,rdi		; DEBUG: {Register}/RDX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1802065E9 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802065EC call 0000000180EA4310h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802065F1 mov rdi,[rsp+30h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802065F6 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802065FA pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802065FB ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802065FC xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802065FE call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206603 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EmmaSkateBoardStarter::OnSearch():
+		End of function at 0x180206604
+		Absolute End is at 0x180206604
+		Identified Jump Destination addresses:
+
+		0x1802064D0: Saves the content of rbx to the stack
+		0x1802064D6: Compares {Unknown Global at 0x18183D269, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} and 0
+		0x1802064DD: Copies {'this' (function parameter, type EmmaSkateBoardStarter)} from rcx into rbx
+		0x1802064E0: Jumps to 0x1802064F4 if {Unknown Global at 0x18183D269, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} != 0
+
+		0x1802064E2: Loads string "$'" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1802064E8: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1802064F4: Loads the type definition for managed type CharaControl as a constant "CharaControl" in rax
+		0x1802064FB: Compares "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180206502: Jumps to 0x18020651C if "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x180206504: Compares "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18020650B: Jumps to 0x18020651C if "{il2cpp field on {'CharaControl' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x18020650D: Copies {'CharaControl' (constant value of type Mono.Cecil.TypeReference)} from rax into rcx
+		0x180206510: Calls the il2cpp cctor for the type CharaControl
+		0x180206515: Loads the type definition for managed type CharaControl as a constant "CharaControl" in rax
+		0x18020651C: [!] Compares {field m_semiAutoEventDone, read from local {'this' (function parameter, type EmmaSkateBoardStarter)}} and False
+		0x180206523: Loads the pointer to the static fields for CharaControl and stores it in constant11 in register rax
+		0x18020652A: [!] Reads the static field CharaControl CharaControl::Instance into new local instance
+		0x18020652E: [!] Sets the field m_charaControl (Type CharaControl) on local {'this' (function parameter, type EmmaSkateBoardStarter)} to the value stored in {'instance' (type CharaControl)}
+		0x180206532: Jumps to 0x180206543 (which is an if statement's body) if this.m_semiAutoEventDone equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x180206536: Copies {'this' (function parameter, type EmmaSkateBoardStarter)} from rbx into rcx
+		0x18020653E: [!] Calls managed method System.Void GeneralInteractionObject::OnSearch() on instance {'this' (function parameter, type EmmaSkateBoardStarter)}
+
+		0x18020653E: [!] Returns from the function
+
+		0x180206543: [!] Reads field m_collider from {'this' (function parameter, type EmmaSkateBoardStarter)} and stores in a new local {'m_collider' (type UnityEngine.Collider)}
+
+		0x18020654C: [!] Sets the field m_semiAutoEventDone (Type System.Boolean) on local {'this' (function parameter, type EmmaSkateBoardStarter)} to the value stored in True
+		0x180206553: [!] Compares {'m_collider' (type UnityEngine.Collider)} and 0
+		0x180206556: Jumps to 0x1802065FC (which throws a NRE) if m_collider equals 0. Implicitly present in managed code, so ignored here.
+		0x18020655F: Clears register rdx, yielding zero-local {'local5' (type System.Int32)}
+		0x180206561: [!] Calls managed method System.Void UnityEngine.Collider::set_enabled(System.Boolean) on instance {'m_collider' (type UnityEngine.Collider)} with arguments [{'local5' (type System.Int32)}]
+
+		0x180206566: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x18020656D: [!] Reads field m_destinationItem from {'this' (function parameter, type EmmaSkateBoardStarter)} and stores in a new local {'m_destinationItem' (type UIDestinationItem)}
+
+		0x180206571: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180206578: Jumps to 0x180206588 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x180206588 which is after end of current block @ 0x180206543 (started at 0x180206534)
+
+		0x18020657A: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x180206581: Jumps to 0x180206588 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x180206588 which is after end of current block @ 0x180206543 (started at 0x180206534)
+
+		0x180206583: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x18020658A: Copies {'m_destinationItem' (type UIDestinationItem)} from rdi into rcx
+		0x18020658D: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'m_destinationItem' (type UIDestinationItem)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x180206592: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x180206594: Jumps to 0x1802065A6 if boolean equals False ;  - This is probably a goto, jumping to 0x1802065A6 which is after end of current block @ 0x180206543 (started at 0x180206534)
+
+		0x180206596: [!] Reads field m_destinationItem from {'this' (function parameter, type EmmaSkateBoardStarter)} and stores in a new local {'m_destinationItem2' (type UIDestinationItem)}
+
+		0x18020659A: [!] Compares {'m_destinationItem2' (type UIDestinationItem)} and 0
+		0x18020659D: Jumps to 0x1802065FC (which throws a NRE) if m_destinationItem2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802065A1: [!] Calls managed method System.Void UIDestinationItem::Decide() on instance {'m_destinationItem2' (type UIDestinationItem)}
+
+		0x1802065A6: Compares {Unknown Global at 0x18183D26B, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} and 0
+		0x1802065AD: Jumps to 0x1802065C1 if {Unknown Global at 0x18183D26B, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} != 0 ;  - This is probably a goto, jumping to 0x1802065C1 which is after end of current block @ 0x180206543 (started at 0x180206534)
+
+		0x1802065AF: Loads string "%'" into register rcx as constant {'constant22' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x1802065B5: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1802065C1: Loads the type definition for managed type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0 as a constant "<OnSetEventStart>c__Iterator0" in rcx
+		0x1802065C8: [!] Allocates an instance of type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0 and stores it as enumeratorInstance in rax.
+
+		0x1802065CF: Copies {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)} from rax into rcx
+		0x1802065D2: Copies {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)} from rax into rdi
+		0x1802065D5: [!] Calls managed method System.Void System.Object::.ctor() on instance {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)}
+
+		0x1802065DA: [!] Compares {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)} and 0
+		0x1802065DD: Jumps to 0x1802065FC (which throws a NRE) if enumeratorInstance equals 0. Implicitly present in managed code, so ignored here.
+		0x1802065E2: [!] Sets the field $this (Type EmmaSkateBoardStarter) on local {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)} to the value stored in {'this' (function parameter, type EmmaSkateBoardStarter)}
+		0x1802065E6: Copies {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)} from rdi into rdx
+		0x1802065E9: Copies {'this' (function parameter, type EmmaSkateBoardStarter)} from rbx into rcx
+		0x1802065EC: [!] Calls managed method UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine(System.Collections.IEnumerator) on instance {'this' (function parameter, type EmmaSkateBoardStarter)} with arguments [{'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)}] and stores the result in {'coroutine' (type UnityEngine.Coroutine)}
+
+		0x1802065F1: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rdi as new constant constant25
+		0x1802065FB: [!] Returns from the function
+
+		0x1802065FE: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EmmaSkateBoardStarter
+	System.Void OnSearch()
+		CharaControl instance = CharaControl.Instance
+		this.m_charaControl = instance
+
+		if (this.m_semiAutoEventDone != False)
+
+		    base.OnSearch()
+		    return
+		endif
+        
+		UnityEngine.Collider m_collider = this.m_collider
+		this.m_semiAutoEventDone = True
+		ulong local5 = 0
+
+		m_collider.enabled = local5
+		UIDestinationItem m_destinationItem = this.m_destinationItem
+
+		System.Boolean boolean = UnityEngine.Object.op_Implicit(m_destinationItem) //(Object exists)
+
+		if (boolean == False)
+            goto INSN_1802065A6
+        endif
+		UIDestinationItem m_destinationItem2 = this.m_destinationItem
+
+		m_destinationItem2.Decide()
+
+		INSN_1802065A6:
+		EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0 enumeratorInstance = new EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0()
+
+		enumeratorInstance..ctor()
+		enumeratorInstance.$this = this
+
+		UnityEngine.Coroutine coroutine = base.StartCoroutine(enumeratorInstance) //(IEnumerator routine)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldsfld CharaControl CharaControl::Instance
+	IL_0005: stloc.0
+	IL_0006: ldarg.0
+	IL_0007: ldloc.0
+	IL_0008: stfld CharaControl GeneralInteractionObject::m_charaControl
+	IL_000d: ldarg.0
+	IL_000e: ldfld System.Boolean EmmaSkateBoardStarter::m_semiAutoEventDone
+	IL_0013: ldc.i4.0
+	IL_0014: beq.s IL_001d
+	IL_0016: ldarg.0
+	IL_0017: call System.Void GeneralInteractionObject::OnSearch()
+	IL_001c: ret
+	IL_001d: ldarg.0
+	IL_001e: ldfld UnityEngine.Collider IntaractionObjectBase::m_collider
+	IL_0023: stloc.1
+	IL_0024: ldarg.0
+	IL_0025: ldc.i4.1
+	IL_0026: stfld System.Boolean EmmaSkateBoardStarter::m_semiAutoEventDone
+	IL_002b: ldc.i4.0
+	IL_002c: stloc.2
+	IL_002d: ldloc.1
+	IL_002e: ldloc.2
+	IL_002f: call System.Void UnityEngine.Collider::set_enabled(System.Boolean)
+	IL_0034: ldarg.0
+	IL_0035: ldfld UIDestinationItem IntaractionObjectBase::m_destinationItem
+	IL_003a: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+	IL_003f: ldc.i4.0
+	IL_0040: beq.s IL_004d
+	IL_0042: ldarg.0
+	IL_0043: ldfld UIDestinationItem IntaractionObjectBase::m_destinationItem
+	IL_0048: call System.Void UIDestinationItem::Decide()
+	IL_004d: newobj System.Void EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0::.ctor()
+	IL_0052: stloc.3
+	IL_0053: ldloc.3
+	IL_0054: ldarg.0
+	IL_0055: stfld EmmaSkateBoardStarter EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0::$this
+	IL_005a: ldarg.0
+	IL_005b: ldloc.3
+	IL_005c: call UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine(System.Collections.IEnumerator)
+	IL_0061: stloc.s V_4
+	IL_0063: ret
+	IL_0064: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0069: throw
+	
+
+Method: System.Void EmmaSkateBoardStarter::EndSemiAutoEvent():	Method Body (x86 ASM):
+		0x180206270 mov [rsp+18h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 24 | None ||| N/A | N/A
+		0x180206275 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180206276 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18020627A cmp byte ptr [18183D26Ah],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467867242 | None ||| N/A | 0
+		0x180206281 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180206284 jne short 0000000180206298h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206286 mov ecx,[1814C2844h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464219204 | None ||| N/A | N/A
+		0x18020628C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206291 mov byte ptr [18183D26Ah],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467867242 | None ||| N/A | 1
+		0x180206298 mov [rsp+30h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 48 | None ||| N/A | N/A
+		0x18020629D xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802062A0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802062A2 mov [rsp+38h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 56 | None ||| N/A | N/A
+		0x1802062A7 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x1802062AA xor sil,sil		; DEBUG: {Register}/SIL {Register}/SIL ||| None | 0 | None ||| N/A | N/A
+		0x1802062AD call 000000018044AF70h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802062B2 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1802062B4 je short 0000000180206308h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802062B6 mov rcx,[18188D758h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468196184 | None ||| N/A | N/A
+		0x1802062BD mov rbx,[rdi+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RDI | 56 | None ||| N/A | N/A
+		0x1802062C1 test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x1802062C8 je short 00000001802062D8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802062CA cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x1802062D1 jne short 00000001802062D8h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802062D3 call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802062D8 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802062DA mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802062DD call 0000000180EA6680h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802062E2 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x1802062E4 je short 0000000180206305h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802062E6 mov rcx,[rdi+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 56 | None ||| N/A | N/A
+		0x1802062EA test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x1802062ED je near ptr 00000001802063FDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802062F3 mov rax,[rcx]		; DEBUG: {Register}/RAX {Memory}/None ||| RCX | 0 | None ||| N/A | N/A
+		0x1802062F6 mov dl,1		; DEBUG: {Register}/DL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x1802062F8 mov r8,[rax+1A0h]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 416 | None ||| N/A | N/A
+		0x1802062FF call qword ptr [rax+198h]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 408 | None ||| N/A | N/A
+		0x180206305 mov sil,1		; DEBUG: {Register}/SIL {Immediate8}/None ||| None | 0 | None ||| N/A | 1
+		0x180206308 mov byte ptr [rdi+175h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RDI | 373 | None ||| N/A | 1
+		0x18020630F mov rcx,[181891300h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468211456 | None ||| N/A | N/A
+		0x180206316 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020631B xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18020631D mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180206320 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180206323 call 0000000180B2E760h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206328 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x18020632A mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x18020632D call 0000000180EA64C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206332 mov rcx,[181883F70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468157296 | None ||| N/A | N/A
+		0x180206339 mov rbp,rax		; DEBUG: {Register}/RBP {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18020633C test byte ptr [rcx+127h],2		; DEBUG: {Memory}/None {Immediate8}/None ||| RCX | 295 | None ||| N/A | 2
+		0x180206343 je short 0000000180206353h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206345 cmp dword ptr [rcx+0D8h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 216 | None ||| N/A | 0
+		0x18020634C jne short 0000000180206353h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020634E call 000000018010EAF0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206353 mov rdx,[181865C90h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468033680 | None ||| N/A | N/A
+		0x18020635A xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x18020635D mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x180206360 call 0000000180D4D090h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206365 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180206368 je near ptr 00000001802063FDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020636E xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x180206371 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180206374 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180206377 call 0000000180EA68E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020637C mov rdx,[18186A1E8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 6468051432 | None ||| N/A | N/A
+		0x180206383 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180206386 call 000000018090CD10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020638B cmp byte ptr [18183D26Ch],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467867244 | None ||| N/A | 0
+		0x180206392 mov rbp,rax		; DEBUG: {Register}/RBP {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180206395 jne short 00000001802063A9h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206397 mov ecx,[1814C2850h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464219216 | None ||| N/A | N/A
+		0x18020639D call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802063A2 mov byte ptr [18183D26Ch],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467867244 | None ||| N/A | 1
+		0x1802063A9 mov rcx,[1818A0D58h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468275544 | None ||| N/A | N/A
+		0x1802063B0 call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802063B5 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x1802063B7 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802063BA mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x1802063BD call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802063C2 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802063C5 je short 00000001802063FDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802063C7 mov [rbx+10h],sil		; DEBUG: {Memory}/None {Register}/SIL ||| RBX | 16 | None ||| N/A | N/A
+		0x1802063CB mov dword ptr [rbx+14h],3F800000h		; DEBUG: {Memory}/None {Immediate32}/None ||| RBX | 20 | None ||| N/A | 1065353216
+		0x1802063D2 mov [rbx+28h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 40 | None ||| N/A | N/A
+		0x1802063D6 test rbp,rbp		; DEBUG: {Register}/RBP {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x1802063D9 je short 00000001802063FDh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802063DB xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x1802063DE mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x1802063E1 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x1802063E4 mov rbp,[rsp+38h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x1802063E9 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x1802063EE mov rsi,[rsp+40h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1802063F3 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x1802063F7 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802063F8 jmp near ptr 000000018058ED10h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802063FD xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802063FF call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206404 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void EmmaSkateBoardStarter::EndSemiAutoEvent():
+		End of function at 0x180206405
+		Absolute End is at 0x180206405
+		Identified Jump Destination addresses:
+
+		0x180206275: Saves the content of rdi to the stack
+		0x18020627A: Compares {Unknown Global at 0x18183D26A, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} and 0
+		0x180206281: Copies {'this' (function parameter, type EmmaSkateBoardStarter)} from rcx into rdi
+		0x180206284: Jumps to 0x180206298 if {Unknown Global at 0x18183D26A, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} != 0
+
+		0x180206286: Loads string ""'" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18020628C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1802062A0: Clears register rdx, yielding zero-local {'local2' (type System.Int32)}
+		0x1802062A7: Copies {'this' (function parameter, type EmmaSkateBoardStarter)} from rdi into rcx
+		0x1802062AA: Clears register rsi, yielding zero-local {'local3' (type System.Int32)}
+		0x1802062AD: [!] Calls managed method System.Boolean GeneralInteractionObject::UpdateDemoId(System.Boolean) on instance {'this' (function parameter, type EmmaSkateBoardStarter)} with arguments [{'local2' (type System.Int32)}] and stores the result in {'boolean' (type System.Boolean)}
+
+		0x1802062B2: [!] Compares {'boolean' (type System.Boolean)} and False
+		0x1802062B4: Jumps to 0x180206308 (which is an if statement's body) if boolean equals False ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x1802062B6: Loads the type definition for managed type UnityEngine.Object as a constant "Object" in rcx
+		0x1802062BD: [!] Reads field m_destinationItem from {'this' (function parameter, type EmmaSkateBoardStarter)} and stores in a new local {'m_destinationItem' (type UIDestinationItem)}
+
+		0x1802062C1: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x1802062C8: Jumps to 0x1802062D8 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2
+
+		0x1802062CA: Compares "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x1802062D1: Jumps to 0x1802062D8 if "{il2cpp field on {'Object' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0
+
+		0x1802062D3: Calls the il2cpp cctor for the type UnityEngine.Object
+		0x1802062DA: Copies {'m_destinationItem' (type UIDestinationItem)} from rbx into rcx
+		0x1802062DD: [!] Calls static managed method System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object) with arguments [{'m_destinationItem' (type UIDestinationItem)}] and stores the result in {'boolean2' (type System.Boolean)}
+
+		0x1802062E2: [!] Compares {'boolean2' (type System.Boolean)} and False
+		0x1802062E4: Jumps to 0x180206305 (which throws a NRE) if boolean2 equals False. Implicitly present in managed code, so ignored here. ;  - Skipping if statement, is array type check
+		0x1802062E6: [!] Reads field m_destinationItem from {'this' (function parameter, type EmmaSkateBoardStarter)} and stores in a new local {'m_destinationItem2' (type UIDestinationItem)}
+
+		0x1802062EA: [!] Compares {'m_destinationItem2' (type UIDestinationItem)} and 0
+		0x1802062ED: Jumps to 0x1802063FD (which throws a NRE) if m_destinationItem2 equals 0. Implicitly present in managed code, so ignored here.
+		0x1802062F3: Loads the class pointer from m_destinationItem2 into a constant constant12 in register rax
+		0x1802062F6: [!] Writes the constant 0x1 into operand True (type UInt64) in register rdx
+		0x1802062F8: Loads the pointer to the implementation of virtual function System.Void UIDestinationItem::SetActive(System.Boolean) specific to UIDestinationItem from the class pointer in rax, slot 7 (from memory offset 416) and stores in constant constant14
+		0x1802062FF: [!] Calls managed method System.Void UIDestinationItem::SetActive(System.Boolean) on instance {'m_destinationItem2' (type UIDestinationItem)} with arguments [True]
+
+		0x180206305: [!] Writes the constant 0x1 into operand 1 (type UInt64) in register rsi
+		0x180206308: [!] Sets the field m_fadeSemiAutoEvent (Type System.Boolean) on local {'this' (function parameter, type EmmaSkateBoardStarter)} to the value stored in True
+		0x18020630F: Loads the type definition for managed type UnityEngine.GameObject as a constant "GameObject" in rcx
+		0x180206316: [!] Allocates an instance of type UnityEngine.GameObject and stores it as gameObject in rax.
+
+		0x18020631D: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rcx
+		0x180206320: Copies {'gameObject' (type UnityEngine.GameObject)} from rax into rbx
+		0x180206323: [!] Calls managed method System.Void UnityEngine.GameObject::.ctor() on instance {'gameObject' (type UnityEngine.GameObject)}
+
+		0x18020632A: Copies {'this' (function parameter, type EmmaSkateBoardStarter)} from rdi into rcx
+		0x18020632D: [!] Calls managed method System.String UnityEngine.Object::get_name() on instance {'this' (function parameter, type EmmaSkateBoardStarter)} and stores the result in {'name' (type System.String)}
+
+		0x180206332: Loads the type definition for managed type System.String as a constant "String" in rcx
+		0x180206339: Copies {'name' (type System.String)} from rax into rbp
+		0x18020633C: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" and 2
+		0x180206343: Jumps to 0x180206353 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0x127}" equals 2 ;  - This is probably a goto, jumping to 0x180206353 which is after end of current block @ 0x180206308 (started at 0x1802062B6)
+
+		0x180206345: Compares "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" and 0
+		0x18020634C: Jumps to 0x180206353 if "{il2cpp field on {'String' (constant value of type Mono.Cecil.TypeReference)}, offset 0xD8}" != 0 ;  - This is probably a goto, jumping to 0x180206353 which is after end of current block @ 0x180206308 (started at 0x1802062B6)
+
+		0x18020634E: Calls the il2cpp cctor for the type System.String
+		0x180206353: Loads the string literal "_CoroutineObject" as a constant "constant22" in rdx
+		0x18020635D: Copies {'name' (type System.String)} from rbp into rcx
+		0x180206360: [!] Calls static managed method System.String System.String::Concat(System.String,System.String) with arguments [{'name' (type System.String)}, "_CoroutineObject"] and stores the result in {'string' (type System.String)}
+
+		0x180206365: [!] Compares {'gameObject' (type UnityEngine.GameObject)} and 0
+		0x180206368: Jumps to 0x1802063FD (which throws a NRE) if gameObject equals 0. Implicitly present in managed code, so ignored here.
+		0x180206371: Copies {'string' (type System.String)} from rax into rdx
+		0x180206374: Copies {'gameObject' (type UnityEngine.GameObject)} from rbx into rcx
+		0x180206377: [!] Calls managed method System.Void UnityEngine.Object::set_name(System.String) on instance {'gameObject' (type UnityEngine.GameObject)} with arguments [{'string' (type System.String)}]
+
+		0x18020637C: Loads the global generic method reference for method T UnityEngine.GameObject::AddComponent<CoroutineObject>() on type UnityEngine.GameObject and stores the result in constant {'AddComponent' (constant value of type Cpp2IL.Core.Analysis.ResultModels.GenericMethodReference)} in rdx
+		0x180206383: Copies {'gameObject' (type UnityEngine.GameObject)} from rbx into rcx
+		0x180206386: [!] Calls managed method T UnityEngine.GameObject::AddComponent<CoroutineObject>() on instance {'gameObject' (type UnityEngine.GameObject)} and stores the result in {'coroutineObject' (type CoroutineObject)} ;  - Method resolved from concrete implementations at this address, with the help of a constant value to identify which concrete implementation.
+
+		0x18020638B: Compares {Unknown Global at 0x18183D26C, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} and 0
+		0x180206392: Copies {'coroutineObject' (type CoroutineObject)} from rax into rbp
+		0x180206395: Jumps to 0x1802063A9 if {Unknown Global at 0x18183D26C, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} != 0 ;  - This is probably a goto, jumping to 0x1802063A9 which is after end of current block @ 0x180206308 (started at 0x1802062B6)
+
+		0x180206397: Loads string "#'" into register rcx as constant {'constant27' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18020639D: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x1802063A9: Loads the type definition for managed type EmmaSkateBoardStarter/<OnFinish>c__Iterator1 as a constant "<OnFinish>c__Iterator1" in rcx
+		0x1802063B0: [!] Allocates an instance of type EmmaSkateBoardStarter/<OnFinish>c__Iterator1 and stores it as enumeratorInstance in rax.
+
+		0x1802063B7: Copies {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} from rax into rcx
+		0x1802063BA: Copies {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} from rax into rbx
+		0x1802063BD: [!] Calls managed method System.Void System.Object::.ctor() on instance {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)}
+
+		0x1802063C2: [!] Compares {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} and 0
+		0x1802063C5: Jumps to 0x1802063FD (which throws a NRE) if enumeratorInstance equals 0. Implicitly present in managed code, so ignored here.
+		0x1802063C7: [!] Sets the field next (Type System.Boolean) on local {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} to the value stored in {'local3' (type System.Int32)}
+		0x1802063CB: [!] Sets the field waitTime (Type System.Single) on local {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} to the value stored in 1
+		0x1802063D2: [!] Sets the field $this (Type EmmaSkateBoardStarter) on local {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} to the value stored in {'this' (function parameter, type EmmaSkateBoardStarter)}
+		0x1802063D6: [!] Compares {'coroutineObject' (type CoroutineObject)} and 0
+		0x1802063D9: Jumps to 0x1802063FD (which throws a NRE) if coroutineObject equals 0. Implicitly present in managed code, so ignored here.
+		0x1802063DE: Copies {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} from rbx into rdx
+		0x1802063E1: Copies {'coroutineObject' (type CoroutineObject)} from rbp into rcx
+		0x1802063E4: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbp as new constant constant31
+		0x1802063E9: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant32
+		0x1802063EE: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rsi as new constant constant33
+		0x1802063F8: [!] Calls managed method System.Void CoroutineObject::ExecCoroutine(System.Collections.IEnumerator) on instance {'coroutineObject' (type CoroutineObject)} with arguments [{'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)}]
+
+		0x1802063F8: [!] Returns from the function
+
+		0x1802063FF: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EmmaSkateBoardStarter
+	System.Void EndSemiAutoEvent()
+		ulong local2 = 0
+		ulong local3 = 0
+
+		System.Boolean boolean = base.UpdateDemoId(local2) //(Boolean chgCollider)
+
+		if (boolean != False)
+		    UIDestinationItem m_destinationItem = this.m_destinationItem
+
+		    System.Boolean boolean2 = UnityEngine.Object.op_Implicit(m_destinationItem) //(Object exists)
+		    UIDestinationItem m_destinationItem2 = this.m_destinationItem
+
+		    m_destinationItem2.SetActive(True) //(Boolean active)
+		endif
+        
+		this.m_fadeSemiAutoEvent = True
+		UnityEngine.GameObject gameObject = new UnityEngine.GameObject()
+
+		gameObject..ctor()
+
+		System.String name = base.name
+
+		System.String string = System.String.Concat(name, "_CoroutineObject") //(String str0, String str1)
+
+		gameObject.name = string
+
+		CoroutineObject coroutineObject = gameObject.AddComponent<CoroutineObject>()
+		EmmaSkateBoardStarter/<OnFinish>c__Iterator1 enumeratorInstance = new EmmaSkateBoardStarter/<OnFinish>c__Iterator1()
+
+		enumeratorInstance..ctor()
+		enumeratorInstance.next = local3
+		enumeratorInstance.waitTime = 1
+		enumeratorInstance.$this = this
+
+		coroutineObject.ExecCoroutine(enumeratorInstance) //(IEnumerator coroutine)
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: ldc.i4.0
+	IL_0003: stloc.1
+	IL_0004: ldarg.0
+	IL_0005: ldloc.0
+	IL_0006: call System.Boolean GeneralInteractionObject::UpdateDemoId(System.Boolean)
+	IL_000b: ldc.i4.0
+	IL_000c: beq.s IL_0026
+	IL_000e: ldarg.0
+	IL_000f: ldfld UIDestinationItem IntaractionObjectBase::m_destinationItem
+	IL_0014: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+	IL_0019: stloc.2
+	IL_001a: ldarg.0
+	IL_001b: ldfld UIDestinationItem IntaractionObjectBase::m_destinationItem
+	IL_0020: ldc.i4.1
+	IL_0021: callvirt System.Void UIDestinationItem::SetActive(System.Boolean)
+	IL_0026: ldarg.0
+	IL_0027: ldc.i4.1
+	IL_0028: stfld System.Boolean EmmaSkateBoardStarter::m_fadeSemiAutoEvent
+	IL_002d: newobj System.Void UnityEngine.GameObject::.ctor()
+	IL_0032: stloc.3
+	IL_0033: ldarg.0
+	IL_0034: call System.String UnityEngine.Object::get_name()
+	IL_0039: ldstr "_CoroutineObject"
+	IL_003e: call System.String System.String::Concat(System.String,System.String)
+	IL_0043: stloc.s V_4
+	IL_0045: ldloc.3
+	IL_0046: ldloc.s V_4
+	IL_0048: call System.Void UnityEngine.Object::set_name(System.String)
+	IL_004d: ldloc.3
+	IL_004e: call T UnityEngine.GameObject::AddComponent<CoroutineObject>()
+	IL_0053: stloc.s V_5
+	IL_0055: newobj System.Void EmmaSkateBoardStarter/<OnFinish>c__Iterator1::.ctor()
+	IL_005a: stloc.s V_6
+	IL_005c: ldloc.s V_6
+	IL_005e: ldloc.1
+	IL_005f: stfld System.Boolean EmmaSkateBoardStarter/<OnFinish>c__Iterator1::next
+	IL_0064: ldloc.s V_6
+	IL_0066: ldc.r4 1
+	IL_006b: stfld System.Single EmmaSkateBoardStarter/<OnFinish>c__Iterator1::waitTime
+	IL_0070: ldloc.s V_6
+	IL_0072: ldarg.0
+	IL_0073: stfld EmmaSkateBoardStarter EmmaSkateBoardStarter/<OnFinish>c__Iterator1::$this
+	IL_0078: ldloc.s V_5
+	IL_007a: ldloc.s V_6
+	IL_007c: call System.Void CoroutineObject::ExecCoroutine(System.Collections.IEnumerator)
+	IL_0081: ret
+	IL_0082: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0087: throw
+	
+
+Method: System.Collections.IEnumerator EmmaSkateBoardStarter::OnSetEventStart():	Method Body (x86 ASM):
+		0x180206610 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180206615 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180206616 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x18020661A cmp byte ptr [18183D26Bh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467867243 | None ||| N/A | 0
+		0x180206621 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180206624 jne short 0000000180206638h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206626 mov ecx,[1814C2870h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464219248 | None ||| N/A | N/A
+		0x18020662C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206631 mov byte ptr [18183D26Bh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467867243 | None ||| N/A | 1
+		0x180206638 mov rcx,[1818A0D28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468275496 | None ||| N/A | N/A
+		0x18020663F call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206644 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180206646 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180206649 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18020664C call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206651 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180206654 je short 0000000180206668h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206656 mov [rbx+10h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RBX | 16 | None ||| N/A | N/A
+		0x18020665A mov rax,rbx		; DEBUG: {Register}/RAX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18020665D mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x180206662 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x180206666 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180206667 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x180206668 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x18020666A call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x18020666F int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Collections.IEnumerator EmmaSkateBoardStarter::OnSetEventStart():
+		End of function at 0x180206670
+		Absolute End is at 0x180206670
+		Identified Jump Destination addresses:
+
+		0x180206615: Saves the content of rdi to the stack
+		0x18020661A: Compares {Unknown Global at 0x18183D26B, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} and 0
+		0x180206621: Copies {'this' (function parameter, type EmmaSkateBoardStarter)} from rcx into rdi
+		0x180206624: Jumps to 0x180206638 if {Unknown Global at 0x18183D26B, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} != 0
+
+		0x180206626: Loads string "%'" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18020662C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x180206638: Loads the type definition for managed type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0 as a constant "<OnSetEventStart>c__Iterator0" in rcx
+		0x18020663F: [!] Allocates an instance of type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0 and stores it as enumeratorInstance in rax.
+
+		0x180206646: Copies {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)} from rax into rcx
+		0x180206649: Copies {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)} from rax into rbx
+		0x18020664C: [!] Calls managed method System.Void System.Object::.ctor() on instance {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)}
+
+		0x180206651: [!] Compares {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)} and 0
+		0x180206654: Jumps to 0x180206668 (which throws a NRE) if enumeratorInstance equals 0. Implicitly present in managed code, so ignored here.
+		0x180206656: [!] Sets the field $this (Type EmmaSkateBoardStarter) on local {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)} to the value stored in {'this' (function parameter, type EmmaSkateBoardStarter)}
+		0x18020665A: Copies {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)} from rbx into rax
+		0x18020665D: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant6
+		0x180206667: [!] Returns {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0)} from the function
+
+		0x18020666A: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EmmaSkateBoardStarter
+	System.Collections.IEnumerator OnSetEventStart()
+		EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0 enumeratorInstance = new EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0()
+
+		enumeratorInstance..ctor()
+		enumeratorInstance.$this = this
+		return enumeratorInstance
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x180206667) is corrupt (Return value has a type of EmmaSkateBoardStarter/<OnSetEventStart>c__Iterator0, expecting an object of type System.Collections.IEnumerator) and cannot be created as IL. Aborting here.
+
+
+Method: System.Collections.IEnumerator EmmaSkateBoardStarter::OnFinish(System.Boolean,System.Single):	Method Body (x86 ASM):
+		0x180206440 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x180206445 mov [rsp+10h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 16 | None ||| N/A | N/A
+		0x18020644A push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x18020644B sub rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x18020644F cmp byte ptr [18183D26Ch],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467867244 | None ||| N/A | 0
+		0x180206456 movzx edi,dl		; DEBUG: {Register}/EDI {Register}/DL ||| None | 0 | None ||| N/A | N/A
+		0x180206459 movaps [rsp+20h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RSP | 32 | None ||| N/A | N/A
+		0x18020645E mov rsi,rcx		; DEBUG: {Register}/RSI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x180206461 movaps xmm6,xmm2		; DEBUG: {Register}/XMM6 {Register}/XMM2 ||| None | 0 | None ||| N/A | N/A
+		0x180206464 jne short 0000000180206478h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206466 mov ecx,[1814C2850h]		; DEBUG: {Register}/ECX {Memory}/None ||| RIP | 6464219216 | None ||| N/A | N/A
+		0x18020646C call 00000001800FEB90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206471 mov byte ptr [18183D26Ch],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 6467867244 | None ||| N/A | 1
+		0x180206478 mov rcx,[1818A0D58h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 6468275544 | None ||| N/A | N/A
+		0x18020647F call 000000018013AC40h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206484 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x180206486 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x180206489 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x18020648C call 0000000180207540h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206491 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x180206494 je short 00000001802064BBh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x180206496 movss dword ptr [rbx+14h],xmm6		; DEBUG: {Memory}/None {Register}/XMM6 ||| RBX | 20 | None ||| N/A | N/A
+		0x18020649B mov rax,rbx		; DEBUG: {Register}/RAX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x18020649E movaps xmm6,[rsp+20h]		; DEBUG: {Register}/XMM6 {Memory}/None ||| RSP | 32 | None ||| N/A | N/A
+		0x1802064A3 mov [rbx+28h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RBX | 40 | None ||| N/A | N/A
+		0x1802064A7 mov rsi,[rsp+48h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x1802064AC mov [rbx+10h],dil		; DEBUG: {Memory}/None {Register}/DIL ||| RBX | 16 | None ||| N/A | N/A
+		0x1802064B0 mov rbx,[rsp+40h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x1802064B5 add rsp,30h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 48
+		0x1802064B9 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802064BA ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x1802064BB xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x1802064BD call 000000018012BDA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 1 | None ||| N/A | N/A
+		0x1802064C2 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Collections.IEnumerator EmmaSkateBoardStarter::OnFinish(System.Boolean,System.Single):
+		End of function at 0x1802064C3
+		Absolute End is at 0x1802064C3
+		Identified Jump Destination addresses:
+
+		0x18020644A: Saves the content of rdi to the stack
+		0x18020644F: Compares {Unknown Global at 0x18183D26C, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} and 0
+		0x180206456: Copies {'next' (function parameter, type System.Boolean)} from rdx into rdi
+		0x18020645E: Copies {'this' (function parameter, type EmmaSkateBoardStarter)} from rcx into rsi
+		0x180206461: Copies {'waitTime' (function parameter, type System.Single)} from xmm2 into xmm6
+		0x180206464: Jumps to 0x180206478 if {Unknown Global at 0x18183D26C, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} != 0
+
+		0x180206466: Loads string "#'" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x18020646C: Attempts to load the il2cpp metadata for this method (method id 0) and init it cpp-side.
+
+		0x180206478: Loads the type definition for managed type EmmaSkateBoardStarter/<OnFinish>c__Iterator1 as a constant "<OnFinish>c__Iterator1" in rcx
+		0x18020647F: [!] Allocates an instance of type EmmaSkateBoardStarter/<OnFinish>c__Iterator1 and stores it as enumeratorInstance in rax.
+
+		0x180206486: Copies {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} from rax into rcx
+		0x180206489: Copies {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} from rax into rbx
+		0x18020648C: [!] Calls managed method System.Void System.Object::.ctor() on instance {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} ;  - Leftover parameters detected, but first few match.
+
+		0x180206491: [!] Compares {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} and 0
+		0x180206494: Jumps to 0x1802064BB (which throws a NRE) if enumeratorInstance equals 0. Implicitly present in managed code, so ignored here.
+		0x180206496: [!] Sets the field waitTime (Type System.Single) on local {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} to the value stored in {'waitTime' (function parameter, type System.Single)}
+		0x18020649B: Copies {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} from rbx into rax
+		0x18020649E: Reads unknown value in stack, offset 32 (0x20) and stores the pointer in register xmm6 as new constant constant6
+		0x1802064A3: [!] Sets the field $this (Type EmmaSkateBoardStarter) on local {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} to the value stored in {'this' (function parameter, type EmmaSkateBoardStarter)}
+		0x1802064A7: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rsi as new constant constant7
+		0x1802064AC: [!] Sets the field next (Type System.Boolean) on local {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} to the value stored in {'next' (function parameter, type System.Boolean)}
+		0x1802064B0: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbx as new constant constant8
+		0x1802064BA: [!] Returns {'enumeratorInstance' (type EmmaSkateBoardStarter/<OnFinish>c__Iterator1)} from the function
+
+		0x1802064BD: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: EmmaSkateBoardStarter
+	System.Collections.IEnumerator OnFinish(System.Boolean next, System.Single waitTime)
+		EmmaSkateBoardStarter/<OnFinish>c__Iterator1 enumeratorInstance = new EmmaSkateBoardStarter/<OnFinish>c__Iterator1()
+
+		enumeratorInstance..ctor()
+		enumeratorInstance.waitTime = waitTime
+		enumeratorInstance.$this = this
+		enumeratorInstance.next = next
+		return enumeratorInstance
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.ReturnFromFunctionAction at (0x1802064BA) is corrupt (Return value has a type of EmmaSkateBoardStarter/<OnFinish>c__Iterator1, expecting an object of type System.Collections.IEnumerator) and cannot be created as IL. Aborting here.
+
+
