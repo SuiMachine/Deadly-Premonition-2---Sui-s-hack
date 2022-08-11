@@ -62,7 +62,6 @@ namespace SuisHack.Components
 								var component = components[j];
 								if (component.GetComponent<TerrainCorrectionData>() == null)
 								{
-									yield return null;
 									component.gameObject.AddComponent<TerrainCorrectionData>();
 								}
 								yield return null;

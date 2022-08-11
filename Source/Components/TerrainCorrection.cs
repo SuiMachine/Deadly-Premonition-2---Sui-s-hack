@@ -24,7 +24,6 @@ namespace SuisHack.Components
 				FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
 				var binaryReader = new BinaryReader(fs);
 
-				SuisHackMain.loggerInst.Msg($"Trying to load corrected verts for: {this.gameObject.name}");
 				try
 				{
 					var mf = this.GetComponent<MeshFilter>();
@@ -40,6 +39,13 @@ namespace SuisHack.Components
 						i++;
 					}
 					mf.sharedMesh.vertices = verticies;
+
+
+					var collider = this.GetComponent<MeshCollider>();
+					if(collider != null)
+					{
+						collider.sharedMesh = mf.sharedMesh;
+					}
 				}
 				catch(Exception e)
 				{
