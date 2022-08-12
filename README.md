@@ -23,6 +23,7 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 * Option to skip splash screens / intros
 * Runtime button prompt replacement with buttons prepared for Xbox and Playstation controllers (make sure to correct bindings in Steam Input).
 * Bugfix: Corrected Electrical Wires bounds to be rendered correctly (Fix geometry).
+* Bugfix: Corrected terrain meshes for 210 terrain pieces (Fix geometry).
 * Movement interpolation.
 * A basic GUI available for configuring the mod available under F11.
 * Option to disable Edge detection (Outline) filter.
