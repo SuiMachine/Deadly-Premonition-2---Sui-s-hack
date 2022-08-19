@@ -734,6 +734,17 @@ namespace SuisHack
 				GUILayout.BeginVertical(GUI.skin.box, null);
 				Settings.Entry_Quality_EdgeDetection.Value = GUILayout.Toggle(Settings.Entry_Quality_EdgeDetection.Value, "Edge detection post process filter", null);
 
+				if (Settings.Entry_Quality_EdgeDetection.Value && Settings.Entry_Quality_CameraFarPlaneDistance.Value > 800)
+				{
+					GUILayout.Label("Warning - extending far clip camera plane distance can cause issues with edge detection filter.\nIf you experience issues with lines on characters being displayed up close, try lowering the value below:", null);
+					GUILayout.BeginHorizontal(null);
+					GUILayout.Label($"Edge detection depth {Settings.Entry_Quality_EdgeDetectionDepth.Value:0.00}", null);
+					Settings.Entry_Quality_EdgeDetectionDepth.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_EdgeDetectionDepth.Value, 0, 1, null);
+					GUILayout.EndHorizontal();
+				}
+				else
+					Settings.Entry_Quality_EdgeDetectionDepth.Value = 1;
+
 				GUILayout.EndVertical();
 			}
 
@@ -856,7 +867,11 @@ namespace SuisHack
 			Settings.Entry_Quality_SSR_Tickness.Value = Settings.Entry_Quality_SSR_Tickness.DefaultValue;
 			Settings.Entry_Quality_SSR_Vignette.Value = Settings.Entry_Quality_SSR_Vignette.DefaultValue;
 
+			Settings.Entry_Quality_HBAO_Preset.Value = Settings.Entry_Quality_HBAO_Preset.DefaultValue;
+			Settings.Entry_Quality_HBAO_Intensity.Value = Settings.Entry_Quality_HBAO_Intensity.DefaultValue;
+
 			Settings.Entry_Quality_EdgeDetection.Value = Settings.Entry_Quality_EdgeDetection.DefaultValue;
+			Settings.Entry_Quality_EdgeDetectionDepth.Value = Settings.Entry_Quality_EdgeDetectionDepth.DefaultValue;
 		}
 
 		private string GetTextureString(int masterTextureLimit)

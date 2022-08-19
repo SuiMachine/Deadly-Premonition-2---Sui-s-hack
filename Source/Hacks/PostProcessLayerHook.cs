@@ -219,6 +219,22 @@ namespace SuisHack.Hacks
 				}
 			}
 		}
+
+		private static float m_EnableEdgeDetectionFilterDepth;
+		public static float EnableEdgeDetectionFilterDepth
+		{
+			get { return m_EnableEdgeDetectionFilterDepth; }
+			set
+			{
+				if (m_EnableEdgeDetectionFilterDepth != value)
+				{
+					ClearNullReferences();
+
+					m_EnableEdgeDetectionFilterDepth = value;
+					ApplyEdgeDetectionChange();
+				}
+			}
+		}
 		#endregion
 
 		private static void ApplyHBAOChange()
@@ -298,6 +314,7 @@ namespace SuisHack.Hacks
 
 					var filter = volume.profile.settings[i].TryCast<SCPE.EdgeDetection>();
 					filter.enabled.value = m_EnableEdgeDetectionFilter;
+					filter.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
 				}
 			}
 		}
@@ -352,6 +369,7 @@ namespace SuisHack.Hacks
 
 				var filter = __instance.profile.settings[i].TryCast<SCPE.EdgeDetection>();
 				filter.enabled.value = m_EnableEdgeDetectionFilter;
+				filter.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
 			}
 
 			if (!m_SSR_Enabled)

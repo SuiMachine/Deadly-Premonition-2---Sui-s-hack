@@ -71,6 +71,8 @@ namespace SuisHack
 		public MelonPreferences_Entry<float> Entry_Quality_SSR_DistanceFade;
 		public MelonPreferences_Entry<float> Entry_Quality_SSR_MaxMarchingDistance;
 		public MelonPreferences_Entry<bool> Entry_Quality_EdgeDetection;
+		public MelonPreferences_Entry<float> Entry_Quality_EdgeDetectionDepth;
+
 
 		//Input settings
 		public MelonPreferences_Entry<InputType> Input_Override;
@@ -224,6 +226,10 @@ namespace SuisHack
 			Entry_Quality_EdgeDetection = Category_graphicsSettings.CreateEntry("Edge Detection Filter", true, description: "Responsible for Enabling/Disabling edge detection post process filter.");
 			Entry_Quality_EdgeDetection.OnValueChanged += (bool oldValue, bool newValue) => { Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = newValue; };
 			Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = Entry_Quality_EdgeDetection.Value;
+
+			Entry_Quality_EdgeDetectionDepth = Category_graphicsSettings.CreateEntry("Edge Detection Filter Depth", 1.0f, description: "Responsible for figuring out how to apply edges based on distance from camera. This might have to be changed to lower values when extending camera's far plane to avoid glitches.");
+			Entry_Quality_EdgeDetectionDepth.OnValueChanged += (float oldValue, float newValue) => { Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = newValue; };
+			Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = Entry_Quality_EdgeDetectionDepth.Value;
 		}
 
 		private void RegisterInputSettings()
