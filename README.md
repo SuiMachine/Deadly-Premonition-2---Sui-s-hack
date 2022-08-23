@@ -59,3 +59,4 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
    * Xbox's X / DualShock's Square to be the game's (Switch) Y.
    * Xbox's Y / DualShock's Triangle to be the game's (Switch) X.
 * Due to hooking SteamInput to provide Keyboard and Mouse input, a controller that SteamInput detects has to be present for keyboard and mouse to work. This can be a virtual controller (for example [Virtual Controller / vJoy](https://sourceforge.net/projects/vjoy-controller/) seems to be working just fine when using vXbox).
+* If you extend draw distance usinf far plane value and notice outlines bugging out when up close, make sure to adjust the outline distance value.
