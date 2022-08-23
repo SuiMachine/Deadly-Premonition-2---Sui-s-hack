@@ -4,7 +4,7 @@ using UnityEngine;
 namespace SuisHack.Hacks.Interpolation
 {
 	[HarmonyPatch]
-	public static class BoatCameraFollowHook
+	public static class BoatSceneSetupHook
 	{
 		[HarmonyPostfix]
 		[HarmonyPatch(typeof(BoatSceneSetup), nameof(BoatSceneSetup.Init))]

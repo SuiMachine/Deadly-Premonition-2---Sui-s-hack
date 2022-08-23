@@ -26,9 +26,9 @@ namespace SuisHack.Components
 
 			var roadMesh = FindObjectsOfType<MeshRenderer>().Where(x => x.name == "Road_world").FirstOrDefault();
 
-			if(roadMesh != null)
+			if (roadMesh != null)
 			{
-				for(int i=0; i< roadMesh.materials.Length; i++)
+				for (int i = 0; i < roadMesh.materials.Length; i++)
 				{
 					var material = roadMesh.materials[i];
 					if (material == null)
@@ -96,12 +96,18 @@ namespace SuisHack.Components
 						if (obj.name.Contains(Terrain))
 						{
 							yield return null;
+							if (obj == null)
+								continue;
+
 							var components = obj.GetComponentsInChildren<FloorTypeObj>();
 							yield return null;
 
 							for (int j = 0; j < components.Length; j++)
 							{
 								var component = components[j];
+								if (component == null)
+									continue;
+
 								if (component.GetComponent<TerrainCorrectionData>() == null)
 								{
 									component.gameObject.AddComponent<TerrainCorrectionData>();
