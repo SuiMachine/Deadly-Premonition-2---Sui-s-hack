@@ -48,9 +48,11 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 * Press F11 to open configuration GUI or close the game and edit "MelonPreferences.cfg" inside the UserData folder.
 
 # Bugs
-* (BUG) Resolution is not applied to main window on startup, if focus is on console window.
-* (BUG) Final boss doesn't seem to display controller prompts correctly.
-* (BUG) Epilepsy warning! TAA causes issues with shader of phantoms in the otherworld, so if you are prone to suffering epileptic seizures - use SMAA instead.
+* Resolution is not applied to main window on startup, if focus is on console window.
+* Final boss doesn't seem to display controller prompts correctly.
+* Epilepsy warning! TAA causes issues with shader of phantoms in the otherworld, so if you are prone to suffering epileptic seizures - use SMAA instead.
+* Occasionally the protagonist may fall through the terrain when using interpolation. Sorry :(
+
 
 # Notes
 * Replacing gamepad prompts requires generally requires modifying Steam Input profile, you generally want:
