@@ -41,11 +41,29 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 * Original copy of the game
 * Melon Loader 0.5+
 
-# Intallation
+# Installation (Windows)
 * Download [MelonLoader](https://github.com/LavaGang/MelonLoader/releases) and install it (prefably using installer).
 * Download the [Sui's Hack](https://github.com/SuiMachine/Deadly-Premonition-2---Sui-s-hack/releases) and extract it to game directory (do not change the file structure SuisHack.dll goes into "Mods", "Prompts" directory to a game's "StreamingAssets" folder etc.)
 * Launch the game.
 * Press F11 to open configuration GUI or close the game and edit "MelonPreferences.cfg" inside the UserData folder.
+
+# Installation (SteamDeck)
+These instructions are written with path assuming you install it on build in drive. They may need to be modified, if installing on SD card.
+* Switch to desktop mode.
+* Download [MelonLoader](https://github.com/LavaGang/MelonLoader/releases).
+* Launch the installer using Protontricks Launcher (if it is missing, install it using Discovery).
+* When the screen of protontricks launcher pops up, selected Deadly Premonition 2.
+* Select brows and navigate to: `/home/deck/`
+* In text field type in `.local` and press enter (it's a hidden folder).
+* Further navigate down to: `/home/deck/.local/share/Steam/common/Deadly Premonition 2` (or wherever the games install on SD cards)
+* Select `DeadlyPremonition2.exe` and install it.
+* Once it is installed download the [Sui's Hack](https://github.com/SuiMachine/Deadly-Premonition-2---Sui-s-hack/releases).
+* Navigate to `/home/deck/.local/share/Steam/common/Deadly Premonition 2` (or wherever the games install on SD cards)
+* Extract the files from the newly downloaded archive file to that folder.
+* Finally right click on the game in Steam libary and choose `Properties`.
+* Under launch options paste in the following `WINEDLLOVERRIDES="version.dll=n,b" %command%`
+* Launch the game. If the MelonLoader appears you should be all set.
+
 
 # Bugs
 * Resolution is not applied to main window on startup, if focus is on console window.
