@@ -908,6 +908,8 @@ namespace SuisHack
 				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.Disabled;
 			if (GUILayout.Button("Enabled", null))
 				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.Enabled;
+			if (GUILayout.Button("Extra Geometry", null))
+				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.ExtraGeometry;
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box, null);
 			GUILayout.Label($"* Light improvements ({Settings.Entry_Other_LightImprovements.Value}):", null);

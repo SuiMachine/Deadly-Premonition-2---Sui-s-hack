@@ -1,5 +1,4 @@
-﻿using Il2CppSystem.Collections.Generic;
-using Il2CppSystem.IO;
+﻿using Il2CppSystem.IO;
 using MelonLoader;
 using System;
 using UnityEngine;
@@ -19,14 +18,16 @@ namespace SuisHack.Components
 		public void Import()
 		{
 			var path = Path.Combine(Path.Combine(Application.streamingAssetsPath, "terrainfixes"), this.gameObject.name + ".bin");
-			if(File.Exists(path))
+
+			var mf = this.GetComponent<MeshFilter>();
+
+			if (File.Exists(path))
 			{
 				FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
 				var binaryReader = new BinaryReader(fs);
 
 				try
 				{
-					var mf = this.GetComponent<MeshFilter>();
 					var verticies = mf.sharedMesh.vertices;
 
 					int i = 0;
@@ -56,6 +57,15 @@ namespace SuisHack.Components
 					binaryReader.Close();
 					fs.Close();
 				}
+			}
+
+
+			if(SuisHackMain.Settings.Entry_Other_GeometryImprovements.Value == ExposedSettings.GeometryImprovements.ExtraGeometry && GPU_Instances_Controller.Instance != null)
+			{
+				var mr = this.GetComponent<MeshRenderer>();
+
+				var instancing = this.gameObject.AddComponent<GPU_Terrain_Rendering_Instance>();
+				instancing.SetComponents(mf, mr);
 			}
 		}
 	}

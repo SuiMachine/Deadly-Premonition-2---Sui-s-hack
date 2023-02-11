@@ -18,6 +18,7 @@ namespace SuisHack
 		{
 			Disabled,
 			Enabled,
+			ExtraGeometry
 		}
 
 		public enum LightImprovements
