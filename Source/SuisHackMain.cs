@@ -67,6 +67,11 @@ namespace SuisHack
 					Components.VibrationController.Initialize();
 				}
 
+				if(Settings.Entry_Other_GeometryImprovements.Value == ExposedSettings.GeometryImprovements.ExtraGeometry)
+				{
+					Components.GPU_Instances_Controller.Initialize();
+				}
+
 				if (sceneName == "TitleTest2")
 				{
 					if (!AppliedResolutionInMainMenu)

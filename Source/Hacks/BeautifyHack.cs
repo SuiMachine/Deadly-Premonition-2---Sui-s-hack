@@ -9,12 +9,12 @@ namespace SuisHack.Hacks
 	{
 		[HarmonyPrefix]
 		[HarmonyPatch(typeof(BeautifyEffect.Beautify), nameof(BeautifyEffect.Beautify.LateUpdate))]
-		public static void LateUpdatePrefix(ref Camera ___currentCamera)
+		public static void LateUpdatePrefix()
 		{
-			if (___currentCamera != null)
+/*			if (___currentCamera != null)
 			{
 				GPU_Instances_Controller.ActiveCamera = ___currentCamera;
-			}
+			}*/
 		}
 	}
 }

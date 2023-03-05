@@ -1,8 +1,10 @@
-﻿using MelonLoader;
+﻿using Il2CppSystem.IO;
+using MelonLoader;
 using System;
 using System.Linq;
 using UnhollowerRuntimeLib;
 using UnityEngine;
+using static UltimateGameTools.MeshSimplifier.Simplifier;
 
 namespace SuisHack.Components
 {
@@ -21,18 +23,15 @@ namespace SuisHack.Components
 		public static readonly int ShaderHash_ExternalOffset = Shader.PropertyToID("_ExternalOffset");
 		public static readonly int ShaderHash_PositionsData = Shader.PropertyToID("_PositionsData");
 		public static readonly int ShaderHash_VertexData = Shader.PropertyToID("_VertexData");
-
 		public static readonly int ShaderHash_VertexCount = Shader.PropertyToID("_VertsCount");
 		public static readonly int ShaderHash_Triangles = Shader.PropertyToID("_Triangles");
 		public static readonly int ShaderHash_TriangleCount = Shader.PropertyToID("_TriangleCount");
 		private Vector3 offsetResult;
 
-		private ComputeShader ComputeShaderGeneratePositions;
+		private Il2CppSystem.Array nativeTrianglesArray;
 		private ComputeBuffer positionsBuffer;
-		private ComputeBuffer vertexBuffer;
 		private ComputeBuffer trianglesBuffer;
 		private ComputeBuffer argsBuffer;
-		private uint[] args = new uint[5] { 0, 0, 0, 0, 0 };
 		private MaterialPropertyBlock mpb;
 
 		public GPU_Terrain_Rendering_Instance(IntPtr ptr) : base(ptr) { }
@@ -45,7 +44,7 @@ namespace SuisHack.Components
 
 		void Awake()
 		{
-			if(instancedMesh == null)
+			if (instancedMesh == null)
 			{
 				var go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 				var mf = go.GetComponent<MeshFilter>();
@@ -53,72 +52,130 @@ namespace SuisHack.Components
 				var mr = go.GetComponent<MeshRenderer>();
 				instancedMaterial = mr.sharedMaterial;
 				Destroy(go);
+
+				var bundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "suihackshaders"));
+				if (bundle == null)
+				{
+					SuisHackMain.loggerInst.Error("No shaders bundle?!");
+					this.enabled = false;
+					return;
+				}
+
+				var drawShitShader = bundle.LoadAsset("DrawShit");
+				if (drawShitShader == null)
+				{
+					SuisHackMain.loggerInst.Error("No shader?");
+					return;
+				}
+
+				instancedMaterial.shader = drawShitShader.Cast<Shader>();
+				bundle.Unload(false);
 			}
 		}
 
 		void Start()
 		{
-			argsBuffer = new ComputeBuffer(1, args.Length * sizeof(uint), ComputeBufferType.IndirectArguments, 0);
 			GPU_Instances_Controller.Instance.Register(this);
 		}
 
-		public void GenerateData()
+		public System.Collections.IEnumerator GenerateData()
 		{
-			//TODO: Implement rotation against hit
-			offsetResult = GetInternalOffset();
-			if (positionsBuffer != null)
-				positionsBuffer.Release();
-			if (vertexBuffer != null)
-				vertexBuffer.Release();
+			var nativeArrayType = UnhollowerRuntimeLib.Il2CppType.Of<int>();
+			nativeTrianglesArray = Il2CppSystem.Array.CreateInstance(nativeArrayType, MeshFilterRef.sharedMesh.triangles.Length);
+			yield return null;
+			CopyTriangles();
+			yield return null;
+			GeneratePositions();
 
-			int mainKernel = ComputeShaderGeneratePositions.FindKernel("CSGenerate");
-			ComputeShaderGeneratePositions.GetKernelThreadGroupSizes(mainKernel, out uint x, out uint y, out uint _);
-			ComputeShaderGeneratePositions.SetVector(ShaderHash_InternalSquareOffset, offsetResult);
-			ComputeShaderGeneratePositions.SetVector(ShaderHash_ExternalOffset, this.transform.position);
+			SuisHackMain.loggerInst.Msg("Generated!");
+		}
 
-
-			var array = Il2CppSystem.Array.CreateInstance(Vector4.Il2CppType, MeshFilterRef.sharedMesh.vertices.Length);
+		private void CopyTriangles()
+		{
+			var copyVerteciesShader = GPU_Instances_Controller.CopyTrinaglesComputeShader;
+			if (copyVerteciesShader == null)
 			{
-				for(int i=0; i< MeshFilterRef.sharedMesh.vertices.Length; i++)
-				{
-					var vec = MeshFilterRef.sharedMesh.vertices[i];
-					array.SetValue(new Vector4(vec.x, vec.y, vec.z, 0), i);
-				}
-				foreach(var element in MeshFilterRef.sharedMesh.vertices)
-				{
-
-				}
-				var verts3Temp = MeshFilterRef.sharedMesh.vertices.Select(yeet => (Vector4)yeet);
+				SuisHackMain.loggerInst.Error("No copy verticies compute shader!");
+				return;
 			}
 
+			int kernel = copyVerteciesShader.FindKernel("CopyData");
+			copyVerteciesShader.GetKernelThreadGroupSizes(kernel, out uint kernelSizeX, out uint kernelSizeY, out uint kernelSizeZ);
 			var triangles = MeshFilterRef.sharedMesh.triangles;
+			var trianglesCap = (int)Mathf.Ceil(triangles.Length / 4.0f) * 4;
 
-			vertexBuffer = new ComputeBuffer(verts3.Length, sizeof(float) * 4);
-			vertexBuffer.SetData(verts3);
-			trianglesBuffer = new ComputeBuffer(triangles.Length, sizeof(int));
-			trianglesBuffer.SetData(triangles);
+			var pseudoVectorArray = new Vector4[trianglesCap / 4];
+			for (int i = 0; i < triangles.Length; i += 4)
+			{
+				pseudoVectorArray[i / 4] = new Vector4(
+					triangles[i],
+					i + 1 < triangles.Length ? triangles[i + 1] : 0,
+					i + 2 < triangles.Length ? triangles[i + 2] : 0,
+					i + 3 < triangles.Length ? triangles[i + 3] : 0);
+			}
+			copyVerteciesShader.SetVectorArray("_VertexData", pseudoVectorArray);
+			trianglesBuffer = new ComputeBuffer(trianglesCap, sizeof(int));
+			copyVerteciesShader.SetBuffer(kernel, "_OutputTriangles", trianglesBuffer);
+			copyVerteciesShader.Dispatch(kernel, Mathf.CeilToInt(trianglesCap / kernelSizeX), (int)kernelSizeY, (int)kernelSizeZ);
+			SuisHackMain.loggerInst.Msg("Copied triangles");
+		}
 
+		private void GeneratePositions()
+		{
+			var generatePositionsShader = GPU_Instances_Controller.GeneratePositionsComputeShader;
+			if (generatePositionsShader == null)
+			{
+				SuisHackMain.loggerInst.Msg("No generate positions compute shader!");
+				return;
+			}
+
+			int mainKernel = generatePositionsShader.FindKernel("CSGenerate");
+			generatePositionsShader.GetKernelThreadGroupSizes(mainKernel, out uint x, out uint y, out uint _);
+			generatePositionsShader.SetVector(ShaderHash_InternalSquareOffset, offsetResult);
+			generatePositionsShader.SetVector(ShaderHash_ExternalOffset, this.transform.position);
+
+			Vector4[] verts3 = MeshFilterRef.sharedMesh.vertices.Select(yeet => (Vector4)yeet).ToArray();
 			positionsBuffer = new ComputeBuffer(initialInstanceCount, sizeof(float) * 4);
-			ComputeShaderGeneratePositions.SetBuffer(mainKernel, ShaderHash_VertexData, vertexBuffer);
-			ComputeShaderGeneratePositions.SetInt(ShaderHash_VertexCount, verts3.Length);
-			ComputeShaderGeneratePositions.SetBuffer(mainKernel, ShaderHash_Triangles, trianglesBuffer);
-			ComputeShaderGeneratePositions.SetInt(ShaderHash_TriangleCount, triangles.Length);
 
-			ComputeShaderGeneratePositions.SetBuffer(mainKernel, ShaderHash_PositionsData, positionsBuffer);
-			ComputeShaderGeneratePositions.Dispatch(mainKernel, Mathf.CeilToInt(sideSize / x), Mathf.CeilToInt(sideSize / y), 1);
-			//instancedMaterial.SetBuffer(ShaderHash_PositionsData, positionsBuffer);
+			generatePositionsShader.SetVectorArray(ShaderHash_VertexData, verts3);
+			generatePositionsShader.SetInt(ShaderHash_VertexCount, verts3.Length);
+			generatePositionsShader.SetInt(ShaderHash_TriangleCount, MeshFilterRef.sharedMesh.triangles.Length);
+			generatePositionsShader.SetBuffer(mainKernel, ShaderHash_Triangles, trianglesBuffer);
+
+			//Output
+			generatePositionsShader.SetBuffer(mainKernel, ShaderHash_PositionsData, positionsBuffer);
+			generatePositionsShader.Dispatch(mainKernel, Mathf.CeilToInt(sideSize / x), Mathf.CeilToInt(sideSize / y), 1);
+
+
+			Il2CppSystem.Array args = Il2CppSystem.Array.CreateInstance(Il2CppSystem.UInt32.Il2CppType, 5);
 
 			if (instancedMesh != null)
 			{
-				args[0] = (uint)instancedMesh.GetIndexCount(0);
-				args[1] = (uint)positionsBuffer.count;
-				args[2] = (uint)instancedMesh.GetIndexStart(0);
-				args[3] = (uint)instancedMesh.GetBaseVertex(0);
+				args.SetValue(new Il2CppSystem.UInt32() { m_value = (uint)instancedMesh.GetIndexCount(0) }.BoxIl2CppObject(), 0);
+				args.SetValue(new Il2CppSystem.UInt32() { m_value = (uint)positionsBuffer.count }.BoxIl2CppObject(), 1);
+				args.SetValue(new Il2CppSystem.UInt32() { m_value = (uint)instancedMesh.GetIndexStart(0) }.BoxIl2CppObject(), 2);
+				args.SetValue(new Il2CppSystem.UInt32() { m_value = (uint)instancedMesh.GetBaseVertex(0) }.BoxIl2CppObject(), 3);
+				//args.SetValue(new Il2CppSystem.UInt32() { m_value = 0 }.BoxIl2CppObject(), 4);
 			}
-			argsBuffer.SetData(args);
+
+			SuisHackMain.loggerInst.Msg("Step 5");
+			argsBuffer = new ComputeBuffer(1, 5 * sizeof(uint), ComputeBufferType.IndirectArguments, 0);
+			SuisHackMain.loggerInst.Msg("Step 6");
+			if(argsBuffer == null)
+				SuisHackMain.loggerInst.Error("Args buffer is null");
+
+			SuisHackMain.loggerInst.Error($"Args lenght: {args.Length}");
+
+			argsBuffer.SetData(args, 0, 0, 5);
+			SuisHackMain.loggerInst.Msg("Step 7");
 
 			mpb = new MaterialPropertyBlock();
 			mpb.SetBuffer(ShaderHash_PositionsData, positionsBuffer);
+			SuisHackMain.loggerInst.Msg("Step 8");
+
+			//trianglesBuffer.Dispose();
+
+			SuisHackMain.loggerInst.Msg("Generated positions");
 		}
 
 		private Vector3 GetInternalOffset()
@@ -132,14 +189,16 @@ namespace SuisHack.Components
 
 		public void RenderMeshes(ComputeShader computeShaderGenerate)
 		{
-			ComputeShaderGeneratePositions = Instantiate(computeShaderGenerate);
+			//ComputeShaderGeneratePositions = Instantiate(computeShaderGenerate);
 			GPUCull();
+
+			Graphics.DrawMeshInstancedIndirect(instancedMesh, 0, instancedMaterial, new Bounds(Vector3.zero, Vector3.one * 9999), argsBuffer, 0, mpb);
 		}
 
 		private void GPUCull()
 		{
 			//TODO: Cull elements on GPU
-			Graphics.DrawMeshInstancedIndirect(instancedMesh, 0, instancedMaterial, new Bounds(Vector3.zero, Vector3.one * 9999), argsBuffer, 0, mpb);
+			//Graphics.DrawMeshInstancedIndirect(instancedMesh, 0, instancedMaterial, new Bounds(Vector3.zero, Vector3.one * 9999), argsBuffer, 0, mpb);
 		}
 
 		void OnDestroy()
