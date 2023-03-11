@@ -11,12 +11,12 @@ namespace SuisHack.Components
 	{
 		public static Dictionary<string, List<PoleDefinitionProtoplast>> DisableUtterlyBroken = new Dictionary<string, List<PoleDefinitionProtoplast>>()
 		{
-/*			{
+			{
 				"OpenWorld_J_09_Location_ElectricPole(Clone)", new List<PoleDefinitionProtoplast>()
 				{
 					new PoleDefinitionDisable("Pole Standard (9)", Vector3.zero),
 				}
-			},*/
+			},
 			{
 				"OpenWorld_L_07_Location_ElectricPole(Clone)", new List<PoleDefinitionProtoplast>()
 				{

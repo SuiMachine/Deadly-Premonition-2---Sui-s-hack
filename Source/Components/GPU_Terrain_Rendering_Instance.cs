@@ -135,7 +135,7 @@ namespace SuisHack.Components
 			generatePositionsShader.SetVector(ShaderHash_ExternalOffset, this.transform.position);
 
 			Vector4[] verts3 = MeshFilterRef.sharedMesh.vertices.Select(yeet => (Vector4)yeet).ToArray();
-			positionsBuffer = new ComputeBuffer(initialInstanceCount, sizeof(float) * 4);
+			positionsBuffer = new ComputeBuffer(initialInstanceCount, sizeof(float) * 4, ComputeBufferType.IndirectArguments, 0);
 
 			generatePositionsShader.SetVectorArray(ShaderHash_VertexData, verts3);
 			generatePositionsShader.SetInt(ShaderHash_VertexCount, verts3.Length);
@@ -147,33 +147,33 @@ namespace SuisHack.Components
 			generatePositionsShader.Dispatch(mainKernel, Mathf.CeilToInt(sideSize / x), Mathf.CeilToInt(sideSize / y), 1);
 
 
-			Il2CppSystem.Array args = Il2CppSystem.Array.CreateInstance(Il2CppSystem.UInt32.Il2CppType, 5);
+			Il2CppSystem.Array args = Il2CppSystem.Array.CreateInstance(UnhollowerRuntimeLib.Il2CppType.Of<int>(), 5);
 
 			if (instancedMesh != null)
 			{
-				args.SetValue(new Il2CppSystem.UInt32() { m_value = (uint)instancedMesh.GetIndexCount(0) }.BoxIl2CppObject(), 0);
-				args.SetValue(new Il2CppSystem.UInt32() { m_value = (uint)positionsBuffer.count }.BoxIl2CppObject(), 1);
-				args.SetValue(new Il2CppSystem.UInt32() { m_value = (uint)instancedMesh.GetIndexStart(0) }.BoxIl2CppObject(), 2);
-				args.SetValue(new Il2CppSystem.UInt32() { m_value = (uint)instancedMesh.GetBaseVertex(0) }.BoxIl2CppObject(), 3);
-				//args.SetValue(new Il2CppSystem.UInt32() { m_value = 0 }.BoxIl2CppObject(), 4);
+				args.SetValue(new Il2CppSystem.Int32() { m_value = (int)instancedMesh.GetIndexCount(0) }.BoxIl2CppObject(), 0);
+				args.SetValue(new Il2CppSystem.Int32() { m_value = positionsBuffer.count }.BoxIl2CppObject(), 1);
+				args.SetValue(new Il2CppSystem.Int32() { m_value = (int)instancedMesh.GetIndexStart(0) }.BoxIl2CppObject(), 2);
+				args.SetValue(new Il2CppSystem.Int32() { m_value = (int)instancedMesh.GetBaseVertex(0) }.BoxIl2CppObject(), 3);
+				args.SetValue(new Il2CppSystem.Int32() { m_value = 0 }.BoxIl2CppObject(), 4);
 			}
 
 			SuisHackMain.loggerInst.Msg("Step 5");
-			argsBuffer = new ComputeBuffer(1, 5 * sizeof(uint), ComputeBufferType.IndirectArguments, 0);
+			argsBuffer = new ComputeBuffer(1, 5 * sizeof(int), ComputeBufferType.IndirectArguments, 20);
 			SuisHackMain.loggerInst.Msg("Step 6");
 			if(argsBuffer == null)
 				SuisHackMain.loggerInst.Error("Args buffer is null");
 
 			SuisHackMain.loggerInst.Error($"Args lenght: {args.Length}");
 
-			argsBuffer.SetData(args, 0, 0, 5);
+			argsBuffer.InternalSetData(args, 0, 0, args.Length, 4);
 			SuisHackMain.loggerInst.Msg("Step 7");
 
 			mpb = new MaterialPropertyBlock();
 			mpb.SetBuffer(ShaderHash_PositionsData, positionsBuffer);
 			SuisHackMain.loggerInst.Msg("Step 8");
 
-			//trianglesBuffer.Dispose();
+			trianglesBuffer.Dispose();
 
 			SuisHackMain.loggerInst.Msg("Generated positions");
 		}
