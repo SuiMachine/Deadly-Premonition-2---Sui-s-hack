@@ -187,12 +187,10 @@ namespace SuisHack.Components
 			return new Vector3(256 * offsetXStr, 0, 256 * offsetYStr);
 		}
 
-		public void RenderMeshes(ComputeShader computeShaderGenerate)
+		public void RenderMeshes()
 		{
-			//ComputeShaderGeneratePositions = Instantiate(computeShaderGenerate);
-			GPUCull();
-
-			Graphics.DrawMeshInstancedIndirect(instancedMesh, 0, instancedMaterial, new Bounds(Vector3.zero, Vector3.one * 9999), argsBuffer, 0, mpb);
+			//GPUCull();
+			Graphics.DrawMeshInstancedIndirect(instancedMesh, 0, instancedMaterial, new Bounds(this.transform.position, Vector3.one * 9999), argsBuffer, 0, mpb);
 		}
 
 		private void GPUCull()

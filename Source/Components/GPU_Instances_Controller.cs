@@ -117,7 +117,22 @@ namespace SuisHack.Components
 				if (ActiveCamera == null)
 					yield return null;
 			}
+		}
 
+
+		private void Update()
+		{
+			var cameraMain = Camera.main;
+			if (cameraMain == null)
+				return;
+
+			var cameraPos = cameraMain.transform.position;
+
+			foreach(var terrainToRender in TerrainsToRender)
+			{
+				if (Vector3.SqrMagnitude(terrainToRender.transform.position - cameraPos) < 200)
+					terrainToRender.RenderMeshes();
+			}
 		}
 
 		void OnGUI()
