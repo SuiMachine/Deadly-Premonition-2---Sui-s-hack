@@ -121,6 +121,8 @@ namespace SuisHack.Components
 			SuisHackMain.loggerInst.Msg("Copied triangles");
 		}
 
+		public Bounds Bounds => this.MeshRendererRef.bounds;
+
 		private void GeneratePositions()
 		{
 			var generatePositionsShader = GPU_Instances_Controller.GeneratePositionsComputeShader;
@@ -188,7 +190,7 @@ namespace SuisHack.Components
 		public void RenderMeshes()
 		{
 			//GPUCull();
-			Graphics.DrawMeshInstancedIndirect(instancedMesh, 0, instancedMaterial, new Bounds(Vector3.zero, Vector3.one * 9999), argsBuffer, 0, mpb, UnityEngine.Rendering.ShadowCastingMode.Off);
+			Graphics.DrawMeshInstancedIndirect(instancedMesh, 0, instancedMaterial, this.MeshRendererRef.bounds, argsBuffer, 0, mpb, UnityEngine.Rendering.ShadowCastingMode.Off);
 		}
 
 		private void GPUCull()
