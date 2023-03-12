@@ -126,11 +126,11 @@ namespace SuisHack.Components
 			if (cameraMain == null)
 				return;
 
-			var cameraPos = cameraMain.transform.position;
+			var cameraPos = new Vector2(cameraMain.transform.position.x, cameraMain.transform.position.z);
 
 			foreach(var terrainToRender in TerrainsToRender)
 			{
-				if (Vector3.SqrMagnitude(terrainToRender.transform.position - cameraPos) < 200)
+				if (Vector3.SqrMagnitude(new Vector2(terrainToRender.transform.position.x, terrainToRender.transform.position.z) - cameraPos) < 512 * 512)
 					terrainToRender.RenderMeshes();
 			}
 		}
