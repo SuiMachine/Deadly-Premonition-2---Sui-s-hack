@@ -1,6 +1,8 @@
 # Deadly Premonition 2 - Sui's hack
 A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of the ports shortcomings.
 
+Note: This "hack" is not compatible with MelonLoader 6.x (and won't be compatibile for a while).
+
 # List of features
 * Resolution override (the game should no longer start in 1920x1080 maximized window).
 * Exposed display settings:
@@ -39,7 +41,7 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 
 # Requirements
 * Original copy of the game
-* Melon Loader 0.5+
+* Melon Loader 0.5.x
 
 # Installation (Windows)
 * Download [MelonLoader](https://github.com/LavaGang/MelonLoader/releases) and install it (prefably using installer).
