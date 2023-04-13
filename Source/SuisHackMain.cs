@@ -69,7 +69,7 @@ namespace SuisHack
 
 				if(Settings.Entry_Other_GeometryImprovements.Value == ExposedSettings.GeometryImprovements.ExtraGeometry)
 				{
-					Components.GPU_Instances_Controller.Initialize();
+					Components.GrassRenderController.Initialize();
 				}
 
 				if (sceneName == "TitleTest2")

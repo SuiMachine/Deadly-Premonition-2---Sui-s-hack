@@ -60,11 +60,11 @@ namespace SuisHack.Components
 			}
 
 
-			if(SuisHackMain.Settings.Entry_Other_GeometryImprovements.Value == ExposedSettings.GeometryImprovements.ExtraGeometry && GPU_Instances_Controller.Instance != null)
+			if(SuisHackMain.Settings.Entry_Other_GeometryImprovements.Value == ExposedSettings.GeometryImprovements.ExtraGeometry && GrassRenderController.Instance != null)
 			{
 				var mr = this.GetComponent<MeshRenderer>();
 
-				var instancing = this.gameObject.AddComponent<GPU_Terrain_Rendering_Instance>();
+				var instancing = this.gameObject.AddComponent<GrassGPUGeneration>();
 				instancing.SetComponents(mf, mr);
 			}
 		}

@@ -2,14 +2,12 @@
 using MelonLoader;
 using System;
 using System.Linq;
-using UnhollowerRuntimeLib;
 using UnityEngine;
-using static UltimateGameTools.MeshSimplifier.Simplifier;
 
 namespace SuisHack.Components
 {
 	[RegisterTypeInIl2Cpp]
-	public class GPU_Terrain_Rendering_Instance : MonoBehaviour
+	public class GrassGPUGeneration : MonoBehaviour
 	{
 		public MeshFilter MeshFilterRef;
 		public MeshRenderer MeshRendererRef;
@@ -17,15 +15,6 @@ namespace SuisHack.Components
 		public static Mesh instancedMesh;
 		public static Material instancedMaterial;
 
-		private const int sideSize = 255;
-		private const int initialInstanceCount = sideSize * sideSize;
-		public static readonly int ShaderHash_InternalSquareOffset = Shader.PropertyToID("_InternalSquareOffset");
-		public static readonly int ShaderHash_ExternalOffset = Shader.PropertyToID("_ExternalOffset");
-		public static readonly int ShaderHash_PositionsData = Shader.PropertyToID("_PositionsData");
-		public static readonly int ShaderHash_VertexData = Shader.PropertyToID("_VertexData");
-		public static readonly int ShaderHash_VertexCount = Shader.PropertyToID("_VertsCount");
-		public static readonly int ShaderHash_Triangles = Shader.PropertyToID("_Triangles");
-		public static readonly int ShaderHash_TriangleCount = Shader.PropertyToID("_TriangleCount");
 		private Vector3 offsetResult;
 
 		private Il2CppSystem.Array nativeTrianglesArray;
@@ -34,14 +23,14 @@ namespace SuisHack.Components
 		private ComputeBuffer argsBuffer;
 		private MaterialPropertyBlock mpb;
 
-		public GPU_Terrain_Rendering_Instance(IntPtr ptr) : base(ptr) { }
+		public GrassGPUGeneration(IntPtr ptr) : base(ptr) { }
 
 		public void SetComponents(MeshFilter mf, MeshRenderer mr)
 		{
 			this.MeshFilterRef = mf;
 			this.MeshRendererRef = mr;
 		}
-
+		/*
 		void Awake()
 		{
 			if (instancedMesh == null)
@@ -75,10 +64,10 @@ namespace SuisHack.Components
 
 		void Start()
 		{
-			GPU_Instances_Controller.Instance.Register(this);
+			GrassRenderController.Instance.Register(this);
 		}
 
-		public System.Collections.IEnumerator GenerateData()
+		public System.Collections.IEnumerator GenerateData(Vector4 rotation)
 		{
 			this.offsetResult = GetInternalOffset();
 			var nativeArrayType = UnhollowerRuntimeLib.Il2CppType.Of<int>();
@@ -86,14 +75,14 @@ namespace SuisHack.Components
 			yield return null;
 			CopyTriangles();
 			yield return null;
-			GeneratePositions();
+			GeneratePositions(rotation);
 
-			SuisHackMain.loggerInst.Msg("Generated!");
+			SuisHackMain.loggerInst.Msg($"Generated (frame {Time.frameCount}");
 		}
 
 		private void CopyTriangles()
 		{
-			var copyVerteciesShader = GPU_Instances_Controller.CopyTrinaglesComputeShader;
+			var copyVerteciesShader = GrassRenderController.CopyTrinaglesComputeShader;
 			if (copyVerteciesShader == null)
 			{
 				SuisHackMain.loggerInst.Error("No copy verticies compute shader!");
@@ -125,7 +114,7 @@ namespace SuisHack.Components
 
 		private void GeneratePositions()
 		{
-			var generatePositionsShader = GPU_Instances_Controller.GeneratePositionsComputeShader;
+			var generatePositionsShader = GrassRenderController.GeneratePositionsComputeShader;
 			if (generatePositionsShader == null)
 			{
 				SuisHackMain.loggerInst.Msg("No generate positions compute shader!");
@@ -193,16 +182,10 @@ namespace SuisHack.Components
 			Graphics.DrawMeshInstancedIndirect(instancedMesh, 0, instancedMaterial, this.MeshRendererRef.bounds, argsBuffer, 0, mpb, UnityEngine.Rendering.ShadowCastingMode.Off);
 		}
 
-		private void GPUCull()
-		{
-			//TODO: Cull elements on GPU
-			//Graphics.DrawMeshInstancedIndirect(instancedMesh, 0, instancedMaterial, new Bounds(Vector3.zero, Vector3.one * 9999), argsBuffer, 0, mpb);
-		}
-
 		void OnDestroy()
 		{
-			if (GPU_Instances_Controller.Instance != null)
-				GPU_Instances_Controller.Instance.Unregister(this);
-		}
+			if (GrassRenderController.Instance != null)
+				GrassRenderController.Instance.Unregister(this);
+		}*/
 	}
 }
