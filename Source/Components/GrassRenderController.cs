@@ -17,7 +17,6 @@ namespace SuisHack.Components
 		public static GrassRenderController Instance;
 		Queue<GrassGPUGeneration> TilesToProcess = new Queue<GrassGPUGeneration>();
 		HashSet<GrassGPUGeneration> TilesToRender = new HashSet<GrassGPUGeneration>();
-		Vector4[] FrustumPlanesForCamera = new Vector4[6];
 		public Mesh instancedMeshLOD0;
 		public Mesh instancedMeshLOD1;
 		public Mesh instancedMeshLOD2;
@@ -207,9 +206,7 @@ namespace SuisHack.Components
 
 			//Because Geometric utility seems to throw an error
 			var frustumPlanes = CalculateManualPlanes(cameraMain);
-			ComputeShaderGPUFrustumCull.SetVectorArray(GrassShaderHashes.CameraClippingPlanes, frustumPlanes);
 
-			return;
 
 			var bounds = new Bounds(cameraMain.transform.position, new Vector3(SIDESIZE, SIDESIZE, SIDESIZE));
 
@@ -237,6 +234,18 @@ namespace SuisHack.Components
 			args.SetValue(new Il2CppSystem.UInt32() { m_value = 0 }.BoxIl2CppObject(), 1 * 5 + 1);
 			args.SetValue(new Il2CppSystem.UInt32() { m_value = 0 }.BoxIl2CppObject(), 2 * 5 + 1);
 			argsBuffer.InternalSetData(args, 0, 0, 15, 4);
+
+
+			ComputeShaderGPUFrustumCull.SetVector(GrassShaderHashes.CameraPosition, cameraMain.transform.position);
+			ComputeShaderGPUFrustumCull.SetVectorArray(GrassShaderHashes.CameraClippingPlanes, frustumPlanes);
+			ComputeShaderGPUFrustumCull.SetBuffer(0, GrassShaderHashes.ArgsBuffer, argsBuffer);
+			ComputeShaderGPUFrustumCull.SetInt(GrassShaderHashes.MaxPoints, INITIALINSTANCECOUNT);
+			ComputeShaderGPUFrustumCull.SetFloat(GrassShaderHashes.Decimate_Distance, decimateDistance);
+			ComputeShaderGPUFrustumCull.SetFloat(GrassShaderHashes.LOD_Distance0, maxDistLOD0);
+			ComputeShaderGPUFrustumCull.SetFloat(GrassShaderHashes.LOD_Distance1, maxDistLOD1);
+			ComputeShaderGPUFrustumCull.SetFloat(GrassShaderHashes.LOD_Distance2, maxDistLOD2);
+
+
 		}
 
 		private Vector4[] CalculateManualPlanes(Camera cam)
