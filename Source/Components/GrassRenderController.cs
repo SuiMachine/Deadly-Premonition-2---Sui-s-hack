@@ -205,13 +205,11 @@ namespace SuisHack.Components
 			if (cameraMain == null)
 				return;
 
-			return;
+			//Because Geometric utility seems to throw an error
+			var frustumPlanes = CalculateManualPlanes(cameraMain);
+			ComputeShaderGPUFrustumCull.SetVectorArray(GrassShaderHashes.CameraClippingPlanes, frustumPlanes);
 
-			Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cameraMain);
-			for (int i = 0; i < 6; ++i)
-			{
-				FrustumPlanesForCamera[i] = new Vector4(planes[i].normal.x, planes[i].normal.y, planes[i].normal.z, planes[i].distance);
-			}
+			return;
 
 			var bounds = new Bounds(cameraMain.transform.position, new Vector3(SIDESIZE, SIDESIZE, SIDESIZE));
 
@@ -239,6 +237,35 @@ namespace SuisHack.Components
 			args.SetValue(new Il2CppSystem.UInt32() { m_value = 0 }.BoxIl2CppObject(), 1 * 5 + 1);
 			args.SetValue(new Il2CppSystem.UInt32() { m_value = 0 }.BoxIl2CppObject(), 2 * 5 + 1);
 			argsBuffer.InternalSetData(args, 0, 0, 15, 4);
+		}
+
+		private Vector4[] CalculateManualPlanes(Camera cam)
+		{
+			Vector4[] planes = new Vector4[6];
+
+			//0.0174532924F is Mathf.Deg2Rad
+			float halfVSize = cam.farClipPlane * Mathf.Tan(cam.fieldOfView * 0.0174532924f * 0.5f);
+			float halfHSize = halfVSize * cam.aspect;
+
+			Vector3 frontMultFar = cam.farClipPlane * cam.transform.forward;
+
+
+			planes[0] = CreatePlane(Vector3.Cross(cam.transform.up, frontMultFar - cam.transform.right * halfHSize), cam.transform.position); //Right plane
+			planes[1] = CreatePlane(Vector3.Cross(frontMultFar + cam.transform.right * halfHSize, cam.transform.up), cam.transform.position); //Left plane
+			planes[2] = CreatePlane(Vector3.Cross(frontMultFar - cam.transform.up * halfVSize, cam.transform.right), cam.transform.position); //Bottom plane
+			planes[3] = CreatePlane(Vector3.Cross(cam.transform.right, frontMultFar + cam.transform.up * halfVSize), cam.transform.position); //Top plane
+
+			planes[4] = CreatePlane(cam.transform.forward, cam.transform.position + cam.nearClipPlane * cam.transform.forward); //Near plane
+			planes[5] = CreatePlane(-cam.transform.forward, cam.transform.position + cam.farClipPlane * cam.transform.forward); //Near plane
+
+
+			return planes;
+		}
+
+		public Vector4 CreatePlane(Vector3 normal, Vector3 Position)
+		{
+			var plane = new Plane(normal, Position);
+			return new Vector4(plane.normal.x, plane.normal.y, plane.normal.z, plane.distance);
 		}
 
 		private void OnGUI()
