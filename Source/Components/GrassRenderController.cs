@@ -21,6 +21,7 @@ namespace SuisHack.Components
 		public Mesh instancedMeshLOD1;
 		public Mesh instancedMeshLOD2;
 		public Material instancedMaterial;
+		public static ComputeShader ComputeShaderGeneratePositions { get; private set; }
 		private ComputeShader ComputeShaderGPUFrustumCull;
 		private ComputeBuffer positionsBufferCulled;
 		private ComputeBuffer positionsBufferWorldToObjectCulledCulled;
@@ -35,7 +36,6 @@ namespace SuisHack.Components
 		private Vector4 rotationCorrection;
 
 		private GrassGPUGeneration LastGPUGeneration;
-		private int Frame;
 
 		private Il2CppSystem.Array args;
 
@@ -98,11 +98,6 @@ namespace SuisHack.Components
 			}
 		}
 
-		private void Start()
-		{
-
-		}
-
 		private void SetValues()
 		{
 			var temp = Quaternion.Euler(new Vector3(-90, 0, 0));
@@ -120,7 +115,7 @@ namespace SuisHack.Components
 
 			AssetBundle shadersBundleHandle;
 			var path = Path.Combine(Application.streamingAssetsPath, "suihackshaders");
-			if(!File.Exists(path))
+			if (!File.Exists(path))
 			{
 				SuisHackMain.loggerInst.Error("No shaders asset bundle!");
 				Destroy(this.gameObject);
@@ -136,14 +131,17 @@ namespace SuisHack.Components
 				return;
 			}
 
-			if(ComputeShaderGPUFrustumCull == null)
+			if (ComputeShaderGPUFrustumCull == null)
 				ComputeShaderGPUFrustumCull = shadersBundleHandle.LoadAsset("ComputeShader_CullPoints").Cast<ComputeShader>();
+
+			if (ComputeShaderGeneratePositions == null)
+				ComputeShaderGeneratePositions = shadersBundleHandle.LoadAsset("ComputeShader_GeneratePositions").Cast<ComputeShader>();
 
 			if (instancedMeshLOD0 == null || instancedMeshLOD1 == null || instancedMeshLOD2 == null || instancedMaterial == null)
 			{
 				var grassFBX = GameObject.Instantiate(shadersBundleHandle.LoadAsset("GrassPrefab").Cast<GameObject>());
 				DontDestroyOnLoad(grassFBX);
-				if(grassFBX == null)
+				if (grassFBX == null)
 					SuisHackMain.loggerInst.Error("Grass?");
 
 				var lods = grassFBX.GetComponentsInChildren<MeshFilter>();
@@ -167,7 +165,7 @@ namespace SuisHack.Components
 		private void Update()
 		{
 			//Because asset bundles expect shaders to come attached to objects already so any time the scene changes Unity just destroys them :(
-			if (ComputeShaderGPUFrustumCull == null || instancedMeshLOD0 == null || instancedMeshLOD1 == null || instancedMeshLOD2 == null || instancedMaterial == null)
+			if (ComputeShaderGPUFrustumCull == null || ComputeShaderGeneratePositions == null || instancedMeshLOD0 == null || instancedMeshLOD1 == null || instancedMeshLOD2 == null || instancedMaterial == null)
 			{
 				LoadAssets();
 				ComputeShaderGPUFrustumCull.SetBuffer(0, GrassShaderHashes.PositionsDataCulled, positionsBufferCulled);
@@ -175,10 +173,10 @@ namespace SuisHack.Components
 				ComputeShaderGPUFrustumCull.SetInt(GrassShaderHashes.MaxPoints, INITIALINSTANCECOUNT);
 			}
 
-			if (Time.frameCount - Frame > 3)
+			if (LastGPUGeneration != null)
 			{
-				if (LastGPUGeneration != null)
-					TilesToRender.Add(LastGPUGeneration);
+				TilesToRender.Add(LastGPUGeneration);
+				LastGPUGeneration = null;
 				return;
 			}
 
@@ -187,8 +185,8 @@ namespace SuisHack.Components
 				var tileToProcess = TilesToProcess.Dequeue();
 				if (tileToProcess != null)
 				{
-					Frame = Time.frameCount;
-					//MelonCoroutines.Start(tileToProcess.GenerateData(rotationCorrection));
+					tileToProcess.GenerateData(rotationCorrection);
+					LastGPUGeneration = tileToProcess;
 				}
 			}
 		}
@@ -245,7 +243,27 @@ namespace SuisHack.Components
 			ComputeShaderGPUFrustumCull.SetFloat(GrassShaderHashes.LOD_Distance1, maxDistLOD1);
 			ComputeShaderGPUFrustumCull.SetFloat(GrassShaderHashes.LOD_Distance2, maxDistLOD2);
 
+			foreach (GrassGPUGeneration square in TilesToRender)
+			{
+				var closestPost = square.squareMeshRenderer.bounds.ClosestPoint(cameraMain.transform.position);
+				var dist = Vector3.Distance(cameraMain.transform.position, closestPost);
 
+				if (dist < 2500 )
+				{
+					ComputeShaderGPUFrustumCull.SetBuffer(0, GrassShaderHashes.PositionsData, square.PositionsBuffer);
+					ComputeShaderGPUFrustumCull.SetBuffer(0, GrassShaderHashes.PositionsDataWorldToObject, square.PositionsBufferWorldToObject);
+					ComputeShaderGPUFrustumCull.Dispatch(0, Mathf.CeilToInt(square.PositionsBuffer.count / 64), 1, 1);
+				}
+			}
+
+			argsBuffer.InternalGetData(args, 0, 0, 15, 4);
+			DBG_InstancedRenderedLOD0 = args.GetValue(5 * 0 + 1).Unbox<uint>();
+			DBG_InstancedRenderedLOD1 = args.GetValue(5 * 1 + 1).Unbox<uint>();
+			DBG_InstancedRenderedLOD2 = args.GetValue(5 * 2 + 1).Unbox<uint>();
+
+			Graphics.DrawMeshInstancedIndirect(instancedMeshLOD0, 0, instancedMaterial, bounds, argsBuffer, ARGS_BYTE_SIZE_PER_DRAW_CALL * 0, mpbLOD0, UnityEngine.Rendering.ShadowCastingMode.Off);
+			Graphics.DrawMeshInstancedIndirect(instancedMeshLOD1, 0, instancedMaterial, bounds, argsBuffer, ARGS_BYTE_SIZE_PER_DRAW_CALL * 1, mpbLOD1, UnityEngine.Rendering.ShadowCastingMode.Off);
+			Graphics.DrawMeshInstancedIndirect(instancedMeshLOD2, 0, instancedMaterial, bounds, argsBuffer, ARGS_BYTE_SIZE_PER_DRAW_CALL * 2, mpbLOD2, UnityEngine.Rendering.ShadowCastingMode.Off);
 		}
 
 		private Vector4[] CalculateManualPlanes(Camera cam)
@@ -281,6 +299,11 @@ namespace SuisHack.Components
 		{
 			GUILayout.BeginHorizontal(null);
 			GUILayout.BeginVertical(GUI.skin.box, null);
+			GUILayout.Label("Tiles to process: " + TilesToProcess.Count, null);
+			GUILayout.Label("Tiles to render: " + TilesToRender.Count, null);
+			GUILayout.Label("", null);
+
+
 			GUILayout.Label("LOD0: " + DBG_InstancedRenderedLOD0, null);
 			GUILayout.Label("LOD1: " + DBG_InstancedRenderedLOD1, null);
 			GUILayout.Label("LOD2: " + DBG_InstancedRenderedLOD2, null);
