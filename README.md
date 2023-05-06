@@ -44,7 +44,7 @@ Note: This "hack" is not compatible with MelonLoader 6.x (and won't be compatibi
 * Melon Loader 0.5.x
 
 # Installation (Windows)
-* Download [MelonLoader](https://github.com/LavaGang/MelonLoader/releases) and install it (prefably using installer).
+* Download [MelonLoader](https://github.com/LavaGang/MelonLoader/releases) and install it (prefably using installer). Make sure to install newest 0.5.x version and not 0.6.x!
 * Download the [Sui's Hack](https://github.com/SuiMachine/Deadly-Premonition-2---Sui-s-hack/releases) and extract it to game directory (do not change the file structure SuisHack.dll goes into "Mods", "Prompts" directory to a game's "StreamingAssets" folder etc.)
 * Launch the game.
 * Press F11 to open configuration GUI or close the game and edit "MelonPreferences.cfg" inside the UserData folder.
