@@ -55,7 +55,7 @@ These instructions are written with path assuming you install it on build in dri
 * Download [MelonLoader](https://github.com/LavaGang/MelonLoader/releases).
 * Launch the installer using Protontricks Launcher (if it is missing, install it using Discovery).
 * When the screen of protontricks launcher pops up, selected Deadly Premonition 2.
-* Select brows and navigate to: `/home/deck/`
+* Select browse and navigate to: `/home/deck/`
 * In text field type in `.local` and press enter (it's a hidden folder).
 * Further navigate down to: `/home/deck/.local/share/Steam/common/Deadly Premonition 2` (or wherever the games install on SD cards)
 * Select `DeadlyPremonition2.exe` and install it.
