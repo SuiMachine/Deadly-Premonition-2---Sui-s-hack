@@ -9,7 +9,7 @@ namespace SuisHack.Components
 	[RegisterTypeInIl2Cpp]
 	public class GrassRenderController : MonoBehaviour
 	{
-		public const int SIDESIZE = 256;
+		public const int SIDESIZE = 128;
 		public const int INITIALINSTANCECOUNT = SIDESIZE * SIDESIZE;
 		private const int NUMBER_OF_ARGS_PER_DRAW = 5; // (indexCount, instanceCount, startIndex, baseVertex, startInstance)
 		private const int ARGS_BYTE_SIZE_PER_DRAW_CALL = NUMBER_OF_ARGS_PER_DRAW * sizeof(uint); // 5args * 4bytes = 20 bytes
