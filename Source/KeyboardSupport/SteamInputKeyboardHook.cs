@@ -1,5 +1,4 @@
-﻿using Steamworks;
-using System.Collections.Generic;
+﻿using Il2CppSteamworks;
 
 namespace SuisHack.KeyboardSupport
 {
@@ -92,13 +91,13 @@ namespace SuisHack.KeyboardSupport
 			var targetGetAnalogActionMethod = typeof(SteamInputHook).GetMethod(nameof(GetAnalogActionDataPrefix), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
 			if (originalGetAnalogActionMethod == null)
 			{
-				SuisHackMain.loggerInst.Error("Original GetAnalogActionData was null");
+				SuisHackMain.loggerInst!.Error("Original GetAnalogActionData was null");
 				return;
 			}
 
 			if (targetGetAnalogActionMethod == null)
 			{
-				SuisHackMain.loggerInst.Error("Target GetAnalogActionData was null");
+				SuisHackMain.loggerInst!.Error("Target GetAnalogActionData was null");
 				return;
 			}
 
@@ -107,13 +106,13 @@ namespace SuisHack.KeyboardSupport
 
 			if (originalGetDigitalActionMethod == null)
 			{
-				SuisHackMain.loggerInst.Error("Original GetDigitalActionData was null");
+				SuisHackMain.loggerInst!.Error("Original GetDigitalActionData was null");
 				return;
 			}
 
 			if (targetGetDigitalActionMethod == null)
 			{
-				SuisHackMain.loggerInst.Error("Target GetDigitalActionData was null");
+				SuisHackMain.loggerInst!.Error("Target GetDigitalActionData was null");
 				return;
 			}
 
@@ -122,13 +121,13 @@ namespace SuisHack.KeyboardSupport
 
 			if (originalGetAnalogActionHandle == null)
 			{
-				SuisHackMain.loggerInst.Error("Original GetAnalogActionHandle was null");
+				SuisHackMain.loggerInst!.Error("Original GetAnalogActionHandle was null");
 				return;
 			}
 
 			if (targetGetAnalogActionHandle == null)
 			{
-				SuisHackMain.loggerInst.Error("Target GetAnalogActionHandle was null");
+				SuisHackMain.loggerInst!.Error("Target GetAnalogActionHandle was null");
 				return;
 			}
 
@@ -137,21 +136,21 @@ namespace SuisHack.KeyboardSupport
 
 			if (originalGetDigitalActionHandle == null)
 			{
-				SuisHackMain.loggerInst.Error("Original GetDigitalActionHandle was null");
+				SuisHackMain.loggerInst!.Error("Original GetDigitalActionHandle was null");
 				return;
 			}
 
 			if (targetGetDigitalActionHandle == null)
 			{
-				SuisHackMain.loggerInst.Error("Target GetDigitalActionHandle was null");
+				SuisHackMain.loggerInst!.Error("Target GetDigitalActionHandle was null");
 				return;
 			}
 
-			harmonyInstance.Patch(originalGetAnalogActionMethod, prefix: new HarmonyLib.HarmonyMethod(targetGetAnalogActionMethod));
+			harmonyInstance!.Patch(originalGetAnalogActionMethod, prefix: new HarmonyLib.HarmonyMethod(targetGetAnalogActionMethod));
 			harmonyInstance.Patch(originalGetDigitalActionMethod, prefix: new HarmonyLib.HarmonyMethod(targetGetDigitalActionMethod));
 			harmonyInstance.Patch(originalGetAnalogActionHandle, prefix: new HarmonyLib.HarmonyMethod(targetGetAnalogActionHandle));
 			harmonyInstance.Patch(originalGetDigitalActionHandle, prefix: new HarmonyLib.HarmonyMethod(targetGetDigitalActionHandle));
-			SuisHackMain.loggerInst.Msg("Patched Steam Input to redirect to keyboard mouse manager");
+			SuisHackMain.loggerInst!.Msg("Patched Steam Input to redirect to keyboard mouse manager");
 		}
 
 		public static bool GetDigitalActionHandle(ref InputDigitalActionHandle_t __result, string pszActionName)
@@ -174,7 +173,7 @@ namespace SuisHack.KeyboardSupport
 				return false;
 			}
 
-			__result = GlobalInputHookHandler.Instance.GetAnalogInputReplacement((SteamInputAnalog)analogActionHandle.m_InputAnalogActionHandle);
+			__result = GlobalInputHookHandler.Instance!.GetAnalogInputReplacement((SteamInputAnalog)analogActionHandle.m_InputAnalogActionHandle);
 			return false;
 		}
 
@@ -186,7 +185,7 @@ namespace SuisHack.KeyboardSupport
 				return false;
 			}
 
-			__result = GlobalInputHookHandler.Instance.GetDigitalInputReplacement((SteamInputDigital)digitalActionHandle.m_InputDigitalActionHandle);
+			__result = GlobalInputHookHandler.Instance!.GetDigitalInputReplacement((SteamInputDigital)digitalActionHandle.m_InputDigitalActionHandle);
 
 			return false;
 		}

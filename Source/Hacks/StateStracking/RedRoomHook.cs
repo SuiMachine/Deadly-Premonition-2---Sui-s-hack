@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using System;
+using Il2Cpp;
 using UnityEngine;
 
 namespace SuisHack.Hacks.StateStracking
@@ -21,7 +21,7 @@ namespace SuisHack.Hacks.StateStracking
 				}
 			}
 			else
-				SuisHackMain.loggerInst.Error("RedRoomMain has no child!");
+				SuisHackMain.loggerInst!.Error("RedRoomMain has no child!");
 		}
 	}
 

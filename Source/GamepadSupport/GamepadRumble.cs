@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using Il2Cpp;
 
 namespace SuisHack.GamepadSupport
 {
@@ -26,14 +27,6 @@ namespace SuisHack.GamepadSupport
 		{
 			Components.VibrationController.Instance?.TriggleRumble(ushort.MaxValue, 0.20f);
 		}
-
-/*		[HarmonyPostfix]
-		[HarmonyPatch(typeof(Gun), nameof(Gun.DispChargeFlash))]
-		public static void DispChargeFlash()
-		{
-			Components.VibrationController.Instance?.TriggerChargeRumble(1000, 40000, 3f);
-			//Components.VibrationController.Instance?.TriggleRumble(60000, 0.15f);
-		}*/
 
 		[HarmonyPostfix]
 		[HarmonyPatch(typeof(Gun), nameof(Gun.UnDispChargeFlash))]

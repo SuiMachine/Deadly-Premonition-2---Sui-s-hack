@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using Il2Cpp;
 using UnityEngine;
 
 namespace SuisHack.Hacks.Lights
@@ -7,24 +8,24 @@ namespace SuisHack.Hacks.Lights
 	{
 		public static void Initialize()
 		{
-			if (SuisHackMain.Settings.Entry_Other_LightImprovements.Value == ExposedSettings.LightImprovements.All)
+			if (SuisHackMain.Settings!.Entry_Other_LightImprovements!.Value == ExposedSettings.LightImprovements.All)
 			{
 				var sourceHook = typeof(NpcVehicle).GetMethod(nameof(NpcVehicle.Awake), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
 				var targetHook = typeof(NpcVehicleHook).GetMethod(nameof(NpcVehicleHook.NpcVehiclePostfix), System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
 
 				if (sourceHook == null)
 				{
-					SuisHackMain.loggerInst.Error("Failed to found source for NpcTestHook");
+					SuisHackMain.loggerInst!.Error("Failed to found source for NpcTestHook");
 					return;
 				}
 
 				if (targetHook == null)
 				{
-					SuisHackMain.loggerInst.Error("Failed to found target for NpcTestHook");
+					SuisHackMain.loggerInst!.Error("Failed to found target for NpcTestHook");
 					return;
 				}
 
-				SuisHackMain.harmonyInst.Patch(sourceHook, postfix: new HarmonyMethod(targetHook));
+				SuisHackMain.harmonyInst!.Patch(sourceHook, postfix: new HarmonyMethod(targetHook));
 			}
 		}
 

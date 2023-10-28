@@ -1,5 +1,4 @@
 ﻿using Il2CppSystem.Collections.Generic;
-using Il2CppSystem.IO;
 using MelonLoader;
 using System;
 using UnityEngine;
@@ -19,7 +18,7 @@ namespace SuisHack.Components
 		public void Import()
 		{
 			var path = Path.Combine(Path.Combine(Application.streamingAssetsPath, "terrainfixes"), this.gameObject.name + ".bin");
-			if(File.Exists(path))
+			if (File.Exists(path))
 			{
 				FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
 				var binaryReader = new BinaryReader(fs);
@@ -42,14 +41,14 @@ namespace SuisHack.Components
 
 
 					var collider = this.GetComponent<MeshCollider>();
-					if(collider != null)
+					if (collider != null)
 					{
 						collider.sharedMesh = mf.sharedMesh;
 					}
 				}
-				catch(Exception e)
+				catch (Exception e)
 				{
-					SuisHackMain.loggerInst.Error($"Error when loading {path}: {e}");
+					SuisHackMain.loggerInst!.Error($"Error when loading {path}: {e}");
 				}
 				finally
 				{

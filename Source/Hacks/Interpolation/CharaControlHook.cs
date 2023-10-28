@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using Il2Cpp;
 using UnityEngine;
 
 namespace SuisHack.Hacks
@@ -16,17 +17,16 @@ namespace SuisHack.Hacks
 				__instance.gameObject.AddComponent<Components.Interpolation.GameObjectInterpolation>();
 			}
 
-			if (SuisHackMain.Settings.Entry_Other_LightImprovements.Value >= ExposedSettings.LightImprovements.Minor)
+			if (SuisHackMain.Settings!.Entry_Other_LightImprovements!.Value >= ExposedSettings.LightImprovements.Minor)
 			{
 				var lights = __instance.GetComponentsInChildren<Light>(true);
-				for (int i = 0; i < lights.Count; i++)
+				for (int i = 0; i < lights.Length; i++)
 				{
 					var light = lights[i];
 					light.shadows = LightShadows.Soft;
 					light.shadowNearPlane = 0.01f;
 					light.shadowBias = 0.01f;
 					light.renderMode = LightRenderMode.ForcePixel;
-					light.shadowSoftness = 1;
 				}
 			}
 		}

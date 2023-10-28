@@ -1,4 +1,4 @@
-﻿using Il2CppSystem.IO;
+﻿using Il2Cpp;
 using System;
 using UnityEngine;
 
@@ -7,16 +7,17 @@ namespace SuisHack.GlobalGameObjects
 	[MelonLoader.RegisterTypeInIl2Cpp]
 	public class GlobalReplacementAtlas : MonoBehaviour
 	{
+		public GlobalReplacementAtlas(IntPtr ptr) : base(ptr) { }
+
 		public enum ReplacementType
 		{
 			Basic,
 			KeyboardAndMouse
 		}
 
-		public static GlobalReplacementAtlas Instance { get; private set; }
-		private UIAtlas Atlas;
-		public GlobalReplacementAtlas(IntPtr ptr) : base(ptr) { }
-		public IPromptCache Cache { get; private set; }
+		public static GlobalReplacementAtlas? Instance { get; private set; }
+		private UIAtlas? Atlas;
+		public IPromptCache? Cache { get; private set; }
 		public ReplacementType ReplacementTypeUsed { get; private set; }
 
 		public static void Initialize()
@@ -31,18 +32,18 @@ namespace SuisHack.GlobalGameObjects
 
 		void Awake()
 		{
-			if (SuisHackMain.Settings.Entry_Other_Prompts.Value != "" || SuisHackMain.Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
+			if (SuisHackMain.Settings!.Entry_Other_Prompts!.Value != "" || SuisHackMain.Settings.Input_Override!.Value == ExposedSettings.InputType.KeyboardAndMouse)
 			{
 				var assetBundlePath = SuisHackMain.Settings.Entry_Other_Prompts.Value;
 				this.ReplacementTypeUsed = ReplacementType.Basic;
-				if (SuisHackMain.Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
+				if (SuisHackMain.Settings.Input_Override!.Value == ExposedSettings.InputType.KeyboardAndMouse)
 				{
 					this.ReplacementTypeUsed = ReplacementType.KeyboardAndMouse;
 					assetBundlePath = "keyboard";
 				}
 
 				string path = Path.Combine(Path.Combine(Application.streamingAssetsPath, "prompts"), assetBundlePath);
-				SuisHackMain.loggerInst.Msg("Trying to load replacement prompts using bundle: " + path);
+				SuisHackMain.loggerInst!.Msg("Trying to load replacement prompts using bundle: " + path);
 
 				var assetBundle = AssetBundle.LoadFromFile(path);
 				if (assetBundle == null)
@@ -106,7 +107,7 @@ namespace SuisHack.GlobalGameObjects
 			if (replacement != null)
 			{
 				instance.atlas = Atlas;
-				instance.SetAtlasSprite(replacement);
+				instance.SetAtlasSprite(replacement!);
 			}
 		}
 	}

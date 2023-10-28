@@ -1,5 +1,5 @@
-﻿using MelonLoader;
-using Steamworks;
+﻿using Il2CppSteamworks;
+using MelonLoader;
 using System;
 using UnityEngine;
 
@@ -11,8 +11,8 @@ namespace SuisHack.Components
 		private InputHandle_t ControllerHandle;
 		public VibrationController(IntPtr ptr) : base(ptr) { }
 
-		public static VibrationController Instance { get; private set; }
-		private object RumbleRoutine = null;
+		public static VibrationController? Instance { get; private set; }
+		private object? RumbleRoutine = null;
 		public static bool UseRumble = false;
 
 		public static void Initialize()
@@ -22,7 +22,7 @@ namespace SuisHack.Components
 				var go = new GameObject("VibrationController");
 				GameObject.DontDestroyOnLoad(go);
 				Instance = go.AddComponent<VibrationController>();
-				UseRumble = SuisHackMain.Settings.Input_Controller_Vibration.Value;
+				UseRumble = SuisHackMain.Settings!.Input_Controller_Vibration!.Value;
 			}
 
 			if (Instance != null)
@@ -35,7 +35,7 @@ namespace SuisHack.Components
 			{
 				if (ControllerHandle.m_InputHandle == 0)
 				{
-					UnhollowerBaseLib.Il2CppStructArray<InputHandle_t> controllers = new UnhollowerBaseLib.Il2CppStructArray<InputHandle_t>(16);
+					var controllers = new Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppStructArray<InputHandle_t>(16);
 					var amountOfControllers = SteamInput.GetConnectedControllers(controllers);
 					if (amountOfControllers > 0)
 					{

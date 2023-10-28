@@ -1,4 +1,4 @@
-﻿using UnhollowerBaseLib;
+﻿using Il2CppInterop.Runtime.InteropTypes.Arrays;
 using UnityEngine;
 
 namespace SuisHack.LightImprovement
@@ -7,7 +7,7 @@ namespace SuisHack.LightImprovement
 	{
 		public static void ModifyOnSceneLoad(string sceneLowercase)
 		{
-			if (SuisHackMain.Settings.Entry_Other_LightImprovements.Value == ExposedSettings.LightImprovements.All)
+			if (SuisHackMain.Settings!.Entry_Other_LightImprovements!.Value == ExposedSettings.LightImprovements.All)
 			{
 				var lights = GameObject.FindObjectsOfType<Light>();
 

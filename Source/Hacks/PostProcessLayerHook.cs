@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
-using System.Collections.Generic;
-using System.Linq;
+using Il2Cpp;
+using Il2CppSCPE;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -9,8 +9,8 @@ namespace SuisHack.Hacks
 	[HarmonyPatch]
 	public static class PostProcessLayerHook
 	{
-		static List<PostProcessLayer> PostProcessLayerInstances = new List<PostProcessLayer>();
-		static List<PostProcessVolume> PostProcessVolumeInstances = new List<PostProcessVolume>();
+		static List<PostProcessLayer?> PostProcessLayerInstances = new List<PostProcessLayer?>();
+		static List<PostProcessVolume?> PostProcessVolumeInstances = new List<PostProcessVolume?>();
 
 
 		#region Antialiasing
@@ -25,7 +25,7 @@ namespace SuisHack.Hacks
 				m_Antialiasing = value;
 				foreach (var postProcess in PostProcessLayerInstances)
 				{
-					postProcess.antialiasingMode = value;
+					postProcess!.antialiasingMode = value;
 					postProcess.subpixelMorphologicalAntialiasing.quality = SubpixelMorphologicalAntialiasing.Quality.High;
 				}
 			}
@@ -79,7 +79,7 @@ namespace SuisHack.Hacks
 				m_FarClipDistance = value;
 				foreach (var postProcess in PostProcessLayerInstances)
 				{
-					var camera = postProcess.GetComponent<Camera>();
+					var camera = postProcess!.GetComponent<Camera>();
 					if (camera != null)
 					{
 						camera.farClipPlane = m_FarClipDistance;
@@ -241,7 +241,7 @@ namespace SuisHack.Hacks
 		{
 			foreach (var postprocess in PostProcessLayerInstances)
 			{
-				var hbao = postprocess.GetComponent<HBAO>();
+				var hbao = postprocess!.GetComponent<HBAO>();
 				if (hbao != null)
 				{
 					hbao.ApplyPreset(m_HBAO_Preset);
@@ -256,14 +256,8 @@ namespace SuisHack.Hacks
 		{
 			foreach (var volume in PostProcessVolumeInstances)
 			{
-				for (int i = 0; i < volume.profile.settings.Count; i++)
+				if(volume!.profile.TryGetSettings<ScreenSpaceReflections>(out var ssr))
 				{
-					//Dumb hack, but doesn't for whatever reason Il2CppType.Of<T> doesn't work
-					if (volume.profile.settings[i].GetIl2CppType().ToString() != typeof(ScreenSpaceReflections).ToString())
-						continue;
-
-					var ssr = volume.profile.settings[i].TryCast<ScreenSpaceReflections>();
-
 					if (m_SSR_Enabled)
 					{
 						ssr.enabled.overrideState = true;
@@ -306,15 +300,10 @@ namespace SuisHack.Hacks
 		{
 			foreach (var volume in PostProcessVolumeInstances)
 			{
-				for (int i = 0; i < volume.profile.settings.Count; i++)
+				if(volume!.profile.TryGetSettings<EdgeDetection>(out var edgeDetection))
 				{
-					//Dumb hack, but doesn't for whatever reason Il2CppType.Of<T> doesn't work
-					if (volume.profile.settings[i].GetIl2CppType().ToString() != typeof(SCPE.EdgeDetection).ToString())
-						continue;
-
-					var filter = volume.profile.settings[i].TryCast<SCPE.EdgeDetection>();
-					filter.enabled.value = m_EnableEdgeDetectionFilter;
-					filter.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
+					edgeDetection!.enabled.value = m_EnableEdgeDetectionFilter;
+					edgeDetection!.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
 				}
 			}
 		}
@@ -360,28 +349,17 @@ namespace SuisHack.Hacks
 				PostProcessVolumeInstances.Add(__instance);
 
 
-
-			for (int i = 0; i < __instance.profile.settings.Count; i++)
+			if(__instance.profile.TryGetSettings<EdgeDetection>(out var edgeDetection))
 			{
-				//Dumb hack, but doesn't for whatever reason Il2CppType.Of<T> doesn't work
-				if (__instance.profile.settings[i].GetIl2CppType().ToString() != typeof(SCPE.EdgeDetection).ToString())
-					continue;
-
-				var filter = __instance.profile.settings[i].TryCast<SCPE.EdgeDetection>();
-				filter.enabled.value = m_EnableEdgeDetectionFilter;
-				filter.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
+				edgeDetection.enabled.value = m_EnableEdgeDetectionFilter;
+				edgeDetection.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
 			}
 
 			if (!m_SSR_Enabled)
 				return;
 
-			for (int i = 0; i < __instance.profile.settings.Count; i++)
+			if(__instance.profile.TryGetSettings<ScreenSpaceReflections>(out var ssr))
 			{
-				if (__instance.profile.settings[i].GetIl2CppType().ToString() != typeof(ScreenSpaceReflections).ToString())
-					continue;
-
-				var ssr = __instance.profile.settings[i].TryCast<ScreenSpaceReflections>();
-
 				ssr.enabled.overrideState = true;
 				if (__instance.gameObject.scene.name.ToLower() == "map_002_1_coldwarehouse")
 				{

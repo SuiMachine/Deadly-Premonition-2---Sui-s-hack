@@ -1,8 +1,6 @@
 # Deadly Premonition 2 - Sui's hack
 A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of the ports shortcomings.
 
-Note: This "hack" is not compatible with MelonLoader 6.x (and won't be compatibile for a while).
-
 # List of features
 * Resolution override (the game should no longer start in 1920x1080 maximized window).
 * Exposed display settings:
@@ -41,10 +39,10 @@ Note: This "hack" is not compatible with MelonLoader 6.x (and won't be compatibi
 
 # Requirements
 * Original copy of the game
-* Melon Loader 0.5.x
+* Melon Loader 0.6.x (versions above 0.6 might not be compatible)
 
 # Installation (Windows)
-* Download [MelonLoader](https://github.com/LavaGang/MelonLoader/releases) and install it (prefably using installer). Make sure to install newest 0.5.x version and not 0.6.x!
+* Download [MelonLoader](https://github.com/LavaGang/MelonLoader/releases) and install it (prefably using installer).
 * Download the [Sui's Hack](https://github.com/SuiMachine/Deadly-Premonition-2---Sui-s-hack/releases) and extract it to game directory (do not change the file structure SuisHack.dll goes into "Mods", "Prompts" directory to a game's "StreamingAssets" folder etc.)
 * Launch the game.
 * Press F11 to open configuration GUI or close the game and edit "MelonPreferences.cfg" inside the UserData folder.
@@ -72,7 +70,6 @@ These instructions are written with path assuming you install it on build in dri
 * Final boss doesn't seem to display controller prompts correctly.
 * Epilepsy warning! TAA causes issues with shader of phantoms in the otherworld, so if you are prone to suffering epileptic seizures - use SMAA instead.
 * Occasionally the protagonist may fall through the terrain when using interpolation. Sorry :(
-
 
 # Notes
 * Replacing gamepad prompts requires generally requires modifying Steam Input profile, you generally want:

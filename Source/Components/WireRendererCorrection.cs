@@ -1,7 +1,4 @@
 ﻿using MelonLoader;
-using System;
-using System.Collections.Generic;
-using UnhollowerBaseLib;
 using UnityEngine;
 
 namespace SuisHack.Components
@@ -9,6 +6,8 @@ namespace SuisHack.Components
 	[RegisterTypeInIl2Cpp]
 	public class WireRendererCorrection : MonoBehaviour
 	{
+		public WireRendererCorrection(IntPtr ptr): base(ptr) { }
+
 		public static Dictionary<string, List<PoleDefinitionProtoplast>> DisableUtterlyBroken = new Dictionary<string, List<PoleDefinitionProtoplast>>()
 		{
 /*			{
@@ -25,11 +24,9 @@ namespace SuisHack.Components
 			}
 		};
 
-		public WireRendererCorrection(IntPtr ptr) : base(ptr) { }
-
 		public void OnEnable()
 		{
-			Il2CppArrayBase<SkinnedMeshRenderer> skinnedMeshes = GetComponentsInChildren<SkinnedMeshRenderer>(true);
+			var skinnedMeshes = GetComponentsInChildren<SkinnedMeshRenderer>(true);
 			for (int i = 0; i < skinnedMeshes.Length; i++)
 			{
 				var newBound = new Bounds();
@@ -86,7 +83,7 @@ namespace SuisHack.Components
 		}
 
 		protected abstract bool IsValidCompare(Transform transform);
-		public abstract void Process(Transform transform, Il2CppArrayBase<SkinnedMeshRenderer> skinnedMeshes);
+		public abstract void Process(Transform transform, SkinnedMeshRenderer[] skinnedMeshes);
 	}
 
 	public class PoleDefinitionDisable : PoleDefinitionProtoplast
@@ -103,9 +100,9 @@ namespace SuisHack.Components
 			return this.LocalEulerRotation == LocalEulerRotation && this.Name == transform.name;
 		}
 
-		public override void Process(Transform transform, Il2CppArrayBase<SkinnedMeshRenderer> skinnedMeshes)
+		public override void Process(Transform transform, SkinnedMeshRenderer[] skinnedMeshes)
 		{
-			SuisHackMain.loggerInst.Error("Implement that!");
+			SuisHackMain.loggerInst!.Error("Implement that!");
 
 		}
 	}
@@ -124,9 +121,9 @@ namespace SuisHack.Components
 			return this.LocalEulerRotation == LocalEulerRotation && this.Name == transform.name;
 		}
 
-		public override void Process(Transform transform, Il2CppArrayBase<SkinnedMeshRenderer> skinnedMeshes)
+		public override void Process(Transform transform, SkinnedMeshRenderer[] skinnedMeshes)
 		{
-			SuisHackMain.loggerInst.Msg("Implement that!");
+			SuisHackMain.loggerInst!.Msg("Implement that!");
 		}
 	}
 
@@ -148,19 +145,19 @@ namespace SuisHack.Components
 			return this.LocalEulerRotation == LocalEulerRotation && this.Name == transform.name;
 		}
 
-		public override void Process(Transform transform, Il2CppArrayBase<SkinnedMeshRenderer> skinnedMeshes)
+		public override void Process(Transform transform, SkinnedMeshRenderer[] skinnedMeshes)
 		{
 			int j = 0;
-			for(int i=0; i<transform.childCount; i++)
+			for (int i = 0; i < transform.childCount; i++)
 			{
 				var child = transform.GetChild(i);
 				if (child.name == RootName)
 				{
-					if(j == RootID)
+					if (j == RootID)
 					{
 						child.gameObject.SetActive(false);
 #if DEBUG
-						SuisHackMain.loggerInst.Msg($"[WireCorrection] Disabled broken child root at \"{child.transform.position.x}, {child.transform.position.y}, {child.transform.position.z}\"");
+						SuisHackMain.loggerInst!.Msg($"[WireCorrection] Disabled broken child root at \"{child.transform.position.x}, {child.transform.position.y}, {child.transform.position.z}\"");
 #endif
 						break;
 					}

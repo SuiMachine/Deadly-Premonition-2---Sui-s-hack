@@ -1,6 +1,5 @@
-﻿using MelonLoader;
-using System;
-using System.Linq;
+﻿using Il2Cpp;
+using MelonLoader;
 using UnityEngine;
 
 namespace SuisHack.Components
@@ -8,10 +7,11 @@ namespace SuisHack.Components
 	[RegisterTypeInIl2Cpp]
 	public class GlobalGeometryChecker : MonoBehaviour
 	{
+		public GlobalGeometryChecker(IntPtr ptr) : base(ptr) { }
+
 		const string OpenWorldPrefix = "OpenWorld_";
 		const string Terrain = "Terrain_Mesh";
-		public GlobalGeometryChecker(IntPtr ptr) : base(ptr) { }
-		private object CheckerCoroutine;
+		private object? CheckerCoroutine;
 
 		private void OnEnable()
 		{
@@ -24,7 +24,7 @@ namespace SuisHack.Components
 			var parallaxMapHash = Shader.PropertyToID("_ParallaxMap");
 			var occlusionMapHash = Shader.PropertyToID("_OcclusionMap");
 
-			var roadMesh = FindObjectsOfType<MeshRenderer>().Where(x => x.name == "Road_world").FirstOrDefault();
+			var roadMesh = GameObject.FindObjectsOfType<MeshRenderer>().Where(x => x.name == "Road_world").FirstOrDefault();
 
 			if (roadMesh != null)
 			{
@@ -57,7 +57,7 @@ namespace SuisHack.Components
 			}
 			else
 			{
-				SuisHackMain.loggerInst.Error("No mesh found!");
+				SuisHackMain.loggerInst!.Error("No mesh found!");
 			}
 		}
 

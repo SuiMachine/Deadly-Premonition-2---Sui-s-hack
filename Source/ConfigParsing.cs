@@ -1,11 +1,11 @@
 ﻿using MelonLoader;
 using System.Text.RegularExpressions;
 
-namespace SuisHack.Hacks
+namespace SuisHack
 {
 	public static class ConfigParsing
 	{
-		public static bool ParseResolution(string text, out LemonTuple<int, int> desiredResolution)
+		public static bool ParseResolution(string text, out LemonTuple<int, int>? desiredResolution)
 		{
 			desiredResolution = null;
 			while (text.IndexOf(' ') >= 0)
@@ -45,5 +45,6 @@ namespace SuisHack.Hacks
 			else
 				return false;
 		}
+
 	}
 }

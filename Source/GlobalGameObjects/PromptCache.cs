@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Il2Cpp;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,10 +37,10 @@ namespace SuisHack.GlobalGameObjects
 				}
 			}
 
-			SuisHackMain.loggerInst.Msg("Atlas cache created!");
+			SuisHackMain.loggerInst!.Msg("Atlas cache created!");
 		}
 
-		UISpriteData GetSpriteDataFromAtlas(UIAtlas atlas, string enumName)
+		UISpriteData? GetSpriteDataFromAtlas(UIAtlas atlas, string enumName)
 		{
 			for (int i = 0; i < atlas.spriteList.Count; i++)
 			{
@@ -51,9 +52,9 @@ namespace SuisHack.GlobalGameObjects
 			return null;
 		}
 
-		public UISpriteData GetReplacement(Enum keyEnum)
+		public UISpriteData? GetReplacement(Enum keyEnum)
 		{
-			if (translation.TryGetValue((T)keyEnum, out UISpriteData result))
+			if (translation.TryGetValue((T)keyEnum, out UISpriteData? result))
 			{
 				return result;
 			}

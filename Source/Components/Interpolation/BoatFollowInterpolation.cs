@@ -1,5 +1,5 @@
-﻿using MelonLoader;
-using System;
+﻿using Il2Cpp;
+using MelonLoader;
 using UnityEngine;
 
 namespace SuisHack.Components.Interpolation
@@ -9,8 +9,8 @@ namespace SuisHack.Components.Interpolation
 	{
 		public BoatFollowInterpolation(IntPtr ptr) : base(ptr) { }
 
-		BoatCameraFollow boatFollowReference;
-		GameObjectInterpolation interpolator;
+		BoatCameraFollow? boatFollowReference;
+		GameObjectInterpolation? interpolator;
 
 		void Start()
 		{
@@ -26,7 +26,7 @@ namespace SuisHack.Components.Interpolation
 		{
 			if (boatFollowReference == null)
 			{
-				interpolator.enabled = true;
+				interpolator!.enabled = true;
 				Destroy(this);
 			}
 		}

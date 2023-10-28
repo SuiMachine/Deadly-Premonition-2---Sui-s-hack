@@ -1,5 +1,5 @@
-﻿using MelonLoader;
-using System;
+﻿using Il2Cpp;
+using MelonLoader;
 using UnityEngine;
 
 namespace SuisHack.Components.Interpolation
@@ -9,8 +9,9 @@ namespace SuisHack.Components.Interpolation
 	{
 		public SmootherController(IntPtr ptr) : base(ptr) { }
 
+
 		public static bool InterpolateMovement;
-		public GameObject visionCameraReference;
+		public GameObject? visionCameraReference;
 		private bool DontInterpolate => VisionModeActive || CutscenePlaying;
 
 		private bool VisionModeActive => visionCameraReference != null && visionCameraReference.activeInHierarchy;

@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using System;
+using Il2Cpp;
 using UnityEngine;
 
 namespace SuisHack.Hacks.StateStracking
