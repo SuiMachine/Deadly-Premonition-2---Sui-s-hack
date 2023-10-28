@@ -18,5 +18,5 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("d8f834c8-2b43-49f6-88f5-afe5873b8972")]
 
-[assembly: MelonInfo(typeof(SuisHack.SuisHackMain), "SuisHack", "1.1.0", "SuicideMachine", "https://github.com/SuiMachine/Deadly-Premonition-2---Sui-s-hack/releases")]
+[assembly: MelonInfo(typeof(SuisHack.SuisHackMain), "SuisHack", "1.2.0", "SuicideMachine", "https://github.com/SuiMachine/Deadly-Premonition-2---Sui-s-hack/releases")]
 [assembly: MelonGame("ToyBox Inc.", "DeadlyPremonition2")]
