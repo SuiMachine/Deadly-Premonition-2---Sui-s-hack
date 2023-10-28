@@ -1,10 +1,11 @@
-﻿using Il2CppSystem.IO;
+﻿using Il2Cpp;
+//using Il2CppSystem.IO;
 using MelonLoader;
-using SuisHack.KeyboardSupport;
+//using SuisHack.KeyboardSupport;
 using System;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
-using static SuisHack.KeyboardSupport.SteamInputHook;
+//using static SuisHack.KeyboardSupport.SteamInputHook;
 
 namespace SuisHack
 {
@@ -20,16 +21,15 @@ namespace SuisHack
 			Other
 		}
 
-		public SettingsGUI(IntPtr ptr) : base(ptr) { }
-		public static SettingsGUI Instance { get; private set; }
+		public static SettingsGUI? Instance { get; private set; }
 		public static bool Display { get; private set; }
 		private Category category = Category.Root;
-		private ExposedSettings Settings;
-		string resolutionX;
-		string resolutionY;
-		string refreshRate;
+		private ExposedSettings? Settings;
+		string? resolutionX;
+		string? resolutionY;
+		string? refreshRate;
 		float restartingToDefault = 0;
-		private RebindingActions CurrentRebinding;
+		//private RebindingActions CurrentRebinding;
 
 		public static void Initialize()
 		{
@@ -43,17 +43,17 @@ namespace SuisHack
 
 		void Start()
 		{
-			Settings = Settings = SuisHackMain.Settings;
+			Settings = SuisHackMain.Settings;
 			resolutionX = Screen.width.ToString();
 			resolutionY = Screen.height.ToString();
-			refreshRate = Settings.Entry_Display_RefreshRate.Value.ToString();
+			refreshRate = Settings!.Entry_Display_RefreshRate.Value.ToString();
 		}
 
 		void Update()
 		{
 			if (Input.GetKeyDown(KeyCode.F11))
 			{
-				CurrentRebinding = RebindingActions.None;
+				//CurrentRebinding = RebindingActions.None;
 				Display = !Display;
 				if (Display)
 				{
@@ -73,8 +73,8 @@ namespace SuisHack
 		{
 			if (Display)
 			{
-				GUILayout.BeginVertical(null);
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
+				GUILayout.BeginVertical();
+				GUILayout.BeginHorizontal(GUI.skin.box);
 				DrawRoot();
 				GUILayout.EndHorizontal();
 				GUILayout.EndVertical();
@@ -90,7 +90,7 @@ namespace SuisHack
 						DrawQuality();
 						break;
 					case Category.Input:
-						switch (Settings.Input_Override.Value)
+						switch (Settings!.Input_Override.Value)
 						{
 							case ExposedSettings.InputType.SteamInput:
 								DrawSteamInput();
@@ -113,19 +113,19 @@ namespace SuisHack
 			richText.richText = true;
 
 			{
-				GUILayout.BeginVertical(GUI.skin.box, null);
-				GUILayout.Label("Options starting with * requires full game restart", null);
-				GUILayout.BeginHorizontal(null);
-				GUILayout.Label("* Input mode:", null);
-				if (GUILayout.Button("Change to keyboard and mouse", null))
-					Settings.Input_Override.Value = ExposedSettings.InputType.KeyboardAndMouse;
+				GUILayout.BeginVertical(GUI.skin.box);
+				GUILayout.Label("Options starting with * requires full game restart");
+				GUILayout.BeginHorizontal();
+				GUILayout.Label("* Input mode:");
+				if (GUILayout.Button("Change to keyboard and mouse"))
+					Settings!.Input_Override.Value = ExposedSettings.InputType.KeyboardAndMouse;
 				GUILayout.EndHorizontal();
 				GUILayout.EndVertical();
 			}
 
 			{
-				GUILayout.BeginVertical(GUI.skin.box, null);
-				Settings.Input_Controller_Vibration.Value = GUILayout.Toggle(Settings.Input_Controller_Vibration.Value, "Controller rumble / vibration", null);
+				GUILayout.BeginVertical(GUI.skin.box);
+				Settings!.Input_Controller_Vibration.Value = GUILayout.Toggle(Settings.Input_Controller_Vibration.Value, "Controller rumble / vibration");
 				GUILayout.EndVertical();
 			}
 
@@ -137,42 +137,42 @@ namespace SuisHack
 			richText.richText = true;
 
 			{
-				GUILayout.BeginVertical(GUI.skin.box, null);
-				GUILayout.BeginHorizontal(null);
-				GUILayout.Label("* Input mode:", null);
-				if (GUILayout.Button("Change to gamepad", null))
-					Settings.Input_Override.Value = ExposedSettings.InputType.SteamInput;
+				GUILayout.BeginVertical(GUI.skin.box);
+				GUILayout.BeginHorizontal();
+				GUILayout.Label("* Input mode:");
+				if (GUILayout.Button("Change to gamepad"))
+					Settings!.Input_Override.Value = ExposedSettings.InputType.SteamInput;
 
 				GUILayout.EndHorizontal();
 				GUILayout.EndVertical();
 			}
 			{
-				GUILayout.BeginVertical(GUI.skin.box, null);
-				GUILayout.Label("Options starting with * requires full game restart", null);
-				GUILayout.Label("For keyboard and mouse to work a controller is still required!", null);
-				GUILayout.Label("A fake / emulated controller can work, provided it is detected by SteamInput.", null);
-				GUILayout.Label("For mouse support to work, a modified gamemangers file is required.", null);
+				GUILayout.BeginVertical(GUI.skin.box);
+				GUILayout.Label("Options starting with * requires full game restart");
+				GUILayout.Label("For keyboard and mouse to work a controller is still required!");
+				GUILayout.Label("A fake / emulated controller can work, provided it is detected by SteamInput.");
+				GUILayout.Label("For mouse support to work, a modified gamemangers file is required.");
 				GUILayout.EndVertical();
 			}
 
 			{
-				GUILayout.BeginVertical(GUI.skin.box, null);
-				GUILayout.BeginHorizontal(null);
-				GUILayout.Label($"Mouse sensitivity: {Settings.Input_Mouse_Sensitivity.Value:0.00}", null);
-				Settings.Input_Mouse_Sensitivity.Value = GUILayout.HorizontalSlider(Settings.Input_Mouse_Sensitivity.Value, 0.05f, 2, null);
-				Settings.Input_MouseYAxisInversion.Value = GUILayout.Toggle(Settings.Input_MouseYAxisInversion.Value, "Mouse Y Axis inversion", null);
+				GUILayout.BeginVertical(GUI.skin.box);
+				GUILayout.BeginHorizontal();
+				GUILayout.Label($"Mouse sensitivity: {Settings!.Input_Mouse_Sensitivity.Value:0.00}");
+				Settings.Input_Mouse_Sensitivity.Value = GUILayout.HorizontalSlider(Settings.Input_Mouse_Sensitivity.Value, 0.05f, 2);
+				Settings.Input_MouseYAxisInversion.Value = GUILayout.Toggle(Settings.Input_MouseYAxisInversion.Value, "Mouse Y Axis inversion");
 				GUILayout.EndHorizontal();
 				GUILayout.EndVertical();
 			}
 
 			{
-				GUILayout.BeginVertical(GUI.skin.box, null);
-				if (GlobalInputHookHandler.Instance != null)
+				GUILayout.BeginVertical(GUI.skin.box);
+/*				if (GlobalInputHookHandler.Instance != null)
 				{
-					GUILayout.Label("<b>Key rebinding (affects only gameplay section)</b>", richText, null);
+					GUILayout.Label("<b>Key rebinding (affects only gameplay section)</b>", richText);
 
-					GUILayout.Label("", null);
-					GUILayout.Label("<b>Movement</b>", richText, null);
+					GUILayout.Label("");
+					GUILayout.Label("<b>Movement</b>", richText);
 					DrawRebind("Move forward", RebindingActions.Forward);
 					DrawRebind("Move backward", RebindingActions.Backward);
 					DrawRebind("Move left", RebindingActions.Left);
@@ -180,8 +180,8 @@ namespace SuisHack
 					DrawRebind("Crouch", RebindingActions.Crouch);
 					DrawRebind("Sprint / dodge", RebindingActions.Dash_Dodge);
 
-					GUILayout.Label("", null);
-					GUILayout.Label("<b>Actions</b>", richText, null);
+					GUILayout.Label("");
+					GUILayout.Label("<b>Actions</b>", richText);
 					DrawRebind("Fire / Punch", RebindingActions.Fire_Weapon_Punch);
 					DrawRebind("Aim a gun", RebindingActions.Point_Gun);
 					DrawRebind("Vision", RebindingActions.Vision);
@@ -233,13 +233,13 @@ namespace SuisHack
 				else
 				{
 					GUILayout.Label("<b>Keyboard / mouse not initialized - please restart the game!</b>", richText, null);
-				}
+				}*/
 
 				GUILayout.EndVertical();
 			}
 		}
 
-		private void RebindingAction(RebindingActions currentRebinding, KeyCode tempKey)
+/*		private void RebindingAction(RebindingActions currentRebinding, KeyCode tempKey)
 		{
 			switch (currentRebinding)
 			{
@@ -328,28 +328,28 @@ namespace SuisHack
 
 			GUILayout.EndHorizontal();
 		}
-
+*/
 
 		private void DrawRoot()
 		{
-			GUILayout.Label("Options category:", null);
-			if (GUILayout.Button("Display options", null))
+			GUILayout.Label("Options category:");
+			if (GUILayout.Button("Display options"))
 			{
 				category = Category.Display;
 			}
-			if (GUILayout.Button("Quality settings", null))
+			if (GUILayout.Button("Quality settings"))
 			{
 				category = Category.Quality;
 			}
-			if (GUILayout.Button("Input settings", null))
+			if (GUILayout.Button("Input settings"))
 			{
 				category = Category.Input;
 			}
-			if (GUILayout.Button("Other settings", null))
+			if (GUILayout.Button("Other settings"))
 			{
 				category = Category.Other;
 			}
-			Settings.Entry_Other_ShowAdvanced.Value = GUILayout.Toggle(Settings.Entry_Other_ShowAdvanced.Value, "Show advanced and experimental options", null);
+			Settings!.Entry_Other_ShowAdvanced.Value = GUILayout.Toggle(Settings.Entry_Other_ShowAdvanced.Value, "Show advanced and experimental options");
 		}
 
 		private void DrawDisplay()
@@ -357,26 +357,26 @@ namespace SuisHack
 			GUIStyle richText = GUI.skin.label;
 			richText.richText = true;
 
-			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			GUILayout.Label("<b>Display settings:</b>", richText, null);
+			GUILayout.BeginHorizontal(GUI.skin.box);
+			GUILayout.Label("<b>Display settings:</b>", richText);
 			GUILayout.EndHorizontal();
 
 			//Resolution
 			{
-				GUILayout.BeginVertical(GUI.skin.box, null);
-				GUILayout.BeginHorizontal(null);
-				GUILayout.Label($"Current resolution ({Screen.width}x{Screen.height})", null);
+				GUILayout.BeginVertical(GUI.skin.box);
+				GUILayout.BeginHorizontal();
+				GUILayout.Label($"Current resolution ({Screen.width}x{Screen.height})");
 				GUILayout.EndHorizontal();
-				GUILayout.BeginHorizontal(null);
-				GUILayout.Label($"Desired resolution:", null);
-				resolutionX = GUILayout.TextField(resolutionX, null);
-				GUILayout.Label($"x", null);
-				resolutionY = GUILayout.TextField(resolutionY, null);
-				GUILayout.Label($"@", null);
-				refreshRate = GUILayout.TextField(refreshRate, null);
-				GUILayout.Label($"Hz", null);
+				GUILayout.BeginHorizontal();
+				GUILayout.Label($"Desired resolution:");
+				resolutionX = GUILayout.TextField(resolutionX);
+				GUILayout.Label($"x");
+				resolutionY = GUILayout.TextField(resolutionY);
+				GUILayout.Label($"@");
+				refreshRate = GUILayout.TextField(refreshRate);
+				GUILayout.Label($"Hz");
 
-				if (GUILayout.Button("Apply", null))
+				if (GUILayout.Button("Apply"))
 				{
 					var newResX = Screen.width;
 					var newResY = Screen.height;
@@ -400,7 +400,7 @@ namespace SuisHack
 							newRefreshRate = refr;
 					}
 
-					Screen.SetResolution(newResX, newResY, Settings.Entry_Display_DisplayMode.Value, newRefreshRate);
+					Screen.SetResolution(newResX, newResY, Settings!.Entry_Display_DisplayMode.Value, newRefreshRate);
 					Settings.Entry_Display_Resolution.Value = $"{newResX}x{newResY}";
 					resolutionX = newResX.ToString();
 					resolutionY = newResY.ToString();
@@ -412,29 +412,29 @@ namespace SuisHack
 
 			//Display mode
 			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				GUILayout.Label($"Display mode ({Screen.fullScreenMode}):", null);
+				GUILayout.BeginHorizontal(GUI.skin.box);
+				GUILayout.Label($"Display mode ({Screen.fullScreenMode}):");
 
-				if (GUILayout.Button("Exclusive fullscreen", null))
+				if (GUILayout.Button("Exclusive fullscreen"))
 				{
-					Settings.Entry_Display_DisplayMode.Value = FullScreenMode.ExclusiveFullScreen;
+					Settings!.Entry_Display_DisplayMode.Value = FullScreenMode.ExclusiveFullScreen;
 					Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, Settings.Entry_Display_DisplayMode.Value, Screen.currentResolution.refreshRate);
 					if (Settings.Entry_Display_Vsync.Value)
 						Settings.Entry_Display_RefreshRate.Value = Screen.currentResolution.refreshRate;
 				}
-				if (GUILayout.Button("Maximized window", null))
+				if (GUILayout.Button("Maximized window"))
 				{
-					Settings.Entry_Display_DisplayMode.Value = FullScreenMode.MaximizedWindow;
+					Settings!.Entry_Display_DisplayMode.Value = FullScreenMode.MaximizedWindow;
 					Screen.SetResolution(Screen.width, Screen.height, Settings.Entry_Display_DisplayMode.Value, 0);
 				}
-				if (GUILayout.Button("Borderless window", null))
+				if (GUILayout.Button("Borderless window"))
 				{
-					Settings.Entry_Display_DisplayMode.Value = FullScreenMode.FullScreenWindow;
+					Settings!.Entry_Display_DisplayMode.Value = FullScreenMode.FullScreenWindow;
 					Screen.SetResolution(Screen.width, Screen.height, Settings.Entry_Display_DisplayMode.Value, 0);
 				}
-				if (GUILayout.Button("Windowed", null))
+				if (GUILayout.Button("Windowed"))
 				{
-					Settings.Entry_Display_DisplayMode.Value = FullScreenMode.Windowed;
+					Settings!.Entry_Display_DisplayMode.Value = FullScreenMode.Windowed;
 					Screen.SetResolution(Screen.width, Screen.height, Settings.Entry_Display_DisplayMode.Value, 0);
 
 				}
@@ -443,16 +443,16 @@ namespace SuisHack
 
 			//Vsync
 			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
+				GUILayout.BeginHorizontal(GUI.skin.box);
 				var oldValue = QualitySettings.vSyncCount > 0 ? true : false;
-				var newValue = GUILayout.Toggle(oldValue, "V-sync", null);
+				var newValue = GUILayout.Toggle(oldValue, "V-sync");
 				if (newValue != oldValue)
 				{
 					QualitySettings.vSyncCount = newValue ? 1 : 0;
-					Settings.Entry_Display_Vsync.Value = newValue;
+					Settings!.Entry_Display_Vsync.Value = newValue;
 					if (!newValue)
 					{
-						Application.targetFrameRate = Settings.Entry_DesiredFramerate.Value;
+						Application.targetFrameRate = Settings!.Entry_DesiredFramerate.Value;
 					}
 				}
 				GUILayout.EndHorizontal();
@@ -462,9 +462,9 @@ namespace SuisHack
 			{
 				if (QualitySettings.vSyncCount == 0)
 				{
-					GUILayout.BeginHorizontal(GUI.skin.box, null);
-					GUILayout.Label($"FPS cap ({Settings.Entry_DesiredFramerate.Value})", null);
-					Settings.Entry_DesiredFramerate.Value = (int)GUILayout.HorizontalSlider(Settings.Entry_DesiredFramerate.Value, -1, 1000, null);
+					GUILayout.BeginHorizontal(GUI.skin.box);
+					GUILayout.Label($"FPS cap ({Settings!.Entry_DesiredFramerate.Value})");
+					Settings.Entry_DesiredFramerate.Value = (int)GUILayout.HorizontalSlider(Settings.Entry_DesiredFramerate.Value, -1, 1000);
 					GUILayout.EndHorizontal();
 				}
 			}
@@ -474,14 +474,14 @@ namespace SuisHack
 		{
 			GUIStyle richText = GUI.skin.label;
 			richText.richText = true;
-			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			GUILayout.Label("<b>Quality settings:</b>", richText, null);
+			GUILayout.BeginHorizontal(GUI.skin.box);
+			GUILayout.Label("<b>Quality settings:</b>", richText);
 			GUILayout.EndHorizontal();
 
-			//Antialiasing
+/*			//Antialiasing
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				GUILayout.Label($"Antialiasing filter: ({Hacks.PostProcessLayerHook.GetShortName()}):", null);
+				GUILayout.Label($"Antialiasing filter: ({Hacks.PostProcessLayerHook.GetShortName()}):");
 				if (GUILayout.Button("None", null))
 					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.None;
 				if (GUILayout.Button("FXAA", null))
@@ -489,7 +489,7 @@ namespace SuisHack
 
 				if (GUILayout.Button("SMAA", null))
 					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.SubpixelMorphologicalAntialiasing;
-				if(Settings.Entry_Other_ShowAdvanced.Value)
+				if (Settings.Entry_Other_ShowAdvanced.Value)
 				{
 					if (GUILayout.Button("TAA (Epilepsy warning!)", null))
 						Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.TemporalAntialiasing;
@@ -497,31 +497,31 @@ namespace SuisHack
 
 
 				GUILayout.EndHorizontal();
-			}
+			}*/
 
 			//Anisotropic filtering Bias
 			{
-				GUILayout.BeginVertical(GUI.skin.box, null);
-				GUILayout.BeginHorizontal(null);
-				GUILayout.Label($"Anisotropic filtering mode: ({QualitySettings.anisotropicFiltering}):", null);
+				GUILayout.BeginVertical(GUI.skin.box);
+				GUILayout.BeginHorizontal();
+				GUILayout.Label($"Anisotropic filtering mode: ({QualitySettings.anisotropicFiltering}):");
 
-				if (GUILayout.Button("Force disabled", null))
-					Settings.Entry_AnistropicFiltering.Value = AnisotropicFiltering.Disable;
+				if (GUILayout.Button("Force disabled"))
+					Settings!.Entry_AnistropicFiltering.Value = AnisotropicFiltering.Disable;
 
-				if (GUILayout.Button("Per texture", null))
-					Settings.Entry_AnistropicFiltering.Value = AnisotropicFiltering.Enable;
+				if (GUILayout.Button("Per texture"))
+					Settings! .Entry_AnistropicFiltering.Value = AnisotropicFiltering.Enable;
 
-				if (GUILayout.Button("Force enabled", null))
-					Settings.Entry_AnistropicFiltering.Value = AnisotropicFiltering.ForceEnable;
+				if (GUILayout.Button("Force enabled"))
+					Settings!.Entry_AnistropicFiltering.Value = AnisotropicFiltering.ForceEnable;
 
 				GUILayout.EndHorizontal();
 
 				if (QualitySettings.anisotropicFiltering == AnisotropicFiltering.ForceEnable)
 				{
-					var oldValue = Settings.Entry_AnistropicFilteringValue.Value;
-					GUILayout.BeginHorizontal(null);
-					GUILayout.Label($"Anisotropic filtering level ({oldValue}): ", null);
-					Settings.Entry_AnistropicFilteringValue.Value = (int)GUILayout.HorizontalSlider(Settings.Entry_AnistropicFilteringValue.Value, -1, 16, null);
+					var oldValue = Settings!.Entry_AnistropicFilteringValue.Value;
+					GUILayout.BeginHorizontal();
+					GUILayout.Label($"Anisotropic filtering level ({oldValue}): ");
+					Settings.Entry_AnistropicFilteringValue.Value = (int)GUILayout.HorizontalSlider(Settings.Entry_AnistropicFilteringValue.Value, -1, 16);
 					GUILayout.EndHorizontal();
 				}
 
@@ -530,20 +530,20 @@ namespace SuisHack
 
 			//Shadows
 			{
-				GUILayout.BeginVertical(GUI.skin.box, null);
+				GUILayout.BeginVertical(GUI.skin.box);
 
 				//Shadow mode
-				if (Settings.Entry_Other_ShowAdvanced.Value)
+				if (Settings!.Entry_Other_ShowAdvanced.Value)
 				{
-					GUILayout.BeginHorizontal(null);
-					GUILayout.Label($"Shadows ({QualitySettings.shadows}):", null);
-					if (GUILayout.Button("None", null))
+					GUILayout.BeginHorizontal();
+					GUILayout.Label($"Shadows ({QualitySettings.shadows}):");
+					if (GUILayout.Button("None"))
 						Settings.Entry_Quality_ShadowsQuality.Value = ShadowQuality.Disable;
 
-					if (GUILayout.Button("Hard only", null))
+					if (GUILayout.Button("Hard only"))
 						Settings.Entry_Quality_ShadowsQuality.Value = ShadowQuality.HardOnly;
 
-					if (GUILayout.Button("Soft", null))
+					if (GUILayout.Button("Soft"))
 						Settings.Entry_Quality_ShadowsQuality.Value = ShadowQuality.All;
 
 					GUILayout.EndHorizontal();
@@ -551,18 +551,18 @@ namespace SuisHack
 
 				//Shadow resolution
 				{
-					GUILayout.BeginHorizontal(null);
-					GUILayout.Label($"Shadow resolution ({QualitySettings.shadowResolution}):", null);
-					if (GUILayout.Button("Low", null))
+					GUILayout.BeginHorizontal();
+					GUILayout.Label($"Shadow resolution ({QualitySettings.shadowResolution}):");
+					if (GUILayout.Button("Low"))
 						Settings.Entry_Quality_ShadowsResolution.Value = ShadowResolution.Low;
 
-					if (GUILayout.Button("Medium", null))
+					if (GUILayout.Button("Medium"))
 						Settings.Entry_Quality_ShadowsResolution.Value = ShadowResolution.Medium;
 
-					if (GUILayout.Button("High", null))
+					if (GUILayout.Button("High"))
 						Settings.Entry_Quality_ShadowsResolution.Value = ShadowResolution.High;
 
-					if (GUILayout.Button("Very High", null))
+					if (GUILayout.Button("Very High"))
 						Settings.Entry_Quality_ShadowsResolution.Value = ShadowResolution.VeryHigh;
 
 					GUILayout.EndHorizontal();
@@ -570,10 +570,10 @@ namespace SuisHack
 
 				//Shadow distance
 				{
-					GUILayout.BeginHorizontal(null);
+					GUILayout.BeginHorizontal();
 					var val = QualitySettings.shadowDistance;
-					GUILayout.Label($"Shadow distance: ({QualitySettings.shadowDistance}):", null);
-					val = Mathf.Round(GUILayout.HorizontalSlider(val, 10, 1000, null));
+					GUILayout.Label($"Shadow distance: ({QualitySettings.shadowDistance}):");
+					val = Mathf.Round(GUILayout.HorizontalSlider(val, 10, 1000));
 
 					if (val != QualitySettings.shadowDistance)
 					{
@@ -583,13 +583,13 @@ namespace SuisHack
 				}
 
 				{
-					GUILayout.BeginHorizontal(null);
-					GUILayout.Label($"Shadow cascades: ({QualitySettings.shadowCascades}):", null);
-					if (GUILayout.Button("2", null))
+					GUILayout.BeginHorizontal();
+					GUILayout.Label($"Shadow cascades: ({QualitySettings.shadowCascades}):");
+					if (GUILayout.Button("2"))
 					{
 						Settings.Entry_Quality_Use4ShadowCascades.Value = false;
 					}
-					if (GUILayout.Button("4", null))
+					if (GUILayout.Button("4"))
 					{
 						Settings.Entry_Quality_Use4ShadowCascades.Value = true;
 					}
@@ -600,10 +600,10 @@ namespace SuisHack
 				{
 					if (QualitySettings.shadowCascades == 2)
 					{
-						GUILayout.BeginHorizontal(null);
-						GUILayout.Label($"Shadow cascades  2 split: ({QualitySettings.shadowCascade2Split:0.00}):", null);
+						GUILayout.BeginHorizontal();
+						GUILayout.Label($"Shadow cascades  2 split: ({QualitySettings.shadowCascade2Split:0.00}):");
 						float value = QualitySettings.shadowCascade2Split;
-						QualitySettings.shadowCascade2Split = GUILayout.HorizontalSlider(value, 0.01f, 0.5f, null);
+						QualitySettings.shadowCascade2Split = GUILayout.HorizontalSlider(value, 0.01f, 0.5f);
 						if (QualitySettings.shadowCascade2Split != value)
 							Settings.Entry_Quality_ShadowTwoSplitValue.Value = QualitySettings.shadowCascade2Split;
 						GUILayout.EndHorizontal();
@@ -613,17 +613,17 @@ namespace SuisHack
 						float cascade1 = QualitySettings.shadowCascade4Split.x;
 						float cascade2 = QualitySettings.shadowCascade4Split.y;
 						float cascade3 = QualitySettings.shadowCascade4Split.z;
-						GUILayout.BeginHorizontal(null);
-						GUILayout.Label($"Shadow cascades 1 split: ({cascade1:0.000}):", null);
-						cascade1 = GUILayout.HorizontalSlider(cascade1, 0.01f, 0.5f, null);
+						GUILayout.BeginHorizontal();
+						GUILayout.Label($"Shadow cascades 1 split: ({cascade1:0.000}):");
+						cascade1 = GUILayout.HorizontalSlider(cascade1, 0.01f, 0.5f);
 						GUILayout.EndHorizontal();
-						GUILayout.BeginHorizontal(null);
-						GUILayout.Label($"Shadow cascades 2 split: ({cascade2:0.000}):", null);
-						cascade2 = GUILayout.HorizontalSlider(cascade2, 0.1f, 0.8f, null);
+						GUILayout.BeginHorizontal();
+						GUILayout.Label($"Shadow cascades 2 split: ({cascade2:0.000}):");
+						cascade2 = GUILayout.HorizontalSlider(cascade2, 0.1f, 0.8f);
 						GUILayout.EndHorizontal();
-						GUILayout.BeginHorizontal(null);
-						GUILayout.Label($"Shadow cascades 3 split: ({cascade3:0.000}):", null);
-						cascade3 = GUILayout.HorizontalSlider(cascade3, 0.02f, 0.9f, null);
+						GUILayout.BeginHorizontal();
+						GUILayout.Label($"Shadow cascades 3 split: ({cascade3:0.000}):");
+						cascade3 = GUILayout.HorizontalSlider(cascade3, 0.02f, 0.9f);
 						GUILayout.EndHorizontal();
 
 						if (cascade2 < cascade1)
@@ -644,7 +644,7 @@ namespace SuisHack
 				GUILayout.EndVertical();
 			}
 
-			{
+/*			{
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				var oldValue = Hacks.PostProcessLayerHook.FarClipDistance;
 				GUILayout.Label($"Far clip distance ({Hacks.PostProcessLayerHook.FarClipDistance}):", null);
@@ -653,14 +653,14 @@ namespace SuisHack
 					Settings.Entry_Quality_CameraFarPlaneDistance.Value = newValue;
 
 				GUILayout.EndHorizontal();
-			}
+			}*/
 
 			//LOD Bias
 			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
+				GUILayout.BeginHorizontal(GUI.skin.box);
 				var oldValue = QualitySettings.lodBias;
-				GUILayout.Label($"LOD Bias ({QualitySettings.lodBias:0.0}):", null);
-				QualitySettings.lodBias = GUILayout.HorizontalSlider(QualitySettings.lodBias, 0.5f, 4f, null);
+				GUILayout.Label($"LOD Bias ({QualitySettings.lodBias:0.0}):");
+				QualitySettings.lodBias = GUILayout.HorizontalSlider(QualitySettings.lodBias, 0.5f, 4f);
 				if (oldValue != QualitySettings.lodBias)
 					Settings.Entry_Quality_LODBias.Value = QualitySettings.lodBias;
 
@@ -670,10 +670,10 @@ namespace SuisHack
 			//Pixel Light Count
 			if (Settings.Entry_Other_ShowAdvanced.Value)
 			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
+				GUILayout.BeginHorizontal(GUI.skin.box);
 				var oldValue = QualitySettings.pixelLightCount;
-				GUILayout.Label($"Pixel light count: ({QualitySettings.pixelLightCount}):", null);
-				QualitySettings.pixelLightCount = (int)GUILayout.HorizontalSlider(QualitySettings.pixelLightCount, 0, 8, null);
+				GUILayout.Label($"Pixel light count: ({QualitySettings.pixelLightCount}):");
+				QualitySettings.pixelLightCount = (int)GUILayout.HorizontalSlider(QualitySettings.pixelLightCount, 0, 8);
 				if (oldValue != QualitySettings.pixelLightCount)
 					Settings.Entry_Quality_PixelLightCount.Value = QualitySettings.pixelLightCount;
 
@@ -682,18 +682,18 @@ namespace SuisHack
 
 			//Texture Quality
 			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				GUILayout.Label($"Texture resolution ({GetTextureString(QualitySettings.masterTextureLimit)}):", null);
+				GUILayout.BeginHorizontal(GUI.skin.box);
+				GUILayout.Label($"Texture resolution ({GetTextureString(QualitySettings.masterTextureLimit)}):");
 
-				if (GUILayout.Button("Full", null))
+				if (GUILayout.Button("Full"))
 					Settings.Entry_Quality_TextureQuality.Value = 0;
-				if (GUILayout.Button("Half", null))
+				if (GUILayout.Button("Half"))
 					Settings.Entry_Quality_TextureQuality.Value = 1;
 
 				GUILayout.EndHorizontal();
 			}
 
-			//Planar reflections
+/*			//Planar reflections
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box, null);
 				GUILayout.Label($"Planar reflections resolution ({Hacks.MirrorReflectionHook.ReflectionSize}):", null);
@@ -703,13 +703,13 @@ namespace SuisHack
 					Settings.Entry_Quality_MirrorReflectionResolution.Value = (int)Mathf.Pow(2, newLog);
 
 				GUILayout.EndHorizontal();
-			}
+			}*/
 
-			//HBAO
+/*			//HBAO
 			{
 				GUILayout.BeginVertical(GUI.skin.box, null);
-				GUILayout.BeginHorizontal(null);
-				GUILayout.Label($"HBAO preset ({Hacks.PostProcessLayerHook.HBAO_Preset}):", null);
+				GUILayout.BeginHorizontal();
+				GUILayout.Label($"HBAO preset ({Hacks.PostProcessLayerHook.HBAO_Preset}):");
 				if (GUILayout.Button("Fastest", null))
 					Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastestPerformance;
 				if (GUILayout.Button("Fast", null))
@@ -727,19 +727,19 @@ namespace SuisHack
 				Settings.Entry_Quality_HBAO_Intensity.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_HBAO_Intensity.Value, 0.0f, 1.0f, null);
 				GUILayout.EndHorizontal();
 				GUILayout.EndVertical();
-			}
+			}*/
 
 			//Meh
 			{
-				GUILayout.BeginVertical(GUI.skin.box, null);
-				Settings.Entry_Quality_EdgeDetection.Value = GUILayout.Toggle(Settings.Entry_Quality_EdgeDetection.Value, "Edge detection post process filter", null);
+				GUILayout.BeginVertical(GUI.skin.box);
+				Settings.Entry_Quality_EdgeDetection.Value = GUILayout.Toggle(Settings.Entry_Quality_EdgeDetection.Value, "Edge detection post process filter");
 
 				if (Settings.Entry_Quality_EdgeDetection.Value && Settings.Entry_Quality_CameraFarPlaneDistance.Value > 800)
 				{
-					GUILayout.Label("Warning - extending far clip camera plane distance can cause issues with edge detection filter.\nIf you experience issues with lines on characters being displayed up close, try lowering the value below:", null);
-					GUILayout.BeginHorizontal(null);
-					GUILayout.Label($"Edge detection depth {Settings.Entry_Quality_EdgeDetectionDepth.Value:0.00}", null);
-					Settings.Entry_Quality_EdgeDetectionDepth.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_EdgeDetectionDepth.Value, 0, 1, null);
+					GUILayout.Label("Warning - extending far clip camera plane distance can cause issues with edge detection filter.\nIf you experience issues with lines on characters being displayed up close, try lowering the value below:");
+					GUILayout.BeginHorizontal();
+					GUILayout.Label($"Edge detection depth {Settings.Entry_Quality_EdgeDetectionDepth.Value:0.00}");
+					Settings.Entry_Quality_EdgeDetectionDepth.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_EdgeDetectionDepth.Value, 0, 1);
 					GUILayout.EndHorizontal();
 				}
 				else
@@ -750,60 +750,60 @@ namespace SuisHack
 
 			//SSR
 			{
-				GUILayout.BeginVertical(GUI.skin.box, null);
-				Settings.Entry_Quality_SSR_Enable.Value = GUILayout.Toggle(Settings.Entry_Quality_SSR_Enable.Value, "Enable SSR override", null);
+				GUILayout.BeginVertical(GUI.skin.box);
+				Settings.Entry_Quality_SSR_Enable.Value = GUILayout.Toggle(Settings.Entry_Quality_SSR_Enable.Value, "Enable SSR override");
 
 				if (Settings.Entry_Quality_SSR_Enable.Value)
 				{
-					GUILayout.BeginHorizontal(null);
-					GUILayout.Label($"SSR preset ({Hacks.PostProcessLayerHook.SSR_Preset}):", null);
-					if (GUILayout.Button("Lower", null))
+/*					GUILayout.BeginHorizontal();
+					GUILayout.Label($"SSR preset ({Hacks.PostProcessLayerHook.SSR_Preset}):");
+					if (GUILayout.Button("Lower"))
 						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Lower;
-					if (GUILayout.Button("Low", null))
+					if (GUILayout.Button("Low"))
 						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Low;
-					if (GUILayout.Button("Medium", null))
+					if (GUILayout.Button("Medium"))
 						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Medium;
-					if (GUILayout.Button("High", null))
+					if (GUILayout.Button("High"))
 						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.High;
-					if (GUILayout.Button("Higher", null))
+					if (GUILayout.Button("Higher"))
 						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Higher;
-					if (GUILayout.Button("Ultra", null))
+					if (GUILayout.Button("Ultra"))
 						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Ultra;
-					if (GUILayout.Button("Overkill", null))
+					if (GUILayout.Button("Overkill"))
 						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Overkill;
-					GUILayout.EndHorizontal();
+					GUILayout.EndHorizontal();*/
 
-					GUILayout.BeginHorizontal(null);
-					GUILayout.Label($"SSR resolution ({Hacks.PostProcessLayerHook.SSR_Resolution}):", null);
-					if (GUILayout.Button("Downsampled", null))
+/*					GUILayout.BeginHorizontal();
+					GUILayout.Label($"SSR resolution ({Hacks.PostProcessLayerHook.SSR_Resolution}):");
+					if (GUILayout.Button("Downsampled"))
 						Settings.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.Downsampled;
-					if (GUILayout.Button("FullSize", null))
+					if (GUILayout.Button("FullSize"))
 						Settings.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.FullSize;
-					if (GUILayout.Button("Supersampled", null))
+					if (GUILayout.Button("Supersampled"))
 						Settings.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.Supersampled;
-					GUILayout.EndHorizontal();
+					GUILayout.EndHorizontal();*/
 
 					if (Settings.Entry_Other_ShowAdvanced.Value)
 					{
-						GUILayout.BeginHorizontal(null);
-						GUILayout.Label($"SSR Tickness ({Hacks.PostProcessLayerHook.SSR_Tickness:0.0}):", null);
-						Settings.Entry_Quality_SSR_Tickness.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_Tickness.Value, 0, 1, null);
-						GUILayout.EndHorizontal();
+/*						GUILayout.BeginHorizontal();
+						GUILayout.Label($"SSR Tickness ({Hacks.PostProcessLayerHook.SSR_Tickness:0.0}):");
+						Settings.Entry_Quality_SSR_Tickness.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_Tickness.Value, 0, 1);
+						GUILayout.EndHorizontal();*/
 
-						GUILayout.BeginHorizontal(null);
+/*						GUILayout.BeginHorizontal(null);
 						GUILayout.Label($"SSR Vignette ({Hacks.PostProcessLayerHook.SSR_Vignette:0.0}):", null);
 						Settings.Entry_Quality_SSR_Vignette.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_Vignette.Value, 0, 1, null);
-						GUILayout.EndHorizontal();
+						GUILayout.EndHorizontal();*/
 
-						GUILayout.BeginHorizontal(null);
+/*						GUILayout.BeginHorizontal(null);
 						GUILayout.Label($"SSR Distance Fade ({Hacks.PostProcessLayerHook.SSR_DistanceFade:0.00}):", null);
 						Settings.Entry_Quality_SSR_DistanceFade.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_DistanceFade.Value, 0, 0.5f, null);
-						GUILayout.EndHorizontal();
+						GUILayout.EndHorizontal();*/
 
-						GUILayout.BeginHorizontal(null);
+/*						GUILayout.BeginHorizontal(null);
 						GUILayout.Label($"SSR Max Marching Distance ({Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance:0}):", null);
 						Settings.Entry_Quality_SSR_MaxMarchingDistance.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_MaxMarchingDistance.Value, 50, 250, null);
-						GUILayout.EndHorizontal();
+						GUILayout.EndHorizontal();*/
 					}
 				}
 				GUILayout.EndVertical();
@@ -812,18 +812,18 @@ namespace SuisHack
 			//Color space
 			if (Settings.Entry_Other_ShowAdvanced.Value)
 			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				GUILayout.Label($"Color space: {QualitySettings.activeColorSpace}", null);
-				GUILayout.Label($"Desired color space: {QualitySettings.desiredColorSpace}", null);
+				GUILayout.BeginHorizontal(GUI.skin.box);
+				GUILayout.Label($"Color space: {QualitySettings.activeColorSpace}");
+				GUILayout.Label($"Desired color space: {QualitySettings.desiredColorSpace}");
 				GUILayout.EndHorizontal();
 			}
 
-			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			if (GUILayout.Button("Unlock restart to defaults", null))
+			GUILayout.BeginHorizontal(GUI.skin.box);
+			if (GUILayout.Button("Unlock restart to defaults"))
 				restartingToDefault = 5f;
 			if (restartingToDefault > 0)
 			{
-				if (GUILayout.Button($"Restart to default {restartingToDefault:0.0}s", null))
+				if (GUILayout.Button($"Restart to default {restartingToDefault:0.0}s"))
 				{
 					RestartToDefault();
 				}
@@ -833,7 +833,7 @@ namespace SuisHack
 
 		private void RestartToDefault()
 		{
-			Settings.Entry_AnistropicFiltering.Value = Settings.Entry_AnistropicFiltering.DefaultValue;
+			Settings!.Entry_AnistropicFiltering.Value = Settings.Entry_AnistropicFiltering.DefaultValue;
 			QualitySettings.anisotropicFiltering = Settings.Entry_AnistropicFiltering.Value;
 
 			Settings.Entry_AnistropicFilteringValue.Value = Settings.Entry_AnistropicFilteringValue.DefaultValue;
@@ -890,40 +890,40 @@ namespace SuisHack
 		{
 			GUIStyle richText = GUI.skin.label;
 			richText.richText = true;
-			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			GUILayout.Label("<b>Other settings:</b>", richText, null);
+			GUILayout.BeginHorizontal(GUI.skin.box);
+			GUILayout.Label("<b>Other settings:</b>", richText);
 			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			GUILayout.Label("Settings with * at the beginning require game restart!", null);
+			GUILayout.BeginHorizontal(GUI.skin.box);
+			GUILayout.Label("Settings with * at the beginning require game restart!");
 			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			Settings.Entry_Other_SkipIntros.Value = GUILayout.Toggle(Settings.Entry_Other_SkipIntros.Value, "* Skip intros", null);
+			GUILayout.BeginHorizontal(GUI.skin.box);
+			Settings!.Entry_Other_SkipIntros.Value = GUILayout.Toggle(Settings.Entry_Other_SkipIntros.Value, "* Skip intros");
 			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			Settings.Entry_Other_InterpolateMovement.Value = GUILayout.Toggle(Settings.Entry_Other_InterpolateMovement.Value, "Interpolate movement", null);
+			GUILayout.BeginHorizontal(GUI.skin.box);
+			Settings.Entry_Other_InterpolateMovement.Value = GUILayout.Toggle(Settings.Entry_Other_InterpolateMovement.Value, "Interpolate movement");
 			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			GUILayout.Label($"* Geometry improvements ({Settings.Entry_Other_GeometryImprovements.Value}):", null);
-			if (GUILayout.Button("Disabled", null))
+			GUILayout.BeginHorizontal(GUI.skin.box);
+			GUILayout.Label($"* Geometry improvements ({Settings.Entry_Other_GeometryImprovements.Value}):");
+			if (GUILayout.Button("Disabled"))
 				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.Disabled;
-			if (GUILayout.Button("Enabled", null))
+			if (GUILayout.Button("Enabled"))
 				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.Enabled;
 			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			GUILayout.Label($"* Light improvements ({Settings.Entry_Other_LightImprovements.Value}):", null);
-			if (GUILayout.Button("Disabled", null))
+			GUILayout.BeginHorizontal(GUI.skin.box);
+			GUILayout.Label($"* Light improvements ({Settings.Entry_Other_LightImprovements.Value}):");
+			if (GUILayout.Button("Disabled"))
 				Settings.Entry_Other_LightImprovements.Value = ExposedSettings.LightImprovements.Disabled;
-			if (GUILayout.Button("Minor (performance safe)", null))
+			if (GUILayout.Button("Minor (performance safe)"))
 				Settings.Entry_Other_LightImprovements.Value = ExposedSettings.LightImprovements.Minor;
-			if (GUILayout.Button("All", null))
+			if (GUILayout.Button("All"))
 				Settings.Entry_Other_LightImprovements.Value = ExposedSettings.LightImprovements.All;
 			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal(GUI.skin.box, null);
-			GUILayout.BeginVertical(null);
+			GUILayout.BeginHorizontal(GUI.skin.box);
+			GUILayout.BeginVertical();
 			var promptsUsed = Settings.Entry_Other_Prompts.Value == "" ? "None" : Settings.Entry_Other_Prompts.Value;
 
-			GUILayout.Label($"* Prompts used: \"{promptsUsed}\" - possible:", null);
-			if (GUILayout.Button("None", null))
+			GUILayout.Label($"* Prompts used: \"{promptsUsed}\" - possible:");
+			if (GUILayout.Button("None"))
 				Settings.Entry_Other_Prompts.Value = "";
 
 			var files = Directory.GetFiles(Path.Combine(Application.streamingAssetsPath, "Prompts"), "*.manifest");
@@ -934,7 +934,7 @@ namespace SuisHack
 				if (fileName == "keyboard")
 					continue;
 
-				if (GUILayout.Button(fileName, null))
+				if (GUILayout.Button(fileName))
 				{
 					Settings.Entry_Other_Prompts.Value = fileName;
 				}

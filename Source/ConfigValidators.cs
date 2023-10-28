@@ -1,5 +1,4 @@
-﻿using Il2CppSystem;
-using MelonLoader.Preferences;
+﻿using MelonLoader.Preferences;
 
 namespace SuisHack
 {

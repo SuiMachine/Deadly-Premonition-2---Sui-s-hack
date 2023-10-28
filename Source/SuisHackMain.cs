@@ -1,24 +1,30 @@
 ﻿using MelonLoader;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace SuisHack
 {
 	public class SuisHackMain : MelonMod
 	{
 		private const string OPENWORLDSCENENAME = "OpenWorld";
-		public static HarmonyLib.Harmony harmonyInst { get; private set; }
-		public static MelonLogger.Instance loggerInst { get; private set; }
-		public static ExposedSettings Settings;
+
+		public static HarmonyLib.Harmony? harmonyInst { get; private set; }
+		public static MelonLogger.Instance? loggerInst { get; private set; }
+
+		public static ExposedSettings? Settings;
 		private bool AppliedResolutionInMainMenu;
 
-		public override void OnApplicationStart()
+		public override void OnEarlyInitializeMelon()
 		{
 			loggerInst = LoggerInstance;
 			harmonyInst = HarmonyInstance;
+			LoggerInstance.Msg("Sui loaded");
+		}
+
+		public override void OnInitializeMelon()
+		{
 			LoggerInstance.Msg("Loading Sui's Hack loaded");
 			Settings = new ExposedSettings();
-			switch (Settings.Input_Override.Value)
+/*		    switch (Settings.Input_Override.Value)
 			{
 				case ExposedSettings.InputType.SteamInput:
 					GamepadSupport.GamepadPrompts.Initialize();
@@ -27,33 +33,30 @@ namespace SuisHack
 					KeyboardSupport.KeyboardPrompts.Initialize();
 					KeyboardSupport.SteamInputHook.InitializeKeyboardAndMouse();
 					break;
-			}
-
-			base.OnApplicationStart();
+			}*/
 		}
 
-		public override void OnApplicationLateStart()
+		public override void OnLateInitializeMelon()
 		{
-			base.OnApplicationLateStart();
+			base.OnLateInitializeMelon();
 
-			if (Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
+			if (Settings!.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
 			{
-				KeyboardSupport.GlobalInputHookHandler.Initialize();
+				//KeyboardSupport.GlobalInputHookHandler.Initialize();
 			}
-
 			SettingsGUI.Initialize();
 			InitializeManualHarmonyHooks();
+
 
 			LoggerInstance.Msg("Sui's Hack loaded");
 		}
 
 		private void InitializeManualHarmonyHooks()
 		{
-			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
+/*			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
 			Hacks.NpcTestHook.Initialize();
 			Hacks.Lights.LightActiveCheckHook.Initialize();
-			Hacks.Lights.NpcVehicleHook.Initialize();
-
+			Hacks.Lights.NpcVehicleHook.Initialize();*/
 		}
 
 		public override void OnSceneWasLoaded(int buildIndex, string sceneName)
@@ -64,7 +67,7 @@ namespace SuisHack
 				Application.targetFrameRate = Settings.Entry_DesiredFramerate.Value;
 				if (Settings.Input_Override.Value == ExposedSettings.InputType.SteamInput)
 				{
-					Components.VibrationController.Initialize();
+					//Components.VibrationController.Initialize();
 				}
 
 				if (sceneName == "TitleTest2")
@@ -79,7 +82,7 @@ namespace SuisHack
 					GameStateMachine.Gameplay = true;
 					if (Settings.Entry_Other_GeometryImprovements.Value >= ExposedSettings.GeometryImprovements.Enabled)
 					{
-						if (GameObject.FindObjectOfType<Components.GlobalGeometryChecker>() == null)
+/*						if (GameObject.FindObjectOfType<Components.GlobalGeometryChecker>() == null)
 						{
 							var scene = SceneManager.GetSceneByName(OPENWORLDSCENENAME);
 							var oldActiveScene = SceneManager.GetActiveScene();
@@ -87,16 +90,15 @@ namespace SuisHack
 							var newGameObject = new GameObject("WireRendererCorrection");
 							SceneManager.SetActiveScene(oldActiveScene);
 							newGameObject.AddComponent<Components.GlobalGeometryChecker>();
-						}
+						}*/
 					}
 				}
 				else
 				{
-					GameStateMachine.Gameplay = true;
-					LightImprovement.ModifyLights.ModifyOnSceneLoad(sceneName.ToLower());
+					//GameStateMachine.Gameplay = true;
+					//LightImprovement.ModifyLights.ModifyOnSceneLoad(sceneName.ToLower());
 				}
 			}
 		}
-
 	}
 }
