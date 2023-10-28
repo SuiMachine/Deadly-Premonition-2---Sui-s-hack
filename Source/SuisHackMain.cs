@@ -25,7 +25,7 @@ namespace SuisHack
 		{
 			LoggerInstance.Msg("Loading Sui's Hack loaded");
 			Settings = new ExposedSettings();
-		    switch (Settings.Input_Override!.Value)
+			switch (Settings.Input_Override!.Value)
 			{
 				case ExposedSettings.InputType.SteamInput:
 					GamepadSupport.GamepadPrompts.Initialize();
@@ -56,10 +56,8 @@ namespace SuisHack
 		{
 			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
 			Hacks.NpcTestHook.Initialize();
-
-			/*			
-						Hacks.Lights.LightActiveCheckHook.Initialize();
-						Hacks.Lights.NpcVehicleHook.Initialize();*/
+			Hacks.Lights.LightActiveCheckHook.Initialize();
+			Hacks.Lights.NpcVehicleHook.Initialize();
 		}
 
 		public override void OnSceneWasLoaded(int buildIndex, string sceneName)
@@ -99,7 +97,7 @@ namespace SuisHack
 				else
 				{
 					GameStateMachine.Gameplay = true;
-					//LightImprovement.ModifyLights.ModifyOnSceneLoad(sceneName.ToLower());
+					LightImprovement.ModifyLights.ModifyOnSceneLoad(sceneName.ToLower());
 				}
 			}
 		}
