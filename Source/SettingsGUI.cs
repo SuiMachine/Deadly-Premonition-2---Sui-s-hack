@@ -167,168 +167,168 @@ namespace SuisHack
 
 			{
 				GUILayout.BeginVertical(GUI.skin.box);
-/*				if (GlobalInputHookHandler.Instance != null)
-				{
-					GUILayout.Label("<b>Key rebinding (affects only gameplay section)</b>", richText);
+				/*				if (GlobalInputHookHandler.Instance != null)
+								{
+									GUILayout.Label("<b>Key rebinding (affects only gameplay section)</b>", richText);
 
-					GUILayout.Label("");
-					GUILayout.Label("<b>Movement</b>", richText);
-					DrawRebind("Move forward", RebindingActions.Forward);
-					DrawRebind("Move backward", RebindingActions.Backward);
-					DrawRebind("Move left", RebindingActions.Left);
-					DrawRebind("Move right", RebindingActions.Right);
-					DrawRebind("Crouch", RebindingActions.Crouch);
-					DrawRebind("Sprint / dodge", RebindingActions.Dash_Dodge);
+									GUILayout.Label("");
+									GUILayout.Label("<b>Movement</b>", richText);
+									DrawRebind("Move forward", RebindingActions.Forward);
+									DrawRebind("Move backward", RebindingActions.Backward);
+									DrawRebind("Move left", RebindingActions.Left);
+									DrawRebind("Move right", RebindingActions.Right);
+									DrawRebind("Crouch", RebindingActions.Crouch);
+									DrawRebind("Sprint / dodge", RebindingActions.Dash_Dodge);
 
-					GUILayout.Label("");
-					GUILayout.Label("<b>Actions</b>", richText);
-					DrawRebind("Fire / Punch", RebindingActions.Fire_Weapon_Punch);
-					DrawRebind("Aim a gun", RebindingActions.Point_Gun);
-					DrawRebind("Vision", RebindingActions.Vision);
-					DrawRebind("Interact / Reload / Accelerate", RebindingActions.Interact_Reload_Accellerate);
-					DrawRebind("Cancel / Break", RebindingActions.Cancel_Brake);
-					DrawRebind("Reset camera / fighting style", RebindingActions.Reset_Camera_Fighting_Style);
+									GUILayout.Label("");
+									GUILayout.Label("<b>Actions</b>", richText);
+									DrawRebind("Fire / Punch", RebindingActions.Fire_Weapon_Punch);
+									DrawRebind("Aim a gun", RebindingActions.Point_Gun);
+									DrawRebind("Vision", RebindingActions.Vision);
+									DrawRebind("Interact / Reload / Accelerate", RebindingActions.Interact_Reload_Accellerate);
+									DrawRebind("Cancel / Break", RebindingActions.Cancel_Brake);
+									DrawRebind("Reset camera / fighting style", RebindingActions.Reset_Camera_Fighting_Style);
 
-					GUILayout.Label("", null);
-					GUILayout.Label("<b>Actions</b>", richText, null);
-					DrawRebind("Display map", RebindingActions.Display_Map);
-					DrawRebind("Quest display", RebindingActions.Quest_Display);
-					DrawRebind("Skateboard", RebindingActions.Skateboard);
+									GUILayout.Label("", null);
+									GUILayout.Label("<b>Actions</b>", richText, null);
+									DrawRebind("Display map", RebindingActions.Display_Map);
+									DrawRebind("Quest display", RebindingActions.Quest_Display);
+									DrawRebind("Skateboard", RebindingActions.Skateboard);
 
-					DrawRebind("Switch slot to left", RebindingActions.SwitchSlotLeft);
-					DrawRebind("Switch slot to right", RebindingActions.SwitchSlotRight);
-					DrawRebind("Switch album display up", RebindingActions.SwitchAlbumDisplayUp);
-					DrawRebind("Switch album display down", RebindingActions.SwitchAlbumDisplayDown);
+									DrawRebind("Switch slot to left", RebindingActions.SwitchSlotLeft);
+									DrawRebind("Switch slot to right", RebindingActions.SwitchSlotRight);
+									DrawRebind("Switch album display up", RebindingActions.SwitchAlbumDisplayUp);
+									DrawRebind("Switch album display down", RebindingActions.SwitchAlbumDisplayDown);
 
-					if (CurrentRebinding != RebindingActions.None)
-					{
-						Event e = Event.current;
-						if (e.type != EventType.Used)
-						{
-							var tempKey = KeyCode.None;
-							if (e.isKey)
-								tempKey = e.keyCode;
-							else if (e.isMouse)
-							{
-								if (Input.GetKeyDown(KeyCode.Mouse0))
-									tempKey = KeyCode.Mouse0;
-								else if (Input.GetKeyDown(KeyCode.Mouse1))
-									tempKey = KeyCode.Mouse1;
-								else if (Input.GetKeyDown(KeyCode.Mouse2))
-									tempKey = KeyCode.Mouse2;
-								else if (Input.GetKeyDown(KeyCode.Mouse3))
-									tempKey = KeyCode.Mouse3;
-								else if (Input.GetKeyDown(KeyCode.Mouse4))
-									tempKey = KeyCode.Mouse4;
-							}
+									if (CurrentRebinding != RebindingActions.None)
+									{
+										Event e = Event.current;
+										if (e.type != EventType.Used)
+										{
+											var tempKey = KeyCode.None;
+											if (e.isKey)
+												tempKey = e.keyCode;
+											else if (e.isMouse)
+											{
+												if (Input.GetKeyDown(KeyCode.Mouse0))
+													tempKey = KeyCode.Mouse0;
+												else if (Input.GetKeyDown(KeyCode.Mouse1))
+													tempKey = KeyCode.Mouse1;
+												else if (Input.GetKeyDown(KeyCode.Mouse2))
+													tempKey = KeyCode.Mouse2;
+												else if (Input.GetKeyDown(KeyCode.Mouse3))
+													tempKey = KeyCode.Mouse3;
+												else if (Input.GetKeyDown(KeyCode.Mouse4))
+													tempKey = KeyCode.Mouse4;
+											}
 
-							if (tempKey != KeyCode.None)
-							{
-								RebindingAction(CurrentRebinding, tempKey);
-								CurrentRebinding = RebindingActions.None;
-							}
-						}
-					}
-				}
-				else
-				{
-					GUILayout.Label("<b>Keyboard / mouse not initialized - please restart the game!</b>", richText, null);
-				}*/
+											if (tempKey != KeyCode.None)
+											{
+												RebindingAction(CurrentRebinding, tempKey);
+												CurrentRebinding = RebindingActions.None;
+											}
+										}
+									}
+								}
+								else
+								{
+									GUILayout.Label("<b>Keyboard / mouse not initialized - please restart the game!</b>", richText, null);
+								}*/
 
 				GUILayout.EndVertical();
 			}
 		}
 
-/*		private void RebindingAction(RebindingActions currentRebinding, KeyCode tempKey)
-		{
-			switch (currentRebinding)
-			{
-				case RebindingActions.Forward:
-					Settings.Input_Analog_LeftStick_Up.Value = tempKey;
-					break;
-				case RebindingActions.Backward:
-					Settings.Input_Analog_LeftStick_Down.Value = tempKey;
-					break;
-				case RebindingActions.Left:
-					Settings.Input_Analog_LeftStick_Left.Value = tempKey;
-					break;
-				case RebindingActions.Right:
-					Settings.Input_Analog_LeftStick_Right.Value = tempKey;
-					break;
-				case RebindingActions.Display_Map:
-					Settings.Input_Digital_Back_Button.Value = tempKey;
-					break;
-				case RebindingActions.Quest_Display:
-					Settings.Input_Digital_Start_Button.Value = tempKey;
-					break;
-				case RebindingActions.Point_Gun:
-					Settings.Input_Digital_LT.Value = tempKey;
-					break;
-				case RebindingActions.Vision:
-					Settings.Input_Digital_LB.Value = tempKey;
-					break;
-				case RebindingActions.Crouch:
-					Settings.Input_Digital_L_Stick_Button.Value = tempKey;
-					break;
-				case RebindingActions.Fire_Weapon_Punch:
-					Settings.Input_Digital_RT.Value = tempKey;
-					break;
-				case RebindingActions.Cancel_Brake:
-					Settings.Input_Digital_B_Button.Value = tempKey;
-					break;
-				case RebindingActions.Dash_Dodge:
-					Settings.Input_Digital_RB.Value = tempKey;
-					break;
-				case RebindingActions.Interact_Reload_Accellerate:
-					Settings.Input_Digital_A_Button.Value = tempKey;
-					break;
-				case RebindingActions.Reset_Camera_Fighting_Style:
-					Settings.Input_Digital_R_Stick_Button.Value = tempKey;
-					break;
-				case RebindingActions.Skateboard:
-					Settings.Input_Digital_Y_Button.Value = tempKey;
-					break;
-				case RebindingActions.SwitchAlbumDisplayDown:
-					Settings.Input_Digital_Down_Button.Value = tempKey;
-					break;
-				case RebindingActions.SwitchAlbumDisplayUp:
-					Settings.Input_Digital_Up_Button.Value = tempKey;
-					break;
-				case RebindingActions.SwitchSlotLeft:
-					Settings.Input_Digital_Left_Button.Value = tempKey;
-					break;
-				case RebindingActions.SwitchSlotRight:
-					Settings.Input_Digital_Right_Button.Value = tempKey;
-					break;
-			}
-		}
-
-		public void DrawRebind(string text, RebindingActions rebindingKey)
-		{
-			var fixedwidth = new UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption>(1);
-			fixedwidth[0] = GUILayout.Width(300);
-
-			GUILayout.BeginHorizontal(null);
-			GUILayout.Label(text, fixedwidth);
-			GUILayout.Label(GlobalInputHookHandler.GetInputForRebinding(rebindingKey).ToString(), fixedwidth);
-			if (rebindingKey == CurrentRebinding)
-			{
-				GUIStyle richText = GUI.skin.label;
-				richText.richText = true;
-				GUILayout.Label("<color=red>Awaiting key</color>", richText, fixedwidth);
-			}
-			else if (rebindingKey != RebindingActions.None)
-			{
-				if (GUILayout.Button("Rebind", fixedwidth))
+		/*		private void RebindingAction(RebindingActions currentRebinding, KeyCode tempKey)
 				{
-					CurrentRebinding = rebindingKey;
-					Event.current.type = EventType.Used;
+					switch (currentRebinding)
+					{
+						case RebindingActions.Forward:
+							Settings.Input_Analog_LeftStick_Up.Value = tempKey;
+							break;
+						case RebindingActions.Backward:
+							Settings.Input_Analog_LeftStick_Down.Value = tempKey;
+							break;
+						case RebindingActions.Left:
+							Settings.Input_Analog_LeftStick_Left.Value = tempKey;
+							break;
+						case RebindingActions.Right:
+							Settings.Input_Analog_LeftStick_Right.Value = tempKey;
+							break;
+						case RebindingActions.Display_Map:
+							Settings.Input_Digital_Back_Button.Value = tempKey;
+							break;
+						case RebindingActions.Quest_Display:
+							Settings.Input_Digital_Start_Button.Value = tempKey;
+							break;
+						case RebindingActions.Point_Gun:
+							Settings.Input_Digital_LT.Value = tempKey;
+							break;
+						case RebindingActions.Vision:
+							Settings.Input_Digital_LB.Value = tempKey;
+							break;
+						case RebindingActions.Crouch:
+							Settings.Input_Digital_L_Stick_Button.Value = tempKey;
+							break;
+						case RebindingActions.Fire_Weapon_Punch:
+							Settings.Input_Digital_RT.Value = tempKey;
+							break;
+						case RebindingActions.Cancel_Brake:
+							Settings.Input_Digital_B_Button.Value = tempKey;
+							break;
+						case RebindingActions.Dash_Dodge:
+							Settings.Input_Digital_RB.Value = tempKey;
+							break;
+						case RebindingActions.Interact_Reload_Accellerate:
+							Settings.Input_Digital_A_Button.Value = tempKey;
+							break;
+						case RebindingActions.Reset_Camera_Fighting_Style:
+							Settings.Input_Digital_R_Stick_Button.Value = tempKey;
+							break;
+						case RebindingActions.Skateboard:
+							Settings.Input_Digital_Y_Button.Value = tempKey;
+							break;
+						case RebindingActions.SwitchAlbumDisplayDown:
+							Settings.Input_Digital_Down_Button.Value = tempKey;
+							break;
+						case RebindingActions.SwitchAlbumDisplayUp:
+							Settings.Input_Digital_Up_Button.Value = tempKey;
+							break;
+						case RebindingActions.SwitchSlotLeft:
+							Settings.Input_Digital_Left_Button.Value = tempKey;
+							break;
+						case RebindingActions.SwitchSlotRight:
+							Settings.Input_Digital_Right_Button.Value = tempKey;
+							break;
+					}
 				}
-			}
 
-			GUILayout.EndHorizontal();
-		}
-*/
+				public void DrawRebind(string text, RebindingActions rebindingKey)
+				{
+					var fixedwidth = new UnhollowerBaseLib.Il2CppReferenceArray<GUILayoutOption>(1);
+					fixedwidth[0] = GUILayout.Width(300);
+
+					GUILayout.BeginHorizontal(null);
+					GUILayout.Label(text, fixedwidth);
+					GUILayout.Label(GlobalInputHookHandler.GetInputForRebinding(rebindingKey).ToString(), fixedwidth);
+					if (rebindingKey == CurrentRebinding)
+					{
+						GUIStyle richText = GUI.skin.label;
+						richText.richText = true;
+						GUILayout.Label("<color=red>Awaiting key</color>", richText, fixedwidth);
+					}
+					else if (rebindingKey != RebindingActions.None)
+					{
+						if (GUILayout.Button("Rebind", fixedwidth))
+						{
+							CurrentRebinding = rebindingKey;
+							Event.current.type = EventType.Used;
+						}
+					}
+
+					GUILayout.EndHorizontal();
+				}
+		*/
 
 		private void DrawRoot()
 		{
@@ -478,26 +478,26 @@ namespace SuisHack
 			GUILayout.Label("<b>Quality settings:</b>", richText);
 			GUILayout.EndHorizontal();
 
-/*			//Antialiasing
-			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				GUILayout.Label($"Antialiasing filter: ({Hacks.PostProcessLayerHook.GetShortName()}):");
-				if (GUILayout.Button("None", null))
-					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.None;
-				if (GUILayout.Button("FXAA", null))
-					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.FastApproximateAntialiasing;
+			/*			//Antialiasing
+						{
+							GUILayout.BeginHorizontal(GUI.skin.box, null);
+							GUILayout.Label($"Antialiasing filter: ({Hacks.PostProcessLayerHook.GetShortName()}):");
+							if (GUILayout.Button("None", null))
+								Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.None;
+							if (GUILayout.Button("FXAA", null))
+								Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.FastApproximateAntialiasing;
 
-				if (GUILayout.Button("SMAA", null))
-					Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.SubpixelMorphologicalAntialiasing;
-				if (Settings.Entry_Other_ShowAdvanced.Value)
-				{
-					if (GUILayout.Button("TAA (Epilepsy warning!)", null))
-						Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.TemporalAntialiasing;
-				}
+							if (GUILayout.Button("SMAA", null))
+								Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.SubpixelMorphologicalAntialiasing;
+							if (Settings.Entry_Other_ShowAdvanced.Value)
+							{
+								if (GUILayout.Button("TAA (Epilepsy warning!)", null))
+									Settings.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.TemporalAntialiasing;
+							}
 
 
-				GUILayout.EndHorizontal();
-			}*/
+							GUILayout.EndHorizontal();
+						}*/
 
 			//Anisotropic filtering Bias
 			{
@@ -509,7 +509,7 @@ namespace SuisHack
 					Settings!.Entry_AnistropicFiltering.Value = AnisotropicFiltering.Disable;
 
 				if (GUILayout.Button("Per texture"))
-					Settings! .Entry_AnistropicFiltering.Value = AnisotropicFiltering.Enable;
+					Settings!.Entry_AnistropicFiltering.Value = AnisotropicFiltering.Enable;
 
 				if (GUILayout.Button("Force enabled"))
 					Settings!.Entry_AnistropicFiltering.Value = AnisotropicFiltering.ForceEnable;
@@ -644,16 +644,16 @@ namespace SuisHack
 				GUILayout.EndVertical();
 			}
 
-/*			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				var oldValue = Hacks.PostProcessLayerHook.FarClipDistance;
-				GUILayout.Label($"Far clip distance ({Hacks.PostProcessLayerHook.FarClipDistance}):", null);
-				var newValue = Mathf.Round(GUILayout.HorizontalSlider(oldValue, 400, 2000f, null));
-				if (newValue != oldValue)
-					Settings.Entry_Quality_CameraFarPlaneDistance.Value = newValue;
+			/*			{
+							GUILayout.BeginHorizontal(GUI.skin.box, null);
+							var oldValue = Hacks.PostProcessLayerHook.FarClipDistance;
+							GUILayout.Label($"Far clip distance ({Hacks.PostProcessLayerHook.FarClipDistance}):", null);
+							var newValue = Mathf.Round(GUILayout.HorizontalSlider(oldValue, 400, 2000f, null));
+							if (newValue != oldValue)
+								Settings.Entry_Quality_CameraFarPlaneDistance.Value = newValue;
 
-				GUILayout.EndHorizontal();
-			}*/
+							GUILayout.EndHorizontal();
+						}*/
 
 			//LOD Bias
 			{
@@ -693,48 +693,48 @@ namespace SuisHack
 				GUILayout.EndHorizontal();
 			}
 
-/*			//Planar reflections
-			{
-				GUILayout.BeginHorizontal(GUI.skin.box, null);
-				GUILayout.Label($"Planar reflections resolution ({Hacks.MirrorReflectionHook.ReflectionSize}):", null);
-				var log = Mathf.RoundToInt(Mathf.Log(Hacks.MirrorReflectionHook.ReflectionSize, 2));
-				var newLog = (int)GUILayout.HorizontalSlider(log, 7, 11, null);
-				if (newLog != log)
-					Settings.Entry_Quality_MirrorReflectionResolution.Value = (int)Mathf.Pow(2, newLog);
+						//Planar reflections
+						{
+							GUILayout.BeginHorizontal(GUI.skin.box);
+							GUILayout.Label($"Planar reflections resolution ({Hacks.MirrorReflectionHook.ReflectionSize}):");
+							var log = Mathf.RoundToInt(Mathf.Log(Hacks.MirrorReflectionHook.ReflectionSize, 2));
+							var newLog = (int)GUILayout.HorizontalSlider(log, 7, 11);
+							if (newLog != log)
+								Settings.Entry_Quality_MirrorReflectionResolution.Value = (int)Mathf.Pow(2, newLog);
 
-				GUILayout.EndHorizontal();
-			}*/
+							GUILayout.EndHorizontal();
+						}
 
-/*			//HBAO
-			{
-				GUILayout.BeginVertical(GUI.skin.box, null);
-				GUILayout.BeginHorizontal();
-				GUILayout.Label($"HBAO preset ({Hacks.PostProcessLayerHook.HBAO_Preset}):");
-				if (GUILayout.Button("Fastest", null))
-					Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastestPerformance;
-				if (GUILayout.Button("Fast", null))
-					Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastPerformance;
-				if (GUILayout.Button("Normal", null))
-					Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.Normal;
-				if (GUILayout.Button("High", null))
-					Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.HighQuality;
-				if (GUILayout.Button("Highest", null))
-					Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.HighestQuality;
-				GUILayout.EndHorizontal();
+			/*			//HBAO
+						{
+							GUILayout.BeginVertical(GUI.skin.box, null);
+							GUILayout.BeginHorizontal();
+							GUILayout.Label($"HBAO preset ({Hacks.PostProcessLayerHook.HBAO_Preset}):");
+							if (GUILayout.Button("Fastest", null))
+								Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastestPerformance;
+							if (GUILayout.Button("Fast", null))
+								Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastPerformance;
+							if (GUILayout.Button("Normal", null))
+								Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.Normal;
+							if (GUILayout.Button("High", null))
+								Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.HighQuality;
+							if (GUILayout.Button("Highest", null))
+								Settings.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.HighestQuality;
+							GUILayout.EndHorizontal();
 
-				GUILayout.BeginHorizontal(null);
-				GUILayout.Label($"HBAO intensity ({Hacks.PostProcessLayerHook.HBAO_Intensity:0.0}):", null);
-				Settings.Entry_Quality_HBAO_Intensity.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_HBAO_Intensity.Value, 0.0f, 1.0f, null);
-				GUILayout.EndHorizontal();
-				GUILayout.EndVertical();
-			}*/
+							GUILayout.BeginHorizontal(null);
+							GUILayout.Label($"HBAO intensity ({Hacks.PostProcessLayerHook.HBAO_Intensity:0.0}):", null);
+							Settings.Entry_Quality_HBAO_Intensity.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_HBAO_Intensity.Value, 0.0f, 1.0f, null);
+							GUILayout.EndHorizontal();
+							GUILayout.EndVertical();
+						}*/
 
 			//Meh
 			{
 				GUILayout.BeginVertical(GUI.skin.box);
 				Settings.Entry_Quality_EdgeDetection.Value = GUILayout.Toggle(Settings.Entry_Quality_EdgeDetection.Value, "Edge detection post process filter");
 
-				if (Settings.Entry_Quality_EdgeDetection.Value && Settings.Entry_Quality_CameraFarPlaneDistance.Value > 800)
+				if (Settings.Entry_Quality_EdgeDetection.Value && Settings.Entry_Quality_CameraFarPlaneDistance!.Value > 800)
 				{
 					GUILayout.Label("Warning - extending far clip camera plane distance can cause issues with edge detection filter.\nIf you experience issues with lines on characters being displayed up close, try lowering the value below:");
 					GUILayout.BeginHorizontal();
@@ -755,7 +755,7 @@ namespace SuisHack
 
 				if (Settings.Entry_Quality_SSR_Enable.Value)
 				{
-/*					GUILayout.BeginHorizontal();
+					GUILayout.BeginHorizontal();
 					GUILayout.Label($"SSR preset ({Hacks.PostProcessLayerHook.SSR_Preset}):");
 					if (GUILayout.Button("Lower"))
 						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Lower;
@@ -771,9 +771,9 @@ namespace SuisHack
 						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Ultra;
 					if (GUILayout.Button("Overkill"))
 						Settings.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Overkill;
-					GUILayout.EndHorizontal();*/
+					GUILayout.EndHorizontal();
 
-/*					GUILayout.BeginHorizontal();
+					GUILayout.BeginHorizontal();
 					GUILayout.Label($"SSR resolution ({Hacks.PostProcessLayerHook.SSR_Resolution}):");
 					if (GUILayout.Button("Downsampled"))
 						Settings.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.Downsampled;
@@ -781,29 +781,29 @@ namespace SuisHack
 						Settings.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.FullSize;
 					if (GUILayout.Button("Supersampled"))
 						Settings.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.Supersampled;
-					GUILayout.EndHorizontal();*/
+					GUILayout.EndHorizontal();
 
 					if (Settings.Entry_Other_ShowAdvanced.Value)
 					{
-/*						GUILayout.BeginHorizontal();
+						GUILayout.BeginHorizontal();
 						GUILayout.Label($"SSR Tickness ({Hacks.PostProcessLayerHook.SSR_Tickness:0.0}):");
 						Settings.Entry_Quality_SSR_Tickness.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_Tickness.Value, 0, 1);
-						GUILayout.EndHorizontal();*/
+						GUILayout.EndHorizontal();
 
-/*						GUILayout.BeginHorizontal(null);
-						GUILayout.Label($"SSR Vignette ({Hacks.PostProcessLayerHook.SSR_Vignette:0.0}):", null);
-						Settings.Entry_Quality_SSR_Vignette.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_Vignette.Value, 0, 1, null);
-						GUILayout.EndHorizontal();*/
+						GUILayout.BeginHorizontal();
+						GUILayout.Label($"SSR Vignette ({Hacks.PostProcessLayerHook.SSR_Vignette:0.0}):");
+						Settings.Entry_Quality_SSR_Vignette.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_Vignette.Value, 0, 1);
+						GUILayout.EndHorizontal();
 
-/*						GUILayout.BeginHorizontal(null);
-						GUILayout.Label($"SSR Distance Fade ({Hacks.PostProcessLayerHook.SSR_DistanceFade:0.00}):", null);
-						Settings.Entry_Quality_SSR_DistanceFade.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_DistanceFade.Value, 0, 0.5f, null);
-						GUILayout.EndHorizontal();*/
+						GUILayout.BeginHorizontal();
+						GUILayout.Label($"SSR Distance Fade ({Hacks.PostProcessLayerHook.SSR_DistanceFade:0.00}):");
+						Settings.Entry_Quality_SSR_DistanceFade.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_DistanceFade.Value, 0, 0.5f);
+						GUILayout.EndHorizontal();
 
-/*						GUILayout.BeginHorizontal(null);
-						GUILayout.Label($"SSR Max Marching Distance ({Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance:0}):", null);
-						Settings.Entry_Quality_SSR_MaxMarchingDistance.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_MaxMarchingDistance.Value, 50, 250, null);
-						GUILayout.EndHorizontal();*/
+						GUILayout.BeginHorizontal();
+						GUILayout.Label($"SSR Max Marching Distance ({Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance:0}):");
+						Settings.Entry_Quality_SSR_MaxMarchingDistance.Value = GUILayout.HorizontalSlider(Settings.Entry_Quality_SSR_MaxMarchingDistance.Value, 50, 250);
+						GUILayout.EndHorizontal();
 					}
 				}
 				GUILayout.EndVertical();
@@ -897,20 +897,20 @@ namespace SuisHack
 			GUILayout.Label("Settings with * at the beginning require game restart!");
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box);
-			Settings!.Entry_Other_SkipIntros.Value = GUILayout.Toggle(Settings.Entry_Other_SkipIntros.Value, "* Skip intros");
+			Settings!.Entry_Other_SkipIntros!.Value = GUILayout.Toggle(Settings.Entry_Other_SkipIntros.Value, "* Skip intros");
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box);
-			Settings.Entry_Other_InterpolateMovement.Value = GUILayout.Toggle(Settings.Entry_Other_InterpolateMovement.Value, "Interpolate movement");
+			Settings.Entry_Other_InterpolateMovement!.Value = GUILayout.Toggle(Settings.Entry_Other_InterpolateMovement.Value, "Interpolate movement");
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box);
-			GUILayout.Label($"* Geometry improvements ({Settings.Entry_Other_GeometryImprovements.Value}):");
+			GUILayout.Label($"* Geometry improvements ({Settings.Entry_Other_GeometryImprovements!.Value}):");
 			if (GUILayout.Button("Disabled"))
 				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.Disabled;
 			if (GUILayout.Button("Enabled"))
 				Settings.Entry_Other_GeometryImprovements.Value = ExposedSettings.GeometryImprovements.Enabled;
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box);
-			GUILayout.Label($"* Light improvements ({Settings.Entry_Other_LightImprovements.Value}):");
+			GUILayout.Label($"* Light improvements ({Settings.Entry_Other_LightImprovements!.Value}):");
 			if (GUILayout.Button("Disabled"))
 				Settings.Entry_Other_LightImprovements.Value = ExposedSettings.LightImprovements.Disabled;
 			if (GUILayout.Button("Minor (performance safe)"))
@@ -920,7 +920,7 @@ namespace SuisHack
 			GUILayout.EndHorizontal();
 			GUILayout.BeginHorizontal(GUI.skin.box);
 			GUILayout.BeginVertical();
-			var promptsUsed = Settings.Entry_Other_Prompts.Value == "" ? "None" : Settings.Entry_Other_Prompts.Value;
+			var promptsUsed = Settings.Entry_Other_Prompts!.Value == "" ? "None" : Settings.Entry_Other_Prompts.Value;
 
 			GUILayout.Label($"* Prompts used: \"{promptsUsed}\" - possible:");
 			if (GUILayout.Button("None"))
