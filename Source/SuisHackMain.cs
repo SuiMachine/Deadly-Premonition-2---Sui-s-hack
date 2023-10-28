@@ -25,7 +25,7 @@ namespace SuisHack
 		{
 			LoggerInstance.Msg("Loading Sui's Hack loaded");
 			Settings = new ExposedSettings();
-/*		    switch (Settings.Input_Override.Value)
+		    switch (Settings.Input_Override!.Value)
 			{
 				case ExposedSettings.InputType.SteamInput:
 					GamepadSupport.GamepadPrompts.Initialize();
@@ -34,16 +34,16 @@ namespace SuisHack
 					KeyboardSupport.KeyboardPrompts.Initialize();
 					KeyboardSupport.SteamInputHook.InitializeKeyboardAndMouse();
 					break;
-			}*/
+			}
 		}
 
 		public override void OnLateInitializeMelon()
 		{
 			base.OnLateInitializeMelon();
 
-			if (Settings!.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
+			if (Settings!.Input_Override!.Value == ExposedSettings.InputType.KeyboardAndMouse)
 			{
-				//KeyboardSupport.GlobalInputHookHandler.Initialize();
+				KeyboardSupport.GlobalInputHookHandler.Initialize();
 			}
 			SettingsGUI.Initialize();
 			InitializeManualHarmonyHooks();
@@ -54,9 +54,10 @@ namespace SuisHack
 
 		private void InitializeManualHarmonyHooks()
 		{
+			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
 			Hacks.NpcTestHook.Initialize();
 
-			/*			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
+			/*			
 						Hacks.Lights.LightActiveCheckHook.Initialize();
 						Hacks.Lights.NpcVehicleHook.Initialize();*/
 		}
@@ -67,9 +68,9 @@ namespace SuisHack
 			if (Settings != null)
 			{
 				Application.targetFrameRate = Settings.Entry_DesiredFramerate!.Value;
-				if (Settings.Input_Override.Value == ExposedSettings.InputType.SteamInput)
+				if (Settings.Input_Override!.Value == ExposedSettings.InputType.SteamInput)
 				{
-					//Components.VibrationController.Initialize();
+					Components.VibrationController.Initialize();
 				}
 
 				if (sceneName == "TitleTest2")

@@ -66,7 +66,7 @@ namespace SuisHack.Components.Interpolation
 			}
 		}
 
-		public RigidBodiesStoredVelocities[] riggidBodiesStored;
+		public RigidBodiesStoredVelocities[]? riggidBodiesStored;
 
 		PositionRecording[] records = new PositionRecording[2];
 		Vector3 restorePosition;
@@ -114,7 +114,7 @@ namespace SuisHack.Components.Interpolation
 			{
 				float newerTime = records[0].time;
 				float olderTime = records[1].time;
-				foreach (var riggedBody in riggidBodiesStored)
+				foreach (var riggedBody in riggidBodiesStored!)
 					riggedBody.StoreVelocity();
 
 				if (newerTime != olderTime)
@@ -133,7 +133,7 @@ namespace SuisHack.Components.Interpolation
 			this.transform.localRotation = restoreRotation;
 			this.transform.localScale = restoreLocalScale;
 
-			foreach (var riggedBody in riggidBodiesStored)
+			foreach (var riggedBody in riggidBodiesStored!)
 				riggedBody.RestoreVelocity();
 		}
 	}

@@ -47,56 +47,56 @@ namespace SuisHack
 
 		public MelonPreferences_Entry<float>? Entry_Quality_CameraFarPlaneDistance;
 
-		public MelonPreferences_Entry<float> Entry_Quality_ShadowDistance;
-		public MelonPreferences_Entry<bool> Entry_Quality_Use4ShadowCascades;
-		public MelonPreferences_Entry<ShadowQuality> Entry_Quality_ShadowsQuality;
-		public MelonPreferences_Entry<ShadowResolution> Entry_Quality_ShadowsResolution;
-		public MelonPreferences_Entry<float> Entry_Quality_ShadowTwoSplitValue;
-		public MelonPreferences_Entry<float> Entry_Quality_ShadowFourSplitValue1;
-		public MelonPreferences_Entry<float> Entry_Quality_ShadowFourSplitValue2;
-		public MelonPreferences_Entry<float> Entry_Quality_ShadowFourSplitValue3;
+		public MelonPreferences_Entry<float>? Entry_Quality_ShadowDistance;
+		public MelonPreferences_Entry<bool>? Entry_Quality_Use4ShadowCascades;
+		public MelonPreferences_Entry<ShadowQuality>? Entry_Quality_ShadowsQuality;
+		public MelonPreferences_Entry<ShadowResolution>? Entry_Quality_ShadowsResolution;
+		public MelonPreferences_Entry<float>? Entry_Quality_ShadowTwoSplitValue;
+		public MelonPreferences_Entry<float>? Entry_Quality_ShadowFourSplitValue1;
+		public MelonPreferences_Entry<float>? Entry_Quality_ShadowFourSplitValue2;
+		public MelonPreferences_Entry<float>? Entry_Quality_ShadowFourSplitValue3;
 
-		public MelonPreferences_Entry<float> Entry_Quality_LODBias;
-		public MelonPreferences_Entry<int> Entry_Quality_PixelLightCount;
-		public MelonPreferences_Entry<int> Entry_Quality_TextureQuality;
-		public MelonPreferences_Entry<int> Entry_Quality_MirrorReflectionResolution;
-		public MelonPreferences_Entry<HBAO_Core.Preset> Entry_Quality_HBAO_Preset;
-		public MelonPreferences_Entry<float> Entry_Quality_HBAO_Intensity;
+		public MelonPreferences_Entry<float>? Entry_Quality_LODBias;
+		public MelonPreferences_Entry<int>? Entry_Quality_PixelLightCount;
+		public MelonPreferences_Entry<int>? Entry_Quality_TextureQuality;
+		public MelonPreferences_Entry<int>? Entry_Quality_MirrorReflectionResolution;
+		public MelonPreferences_Entry<HBAO_Core.Preset>? Entry_Quality_HBAO_Preset;
+		public MelonPreferences_Entry<float>? Entry_Quality_HBAO_Intensity;
 
-		public MelonPreferences_Entry<bool> Entry_Quality_SSR_Enable;
-		public MelonPreferences_Entry<ScreenSpaceReflectionPreset> Entry_Quality_SSR_Preset;
-		public MelonPreferences_Entry<ScreenSpaceReflectionResolution> Entry_Quality_SSR_Resolution;
-		public MelonPreferences_Entry<float> Entry_Quality_SSR_Tickness;
-		public MelonPreferences_Entry<float> Entry_Quality_SSR_Vignette;
-		public MelonPreferences_Entry<float> Entry_Quality_SSR_DistanceFade;
-		public MelonPreferences_Entry<float> Entry_Quality_SSR_MaxMarchingDistance;
-		public MelonPreferences_Entry<bool> Entry_Quality_EdgeDetection;
-		public MelonPreferences_Entry<float> Entry_Quality_EdgeDetectionDepth;
+		public MelonPreferences_Entry<bool>? Entry_Quality_SSR_Enable;
+		public MelonPreferences_Entry<ScreenSpaceReflectionPreset>? Entry_Quality_SSR_Preset;
+		public MelonPreferences_Entry<ScreenSpaceReflectionResolution>? Entry_Quality_SSR_Resolution;
+		public MelonPreferences_Entry<float>? Entry_Quality_SSR_Tickness;
+		public MelonPreferences_Entry<float>? Entry_Quality_SSR_Vignette;
+		public MelonPreferences_Entry<float>? Entry_Quality_SSR_DistanceFade;
+		public MelonPreferences_Entry<float>? Entry_Quality_SSR_MaxMarchingDistance;
+		public MelonPreferences_Entry<bool>? Entry_Quality_EdgeDetection;
+		public MelonPreferences_Entry<float>? Entry_Quality_EdgeDetectionDepth;
 
 
 		//Input settings
-		public MelonPreferences_Entry<InputType> Input_Override;
-		public MelonPreferences_Entry<float> Input_Analog_LeftStickFloatTime;
-		public MelonPreferences_Entry<KeyCode> Input_Analog_LeftStick_Up;
-		public MelonPreferences_Entry<KeyCode> Input_Analog_LeftStick_Right;
-		public MelonPreferences_Entry<KeyCode> Input_Analog_LeftStick_Down;
-		public MelonPreferences_Entry<KeyCode> Input_Analog_LeftStick_Left;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_A_Button;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_B_Button;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_X_Button;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_Y_Button;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_LB;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_RB;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_Back_Button;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_Start_Button;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_L_Stick_Button;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_R_Stick_Button;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_Up_Button;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_Right_Button;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_Down_Button;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_Left_Button;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_LT;
-		public MelonPreferences_Entry<KeyCode> Input_Digital_RT;
+		public MelonPreferences_Entry<InputType>? Input_Override;
+		public MelonPreferences_Entry<float>? Input_Analog_LeftStickFloatTime;
+		public MelonPreferences_Entry<KeyCode>? Input_Analog_LeftStick_Up;
+		public MelonPreferences_Entry<KeyCode>? Input_Analog_LeftStick_Right;
+		public MelonPreferences_Entry<KeyCode>? Input_Analog_LeftStick_Down;
+		public MelonPreferences_Entry<KeyCode>? Input_Analog_LeftStick_Left;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_A_Button;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_B_Button;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_X_Button;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_Y_Button;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_LB;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_RB;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_Back_Button;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_Start_Button;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_L_Stick_Button;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_R_Stick_Button;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_Up_Button;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_Right_Button;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_Down_Button;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_Left_Button;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_LT;
+		public MelonPreferences_Entry<KeyCode>? Input_Digital_RT;
 		public MelonPreferences_Entry<float>? Input_Mouse_Sensitivity;
 		public MelonPreferences_Entry<bool>? Input_MouseYAxisInversion;
 		public MelonPreferences_Entry<bool>? Input_Controller_Vibration;
@@ -131,7 +131,7 @@ namespace SuisHack
 			Entry_DesiredFramerate = Category_mainDisplay.CreateEntry("DesiredFPS", -1, description: "Desired framerate. This is only used when Vsync is disabled. -1 is platform default, 0 is uncapped, max is 1000.", validator: new ValueRange<int>(-1, 1000));
 			Entry_DesiredFramerate.OnEntryValueChanged.Subscribe((int oldValue, int newValue) => { Application.targetFrameRate = newValue; });
 
-			if (ConfigParsing.ParseResolution(Entry_Display_Resolution.Value, out LemonTuple<int, int> desiredResolution))
+			if (ConfigParsing.ParseResolution(Entry_Display_Resolution.Value, out LemonTuple<int, int>? desiredResolution))
 				Resolution = desiredResolution;
 			else
 				Entry_Display_Resolution.Value = "0x0";
@@ -234,7 +234,7 @@ namespace SuisHack
 
 		private void RegisterInputSettings()
 		{
-			Input_Override = Category_inputSettings.CreateEntry("Input type", InputType.SteamInput, description: "Overrides controls handling - options are: SteamInput (leaves the game using Steam Input as it is) / KeyboardAndMouse (hooks input to read keyboard and mouse instead)");
+			Input_Override = Category_inputSettings!.CreateEntry("Input type", InputType.SteamInput, description: "Overrides controls handling - options are: SteamInput (leaves the game using Steam Input as it is) / KeyboardAndMouse (hooks input to read keyboard and mouse instead)");
 			Input_Analog_LeftStickFloatTime = Category_inputSettings.CreateEntry("Left Stick Float Time", 0.1f, description: "How long does it take a stick to get to desired spot - this allows the game to handle rotations slightly better, although prevents the input from being instantanious. Min value: 0.01, Max 1.", validator: new ValueRange<float>(0.01f, 1f));
 			Input_Analog_LeftStickFloatTime.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { });// GlobalInputHookHandler.Instance.AnalogInputToInput[SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up.Value, Input_Analog_LeftStick_Down.Value, Input_Analog_LeftStick_Left.Value, Input_Analog_LeftStick_Right.Value, newValue); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 
@@ -313,6 +313,6 @@ namespace SuisHack
 			Entry_Other_EnableCheats = Category_otherSettings.CreateEntry("Enable cheats", true, description: "Enables access to custom cheat menu.");
 		}
 
-		public LemonTuple<int, int> Resolution;
+		public LemonTuple<int, int>? Resolution;
 	}
 }

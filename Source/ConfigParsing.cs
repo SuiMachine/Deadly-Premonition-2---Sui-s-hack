@@ -5,7 +5,7 @@ namespace SuisHack
 {
 	public static class ConfigParsing
 	{
-		public static bool ParseResolution(string text, out LemonTuple<int, int> desiredResolution)
+		public static bool ParseResolution(string text, out LemonTuple<int, int>? desiredResolution)
 		{
 			desiredResolution = null;
 			while (text.IndexOf(' ') >= 0)
