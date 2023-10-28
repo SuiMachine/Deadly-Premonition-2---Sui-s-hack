@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using Il2Cpp;
+using Il2CppSCPE;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -297,19 +298,14 @@ namespace SuisHack.Hacks
 
 		private static void ApplyEdgeDetectionChange()
 		{
-/*			foreach (var volume in PostProcessVolumeInstances)
+			foreach (var volume in PostProcessVolumeInstances)
 			{
-				for (int i = 0; i < volume!.profile.settings.Count; i++)
+				if(volume!.profile.TryGetSettings<EdgeDetection>(out var edgeDetection))
 				{
-					//Dumb hack, but doesn't for whatever reason Il2CppType.Of<T> doesn't work
-					if (volume.profile.settings[i].GetIl2CppType().ToString() != typeof(SCPE.EdgeDetection).ToString())
-						continue;
-
-					var filter = volume.profile.settings[i].TryCast<SCPE.EdgeDetection>();
-					filter.enabled.value = m_EnableEdgeDetectionFilter;
-					filter.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
+					edgeDetection!.enabled.value = m_EnableEdgeDetectionFilter;
+					edgeDetection!.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
 				}
-			}*/
+			}
 		}
 
 		public static void ClearNullReferences()
@@ -353,17 +349,11 @@ namespace SuisHack.Hacks
 				PostProcessVolumeInstances.Add(__instance);
 
 
-
-			/*for (int i = 0; i < __instance.profile.settings.Count; i++)
+			if(__instance.profile.TryGetSettings<EdgeDetection>(out var edgeDetection))
 			{
-				//Dumb hack, but doesn't for whatever reason Il2CppType.Of<T> doesn't work
-				if (__instance.profile.settings[i].GetIl2CppType().ToString() != typeof(SCPE.EdgeDetection).ToString())
-					continue;
-
-				var filter = __instance.profile.settings[i].TryCast<SCPE.EdgeDetection>();
-				filter.enabled.value = m_EnableEdgeDetectionFilter;
-				filter.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
-			}*/
+				edgeDetection.enabled.value = m_EnableEdgeDetectionFilter;
+				edgeDetection.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
+			}
 
 			if (!m_SSR_Enabled)
 				return;

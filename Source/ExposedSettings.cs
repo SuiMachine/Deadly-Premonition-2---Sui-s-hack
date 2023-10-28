@@ -225,12 +225,12 @@ namespace SuisHack
 			Entry_Quality_TextureQuality.OnEntryValueChanged.Subscribe((int oldValue, int newValue) => { QualitySettings.masterTextureLimit = newValue; });
 
 			Entry_Quality_EdgeDetection = Category_graphicsSettings.CreateEntry("Edge Detection Filter", true, description: "Responsible for Enabling/Disabling edge detection post process filter.");
-			Entry_Quality_EdgeDetection.OnEntryValueChanged.Subscribe((bool oldValue, bool newValue) => { }); //Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = newValue; });
-																											  //Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = Entry_Quality_EdgeDetection.Value;
+			Entry_Quality_EdgeDetection.OnEntryValueChanged.Subscribe((bool oldValue, bool newValue) => { Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = newValue; });
+			Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = Entry_Quality_EdgeDetection.Value;
 
 			Entry_Quality_EdgeDetectionDepth = Category_graphicsSettings.CreateEntry("Edge Detection Filter Depth", 1.0f, description: "Responsible for figuring out how to apply edges based on distance from camera. This might have to be changed to lower values when extending camera's far plane to avoid glitches.");
-			Entry_Quality_EdgeDetectionDepth.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { }); //Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = newValue; });
-																													 //Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = Entry_Quality_EdgeDetectionDepth.Value;
+			Entry_Quality_EdgeDetectionDepth.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = newValue; });
+			Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = Entry_Quality_EdgeDetectionDepth.Value;
 		}
 
 		private void RegisterInputSettings()
