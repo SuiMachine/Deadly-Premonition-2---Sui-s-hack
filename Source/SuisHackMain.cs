@@ -1,5 +1,6 @@
 ﻿using MelonLoader;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SuisHack
 {
@@ -53,10 +54,11 @@ namespace SuisHack
 
 		private void InitializeManualHarmonyHooks()
 		{
-/*			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
 			Hacks.NpcTestHook.Initialize();
-			Hacks.Lights.LightActiveCheckHook.Initialize();
-			Hacks.Lights.NpcVehicleHook.Initialize();*/
+
+			/*			GlobalGameObjects.GlobalReplacementAtlas.Initialize();
+						Hacks.Lights.LightActiveCheckHook.Initialize();
+						Hacks.Lights.NpcVehicleHook.Initialize();*/
 		}
 
 		public override void OnSceneWasLoaded(int buildIndex, string sceneName)
@@ -64,7 +66,7 @@ namespace SuisHack
 			base.OnSceneWasLoaded(buildIndex, sceneName);
 			if (Settings != null)
 			{
-				Application.targetFrameRate = Settings.Entry_DesiredFramerate.Value;
+				Application.targetFrameRate = Settings.Entry_DesiredFramerate!.Value;
 				if (Settings.Input_Override.Value == ExposedSettings.InputType.SteamInput)
 				{
 					//Components.VibrationController.Initialize();
@@ -80,9 +82,9 @@ namespace SuisHack
 				else if (sceneName == OPENWORLDSCENENAME)
 				{
 					GameStateMachine.Gameplay = true;
-					if (Settings.Entry_Other_GeometryImprovements.Value >= ExposedSettings.GeometryImprovements.Enabled)
+					if (Settings.Entry_Other_GeometryImprovements!.Value >= ExposedSettings.GeometryImprovements.Enabled)
 					{
-/*						if (GameObject.FindObjectOfType<Components.GlobalGeometryChecker>() == null)
+						if (GameObject.FindObjectOfType<Components.GlobalGeometryChecker>() == null)
 						{
 							var scene = SceneManager.GetSceneByName(OPENWORLDSCENENAME);
 							var oldActiveScene = SceneManager.GetActiveScene();
@@ -90,12 +92,12 @@ namespace SuisHack
 							var newGameObject = new GameObject("WireRendererCorrection");
 							SceneManager.SetActiveScene(oldActiveScene);
 							newGameObject.AddComponent<Components.GlobalGeometryChecker>();
-						}*/
+						}
 					}
 				}
 				else
 				{
-					//GameStateMachine.Gameplay = true;
+					GameStateMachine.Gameplay = true;
 					//LightImprovement.ModifyLights.ModifyOnSceneLoad(sceneName.ToLower());
 				}
 			}

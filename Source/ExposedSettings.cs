@@ -131,10 +131,10 @@ namespace SuisHack
 			Entry_DesiredFramerate = Category_mainDisplay.CreateEntry("DesiredFPS", -1, description: "Desired framerate. This is only used when Vsync is disabled. -1 is platform default, 0 is uncapped, max is 1000.", validator: new ValueRange<int>(-1, 1000));
 			Entry_DesiredFramerate.OnEntryValueChanged.Subscribe((int oldValue, int newValue) => { Application.targetFrameRate = newValue; });
 
-			/*			if (Hacks.ConfigParsing.ParseResolution(Entry_Display_Resolution.Value, out LemonTuple<int, int> desiredResolution))
-							Resolution = desiredResolution;
-						else
-							Entry_Display_Resolution.Value = "0x0";*/
+			if (ConfigParsing.ParseResolution(Entry_Display_Resolution.Value, out LemonTuple<int, int> desiredResolution))
+				Resolution = desiredResolution;
+			else
+				Entry_Display_Resolution.Value = "0x0";
 
 			Entry_Display_DisplayMode = Category_mainDisplay.CreateEntry("Mode", FullScreenMode.FullScreenWindow, description: "Unity's display mode. Options are: ExclusiveFullScreen / FullScreenWindow / MaximizedWindow / Windowed");
 			Entry_Display_Vsync = Category_mainDisplay.CreateEntry("Vsync", true, description: "Enable vSync. True by default. If this is false and refresh rate is not 0, FPS cap is used.");
@@ -144,7 +144,7 @@ namespace SuisHack
 		{
 			//I was originally planning on writting some wrapper to set up these events, but why should I when I can have a wall of text!
 			Entry_Antialiasing = Category_graphicsSettings!.CreateEntry("Antialiasing", PostProcessLayer.Antialiasing.FastApproximateAntialiasing, description: "Experimental: Antialiasing used by the game. Options are: \"None\" (disables AA) / \"FastApproximateAntialiasing\" (FXAA) / \"SubpixelMorphologicalAntialiasing\" (SMAA) / \"TemporalAntialiasing\" (TAA). Default on PC is \"FastApproximateAntialiasing\". MSAA is not available due to the game using deferred rendering path. TAA causes issues with phantoms and as such SMAA is recommended.");
-			Entry_Antialiasing.OnEntryValueChanged.Subscribe((PostProcessLayer.Antialiasing oldVal, PostProcessLayer.Antialiasing newVal) => { }); //Hacks.PostProcessLayerHook.Antialiasing = newVal; });
+			Entry_Antialiasing.OnEntryValueChanged.Subscribe((PostProcessLayer.Antialiasing oldVal, PostProcessLayer.Antialiasing newVal) => { Hacks.PostProcessLayerHook.Antialiasing = newVal; });
 
 			Entry_AnistropicFiltering = Category_graphicsSettings.CreateEntry("Anisotropic filtering", AnisotropicFiltering.ForceEnable, description: "Main anisotropic setting that applies to all textures. Options are \"Disable\" (disables all Anisotropic filtering) / \"Enable\" (makes it so the game uses per texture settings that were specified by the developer) / \"ForceEnable\" (Forces override - see \"Anisotropic filtering override min\" and \"Anisotropic filtering override max\"). Default on PC is ForceEnable (on Switch it was probably Enable)");
 			Entry_AnistropicFiltering.OnEntryValueChanged.Subscribe((AnisotropicFiltering oldAF, AnisotropicFiltering newAF) => { QualitySettings.anisotropicFiltering = newAF; });
@@ -305,8 +305,8 @@ namespace SuisHack
 			Entry_Other_ShowAdvanced = Category_otherSettings.CreateEntry("Show advanced settings", false, description: "Shows advanced options in GUI.");
 
 			Entry_Other_InterpolateMovement = Category_otherSettings.CreateEntry("Interpolate movement", true, description: "Experimental: Enabled hooks related to movement interpolation of some rendered objects (protagonist and camera) to work around 50Hz Fixed Update stuttering - to my speedrunning friends: DO NOT allow this option for speedrunning.");
-			Entry_Other_InterpolateMovement.OnEntryValueChanged.Subscribe((bool oldValue, bool newVal) => { });// Components.Interpolation.SmootherController.InterpolateMovement = newVal; };
-																											   //Components.Interpolation.SmootherController.InterpolateMovement = Entry_Other_InterpolateMovement.Value;
+			Entry_Other_InterpolateMovement.OnEntryValueChanged.Subscribe((bool oldValue, bool newVal) => { Components.Interpolation.SmootherController.InterpolateMovement = newVal; });
+			Components.Interpolation.SmootherController.InterpolateMovement = Entry_Other_InterpolateMovement.Value;
 
 			Entry_Other_GeometryImprovements = Category_otherSettings.CreateEntry("Geometry improvements", GeometryImprovements.Enabled, description: "Runs additional scripts and shader replacement to improve geometry. Options are: \"Disabled\" / \"Enabled\" (only fixes some geometry issues and modifiers a few really bad LOD distance groups)");
 			Entry_Other_LightImprovements = Category_otherSettings.CreateEntry("Improve lights", LightImprovements.Minor, description: "Modifies light sources to improve the game's looks. Options are: Disabled / Minor / All - All can introduce some performance problems. Minor should be generally safe.");
