@@ -256,43 +256,58 @@ namespace SuisHack.Hacks
 		{
 			foreach (var volume in PostProcessVolumeInstances)
 			{
-				if(volume!.profile.TryGetSettings<ScreenSpaceReflections>(out var ssr))
+				if (volume == null)
 				{
-					if (m_SSR_Enabled)
+					SuisHackMain.loggerInst!.Msg("Volume was null!");
+					continue;
+				}
+				else if (volume!.profile == null)
+				{
+					SuisHackMain.loggerInst!.Msg("Profile was null!");
+					continue;
+				}
+
+				ScreenSpaceReflections ssr = volume!.profile!.GetSetting<ScreenSpaceReflections>();
+				if (ssr == null)
+				{
+					SuisHackMain.loggerInst!.Msg("Ssr was null");
+					continue;
+				}
+
+				if (m_SSR_Enabled)
+				{
+					ssr.enabled.overrideState = true;
+					if (volume.gameObject.scene.name.ToLower() == "map_002_1_coldwarehouse")
 					{
-						ssr.enabled.overrideState = true;
-						if (volume.gameObject.scene.name.ToLower() == "map_002_1_coldwarehouse")
-						{
-							ssr.enabled.value = false;
-							ssr.active = false;
-						}
-						else
-						{
-							ssr.enabled.value = true;
-							ssr.active = true;
-						}
-
-						ssr.preset.overrideState = true;
-						ssr.preset.value = m_SSR_Preset;
-
-						ssr.resolution.overrideState = true;
-						ssr.resolution.value = m_SSR_Resolution;
-
-						ssr.thickness.overrideState = true;
-						ssr.thickness.value = m_SSR_Tickness; //0.3
-
-						ssr.vignette.overrideState = true;
-						ssr.vignette.value = m_SSR_Vignette; //0.3
-
-						ssr.distanceFade.overrideState = true;
-						ssr.distanceFade.value = m_SSR_DistanceFade; //0.1
-
-						ssr.maximumMarchDistance.overrideState = true;
-						ssr.maximumMarchDistance.value = m_SSR_MaxMarchingDistance;
+						ssr.enabled.value = false;
+						ssr.active = false;
 					}
 					else
-						ssr.enabled.overrideState = false;
+					{
+						ssr.enabled.value = true;
+						ssr.active = true;
+					}
+
+					ssr.preset.overrideState = true;
+					ssr.preset.value = m_SSR_Preset;
+
+					ssr.resolution.overrideState = true;
+					ssr.resolution.value = m_SSR_Resolution;
+
+					ssr.thickness.overrideState = true;
+					ssr.thickness.value = m_SSR_Tickness; //0.3
+
+					ssr.vignette.overrideState = true;
+					ssr.vignette.value = m_SSR_Vignette; //0.3
+
+					ssr.distanceFade.overrideState = true;
+					ssr.distanceFade.value = m_SSR_DistanceFade; //0.1
+
+					ssr.maximumMarchDistance.overrideState = true;
+					ssr.maximumMarchDistance.value = m_SSR_MaxMarchingDistance;
 				}
+				else
+					ssr.enabled.overrideState = false;
 			}
 		}
 
@@ -300,11 +315,25 @@ namespace SuisHack.Hacks
 		{
 			foreach (var volume in PostProcessVolumeInstances)
 			{
-				if(volume!.profile.TryGetSettings<EdgeDetection>(out var edgeDetection))
+				if (volume == null)
 				{
-					edgeDetection!.enabled.value = m_EnableEdgeDetectionFilter;
-					edgeDetection!.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
+					SuisHackMain.loggerInst!.Msg("Volume was null!");
+					continue;
 				}
+				else if (volume!.profile == null)
+				{
+					SuisHackMain.loggerInst!.Msg("Profile was null!");
+					continue;
+				}
+
+				EdgeDetection edgeDetection = volume!.profile!.GetSetting<EdgeDetection>();
+				if (edgeDetection == null)
+				{
+					SuisHackMain.loggerInst!.Msg("EdgeDetection was null");
+					continue;
+				}
+				edgeDetection!.enabled.value = m_EnableEdgeDetectionFilter;
+				edgeDetection!.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
 			}
 		}
 
@@ -348,8 +377,15 @@ namespace SuisHack.Hacks
 			if (!PostProcessVolumeInstances.Contains(__instance))
 				PostProcessVolumeInstances.Add(__instance);
 
+			else if (__instance.profile == null)
+			{
+				SuisHackMain.loggerInst!.Msg("Profile was null!");
+				return;
+			}
 
-			if(__instance.profile.TryGetSettings<EdgeDetection>(out var edgeDetection))
+
+			EdgeDetection edgeDetection = __instance.profile.GetSetting<EdgeDetection>();
+			if (edgeDetection != null)
 			{
 				edgeDetection.enabled.value = m_EnableEdgeDetectionFilter;
 				edgeDetection.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
@@ -358,7 +394,8 @@ namespace SuisHack.Hacks
 			if (!m_SSR_Enabled)
 				return;
 
-			if(__instance.profile.TryGetSettings<ScreenSpaceReflections>(out var ssr))
+			ScreenSpaceReflections ssr = __instance.profile.GetSetting<ScreenSpaceReflections>();
+			if (ssr != null)
 			{
 				ssr.enabled.overrideState = true;
 				if (__instance.gameObject.scene.name.ToLower() == "map_002_1_coldwarehouse")
