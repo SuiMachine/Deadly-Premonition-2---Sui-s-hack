@@ -1,7 +1,9 @@
 ﻿using BepInEx;
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
+using Il2CppInterop.Runtime.Injection;
 using System;
+using UnityEngine.SceneManagement;
 
 namespace SuisHack;
 
@@ -21,6 +23,8 @@ public class Plugin : BasePlugin
     {
 		Log.LogInfo($"{MyPluginInfo.PLUGIN_GUID} starting to load - report problems if there are errors between this message and notification that it finished loading!");
 		HarmonyInstance = new Harmony("local.suimachine.suihack");
+		ClassInjector.RegisterTypeInIl2Cpp<SettingsGUI>();
+
 		m_Logger = Log;
 		Settings = new ExposedSettings(Config);
 		switch (Settings.Input_Override.Value)
