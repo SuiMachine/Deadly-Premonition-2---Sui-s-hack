@@ -1,4 +1,5 @@
-﻿using Il2CppSteamworks;
+﻿using Steamworks;
+using System.Collections.Generic;
 
 namespace SuisHack.KeyboardSupport
 {
@@ -86,7 +87,7 @@ namespace SuisHack.KeyboardSupport
 
 		public static void InitializeKeyboardAndMouse()
 		{
-			var harmonyInstance = SuisHackMain.harmonyInst;
+			/*HarmonyLib.Harmony harmonyInstance = Plugin.HarmonyInstance;
 			var originalGetAnalogActionMethod = typeof(SteamInput).GetMethod(nameof(SteamInput.GetAnalogActionData), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
 			var targetGetAnalogActionMethod = typeof(SteamInputHook).GetMethod(nameof(GetAnalogActionDataPrefix), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
 			if (originalGetAnalogActionMethod == null)
@@ -136,7 +137,7 @@ namespace SuisHack.KeyboardSupport
 
 			if (originalGetDigitalActionHandle == null)
 			{
-				SuisHackMain.loggerInst!.Error("Original GetDigitalActionHandle was null");
+				Plugin.Error("Original GetDigitalActionHandle was null");
 				return;
 			}
 
@@ -150,44 +151,8 @@ namespace SuisHack.KeyboardSupport
 			harmonyInstance.Patch(originalGetDigitalActionMethod, prefix: new HarmonyLib.HarmonyMethod(targetGetDigitalActionMethod));
 			harmonyInstance.Patch(originalGetAnalogActionHandle, prefix: new HarmonyLib.HarmonyMethod(targetGetAnalogActionHandle));
 			harmonyInstance.Patch(originalGetDigitalActionHandle, prefix: new HarmonyLib.HarmonyMethod(targetGetDigitalActionHandle));
-			SuisHackMain.loggerInst!.Msg("Patched Steam Input to redirect to keyboard mouse manager");
+			SuisHackMain.loggerInst!.Msg("Patched Steam Input to redirect to keyboard mouse manager");*/
 		}
 
-		public static bool GetDigitalActionHandle(ref InputDigitalActionHandle_t __result, string pszActionName)
-		{
-			__result = DigitalInputDictionary[pszActionName];
-			return false;
-		}
-
-		public static bool GetAnalogActionHandle(ref InputAnalogActionHandle_t __result, string pszActionName)
-		{
-			__result = AnalogInputDictionary[pszActionName];
-			return false;
-		}
-
-		public static bool GetAnalogActionDataPrefix(ref InputAnalogActionData_t __result, InputHandle_t inputHandle, InputAnalogActionHandle_t analogActionHandle)
-		{
-			if (SettingsGUI.Display)
-			{
-				__result = new InputAnalogActionData_t();
-				return false;
-			}
-
-			__result = GlobalInputHookHandler.Instance!.GetAnalogInputReplacement((SteamInputAnalog)analogActionHandle.m_InputAnalogActionHandle);
-			return false;
-		}
-
-		public static bool GetDigitalActionDataPrefix(ref InputDigitalActionData_t __result, InputHandle_t inputHandle, InputDigitalActionHandle_t digitalActionHandle)
-		{
-			if (SettingsGUI.Display)
-			{
-				__result = new InputDigitalActionData_t();
-				return false;
-			}
-
-			__result = GlobalInputHookHandler.Instance!.GetDigitalInputReplacement((SteamInputDigital)digitalActionHandle.m_InputDigitalActionHandle);
-
-			return false;
-		}
 	}
 }
