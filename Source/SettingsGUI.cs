@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Il2CppInterop.Runtime.Injection;
 using System.IO;
 using UnityEngine;
 using static SuisHack.KeyboardSupport.SteamInputHook;
@@ -7,8 +7,6 @@ namespace SuisHack
 {
 	public class SettingsGUI : MonoBehaviour
 	{
-		public SettingsGUI(IntPtr handle) : base() { }
-
 		public static SettingsGUI Instance { get; private set; }
 		public static bool Display { get; private set; }
 		private Category category = Category.Root;
@@ -32,6 +30,7 @@ namespace SuisHack
 		{
 			if (Instance == null)
 			{
+				ClassInjector.RegisterTypeInIl2Cpp<SettingsGUI>();
 				var gameObject = new GameObject("SuisHackSettingsGUI");
 				Instance = gameObject.AddComponent<SettingsGUI>();
 				DontDestroyOnLoad(gameObject);
