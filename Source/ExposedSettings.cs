@@ -7,6 +7,8 @@ namespace SuisHack
 {
 	public class ExposedSettings
 	{
+		public static ExposedSettings Instance { get; private set; }
+
 		private const string CATEGORYNAME_MAINDISPLAY = "Suis Hack Main Display";
 		private const string CATEGORYNAME_GRAPHICS = "Suis Hack Graphics Settings";
 		private const string CATEGORYNAME_INPUT = "Suis Hack Input Settings";
@@ -113,6 +115,7 @@ namespace SuisHack
 
 		public ExposedSettings(ConfigFile fileInst)
 		{
+			Instance = this;
 			Config = fileInst;
 
 			RegisterMainDisplay();
