@@ -54,7 +54,10 @@ public class Plugin : BasePlugin
 
 	private void InitializeManualHarmonyHooks()
 	{
-
+		//GlobalGameObjects.GlobalReplacementAtlas.Initialize();
+		Hacks.NpcTestHook.Initialize();
+		Hacks.Lights.LightActiveCheckHook.Initialize();
+		Hacks.Lights.NpcVehicleHook.Initialize();
 	}
 
 	private void RegisterTypesForIll2cpp()
