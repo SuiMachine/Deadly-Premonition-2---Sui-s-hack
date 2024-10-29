@@ -43,8 +43,8 @@ namespace SuisHack
 		public ConfigEntry<bool> Entry_Display_Vsync;
 
 		//Quality settings
-		public ConfigEntry<PostProcessLayer.Antialiasing>? Entry_Antialiasing;
-		public ConfigEntry<AnisotropicFiltering>? Entry_AnistropicFiltering;
+		public ConfigEntry<PostProcessLayer.Antialiasing> Entry_Antialiasing;
+		public ConfigEntry<AnisotropicFiltering> Entry_AnistropicFiltering;
 		public ConfigEntry<int> Entry_AnistropicFilteringValue;
 
 		public ConfigEntry<float> Entry_Quality_CameraFarPlaneDistance;
@@ -144,92 +144,92 @@ namespace SuisHack
 		{
 			//I was originally planning on writting some wrapper to set up these events, but why should I when I can have a wall of text!
 			Entry_Antialiasing = Config.Bind(CATEGORYNAME_GRAPHICS, "Antialiasing", PostProcessLayer.Antialiasing.FastApproximateAntialiasing, description: "Experimental: Antialiasing used by the game. Options are: \"None\" (disables AA) / \"FastApproximateAntialiasing\" (FXAA) / \"SubpixelMorphologicalAntialiasing\" (SMAA) / \"TemporalAntialiasing\" (TAA). Default on PC is \"FastApproximateAntialiasing\". MSAA is not available due to the game using deferred rendering path. TAA causes issues with phantoms and as such SMAA is recommended.");
-			//Entry_Antialiasing.OnEntryValueChanged.Subscribe((PostProcessLayer.Antialiasing oldVal, PostProcessLayer.Antialiasing newVal) => { Hacks.PostProcessLayerHook.Antialiasing = newVal; });
+			Entry_Antialiasing.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.Antialiasing = Entry_Antialiasing.Value; };
 
 			Entry_AnistropicFiltering = Config.Bind(CATEGORYNAME_GRAPHICS, "Anisotropic filtering", AnisotropicFiltering.ForceEnable, description: "Main anisotropic setting that applies to all textures. Options are \"Disable\" (disables all Anisotropic filtering) / \"Enable\" (makes it so the game uses per texture settings that were specified by the developer) / \"ForceEnable\" (Forces override - see \"Anisotropic filtering override min\" and \"Anisotropic filtering override max\"). Default on PC is ForceEnable (on Switch it was probably Enable)");
-			//Entry_AnistropicFiltering.OnEntryValueChanged.Subscribe((AnisotropicFiltering oldAF, AnisotropicFiltering newAF) => { QualitySettings.anisotropicFiltering = newAF; });
+			Entry_AnistropicFiltering.SettingChanged += (object sender, EventArgs e) => { QualitySettings.anisotropicFiltering = Entry_AnistropicFiltering.Value; };
 
 			Entry_AnistropicFilteringValue = Config.Bind(CATEGORYNAME_GRAPHICS, "Anisotropic filtering override value", 8, description: "Anisotropic filtering level when using ForceEnable anisotropic filtering"); // validator: new ValueRange<int>(-1, 16));
-			//Entry_AnistropicFilteringValue.OnEntryValueChanged.Subscribe((int oldValue, int newValue) => { Texture.SetGlobalAnisotropicFilteringLimits(newValue, newValue); });
+			Entry_AnistropicFilteringValue.SettingChanged += (object sender, EventArgs e) => { Texture.SetGlobalAnisotropicFilteringLimits(Entry_AnistropicFilteringValue.Value, Entry_AnistropicFilteringValue.Value); };
 
 			Entry_Quality_CameraFarPlaneDistance = Config.Bind(CATEGORYNAME_GRAPHICS, "Far plane distance", 700f, description: "Sets camera's maximum draw distance (far clip plane). The default is: 700.");
-			//Entry_Quality_CameraFarPlaneDistance.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { Hacks.PostProcessLayerHook.FarClipDistance = newValue; });
+			Entry_Quality_CameraFarPlaneDistance.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.FarClipDistance = Entry_Quality_CameraFarPlaneDistance.Value; };
 
 			Entry_Quality_ShadowDistance = Config.Bind(CATEGORYNAME_GRAPHICS, "Shadow distance", 150f, description: "Affects the distance at which the shadows are rendered. The default is 150. Careful as this option is tied with shadow cascades. Min. is 10, max 1000"); // validator: new ValueRange<float>(10, 1000));
-			//Entry_Quality_ShadowDistance.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { QualitySettings.shadowDistance = newValue; });
+			Entry_Quality_ShadowDistance.SettingChanged += (object sender, EventArgs e) => { QualitySettings.shadowDistance = Entry_Quality_ShadowDistance.Value; };
 
 			Entry_Quality_ShadowsQuality = Config.Bind(CATEGORYNAME_GRAPHICS, "Shadows quality", ShadowQuality.All, description: "Sets Unity\'s shadadow quality, which is actually the types of shadows allowed. Options are \"Disable\" (to disable any shadows) / \"HardOnly\" (to allow only hard shadows) / All (to allow both smooth shadows). By default the game uses All.");
-			//Entry_Quality_ShadowsQuality.OnEntryValueChanged.Subscribe((ShadowQuality oldValue, ShadowQuality newValue) => { QualitySettings.shadows = newValue; });
+			Entry_Quality_ShadowsQuality.SettingChanged += (object sender, EventArgs e) => { QualitySettings.shadows = Entry_Quality_ShadowsQuality.Value; };
 
 			Entry_Quality_ShadowsResolution = Config.Bind(CATEGORYNAME_GRAPHICS, "Shadows resolution", ShadowResolution.High, description: "Sets shadow resolution. There are 4 options: Low / Medium / High / VeryHigh. By default the PC version uses High. Very high shouldn't provide much of a difference above High unless 4 cascades are used.");
-			//Entry_Quality_ShadowsResolution.OnEntryValueChanged.Subscribe((ShadowResolution oldValue, ShadowResolution newValue) => { QualitySettings.shadowResolution = newValue; });
+			Entry_Quality_ShadowsResolution.SettingChanged += (object sender, EventArgs e) => { QualitySettings.shadowResolution = Entry_Quality_ShadowsResolution.Value; };
 
 			Entry_Quality_Use4ShadowCascades = Config.Bind(CATEGORYNAME_GRAPHICS, "Use 4 Shadow cascades", false, description: "Makes it so the game uses 4 shadow cascades instead of 2. This should significently increase shadows quality in the game if used. By default in PC version the game uses 2 cascades.");
-			//Entry_Quality_Use4ShadowCascades.OnEntryValueChanged.Subscribe((bool oldValue, bool newValue) => { QualitySettings.shadowCascades = newValue ? 4 : 2; });
+			Entry_Quality_Use4ShadowCascades.SettingChanged += (object sender, EventArgs e) => { QualitySettings.shadowCascades = Entry_Quality_Use4ShadowCascades.Value ? 4 : 2; };
 
 			Entry_Quality_LODBias = Config.Bind(CATEGORYNAME_GRAPHICS, "LODBias", 2f, description: "LOD Bias - affects how far from camera the LOD changes - bigger values, push the LOD change further from camera - min. 0.5, max. 4.0. Default game value is 2.0. Originally it was probably 1.0 on Nintendo Switch."); // validator: new ValueRange<float>(0.5f, 4f));
-																																																																														   //Entry_Quality_LODBias.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { QualitySettings.lodBias = newValue; });
+			Entry_Quality_LODBias.SettingChanged += (object sender, EventArgs e) => { QualitySettings.lodBias = Entry_Quality_LODBias.Value; };
 
 			Entry_Quality_ShadowTwoSplitValue = Config.Bind(CATEGORYNAME_GRAPHICS, "Shadow split 2 percent", 0.333333333f, description: "Sets percentage distance from maximum shadow distance where first cascade transitions to second one. Default value is 0.333333333. This value is not used when using 4 cascades. Essentially what this means that with a default shadow distance of 150 and value split percentage 0.333333333, the first cascade will transition to second one at a distance of approx. 50 units from camera. Min value is 0.01, max is 0.5"); //validator: new ValueRange<float>(0.01f, 0.5f));
-			//Entry_Quality_ShadowTwoSplitValue.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { QualitySettings.shadowCascade2Split = newValue; });
+			Entry_Quality_ShadowTwoSplitValue.SettingChanged += (object sender, EventArgs e) => { QualitySettings.shadowCascade2Split = Entry_Quality_ShadowTwoSplitValue.Value; };
 
 			Entry_Quality_ShadowFourSplitValue1 = Config.Bind(CATEGORYNAME_GRAPHICS, "Shadow split 4 percent 1", 0.06666667f, description: "See \"Shadow split 2 percent\" - this is the same, except used for 4 cascades - this one is percentage distance between cascade 1 and 2. Default value is 0.06666667f. Min value is 0.01, max is 0.5"); //validator: new ValueRange<float>(0.01f, 0.5f));
 			Entry_Quality_ShadowFourSplitValue2 = Config.Bind(CATEGORYNAME_GRAPHICS, "Shadow split 4 percent 2", 0.2f, description: "See \"Shadow split 2 percent\" - this is the same, except used for 4 cascades - this one is percentage distance between cascade 2 and 3. Default value is 0.2. Min value is 0.1, max is 0.8"); // validator: new ValueRange<float>(0.1f, 0.8f));
 			Entry_Quality_ShadowFourSplitValue3 = Config.Bind(CATEGORYNAME_GRAPHICS, "Shadow split 4 percent 3", 0.4666667f, description: "See \"Shadow split 2 percent\" - this is the same, except used for 4 cascades - this one is percentage distance between cascade 3 and 4. Default value is 0.4666667. Min value is 0.02, max is 0.9"); //validator: new ValueRange<float>(0.02f, 0.9f));
 
 			Entry_Quality_MirrorReflectionResolution = Config.Bind(CATEGORYNAME_GRAPHICS, "Mirrors reflection reflection", 512, description: "Overrides render texture resolution for planar reflections - the resolution has to be a number that is a power of 2 and at least 128 and at most 2048. Default is 512."); //validator: new PowerOfTwoValidatorWithRange(128, 2048));
-			//Entry_Quality_MirrorReflectionResolution.OnEntryValueChanged.Subscribe((int oldValue, int newValue) => { Hacks.MirrorReflectionHook.ReflectionSize = newValue; });
-			//Hacks.MirrorReflectionHook.ReflectionSize = Entry_Quality_MirrorReflectionResolution.Value;
+			Entry_Quality_MirrorReflectionResolution.SettingChanged += (object sender, EventArgs e) => { Hacks.MirrorReflectionHook.ReflectionSize = Entry_Quality_MirrorReflectionResolution.Value; };
+			Hacks.MirrorReflectionHook.ReflectionSize = Entry_Quality_MirrorReflectionResolution.Value;
 
 			Entry_Quality_HBAO_Preset = Config.Bind(CATEGORYNAME_GRAPHICS, "HBAO Preset", HBAO_Core.Preset.FastestPerformance, description: "Preset to use to override HBAO. Options are: FastestPerformance / FastPerformance / Normal / HighQuality / HighestQuality. Default is FastestPerformance. For Normal and higher, consider lowering HBAO intensity.");
-			//Entry_Quality_HBAO_Preset.OnEntryValueChanged.Subscribe((HBAO_Core.Preset oldValue, HBAO_Core.Preset newValue) => { Hacks.PostProcessLayerHook.HBAO_Preset = newValue; });
-			//Hacks.PostProcessLayerHook.HBAO_Preset = Entry_Quality_HBAO_Preset.Value;
+			Entry_Quality_HBAO_Preset.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.HBAO_Preset = Entry_Quality_HBAO_Preset.Value; };
+			Hacks.PostProcessLayerHook.HBAO_Preset = Entry_Quality_HBAO_Preset.Value;
 
 			Entry_Quality_HBAO_Intensity = Config.Bind(CATEGORYNAME_GRAPHICS, "HBAO Intensity", 1.0f, description: "HBAO intensity - this probably should be lower than 1.0 when using Normal and higher presets."); //validator: new ValueRange<float>(0, 1));
-			//Entry_Quality_HBAO_Intensity.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { Hacks.PostProcessLayerHook.HBAO_Intensity = newValue; });
-			//Hacks.PostProcessLayerHook.HBAO_Intensity = Entry_Quality_HBAO_Intensity.Value;
+			Entry_Quality_HBAO_Intensity.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.HBAO_Intensity = Entry_Quality_HBAO_Intensity.Value; };
+			Hacks.PostProcessLayerHook.HBAO_Intensity = Entry_Quality_HBAO_Intensity.Value;
 
 			Entry_Quality_SSR_Enable = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Enable", false, description: "Enables Screen Space Reflection override");
-			//Entry_Quality_SSR_Enable.OnEntryValueChanged.Subscribe((bool oldValue, bool newValue) => { Hacks.PostProcessLayerHook.SSR_Enabled = newValue; });
-			//Hacks.PostProcessLayerHook.SSR_Enabled = Entry_Quality_SSR_Enable.Value;
+			Entry_Quality_SSR_Enable.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_Enabled = Entry_Quality_SSR_Enable.Value; };
+			Hacks.PostProcessLayerHook.SSR_Enabled = Entry_Quality_SSR_Enable.Value;
 
 			Entry_Quality_SSR_Preset = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Preset", ScreenSpaceReflectionPreset.Medium, description: "Sets Screen Space Reflection preset. Can be Lower / Low / Medium / High / Higher / Ultra / Overkill. Generally you shouldn't use Overkill.");
-			//Entry_Quality_SSR_Preset.OnEntryValueChanged.Subscribe((ScreenSpaceReflectionPreset oldValue, ScreenSpaceReflectionPreset newValue) => { Hacks.PostProcessLayerHook.SSR_Preset = newValue; });
-			//Hacks.PostProcessLayerHook.SSR_Preset = Entry_Quality_SSR_Preset.Value;
+			Entry_Quality_SSR_Preset.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_Preset = Entry_Quality_SSR_Preset.Value; };
+			Hacks.PostProcessLayerHook.SSR_Preset = Entry_Quality_SSR_Preset.Value;
 
 			Entry_Quality_SSR_Resolution = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Resolution", ScreenSpaceReflectionResolution.Downsampled, description: "Sets Screen Space Reflections resolution. Can be Downsampled / FullSize / Supersampled. Generally you shouldn't use Supersampled.");
-			//Entry_Quality_SSR_Resolution.OnEntryValueChanged.Subscribe((ScreenSpaceReflectionResolution oldValue, ScreenSpaceReflectionResolution newValue) => { Hacks.PostProcessLayerHook.SSR_Resolution = newValue; });
-			//Hacks.PostProcessLayerHook.SSR_Resolution = Entry_Quality_SSR_Resolution.Value;
+			Entry_Quality_SSR_Resolution.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_Resolution = Entry_Quality_SSR_Resolution.Value; };
+			Hacks.PostProcessLayerHook.SSR_Resolution = Entry_Quality_SSR_Resolution.Value;
 
 			Entry_Quality_SSR_Tickness = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Tickness", 1f, description: "Sets Screen Space Reflections tickness value"); //validator: new ValueRange<float>(0, 1));
-			//Entry_Quality_SSR_Tickness.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { Hacks.PostProcessLayerHook.SSR_Tickness = newValue; });
-			//Hacks.PostProcessLayerHook.SSR_Tickness = Entry_Quality_SSR_Tickness.Value;
+			Entry_Quality_SSR_Tickness.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_Tickness = Entry_Quality_SSR_Tickness.Value; };
+			Hacks.PostProcessLayerHook.SSR_Tickness = Entry_Quality_SSR_Tickness.Value;
 
 			Entry_Quality_SSR_Vignette = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Vignette", 0.15f, description: "Sets Screen Space Reflections vigniette value, which smoothly disables reflections towards the edges of the screen"); // validator: new ValueRange<float>(0, 1));
-			//Entry_Quality_SSR_Vignette.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { Hacks.PostProcessLayerHook.SSR_Vignette = newValue; });
-			//Hacks.PostProcessLayerHook.SSR_Vignette = Entry_Quality_SSR_Vignette.Value;
+			Entry_Quality_SSR_Vignette.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_Vignette = Entry_Quality_SSR_Vignette.Value; };
+			Hacks.PostProcessLayerHook.SSR_Vignette = Entry_Quality_SSR_Vignette.Value;
 
 			Entry_Quality_SSR_DistanceFade = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Distance fade", 0.01f, description: "Sets Screen Space Reflections distance fade value. Keep it really low to reduce SSR glow-like effect around silhouettes"); //validator: new ValueRange<float>(0, 0.5f));
-			//Entry_Quality_SSR_DistanceFade.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { Hacks.PostProcessLayerHook.SSR_DistanceFade = newValue; });
-			//Hacks.PostProcessLayerHook.SSR_DistanceFade = Entry_Quality_SSR_DistanceFade.Value;
+			Entry_Quality_SSR_DistanceFade.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_DistanceFade = Entry_Quality_SSR_DistanceFade.Value; };
+			Hacks.PostProcessLayerHook.SSR_DistanceFade = Entry_Quality_SSR_DistanceFade.Value;
 
 			Entry_Quality_SSR_MaxMarchingDistance = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Max Marching Distance", 100f, description: "Sets Screen Space Reflections max maching distance value, after which the ray is terminated."); //validator: new ValueRange<float>(50, 250));
-			//Entry_Quality_SSR_MaxMarchingDistance.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance = newValue; });
-			//Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance = Entry_Quality_SSR_MaxMarchingDistance.Value;
+			Entry_Quality_SSR_MaxMarchingDistance.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance = Entry_Quality_SSR_MaxMarchingDistance.Value; };
+			Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance = Entry_Quality_SSR_MaxMarchingDistance.Value;
 
 			Entry_Quality_PixelLightCount = Config.Bind(CATEGORYNAME_GRAPHICS, "PixelLightCount", 4, description: "Pixel Light Count - Default is 4. Affects the maximum number of pixel lights that should affect any object. If there are more lights illuminating an object, the dimmest ones will be rendered as vertex lights."); //validator: new ValueRange<int>(0, 8));
-			//Entry_Quality_PixelLightCount.OnEntryValueChanged.Subscribe((int oldValue, int newValue) => { QualitySettings.pixelLightCount = newValue; });
+			Entry_Quality_PixelLightCount.SettingChanged += (object sender, EventArgs e) => { QualitySettings.pixelLightCount = Entry_Quality_PixelLightCount.Value; };
 
 			Entry_Quality_TextureQuality = Config.Bind(CATEGORYNAME_GRAPHICS, "Texture quality", 0, description: "Texture quality - default is 0. Higher values cause lower mip maps to be used. Can be used to reduce VRAM usage on low-end devices. 1 will cause half of the original resolution to be used"); //validator: new ValueRange<int>(0, 1));
-			//Entry_Quality_TextureQuality.OnEntryValueChanged.Subscribe((int oldValue, int newValue) => { QualitySettings.masterTextureLimit = newValue; });
+			Entry_Quality_TextureQuality.SettingChanged += (object sender, EventArgs e) => { QualitySettings.masterTextureLimit = Entry_Quality_TextureQuality.Value; };
 
 			Entry_Quality_EdgeDetection = Config.Bind(CATEGORYNAME_GRAPHICS, "Edge Detection Filter", true, description: "Responsible for Enabling/Disabling edge detection post process filter.");
-			//Entry_Quality_EdgeDetection.OnEntryValueChanged.Subscribe((bool oldValue, bool newValue) => { Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = newValue; });
-			//Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = Entry_Quality_EdgeDetection.Value;
+			Entry_Quality_EdgeDetection.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = Entry_Quality_EdgeDetection.Value; };
+			Hacks.PostProcessLayerHook.EnableEdgeDetectionFilter = Entry_Quality_EdgeDetection.Value;
 
 			Entry_Quality_EdgeDetectionDepth = Config.Bind(CATEGORYNAME_GRAPHICS, "Edge Detection Filter Depth", 1.0f, description: "Responsible for figuring out how to apply edges based on distance from camera. This might have to be changed to lower values when extending camera's far plane to avoid glitches.");
-			//Entry_Quality_EdgeDetectionDepth.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = newValue; });
-			//Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = Entry_Quality_EdgeDetectionDepth.Value;
+			Entry_Quality_EdgeDetectionDepth.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = Entry_Quality_EdgeDetectionDepth.Value; };
+			Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = Entry_Quality_EdgeDetectionDepth.Value;
 		}
 
 		private void RegisterInputSettings()

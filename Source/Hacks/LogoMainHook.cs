@@ -15,8 +15,8 @@ namespace SuisHack.Hacks
 
 			QualitySettings.anisotropicFiltering = Settings.Entry_AnistropicFiltering.Value;
 			Texture.SetGlobalAnisotropicFilteringLimits(Settings.Entry_AnistropicFilteringValue.Value, Settings.Entry_AnistropicFilteringValue.Value);
-			//PostProcessLayerHook.Antialiasing = Settings.Entry_Antialiasing.Value;
-			//PostProcessLayerHook.FarClipDistance = Settings.Entry_Quality_CameraFarPlaneDistance.Value;
+			PostProcessLayerHook.Antialiasing = Settings.Entry_Antialiasing.Value;
+			PostProcessLayerHook.FarClipDistance = Settings.Entry_Quality_CameraFarPlaneDistance.Value;
 			QualitySettings.lodBias = Settings.Entry_Quality_LODBias.Value;
 			QualitySettings.pixelLightCount = Settings.Entry_Quality_PixelLightCount.Value;
 			QualitySettings.shadowDistance = Settings.Entry_Quality_ShadowDistance.Value;

@@ -214,7 +214,7 @@ namespace SuisHack
 			//Vsync
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box);
-				var oldValue = QualitySettings.vSyncCount > 0 ? true : false;
+				var oldValue = QualitySettings.vSyncCount > 0;
 				var newValue = GUILayout.Toggle(oldValue, "V-sync");
 				if (newValue != oldValue)
 				{
@@ -250,7 +250,7 @@ namespace SuisHack
 			//Antialiasing
 			{
 				GUILayout.BeginHorizontal(GUI.skin.box);
-				//GUILayout.Label($"Antialiasing filter: ({Hacks.PostProcessLayerHook.GetShortName()}):");
+				GUILayout.Label($"Antialiasing filter: ({Hacks.PostProcessLayerHook.GetShortName()}):");
 				if (GUILayout.Button("None"))
 					ExposedSettings.Instance.Entry_Antialiasing.Value = PostProcessLayer.Antialiasing.None;
 				if (GUILayout.Button("FXAA"))
@@ -414,14 +414,14 @@ namespace SuisHack
 			}
 
 			{
-				/*				GUILayout.BeginHorizontal(GUI.skin.box);
-								var oldValue = Hacks.PostProcessLayerHook.FarClipDistance;
-								GUILayout.Label($"Far clip distance ({Hacks.PostProcessLayerHook.FarClipDistance}):");
-								var newValue = Mathf.Round(GUILayout.HorizontalSlider(oldValue, 400, 2000f));
-								if (newValue != oldValue)
-									ExposedSettings.Instance.Entry_Quality_CameraFarPlaneDistance.Value = newValue;
+				GUILayout.BeginHorizontal(GUI.skin.box);
+				var oldValue = Hacks.PostProcessLayerHook.FarClipDistance;
+				GUILayout.Label($"Far clip distance ({Hacks.PostProcessLayerHook.FarClipDistance}):");
+				var newValue = Mathf.Round(GUILayout.HorizontalSlider(oldValue, 400, 2000f));
+				if (newValue != oldValue)
+					ExposedSettings.Instance.Entry_Quality_CameraFarPlaneDistance.Value = newValue;
 
-								GUILayout.EndHorizontal();*/
+				GUILayout.EndHorizontal();
 			}
 
 			//LOD Bias
@@ -451,51 +451,51 @@ namespace SuisHack
 
 			//Texture Quality
 			{
-				/*				GUILayout.BeginHorizontal(GUI.skin.box);
-								GUILayout.Label($"Texture resolution ({GetTextureString(QualityExposedSettings.Instance.masterTextureLimit)}):");
+				GUILayout.BeginHorizontal(GUI.skin.box);
+				GUILayout.Label($"Texture resolution ({GetTextureString(QualitySettings.masterTextureLimit)}):");
 
-								if (GUILayout.Button("Full"))
-									ExposedSettings.Instance.Entry_Quality_TextureQuality.Value = 0;
-								if (GUILayout.Button("Half"))
-									ExposedSettings.Instance.Entry_Quality_TextureQuality.Value = 1;
+				if (GUILayout.Button("Full"))
+					ExposedSettings.Instance.Entry_Quality_TextureQuality.Value = 0;
+				if (GUILayout.Button("Half"))
+					ExposedSettings.Instance.Entry_Quality_TextureQuality.Value = 1;
 
-								GUILayout.EndHorizontal();*/
+				GUILayout.EndHorizontal();
 			}
 
 			//Planar reflections
 			{
-				/*				GUILayout.BeginHorizontal(GUI.skin.box);
-								GUILayout.Label($"Planar reflections resolution ({Hacks.MirrorReflectionHook.ReflectionSize}):");
-								var log = Mathf.RoundToInt(Mathf.Log(Hacks.MirrorReflectionHook.ReflectionSize, 2));
-								var newLog = (int)GUILayout.HorizontalSlider(log, 7, 11);
-								if (newLog != log)
-									ExposedSettings.Instance.Entry_Quality_MirrorReflectionResolution.Value = (int)Mathf.Pow(2, newLog);
+				GUILayout.BeginHorizontal(GUI.skin.box);
+				GUILayout.Label($"Planar reflections resolution ({Hacks.MirrorReflectionHook.ReflectionSize}):");
+				var log = Mathf.RoundToInt(Mathf.Log(Hacks.MirrorReflectionHook.ReflectionSize, 2));
+				var newLog = (int)GUILayout.HorizontalSlider(log, 7, 11);
+				if (newLog != log)
+					ExposedSettings.Instance.Entry_Quality_MirrorReflectionResolution.Value = (int)Mathf.Pow(2, newLog);
 
-								GUILayout.EndHorizontal();*/
+				GUILayout.EndHorizontal();
 			}
 
 			//HBAO
 			{
-				/*				GUILayout.BeginVertical(GUI.skin.box);
-								GUILayout.BeginHorizontal();
-								GUILayout.Label($"HBAO preset ({Hacks.PostProcessLayerHook.HBAO_Preset}):");
-								if (GUILayout.Button("Fastest"))
-									ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastestPerformance;
-								if (GUILayout.Button("Fast"))
-									ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastPerformance;
-								if (GUILayout.Button("Normal"))
-									ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.Normal;
-								if (GUILayout.Button("High"))
-									ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.HighQuality;
-								if (GUILayout.Button("Highest"))
-									ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.HighestQuality;
-								GUILayout.EndHorizontal();
+				GUILayout.BeginVertical(GUI.skin.box);
+				GUILayout.BeginHorizontal();
+				GUILayout.Label($"HBAO preset ({Hacks.PostProcessLayerHook.HBAO_Preset}):");
+				if (GUILayout.Button("Fastest"))
+					ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastestPerformance;
+				if (GUILayout.Button("Fast"))
+					ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastPerformance;
+				if (GUILayout.Button("Normal"))
+					ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.Normal;
+				if (GUILayout.Button("High"))
+					ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.HighQuality;
+				if (GUILayout.Button("Highest"))
+					ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.HighestQuality;
+				GUILayout.EndHorizontal();
 
-								GUILayout.BeginHorizontal();
-								GUILayout.Label($"HBAO intensity ({Hacks.PostProcessLayerHook.HBAO_Intensity:0.0}):");
-								ExposedSettings.Instance.Entry_Quality_HBAO_Intensity.Value = GUILayout.HorizontalSlider(ExposedSettings.Instance.Entry_Quality_HBAO_Intensity.Value, 0.0f, 1.0f);
-								GUILayout.EndHorizontal();
-								GUILayout.EndVertical();*/
+				GUILayout.BeginHorizontal();
+				GUILayout.Label($"HBAO intensity ({Hacks.PostProcessLayerHook.HBAO_Intensity:0.0}):");
+				ExposedSettings.Instance.Entry_Quality_HBAO_Intensity.Value = GUILayout.HorizontalSlider(ExposedSettings.Instance.Entry_Quality_HBAO_Intensity.Value, 0.0f, 1.0f);
+				GUILayout.EndHorizontal();
+				GUILayout.EndVertical();
 			}
 
 			//Meh
@@ -524,55 +524,55 @@ namespace SuisHack
 
 				if (ExposedSettings.Instance.Entry_Quality_SSR_Enable.Value)
 				{
-					/*					GUILayout.BeginHorizontal();
-										GUILayout.Label($"SSR preset ({Hacks.PostProcessLayerHook.SSR_Preset}):");
-										if (GUILayout.Button("Lower"))
-											ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Lower;
-										if (GUILayout.Button("Low"))
-											ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Low;
-										if (GUILayout.Button("Medium"))
-											ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Medium;
-										if (GUILayout.Button("High"))
-											ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.High;
-										if (GUILayout.Button("Higher"))
-											ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Higher;
-										if (GUILayout.Button("Ultra"))
-											ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Ultra;
-										if (GUILayout.Button("Overkill"))
-											ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Overkill;
-										GUILayout.EndHorizontal();*/
+					GUILayout.BeginHorizontal();
+					GUILayout.Label($"SSR preset ({Hacks.PostProcessLayerHook.SSR_Preset}):");
+					if (GUILayout.Button("Lower"))
+						ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Lower;
+					if (GUILayout.Button("Low"))
+						ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Low;
+					if (GUILayout.Button("Medium"))
+						ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Medium;
+					if (GUILayout.Button("High"))
+						ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.High;
+					if (GUILayout.Button("Higher"))
+						ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Higher;
+					if (GUILayout.Button("Ultra"))
+						ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Ultra;
+					if (GUILayout.Button("Overkill"))
+						ExposedSettings.Instance.Entry_Quality_SSR_Preset.Value = ScreenSpaceReflectionPreset.Overkill;
+					GUILayout.EndHorizontal();
 
-					/*					GUILayout.BeginHorizontal();
-										GUILayout.Label($"SSR resolution ({Hacks.PostProcessLayerHook.SSR_Resolution}):");
-										if (GUILayout.Button("Downsampled"))
-											ExposedSettings.Instance.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.Downsampled;
-										if (GUILayout.Button("FullSize"))
-											ExposedSettings.Instance.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.FullSize;
-										if (GUILayout.Button("Supersampled"))
-											ExposedSettings.Instance.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.Supersampled;
-										GUILayout.EndHorizontal();*/
+					GUILayout.BeginHorizontal();
+					GUILayout.Label($"SSR resolution ({Hacks.PostProcessLayerHook.SSR_Resolution}):");
+					if (GUILayout.Button("Downsampled"))
+						ExposedSettings.Instance.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.Downsampled;
+					if (GUILayout.Button("FullSize"))
+						ExposedSettings.Instance.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.FullSize;
+					if (GUILayout.Button("Supersampled"))
+						ExposedSettings.Instance.Entry_Quality_SSR_Resolution.Value = ScreenSpaceReflectionResolution.Supersampled;
+					GUILayout.EndHorizontal();
 
 					if (ExposedSettings.Instance.Entry_Other_ShowAdvanced.Value)
 					{
-						/*						GUILayout.BeginHorizontal();
-												GUILayout.Label($"SSR Tickness ({Hacks.PostProcessLayerHook.SSR_Tickness:0.0}):");
-												ExposedSettings.Instance.Entry_Quality_SSR_Tickness.Value = GUILayout.HorizontalSlider(ExposedSettings.Instance.Entry_Quality_SSR_Tickness.Value, 0, 1);
-												GUILayout.EndHorizontal();
+						GUILayout.BeginHorizontal();
+						GUILayout.Label($"SSR Tickness ({Hacks.PostProcessLayerHook.SSR_Tickness:0.0}):");
+						ExposedSettings.Instance.Entry_Quality_SSR_Tickness.Value = GUILayout.HorizontalSlider(ExposedSettings.Instance.Entry_Quality_SSR_Tickness.Value, 0, 1);
+						GUILayout.EndHorizontal();
 
-												GUILayout.BeginHorizontal();
-												GUILayout.Label($"SSR Vignette ({Hacks.PostProcessLayerHook.SSR_Vignette:0.0}):");
-												ExposedSettings.Instance.Entry_Quality_SSR_Vignette.Value = GUILayout.HorizontalSlider(ExposedSettings.Instance.Entry_Quality_SSR_Vignette.Value, 0, 1);
-												GUILayout.EndHorizontal();
+						GUILayout.BeginHorizontal();
+						GUILayout.Label($"SSR Vignette ({Hacks.PostProcessLayerHook.SSR_Vignette:0.0}):");
+						ExposedSettings.Instance.Entry_Quality_SSR_Vignette.Value = GUILayout.HorizontalSlider(ExposedSettings.Instance.Entry_Quality_SSR_Vignette.Value, 0, 1);
+						GUILayout.EndHorizontal();
 
-												GUILayout.BeginHorizontal();
-												GUILayout.Label($"SSR Distance Fade ({Hacks.PostProcessLayerHook.SSR_DistanceFade:0.00}):");
-												ExposedSettings.Instance.Entry_Quality_SSR_DistanceFade.Value = GUILayout.HorizontalSlider(ExposedSettings.Instance.Entry_Quality_SSR_DistanceFade.Value, 0, 0.5f);
-												GUILayout.EndHorizontal();
+						GUILayout.BeginHorizontal();
+						GUILayout.Label($"SSR Distance Fade ({Hacks.PostProcessLayerHook.SSR_DistanceFade:0.00}):");
+						ExposedSettings.Instance.Entry_Quality_SSR_DistanceFade.Value = GUILayout.HorizontalSlider(ExposedSettings.Instance.Entry_Quality_SSR_DistanceFade.Value, 0, 0.5f);
+						GUILayout.EndHorizontal();
 
-												GUILayout.BeginHorizontal();
-												GUILayout.Label($"SSR Max Marching Distance ({Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance:0}):");
-												ExposedSettings.Instance.Entry_Quality_SSR_MaxMarchingDistance.Value = GUILayout.HorizontalSlider(ExposedSettings.Instance.Entry_Quality_SSR_MaxMarchingDistance.Value, 50, 250);
-												GUILayout.EndHorizontal();*/
+						GUILayout.BeginHorizontal();
+						GUILayout.Label($"SSR Max Marching Distance ({Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance:0}):");
+						ExposedSettings.Instance.Entry_Quality_SSR_MaxMarchingDistance.Value = GUILayout.HorizontalSlider(ExposedSettings.Instance.Entry_Quality_SSR_MaxMarchingDistance.Value, 50, 250);
+						GUILayout.EndHorizontal();
 					}
 				}
 				GUILayout.EndVertical();
@@ -698,6 +698,18 @@ namespace SuisHack
 			}
 			GUILayout.EndVertical();
 			GUILayout.EndHorizontal();
+		}
+
+		private string GetTextureString(int masterTextureLimit)
+		{
+			//I wish I could use 8.0 recursive patern
+			switch (masterTextureLimit)
+			{
+				case 1:
+					return "Half";
+				default:
+					return "Full";
+			}
 		}
 
 		void OnDestroy()
