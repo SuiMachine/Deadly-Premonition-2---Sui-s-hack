@@ -24,14 +24,8 @@ namespace SuisHack
 
 		public void Awake()
 		{
-			Plugin.Error("Dupa awake");
-			DontDestroyOnLoad(gameObject);
-		}
-
-		public void Start()
-		{
-			Plugin.Error("Dupa start");
-			DontDestroyOnLoad(gameObject);
+			DontDestroyOnLoad(this.gameObject);
+			this.gameObject.hideFlags = HideFlags.HideAndDontSave;
 		}
 
 		public void Update()
