@@ -2,8 +2,8 @@
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
 using Il2CppInterop.Runtime.Injection;
+using SuisHack.Hacks.StateStracking;
 using System;
-using UnityEngine.SceneManagement;
 
 namespace SuisHack;
 
@@ -23,10 +23,11 @@ public class Plugin : BasePlugin
     {
 		Log.LogInfo($"{MyPluginInfo.PLUGIN_GUID} starting to load - report problems if there are errors between this message and notification that it finished loading!");
 		HarmonyInstance = new Harmony("local.suimachine.suihack");
-		ClassInjector.RegisterTypeInIl2Cpp<SettingsGUI>();
-
 		m_Logger = Log;
 		Settings = new ExposedSettings(Config);
+
+		RegisterTypesForIll2cpp();
+
 		switch (Settings.Input_Override.Value)
 		{
 			case ExposedSettings.InputType.SteamInput:
@@ -46,11 +47,22 @@ public class Plugin : BasePlugin
 		}
 
 		SettingsGUI.Initialize();
-		//InitializeManualHarmonyHooks();
+		HarmonyInstance.PatchAll();
+		InitializeManualHarmonyHooks();
 
 		Log.LogInfo($"{MyPluginInfo.PLUGIN_GUID} has finished loading!");
+	}
 
+	private void InitializeManualHarmonyHooks()
+	{
 
+	}
+
+	private void RegisterTypesForIll2cpp()
+	{
+		ClassInjector.RegisterTypeInIl2Cpp<SettingsGUI>();
+		ClassInjector.RegisterTypeInIl2Cpp<MapUIManagerTracking>();
+		ClassInjector.RegisterTypeInIl2Cpp<RedRoomTracking>();		
 	}
 
 	public override bool Unload()
