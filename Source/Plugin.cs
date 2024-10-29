@@ -53,6 +53,12 @@ public class Plugin : BasePlugin
 
 	}
 
+	public override bool Unload()
+	{
+		return false;
+	}
 
 	public static void Error(string errorTest) => m_Logger.LogError(errorTest);
+	public static void Message(string message) => m_Logger.LogMessage(message);
+	public static void Warning(string warning) => m_Logger.LogWarning(warning);
 }
