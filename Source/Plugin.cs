@@ -2,6 +2,9 @@
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
 using Il2CppInterop.Runtime.Injection;
+using SuisHack.Components;
+using SuisHack.Components.Interpolation;
+using SuisHack.GlobalGameObjects;
 using SuisHack.Hacks.StateStracking;
 
 namespace SuisHack;
@@ -13,7 +16,6 @@ public class Plugin : BasePlugin
 	public static Harmony HarmonyInstance { get; private set; }
 	private static BepInEx.Logging.ManualLogSource m_Logger;
 	public static ExposedSettings Settings;
-	//		public static ExposedSettings? Settings;
 
 	private bool AppliedResolutionInMainMenu;
 
@@ -54,7 +56,7 @@ public class Plugin : BasePlugin
 
 	private void InitializeManualHarmonyHooks()
 	{
-		//GlobalGameObjects.GlobalReplacementAtlas.Initialize();
+		GlobalReplacementAtlas.Initialize();
 		Hacks.NpcTestHook.Initialize();
 		Hacks.Lights.LightActiveCheckHook.Initialize();
 		Hacks.Lights.NpcVehicleHook.Initialize();
@@ -64,7 +66,13 @@ public class Plugin : BasePlugin
 	{
 		ClassInjector.RegisterTypeInIl2Cpp<SettingsGUI>();
 		ClassInjector.RegisterTypeInIl2Cpp<MapUIManagerTracking>();
-		ClassInjector.RegisterTypeInIl2Cpp<RedRoomTracking>();		
+		ClassInjector.RegisterTypeInIl2Cpp<RedRoomTracking>();
+		ClassInjector.RegisterTypeInIl2Cpp<GlobalReplacementAtlas>();
+		ClassInjector.RegisterTypeInIl2Cpp<GlobalGeometryChecker>();
+		ClassInjector.RegisterTypeInIl2Cpp<TerrainCorrectionData>();
+		ClassInjector.RegisterTypeInIl2Cpp<BoatFollowInterpolation>();
+		ClassInjector.RegisterTypeInIl2Cpp<GameObjectInterpolation>();
+		ClassInjector.RegisterTypeInIl2Cpp<SmootherController>();
 	}
 
 	public override bool Unload()

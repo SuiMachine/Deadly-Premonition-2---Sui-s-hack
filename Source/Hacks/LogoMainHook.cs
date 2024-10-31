@@ -42,7 +42,6 @@ namespace SuisHack.Hacks
 			//Just to be extra sure stuff is loaded
 			UnityEngine.SceneManagement.SceneManager.LoadScene(5, UnityEngine.SceneManagement.LoadSceneMode.Single);
 			Plugin.Message("Skipped scene");
-
 		}
 	}
 }

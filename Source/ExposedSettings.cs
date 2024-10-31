@@ -1,4 +1,5 @@
 ﻿using BepInEx.Configuration;
+using SuisHack.KeyboardSupport;
 using System;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
@@ -236,66 +237,80 @@ namespace SuisHack
 		{
 			Input_Override = Config.Bind(CATEGORYNAME_INPUT, "Input type", InputType.SteamInput, description: "Overrides controls handling - options are: SteamInput (leaves the game using Steam Input as it is) / KeyboardAndMouse (hooks input to read keyboard and mouse instead)");
 			Input_Analog_LeftStickFloatTime = Config.Bind(CATEGORYNAME_INPUT, "Left Stick Float Time", 0.1f, description: "How long does it take a stick to get to desired spot - this allows the game to handle rotations slightly better, although prevents the input from being instantanious. Min value: 0.01, Max 1."); // validator: new ValueRange<float>(0.01f, 1f));
-			//Input_Analog_LeftStickFloatTime.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { GlobalInputHookHandler.Instance!.AnalogInputToInput![SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up!.Value, Input_Analog_LeftStick_Down!.Value, Input_Analog_LeftStick_Left!.Value, Input_Analog_LeftStick_Right!.Value, newValue); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Analog_LeftStickFloatTime.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.AnalogInputToInput[SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up.Value, Input_Analog_LeftStick_Down.Value, Input_Analog_LeftStick_Left.Value, Input_Analog_LeftStick_Right.Value, Input_Analog_LeftStickFloatTime.Value); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 
 			Input_Analog_LeftStick_Up = Config.Bind(CATEGORYNAME_INPUT, "Left Stick Key Up", KeyCode.W, description: "Key used to as replacement for reading up on left analog's Y axis");
-			//Input_Analog_LeftStick_Up.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.AnalogInputToInput![SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(newValue, Input_Analog_LeftStick_Down!.Value, Input_Analog_LeftStick_Left!.Value, Input_Analog_LeftStick_Right!.Value, Input_Analog_LeftStickFloatTime.Value); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Analog_LeftStick_Up.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.AnalogInputToInput[SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up.Value, Input_Analog_LeftStick_Down.Value, Input_Analog_LeftStick_Left.Value, Input_Analog_LeftStick_Right.Value, Input_Analog_LeftStickFloatTime.Value); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Analog_LeftStick_Right = Config.Bind(CATEGORYNAME_INPUT, "Left Stick Key Right", KeyCode.D, description: "Key used to as replacement for reading left on left analog's X axis");
-			//Input_Analog_LeftStick_Right.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.AnalogInputToInput![SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up.Value, Input_Analog_LeftStick_Down!.Value, Input_Analog_LeftStick_Left!.Value, newValue, Input_Analog_LeftStickFloatTime.Value); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Analog_LeftStick_Right.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.AnalogInputToInput[SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up.Value, Input_Analog_LeftStick_Down.Value, Input_Analog_LeftStick_Left.Value, Input_Analog_LeftStick_Right.Value, Input_Analog_LeftStickFloatTime.Value); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Analog_LeftStick_Down = Config.Bind(CATEGORYNAME_INPUT, "Left Stick Key Down", KeyCode.S, description: "Key used to as replacement for reading down on left analog's Y axis");
-			//Input_Analog_LeftStick_Down.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.AnalogInputToInput![SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up.Value, newValue, Input_Analog_LeftStick_Left!.Value, Input_Analog_LeftStick_Right.Value, Input_Analog_LeftStickFloatTime.Value); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Analog_LeftStick_Down.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.AnalogInputToInput[SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up.Value, Input_Analog_LeftStick_Down.Value, Input_Analog_LeftStick_Left.Value, Input_Analog_LeftStick_Right.Value, Input_Analog_LeftStickFloatTime.Value); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Analog_LeftStick_Left = Config.Bind(CATEGORYNAME_INPUT, "Left Stick Key Left", KeyCode.A, description: "Key used to as replacement for reading right on left analog's X axis");
-			//Input_Analog_LeftStick_Left.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.AnalogInputToInput![SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up.Value, Input_Analog_LeftStick_Down.Value, newValue, Input_Analog_LeftStick_Right.Value, Input_Analog_LeftStickFloatTime.Value); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Analog_LeftStick_Left.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.AnalogInputToInput[SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up.Value, Input_Analog_LeftStick_Down.Value, Input_Analog_LeftStick_Left.Value, Input_Analog_LeftStick_Right.Value, Input_Analog_LeftStickFloatTime.Value); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 
 			Input_Digital_A_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller button B", KeyCode.Q, description: "Key used as replacement for Xbox's B key (originally Switch's A key) - generally cancel action");
-			//Input_Digital_A_Button.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.A_Button] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_A_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.A_Button] = new KeySteamDigitalAction(Input_Digital_A_Button.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Digital_B_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller button A", KeyCode.E, description: "Key used as replacement for Xbox's A key (originally Switch's B key) - generally confirm and contextual action");
-			//Input_Digital_B_Button.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.B_Button] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_B_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.B_Button] = new KeySteamDigitalAction(Input_Digital_B_Button.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Digital_X_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller button Y", KeyCode.Space, description: "Key used as replacement for Xbox's Y key (originally Switch's X key) - generally used for skateboard");
-			//Input_Digital_X_Button.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.X_Button] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_X_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.X_Button] = new KeySteamDigitalAction(Input_Digital_X_Button.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Digital_Y_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller button X", KeyCode.Escape, description: "Key used as replacement for Xbox's Y key (originally Switch's X key) - generally used for opening Red Room");
-			//Input_Digital_Y_Button.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.Y_Button] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_Y_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.Y_Button] = new KeySteamDigitalAction(Input_Digital_Y_Button.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 
 			Input_Digital_LB = Config.Bind(CATEGORYNAME_INPUT, "Controller LB", KeyCode.Alpha2, description: "Key used as replacement for Left Bumper - generally used for vision mode");
-			//Input_Digital_LB.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.LB] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_LB.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.LB] = new KeySteamDigitalAction(Input_Digital_LB.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Digital_RB = Config.Bind(CATEGORYNAME_INPUT, "Controller RB", KeyCode.LeftShift, description: "Key used as replacement for Right Bumper - generally used for sprint");
-			//Input_Digital_RB.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.RB] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_RB.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.RB] = new KeySteamDigitalAction(Input_Digital_RB.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 
 			Input_Digital_Back_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller Back", KeyCode.Tab, description: "Key used as replacement for Back / Select button");
-			//Input_Digital_Back_Button.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.Back_Button] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_Back_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.Back_Button] = new KeySteamDigitalAction(Input_Digital_Back_Button.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Digital_Start_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller Start", KeyCode.O, description: "Key used as replacement for Start button");
-			//Input_Digital_Start_Button.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.Start_Button] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_Start_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.Start_Button] = new KeySteamDigitalAction(Input_Digital_Start_Button.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 
 			Input_Digital_L_Stick_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller Left Stick Click", KeyCode.LeftControl, description: "Key used as replacement for Left stick click - generally used for crouching");
-			//Input_Digital_L_Stick_Button.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.L_Stick_Button] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_L_Stick_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.L_Stick_Button] = new KeySteamDigitalAction(Input_Digital_L_Stick_Button.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Digital_R_Stick_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller Right Stick Click", KeyCode.Mouse2, description: "Key used as replacement for Right stick click");
-			//Input_Digital_R_Stick_Button.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.R_Stick_Button] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_R_Stick_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.R_Stick_Button] = new KeySteamDigitalAction(Input_Digital_R_Stick_Button.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 
 			Input_Digital_Up_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller Dpad up", KeyCode.UpArrow, description: "Key used as replacement for D-pad up");
-			//Input_Digital_Up_Button.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.Up_Button] = new KeySteamDigitalAction(newValue, true); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_Up_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.Up_Button] = new KeySteamDigitalAction(Input_Digital_Up_Button.Value, true); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Digital_Right_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller Dpad right", KeyCode.RightArrow, description: "Key used as replacement for D-pad right");
-			//Input_Digital_Right_Button.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.Right_Button] = new KeySteamDigitalAction(newValue, true); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_Right_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.Right_Button] = new KeySteamDigitalAction(Input_Digital_Right_Button.Value, true); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Digital_Down_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller Dpad down", KeyCode.DownArrow, description: "Key used as replacement for D-pad down");
-			//Input_Digital_Down_Button.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.Down_Button] = new KeySteamDigitalAction(newValue, true); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_Down_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.Down_Button] = new KeySteamDigitalAction(Input_Digital_Down_Button.Value, true); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Digital_Left_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller Dpad left", KeyCode.LeftArrow, description: "Key used as replacement for D-pad left");
-			//Input_Digital_Left_Button.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.Left_Button] = new KeySteamDigitalAction(newValue, true); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_Left_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.Left_Button] = new KeySteamDigitalAction(Input_Digital_Left_Button.Value, true); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 
 			Input_Digital_LT = Config.Bind(CATEGORYNAME_INPUT, "Controller Left Trigger", KeyCode.Mouse1, description: "Key used as replacemen for Left trigger pull - generally aiming");
-			//Input_Digital_LT.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.LT] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_LT.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput![SteamInputHook.SteamInputDigital.LT] = new KeySteamDigitalAction(Input_Digital_LT.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
+
 			Input_Digital_RT = Config.Bind(CATEGORYNAME_INPUT, "Controller Right Trigger", KeyCode.Mouse0, description: "Key used as replacemen for Right trigger pull - generally punching / shooting");
-			//Input_Digital_RT.OnEntryValueChanged.Subscribe((KeyCode oldValue, KeyCode newValue) => { GlobalInputHookHandler.Instance!.DigitalInputToInput![SteamInputHook.SteamInputDigital.RT] = new KeySteamDigitalAction(newValue, false); GlobalInputHookHandler.Instance?.InitializeInputs(); });
+			Input_Digital_RT.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput![SteamInputHook.SteamInputDigital.RT] = new KeySteamDigitalAction(Input_Digital_RT.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 
 			Input_Mouse_Sensitivity = Config.Bind(CATEGORYNAME_INPUT, "Mouse sensitivity", 1.0f, description: "Mouse sensitivity multiplier."); //validator: new ValueRange<float>(0.05f, 2f));
-			//Input_Mouse_Sensitivity.OnEntryValueChanged.Subscribe((float oldValue, float newValue) => { MouseAnalog.Sensitivity = newValue; });
-			//MouseAnalog.Sensitivity = Input_Mouse_Sensitivity.Value;
+			Input_Mouse_Sensitivity.SettingChanged += (object sender, EventArgs e) => { MouseAnalog.Sensitivity = Input_Mouse_Sensitivity.Value; };
+			MouseAnalog.Sensitivity = Input_Mouse_Sensitivity.Value;
 
 			Input_MouseYAxisInversion = Config.Bind(CATEGORYNAME_INPUT, "Mouse Y axis inversion", false, description: "Inverts mouse's Y axis.");
-			//Input_MouseYAxisInversion.OnEntryValueChanged.Subscribe((bool oldValue, bool newValue) => { MouseAnalog.InvertYAxis = newValue; });
-			//MouseAnalog.InvertYAxis = Input_MouseYAxisInversion.Value;
+			Input_MouseYAxisInversion.SettingChanged += (object sender, EventArgs e) => { MouseAnalog.InvertYAxis = Input_MouseYAxisInversion.Value; };
+			MouseAnalog.InvertYAxis = Input_MouseYAxisInversion.Value;
 
 			Input_Controller_Vibration = Config.Bind(CATEGORYNAME_INPUT, "Controller vibration", false, description: "Adds controller vibration in few places.");
-			//Input_Controller_Vibration.OnEntryValueChanged.Subscribe((bool oldValue, bool newValue) => { Components.VibrationController.UseRumble = newValue; });
-			//Components.VibrationController.UseRumble = Input_Controller_Vibration.Value;
+			Input_Controller_Vibration.SettingChanged += (object sender, EventArgs e) => { Components.VibrationController.UseRumble = Input_Controller_Vibration.Value; };
+
+			Components.VibrationController.UseRumble = Input_Controller_Vibration.Value;
 		}
 
 		private void RegisterOtherSettings()
@@ -305,8 +320,8 @@ namespace SuisHack
 			Entry_Other_ShowAdvanced = Config.Bind(CATEGORYNAME_OTHER, "Show advanced settings", false, description: "Shows advanced options in GUI.");
 
 			Entry_Other_InterpolateMovement = Config.Bind(CATEGORYNAME_OTHER, "Interpolate movement", true, description: "Experimental: Enabled hooks related to movement interpolation of some rendered objects (protagonist and camera) to work around 50Hz Fixed Update stuttering - to my speedrunning friends: DO NOT allow this option for speedrunning.");
-			//Entry_Other_InterpolateMovement.OnEntryValueChanged.Subscribe((bool oldValue, bool newVal) => { Components.Interpolation.SmootherController.InterpolateMovement = newVal; });
-			//Components.Interpolation.SmootherController.InterpolateMovement = Entry_Other_InterpolateMovement.Value;
+			Entry_Other_InterpolateMovement.SettingChanged += (object sender, EventArgs e) => { Components.Interpolation.SmootherController.InterpolateMovement = Entry_Other_InterpolateMovement.Value; };
+			Components.Interpolation.SmootherController.InterpolateMovement = Entry_Other_InterpolateMovement.Value;
 
 			Entry_Other_GeometryImprovements = Config.Bind(CATEGORYNAME_OTHER, "Geometry improvements", GeometryImprovements.Enabled, description: "Runs additional scripts and shader replacement to improve geometry. Options are: \"Disabled\" / \"Enabled\" (only fixes some geometry issues and modifiers a few really bad LOD distance groups)");
 			Entry_Other_LightImprovements = Config.Bind(CATEGORYNAME_OTHER, "Improve lights", LightImprovements.Minor, description: "Modifies light sources to improve the game's looks. Options are: Disabled / Minor / All - All can introduce some performance problems. Minor should be generally safe.");

@@ -10,8 +10,8 @@ namespace SuisHack.Hacks
 	[HarmonyPatch]
 	public static class PostProcessLayerHook
 	{
-		static List<PostProcessLayer?> PostProcessLayerInstances = new List<PostProcessLayer?>();
-		static List<PostProcessVolume?> PostProcessVolumeInstances = new List<PostProcessVolume?>();
+		static List<PostProcessLayer> PostProcessLayerInstances = new List<PostProcessLayer>();
+		static List<PostProcessVolume> PostProcessVolumeInstances = new List<PostProcessVolume>();
 
 
 		#region Antialiasing
