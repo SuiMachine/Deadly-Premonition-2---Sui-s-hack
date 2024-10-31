@@ -8,25 +8,25 @@ namespace SuisHack.KeyboardSupport
 	{
 		public static void Initialize()
 		{
-			if (SuisHackMain.Settings!.Input_Override!.Value == ExposedSettings.InputType.KeyboardAndMouse)
+			if (ExposedSettings.Instance.Input_Override!.Value == ExposedSettings.InputType.KeyboardAndMouse)
 			{
 				var source = typeof(UISprite).GetMethod(nameof(UISprite.OnInit), System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
 				var target = typeof(KeyboardPrompts).GetMethod(nameof(KeyboardPrompts.UISpriteOn), System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
 
 				if (source == null)
 				{
-					SuisHackMain.loggerInst!.Msg("Failed to find source method for GamepadPrompts");
+					Plugin.Message("Failed to find source method for GamepadPrompts");
 					return;
 				}
 
 				if (target == null)
 				{
-					SuisHackMain.loggerInst!.Msg("Failed to find target method for GamepadPrompts");
+					Plugin.Message("Failed to find target method for GamepadPrompts");
 					return;
 				}
 
-				SuisHackMain.harmonyInst!.Patch(source, postfix: new HarmonyMethod(target));
-				SuisHackMain.loggerInst!.Msg("Initialized keyboard/mouse patch");
+				Plugin.HarmonyInstance.Patch(source, postfix: new HarmonyMethod(target));
+				Plugin.Message("Initialized keyboard/mouse patch");
 			}
 		}
 
