@@ -1,4 +1,5 @@
 ﻿using Il2CppSystem.IO;
+using SuisHack.KeyboardSupport;
 using System;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
@@ -86,10 +87,10 @@ namespace SuisHack
 						switch (ExposedSettings.Instance.Input_Override.Value)
 						{
 							case ExposedSettings.InputType.SteamInput:
-								//DrawSteamInput();
+								DrawSteamInput();
 								break;
 							case ExposedSettings.InputType.KeyboardAndMouse:
-								//DrawKeyboardAndMouseInput();
+								DrawKeyboardAndMouseInput();
 								break;
 						}
 						break;
@@ -239,6 +240,7 @@ namespace SuisHack
 				}
 			}
 		}
+
 		private void DrawQuality()
 		{
 			GUIStyle richText = GUI.skin.label;
@@ -643,6 +645,231 @@ namespace SuisHack
 			ExposedSettings.Instance.Entry_Quality_EdgeDetectionDepth.Value = (float)ExposedSettings.Instance.Entry_Quality_EdgeDetectionDepth.DefaultValue;
 		}
 
+		private void DrawSteamInput()
+		{
+			GUIStyle richText = GUI.skin.label;
+			richText.richText = true;
+
+			{
+				GUILayout.BeginVertical(GUI.skin.box);
+				GUILayout.Label("Options starting with * requires full game restart");
+				GUILayout.BeginHorizontal();
+				GUILayout.Label("* Input mode:");
+				if (GUILayout.Button("Change to keyboard and mouse"))
+					ExposedSettings.Instance.Input_Override.Value = ExposedSettings.InputType.KeyboardAndMouse;
+				GUILayout.EndHorizontal();
+				GUILayout.EndVertical();
+			}
+
+			{
+				GUILayout.BeginVertical(GUI.skin.box);
+				ExposedSettings.Instance.Input_Controller_Vibration.Value = GUILayout.Toggle(ExposedSettings.Instance.Input_Controller_Vibration.Value, "Controller rumble / vibration");
+				GUILayout.EndVertical();
+			}
+		}
+
+		private void DrawKeyboardAndMouseInput()
+		{
+			GUIStyle richText = GUI.skin.label;
+			richText.richText = true;
+
+			var Settings = ExposedSettings.Instance;
+			{
+				GUILayout.BeginVertical(GUI.skin.box);
+				GUILayout.BeginHorizontal();
+				GUILayout.Label("* Input mode:");
+				if (GUILayout.Button("Change to gamepad"))
+					Settings.Input_Override.Value = ExposedSettings.InputType.SteamInput;
+
+				GUILayout.EndHorizontal();
+				GUILayout.EndVertical();
+			}
+			{
+				GUILayout.BeginVertical(GUI.skin.box);
+				GUILayout.Label("Options starting with * requires full game restart");
+				GUILayout.Label("For keyboard and mouse to work a controller is still required!");
+				GUILayout.Label("A fake / emulated controller can work, provided it is detected by SteamInput.");
+				GUILayout.Label("For mouse support to work, a modified gamemangers file is required.");
+				GUILayout.EndVertical();
+			}
+
+			{
+				GUILayout.BeginVertical(GUI.skin.box);
+				GUILayout.BeginHorizontal();
+				GUILayout.Label($"Mouse sensitivity: {Settings.Input_Mouse_Sensitivity.Value:0.00}");
+				Settings.Input_Mouse_Sensitivity.Value = GUILayout.HorizontalSlider(Settings.Input_Mouse_Sensitivity.Value, 0.05f, 2);
+				Settings.Input_MouseYAxisInversion.Value = GUILayout.Toggle(Settings.Input_MouseYAxisInversion.Value, "Mouse Y Axis inversion");
+				GUILayout.EndHorizontal();
+				GUILayout.EndVertical();
+			}
+
+			{
+				GUILayout.BeginVertical(GUI.skin.box);
+				if (GlobalInputHookHandler.Instance != null)
+				{
+					GUILayout.Label("<b>Key rebinding (affects only gameplay section)</b>", richText);
+
+					GUILayout.Label("");
+					GUILayout.Label("<b>Movement</b>", richText);
+					DrawRebind("Move forward", RebindingActions.Forward);
+					DrawRebind("Move backward", RebindingActions.Backward);
+					DrawRebind("Move left", RebindingActions.Left);
+					DrawRebind("Move right", RebindingActions.Right);
+					DrawRebind("Crouch", RebindingActions.Crouch);
+					DrawRebind("Sprint / dodge", RebindingActions.Dash_Dodge);
+
+					GUILayout.Label("");
+					GUILayout.Label("<b>Actions</b>", richText);
+					DrawRebind("Fire / Punch", RebindingActions.Fire_Weapon_Punch);
+					DrawRebind("Aim a gun", RebindingActions.Point_Gun);
+					DrawRebind("Vision", RebindingActions.Vision);
+					DrawRebind("Interact / Reload / Accelerate", RebindingActions.Interact_Reload_Accellerate);
+					DrawRebind("Cancel / Break", RebindingActions.Cancel_Brake);
+					DrawRebind("Reset camera / fighting style", RebindingActions.Reset_Camera_Fighting_Style);
+
+					GUILayout.Label("");
+					GUILayout.Label("<b>Actions</b>", richText);
+					DrawRebind("Display map", RebindingActions.Display_Map);
+					DrawRebind("Quest display", RebindingActions.Quest_Display);
+					DrawRebind("Skateboard", RebindingActions.Skateboard);
+
+					DrawRebind("Switch slot to left", RebindingActions.SwitchSlotLeft);
+					DrawRebind("Switch slot to right", RebindingActions.SwitchSlotRight);
+					DrawRebind("Switch album display up", RebindingActions.SwitchAlbumDisplayUp);
+					DrawRebind("Switch album display down", RebindingActions.SwitchAlbumDisplayDown);
+
+					if (CurrentRebinding != RebindingActions.None)
+					{
+						Event e = Event.current;
+						if (e.type != EventType.Used)
+						{
+							var tempKey = KeyCode.None;
+							if (e.isKey)
+								tempKey = e.keyCode;
+							else if (e.isMouse)
+							{
+								if (Input.GetKeyDown(KeyCode.Mouse0))
+									tempKey = KeyCode.Mouse0;
+								else if (Input.GetKeyDown(KeyCode.Mouse1))
+									tempKey = KeyCode.Mouse1;
+								else if (Input.GetKeyDown(KeyCode.Mouse2))
+									tempKey = KeyCode.Mouse2;
+								else if (Input.GetKeyDown(KeyCode.Mouse3))
+									tempKey = KeyCode.Mouse3;
+								else if (Input.GetKeyDown(KeyCode.Mouse4))
+									tempKey = KeyCode.Mouse4;
+							}
+
+							if (tempKey != KeyCode.None)
+							{
+								RebindingAction(CurrentRebinding, tempKey);
+								CurrentRebinding = RebindingActions.None;
+							}
+						}
+					}
+				}
+				else
+				{
+					GUILayout.Label("<b>Keyboard / mouse not initialized - please restart the game!</b>", richText);
+				}
+
+				GUILayout.EndVertical();
+			}
+		}
+
+
+		private void RebindingAction(RebindingActions currentRebinding, KeyCode tempKey)
+		{
+			var Settings = ExposedSettings.Instance;
+
+			switch (currentRebinding)
+			{
+				case RebindingActions.Forward:
+					Settings.Input_Analog_LeftStick_Up.Value = tempKey;
+					break;
+				case RebindingActions.Backward:
+					Settings.Input_Analog_LeftStick_Down.Value = tempKey;
+					break;
+				case RebindingActions.Left:
+					Settings.Input_Analog_LeftStick_Left.Value = tempKey;
+					break;
+				case RebindingActions.Right:
+					Settings.Input_Analog_LeftStick_Right.Value = tempKey;
+					break;
+				case RebindingActions.Display_Map:
+					Settings.Input_Digital_Back_Button.Value = tempKey;
+					break;
+				case RebindingActions.Quest_Display:
+					Settings.Input_Digital_Start_Button.Value = tempKey;
+					break;
+				case RebindingActions.Point_Gun:
+					Settings.Input_Digital_LT.Value = tempKey;
+					break;
+				case RebindingActions.Vision:
+					Settings.Input_Digital_LB.Value = tempKey;
+					break;
+				case RebindingActions.Crouch:
+					Settings.Input_Digital_L_Stick_Button.Value = tempKey;
+					break;
+				case RebindingActions.Fire_Weapon_Punch:
+					Settings.Input_Digital_RT.Value = tempKey;
+					break;
+				case RebindingActions.Cancel_Brake:
+					Settings.Input_Digital_B_Button.Value = tempKey;
+					break;
+				case RebindingActions.Dash_Dodge:
+					Settings.Input_Digital_RB.Value = tempKey;
+					break;
+				case RebindingActions.Interact_Reload_Accellerate:
+					Settings.Input_Digital_A_Button.Value = tempKey;
+					break;
+				case RebindingActions.Reset_Camera_Fighting_Style:
+					Settings.Input_Digital_R_Stick_Button.Value = tempKey;
+					break;
+				case RebindingActions.Skateboard:
+					Settings.Input_Digital_Y_Button.Value = tempKey;
+					break;
+				case RebindingActions.SwitchAlbumDisplayDown:
+					Settings.Input_Digital_Down_Button.Value = tempKey;
+					break;
+				case RebindingActions.SwitchAlbumDisplayUp:
+					Settings.Input_Digital_Up_Button.Value = tempKey;
+					break;
+				case RebindingActions.SwitchSlotLeft:
+					Settings.Input_Digital_Left_Button.Value = tempKey;
+					break;
+				case RebindingActions.SwitchSlotRight:
+					Settings.Input_Digital_Right_Button.Value = tempKey;
+					break;
+			}
+		}
+
+		public void DrawRebind(string text, RebindingActions rebindingKey)
+		{
+			var fixedwidth = new Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray<GUILayoutOption>(1);
+			fixedwidth[0] = GUILayout.Width(300);
+
+			GUILayout.BeginHorizontal();
+			GUILayout.Label(text, fixedwidth);
+			GUILayout.Label(GlobalInputHookHandler.GetInputForRebinding(rebindingKey).ToString(), fixedwidth);
+			if (rebindingKey == CurrentRebinding)
+			{
+				GUIStyle richText = GUI.skin.label;
+				richText.richText = true;
+				GUILayout.Label("<color=red>Awaiting key</color>", richText, fixedwidth);
+			}
+			else if (rebindingKey != RebindingActions.None)
+			{
+				if (GUILayout.Button("Rebind", fixedwidth))
+				{
+					CurrentRebinding = rebindingKey;
+					Event.current.type = EventType.Used;
+				}
+			}
+
+			GUILayout.EndHorizontal();
+		}
+
 		private void DrawOther()
 		{
 			GUIStyle richText = GUI.skin.label;
@@ -700,21 +927,16 @@ namespace SuisHack
 			GUILayout.EndHorizontal();
 		}
 
-		private string GetTextureString(int masterTextureLimit)
+		private static string GetTextureString(int masterTextureLimit)
 		{
 			//I wish I could use 8.0 recursive patern
-			switch (masterTextureLimit)
+			return masterTextureLimit switch
 			{
-				case 1:
-					return "Half";
-				default:
-					return "Full";
-			}
+				1 => "Half",
+				_ => "Full",
+			};
 		}
 
-		void OnDestroy()
-		{
-			Plugin.Warning("GUI was destroyed - was this intended or Unity cleaned it up?");
-		}
+		private void OnDestroy() => Plugin.Warning("GUI was destroyed - was this intended or Unity cleaned it up?");
 	}
 }

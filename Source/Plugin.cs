@@ -32,11 +32,11 @@ public class Plugin : BasePlugin
 		switch (Settings.Input_Override.Value)
 		{
 			case ExposedSettings.InputType.SteamInput:
-				//GamepadSupport.GamepadPrompts.Initialize();
+				GamepadSupport.GamepadPrompts.Initialize();
 				break;
 			case ExposedSettings.InputType.KeyboardAndMouse:
-				//KeyboardSupport.KeyboardPrompts.Initialize();
-				//KeyboardSupport.SteamInputHook.InitializeKeyboardAndMouse();
+				KeyboardSupport.KeyboardPrompts.Initialize();
+				KeyboardSupport.SteamInputHook.InitializeKeyboardAndMouse();
 				break;
 		}
 
