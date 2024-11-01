@@ -208,6 +208,7 @@ namespace SuisHack.KeyboardSupport
 		private void Awake()
 		{
 			Plugin.Message("Initialized Global Input Hook Handler");
+			this.hideFlags = HideFlags.HideAndDontSave;
 		}
 
 		private void Start()

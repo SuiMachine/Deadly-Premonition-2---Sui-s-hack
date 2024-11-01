@@ -44,7 +44,7 @@ public class Plugin : BasePlugin
 
 		if (Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
 		{
-			//KeyboardSupport.GlobalInputHookHandler.Initialize();
+			KeyboardSupport.GlobalInputHookHandler.Initialize();
 		}
 
 		SettingsGUI.Initialize();
@@ -52,6 +52,7 @@ public class Plugin : BasePlugin
 		InitializeManualHarmonyHooks();
 
 		Log.LogInfo($"{MyPluginInfo.PLUGIN_GUID} has finished loading!");
+
 	}
 
 	private void InitializeManualHarmonyHooks()
