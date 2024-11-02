@@ -6,6 +6,10 @@ using SuisHack.Components;
 using SuisHack.Components.Interpolation;
 using SuisHack.GlobalGameObjects;
 using SuisHack.Hacks.StateStracking;
+using SuisHack.KeyboardSupport;
+using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SuisHack;
 
@@ -21,7 +25,7 @@ public class Plugin : BasePlugin
 
 
 	public override void Load()
-    {
+	{
 		Log.LogInfo($"{MyPluginInfo.PLUGIN_GUID} starting to load - report problems if there are errors between this message and notification that it finished loading!");
 		HarmonyInstance = new Harmony("local.suimachine.suihack");
 		m_Logger = Log;
@@ -52,7 +56,43 @@ public class Plugin : BasePlugin
 		InitializeManualHarmonyHooks();
 
 		Log.LogInfo($"{MyPluginInfo.PLUGIN_GUID} has finished loading!");
+		SceneManager.add_sceneLoaded((Action<Scene, LoadSceneMode>)((scene, loadMode) =>
+		{
+			var sceneName = scene.name;
 
+			if (Settings != null)
+			{
+				Application.targetFrameRate = Settings.Entry_DesiredFramerate.Value;
+
+				if (sceneName == "TitleTest2")
+				{
+					if (!AppliedResolutionInMainMenu)
+						Hacks.ScreenHook.SetResolution1();
+					AppliedResolutionInMainMenu = true;
+					GameStateMachine.MainMenu = true;
+				}
+				else if (sceneName == OPENWORLDSCENENAME)
+				{
+					GameStateMachine.Gameplay = true;
+					if (Settings.Entry_Other_GeometryImprovements.Value >= ExposedSettings.GeometryImprovements.Enabled)
+					{
+						if (GameObject.FindObjectOfType<Components.GlobalGeometryChecker>() == null)
+						{
+							var oldActiveScene = SceneManager.GetActiveScene();
+							SceneManager.SetActiveScene(scene);
+							var newGameObject = new GameObject("WireRendererCorrection");
+							SceneManager.SetActiveScene(oldActiveScene);
+							newGameObject.AddComponent<Components.GlobalGeometryChecker>();
+						}
+					}
+				}
+				else
+				{
+					GameStateMachine.Gameplay = true;
+					LightImprovement.ModifyLights.ModifyOnSceneLoad(sceneName.ToLower());
+				}
+			}
+		}));
 	}
 
 	private void InitializeManualHarmonyHooks()
@@ -74,6 +114,8 @@ public class Plugin : BasePlugin
 		ClassInjector.RegisterTypeInIl2Cpp<BoatFollowInterpolation>();
 		ClassInjector.RegisterTypeInIl2Cpp<GameObjectInterpolation>();
 		ClassInjector.RegisterTypeInIl2Cpp<SmootherController>();
+		ClassInjector.RegisterTypeInIl2Cpp<WireRendererCorrection>();
+		ClassInjector.RegisterTypeInIl2Cpp<GlobalInputHookHandler>();
 	}
 
 	public override bool Unload()

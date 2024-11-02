@@ -660,12 +660,6 @@ namespace SuisHack
 				GUILayout.EndHorizontal();
 				GUILayout.EndVertical();
 			}
-
-			{
-				GUILayout.BeginVertical(GUI.skin.box);
-				ExposedSettings.Instance.Input_Controller_Vibration.Value = GUILayout.Toggle(ExposedSettings.Instance.Input_Controller_Vibration.Value, "Controller rumble / vibration");
-				GUILayout.EndVertical();
-			}
 		}
 
 		private void DrawKeyboardAndMouseInput()

@@ -10,10 +10,9 @@ namespace SuisHack.KeyboardSupport
 	{
 		public GlobalInputHookHandler(IntPtr ptr) : base(ptr) { }
 
-		public static GlobalInputHookHandler? Instance { get; private set; }
+		public static GlobalInputHookHandler Instance { get; private set; }
 		public Dictionary<SteamInputHook.SteamInputAnalog, KeySteamAnalogAction> AnalogInputToInput;
 		public Dictionary<SteamInputHook.SteamInputDigital, KeySteamDigitalAction> DigitalInputToInput;
-
 
 		public static KeyCode GetInputForRebinding(RebindingActions action)
 		{
@@ -209,6 +208,7 @@ namespace SuisHack.KeyboardSupport
 		{
 			Plugin.Message("Initialized Global Input Hook Handler");
 			this.hideFlags = HideFlags.HideAndDontSave;
+			DontDestroyOnLoad(this.gameObject);
 		}
 
 		private void Start()

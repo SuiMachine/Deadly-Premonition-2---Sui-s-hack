@@ -102,7 +102,6 @@ namespace SuisHack
 		public ConfigEntry<KeyCode> Input_Digital_RT;
 		public ConfigEntry<float> Input_Mouse_Sensitivity;
 		public ConfigEntry<bool> Input_MouseYAxisInversion;
-		public ConfigEntry<bool> Input_Controller_Vibration;
 
 
 		//Other settings
@@ -306,11 +305,6 @@ namespace SuisHack
 			Input_MouseYAxisInversion = Config.Bind(CATEGORYNAME_INPUT, "Mouse Y axis inversion", false, description: "Inverts mouse's Y axis.");
 			Input_MouseYAxisInversion.SettingChanged += (object sender, EventArgs e) => { MouseAnalog.InvertYAxis = Input_MouseYAxisInversion.Value; };
 			MouseAnalog.InvertYAxis = Input_MouseYAxisInversion.Value;
-
-			Input_Controller_Vibration = Config.Bind(CATEGORYNAME_INPUT, "Controller vibration", false, description: "Adds controller vibration in few places.");
-			Input_Controller_Vibration.SettingChanged += (object sender, EventArgs e) => { Components.VibrationController.UseRumble = Input_Controller_Vibration.Value; };
-
-			Components.VibrationController.UseRumble = Input_Controller_Vibration.Value;
 		}
 
 		private void RegisterOtherSettings()
