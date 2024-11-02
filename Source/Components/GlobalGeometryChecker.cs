@@ -1,4 +1,5 @@
 ﻿using BepInEx.Unity.IL2CPP.Utils;
+using Il2CppInterop.Runtime.Attributes;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -61,6 +62,7 @@ namespace SuisHack.Components
 			}
 		}
 
+		[HideFromIl2Cpp]
 		private System.Collections.IEnumerator Checker()
 		{
 			while (true)
