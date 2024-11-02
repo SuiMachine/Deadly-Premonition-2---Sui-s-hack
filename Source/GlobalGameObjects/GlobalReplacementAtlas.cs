@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 using UnityEngine;
 
@@ -25,12 +26,14 @@ namespace SuisHack.GlobalGameObjects
 			{
 				var GlobalAtlasGO = new GameObject("GlobalAtlas");
 				DontDestroyOnLoad(GlobalAtlasGO);
+				GlobalAtlasGO.hideFlags = HideFlags.HideAndDontSave;
 				Instance = GlobalAtlasGO.AddComponent<GlobalReplacementAtlas>();
 			}
 		}
 
 		void Awake()
 		{
+			DontDestroyOnLoad(this.gameObject);
 			this.hideFlags = HideFlags.HideAndDontSave;
 			var settings = ExposedSettings.Instance;
 			if (settings.Entry_Other_Prompts.Value != "" || settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
@@ -66,6 +69,7 @@ namespace SuisHack.GlobalGameObjects
 							instanitate.transform.SetParent(this.transform);
 							instanitate.transform.localPosition = Vector3.zero;
 							instanitate.transform.localRotation = Quaternion.identity;
+							instanitate.gameObject.hideFlags = HideFlags.HideAndDontSave;
 							Atlas = instanitate.GetComponentInChildren<UIAtlas>();
 
 							switch (ReplacementTypeUsed)
@@ -108,7 +112,7 @@ namespace SuisHack.GlobalGameObjects
 			if (replacement != null)
 			{
 				instance.atlas = Atlas;
-				instance.SetAtlasSprite(replacement!);
+				instance.SetAtlasSprite(replacement);
 			}
 		}
 	}
