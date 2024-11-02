@@ -39,8 +39,8 @@ public class Plugin : BasePlugin
 				GamepadSupport.GamepadPrompts.Initialize();
 				break;
 			case ExposedSettings.InputType.KeyboardAndMouse:
-				KeyboardSupport.KeyboardPrompts.Initialize();
-				KeyboardSupport.SteamInputHook.InitializeKeyboardAndMouse();
+				KeyboardPrompts.Initialize();
+				SteamInputHook.InitializeKeyboardAndMouse();
 				break;
 		}
 
@@ -48,7 +48,7 @@ public class Plugin : BasePlugin
 
 		if (Settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
 		{
-			KeyboardSupport.GlobalInputHookHandler.Initialize();
+			GlobalInputHookHandler.Initialize();
 		}
 
 		SettingsGUI.Initialize();

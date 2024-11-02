@@ -9,6 +9,7 @@ namespace SuisHack.KeyboardSupport
 	class GlobalInputHookHandler : MonoBehaviour
 	{
 		public GlobalInputHookHandler(IntPtr ptr) : base(ptr) { }
+		private bool m_Initiated = false;
 
 		public static GlobalInputHookHandler Instance { get; private set; }
 		public Dictionary<SteamInputHook.SteamInputAnalog, KeySteamAnalogAction> AnalogInputToInput;
@@ -184,7 +185,8 @@ namespace SuisHack.KeyboardSupport
 			if (Instance == null)
 			{
 				var gameObject = new GameObject("GlobalInputHandler");
-				GameObject.DontDestroyOnLoad(gameObject);
+				DontDestroyOnLoad(gameObject);
+				gameObject.hideFlags = HideFlags.HideAndDontSave;
 				Instance = gameObject.AddComponent<GlobalInputHookHandler>();
 			}
 		}
@@ -209,14 +211,19 @@ namespace SuisHack.KeyboardSupport
 			Plugin.Message("Initialized Global Input Hook Handler");
 			this.hideFlags = HideFlags.HideAndDontSave;
 			DontDestroyOnLoad(this.gameObject);
+			Start();
 		}
 
 		private void Start()
 		{
-			InitializeInputs();
-			InitializeInputsMenu();
-			InitializeRedRoomMenu();
-			InitializeInputsMap();
+			if (!m_Initiated)
+			{
+				m_Initiated = true;
+				InitializeInputs();
+				InitializeInputsMenu();
+				InitializeRedRoomMenu();
+				InitializeInputsMap();
+			}
 		}
 
 		public void InitializeInputs()
