@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using SCPE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -240,9 +241,11 @@ namespace SuisHack.Hacks
 
 		private static void ApplyHBAOChange()
 		{
+			CleanupLayersAndVolumes();
+
 			foreach (var postprocess in PostProcessLayerInstances)
 			{
-				var hbao = postprocess.GetComponent<HBAO>();
+				HBAO hbao = postprocess.GetComponent<HBAO>();
 				if (hbao != null)
 				{
 					hbao.ApplyPreset(m_HBAO_Preset);
@@ -348,7 +351,7 @@ namespace SuisHack.Hacks
 
 		[HarmonyPostfix]
 		[HarmonyPatch(typeof(PostProcessLayer), "OnEnable")]
-		public static void PostProcessLayerAwakePostfix(PostProcessLayer __instance)
+		public static void PostProcessLayerOnEnablePostfix(PostProcessLayer __instance)
 		{
 			__instance.antialiasingMode = m_Antialiasing;
 			__instance.subpixelMorphologicalAntialiasing.quality = SubpixelMorphologicalAntialiasing.Quality.High;
@@ -436,6 +439,21 @@ namespace SuisHack.Hacks
 		{
 			if (PostProcessVolumeInstances.Contains(__instance))
 				PostProcessVolumeInstances.Remove(__instance);
+		}
+
+		private static void CleanupLayersAndVolumes()
+		{
+			for (int i = PostProcessLayerInstances.Count - 1; i >= 0; i--)
+			{
+				if (PostProcessLayerInstances[i] == null)
+					PostProcessLayerInstances.RemoveAt(i);
+			}
+
+			for (int i = PostProcessVolumeInstances.Count - 1; i >= 0; i--)
+			{
+				if (PostProcessVolumeInstances[i] == null)
+					PostProcessVolumeInstances.RemoveAt(i);
+			}
 		}
 
 		internal static string GetShortName()
