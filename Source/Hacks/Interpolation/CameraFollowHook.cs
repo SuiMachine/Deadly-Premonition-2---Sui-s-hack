@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using Il2Cpp;
 
 namespace SuisHack.Hacks
 {

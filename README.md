@@ -1,5 +1,5 @@
 # Deadly Premonition 2 - Sui's hack
-A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of the ports shortcomings.
+A hack/mod that utilizes ''BepInEx'' and ''HarmonyX'' to make up for some of the ports shortcomings.
 
 # List of features
 * Resolution override (the game should no longer start in 1920x1080 maximized window).
@@ -31,42 +31,32 @@ A hack/mod that utilizes ''MelonLoader'' and ''HarmonyX'' to make up for some of
 * An option to add shadows to lights used byt the game.
 * Options to configure HBAO.
 * Option to modify planar reflections resolution.
-* Rumble for controller when shooting
-* Basic Keyboard and Mouse support* (see notes)
+* Basic Keyboard and Mouse support* (see notes).
 
 # Experimental features
 * Hook for SteamInput to read Keyboard and mouse input instead.
 
 # Requirements
-* Original copy of the game
-* Melon Loader 0.6.x (versions above 0.6 might not be compatible)
+* Original copy of the game.
+* BepInEx (bundled in the release).
 
 # Installation (Windows)
-* Download [MelonLoader](https://github.com/LavaGang/MelonLoader/releases) and install it (prefably using installer).
-* Download the [Sui's Hack](https://github.com/SuiMachine/Deadly-Premonition-2---Sui-s-hack/releases) and extract it to game directory (do not change the file structure SuisHack.dll goes into "Mods", "Prompts" directory to a game's "StreamingAssets" folder etc.)
+* Download the [Sui's Hack](https://github.com/SuiMachine/Deadly-Premonition-2---Sui-s-hack/releases) and extract it to game directory.
 * Launch the game.
-* Press F11 to open configuration GUI or close the game and edit "MelonPreferences.cfg" inside the UserData folder.
+* Press F11 to open configuration GUI or close the game and edit "SuisHack.cfg" inside the BepInEx/config folder.
 
 # Installation (SteamDeck)
-These instructions are written with path assuming you install it on build in drive. They may need to be modified, if installing on SD card.
 * Switch to desktop mode.
-* Download [MelonLoader](https://github.com/LavaGang/MelonLoader/releases).
-* Launch the installer using Protontricks Launcher (if it is missing, install it using Discovery).
-* When the screen of protontricks launcher pops up, selected Deadly Premonition 2.
-* Select browse and navigate to: `/home/deck/`
-* In text field type in `.local` and press enter (it's a hidden folder).
-* Further navigate down to: `/home/deck/.local/share/Steam/common/Deadly Premonition 2` (or wherever the games install on SD cards)
-* Select `DeadlyPremonition2.exe` and install it.
-* Once it is installed download the [Sui's Hack](https://github.com/SuiMachine/Deadly-Premonition-2---Sui-s-hack/releases).
-* Navigate to `/home/deck/.local/share/Steam/common/Deadly Premonition 2` (or wherever the games install on SD cards)
-* Extract the files from the newly downloaded archive file to that folder.
-* Finally right click on the game in Steam libary and choose `Properties`.
-* Under launch options paste in the following `WINEDLLOVERRIDES="version.dll=n,b" %command%`
-* Launch the game. If the MelonLoader appears you should be all set.
-
+* Download [Sui's Hack](https://github.com/SuiMachine/Deadly-Premonition-2---Sui-s-hack/releases) and extract it.
+* Open Steam (in desktop mode) and find Deadly Premonition 2 on the list of games in your library.
+* Right click on it and select `Properties`.
+* Go to `Installed files` tab and select `Browse...` - this will open a new Dolphin file explorer window.
+* Copy extracted files to that directory.
+* Now return to Deadly Premonition 2's property window in Steam and go to `General` tab.
+* Under launch options paste in the following `WINEDLLOVERRIDES="winhttp.dll=n,b" %command%`
+* Launch the game.
 
 # Bugs
-* Resolution is not applied to main window on startup, if focus is on console window.
 * Final boss doesn't seem to display controller prompts correctly.
 * Epilepsy warning! TAA causes issues with shader of phantoms in the otherworld, so if you are prone to suffering epileptic seizures - use SMAA instead.
 * Occasionally the protagonist may fall through the terrain when using interpolation. Sorry :(

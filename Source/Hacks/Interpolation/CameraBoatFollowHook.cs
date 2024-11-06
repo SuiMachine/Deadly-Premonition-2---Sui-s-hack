@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using Il2Cpp;
 using UnityEngine;
 
 namespace SuisHack.Hacks.Interpolation
@@ -7,7 +6,7 @@ namespace SuisHack.Hacks.Interpolation
 	[HarmonyPatch]
 	public static class BoatCameraFollowHook
 	{
-		public static BoatCameraFollow? LastCheckBehaviour;
+		public static BoatCameraFollow LastCheckBehaviour;
 
 		[HarmonyPostfix]
 		[HarmonyPatch(typeof(BoatCameraFollow), nameof(BoatCameraFollow.LateUpdate))]

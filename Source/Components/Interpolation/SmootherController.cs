@@ -1,17 +1,15 @@
-﻿using Il2Cpp;
-using MelonLoader;
+﻿using System;
 using UnityEngine;
 
 namespace SuisHack.Components.Interpolation
 {
-	[RegisterTypeInIl2Cpp]
 	public class SmootherController : MonoBehaviour
 	{
 		public SmootherController(IntPtr ptr) : base(ptr) { }
 
 
 		public static bool InterpolateMovement;
-		public GameObject? visionCameraReference;
+		public GameObject visionCameraReference;
 		private bool DontInterpolate => VisionModeActive || CutscenePlaying;
 
 		private bool VisionModeActive => visionCameraReference != null && visionCameraReference.activeInHierarchy;

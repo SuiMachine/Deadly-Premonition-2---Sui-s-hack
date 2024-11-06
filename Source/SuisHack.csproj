@@ -1,71 +1,58 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-	<AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
-	<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-	<OutputPath>F:\\Steam\\steamapps\\common\\Deadly Premonition 2\\Mods</OutputPath>
+    <AssemblyName>SuisHack</AssemblyName>
+    <Description>A hack/mod made to make up for some of the port's shortcomings.</Description>
+    <Version>2.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+    <RootNamespace>SuisHack</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\net6\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\BepInEx\interop\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\Il2CppAssemblies\Assembly-CSharp-firstpass.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Il2CppInterop.Runtime">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\BepInEx\interop\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Il2CppSystem">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\Il2CppAssemblies\Il2CppSystem.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MelonLoader">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\net6\MelonLoader.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\Il2CppAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\BepInEx\interop\Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\BepInEx\interop\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\Il2CppAssemblies\UnityEngine.AssetBundleModule.dll</HintPath>
+      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\BepInEx\interop\UnityEngine.AssetBundleModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\Il2CppAssemblies\UnityEngine.IMGUIModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.InputModule">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\Il2CppAssemblies\UnityEngine.InputModule.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\BepInEx\interop\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\Il2CppAssemblies\UnityEngine.PhysicsModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>F:\Steam\steamapps\common\Deadly Premonition 2\BepInEx\interop\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;F:\Steam\steamapps\common\Deadly Premonition 2\BepInEx\plugins\$(ProjectName).dll&quot;&#xD;&#xA;copy /Y &quot;$(TargetDir)$(ProjectName).pdb&quot; &quot;F:\Steam\steamapps\common\Deadly Premonition 2\BepInEx\plugins\$(ProjectName).pdb&quot;&#xD;&#xA;&#xD;&#xA;copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;(TargetDir)../../../Release/BepInEx/plugins/$(ProjectName).dll&quot;" />
+  </Target>
 </Project>

@@ -1,11 +1,9 @@
-﻿using Il2CppSystem.Collections.Generic;
-using MelonLoader;
-using System;
+﻿using System;
+using System.IO;
 using UnityEngine;
 
 namespace SuisHack.Components
 {
-	[RegisterTypeInIl2Cpp]
 	public class TerrainCorrectionData : MonoBehaviour
 	{
 		public TerrainCorrectionData(IntPtr ptr) : base(ptr) { }
@@ -48,7 +46,7 @@ namespace SuisHack.Components
 				}
 				catch (Exception e)
 				{
-					SuisHackMain.loggerInst!.Error($"Error when loading {path}: {e}");
+					Plugin.Error($"Error when loading {path}: {e}");
 				}
 				finally
 				{

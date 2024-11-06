@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using Il2Cpp;
+using System;
 using UnityEngine;
 
 namespace SuisHack.Hacks.StateStracking
@@ -18,7 +18,6 @@ namespace SuisHack.Hacks.StateStracking
 		}
 	}
 
-	[MelonLoader.RegisterTypeInIl2Cpp]
 	public class MapUIManagerTracking : MonoBehaviour
 	{
 		public MapUIManagerTracking(IntPtr ptr) : base(ptr) { }

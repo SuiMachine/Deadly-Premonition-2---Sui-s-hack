@@ -1,6 +1,8 @@
 ﻿using HarmonyLib;
-using Il2Cpp;
-using Il2CppSCPE;
+using SCPE;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -9,8 +11,8 @@ namespace SuisHack.Hacks
 	[HarmonyPatch]
 	public static class PostProcessLayerHook
 	{
-		static List<PostProcessLayer?> PostProcessLayerInstances = new List<PostProcessLayer?>();
-		static List<PostProcessVolume?> PostProcessVolumeInstances = new List<PostProcessVolume?>();
+		static List<PostProcessLayer> PostProcessLayerInstances = new List<PostProcessLayer>();
+		static List<PostProcessVolume> PostProcessVolumeInstances = new List<PostProcessVolume>();
 
 
 		#region Antialiasing
@@ -25,7 +27,7 @@ namespace SuisHack.Hacks
 				m_Antialiasing = value;
 				foreach (var postProcess in PostProcessLayerInstances)
 				{
-					postProcess!.antialiasingMode = value;
+					postProcess.antialiasingMode = value;
 					postProcess.subpixelMorphologicalAntialiasing.quality = SubpixelMorphologicalAntialiasing.Quality.High;
 				}
 			}
@@ -79,7 +81,7 @@ namespace SuisHack.Hacks
 				m_FarClipDistance = value;
 				foreach (var postProcess in PostProcessLayerInstances)
 				{
-					var camera = postProcess!.GetComponent<Camera>();
+					var camera = postProcess.GetComponent<Camera>();
 					if (camera != null)
 					{
 						camera.farClipPlane = m_FarClipDistance;
@@ -239,9 +241,11 @@ namespace SuisHack.Hacks
 
 		private static void ApplyHBAOChange()
 		{
+			CleanupLayersAndVolumes();
+
 			foreach (var postprocess in PostProcessLayerInstances)
 			{
-				var hbao = postprocess!.GetComponent<HBAO>();
+				HBAO hbao = postprocess.GetComponent<HBAO>();
 				if (hbao != null)
 				{
 					hbao.ApplyPreset(m_HBAO_Preset);
@@ -258,19 +262,19 @@ namespace SuisHack.Hacks
 			{
 				if (volume == null)
 				{
-					SuisHackMain.loggerInst!.Msg("Volume was null!");
+					Plugin.Error("Volume was null!");
 					continue;
 				}
-				else if (volume!.profile == null)
+				else if (volume.profile == null)
 				{
-					SuisHackMain.loggerInst!.Msg("Profile was null!");
+					Plugin.Error("Profile was null!");
 					continue;
 				}
 
-				ScreenSpaceReflections ssr = volume!.profile!.GetSetting<ScreenSpaceReflections>();
+				ScreenSpaceReflections ssr = volume.profile.GetSetting<ScreenSpaceReflections>();
 				if (ssr == null)
 				{
-					SuisHackMain.loggerInst!.Msg("Ssr was null");
+					Plugin.Error("Ssr was null");
 					continue;
 				}
 
@@ -317,23 +321,23 @@ namespace SuisHack.Hacks
 			{
 				if (volume == null)
 				{
-					SuisHackMain.loggerInst!.Msg("Volume was null!");
+					Plugin.Error("Volume was null!");
 					continue;
 				}
-				else if (volume!.profile == null)
+				else if (volume.profile == null)
 				{
-					SuisHackMain.loggerInst!.Msg("Profile was null!");
+					Plugin.Error("Profile was null!");
 					continue;
 				}
 
-				EdgeDetection edgeDetection = volume!.profile!.GetSetting<EdgeDetection>();
+				EdgeDetection edgeDetection = volume.profile.GetSetting<EdgeDetection>();
 				if (edgeDetection == null)
 				{
-					SuisHackMain.loggerInst!.Msg("EdgeDetection was null");
+					Plugin.Error("EdgeDetection was null");
 					continue;
 				}
-				edgeDetection!.enabled.value = m_EnableEdgeDetectionFilter;
-				edgeDetection!.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
+				edgeDetection.enabled.value = m_EnableEdgeDetectionFilter;
+				edgeDetection.sensitivityDepth.value = m_EnableEdgeDetectionFilterDepth;
 			}
 		}
 
@@ -347,7 +351,7 @@ namespace SuisHack.Hacks
 
 		[HarmonyPostfix]
 		[HarmonyPatch(typeof(PostProcessLayer), "OnEnable")]
-		public static void PostProcessLayerAwakePostfix(PostProcessLayer __instance)
+		public static void PostProcessLayerOnEnablePostfix(PostProcessLayer __instance)
 		{
 			__instance.antialiasingMode = m_Antialiasing;
 			__instance.subpixelMorphologicalAntialiasing.quality = SubpixelMorphologicalAntialiasing.Quality.High;
@@ -379,7 +383,7 @@ namespace SuisHack.Hacks
 
 			else if (__instance.profile == null)
 			{
-				SuisHackMain.loggerInst!.Msg("Profile was null!");
+				Plugin.Error("Profile was null!");
 				return;
 			}
 
@@ -435,6 +439,21 @@ namespace SuisHack.Hacks
 		{
 			if (PostProcessVolumeInstances.Contains(__instance))
 				PostProcessVolumeInstances.Remove(__instance);
+		}
+
+		private static void CleanupLayersAndVolumes()
+		{
+			for (int i = PostProcessLayerInstances.Count - 1; i >= 0; i--)
+			{
+				if (PostProcessLayerInstances[i] == null)
+					PostProcessLayerInstances.RemoveAt(i);
+			}
+
+			for (int i = PostProcessVolumeInstances.Count - 1; i >= 0; i--)
+			{
+				if (PostProcessVolumeInstances[i] == null)
+					PostProcessVolumeInstances.RemoveAt(i);
+			}
 		}
 
 		internal static string GetShortName()

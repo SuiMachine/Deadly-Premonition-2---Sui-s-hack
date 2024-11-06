@@ -1,16 +1,14 @@
-﻿using Il2Cpp;
-using MelonLoader;
+﻿using System;
 using UnityEngine;
 
 namespace SuisHack.Components.Interpolation
 {
-	[RegisterTypeInIl2Cpp]
 	class BoatFollowInterpolation : MonoBehaviour
 	{
 		public BoatFollowInterpolation(IntPtr ptr) : base(ptr) { }
 
-		BoatCameraFollow? boatFollowReference;
-		GameObjectInterpolation? interpolator;
+		BoatCameraFollow boatFollowReference;
+		GameObjectInterpolation interpolator;
 
 		void Start()
 		{

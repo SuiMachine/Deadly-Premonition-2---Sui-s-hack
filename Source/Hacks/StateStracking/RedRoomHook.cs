@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using Il2Cpp;
+using System;
 using UnityEngine;
 
 namespace SuisHack.Hacks.StateStracking
@@ -21,11 +21,10 @@ namespace SuisHack.Hacks.StateStracking
 				}
 			}
 			else
-				SuisHackMain.loggerInst!.Error("RedRoomMain has no child!");
+				Plugin.Error("RedRoomMain has no child!");
 		}
 	}
 
-	[MelonLoader.RegisterTypeInIl2Cpp]
 	public class RedRoomTracking : MonoBehaviour
 	{
 		public RedRoomTracking(IntPtr ptr) : base(ptr) { }
@@ -38,7 +37,6 @@ namespace SuisHack.Hacks.StateStracking
 		void OnDisable()
 		{
 			GameStateMachine.RedRoomOpened = false;
-
 		}
 	}
 }

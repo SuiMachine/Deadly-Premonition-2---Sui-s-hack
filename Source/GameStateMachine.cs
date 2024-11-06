@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SuisHack
+﻿namespace SuisHack
 {
 	public static class GameStateMachine
 	{
@@ -98,7 +92,7 @@ namespace SuisHack
 
 			if (oldState != CurrentGameState)
 			{
-				SuisHackMain.loggerInst!.Msg($"Changed state to: {CurrentGameState}");
+				Plugin.Message($"Changed state to: {CurrentGameState}");
 			}
 		}
 	}

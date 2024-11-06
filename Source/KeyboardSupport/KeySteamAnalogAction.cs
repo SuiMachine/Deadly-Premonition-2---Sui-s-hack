@@ -1,4 +1,4 @@
-﻿using Il2CppSteamworks;
+﻿using Steamworks;
 using UnityEngine;
 
 namespace SuisHack.KeyboardSupport

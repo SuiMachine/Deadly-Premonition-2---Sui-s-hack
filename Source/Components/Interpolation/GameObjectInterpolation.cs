@@ -1,12 +1,12 @@
-﻿using MelonLoader;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SuisHack.Components.Interpolation
 {
-	[RegisterTypeInIl2Cpp]
 	public class GameObjectInterpolation : MonoBehaviour
 	{
-		public GameObjectInterpolation(IntPtr ptr): base(ptr) { }
+		public GameObjectInterpolation(IntPtr ptr) : base(ptr) { }
 
 		public static List<GameObjectInterpolation> ActiveObjects = new List<GameObjectInterpolation>();
 
@@ -66,7 +66,7 @@ namespace SuisHack.Components.Interpolation
 			}
 		}
 
-		public RigidBodiesStoredVelocities[]? riggidBodiesStored;
+		public RigidBodiesStoredVelocities[] riggidBodiesStored;
 
 		PositionRecording[] records = new PositionRecording[2];
 		Vector3 restorePosition;

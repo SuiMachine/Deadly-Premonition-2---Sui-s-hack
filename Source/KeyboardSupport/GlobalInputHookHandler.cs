@@ -1,19 +1,19 @@
-﻿using Il2CppSteamworks;
+﻿using Steamworks;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using static SuisHack.KeyboardSupport.SteamInputHook;
 
 namespace SuisHack.KeyboardSupport
 {
-	[MelonLoader.RegisterTypeInIl2Cpp]
 	class GlobalInputHookHandler : MonoBehaviour
 	{
 		public GlobalInputHookHandler(IntPtr ptr) : base(ptr) { }
-		public ExposedSettings? Settings;
+		private bool m_Initiated = false;
 
-		public static GlobalInputHookHandler? Instance { get; private set; }
-		public Dictionary<SteamInputHook.SteamInputAnalog, KeySteamAnalogAction>? AnalogInputToInput;
-		public Dictionary<SteamInputHook.SteamInputDigital, KeySteamDigitalAction>? DigitalInputToInput;
-
+		public static GlobalInputHookHandler Instance { get; private set; }
+		public Dictionary<SteamInputHook.SteamInputAnalog, KeySteamAnalogAction> AnalogInputToInput;
+		public Dictionary<SteamInputHook.SteamInputDigital, KeySteamDigitalAction> DigitalInputToInput;
 
 		public static KeyCode GetInputForRebinding(RebindingActions action)
 		{
@@ -22,43 +22,43 @@ namespace SuisHack.KeyboardSupport
 				switch (action)
 				{
 					case RebindingActions.Forward:
-						return Instance!.AnalogInputToInput![SteamInputAnalog.L_Stick].GetUpKeyCode();
+						return Instance.AnalogInputToInput[SteamInputAnalog.L_Stick].GetUpKeyCode();
 					case RebindingActions.Backward:
-						return Instance!.AnalogInputToInput![SteamInputAnalog.L_Stick].GetDownKeyCode();
+						return Instance.AnalogInputToInput[SteamInputAnalog.L_Stick].GetDownKeyCode();
 					case RebindingActions.Left:
-						return Instance!.AnalogInputToInput![SteamInputAnalog.L_Stick].GetLeftKeyCode();
+						return Instance.AnalogInputToInput[SteamInputAnalog.L_Stick].GetLeftKeyCode();
 					case RebindingActions.Right:
-						return Instance!.AnalogInputToInput![SteamInputAnalog.L_Stick].GetRightKeyCode();
+						return Instance.AnalogInputToInput[SteamInputAnalog.L_Stick].GetRightKeyCode();
 					case RebindingActions.Crouch:
-						return Instance!.DigitalInputToInput![SteamInputDigital.L_Stick_Button].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.L_Stick_Button].GetBind();
 					case RebindingActions.Dash_Dodge:
-						return Instance!.DigitalInputToInput![SteamInputDigital.RB].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.RB].GetBind();
 					case RebindingActions.Fire_Weapon_Punch:
-						return Instance!.DigitalInputToInput![SteamInputDigital.RT].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.RT].GetBind();
 					case RebindingActions.Point_Gun:
-						return Instance!.DigitalInputToInput![SteamInputDigital.LT].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.LT].GetBind();
 					case RebindingActions.Vision:
-						return Instance!.DigitalInputToInput![SteamInputDigital.LB].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.LB].GetBind();
 					case RebindingActions.Interact_Reload_Accellerate:
-						return Instance!.DigitalInputToInput![SteamInputDigital.A_Button].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.A_Button].GetBind();
 					case RebindingActions.Cancel_Brake:
-						return Instance!.DigitalInputToInput![SteamInputDigital.B_Button].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.B_Button].GetBind();
 					case RebindingActions.Reset_Camera_Fighting_Style:
-						return Instance!.DigitalInputToInput![SteamInputDigital.R_Stick_Button].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.R_Stick_Button].GetBind();
 					case RebindingActions.Display_Map:
-						return Instance!.DigitalInputToInput![SteamInputDigital.Back_Button].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.Back_Button].GetBind();
 					case RebindingActions.Quest_Display:
-						return Instance!.DigitalInputToInput![SteamInputDigital.Start_Button].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.Start_Button].GetBind();
 					case RebindingActions.Skateboard:
-						return Instance!.DigitalInputToInput![SteamInputDigital.Y_Button].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.Y_Button].GetBind();
 					case RebindingActions.SwitchSlotLeft:
-						return Instance!.DigitalInputToInput![SteamInputDigital.Left_Button].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.Left_Button].GetBind();
 					case RebindingActions.SwitchSlotRight:
-						return Instance!.DigitalInputToInput![SteamInputDigital.Right_Button].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.Right_Button].GetBind();
 					case RebindingActions.SwitchAlbumDisplayDown:
-						return Instance!.DigitalInputToInput![SteamInputDigital.Down_Button].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.Down_Button].GetBind();
 					case RebindingActions.SwitchAlbumDisplayUp:
-						return Instance!.DigitalInputToInput![SteamInputDigital.Up_Button].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.Up_Button].GetBind();
 					default:
 						return KeyCode.None;
 				}
@@ -185,7 +185,8 @@ namespace SuisHack.KeyboardSupport
 			if (Instance == null)
 			{
 				var gameObject = new GameObject("GlobalInputHandler");
-				GameObject.DontDestroyOnLoad(gameObject);
+				DontDestroyOnLoad(gameObject);
+				gameObject.hideFlags = HideFlags.HideAndDontSave;
 				Instance = gameObject.AddComponent<GlobalInputHookHandler>();
 			}
 		}
@@ -201,50 +202,58 @@ namespace SuisHack.KeyboardSupport
 				case GameStateMachine.Gamestate.Map:
 					return MapTranslateDigitalBackToInput[(int)gamepadKey];
 				default:
-					return DigitalInputToInput![gamepadKey].GetBind();
+					return DigitalInputToInput[gamepadKey].GetBind();
 			}
 		}
 
 		private void Awake()
 		{
-			SuisHackMain.loggerInst!.Msg("Initialized Global Input Hook Handler");
-			Settings = SuisHackMain.Settings;
+			Plugin.Message("Initialized Global Input Hook Handler");
+			this.hideFlags = HideFlags.HideAndDontSave;
+			DontDestroyOnLoad(this.gameObject);
+			Start();
 		}
 
 		private void Start()
 		{
-			InitializeInputs();
-			InitializeInputsMenu();
-			InitializeRedRoomMenu();
-			InitializeInputsMap();
+			if (!m_Initiated)
+			{
+				m_Initiated = true;
+				InitializeInputs();
+				InitializeInputsMenu();
+				InitializeRedRoomMenu();
+				InitializeInputsMap();
+			}
 		}
 
 		public void InitializeInputs()
 		{
+			var Settings = ExposedSettings.Instance;
+
 			AnalogInputToInput = new Dictionary<SteamInputHook.SteamInputAnalog, KeySteamAnalogAction>()
 			{
-				{ SteamInputHook.SteamInputAnalog.L_Stick, new KeyActionAnalog(Settings!.Input_Analog_LeftStick_Up!.Value, Settings.Input_Analog_LeftStick_Down!.Value, Settings.Input_Analog_LeftStick_Left!.Value, Settings.Input_Analog_LeftStick_Right!.Value, Settings.Input_Analog_LeftStickFloatTime!.Value) },
+				{ SteamInputHook.SteamInputAnalog.L_Stick, new KeyActionAnalog(Settings.Input_Analog_LeftStick_Up.Value, Settings.Input_Analog_LeftStick_Down.Value, Settings.Input_Analog_LeftStick_Left.Value, Settings.Input_Analog_LeftStick_Right.Value, Settings.Input_Analog_LeftStickFloatTime.Value) },
 				{ SteamInputHook.SteamInputAnalog.R_Stick, new MouseAnalog() },
 			};
 
 			DigitalInputToInput = new Dictionary<SteamInputHook.SteamInputDigital, KeySteamDigitalAction>()
 			{
-				{ SteamInputHook.SteamInputDigital.A_Button, new KeySteamDigitalAction(Settings!.Input_Digital_A_Button!.Value, false) },
-				{ SteamInputHook.SteamInputDigital.B_Button, new KeySteamDigitalAction(Settings!.Input_Digital_B_Button!.Value, false) },
-				{ SteamInputHook.SteamInputDigital.X_Button, new KeySteamDigitalAction(Settings!.Input_Digital_X_Button!.Value, false) },
-				{ SteamInputHook.SteamInputDigital.Y_Button, new KeySteamDigitalAction(Settings!.Input_Digital_Y_Button!.Value, false) },
-				{ SteamInputHook.SteamInputDigital.Back_Button, new KeySteamDigitalAction(Settings!.Input_Digital_Back_Button!.Value, false) },
-				{ SteamInputHook.SteamInputDigital.Start_Button, new KeySteamDigitalAction(Settings!.Input_Digital_Start_Button!.Value, false) },
-				{ SteamInputHook.SteamInputDigital.Up_Button, new KeySteamDigitalAction(Settings!.Input_Digital_Up_Button!.Value, true) },
-				{ SteamInputHook.SteamInputDigital.Down_Button, new KeySteamDigitalAction(Settings!.Input_Digital_Down_Button!.Value, true) },
-				{ SteamInputHook.SteamInputDigital.Left_Button, new KeySteamDigitalAction(Settings!.Input_Digital_Left_Button!.Value, true) },
-				{ SteamInputHook.SteamInputDigital.Right_Button, new KeySteamDigitalAction(Settings!.Input_Digital_Right_Button!.Value, true) },
-				{ SteamInputHook.SteamInputDigital.LB, new KeySteamDigitalAction(Settings!.Input_Digital_LB!.Value, false) },
-				{ SteamInputHook.SteamInputDigital.RB, new KeySteamDigitalAction(Settings!.Input_Digital_RB!.Value, false) },
-				{ SteamInputHook.SteamInputDigital.LT, new KeySteamDigitalAction(Settings!.Input_Digital_LT!.Value, false) },
-				{ SteamInputHook.SteamInputDigital.RT, new KeySteamDigitalAction(Settings!.Input_Digital_RT!.Value, false) },
-				{ SteamInputHook.SteamInputDigital.L_Stick_Button, new KeySteamDigitalAction(Settings!.Input_Digital_L_Stick_Button!.Value, false) },
-				{ SteamInputHook.SteamInputDigital.R_Stick_Button, new KeySteamDigitalAction(Settings!.Input_Digital_Right_Button!.Value, false) },
+				{ SteamInputHook.SteamInputDigital.A_Button, new KeySteamDigitalAction(Settings.Input_Digital_A_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.B_Button, new KeySteamDigitalAction(Settings.Input_Digital_B_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.X_Button, new KeySteamDigitalAction(Settings.Input_Digital_X_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.Y_Button, new KeySteamDigitalAction(Settings.Input_Digital_Y_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.Back_Button, new KeySteamDigitalAction(Settings.Input_Digital_Back_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.Start_Button, new KeySteamDigitalAction(Settings.Input_Digital_Start_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.Up_Button, new KeySteamDigitalAction(Settings.Input_Digital_Up_Button.Value, true) },
+				{ SteamInputHook.SteamInputDigital.Down_Button, new KeySteamDigitalAction(Settings.Input_Digital_Down_Button.Value, true) },
+				{ SteamInputHook.SteamInputDigital.Left_Button, new KeySteamDigitalAction(Settings.Input_Digital_Left_Button.Value, true) },
+				{ SteamInputHook.SteamInputDigital.Right_Button, new KeySteamDigitalAction(Settings.Input_Digital_Right_Button.Value, true) },
+				{ SteamInputHook.SteamInputDigital.LB, new KeySteamDigitalAction(Settings.Input_Digital_LB.Value, false) },
+				{ SteamInputHook.SteamInputDigital.RB, new KeySteamDigitalAction(Settings.Input_Digital_RB.Value, false) },
+				{ SteamInputHook.SteamInputDigital.LT, new KeySteamDigitalAction(Settings.Input_Digital_LT.Value, false) },
+				{ SteamInputHook.SteamInputDigital.RT, new KeySteamDigitalAction(Settings.Input_Digital_RT.Value, false) },
+				{ SteamInputHook.SteamInputDigital.L_Stick_Button, new KeySteamDigitalAction(Settings.Input_Digital_L_Stick_Button.Value, false) },
+				{ SteamInputHook.SteamInputDigital.R_Stick_Button, new KeySteamDigitalAction(Settings.Input_Digital_Right_Button.Value, false) },
 			};
 
 			TranslateAnalogBackToInput[0] = new KeyActionAnalog(KeyCode.None, KeyCode.None, KeyCode.None, KeyCode.None, 1);

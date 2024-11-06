@@ -1,12 +1,12 @@
-﻿using MelonLoader;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SuisHack.Components
 {
-	[RegisterTypeInIl2Cpp]
 	public class WireRendererCorrection : MonoBehaviour
 	{
-		public WireRendererCorrection(IntPtr ptr): base(ptr) { }
+		public WireRendererCorrection(IntPtr ptr) : base(ptr) { }
 
 		public static Dictionary<string, List<PoleDefinitionProtoplast>> DisableUtterlyBroken = new Dictionary<string, List<PoleDefinitionProtoplast>>()
 		{
@@ -102,7 +102,7 @@ namespace SuisHack.Components
 
 		public override void Process(Transform transform, SkinnedMeshRenderer[] skinnedMeshes)
 		{
-			SuisHackMain.loggerInst!.Error("Implement that!");
+			Plugin.Error("Implement that!");
 
 		}
 	}
@@ -123,7 +123,7 @@ namespace SuisHack.Components
 
 		public override void Process(Transform transform, SkinnedMeshRenderer[] skinnedMeshes)
 		{
-			SuisHackMain.loggerInst!.Msg("Implement that!");
+			Plugin.Warning("Implement that!");
 		}
 	}
 
@@ -157,7 +157,7 @@ namespace SuisHack.Components
 					{
 						child.gameObject.SetActive(false);
 #if DEBUG
-						SuisHackMain.loggerInst!.Msg($"[WireCorrection] Disabled broken child root at \"{child.transform.position.x}, {child.transform.position.y}, {child.transform.position.z}\"");
+						Plugin.Message($"[WireCorrection] Disabled broken child root at \"{child.transform.position.x}, {child.transform.position.y}, {child.transform.position.z}\"");
 #endif
 						break;
 					}

@@ -1,10 +1,10 @@
-﻿using Il2Cpp;
-using System;
+﻿using System;
+using System.Collections;
+using System.IO;
 using UnityEngine;
 
 namespace SuisHack.GlobalGameObjects
 {
-	[MelonLoader.RegisterTypeInIl2Cpp]
 	public class GlobalReplacementAtlas : MonoBehaviour
 	{
 		public GlobalReplacementAtlas(IntPtr ptr) : base(ptr) { }
@@ -15,9 +15,9 @@ namespace SuisHack.GlobalGameObjects
 			KeyboardAndMouse
 		}
 
-		public static GlobalReplacementAtlas? Instance { get; private set; }
-		private UIAtlas? Atlas;
-		public IPromptCache? Cache { get; private set; }
+		public static GlobalReplacementAtlas Instance { get; private set; }
+		private UIAtlas Atlas;
+		public IPromptCache Cache { get; private set; }
 		public ReplacementType ReplacementTypeUsed { get; private set; }
 
 		public static void Initialize()
@@ -26,29 +26,33 @@ namespace SuisHack.GlobalGameObjects
 			{
 				var GlobalAtlasGO = new GameObject("GlobalAtlas");
 				DontDestroyOnLoad(GlobalAtlasGO);
+				GlobalAtlasGO.hideFlags = HideFlags.HideAndDontSave;
 				Instance = GlobalAtlasGO.AddComponent<GlobalReplacementAtlas>();
 			}
 		}
 
 		void Awake()
 		{
-			if (SuisHackMain.Settings!.Entry_Other_Prompts!.Value != "" || SuisHackMain.Settings.Input_Override!.Value == ExposedSettings.InputType.KeyboardAndMouse)
+			DontDestroyOnLoad(this.gameObject);
+			this.hideFlags = HideFlags.HideAndDontSave;
+			var settings = ExposedSettings.Instance;
+			if (settings.Entry_Other_Prompts.Value != "" || settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
 			{
-				var assetBundlePath = SuisHackMain.Settings.Entry_Other_Prompts.Value;
+				var assetBundlePath = settings.Entry_Other_Prompts.Value;
 				this.ReplacementTypeUsed = ReplacementType.Basic;
-				if (SuisHackMain.Settings.Input_Override!.Value == ExposedSettings.InputType.KeyboardAndMouse)
+				if (settings.Input_Override.Value == ExposedSettings.InputType.KeyboardAndMouse)
 				{
 					this.ReplacementTypeUsed = ReplacementType.KeyboardAndMouse;
 					assetBundlePath = "keyboard";
 				}
 
 				string path = Path.Combine(Path.Combine(Application.streamingAssetsPath, "prompts"), assetBundlePath);
-				SuisHackMain.loggerInst!.Msg("Trying to load replacement prompts using bundle: " + path);
+				Plugin.Message("Trying to load replacement prompts using bundle: " + path);
 
 				var assetBundle = AssetBundle.LoadFromFile(path);
 				if (assetBundle == null)
 				{
-					SuisHackMain.loggerInst.Error("Failed to load asset bundle!");
+					Plugin.Error("Failed to load asset bundle!");
 					return;
 				}
 
@@ -65,6 +69,7 @@ namespace SuisHack.GlobalGameObjects
 							instanitate.transform.SetParent(this.transform);
 							instanitate.transform.localPosition = Vector3.zero;
 							instanitate.transform.localRotation = Quaternion.identity;
+							instanitate.gameObject.hideFlags = HideFlags.HideAndDontSave;
 							Atlas = instanitate.GetComponentInChildren<UIAtlas>();
 
 							switch (ReplacementTypeUsed)
@@ -79,21 +84,21 @@ namespace SuisHack.GlobalGameObjects
 						}
 						else
 						{
-							SuisHackMain.loggerInst.Error("Atlas Game object was found, but UIAtlas was null. Crap!");
+							Plugin.Error("Atlas Game object was found, but UIAtlas was null. Crap!");
 							return;
 						}
 					}
 					else
 					{
-						SuisHackMain.loggerInst.Error("Atlas game object cast failed - object might be invalid.");
+						Plugin.Error("Atlas game object cast failed - object might be invalid.");
 						return;
 					}
 				}
 				else
-					SuisHackMain.loggerInst.Error("Failed to find Xbox atlas... fuck!");
+					Plugin.Error("Failed to find Xbox atlas... fuck!");
 
 				if (Atlas != null)
-					SuisHackMain.loggerInst.Msg("Replacement atlas loaded correctly!!");
+					Plugin.Message("Replacement atlas loaded correctly!!");
 			}
 		}
 
@@ -107,7 +112,7 @@ namespace SuisHack.GlobalGameObjects
 			if (replacement != null)
 			{
 				instance.atlas = Atlas;
-				instance.SetAtlasSprite(replacement!);
+				instance.SetAtlasSprite(replacement);
 			}
 		}
 	}

@@ -1,23 +1,24 @@
-﻿using Il2Cpp;
-using MelonLoader;
+﻿using BepInEx.Unity.IL2CPP.Utils;
+using Il2CppInterop.Runtime.Attributes;
+using System;
+using System.Linq;
 using UnityEngine;
 
 namespace SuisHack.Components
 {
-	[RegisterTypeInIl2Cpp]
 	public class GlobalGeometryChecker : MonoBehaviour
 	{
 		public GlobalGeometryChecker(IntPtr ptr) : base(ptr) { }
 
 		const string OpenWorldPrefix = "OpenWorld_";
 		const string Terrain = "Terrain_Mesh";
-		private object? CheckerCoroutine;
+		private Coroutine CheckerCoroutine;
 
 		private void OnEnable()
 		{
 			if (CheckerCoroutine != null)
-				MelonCoroutines.Stop(CheckerCoroutine);
-			CheckerCoroutine = MelonCoroutines.Start(Checker());
+				StopCoroutine(CheckerCoroutine);
+			CheckerCoroutine = MonoBehaviourExtensions.StartCoroutine(this, Checker());
 
 			var normalMapHash = Shader.PropertyToID("_BumpMap");
 			var metalicGlossMapHash = Shader.PropertyToID("_MetallicGlossMap");
@@ -57,10 +58,11 @@ namespace SuisHack.Components
 			}
 			else
 			{
-				SuisHackMain.loggerInst!.Error("No mesh found!");
+				Plugin.Error("No mesh found!");
 			}
 		}
 
+		[HideFromIl2Cpp]
 		private System.Collections.IEnumerator Checker()
 		{
 			while (true)
@@ -127,7 +129,7 @@ namespace SuisHack.Components
 		{
 			if (CheckerCoroutine != null)
 			{
-				MelonCoroutines.Stop(CheckerCoroutine);
+				StopCoroutine(CheckerCoroutine);
 				CheckerCoroutine = null;
 			}
 		}
