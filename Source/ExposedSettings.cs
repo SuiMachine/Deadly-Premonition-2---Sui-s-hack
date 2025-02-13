@@ -75,7 +75,7 @@ namespace SuisHack
 		public ConfigEntry<float> Entry_Quality_SSR_MaxMarchingDistance;
 		public ConfigEntry<bool> Entry_Quality_EdgeDetection;
 		public ConfigEntry<float> Entry_Quality_EdgeDetectionDepth;
-
+		public ConfigEntry<bool> Entry_Quality_ReplaceShadowMeshes;
 
 		//Input settings
 		public ConfigEntry<InputType> Input_Override;
@@ -129,7 +129,7 @@ namespace SuisHack
 			Entry_Display_Resolution = Config.Bind(CATEGORYNAME_MAINDISPLAY, "Resolution", "0x0", "Screen or game resolution depending on display mode - if invalid resolution is specified - main screen resolution is used");
 			Entry_Display_RefreshRate = Config.Bind(CATEGORYNAME_MAINDISPLAY, "Refresh_Rate", 0, "Refresh rate used in fullscreen. Normally it should be 0 (uses screen default). Only really matters if the game is set to Exclusive Fullscreen mode."); //validator: new ValueRange<int>(0, 560)
 			Entry_DesiredFramerate = Config.Bind(CATEGORYNAME_MAINDISPLAY, "DesiredFPS", -1, "Desired framerate. This is only used when Vsync is disabled. -1 is platform default, 0 is uncapped, max is 1000."); //validator: new ValueRange<int>(-1, 1000));
-			//Entry_DesiredFramerate.OnEntryValueChanged.Subscribe((int oldValue, int newValue) => { Application.targetFrameRate = newValue; });
+																																																				  //Entry_DesiredFramerate.OnEntryValueChanged.Subscribe((int oldValue, int newValue) => { Application.targetFrameRate = newValue; });
 
 			if (ConfigParsing.ParseResolution(Entry_Display_Resolution.Value, out Tuple<int, int> desiredResolution))
 				Resolution = desiredResolution;
@@ -230,6 +230,10 @@ namespace SuisHack
 			Entry_Quality_EdgeDetectionDepth = Config.Bind(CATEGORYNAME_GRAPHICS, "Edge Detection Filter Depth", 1.0f, description: "Responsible for figuring out how to apply edges based on distance from camera. This might have to be changed to lower values when extending camera's far plane to avoid glitches.");
 			Entry_Quality_EdgeDetectionDepth.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = Entry_Quality_EdgeDetectionDepth.Value; };
 			Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = Entry_Quality_EdgeDetectionDepth.Value;
+
+			Entry_Quality_ReplaceShadowMeshes = Config.Bind(CATEGORYNAME_GRAPHICS, "Replace Shadow Meshes", false, description: "This option destroys shadow meshes of buildings and instead makes building LODs receive and cast shadows, which provides better quality and should prevent buildings from flickering, but at the cost of hit to performance");
+			Entry_Quality_ReplaceShadowMeshes.SettingChanged += (object sender, EventArgs e) => { Hacks.BuildingHook.Use = Entry_Quality_ReplaceShadowMeshes.Value; };
+			Hacks.BuildingHook.Use = Entry_Quality_ReplaceShadowMeshes.Value;
 		}
 
 		private void RegisterInputSettings()

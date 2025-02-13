@@ -31,6 +31,7 @@ A hack/mod that utilizes ''BepInEx'' and ''HarmonyX'' to make up for some of the
 * An option to add shadows to lights used byt the game.
 * Options to configure HBAO.
 * Option to modify planar reflections resolution.
+* Enforce LOD models to cast their own shadows.
 * Basic Keyboard and Mouse support* (see notes).
 
 # Experimental features

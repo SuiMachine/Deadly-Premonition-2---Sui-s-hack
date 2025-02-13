@@ -1,4 +1,5 @@
 ﻿using Il2CppSystem.IO;
+using SuisHack.Hacks;
 using SuisHack.KeyboardSupport;
 using System;
 using UnityEngine;
@@ -364,6 +365,17 @@ namespace SuisHack
 					{
 						ExposedSettings.Instance.Entry_Quality_Use4ShadowCascades.Value = true;
 					}
+					GUILayout.EndHorizontal();
+				}
+
+				//Mesh replacement
+				{
+					GUILayout.BeginHorizontal();
+					GUILayout.Label($"Replace shadow meshes: {ExposedSettings.Instance.Entry_Quality_ReplaceShadowMeshes.Value}:");
+					if (GUILayout.Button("Enable"))
+						ExposedSettings.Instance.Entry_Quality_ReplaceShadowMeshes.Value = true;
+					if (GUILayout.Button("Disable"))
+						ExposedSettings.Instance.Entry_Quality_ReplaceShadowMeshes.Value = false;
 					GUILayout.EndHorizontal();
 				}
 
