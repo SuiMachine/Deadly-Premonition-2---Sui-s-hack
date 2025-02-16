@@ -164,7 +164,7 @@ namespace SuisHack
 			Entry_Quality_ShadowsResolution = Config.Bind(CATEGORYNAME_GRAPHICS, "Shadows resolution", ShadowResolution.High, description: "Sets shadow resolution. There are 4 options: Low / Medium / High / VeryHigh. By default the PC version uses High. Very high shouldn't provide much of a difference above High unless 4 cascades are used.");
 			Entry_Quality_ShadowsResolution.SettingChanged += (object sender, EventArgs e) => { QualitySettings.shadowResolution = Entry_Quality_ShadowsResolution.Value; };
 
-			Entry_Quality_Use4ShadowCascades = Config.Bind(CATEGORYNAME_GRAPHICS, "Use 4 Shadow cascades", false, description: "Makes it so the game uses 4 shadow cascades instead of 2. This should significently increase shadows quality in the game if used. By default in PC version the game uses 2 cascades.");
+			Entry_Quality_Use4ShadowCascades = Config.Bind(CATEGORYNAME_GRAPHICS, "Use 4 Shadow cascades", false, description: "Makes it so the game uses 4 shadow cascades instead of 2. This should significantly increase shadows quality in the game if used. By default in PC version the game uses 2 cascades.");
 			Entry_Quality_Use4ShadowCascades.SettingChanged += (object sender, EventArgs e) => { QualitySettings.shadowCascades = Entry_Quality_Use4ShadowCascades.Value ? 4 : 2; };
 
 			Entry_Quality_LODBias = Config.Bind(CATEGORYNAME_GRAPHICS, "LODBias", 2f, description: "LOD Bias - affects how far from camera the LOD changes - bigger values, push the LOD change further from camera - min. 0.5, max. 4.0. Default game value is 2.0. Originally it was probably 1.0 on Nintendo Switch."); // validator: new ValueRange<float>(0.5f, 4f));
@@ -201,11 +201,11 @@ namespace SuisHack
 			Entry_Quality_SSR_Resolution.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_Resolution = Entry_Quality_SSR_Resolution.Value; };
 			Hacks.PostProcessLayerHook.SSR_Resolution = Entry_Quality_SSR_Resolution.Value;
 
-			Entry_Quality_SSR_Tickness = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Tickness", 1f, description: "Sets Screen Space Reflections tickness value"); //validator: new ValueRange<float>(0, 1));
+			Entry_Quality_SSR_Tickness = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Tickness", 1f, description: "Sets Screen Space Reflections thickness value"); //validator: new ValueRange<float>(0, 1));
 			Entry_Quality_SSR_Tickness.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_Tickness = Entry_Quality_SSR_Tickness.Value; };
 			Hacks.PostProcessLayerHook.SSR_Tickness = Entry_Quality_SSR_Tickness.Value;
 
-			Entry_Quality_SSR_Vignette = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Vignette", 0.15f, description: "Sets Screen Space Reflections vigniette value, which smoothly disables reflections towards the edges of the screen"); // validator: new ValueRange<float>(0, 1));
+			Entry_Quality_SSR_Vignette = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Vignette", 0.15f, description: "Sets Screen Space Reflections vignette value, which smoothly disables reflections towards the edges of the screen"); // validator: new ValueRange<float>(0, 1));
 			Entry_Quality_SSR_Vignette.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_Vignette = Entry_Quality_SSR_Vignette.Value; };
 			Hacks.PostProcessLayerHook.SSR_Vignette = Entry_Quality_SSR_Vignette.Value;
 
@@ -213,7 +213,7 @@ namespace SuisHack
 			Entry_Quality_SSR_DistanceFade.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_DistanceFade = Entry_Quality_SSR_DistanceFade.Value; };
 			Hacks.PostProcessLayerHook.SSR_DistanceFade = Entry_Quality_SSR_DistanceFade.Value;
 
-			Entry_Quality_SSR_MaxMarchingDistance = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Max Marching Distance", 100f, description: "Sets Screen Space Reflections max maching distance value, after which the ray is terminated."); //validator: new ValueRange<float>(50, 250));
+			Entry_Quality_SSR_MaxMarchingDistance = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Max Marching Distance", 100f, description: "Sets Screen Space Reflections max marching distance value, after which the ray is terminated."); //validator: new ValueRange<float>(50, 250));
 			Entry_Quality_SSR_MaxMarchingDistance.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance = Entry_Quality_SSR_MaxMarchingDistance.Value; };
 			Hacks.PostProcessLayerHook.SSR_MaxMarchingDistance = Entry_Quality_SSR_MaxMarchingDistance.Value;
 
@@ -239,7 +239,7 @@ namespace SuisHack
 		private void RegisterInputSettings()
 		{
 			Input_Override = Config.Bind(CATEGORYNAME_INPUT, "Input type", InputType.SteamInput, description: "Overrides controls handling - options are: SteamInput (leaves the game using Steam Input as it is) / KeyboardAndMouse (hooks input to read keyboard and mouse instead)");
-			Input_Analog_LeftStickFloatTime = Config.Bind(CATEGORYNAME_INPUT, "Left Stick Float Time", 0.1f, description: "How long does it take a stick to get to desired spot - this allows the game to handle rotations slightly better, although prevents the input from being instantanious. Min value: 0.01, Max 1."); // validator: new ValueRange<float>(0.01f, 1f));
+			Input_Analog_LeftStickFloatTime = Config.Bind(CATEGORYNAME_INPUT, "Left Stick Float Time", 0.1f, description: "How long does it take a stick to get to desired spot - this allows the game to handle rotations slightly better, although prevents the input from being instantaneous. Min value: 0.01, Max 1."); // validator: new ValueRange<float>(0.01f, 1f));
 			Input_Analog_LeftStickFloatTime.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.AnalogInputToInput[SteamInputHook.SteamInputAnalog.L_Stick] = new KeyActionAnalog(Input_Analog_LeftStick_Up.Value, Input_Analog_LeftStick_Down.Value, Input_Analog_LeftStick_Left.Value, Input_Analog_LeftStick_Right.Value, Input_Analog_LeftStickFloatTime.Value); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 
 			Input_Analog_LeftStick_Up = Config.Bind(CATEGORYNAME_INPUT, "Left Stick Key Up", KeyCode.W, description: "Key used to as replacement for reading up on left analog's Y axis");
@@ -313,7 +313,7 @@ namespace SuisHack
 
 		private void RegisterOtherSettings()
 		{
-			Entry_Other_SkipIntros = Config.Bind(CATEGORYNAME_OTHER, "Skip intros", true, description: "Allows to skip splash screns / intros and go straight to menu! Disable in case of issues");
+			Entry_Other_SkipIntros = Config.Bind(CATEGORYNAME_OTHER, "Skip intros", true, description: "Allows to skip splash screens / intros and go straight to menu! Disable in case of issues");
 			Entry_Other_Prompts = Config.Bind(CATEGORYNAME_OTHER, "Controller Prompts", "", description: "Asset bundle file name that is containing replacement prompts atlas. Make sure to use correct Steam Input binding for the keys to correspond to displayed prompts.");
 			Entry_Other_ShowAdvanced = Config.Bind(CATEGORYNAME_OTHER, "Show advanced settings", false, description: "Shows advanced options in GUI.");
 
