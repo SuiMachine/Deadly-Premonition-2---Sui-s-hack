@@ -8,6 +8,14 @@ namespace SuisHack.Hacks
 	public static class BuildingHook
 	{
 		public static bool Use = true;
+		public static MeshRenderer[] MeshRenderers = new MeshRenderer[10];
+		public static MeshRenderer ShadowRenderer = null;
+
+		public static Vector3[] IncorrectCoordinateBuildings = new Vector3[]
+		{
+			new Vector3(-985.615f, 9.375f, -558.485f)
+		};
+
 
 		[HarmonyPostfix]
 		[HarmonyPatch(typeof(ClockObject), "Start")]
@@ -19,23 +27,54 @@ namespace SuisHack.Hacks
 			if (__instance.GetComponent<BuildingModel>() == null)
 				return;
 
+			for (int i = 0; i < IncorrectCoordinateBuildings.Length; i++)
+			{
+				if (IncorrectCoordinateBuildings[i] == __instance.transform.position)
+				{
+					GameObject.Destroy(__instance.gameObject);
+					return;
+				}
+			}
+
+			for (int i = 0; i < MeshRenderers.Length; i++)
+				MeshRenderers[i] = null;
+			ShadowRenderer = null;
+
+			int j = 0;
 			for (int i = __instance.transform.childCount - 1; i >= 0; i--)
 			{
 				var child = __instance.transform.GetChild(i);
-				if (child.name.ToLower().EndsWith("_shadow"))
+				var mr = child.GetComponent<MeshRenderer>();
+				if (mr == null)
+					continue;
+
+				if (mr.shadowCastingMode == UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly)
 				{
-					GameObject.Destroy(child.gameObject);
-					//Plugin.Message("Destroying shadow mesh");
+					if (ShadowRenderer != null)
+						Plugin.Error("Already assigned shadow renderer?!");
+					else
+						ShadowRenderer = mr;
 				}
 				else
 				{
-					var mr = child.GetComponent<MeshRenderer>();
-					if (mr == null)
-						continue;
+					MeshRenderers[j] = mr;
+					j++;
+				}
+			}
 
-					mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-					mr.receiveShadows = true;
-					//Plugin.Message("Setting shadows");
+			if (ShadowRenderer == null)
+				return;
+			else
+			{
+				GameObject.Destroy(ShadowRenderer.gameObject);
+
+				for (int i = 0; i < MeshRenderers.Length; i++)
+				{
+					if (MeshRenderers[i] == null)
+						break;
+					MeshRenderers[i].shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+					MeshRenderers[i].receiveShadows = true;
+					MeshRenderers[i].castShadows = true;
 				}
 			}
 		}
