@@ -9,6 +9,7 @@
 			Menu,
 			Map,
 			RedRoom,
+			RedRoomQuestMenu,
 		}
 
 		public static Gamestate CurrentGameState { get; private set; }
@@ -26,7 +27,7 @@
 			}
 		}
 
-		public static bool m_MainMenu;
+		private static bool m_MainMenu;
 		public static bool MainMenu
 		{
 			get { return m_MainMenu; }
@@ -42,7 +43,7 @@
 			}
 		}
 
-		public static bool m_Gameplay;
+		private static bool m_Gameplay;
 		public static bool Gameplay
 		{
 			get { return m_Gameplay; }
@@ -58,7 +59,7 @@
 			}
 		}
 
-		public static bool m_RedRoomOpened;
+		private static bool m_RedRoomOpened;
 		public static bool RedRoomOpened
 		{
 			get { return m_RedRoomOpened; }
@@ -73,6 +74,17 @@
 			}
 		}
 
+		private static bool m_RedRoomQuestMenu;
+		public static bool RedRoomQuestMenu
+		{
+			get => m_RedRoomQuestMenu;
+			set
+			{
+				m_RedRoomQuestMenu = value;
+				RunStateMachine();
+			}
+		}
+
 		private static void RunStateMachine()
 		{
 			var oldState = CurrentGameState;
@@ -83,7 +95,12 @@
 				if (m_MapOpened)
 					CurrentGameState = Gamestate.Map;
 				else if (m_RedRoomOpened)
-					CurrentGameState = Gamestate.RedRoom;
+				{
+					if(m_RedRoomQuestMenu)
+						CurrentGameState = Gamestate.RedRoomQuestMenu;
+					else
+						CurrentGameState = Gamestate.RedRoom;
+				}
 				else
 					CurrentGameState = Gamestate.StandardGameplay;
 			}

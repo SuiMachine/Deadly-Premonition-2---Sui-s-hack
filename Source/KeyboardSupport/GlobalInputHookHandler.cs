@@ -73,6 +73,7 @@ namespace SuisHack.KeyboardSupport
 			{
 				case GameStateMachine.Gamestate.Menu:
 				case GameStateMachine.Gamestate.RedRoom:
+				case GameStateMachine.Gamestate.RedRoomQuestMenu:
 					return MenuTranslateAnalogInput(analogActionHandle);
 				case GameStateMachine.Gamestate.Map:
 					return MapTranslateAnalogInput(analogActionHandle);
@@ -114,6 +115,9 @@ namespace SuisHack.KeyboardSupport
 					return MenuTranslateDigitalInput(digitalAction);
 				case GameStateMachine.Gamestate.RedRoom:
 					return RedRoomTranslateDigitalInput(digitalAction);
+				case GameStateMachine.Gamestate.RedRoomQuestMenu:
+					Cursor.lockState = CursorLockMode.Locked;
+					return RedRoomWithQuestTranslateDigitalInput(digitalAction);
 				case GameStateMachine.Gamestate.Map:
 					return TranslateDigitalInputMap(digitalAction);
 				default:
@@ -136,6 +140,39 @@ namespace SuisHack.KeyboardSupport
 			{
 				bActive = 1,
 				bState = Input.GetKeyDown(RedRoomTranslateDigitalBackToInput[(int)digitalAction]) ? (byte)1 : (byte)0
+			};
+		}
+
+		private InputDigitalActionData_t RedRoomWithQuestTranslateDigitalInput(SteamInputHook.SteamInputDigital digitalAction)
+		{
+			//Zoom in
+			if (digitalAction == SteamInputHook.SteamInputDigital.LB)
+			{
+				if (Input.mouseScrollDelta.y < -0.5f)
+					return new InputDigitalActionData_t() { bActive = 1, bState = 1 };
+				else
+					return new InputDigitalActionData_t()
+					{
+						bActive = 1,
+						bState = Input.GetKey(RedRoomQuestTranslateDigitalBackToInput[(int)digitalAction]) ? (byte)1 : (byte)0
+					};
+			}
+			else if (digitalAction == SteamInputHook.SteamInputDigital.RB)
+			{
+				if (Input.mouseScrollDelta.y > 0.5f)
+					return new InputDigitalActionData_t() { bActive = 1, bState = 1 };
+				else
+					return new InputDigitalActionData_t()
+					{
+						bActive = 1,
+						bState = Input.GetKey(RedRoomQuestTranslateDigitalBackToInput[(int)digitalAction]) ? (byte)1 : (byte)0
+					};
+			}
+
+			return new InputDigitalActionData_t()
+			{
+				bActive = 1,
+				bState = Input.GetKeyDown(RedRoomQuestTranslateDigitalBackToInput[(int)digitalAction]) ? (byte)1 : (byte)0
 			};
 		}
 
@@ -177,6 +214,7 @@ namespace SuisHack.KeyboardSupport
 
 		private static KeyCode[] MenuTranslateDigitalBackToInput = new KeyCode[17];
 		private static KeyCode[] RedRoomTranslateDigitalBackToInput = new KeyCode[17];
+		private static KeyCode[] RedRoomQuestTranslateDigitalBackToInput = new KeyCode[17];
 		private static KeyCode[] MapTranslateDigitalBackToInput = new KeyCode[17];
 
 
@@ -199,6 +237,8 @@ namespace SuisHack.KeyboardSupport
 					return MenuTranslateDigitalBackToInput[(int)gamepadKey];
 				case GameStateMachine.Gamestate.RedRoom:
 					return RedRoomTranslateDigitalBackToInput[(int)gamepadKey];
+				case GameStateMachine.Gamestate.RedRoomQuestMenu:
+					return RedRoomQuestTranslateDigitalBackToInput[(int)gamepadKey];
 				case GameStateMachine.Gamestate.Map:
 					return MapTranslateDigitalBackToInput[(int)gamepadKey];
 				default:
@@ -222,6 +262,7 @@ namespace SuisHack.KeyboardSupport
 				InitializeInputs();
 				InitializeInputsMenu();
 				InitializeRedRoomMenu();
+				InitializeRedRoomQuestMenu();
 				InitializeInputsMap();
 			}
 		}
@@ -313,6 +354,27 @@ namespace SuisHack.KeyboardSupport
 			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Left_Button] = KeyCode.LeftArrow;
 			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LT] = KeyCode.None;
 			RedRoomTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RT] = KeyCode.None;
+		}
+
+		private void InitializeRedRoomQuestMenu()
+		{
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.None] = KeyCode.None;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.A_Button] = KeyCode.Escape;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.B_Button] = KeyCode.Return;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.X_Button] = KeyCode.None;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Y_Button] = KeyCode.Backspace;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LB] = KeyCode.KeypadMinus;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RB] = KeyCode.KeypadPlus;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Back_Button] = KeyCode.None;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Start_Button] = KeyCode.None;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.L_Stick_Button] = KeyCode.None;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.R_Stick_Button] = KeyCode.None;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Up_Button] = KeyCode.UpArrow;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Right_Button] = KeyCode.RightArrow;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Down_Button] = KeyCode.DownArrow;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.Left_Button] = KeyCode.LeftArrow;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.LT] = KeyCode.None;
+			RedRoomQuestTranslateDigitalBackToInput[(int)SteamInputHook.SteamInputDigital.RT] = KeyCode.None;
 		}
 
 		private void InitializeInputsMap()

@@ -114,6 +114,10 @@ namespace SuisHack.GlobalGameObjects
 				instance.atlas = Atlas;
 				instance.SetAtlasSprite(replacement);
 			}
+			else
+			{
+				Plugin.Error($"Replacement of {instance.name} was null! Looked for {keyEnum} to replace {instance.spriteName}");
+			}
 		}
 	}
 }
