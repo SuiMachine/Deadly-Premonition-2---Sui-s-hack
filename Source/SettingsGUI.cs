@@ -821,13 +821,13 @@ namespace SuisHack
 					Settings.Input_Digital_RT.Value = tempKey;
 					break;
 				case RebindingActions.Cancel_Brake:
-					Settings.Input_Digital_B_Button.Value = tempKey;
+					Settings.Input_Digital_A_Button.Value = tempKey;
 					break;
 				case RebindingActions.Dash_Dodge:
 					Settings.Input_Digital_RB.Value = tempKey;
 					break;
 				case RebindingActions.Interact_Reload_Accellerate:
-					Settings.Input_Digital_A_Button.Value = tempKey;
+					Settings.Input_Digital_B_Button.Value = tempKey;
 					break;
 				case RebindingActions.Reset_Camera_Fighting_Style:
 					Settings.Input_Digital_R_Stick_Button.Value = tempKey;

@@ -40,9 +40,9 @@ namespace SuisHack.KeyboardSupport
 					case RebindingActions.Vision:
 						return Instance.DigitalInputToInput[SteamInputDigital.LB].GetBind();
 					case RebindingActions.Interact_Reload_Accellerate:
-						return Instance.DigitalInputToInput[SteamInputDigital.A_Button].GetBind();
-					case RebindingActions.Cancel_Brake:
 						return Instance.DigitalInputToInput[SteamInputDigital.B_Button].GetBind();
+					case RebindingActions.Cancel_Brake:
+						return Instance.DigitalInputToInput[SteamInputDigital.A_Button].GetBind();
 					case RebindingActions.Reset_Camera_Fighting_Style:
 						return Instance.DigitalInputToInput[SteamInputDigital.R_Stick_Button].GetBind();
 					case RebindingActions.Display_Map:
