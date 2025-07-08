@@ -260,7 +260,7 @@ namespace SuisHack
 			Input_Digital_B_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller button A", KeyCode.E, description: "Key used as replacement for Xbox's A key (originally Switch's B key) - generally confirm and contextual action");
 			Input_Digital_B_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.B_Button] = new KeySteamDigitalAction(Input_Digital_B_Button.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 
-			Input_Digital_X_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller button Y", KeyCode.Space, description: "Key used as replacement for Xbox's Y key (originally Switch's X key) - generally used for skateboard");
+			Input_Digital_X_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller button Y", KeyCode.Space, description: "Key used as replacement for Xbox's X key (originally Switch's Y key) - generally used for skateboard");
 			Input_Digital_X_Button.SettingChanged += (object sender, EventArgs e) => { GlobalInputHookHandler.Instance.DigitalInputToInput[SteamInputHook.SteamInputDigital.X_Button] = new KeySteamDigitalAction(Input_Digital_X_Button.Value, false); GlobalInputHookHandler.Instance?.InitializeInputs(); };
 
 			Input_Digital_Y_Button = Config.Bind(CATEGORYNAME_INPUT, "Controller button X", KeyCode.Escape, description: "Key used as replacement for Xbox's Y key (originally Switch's X key) - generally used for opening Red Room");

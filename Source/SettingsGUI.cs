@@ -833,7 +833,7 @@ namespace SuisHack
 					Settings.Input_Digital_R_Stick_Button.Value = tempKey;
 					break;
 				case RebindingActions.Skateboard:
-					Settings.Input_Digital_Y_Button.Value = tempKey;
+					Settings.Input_Digital_X_Button.Value = tempKey;
 					break;
 				case RebindingActions.SwitchAlbumDisplayDown:
 					Settings.Input_Digital_Down_Button.Value = tempKey;

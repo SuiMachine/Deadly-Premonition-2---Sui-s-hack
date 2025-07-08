@@ -50,7 +50,7 @@ namespace SuisHack.KeyboardSupport
 					case RebindingActions.Quest_Display:
 						return Instance.DigitalInputToInput[SteamInputDigital.Start_Button].GetBind();
 					case RebindingActions.Skateboard:
-						return Instance.DigitalInputToInput[SteamInputDigital.Y_Button].GetBind();
+						return Instance.DigitalInputToInput[SteamInputDigital.X_Button].GetBind();
 					case RebindingActions.SwitchSlotLeft:
 						return Instance.DigitalInputToInput[SteamInputDigital.Left_Button].GetBind();
 					case RebindingActions.SwitchSlotRight:
