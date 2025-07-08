@@ -23,10 +23,15 @@ namespace SuisHack.KeyboardSupport
 
 		public override InputAnalogActionData_t GetInput()
 		{
-			Cursor.lockState = CursorLockMode.Confined;
+			Cursor.lockState = CursorLockMode.Locked;
 			var vec = new Vector2(Input.GetAxis("Horizontal"), -Input.GetAxis("Vertical")) * Sensitivity;
 
-			return new InputAnalogActionData_t() { x = vec.x, y = vec.y };
+			return new InputAnalogActionData_t()
+			{
+				bActive = 1,
+				eMode = EInputSourceMode.k_EInputSourceMode_None,
+				x = vec.x, y = vec.y 
+			};
 		}
 
 		public override KeyCode GetLeftKeyCode() => KeyCode.None;
@@ -69,17 +74,29 @@ namespace SuisHack.KeyboardSupport
 			var inputValLeft = Input.GetKey(keyCodeLeft) ? -1.0f : 0.0f;
 			var inputValRight = Input.GetKey(keyCodeRight) ? 1.0f : 0.0f;
 
-			var newLeftRight = inputValLeft + inputValRight;
-			var newUpDown = inputValUp + inputValDown;
+			float newLeftRight = inputValLeft + inputValRight;
+			float newUpDown = inputValUp + inputValDown;
 
-			analogVector = new Vector2(
-				Mathf.MoveTowards(analogVector.x, newLeftRight, Time.unscaledDeltaTime * maxDelta),
-				Mathf.MoveTowards(analogVector.y, newUpDown, Time.unscaledDeltaTime * maxDelta));
+			if (GameStateMachine.CurrentGameState == GameStateMachine.Gamestate.StandardGameplay)
+			{
+				//To make it a bit less jittery
+				analogVector = new Vector2(
+					Mathf.MoveTowards(analogVector.x, newLeftRight, Time.unscaledDeltaTime * maxDelta),
+					Mathf.MoveTowards(analogVector.y, newUpDown, Time.unscaledDeltaTime * maxDelta));
 
-			if (analogVector.magnitude > 1)
-				analogVector.Normalize();
+				if (analogVector.sqrMagnitude > 1)
+					analogVector.Normalize();
 
-			return new InputAnalogActionData_t() { x = analogVector.x, y = analogVector.y };
+				return new InputAnalogActionData_t() { x = analogVector.x, y = analogVector.y };
+			}
+			else
+			{
+				analogVector = new Vector2(newLeftRight, newUpDown);
+				if(analogVector.sqrMagnitude > 1)
+					analogVector.Normalize();
+
+				return new InputAnalogActionData_t() { x = analogVector.x, y = analogVector.y };
+			}
 		}
 
 		public override void Update()

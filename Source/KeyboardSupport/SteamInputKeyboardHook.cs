@@ -23,7 +23,7 @@ namespace SuisHack.KeyboardSupport
 			Quest_Display,
 			Fire_Weapon_Punch,
 			Dash_Dodge,
-			Interact_Reload_Accellerate,
+			Interact_Reload_Accelerate,
 			Cancel_Brake,
 			Skateboard,
 			Reset_Camera_Fighting_Style
@@ -180,7 +180,7 @@ namespace SuisHack.KeyboardSupport
 
 		public static bool GetDigitalActionDataPrefix(ref InputDigitalActionData_t __result, InputHandle_t inputHandle, InputDigitalActionHandle_t digitalActionHandle)
 		{
-			if (SettingsGUI.Display)
+			if (SettingsGUI.Display )
 			{
 				__result = new InputDigitalActionData_t();
 				return false;

@@ -729,7 +729,7 @@ namespace SuisHack
 					DrawRebind("Fire / Punch", RebindingActions.Fire_Weapon_Punch);
 					DrawRebind("Aim a gun", RebindingActions.Point_Gun);
 					DrawRebind("Vision", RebindingActions.Vision);
-					DrawRebind("Interact / Reload / Accelerate", RebindingActions.Interact_Reload_Accellerate);
+					DrawRebind("Interact / Reload / Accelerate", RebindingActions.Interact_Reload_Accelerate);
 					DrawRebind("Cancel / Break", RebindingActions.Cancel_Brake);
 					DrawRebind("Reset camera / fighting style", RebindingActions.Reset_Camera_Fighting_Style);
 
@@ -826,7 +826,7 @@ namespace SuisHack
 				case RebindingActions.Dash_Dodge:
 					Settings.Input_Digital_RB.Value = tempKey;
 					break;
-				case RebindingActions.Interact_Reload_Accellerate:
+				case RebindingActions.Interact_Reload_Accelerate:
 					Settings.Input_Digital_B_Button.Value = tempKey;
 					break;
 				case RebindingActions.Reset_Camera_Fighting_Style:
