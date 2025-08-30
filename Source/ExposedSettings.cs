@@ -1,4 +1,5 @@
 ﻿using BepInEx.Configuration;
+using SuisHack.Hacks;
 using SuisHack.KeyboardSupport;
 using System;
 using UnityEngine;
@@ -232,8 +233,8 @@ namespace SuisHack
 			Hacks.PostProcessLayerHook.EnableEdgeDetectionFilterDepth = Entry_Quality_EdgeDetectionDepth.Value;
 
 			Entry_Quality_ReplaceShadowMeshes = Config.Bind(CATEGORYNAME_GRAPHICS, "Replace Shadow Meshes", false, description: "This option destroys shadow meshes of buildings and instead makes building LODs receive and cast shadows, which provides better quality and should prevent buildings from flickering, but at the cost of hit to performance");
-			Entry_Quality_ReplaceShadowMeshes.SettingChanged += (object sender, EventArgs e) => { Hacks.BuildingHook.Use = Entry_Quality_ReplaceShadowMeshes.Value; };
-			Hacks.BuildingHook.Use = Entry_Quality_ReplaceShadowMeshes.Value;
+			Entry_Quality_ReplaceShadowMeshes.SettingChanged += (object sender, EventArgs e) => { BuildingHook.Use = Entry_Quality_ReplaceShadowMeshes.Value; };
+			BuildingHook.Use = Entry_Quality_ReplaceShadowMeshes.Value;
 		}
 
 		private void RegisterInputSettings()

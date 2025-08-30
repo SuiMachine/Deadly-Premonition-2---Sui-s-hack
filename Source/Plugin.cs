@@ -5,7 +5,7 @@ using Il2CppInterop.Runtime.Injection;
 using SuisHack.Components;
 using SuisHack.Components.Interpolation;
 using SuisHack.GlobalGameObjects;
-using SuisHack.Hacks.StateStracking;
+using SuisHack.Hacks.StateTracking;
 using SuisHack.KeyboardSupport;
 using System;
 using UnityEngine;

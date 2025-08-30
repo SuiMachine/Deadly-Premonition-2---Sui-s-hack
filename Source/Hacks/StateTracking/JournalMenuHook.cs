@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace SuisHack.Hacks.StateStracking
+namespace SuisHack.Hacks.StateTracking
 {
 	[HarmonyPatch]
 	public static class JournalMenuHook

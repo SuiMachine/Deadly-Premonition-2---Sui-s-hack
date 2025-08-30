@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace SuisHack.Hacks.StateStracking
+namespace SuisHack.Hacks.StateTracking
 {
 	[HarmonyPatch]
 	public static class RedRoomHook
