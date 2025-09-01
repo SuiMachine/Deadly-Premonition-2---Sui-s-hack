@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using SuisHack.GamepadSupport;
 using System.Xml.Linq;
 
 namespace SuisHack.KeyboardSupport
@@ -10,9 +11,6 @@ namespace SuisHack.KeyboardSupport
 		[HarmonyPatch(typeof(BossGimickQTE), nameof(BossGimickQTE.EndCutScene))]
 		public static void EndCutsceneDetourPost(BossGimickQTE __instance)
 		{
-			if (Plugin.Settings.Input_Override.Value != ExposedSettings.InputType.KeyboardAndMouse)
-				return;
-
 			//This hook is because the game doesn't set a new instance of a sprite, it just tries to change sprite name, which I think points it to a different spot in atlas - I think
 			//cause this entire system is awful and I have no idea why would any developer use this over just Unity UI (which is still bad, but better than this shit)
 			if (__instance.m_hudQTE == null || __instance.m_hudQTE.m_uiButton == null)
@@ -35,8 +33,10 @@ namespace SuisHack.KeyboardSupport
 					break;
 			}
 
-			//Plugin.Message($"Replace QTE: {__instance.m_hudQTE.m_uiButton.spriteName}");
-			KeyboardPrompts.UISpriteOn(__instance.m_hudQTE.m_uiButton);
+			if (Plugin.Settings.Input_Override.Value != ExposedSettings.InputType.KeyboardAndMouse)
+				GamepadPrompts.UISpriteOn(__instance.m_hudQTE.m_uiButton);
+			else
+				KeyboardPrompts.UISpriteOn(__instance.m_hudQTE.m_uiButton);
 		}
 	}
 }
