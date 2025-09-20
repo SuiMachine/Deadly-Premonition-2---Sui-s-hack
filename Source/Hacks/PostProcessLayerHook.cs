@@ -35,38 +35,39 @@ namespace SuisHack.Hacks
 		#endregion
 
 		#region HBAO
-		private static HBAO_Core.Preset m_HBAO_Preset = HBAO_Core.Preset.FastestPerformance;
-		public static HBAO_Core.Preset HBAO_Preset
+		private static HBAO_Core.Quality m_HBAO_Quality = HBAO_Core.Quality.Lowest;
+		public static HBAO_Core.Quality HBAO_Quality
 		{
-			get { return m_HBAO_Preset; }
+			get { return m_HBAO_Quality; }
 			set
 			{
-				if (m_HBAO_Preset != value)
+				if (m_HBAO_Quality != value)
 				{
 					ClearNullReferences();
 
-					m_HBAO_Preset = value;
+					m_HBAO_Quality = value;
 					ApplyHBAOChange();
 
 				}
 			}
 		}
 
-		private static float m_HBAO_Intensity = 1f;
-		public static float HBAO_Intensity
+		private static HBAO_Core.Resolution m_HBAO_Resolution = HBAO_Core.Resolution.Half;
+		public static HBAO_Core.Resolution HBAO_Resolution
 		{
-			get { return m_HBAO_Intensity; }
+			get { return m_HBAO_Resolution; }
 			set
 			{
-				if (m_HBAO_Intensity != value)
+				if (m_HBAO_Resolution != value)
 				{
 					ClearNullReferences();
 
-					m_HBAO_Intensity = value;
+					m_HBAO_Resolution = value;
 					ApplyHBAOChange();
 				}
 			}
 		}
+
 		#endregion
 
 		#region Cameras Far Clip Distance
@@ -248,10 +249,13 @@ namespace SuisHack.Hacks
 				HBAO hbao = postprocess.GetComponent<HBAO>();
 				if (hbao != null)
 				{
-					hbao.ApplyPreset(m_HBAO_Preset);
-					var settings = hbao.aoSettings;
-					settings.intensity = m_HBAO_Intensity;
-					hbao.aoSettings = settings;
+					//var settings = hbao.aoSettings;
+					//hbao.aoSettings = settings;
+
+					var generalSettings = hbao.generalSettings;
+					generalSettings.quality = HBAO_Quality;
+					generalSettings.resolution = HBAO_Resolution;
+					hbao.generalSettings = generalSettings;
 				}
 			}
 		}
@@ -367,10 +371,10 @@ namespace SuisHack.Hacks
 			var hbao = __instance.GetComponent<HBAO>();
 			if (hbao != null)
 			{
-				hbao.ApplyPreset(m_HBAO_Preset);
-				var settings = hbao.aoSettings;
-				settings.intensity = m_HBAO_Intensity;
-				hbao.aoSettings = settings;
+				var generalSettings = hbao.generalSettings;
+				generalSettings.quality = HBAO_Quality;
+				generalSettings.resolution = HBAO_Resolution;
+				hbao.generalSettings = generalSettings;
 			}
 		}
 

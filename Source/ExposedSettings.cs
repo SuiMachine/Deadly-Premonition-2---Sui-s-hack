@@ -64,8 +64,8 @@ namespace SuisHack
 		public ConfigEntry<int> Entry_Quality_PixelLightCount;
 		public ConfigEntry<int> Entry_Quality_TextureQuality;
 		public ConfigEntry<int> Entry_Quality_MirrorReflectionResolution;
-		public ConfigEntry<HBAO_Core.Preset> Entry_Quality_HBAO_Preset;
-		public ConfigEntry<float> Entry_Quality_HBAO_Intensity;
+		public ConfigEntry<HBAO_Core.Quality> Entry_Quality_HBAO_Quality;
+		public ConfigEntry<HBAO_Core.Resolution> Entry_Quality_HBAO_Resolution;
 
 		public ConfigEntry<bool> Entry_Quality_SSR_Enable;
 		public ConfigEntry<ScreenSpaceReflectionPreset> Entry_Quality_SSR_Preset;
@@ -182,13 +182,13 @@ namespace SuisHack
 			Entry_Quality_MirrorReflectionResolution.SettingChanged += (object sender, EventArgs e) => { Hacks.MirrorReflectionHook.ReflectionSize = Entry_Quality_MirrorReflectionResolution.Value; };
 			Hacks.MirrorReflectionHook.ReflectionSize = Entry_Quality_MirrorReflectionResolution.Value;
 
-			Entry_Quality_HBAO_Preset = Config.Bind(CATEGORYNAME_GRAPHICS, "HBAO Preset", HBAO_Core.Preset.FastestPerformance, description: "Preset to use to override HBAO. Options are: FastestPerformance / FastPerformance / Normal / HighQuality / HighestQuality. Default is FastestPerformance. For Normal and higher, consider lowering HBAO intensity.");
-			Entry_Quality_HBAO_Preset.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.HBAO_Preset = Entry_Quality_HBAO_Preset.Value; };
-			Hacks.PostProcessLayerHook.HBAO_Preset = Entry_Quality_HBAO_Preset.Value;
+			Entry_Quality_HBAO_Quality = Config.Bind(CATEGORYNAME_GRAPHICS, "HBAO Quality", HBAO_Core.Quality.Lowest, description: "Quality setting for HBAO override. Options are: Lowest / Low / Medium / High / Highest. Default is Lowest.");
+			Entry_Quality_HBAO_Quality.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.HBAO_Quality = Entry_Quality_HBAO_Quality.Value; };
+			Hacks.PostProcessLayerHook.HBAO_Quality = Entry_Quality_HBAO_Quality.Value;
 
-			Entry_Quality_HBAO_Intensity = Config.Bind(CATEGORYNAME_GRAPHICS, "HBAO Intensity", 1.0f, description: "HBAO intensity - this probably should be lower than 1.0 when using Normal and higher presets."); //validator: new ValueRange<float>(0, 1));
-			Entry_Quality_HBAO_Intensity.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.HBAO_Intensity = Entry_Quality_HBAO_Intensity.Value; };
-			Hacks.PostProcessLayerHook.HBAO_Intensity = Entry_Quality_HBAO_Intensity.Value;
+			Entry_Quality_HBAO_Resolution = Config.Bind(CATEGORYNAME_GRAPHICS, "HBAO Resolution", HBAO_Core.Resolution.Half, description: "Resolution of HBAO override. Options are: Quarter / Half / Full. Default is Half.");
+			Entry_Quality_HBAO_Resolution.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.HBAO_Resolution = Entry_Quality_HBAO_Resolution.Value; };
+			Hacks.PostProcessLayerHook.HBAO_Resolution = Entry_Quality_HBAO_Resolution.Value;
 
 			Entry_Quality_SSR_Enable = Config.Bind(CATEGORYNAME_GRAPHICS, "SSR Enable", false, description: "Enables Screen Space Reflection override");
 			Entry_Quality_SSR_Enable.SettingChanged += (object sender, EventArgs e) => { Hacks.PostProcessLayerHook.SSR_Enabled = Entry_Quality_SSR_Enable.Value; };

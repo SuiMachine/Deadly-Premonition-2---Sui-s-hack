@@ -492,22 +492,30 @@ namespace SuisHack
 			{
 				GUILayout.BeginVertical(GUI.skin.box);
 				GUILayout.BeginHorizontal();
-				GUILayout.Label($"HBAO preset ({Hacks.PostProcessLayerHook.HBAO_Preset}):");
-				if (GUILayout.Button("Fastest"))
-					ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastestPerformance;
-				if (GUILayout.Button("Fast"))
-					ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.FastPerformance;
-				if (GUILayout.Button("Normal"))
-					ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.Normal;
+				GUILayout.Label($"HBAO quality ({PostProcessLayerHook.HBAO_Quality}):");
+				if (GUILayout.Button("Lowest"))
+					ExposedSettings.Instance.Entry_Quality_HBAO_Quality.Value = HBAO_Core.Quality.Lowest;
+				if (GUILayout.Button("Low"))
+					ExposedSettings.Instance.Entry_Quality_HBAO_Quality.Value = HBAO_Core.Quality.Low;
+				if (GUILayout.Button("Medium"))
+					ExposedSettings.Instance.Entry_Quality_HBAO_Quality.Value = HBAO_Core.Quality.Medium;
 				if (GUILayout.Button("High"))
-					ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.HighQuality;
+					ExposedSettings.Instance.Entry_Quality_HBAO_Quality.Value = HBAO_Core.Quality.High;
 				if (GUILayout.Button("Highest"))
-					ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = HBAO_Core.Preset.HighestQuality;
+					ExposedSettings.Instance.Entry_Quality_HBAO_Quality.Value = HBAO_Core.Quality.Highest;
 				GUILayout.EndHorizontal();
 
 				GUILayout.BeginHorizontal();
-				GUILayout.Label($"HBAO intensity ({Hacks.PostProcessLayerHook.HBAO_Intensity:0.0}):");
-				ExposedSettings.Instance.Entry_Quality_HBAO_Intensity.Value = GUILayout.HorizontalSlider(ExposedSettings.Instance.Entry_Quality_HBAO_Intensity.Value, 0.0f, 1.0f);
+				GUILayout.Label($"HBAO resolution ({PostProcessLayerHook.HBAO_Resolution}):");
+				if (GUILayout.Button("Quarter"))
+					ExposedSettings.Instance.Entry_Quality_HBAO_Resolution.Value = HBAO_Core.Resolution.Quarter;
+				if (GUILayout.Button("Half"))
+					ExposedSettings.Instance.Entry_Quality_HBAO_Resolution.Value = HBAO_Core.Resolution.Half;
+				if (GUILayout.Button("Full"))
+					ExposedSettings.Instance.Entry_Quality_HBAO_Resolution.Value = HBAO_Core.Resolution.Full;
+				GUILayout.EndHorizontal();
+
+				GUILayout.BeginHorizontal();
 				GUILayout.EndHorizontal();
 				GUILayout.EndVertical();
 			}
@@ -649,9 +657,6 @@ namespace SuisHack
 			ExposedSettings.Instance.Entry_Quality_SSR_Resolution.Value = (ScreenSpaceReflectionResolution)ExposedSettings.Instance.Entry_Quality_SSR_Resolution.DefaultValue;
 			ExposedSettings.Instance.Entry_Quality_SSR_Tickness.Value = (float)ExposedSettings.Instance.Entry_Quality_SSR_Tickness.DefaultValue;
 			ExposedSettings.Instance.Entry_Quality_SSR_Vignette.Value = (float)ExposedSettings.Instance.Entry_Quality_SSR_Vignette.DefaultValue;
-
-			ExposedSettings.Instance.Entry_Quality_HBAO_Preset.Value = (HBAO_Core.Preset)ExposedSettings.Instance.Entry_Quality_HBAO_Preset.DefaultValue;
-			ExposedSettings.Instance.Entry_Quality_HBAO_Intensity.Value = (float)ExposedSettings.Instance.Entry_Quality_HBAO_Intensity.DefaultValue;
 
 			ExposedSettings.Instance.Entry_Quality_EdgeDetection.Value = (bool)ExposedSettings.Instance.Entry_Quality_EdgeDetection.DefaultValue;
 			ExposedSettings.Instance.Entry_Quality_EdgeDetectionDepth.Value = (float)ExposedSettings.Instance.Entry_Quality_EdgeDetectionDepth.DefaultValue;

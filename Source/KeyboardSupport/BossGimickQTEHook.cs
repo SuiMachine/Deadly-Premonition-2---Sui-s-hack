@@ -37,6 +37,8 @@ namespace SuisHack.KeyboardSupport
 				GamepadPrompts.UISpriteOn(__instance.m_hudQTE.m_uiButton);
 			else
 				KeyboardPrompts.UISpriteOn(__instance.m_hudQTE.m_uiButton);
+
+			//Plugin.Message($"EndCutscenDetour - button was suppose to be {__instance.m_buttonIndex}");
 		}
 	}
 }

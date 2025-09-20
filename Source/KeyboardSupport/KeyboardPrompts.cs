@@ -33,7 +33,7 @@ namespace SuisHack.KeyboardSupport
 
 		public static void UISpriteOn(UISprite __instance)
 		{
-			//Plugin.Message($"{__instance.name} - {__instance.mSpriteName}");
+			//Plugin.Message($"UISpriteOn - {__instance.name} - {__instance.mSpriteName}");
 			if (GlobalReplacementAtlas.Instance != null)
 			{
 				//SuisHackMain.loggerInst.Msg($"Trying to replace: {__instance.mSpriteName}"); 
